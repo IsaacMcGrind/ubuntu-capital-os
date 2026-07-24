@@ -26,15 +26,15 @@ PUB, IAM, ONB, OPP, DD, INV, SET, PORT, DOC, NEWS, EVENT, NOTIFY, REF, PROFILE, 
 
 ## 5. Use-Case Count
 
-The initial master catalogue contains **42 use cases**.
+The initial master catalogue contains **41 use cases**.
 
 ### Confirmed
 
-Investor-facing opportunity discovery, filtering, detail viewing, NDA action presence, pending-investment navigation, holdings, performance, activity, reports/tax documents, news, events, profile, referral, and contact/support entry points are directly visible at capability level.
+Direct evidence supports the public platform proposition, visible opportunity cards and categories, the presence of an NDA action, portfolio-area navigation, news content, events navigation, profile navigation, referral navigation, and a contact/support entry point.
 
 ### Inferred
 
-Authentication, registration, KYC/AML, accreditation, commitment processing, notifications, administration, audit, management reporting, and several external integration categories are inferred from the platform model or supplied analytical report.
+Authentication, registration, filtering and sorting behaviour, opportunity-detail behaviour, KYC/AML, accreditation, commitment processing, notifications, administration, audit, management reporting, and several external integration categories are inferred from the platform model, visible affordances, or supplied analytical report.
 
 ### Unknown
 
@@ -59,7 +59,7 @@ No direct contradiction is currently supported. Architectural guesses in the ear
 
 Build **Discover an Opportunity and Submit a Non-Binding Expression of Interest**.
 
-This slice should include protected access, catalogue UI and API, filters, opportunity detail, interest submission, persistence, duplicate handling, validation, role enforcement, audit events, operational visibility, automated tests, E2E acceptance tests, and deployment evidence.
+This slice should include protected access, catalogue UI and API, an explicitly assumed filtering/detail experience pending evidence, interest submission, persistence, duplicate handling, validation, role enforcement, audit events, operational visibility, automated tests, E2E acceptance tests, and deployment evidence.
 
 It deliberately avoids presenting an expression of interest as a binding investment before legal, compliance, settlement, and ownership rules are confirmed.
 
@@ -98,8 +98,8 @@ The supplied context supports an investor-facing marketplace and portfolio model
 
 **Discovery-prototype readiness: `READY_WITH_ASSUMPTIONS`.**
 
-A non-binding opportunity-discovery and expression-of-interest slice can proceed while clearly labelling assumptions and retaining evidence traceability.
+A non-binding opportunity-discovery and expression-of-interest slice can proceed while clearly labelling filtering and detail behaviour as assumptions until direct evidence is captured.
 
 ## 12. Recommended Next Action
 
-Approve the first vertical slice and collect targeted evidence for the critical open questions before implementing any binding investment or money-movement workflow. The next reconstruction pass should complete actors, permissions, detailed specifications for UC-IAM-001 and UC-OPP-001 to UC-OPP-003, journey/state models, backlog JSON, traceability, and E2E evidence criteria.
+Execute `plan.md` from Phase 0, complete the canonical actor and permission outputs, and collect targeted evidence for opportunity filters, detail pages, onboarding, NDA completion, commitment, and settlement before promoting those behaviours to `CONFIRMED`.
