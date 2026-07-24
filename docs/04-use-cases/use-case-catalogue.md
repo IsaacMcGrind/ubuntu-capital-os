@@ -1,6 +1,6 @@
 # Master Use-Case Catalogue
 
-The catalogue is evidence-first. `CONFIRMED` means the supplied material directly supports the business capability; it does not confirm every business rule or technical implementation detail.
+The catalogue is evidence-first. `CONFIRMED` means the supplied material directly supports the stated capability. It does not confirm every rule, field, route, calculation, or technical implementation detail.
 
 | Use Case ID | Domain | Use Case | Primary Actor | Outcome | Evidence | Priority | Dependencies |
 |---|---|---|---|---|---|---|---|
@@ -11,10 +11,10 @@ The catalogue is evidence-first. `CONFIRMED` means the supplied material directl
 | UC-ONB-001 | ONB | Register as a prospective investor | Prospective investor | Create an investor account and begin onboarding | INFERRED | CRITICAL | Public experience, IAM |
 | UC-ONB-002 | ONB | Complete investor profile and eligibility onboarding | Prospective investor | Submit information needed to determine platform eligibility | INFERRED | CRITICAL | Registration |
 | UC-ONB-003 | ONB | Verify investor identity and compliance status | Compliance actor / external service | Establish KYC/AML and accreditation status | INFERRED | CRITICAL | Profile submission, integrations |
-| UC-OPP-001 | OPP | Browse investment opportunities | Eligible investor | Discover available opportunities | CONFIRMED | CRITICAL | IAM, access status |
-| UC-OPP-002 | OPP | Filter and sort opportunities | Eligible investor | Narrow the opportunity set by investor-relevant criteria | CONFIRMED | HIGH | Opportunity catalogue |
-| UC-OPP-003 | OPP | View an opportunity summary and detail | Eligible investor | Understand the opportunity, terms, status, and next action | CONFIRMED | CRITICAL | Opportunity available |
-| UC-DD-001 | DD | Sign or acknowledge an NDA for an opportunity | Eligible investor | Gain controlled access to confidential due-diligence content | CONFIRMED for trigger; flow INFERRED | HIGH | Opportunity, identity, agreement service |
+| UC-OPP-001 | OPP | Browse visible investment opportunity cards and categories | Eligible investor | Discover available opportunity summaries shown by the reference interface | CONFIRMED | CRITICAL | IAM, access status |
+| UC-OPP-002 | OPP | Filter and sort opportunities | Eligible investor | Narrow the opportunity set by investor-relevant criteria | INFERRED | HIGH | Opportunity catalogue |
+| UC-OPP-003 | OPP | View an opportunity detail page | Eligible investor | Understand the opportunity, terms, status, and next action | INFERRED | CRITICAL | Opportunity available |
+| UC-DD-001 | DD | Initiate an NDA action for an opportunity | Eligible investor | Begin the process required to access restricted opportunity content | CONFIRMED for trigger; flow INFERRED | HIGH | Opportunity, identity, agreement service |
 | UC-DD-002 | DD | Access confidential due-diligence materials | NDA-authorised investor | Review restricted opportunity material | INFERRED | HIGH | Valid NDA/access grant |
 | UC-INV-001 | INV | Submit an investment commitment | Eligible investor | Record an intention or binding commitment to invest | INFERRED | CRITICAL | Opportunity open, DD where required, eligibility |
 | UC-INV-002 | INV | Review and resolve a pending investment | Investor / operations | Reach an accepted, rejected, cancelled, or remediated status | CONFIRMED for pending area; lifecycle INFERRED | CRITICAL | Commitment exists |
@@ -22,12 +22,12 @@ The catalogue is evidence-first. `CONFIRMED` means the supplied material directl
 | UC-SET-001 | SET | Receive funding instructions | Accepted investor | Obtain approved settlement instructions | UNKNOWN | CRITICAL | Accepted commitment |
 | UC-SET-002 | SET | Record and reconcile investor funds | Operations / banking integration | Match funds to the correct commitment | UNKNOWN | CRITICAL | Funding receipt, reference data |
 | UC-SET-003 | SET | Resolve a settlement exception | Operations | Correct unmatched, partial, late, duplicate, or reversed funding | UNKNOWN | HIGH | Settlement exception |
-| UC-PORT-001 | PORT | View pending investments | Investor | Understand investments awaiting completion or resolution | CONFIRMED | HIGH | IAM, investment records |
-| UC-PORT-002 | PORT | View current holdings | Investor | See owned companies, funds, or alternative assets | CONFIRMED | CRITICAL | Completed investments |
-| UC-PORT-003 | PORT | View portfolio performance | Investor | Understand portfolio value and performance | CONFIRMED for screen; calculations INFERRED | CRITICAL | Holdings, valuations, cash flows |
-| UC-PORT-004 | PORT | View portfolio activity history | Investor | Review material portfolio and account events | CONFIRMED | HIGH | Auditable events |
-| UC-DOC-001 | DOC | View and download reports and tax documents | Investor | Obtain authorised portfolio and tax documentation | CONFIRMED | HIGH | Generated/uploaded documents |
-| UC-NEWS-001 | NEWS | View personalised portfolio and opportunity news | Investor | Stay informed about investments and opportunities | CONFIRMED | MEDIUM | Content catalogue, preferences |
+| UC-PORT-001 | PORT | View pending investments | Investor | Understand investments awaiting completion or resolution | CONFIRMED for navigation | HIGH | IAM, investment records |
+| UC-PORT-002 | PORT | View current holdings | Investor | See owned companies, funds, or alternative assets | CONFIRMED for navigation | CRITICAL | Completed investments |
+| UC-PORT-003 | PORT | View portfolio performance | Investor | Understand portfolio value and performance | CONFIRMED for navigation; calculations INFERRED | CRITICAL | Holdings, valuations, cash flows |
+| UC-PORT-004 | PORT | View portfolio activity history | Investor | Review material portfolio and account events | CONFIRMED for navigation | HIGH | Auditable events |
+| UC-DOC-001 | DOC | View and download reports and tax documents | Investor | Obtain authorised portfolio and tax documentation | CONFIRMED for navigation; retrieval flow INFERRED | HIGH | Generated/uploaded documents |
+| UC-NEWS-001 | NEWS | View portfolio and opportunity news content | Investor | Stay informed about investments and opportunities | CONFIRMED | MEDIUM | Content catalogue, preferences |
 | UC-EVENT-001 | EVENT | Browse investment events and webinars | Investor | Discover relevant educational or engagement events | CONFIRMED for navigation | LOW | Event catalogue |
 | UC-PROFILE-001 | PROFILE | View and maintain investor profile | Investor | Keep account and investor information current | CONFIRMED for navigation; fields INFERRED | HIGH | IAM |
 | UC-REF-001 | REF | Refer a prospective investor | Investor | Submit a referral through the platform | CONFIRMED for navigation; workflow UNKNOWN | LOW | IAM |
@@ -46,8 +46,12 @@ The catalogue is evidence-first. `CONFIRMED` means the supplied material directl
 | UC-INT-003 | INT | Deliver email or in-app communications | Platform / messaging provider | Notify actors and preserve delivery evidence | INFERRED | HIGH | Notification event |
 | UC-INT-004 | INT | Exchange settlement data with banking or payment services | Platform / financial service | Support funding and reconciliation | UNKNOWN | CRITICAL | Banking/payment integration |
 
+## Catalogue count
+
+The catalogue contains **41 use cases**.
+
 ## Coverage observations
 
-- Confirmed evidence is strongest for opportunity discovery and investor portfolio navigation.
-- Registration, compliance, commitment, settlement, administration, and operational recovery are essential to a complete investment platform but remain incompletely evidenced.
-- The first implementation-ready slice must therefore distinguish a demonstrable product slice from a production-regulated investment transaction.
+- Confirmed evidence is strongest for visible opportunity cards, categories, investor navigation, portfolio news, and the presence of an NDA trigger.
+- Filtering, sorting, detail-page behaviour, regulated onboarding, commitment, settlement, administration, and operational recovery remain incompletely evidenced.
+- The first implementation-ready slice must distinguish a demonstrable prototype from a production-regulated investment transaction.
