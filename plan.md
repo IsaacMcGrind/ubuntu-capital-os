@@ -15,6 +15,7 @@ The plan is the controlling implementation sequence for developers and autonomou
 5. Never mark a use case complete because code exists.
 6. Keep reconstruction requirements separate from future enhancements.
 7. Update the catalogue, backlog, tracker, traceability matrix, open questions, and summary after every completed phase.
+8. Record current implementation and contractor delivery evidence under `contractors/` without treating implementation provenance as proof of E2E completion.
 
 ## 3. Required Repository Outputs
 
@@ -65,6 +66,11 @@ docs/
   13-risks/
     gap-and-risk-register.md
 
+contractors/
+  80kdevelopers/
+    README.md
+    implementation-status.md
+
 schemas/
   use-case.schema.json
   backlog-item.schema.json
@@ -91,6 +97,7 @@ Establish a reliable baseline before implementation begins.
 ### Work Items
 
 - Inventory all supplied screenshots, HTML, URLs, prompts, reports, and repository material.
+- Record current implementation URLs, source repositories, contractor provenance, and repository-access constraints.
 - Create system terminology and separate observed OurCrowd wording from Ubuntu Capital naming.
 - Define public, authenticated investor, operational, administrative, and external-system boundaries.
 - Document current evidence classifications and contradictions.
@@ -103,12 +110,15 @@ Establish a reliable baseline before implementation begins.
 - `docs/00-context/source-inventory.md`
 - `docs/00-context/terminology.md`
 - `docs/00-context/system-boundary.md`
+- `contractors/80kdevelopers/README.md`
+- `contractors/80kdevelopers/implementation-status.md`
 - completed evidence register
 - architecture decision log or baseline section
 
 ### Exit Criteria
 
 - Every supplied source has a stable source ID.
+- Current implementation and contractor provenance are recorded without overstating completion.
 - Product boundaries and unknowns are explicit.
 - No critical contradiction is hidden.
 - The first vertical slice can be described without inventing binding investment behaviour.
@@ -146,7 +156,7 @@ Convert the current catalogue into a complete, structured reconstruction specifi
 
 ### Work Items
 
-- Review the initial 42-use-case catalogue for duplicates, gaps, and oversized cases.
+- Review the current 41-use-case catalogue for duplicates, gaps, and oversized cases.
 - Populate every required master-catalogue field.
 - Create one Markdown specification per use case using the exact 23-section template.
 - Perform mandatory exception analysis for every relevant use case.
@@ -422,16 +432,18 @@ Make the platform operable, supportable, and auditable.
 
 Execute these tasks next, in order:
 
-1. Complete source inventory and terminology.
-2. Produce actors and permissions matrix.
-3. Produce capability map.
-4. Upgrade the 42-use-case catalogue to all mandatory fields.
-5. Fully specify the foundational and first-slice use cases.
-6. Extract business rules.
-7. Create journeys and state models for the first slice.
-8. Create integration and validation records for the first slice.
-9. Generate backlog, tracker, and traceability entries for the first slice.
-10. Scaffold and implement the first vertical slice only after steps 1–9 meet exit criteria.
+1. Complete source inventory and terminology, including current implementation and contractor provenance.
+2. Gain repository access to `HarleyJoker/ubuntu-capital-platform` and perform implementation inventory when access becomes available.
+3. Produce actors and permissions matrix.
+4. Produce capability map.
+5. Upgrade the 41-use-case catalogue to all mandatory fields.
+6. Reconcile the current implementation against the 41 use cases without overstating visual completion as E2E completion.
+7. Fully specify the foundational and first-slice use cases.
+8. Extract business rules.
+9. Create journeys and state models for the first slice.
+10. Create integration and validation records for the first slice.
+11. Generate backlog, tracker, and traceability entries for the first slice.
+12. Continue or remediate implementation only after the relevant analysis and evidence meet exit criteria.
 
 ## 16. Agent Completion Protocol
 
@@ -440,10 +452,11 @@ At the end of each execution cycle, the agent must report:
 - files created or updated;
 - use cases progressed;
 - evidence classifications changed;
+- contractor implementation evidence added or reconciled;
 - open questions added or resolved;
 - tests or schema validations executed;
 - current blockers;
 - tracker status changes;
 - next dependency-aware action.
 
-The agent must commit related changes atomically with a descriptive message and update Pull Request #1 rather than creating disconnected work.
+The agent must commit related changes atomically with a descriptive message and use a focused pull request for each coherent change set.
