@@ -64,8 +64,19 @@ jobs:
           if-no-files-found: warn
           retention-days: 90
 
+      - name: Determine whether new repository activity occurred
+        id: reportability
+        if: always()
+        shell: bash
+        run: |
+          if grep -Eq 'Detected \*\*[1-9][0-9]* relevant commit\(s\)\*\*|and \*\*[1-9][0-9]* pull request\(s\) with activity\*\*' monitoring-output/report.md 2>/dev/null; then
+            echo "reportable=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "reportable=false" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Create GitHub issue for material changes
-        if: steps.monitor.outputs.material_changes == 'true'
+        if: steps.reportability.outputs.reportable == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REPORT_TITLE: ${{ steps.monitor.outputs.report_title }}
