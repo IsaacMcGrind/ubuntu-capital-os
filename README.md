@@ -6,13 +6,24 @@ Ubuntu Capital OS is the evidence-first system reconstruction and delivery repos
 
 `PARTIALLY_READY`
 
-The initial repository baseline captures the supplied screenshots, public routes, authenticated portfolio route, reverse-engineering report, and enterprise reconstruction protocol. Material behaviour that was not directly evidenced is explicitly classified as `INFERRED` or `UNKNOWN`.
+The repository baseline captures the supplied reference-platform evidence, reverse-engineering material, the 41-use-case catalogue, the execution protocol, and the current Ubuntu Capital implementation references. Material behaviour that has not been directly evidenced remains explicitly classified as `INFERRED` or `UNKNOWN`.
+
+## Current Ubuntu Capital implementation
+
+The current implementation supplied by the project owner is now tracked as part of the OS context:
+
+- **Live website:** https://80kdevelopers.com/ubuntucapital/
+- **Implementation source repository:** https://github.com/HarleyJoker/ubuntu-capital-platform
+- **Implementation provenance:** `contractors/80kdevelopers/`
+
+The connected ChatGPT GitHub application cannot currently inspect `HarleyJoker/ubuntu-capital-platform`; the access attempt returned `404 Not Found`. Therefore the existence of the deployed website is recorded as implementation progress, while exact use-case coverage remains unverified until the codebase and live flows can be reconciled against the 41-use-case catalogue.
 
 ## Controlling documents
 
 - `AGENT.md` defines how autonomous agents and contributors must operate.
 - `plan.md` is the single controlling execution plan and canonical repository-structure definition.
 - Documents under `docs/` are reconstruction and delivery outputs. They must not compete with `plan.md` as execution instructions.
+- `contractors/` records implementation provenance and contractor delivery evidence. It does not replace use-case, traceability, testing, or E2E evidence under `docs/`.
 
 ## Canonical repository structure
 
@@ -30,6 +41,7 @@ The initial repository baseline captures the supplied screenshots, public routes
 - `docs/11-open-questions` — unresolved questions
 - `docs/12-validation` — validation plan for inferred and unknown behaviour
 - `docs/13-risks` — gap and risk register
+- `contractors/80kdevelopers` — current 80K Developers implementation references, provenance, and delivery-status evidence
 - `schemas` — JSON schemas for structured outputs
 - `data` — machine-readable reconstruction artefacts
 - `output` — executive reconstruction summaries
@@ -47,6 +59,6 @@ A `CONFIRMED` classification requires direct supplied evidence. Every non-confir
 
 ## Integrity policy
 
-Counts, links, IDs, evidence classifications, directory names, and required outputs must reconcile across the repository. A contributor or agent must repair inconsistencies before progressing to the next phase.
+Counts, links, IDs, evidence classifications, directory names, implementation claims, and required outputs must reconcile across the repository. A contributor or agent must repair inconsistencies before progressing to the next phase.
 
-The current source base is insufficient to reproduce regulated investment execution faithfully. The next evidence priority is direct observation of onboarding, accreditation/KYC, opportunity detail, NDA, commitment, settlement, portfolio update, reporting, administration, and failure recovery behaviour.
+The source base is still insufficient to reproduce regulated investment execution faithfully. The next evidence priority is to gain access to the current implementation repository, walk the deployed website against the 41 use cases, and directly validate onboarding, accreditation/KYC, opportunity detail, NDA, commitment, settlement, portfolio update, reporting, administration, security, testing, and failure-recovery behaviour.
