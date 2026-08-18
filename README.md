@@ -14,7 +14,7 @@ The current implementation supplied by the project owner is now tracked as part 
 
 - **Live website:** https://80kdevelopers.com/ubuntucapital/
 - **Implementation source repository:** https://github.com/HarleyJoker/ubuntu-capital-platform
-- **Implementation provenance:** `contractors/80kdevelopers/`
+- **Implementation provenance:** `contractors/80kDevelopers/`
 
 The connected ChatGPT GitHub application cannot currently inspect `HarleyJoker/ubuntu-capital-platform`; the access attempt returned `404 Not Found`. Therefore the existence of the deployed website is recorded as implementation progress, while exact use-case coverage remains unverified until the codebase and live flows can be reconciled against the 41-use-case catalogue.
 
@@ -41,7 +41,7 @@ The connected ChatGPT GitHub application cannot currently inspect `HarleyJoker/u
 - `docs/11-open-questions` — unresolved questions
 - `docs/12-validation` — validation plan for inferred and unknown behaviour
 - `docs/13-risks` — gap and risk register
-- `contractors/80kdevelopers` — current 80K Developers implementation references, provenance, and delivery-status evidence
+- `contractors/80kDevelopers` — current 80K Developers implementation references, provenance, and delivery-status evidence
 - `schemas` — JSON schemas for structured outputs
 - `data` — machine-readable reconstruction artefacts
 - `output` — executive reconstruction summaries
