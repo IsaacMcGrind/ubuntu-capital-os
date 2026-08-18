@@ -67,7 +67,7 @@ docs/
     gap-and-risk-register.md
 
 contractors/
-  80kdevelopers/
+  80kDevelopers/
     README.md
     implementation-status.md
 
@@ -110,8 +110,8 @@ Establish a reliable baseline before implementation begins.
 - `docs/00-context/source-inventory.md`
 - `docs/00-context/terminology.md`
 - `docs/00-context/system-boundary.md`
-- `contractors/80kdevelopers/README.md`
-- `contractors/80kdevelopers/implementation-status.md`
+- `contractors/80kDevelopers/README.md`
+- `contractors/80kDevelopers/implementation-status.md`
 - completed evidence register
 - architecture decision log or baseline section
 
