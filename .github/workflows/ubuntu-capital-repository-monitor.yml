@@ -66,12 +66,12 @@ jobs:
           if-no-files-found: warn
           retention-days: 7
 
-      - name: Determine whether new repository activity occurred
+      - name: Determine whether the report should be published
         id: reportability
         if: always()
         shell: bash
         run: |
-          if grep -Eq 'Detected \*\*[1-9][0-9]* relevant commit\(s\)\*\*|and \*\*[1-9][0-9]* pull request\(s\) with activity\*\*' monitoring-output/report.md 2>/dev/null; then
+          if [ "${{ steps.monitor.outputs.reportable }}" = "true" ] || grep -q '\*\*History integrity event:\*\* YES' monitoring-output/report.md 2>/dev/null; then
             echo "reportable=true" >> "$GITHUB_OUTPUT"
           else
             echo "reportable=false" >> "$GITHUB_OUTPUT"

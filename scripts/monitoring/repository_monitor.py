@@ -115,6 +115,21 @@ def git_exists(revision: str) -> bool:
     return result.returncode == 0
 
 
+def ensure_commit_available(revision: str) -> bool:
+    """Fetch a prior workflow head that may be unreachable after a force-push."""
+    if git_exists(revision):
+        return True
+    subprocess.run(
+        ["git", "fetch", "--no-tags", "origin", revision],
+        cwd=WORKSPACE,
+        text=True,
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.DEVNULL,
+        check=False,
+    )
+    return git_exists(revision)
+
+
 def git_is_ancestor(ancestor: str, descendant: str) -> bool:
     result = subprocess.run(
         ["git", "merge-base", "--is-ancestor", ancestor, descendant],
@@ -297,7 +312,8 @@ def commit_files_and_patch(sha: str) -> tuple[list[dict[str, str]], str]:
 def collect_commit_activity(since: datetime, branch: str, previous_head_sha: str | None):
     """Collect activity and make default-branch rewrites explicit integrity evidence."""
     rewrite = None
-    if previous_head_sha and git_exists(previous_head_sha):
+    previous_head_available = bool(previous_head_sha) and ensure_commit_available(previous_head_sha)
+    if previous_head_sha and previous_head_available:
         if git_is_ancestor(previous_head_sha, branch):
             revision = f"{previous_head_sha}..{branch}"
         else:
@@ -312,6 +328,7 @@ def collect_commit_activity(since: datetime, branch: str, previous_head_sha: str
                 use_case_ids.update(re.findall(USE_CASE_PATTERN, file_entry.get("filename", "")))
                 use_case_ids.update(re.findall(USE_CASE_PATTERN, file_entry.get("previous_filename", "")))
             rewrite = {
+                "kind": "diverged",
                 "previous_head": previous_head_sha,
                 "current_head": current_head_sha,
                 "merge_base": merge_base,
@@ -322,6 +339,15 @@ def collect_commit_activity(since: datetime, branch: str, previous_head_sha: str
     else:
         since_iso = since.isoformat().replace("+00:00", "Z")
         raw = git("log", branch, f"--since={since_iso}", "--format=%H%x1f%an%x1f%aI%x1f%s", "--reverse")
+        if previous_head_sha:
+            rewrite = {
+                "kind": "previous_head_unavailable",
+                "previous_head": previous_head_sha,
+                "current_head": git("rev-parse", branch).strip(),
+                "merge_base": None,
+                "files": [],
+                "use_case_ids": [],
+            }
 
     results = []
     for line in raw.splitlines():
@@ -519,15 +545,25 @@ def main() -> None:
     pull_requests = collect_pr_activity(since)
     use_cases, absent_use_cases = classify_use_case_changes(catalogue, commits, pull_requests, rewrite)
     if rewrite:
-        integrity.append(
-            (
-                "HIGH",
-                "Default-branch history rewrite detected: previous successful head "
-                f"`{rewrite['previous_head']}` is not an ancestor of current head `{rewrite['current_head']}`. "
-                f"The monitor compared current state with the prior head and collected current-branch commits after merge base `{rewrite['merge_base'] or 'none'}`; "
-                "activity removed by the rewrite cannot be reconstructed from the current branch and requires human review.",
+        if rewrite["kind"] == "diverged":
+            integrity.append(
+                (
+                    "HIGH",
+                    "Default-branch history rewrite detected: previous successful head "
+                    f"`{rewrite['previous_head']}` is not an ancestor of current head `{rewrite['current_head']}`. "
+                    f"The monitor compared current state with the prior head and collected current-branch commits after merge base `{rewrite['merge_base'] or 'none'}`; "
+                    "activity removed by the rewrite cannot be reconstructed from the current branch and requires human review.",
+                )
             )
-        )
+        else:
+            integrity.append(
+                (
+                    "HIGH",
+                    "Previous successful workflow head "
+                    f"`{rewrite['previous_head']}` could not be fetched from `origin` or found in the checkout. "
+                    "Default-branch continuity and state comparison cannot be verified; review for a force-push, object retention issue, or repository-access failure.",
+                )
+            )
     if absent_use_cases:
         integrity.append(
             (
@@ -583,6 +619,7 @@ def main() -> None:
 
     report_title = f"Ubuntu Capital OS Change Report — {johannesburg_display(now)}"
     set_output("report_title", report_title)
+    set_output("reportable", "true" if commits or pull_requests or rewrite else "false")
 
     lines: list[str] = [
         "# Ubuntu Capital OS — Repository Change Report",
@@ -627,13 +664,15 @@ def main() -> None:
         lines.extend(
             [
                 "",
-                "### Default-branch history rewrite",
+                "### Default-branch history integrity event",
                 "",
                 f"- Previous successful head: `{rewrite['previous_head']}`",
                 f"- Current head: `{rewrite['current_head']}`",
-                f"- Comparison base: `{rewrite['merge_base'] or 'none (unrelated histories)'}`",
+                f"- Event: `{rewrite['kind']}`",
+                f"- Comparison base: `{rewrite['merge_base'] or 'none (unavailable or unrelated histories)'}`",
                 f"- Current-state path differences captured: {len(rewrite['files'])}",
-                "- This is a **HIGH** integrity event. Review the rewrite before relying on the normal monitoring ledger.",
+                "- **History integrity event:** YES",
+                "- This is a **HIGH** integrity event. Review it before relying on the normal monitoring ledger.",
             ]
         )
 
@@ -761,7 +800,7 @@ def main() -> None:
             )
         ) or "Repository"
         lines.append(
-            f"| {now.isoformat()} | History rewrite | Previous head diverged from current branch | {rewrite_area} | HIGH integrity review |"
+            f"| {now.isoformat()} | History integrity | {rewrite['kind'].replace('_', ' ')} | {rewrite_area} | HIGH integrity review |"
         )
     if not commits and not pull_requests and not rewrite:
         lines.append("| — | — | No material change | Repository | None |")
