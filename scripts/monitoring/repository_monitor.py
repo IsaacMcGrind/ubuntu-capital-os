@@ -115,6 +115,42 @@ def git_exists(revision: str) -> bool:
     return result.returncode == 0
 
 
+def ensure_commit_available(revision: str) -> bool:
+    """Fetch a prior workflow head that may be unreachable after a force-push."""
+    if git_exists(revision):
+        return True
+    subprocess.run(
+        ["git", "fetch", "--no-tags", "origin", revision],
+        cwd=WORKSPACE,
+        text=True,
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.DEVNULL,
+        check=False,
+    )
+    return git_exists(revision)
+
+
+def git_is_ancestor(ancestor: str, descendant: str) -> bool:
+    result = subprocess.run(
+        ["git", "merge-base", "--is-ancestor", ancestor, descendant],
+        cwd=WORKSPACE,
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.DEVNULL,
+    )
+    return result.returncode == 0
+
+
+def git_merge_base(left: str, right: str) -> str | None:
+    result = subprocess.run(
+        ["git", "merge-base", left, right],
+        cwd=WORKSPACE,
+        text=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.DEVNULL,
+    )
+    return result.stdout.strip() if result.returncode == 0 else None
+
+
 def parse_dt(value: str) -> datetime:
     return datetime.fromisoformat(value.replace("Z", "+00:00"))
 
@@ -241,42 +277,84 @@ def area_for(path: str) -> str:
     return "Repository"
 
 
+def parse_name_status(status_raw: str) -> list[dict[str, str]]:
+    files = []
+    for row in status_raw.splitlines():
+        if not row.strip():
+            continue
+        parts = row.split("\t")
+        status = parts[0]
+        entry = {"filename": parts[-1], "status": status}
+        if status.startswith("R") and len(parts) >= 3:
+            entry["previous_filename"] = parts[-2]
+        files.append(entry)
+    return files
+
+
+def first_parent(sha: str) -> str | None:
+    """Return the first parent so merge diffs match their first-parent patch."""
+    parts = git("rev-list", "--parents", "-n", "1", sha).strip().split()
+    return parts[1] if len(parts) > 1 else None
+
+
+def commit_files_and_patch(sha: str) -> tuple[list[dict[str, str]], str]:
+    """Collect paths and patch against the same first-parent comparison."""
+    parent = first_parent(sha)
+    if parent:
+        status_raw = git("diff", "--name-status", "-M", "--no-ext-diff", parent, sha)
+        patch = git("diff", "--format=", "--unified=0", "--no-ext-diff", parent, sha)
+    else:
+        status_raw = git("diff-tree", "--root", "--no-commit-id", "--name-status", "-M", "-r", sha)
+        patch = git("show", "--format=", "--unified=0", "--no-ext-diff", sha)
+    return parse_name_status(status_raw), patch
+
+
 def collect_commit_activity(since: datetime, branch: str, previous_head_sha: str | None):
-    """Collect commits by branch ancestry when a prior successful head is available."""
-    if previous_head_sha and git_exists(previous_head_sha):
-        revision = f"{previous_head_sha}..{branch}"
+    """Collect activity and make default-branch rewrites explicit integrity evidence."""
+    rewrite = None
+    previous_head_available = bool(previous_head_sha) and ensure_commit_available(previous_head_sha)
+    if previous_head_sha and previous_head_available:
+        if git_is_ancestor(previous_head_sha, branch):
+            revision = f"{previous_head_sha}..{branch}"
+        else:
+            merge_base = git_merge_base(previous_head_sha, branch)
+            current_head_sha = git("rev-parse", branch).strip()
+            revision = f"{merge_base}..{branch}" if merge_base else branch
+            status_raw = git("diff", "--name-status", "-M", "--no-ext-diff", previous_head_sha, current_head_sha)
+            full_patch = git("diff", "--format=", "--unified=0", "--no-ext-diff", previous_head_sha, current_head_sha)
+            files = parse_name_status(status_raw)
+            use_case_ids = set(re.findall(USE_CASE_PATTERN, full_patch))
+            for file_entry in files:
+                use_case_ids.update(re.findall(USE_CASE_PATTERN, file_entry.get("filename", "")))
+                use_case_ids.update(re.findall(USE_CASE_PATTERN, file_entry.get("previous_filename", "")))
+            rewrite = {
+                "kind": "diverged",
+                "previous_head": previous_head_sha,
+                "current_head": current_head_sha,
+                "merge_base": merge_base,
+                "files": files,
+                "use_case_ids": sorted(use_case_ids),
+            }
         raw = git("log", revision, "--format=%H%x1f%an%x1f%aI%x1f%s", "--reverse")
     else:
         since_iso = since.isoformat().replace("+00:00", "Z")
         raw = git("log", branch, f"--since={since_iso}", "--format=%H%x1f%an%x1f%aI%x1f%s", "--reverse")
+        if previous_head_sha:
+            rewrite = {
+                "kind": "previous_head_unavailable",
+                "previous_head": previous_head_sha,
+                "current_head": git("rev-parse", branch).strip(),
+                "merge_base": None,
+                "files": [],
+                "use_case_ids": [],
+            }
 
     results = []
     for line in raw.splitlines():
         if not line.strip():
             continue
         sha, author, timestamp, message = line.split("\x1f", 3)
-        status_raw = git(
-            "diff-tree",
-            "--root",
-            "--first-parent",
-            "--no-commit-id",
-            "--name-status",
-            "-M",
-            "-r",
-            sha,
-        )
-        files = []
-        for row in status_raw.splitlines():
-            if not row.strip():
-                continue
-            parts = row.split("\t")
-            status = parts[0]
-            entry = {"filename": parts[-1], "status": status}
-            if status.startswith("R") and len(parts) >= 3:
-                entry["previous_filename"] = parts[-2]
-            files.append(entry)
-
-        full_patch = git("show", "--first-parent", "--format=", "--unified=0", "--no-ext-diff", sha)
+        files, full_patch = commit_files_and_patch(sha)
         use_case_ids = set(re.findall(USE_CASE_PATTERN, full_patch))
         use_case_ids.update(re.findall(USE_CASE_PATTERN, message))
         for file_entry in files:
@@ -298,7 +376,7 @@ def collect_commit_activity(since: datetime, branch: str, previous_head_sha: str
                 "use_case_ids": sorted(use_case_ids),
             }
         )
-    return results
+    return results, rewrite
 
 
 def recent_pull_requests(since: datetime):
@@ -408,7 +486,7 @@ def collect_pr_activity(since: datetime):
     return results
 
 
-def changed_use_case_ids(commits, pull_requests) -> set[str]:
+def changed_use_case_ids(commits, pull_requests, rewrite=None) -> set[str]:
     ids: set[str] = set()
     for item in commits + pull_requests:
         ids.update(item.get("use_case_ids", []))
@@ -422,11 +500,13 @@ def changed_use_case_ids(commits, pull_requests) -> set[str]:
                 ids.update(re.findall(USE_CASE_PATTERN, filename.get("previous_filename", "")))
             else:
                 ids.update(re.findall(USE_CASE_PATTERN, filename or ""))
+    if rewrite:
+        ids.update(rewrite.get("use_case_ids", []))
     return ids
 
 
-def classify_use_case_changes(catalogue: dict[str, str], commits, pull_requests):
-    changed = changed_use_case_ids(commits, pull_requests)
+def classify_use_case_changes(catalogue: dict[str, str], commits, pull_requests, rewrite=None):
+    changed = changed_use_case_ids(commits, pull_requests, rewrite)
     known = sorted(uid for uid in changed if uid in catalogue)
     absent = sorted(uid for uid in changed if uid not in catalogue)
     return known, absent
@@ -461,9 +541,29 @@ def main() -> None:
     catalogue, _, catalogue_issues = load_catalogue()
     integrity = [("MEDIUM", issue) for issue in catalogue_issues] + integrity_checks(len(catalogue))
 
-    commits = collect_commit_activity(since, branch, previous_head_sha)
+    commits, rewrite = collect_commit_activity(since, branch, previous_head_sha)
     pull_requests = collect_pr_activity(since)
-    use_cases, absent_use_cases = classify_use_case_changes(catalogue, commits, pull_requests)
+    use_cases, absent_use_cases = classify_use_case_changes(catalogue, commits, pull_requests, rewrite)
+    if rewrite:
+        if rewrite["kind"] == "diverged":
+            integrity.append(
+                (
+                    "HIGH",
+                    "Default-branch history rewrite detected: previous successful head "
+                    f"`{rewrite['previous_head']}` is not an ancestor of current head `{rewrite['current_head']}`. "
+                    f"The monitor compared current state with the prior head and collected current-branch commits after merge base `{rewrite['merge_base'] or 'none'}`; "
+                    "activity removed by the rewrite cannot be reconstructed from the current branch and requires human review.",
+                )
+            )
+        else:
+            integrity.append(
+                (
+                    "HIGH",
+                    "Previous successful workflow head "
+                    f"`{rewrite['previous_head']}` could not be fetched from `origin` or found in the checkout. "
+                    "Default-branch continuity and state comparison cannot be verified; review for a force-push, object retention issue, or repository-access failure.",
+                )
+            )
     if absent_use_cases:
         integrity.append(
             (
@@ -483,6 +583,16 @@ def main() -> None:
             if file_entry.get("previous_filename")
         }
         | {filename for pull_request in pull_requests for filename in pull_request["files"] if filename}
+        | {
+            file_entry.get("filename")
+            for file_entry in (rewrite or {}).get("files", [])
+            if file_entry.get("filename")
+        }
+        | {
+            file_entry.get("previous_filename")
+            for file_entry in (rewrite or {}).get("files", [])
+            if file_entry.get("previous_filename")
+        }
     )
     areas = sorted({area_for(filename) for filename in all_files})
     contractor_changes = [filename for filename in all_files if filename.startswith("contractors/80kDevelopers/")]
@@ -494,7 +604,7 @@ def main() -> None:
 
     severity = significance(commits, pull_requests, integrity, use_cases, absent_use_cases)
     health = repository_health(integrity)
-    score = len(commits) + len(pull_requests) + len(use_cases) + len(absent_use_cases)
+    score = len(commits) + len(pull_requests) + len(use_cases) + len(absent_use_cases) + int(bool(rewrite))
     momentum = (
         "NO_CHANGE"
         if score == 0
@@ -509,6 +619,7 @@ def main() -> None:
 
     report_title = f"Ubuntu Capital OS Change Report — {johannesburg_display(now)}"
     set_output("report_title", report_title)
+    set_output("reportable", "true" if commits or pull_requests or rewrite else "false")
 
     lines: list[str] = [
         "# Ubuntu Capital OS — Repository Change Report",
@@ -522,7 +633,7 @@ def main() -> None:
         "## 1. Executive Summary",
         "",
     ]
-    if not commits and not pull_requests:
+    if not commits and not pull_requests and not rewrite:
         lines.append("No material Ubuntu Capital OS repository changes were detected during this monitoring window.")
     else:
         lines.append(
@@ -548,6 +659,22 @@ def main() -> None:
             )
     else:
         lines.append("No commits were detected in the monitoring window.")
+
+    if rewrite:
+        lines.extend(
+            [
+                "",
+                "### Default-branch history integrity event",
+                "",
+                f"- Previous successful head: `{rewrite['previous_head']}`",
+                f"- Current head: `{rewrite['current_head']}`",
+                f"- Event: `{rewrite['kind']}`",
+                f"- Comparison base: `{rewrite['merge_base'] or 'none (unavailable or unrelated histories)'}`",
+                f"- Current-state path differences captured: {len(rewrite['files'])}",
+                "- **History integrity event:** YES",
+                "- This is a **HIGH** integrity event. Review it before relying on the normal monitoring ledger.",
+            ]
+        )
 
     lines.append("")
     if pull_requests:
@@ -609,7 +736,7 @@ def main() -> None:
         lines.append("No selected repository-integrity regressions were detected.")
 
     lines.extend(["", "## 7. Positive Progress", ""])
-    if commits or pull_requests:
+    if commits or pull_requests or rewrite:
         lines.append("- Repository activity occurred and has been captured in the monitoring ledger.")
         if use_cases:
             lines.append(f"- {len(use_cases)} current use case(s) received explicit changed evidence for review.")
@@ -661,7 +788,21 @@ def main() -> None:
         lines.append(
             f"| {pull_request['updated_at']} | PR #{pull_request['number']} | {pull_request['title'].replace('|', '/')} | {area} | Review |"
         )
-    if not commits and not pull_requests:
+    if rewrite:
+        rewrite_area = ", ".join(
+            sorted(
+                {
+                    area_for(path)
+                    for file_entry in rewrite["files"]
+                    for path in (file_entry.get("filename"), file_entry.get("previous_filename"))
+                    if path
+                }
+            )
+        ) or "Repository"
+        lines.append(
+            f"| {now.isoformat()} | History integrity | {rewrite['kind'].replace('_', ' ')} | {rewrite_area} | HIGH integrity review |"
+        )
+    if not commits and not pull_requests and not rewrite:
         lines.append("| — | — | No material change | Repository | None |")
 
     intervention = "YES" if health == "RED" or severity == "HIGH" else "NO"
