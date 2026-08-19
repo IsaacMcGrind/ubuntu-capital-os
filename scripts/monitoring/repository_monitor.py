@@ -70,6 +70,8 @@ AREA_RULES = [
     ("output", "Executive output"),
 ]
 
+USE_CASE_PATTERN = r"UC-[A-Z]+-\d+"
+
 
 def api(path: str, params: dict | None = None):
     if params:
@@ -121,12 +123,15 @@ def repository_default_branch() -> str:
     return branch
 
 
-def paginate_list(path: str, params: dict | None = None, *, max_pages: int = 100):
-    """Read every list page until GitHub returns a short/empty page."""
+def paginate_list(path: str, params: dict | None = None, *, max_pages: int | None = None):
+    """Read all list pages; max_pages is used only for documented endpoint caps."""
     items = []
     base = dict(params or {})
     per_page = min(int(base.pop("per_page", 100)), 100)
-    for page in range(1, max_pages + 1):
+    page = 1
+    while True:
+        if max_pages is not None and page > max_pages:
+            break
         query = dict(base)
         query.update({"per_page": per_page, "page": page})
         batch = api(path, query)
@@ -135,6 +140,7 @@ def paginate_list(path: str, params: dict | None = None, *, max_pages: int = 100
         items.extend(batch)
         if len(batch) < per_page:
             break
+        page += 1
     return items
 
 
@@ -143,9 +149,8 @@ def prior_successful_run(now: datetime, branch: str) -> tuple[datetime, str]:
     current = api(f"/repos/{REPO}/actions/runs/{RUN_ID}")
     workflow_id = current["workflow_id"]
     path = f"/repos/{REPO}/actions/workflows/{workflow_id}/runs"
-
-    # Workflow-runs responses are objects rather than bare lists, so paginate here.
-    for page in range(1, 101):
+    page = 1
+    while True:
         data = api(
             path,
             {"branch": branch, "status": "completed", "per_page": 100, "page": page},
@@ -163,7 +168,7 @@ def prior_successful_run(now: datetime, branch: str) -> tuple[datetime, str]:
                 return parse_dt(started), f"previous successful workflow run #{run.get('run_number')}"
         if len(runs) < 100:
             break
-
+        page += 1
     return now - timedelta(hours=12), "first-run fallback: preceding 12 hours"
 
 
@@ -228,24 +233,46 @@ def collect_commit_activity(since: datetime, branch: str):
         if not line.strip():
             continue
         sha, author, timestamp, message = line.split("\x1f", 3)
-        status_raw = git("diff-tree", "--root", "--no-commit-id", "--name-status", "-r", sha)
+        status_raw = git("diff-tree", "--root", "--no-commit-id", "--name-status", "-M", "-r", sha)
         files = []
         for row in status_raw.splitlines():
             if not row.strip():
                 continue
             parts = row.split("\t")
-            files.append({"filename": parts[-1], "status": parts[0]})
-        patch = git("show", "--format=", "--unified=0", "--no-ext-diff", sha)
+            status = parts[0]
+            entry = {"filename": parts[-1], "status": status}
+            if status.startswith("R") and len(parts) >= 3:
+                entry["previous_filename"] = parts[-2]
+            files.append(entry)
+
+        full_patch = git("show", "--format=", "--unified=0", "--no-ext-diff", sha)
+        use_case_ids = set(re.findall(USE_CASE_PATTERN, full_patch))
+        use_case_ids.update(re.findall(USE_CASE_PATTERN, message))
+        for f in files:
+            use_case_ids.update(re.findall(USE_CASE_PATTERN, f.get("filename", "")))
+            use_case_ids.update(re.findall(USE_CASE_PATTERN, f.get("previous_filename", "")))
+
+        patch = full_patch
         if len(patch) > 200_000:
             patch = patch[:200_000] + "\n[patch truncated by monitor]"
-        results.append({"sha": sha, "short": sha[:7], "message": message, "author": author, "time": timestamp, "files": files, "patch": patch})
+        results.append({
+            "sha": sha,
+            "short": sha[:7],
+            "message": message,
+            "author": author,
+            "time": timestamp,
+            "files": files,
+            "patch": patch,
+            "use_case_ids": sorted(use_case_ids),
+        })
     return results
 
 
-def recent_pull_requests(since: datetime, max_recent: int = 50):
-    """Fetch updated PRs newest-first and stop immediately at the first old PR."""
+def recent_pull_requests(since: datetime):
+    """Fetch every PR updated in-window, newest-first, stopping only at time boundary."""
     recent = []
-    for page in range(1, 101):
+    page = 1
+    while True:
         batch = api(
             f"/repos/{REPO}/pulls",
             {"state": "all", "sort": "updated", "direction": "desc", "per_page": 100, "page": page},
@@ -256,10 +283,9 @@ def recent_pull_requests(since: datetime, max_recent: int = 50):
             if parse_dt(pr["updated_at"]) < since:
                 return recent
             recent.append(pr)
-            if len(recent) >= max_recent:
-                return recent
         if len(batch) < 100:
             break
+        page += 1
     return recent
 
 
@@ -279,19 +305,37 @@ def collect_pr_activity(since: datetime):
         recent_review_comments = [r for r in review_comments if r.get("updated_at") and parse_dt(r["updated_at"]) >= since]
         recent_issue_comments = [r for r in issue_comments if r.get("updated_at") and parse_dt(r["updated_at"]) >= since]
 
+        use_case_ids = set()
+        file_paths = []
         patch_parts = []
         patch_size = 0
+        patch_truncated = False
         for f in files:
+            filename = f.get("filename")
+            previous_filename = f.get("previous_filename")
+            if filename:
+                file_paths.append(filename)
+                use_case_ids.update(re.findall(USE_CASE_PATTERN, filename))
+            if previous_filename:
+                file_paths.append(previous_filename)
+                use_case_ids.update(re.findall(USE_CASE_PATTERN, previous_filename))
+
             part = f.get("patch", "")
-            if not part:
-                continue
-            remaining = 200_000 - patch_size
-            if remaining <= 0:
-                break
-            patch_parts.append(part[:remaining])
-            patch_size += len(patch_parts[-1])
+            if part:
+                # Extract identifiers from the complete available patch before any
+                # display/report truncation is applied.
+                use_case_ids.update(re.findall(USE_CASE_PATTERN, part))
+                remaining = 200_000 - patch_size
+                if remaining > 0:
+                    patch_parts.append(part[:remaining])
+                    patch_size += len(patch_parts[-1])
+                    if len(part) > remaining:
+                        patch_truncated = True
+                else:
+                    patch_truncated = True
+
         patch = "\n".join(patch_parts)
-        if patch_size >= 200_000:
+        if patch_truncated:
             patch += "\n[PR patch truncated by monitor]"
 
         results.append({
@@ -302,8 +346,9 @@ def collect_pr_activity(since: datetime):
             "merged_at": pr.get("merged_at"),
             "updated_at": pr["updated_at"],
             "author": pr.get("user", {}).get("login", "unknown"),
-            "files": [f.get("filename") for f in files if f.get("filename")],
+            "files": sorted(set(file_paths)),
             "patch": patch,
+            "use_case_ids": sorted(use_case_ids),
             "reviews": len(recent_reviews),
             "review_comments": len(recent_review_comments),
             "issue_comments": len(recent_issue_comments),
@@ -314,12 +359,15 @@ def collect_pr_activity(since: datetime):
 def affected_use_cases(catalogue: dict[str, str], commits, prs):
     ids = set()
     for item in commits + prs:
-        ids.update(re.findall(r"UC-[A-Z]+-\d+", item.get("patch", "")))
-        ids.update(re.findall(r"UC-[A-Z]+-\d+", item.get("message", "")))
+        ids.update(item.get("use_case_ids", []))
+        ids.update(re.findall(USE_CASE_PATTERN, item.get("patch", "")))
+        ids.update(re.findall(USE_CASE_PATTERN, item.get("message", "")))
         for filename in item.get("files", []):
             if isinstance(filename, dict):
-                filename = filename.get("filename", "")
-            ids.update(re.findall(r"UC-[A-Z]+-\d+", filename or ""))
+                ids.update(re.findall(USE_CASE_PATTERN, filename.get("filename", "")))
+                ids.update(re.findall(USE_CASE_PATTERN, filename.get("previous_filename", "")))
+            else:
+                ids.update(re.findall(USE_CASE_PATTERN, filename or ""))
     return sorted(uid for uid in ids if uid in catalogue)
 
 
@@ -358,6 +406,7 @@ def main() -> None:
 
     all_files = sorted(
         {f["filename"] for c in commits for f in c["files"] if f.get("filename")}
+        | {f.get("previous_filename") for c in commits for f in c["files"] if f.get("previous_filename")}
         | {f for p in prs for f in p["files"] if f}
     )
     areas = sorted({area_for(f) for f in all_files})
@@ -474,7 +523,13 @@ def main() -> None:
 
     lines.extend(["", "## 9. Change Ledger", "", "| Time | Commit / PR | Change | Area | Impact |", "|---|---|---|---|---|"])
     for c in commits:
-        area = ", ".join(sorted({area_for(f["filename"]) for f in c["files"]})) or "Repository"
+        commit_paths = set()
+        for f in c["files"]:
+            if f.get("filename"):
+                commit_paths.add(f["filename"])
+            if f.get("previous_filename"):
+                commit_paths.add(f["previous_filename"])
+        area = ", ".join(sorted({area_for(path) for path in commit_paths})) or "Repository"
         lines.append(f"| {c['time']} | `{c['short']}` | {c['message'].replace('|', '/')} | {area} | Review |")
     for pr in prs:
         area = ", ".join(sorted({area_for(f) for f in pr["files"]})) or "Repository"
