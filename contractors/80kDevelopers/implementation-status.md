@@ -9,7 +9,7 @@ The current Ubuntu Capital implementation is represented by:
 - Live website: `https://80kdevelopers.com/ubuntucapital/`
 - Source repository: `https://github.com/HarleyJoker/ubuntu-capital-platform`
 
-The live website is treated as current implementation evidence supplied by the project owner. The source repository cannot yet be inspected through the connected ChatGPT GitHub application because the access attempt returned `404 Not Found`.
+The live website is treated as current implementation evidence supplied by the project owner. The source repository has now been directly inspected in the local workspace and reconciled against the Ubuntu Capital OS use-case catalogue.
 
 ## Delivery Evidence Recorded
 
@@ -17,25 +17,29 @@ The live website is treated as current implementation evidence supplied by the p
 |---|---|---|---|
 | Ubuntu Capital website deployment | COMPONENT_COMPLETE | User-supplied live URL | Confirms a deployed web experience exists, not that every business use case is E2E complete. |
 | Source-code repository identified | COMPONENT_COMPLETE | User-supplied GitHub URL | Repository identity is known. |
-| Source-code repository inspectable by Ubuntu Capital OS agent | BLOCKED_BY_CONTEXT | GitHub connector `404 Not Found` | Confirms a current access/context blocker; it is not a contradiction classification. |
-| 41-use-case implementation reconciliation | NOT_ANALYSED | No code walkthrough yet | Must be performed once repository access is available. |
-| Regulated investor onboarding / KYC / AML implementation evidence | NOT_ANALYSED | Not yet inspected | Do not infer from website existence. |
-| NDA end-to-end lifecycle implementation evidence | NOT_ANALYSED | Current OS only confirms the reference-platform NDA trigger | Must inspect implementation and live behaviour. |
-| Investment commitment / expression-of-interest implementation evidence | NOT_ANALYSED | Not yet inspected | Must distinguish prototype interest capture from binding investment. |
-| Settlement / reconciliation implementation evidence | NOT_ANALYSED | Not yet inspected | Financial execution cannot be assumed. |
-| Portfolio holdings / performance implementation evidence | NOT_ANALYSED | Not yet inspected | Navigation or UI alone is insufficient for completion. |
-| Admin / operations / support implementation evidence | NOT_ANALYSED | Not yet inspected | Must inspect controlled operational workflows. |
-| Security / audit / test / deployment evidence | NOT_ANALYSED | Not yet inspected | Required before production-readiness claims. |
+| Source-code repository inspectable by Ubuntu Capital OS agent | COMPONENT_COMPLETE | Direct repository inspection | The codebase is now directly inspected as a Vite/React application in the current environment. |
+| 41-use-case implementation reconciliation | IN_DEVELOPMENT | Direct inspection of route structure and mock data | Initial evidence confirms a front-end UI prototype, not a full regulated platform. |
+| Regulated investor onboarding / KYC / AML implementation evidence | NOT_IMPLEMENTED_OR_UNVERIFIED | No backend or identity services identified | No API, server, database, or verification logic was located. |
+| NDA end-to-end lifecycle implementation evidence | PARTIAL | UI route and static pages exist | The repository includes NDA-facing flows as interface states, but no real legal workflow or persisted record logic was identified. |
+| Investment commitment / expression-of-interest implementation evidence | PARTIAL | UI opportunities and dashboard flows exist | The app models deal listings and portfolio data, but no live commitment or fund movement logic was found. |
+| Settlement / reconciliation implementation evidence | NOT_IMPLEMENTED_OR_UNVERIFIED | No payment or settlement service identified | Financial execution cannot be assumed. |
+| Portfolio holdings / performance implementation evidence | PARTIAL | Portfolio pages and mock holdings data exist | The behaviour is demonstrably UI-level mock data, not a live portfolio system. |
+| Admin / operations / support implementation evidence | NOT_IMPLEMENTED_OR_UNVERIFIED | No operational/admin backend or workflows identified | Must inspect controlled operational workflows; none were found in the current codebase. |
+| Security / audit / test / deployment evidence | PARTIAL | Test suite exists and builds successfully | Security and runtime audit controls are not evidenced beyond front-end scaffolding. |
+
+Detailed mapping evidence is recorded in:
+
+- `docs/09-delivery/implementation-coverage-gap-matrix.md`
 
 ## Interpretation
 
 The existence of the deployed website is meaningful progress and should be preserved as contractor delivery evidence. However, Ubuntu Capital OS uses an end-to-end definition of complete. A visually implemented page or deployed component does not make the corresponding business use case `COMPLETE` until the required backend, persistence, permissions, business rules, integrations, audit, failure handling, automated tests, E2E tests, deployment evidence, and documentation are verified where applicable.
 
-The failed GitHub connector attempt is recorded as confirmed access evidence while the delivery status remains `BLOCKED_BY_CONTEXT`. It does not change the repository contradiction register.
+The historical failed GitHub connector attempt remains valid as access evidence for that specific path and time window, but it no longer blocks inspection because the implementation repository was reviewed directly from the local filesystem.
 
 ## Next Contractor Review
 
-Once source-repository access is available, perform a structured implementation audit against all 41 use cases and produce:
+With repository inspection completed, the next contractor review should deepen evidence for backend and operational behavior and produce:
 
 - use-case-to-code mapping;
 - route and screen inventory;

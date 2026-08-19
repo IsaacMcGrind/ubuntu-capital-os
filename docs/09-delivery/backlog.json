@@ -1,0 +1,2119 @@
+{
+  "payload_version": "2026-08-20.backlog-diff-pass-3",
+  "source_artifacts": [
+    "docs/09-delivery/prioritized-backlog-diff.md",
+    "docs/09-delivery/implementation-coverage-gap-matrix.md",
+    "docs/04-use-cases/use-case-catalogue.md"
+  ],
+  "status": "ANALYSIS_IN_PROGRESS",
+  "ordering_strategy": "Critical domains first (IAM, ONB, INV, SET, ADMIN, AUD, INT), then remaining gaps",
+  "sequence_overrides": [
+    {
+      "id": "SEQUENCE-001",
+      "rule": "BL-AUD-001 must be delivered before BL-SET-* and BL-ADMIN-*",
+      "rationale": "Standardized audit coverage is required before sensitive workflows"
+    },
+    {
+      "id": "SEQUENCE-002",
+      "rule": "BL-IAM-001 and BL-IAM-003 must be delivered before onboarding and commitment work",
+      "rationale": "Avoid unsecured state transitions"
+    },
+    {
+      "id": "SEQUENCE-003",
+      "rule": "BL-INT-001 and BL-ONB-003 must be delivered before BL-DD-* and BL-INV-* where eligibility gates are required",
+      "rationale": "Eligibility and compliance checks gate protected flows"
+    },
+    {
+      "id": "SEQUENCE-004",
+      "rule": "BL-SET-001 must be delivered before BL-SET-002 and BL-SET-003",
+      "rationale": "Canonical funding references are prerequisite for reconciliation and exceptions"
+    },
+    {
+      "id": "SEQUENCE-005",
+      "rule": "BL-ADMIN-003 must be delivered before BL-ADMIN-001, BL-ADMIN-002, and BL-ADMIN-004",
+      "rationale": "Governance controls must precede expanded admin tooling"
+    }
+  ],
+  "items": [
+    {
+      "id": "BL-ADMIN-001",
+      "title": "Create and publish an investment opportunity",
+      "use_case_ids": [
+        "UC-ADMIN-001"
+      ],
+      "domain": "ADMIN",
+      "priority": "P0",
+      "current_gap_status": "READY_FOR_DEVELOPMENT",
+      "backlog_diff": "ADD",
+      "roadmap_phase": "Phase 6",
+      "dependencies": [
+        "BL-ADMIN-003",
+        "BL-AUD-001"
+      ],
+      "acceptance_criteria": [
+        "Admin can create draft opportunity and publish only after compliance approval",
+        "publish event appears in audit feed",
+        "investors see published deal only after status transition"
+      ],
+      "tracker_gate": {
+        "target_status": "READY_FOR_E2E_TEST",
+        "required_checks": [
+          "Linked use-case IDs are explicit in the item",
+          "Acceptance checks are implemented and testable",
+          "Positive and negative path tests exist",
+          "Audit and access-control expectations are verified where applicable",
+          "Traceability links are updated in delivery and evidence docs"
+        ]
+      },
+      "Initiative": {
+        "id": "INIT-001",
+        "title": "Ubuntu Capital OS Evidence-First Reconstruction"
+      },
+      "Epic": {
+        "id": "EPIC-ADMIN",
+        "title": "Administration and Governance Controls"
+      },
+      "Feature": {
+        "id": "FEAT-UC-ADMIN-001",
+        "title": "Create and publish an investment opportunity"
+      },
+      "Story": {
+        "id": "STORY-BL-ADMIN-001",
+        "title": "Implement Create and publish an investment opportunity"
+      },
+      "Task": {
+        "id": "BL-ADMIN-001",
+        "title": "Create and publish an investment opportunity"
+      }
+    },
+    {
+      "id": "BL-ADMIN-002",
+      "title": "Update, close, pause, or archive an opportunity",
+      "use_case_ids": [
+        "UC-ADMIN-002"
+      ],
+      "domain": "ADMIN",
+      "priority": "P0",
+      "current_gap_status": "READY_FOR_DEVELOPMENT",
+      "backlog_diff": "ADD",
+      "roadmap_phase": "Phase 6",
+      "dependencies": [
+        "BL-ADMIN-003",
+        "BL-AUD-001"
+      ],
+      "acceptance_criteria": [
+        "Admin can pause/close/archive opportunities with reason",
+        "closed opportunities block new commitments",
+        "lifecycle actions are audit-logged"
+      ],
+      "tracker_gate": {
+        "target_status": "READY_FOR_E2E_TEST",
+        "required_checks": [
+          "Linked use-case IDs are explicit in the item",
+          "Acceptance checks are implemented and testable",
+          "Positive and negative path tests exist",
+          "Audit and access-control expectations are verified where applicable",
+          "Traceability links are updated in delivery and evidence docs"
+        ]
+      },
+      "Initiative": {
+        "id": "INIT-001",
+        "title": "Ubuntu Capital OS Evidence-First Reconstruction"
+      },
+      "Epic": {
+        "id": "EPIC-ADMIN",
+        "title": "Administration and Governance Controls"
+      },
+      "Feature": {
+        "id": "FEAT-UC-ADMIN-002",
+        "title": "Update, close, pause, or archive an opportunity"
+      },
+      "Story": {
+        "id": "STORY-BL-ADMIN-002",
+        "title": "Implement Update, close, pause, or archive an opportunity"
+      },
+      "Task": {
+        "id": "BL-ADMIN-002",
+        "title": "Update, close, pause, or archive an opportunity"
+      }
+    },
+    {
+      "id": "BL-ADMIN-003",
+      "title": "Manage users, roles, permissions, and data scope",
+      "use_case_ids": [
+        "UC-ADMIN-003"
+      ],
+      "domain": "ADMIN",
+      "priority": "P0",
+      "current_gap_status": "READY_FOR_DEVELOPMENT",
+      "backlog_diff": "ADD",
+      "roadmap_phase": "Phase 6",
+      "dependencies": [
+        "BL-IAM-001",
+        "BL-AUD-001"
+      ],
+      "acceptance_criteria": [
+        "Role assignment enforces least privilege",
+        "scoped data access verified by negative tests",
+        "permission changes produce immutable audit records"
+      ],
+      "tracker_gate": {
+        "target_status": "READY_FOR_E2E_TEST",
+        "required_checks": [
+          "Linked use-case IDs are explicit in the item",
+          "Acceptance checks are implemented and testable",
+          "Positive and negative path tests exist",
+          "Audit and access-control expectations are verified where applicable",
+          "Traceability links are updated in delivery and evidence docs"
+        ]
+      },
+      "Initiative": {
+        "id": "INIT-001",
+        "title": "Ubuntu Capital OS Evidence-First Reconstruction"
+      },
+      "Epic": {
+        "id": "EPIC-ADMIN",
+        "title": "Administration and Governance Controls"
+      },
+      "Feature": {
+        "id": "FEAT-UC-ADMIN-003",
+        "title": "Manage users, roles, permissions, and data scope"
+      },
+      "Story": {
+        "id": "STORY-BL-ADMIN-003",
+        "title": "Implement Manage users, roles, permissions, and data scope"
+      },
+      "Task": {
+        "id": "BL-ADMIN-003",
+        "title": "Manage users, roles, permissions, and data scope"
+      }
+    },
+    {
+      "id": "BL-ADMIN-004",
+      "title": "Manage platform content and reference data",
+      "use_case_ids": [
+        "UC-ADMIN-004"
+      ],
+      "domain": "ADMIN",
+      "priority": "P0",
+      "current_gap_status": "READY_FOR_DEVELOPMENT",
+      "backlog_diff": "ADD",
+      "roadmap_phase": "Phase 6",
+      "dependencies": [
+        "BL-ADMIN-003",
+        "BL-AUD-001"
+      ],
+      "acceptance_criteria": [
+        "Reference data/content edits require authorized role",
+        "changes are versioned",
+        "dependent UI reflects updates without manual code edits"
+      ],
+      "tracker_gate": {
+        "target_status": "READY_FOR_E2E_TEST",
+        "required_checks": [
+          "Linked use-case IDs are explicit in the item",
+          "Acceptance checks are implemented and testable",
+          "Positive and negative path tests exist",
+          "Audit and access-control expectations are verified where applicable",
+          "Traceability links are updated in delivery and evidence docs"
+        ]
+      },
+      "Initiative": {
+        "id": "INIT-001",
+        "title": "Ubuntu Capital OS Evidence-First Reconstruction"
+      },
+      "Epic": {
+        "id": "EPIC-ADMIN",
+        "title": "Administration and Governance Controls"
+      },
+      "Feature": {
+        "id": "FEAT-UC-ADMIN-004",
+        "title": "Manage platform content and reference data"
+      },
+      "Story": {
+        "id": "STORY-BL-ADMIN-004",
+        "title": "Implement Manage platform content and reference data"
+      },
+      "Task": {
+        "id": "BL-ADMIN-004",
+        "title": "Manage platform content and reference data"
+      }
+    },
+    {
+      "id": "BL-AUD-001",
+      "title": "Record and review audit events",
+      "use_case_ids": [
+        "UC-AUD-001"
+      ],
+      "domain": "AUD",
+      "priority": "P0",
+      "current_gap_status": "READY_FOR_DEVELOPMENT",
+      "backlog_diff": "ADD",
+      "roadmap_phase": "Phase 7",
+      "dependencies": [
+        "BL-IAM-001"
+      ],
+      "acceptance_criteria": [
+        "Sensitive actions emit structured audit events with actor/time/resource/outcome",
+        "audit records are queryable",
+        "tamper attempt detection path defined"
+      ],
+      "tracker_gate": {
+        "target_status": "READY_FOR_E2E_TEST",
+        "required_checks": [
+          "Linked use-case IDs are explicit in the item",
+          "Acceptance checks are implemented and testable",
+          "Positive and negative path tests exist",
+          "Audit and access-control expectations are verified where applicable",
+          "Traceability links are updated in delivery and evidence docs"
+        ]
+      },
+      "Initiative": {
+        "id": "INIT-001",
+        "title": "Ubuntu Capital OS Evidence-First Reconstruction"
+      },
+      "Epic": {
+        "id": "EPIC-AUD",
+        "title": "Auditability and Compliance Investigation"
+      },
+      "Feature": {
+        "id": "FEAT-UC-AUD-001",
+        "title": "Record and review audit events"
+      },
+      "Story": {
+        "id": "STORY-BL-AUD-001",
+        "title": "Implement Record and review audit events"
+      },
+      "Task": {
+        "id": "BL-AUD-001",
+        "title": "Record and review audit events"
+      }
+    },
+    {
+      "id": "BL-AUD-002",
+      "title": "Investigate a compliance or security event",
+      "use_case_ids": [
+        "UC-AUD-002"
+      ],
+      "domain": "AUD",
+      "priority": "P0",
+      "current_gap_status": "READY_FOR_DEVELOPMENT",
+      "backlog_diff": "ADD",
+      "roadmap_phase": "Phase 7",
+      "dependencies": [
+        "BL-AUD-001"
+      ],
+      "acceptance_criteria": [
+        "Compliance/security investigation case can be opened and linked to events",
+        "evidence chain is preserved",
+        "investigation status transitions are tracked"
+      ],
+      "tracker_gate": {
+        "target_status": "READY_FOR_E2E_TEST",
+        "required_checks": [
+          "Linked use-case IDs are explicit in the item",
+          "Acceptance checks are implemented and testable",
+          "Positive and negative path tests exist",
+          "Audit and access-control expectations are verified where applicable",
+          "Traceability links are updated in delivery and evidence docs"
+        ]
+      },
+      "Initiative": {
+        "id": "INIT-001",
+        "title": "Ubuntu Capital OS Evidence-First Reconstruction"
+      },
+      "Epic": {
+        "id": "EPIC-AUD",
+        "title": "Auditability and Compliance Investigation"
+      },
+      "Feature": {
+        "id": "FEAT-UC-AUD-002",
+        "title": "Investigate a compliance or security event"
+      },
+      "Story": {
+        "id": "STORY-BL-AUD-002",
+        "title": "Implement Investigate a compliance or security event"
+      },
+      "Task": {
+        "id": "BL-AUD-002",
+        "title": "Investigate a compliance or security event"
+      }
+    },
+    {
+      "id": "BL-IAM-001",
+      "title": "Sign in to the private investor portal",
+      "use_case_ids": [
+        "UC-IAM-001"
+      ],
+      "domain": "IAM",
+      "priority": "P0",
+      "current_gap_status": "IN_DEVELOPMENT",
+      "backlog_diff": "EXPAND",
+      "roadmap_phase": "Phase 1",
+      "dependencies": [],
+      "acceptance_criteria": [
+        "Successful login creates server session",
+        "invalid credentials rejected with audit event",
+        "protected routes deny unauthenticated requests"
+      ],
+      "tracker_gate": {
+        "target_status": "READY_FOR_E2E_TEST",
+        "required_checks": [
+          "Linked use-case IDs are explicit in the item",
+          "Acceptance checks are implemented and testable",
+          "Positive and negative path tests exist",
+          "Audit and access-control expectations are verified where applicable",
+          "Traceability links are updated in delivery and evidence docs"
+        ]
+      },
+      "Initiative": {
+        "id": "INIT-001",
+        "title": "Ubuntu Capital OS Evidence-First Reconstruction"
+      },
+      "Epic": {
+        "id": "EPIC-IAM",
+        "title": "Identity and Session Security"
+      },
+      "Feature": {
+        "id": "FEAT-UC-IAM-001",
+        "title": "Sign in to the private investor portal"
+      },
+      "Story": {
+        "id": "STORY-BL-IAM-001",
+        "title": "Implement Sign in to the private investor portal"
+      },
+      "Task": {
+        "id": "BL-IAM-001",
+        "title": "Sign in to the private investor portal"
+      }
+    },
+    {
+      "id": "BL-IAM-002",
+      "title": "Recover account access",
+      "use_case_ids": [
+        "UC-IAM-002"
+      ],
+      "domain": "IAM",
+      "priority": "P0",
+      "current_gap_status": "IN_DEVELOPMENT",
+      "backlog_diff": "ADD",
+      "roadmap_phase": "Phase 1",
+      "dependencies": [
+        "BL-IAM-001"
+      ],
+      "acceptance_criteria": [
+        "Password reset token issued, expires, and is single-use",
+        "reset email delivery is logged",
+        "invalid/expired token path covered by tests"
+      ],
+      "tracker_gate": {
+        "target_status": "READY_FOR_E2E_TEST",
+        "required_checks": [
+          "Linked use-case IDs are explicit in the item",
+          "Acceptance checks are implemented and testable",
+          "Positive and negative path tests exist",
+          "Audit and access-control expectations are verified where applicable",
+          "Traceability links are updated in delivery and evidence docs"
+        ]
+      },
+      "Initiative": {
+        "id": "INIT-001",
+        "title": "Ubuntu Capital OS Evidence-First Reconstruction"
+      },
+      "Epic": {
+        "id": "EPIC-IAM",
+        "title": "Identity and Session Security"
+      },
+      "Feature": {
+        "id": "FEAT-UC-IAM-002",
+        "title": "Recover account access"
+      },
+      "Story": {
+        "id": "STORY-BL-IAM-002",
+        "title": "Implement Recover account access"
+      },
+      "Task": {
+        "id": "BL-IAM-002",
+        "title": "Recover account access"
+      }
+    },
+    {
+      "id": "BL-IAM-003",
+      "title": "End or expire an investor session",
+      "use_case_ids": [
+        "UC-IAM-003"
+      ],
+      "domain": "IAM",
+      "priority": "P0",
+      "current_gap_status": "READY_FOR_DEVELOPMENT",
+      "backlog_diff": "ADD",
+      "roadmap_phase": "Phase 1",
+      "dependencies": [
+        "BL-IAM-001"
+      ],
+      "acceptance_criteria": [
+        "Explicit logout invalidates session server-side",
+        "idle/absolute timeout enforced",
+        "timed-out session redirected and audited"
+      ],
+      "tracker_gate": {
+        "target_status": "READY_FOR_E2E_TEST",
+        "required_checks": [
+          "Linked use-case IDs are explicit in the item",
+          "Acceptance checks are implemented and testable",
+          "Positive and negative path tests exist",
+          "Audit and access-control expectations are verified where applicable",
+          "Traceability links are updated in delivery and evidence docs"
+        ]
+      },
+      "Initiative": {
+        "id": "INIT-001",
+        "title": "Ubuntu Capital OS Evidence-First Reconstruction"
+      },
+      "Epic": {
+        "id": "EPIC-IAM",
+        "title": "Identity and Session Security"
+      },
+      "Feature": {
+        "id": "FEAT-UC-IAM-003",
+        "title": "End or expire an investor session"
+      },
+      "Story": {
+        "id": "STORY-BL-IAM-003",
+        "title": "Implement End or expire an investor session"
+      },
+      "Task": {
+        "id": "BL-IAM-003",
+        "title": "End or expire an investor session"
+      }
+    },
+    {
+      "id": "BL-INT-001",
+      "title": "Exchange identity or KYC/AML data with an external provider",
+      "use_case_ids": [
+        "UC-INT-001"
+      ],
+      "domain": "INT",
+      "priority": "P0",
+      "current_gap_status": "READY_FOR_DEVELOPMENT",
+      "backlog_diff": "ADD",
+      "roadmap_phase": "Phase 4",
+      "dependencies": [
+        "BL-IAM-001"
+      ],
+      "acceptance_criteria": [
+        "Identity/KYC provider contract implemented with timeout/retry logic",
+        "provider response mapped to onboarding states",
+        "integration failures observable in logs"
+      ],
+      "tracker_gate": {
+        "target_status": "READY_FOR_E2E_TEST",
+        "required_checks": [
+          "Linked use-case IDs are explicit in the item",
+          "Acceptance checks are implemented and testable",
+          "Positive and negative path tests exist",
+          "Audit and access-control expectations are verified where applicable",
+          "Traceability links are updated in delivery and evidence docs"
+        ]
+      },
+      "Initiative": {
+        "id": "INIT-001",
+        "title": "Ubuntu Capital OS Evidence-First Reconstruction"
+      },
+      "Epic": {
+        "id": "EPIC-INT",
+        "title": "External Service Integrations"
+      },
+      "Feature": {
+        "id": "FEAT-UC-INT-001",
+        "title": "Exchange identity or KYC/AML data with an external provider"
+      },
+      "Story": {
+        "id": "STORY-BL-INT-001",
+        "title": "Implement Exchange identity or KYC/AML data with an external provider"
+      },
+      "Task": {
+        "id": "BL-INT-001",
+        "title": "Exchange identity or KYC/AML data with an external provider"
+      }
+    },
+    {
+      "id": "BL-INT-002",
+      "title": "Execute or record electronic agreements",
+      "use_case_ids": [
+        "UC-INT-002"
+      ],
+      "domain": "INT",
+      "priority": "P0",
+      "current_gap_status": "READY_FOR_DEVELOPMENT",
+      "backlog_diff": "ADD",
+      "roadmap_phase": "Phase 4",
+      "dependencies": [
+        "BL-IAM-001",
+        "BL-INT-001"
+      ],
+      "acceptance_criteria": [
+        "E-sign workflow creates agreement envelope, captures signed artifact, and stores reference",
+        "unsigned/expired agreements block restricted access"
+      ],
+      "tracker_gate": {
+        "target_status": "READY_FOR_E2E_TEST",
+        "required_checks": [
+          "Linked use-case IDs are explicit in the item",
+          "Acceptance checks are implemented and testable",
+          "Positive and negative path tests exist",
+          "Audit and access-control expectations are verified where applicable",
+          "Traceability links are updated in delivery and evidence docs"
+        ]
+      },
+      "Initiative": {
+        "id": "INIT-001",
+        "title": "Ubuntu Capital OS Evidence-First Reconstruction"
+      },
+      "Epic": {
+        "id": "EPIC-INT",
+        "title": "External Service Integrations"
+      },
+      "Feature": {
+        "id": "FEAT-UC-INT-002",
+        "title": "Execute or record electronic agreements"
+      },
+      "Story": {
+        "id": "STORY-BL-INT-002",
+        "title": "Implement Execute or record electronic agreements"
+      },
+      "Task": {
+        "id": "BL-INT-002",
+        "title": "Execute or record electronic agreements"
+      }
+    },
+    {
+      "id": "BL-INT-003",
+      "title": "Deliver email or in-app communications",
+      "use_case_ids": [
+        "UC-INT-003"
+      ],
+      "domain": "INT",
+      "priority": "P0",
+      "current_gap_status": "READY_FOR_DEVELOPMENT",
+      "backlog_diff": "ADD",
+      "roadmap_phase": "Phase 4",
+      "dependencies": [
+        "BL-IAM-001"
+      ],
+      "acceptance_criteria": [
+        "Notification provider sends templated messages",
+        "delivery/bounce status captured",
+        "critical notification retries follow policy"
+      ],
+      "tracker_gate": {
+        "target_status": "READY_FOR_E2E_TEST",
+        "required_checks": [
+          "Linked use-case IDs are explicit in the item",
+          "Acceptance checks are implemented and testable",
+          "Positive and negative path tests exist",
+          "Audit and access-control expectations are verified where applicable",
+          "Traceability links are updated in delivery and evidence docs"
+        ]
+      },
+      "Initiative": {
+        "id": "INIT-001",
+        "title": "Ubuntu Capital OS Evidence-First Reconstruction"
+      },
+      "Epic": {
+        "id": "EPIC-INT",
+        "title": "External Service Integrations"
+      },
+      "Feature": {
+        "id": "FEAT-UC-INT-003",
+        "title": "Deliver email or in-app communications"
+      },
+      "Story": {
+        "id": "STORY-BL-INT-003",
+        "title": "Implement Deliver email or in-app communications"
+      },
+      "Task": {
+        "id": "BL-INT-003",
+        "title": "Deliver email or in-app communications"
+      }
+    },
+    {
+      "id": "BL-INT-004",
+      "title": "Exchange settlement data with banking or payment services",
+      "use_case_ids": [
+        "UC-INT-004"
+      ],
+      "domain": "INT",
+      "priority": "P0",
+      "current_gap_status": "READY_FOR_DEVELOPMENT",
+      "backlog_diff": "ADD",
+      "roadmap_phase": "Phase 4",
+      "dependencies": [
+        "BL-SET-001",
+        "BL-AUD-001"
+      ],
+      "acceptance_criteria": [
+        "Banking/payment integration exchanges settlement references",
+        "duplicate callback handling is idempotent",
+        "reconciliation mismatch triggers exception flow"
+      ],
+      "tracker_gate": {
+        "target_status": "READY_FOR_E2E_TEST",
+        "required_checks": [
+          "Linked use-case IDs are explicit in the item",
+          "Acceptance checks are implemented and testable",
+          "Positive and negative path tests exist",
+          "Audit and access-control expectations are verified where applicable",
+          "Traceability links are updated in delivery and evidence docs"
+        ]
+      },
+      "Initiative": {
+        "id": "INIT-001",
+        "title": "Ubuntu Capital OS Evidence-First Reconstruction"
+      },
+      "Epic": {
+        "id": "EPIC-INT",
+        "title": "External Service Integrations"
+      },
+      "Feature": {
+        "id": "FEAT-UC-INT-004",
+        "title": "Exchange settlement data with banking or payment services"
+      },
+      "Story": {
+        "id": "STORY-BL-INT-004",
+        "title": "Implement Exchange settlement data with banking or payment services"
+      },
+      "Task": {
+        "id": "BL-INT-004",
+        "title": "Exchange settlement data with banking or payment services"
+      }
+    },
+    {
+      "id": "BL-INV-001",
+      "title": "Submit an investment commitment",
+      "use_case_ids": [
+        "UC-INV-001"
+      ],
+      "domain": "INV",
+      "priority": "P0",
+      "current_gap_status": "IN_DEVELOPMENT",
+      "backlog_diff": "EXPAND",
+      "roadmap_phase": "Phase 4",
+      "dependencies": [
+        "BL-IAM-001",
+        "BL-ONB-003",
+        "BL-OPP-003",
+        "BL-DD-001"
+      ],
+      "acceptance_criteria": [
+        "Express-interest endpoint enforces eligibility and opportunity status",
+        "duplicate submissions are idempotent",
+        "non-binding vs binding state explicit"
+      ],
+      "tracker_gate": {
+        "target_status": "READY_FOR_E2E_TEST",
+        "required_checks": [
+          "Linked use-case IDs are explicit in the item",
+          "Acceptance checks are implemented and testable",
+          "Positive and negative path tests exist",
+          "Audit and access-control expectations are verified where applicable",
+          "Traceability links are updated in delivery and evidence docs"
+        ]
+      },
+      "Initiative": {
+        "id": "INIT-001",
+        "title": "Ubuntu Capital OS Evidence-First Reconstruction"
+      },
+      "Epic": {
+        "id": "EPIC-INV",
+        "title": "Investment Commitment Lifecycle"
+      },
+      "Feature": {
+        "id": "FEAT-UC-INV-001",
+        "title": "Submit an investment commitment"
+      },
+      "Story": {
+        "id": "STORY-BL-INV-001",
+        "title": "Implement Submit an investment commitment"
+      },
+      "Task": {
+        "id": "BL-INV-001",
+        "title": "Submit an investment commitment"
+      }
+    },
+    {
+      "id": "BL-INV-002",
+      "title": "Review and resolve a pending investment",
+      "use_case_ids": [
+        "UC-INV-002"
+      ],
+      "domain": "INV",
+      "priority": "P0",
+      "current_gap_status": "IN_DEVELOPMENT",
+      "backlog_diff": "EXPAND",
+      "roadmap_phase": "Phase 4",
+      "dependencies": [
+        "BL-INV-001"
+      ],
+      "acceptance_criteria": [
+        "Pending commitment lifecycle transitions are persisted",
+        "operator decision path captured with reason codes",
+        "state transition tests pass"
+      ],
+      "tracker_gate": {
+        "target_status": "READY_FOR_E2E_TEST",
+        "required_checks": [
+          "Linked use-case IDs are explicit in the item",
+          "Acceptance checks are implemented and testable",
+          "Positive and negative path tests exist",
+          "Audit and access-control expectations are verified where applicable",
+          "Traceability links are updated in delivery and evidence docs"
+        ]
+      },
+      "Initiative": {
+        "id": "INIT-001",
+        "title": "Ubuntu Capital OS Evidence-First Reconstruction"
+      },
+      "Epic": {
+        "id": "EPIC-INV",
+        "title": "Investment Commitment Lifecycle"
+      },
+      "Feature": {
+        "id": "FEAT-UC-INV-002",
+        "title": "Review and resolve a pending investment"
+      },
+      "Story": {
+        "id": "STORY-BL-INV-002",
+        "title": "Implement Review and resolve a pending investment"
+      },
+      "Task": {
+        "id": "BL-INV-002",
+        "title": "Review and resolve a pending investment"
+      }
+    },
+    {
+      "id": "BL-INV-003",
+      "title": "Cancel or withdraw an investment request",
+      "use_case_ids": [
+        "UC-INV-003"
+      ],
+      "domain": "INV",
+      "priority": "P0",
+      "current_gap_status": "READY_FOR_DEVELOPMENT",
+      "backlog_diff": "ADD",
+      "roadmap_phase": "Phase 4",
+      "dependencies": [
+        "BL-INV-001"
+      ],
+      "acceptance_criteria": [
+        "Withdrawal window/policy enforced",
+        "unauthorized cancellation blocked",
+        "cancellation action recorded in audit/event history"
+      ],
+      "tracker_gate": {
+        "target_status": "READY_FOR_E2E_TEST",
+        "required_checks": [
+          "Linked use-case IDs are explicit in the item",
+          "Acceptance checks are implemented and testable",
+          "Positive and negative path tests exist",
+          "Audit and access-control expectations are verified where applicable",
+          "Traceability links are updated in delivery and evidence docs"
+        ]
+      },
+      "Initiative": {
+        "id": "INIT-001",
+        "title": "Ubuntu Capital OS Evidence-First Reconstruction"
+      },
+      "Epic": {
+        "id": "EPIC-INV",
+        "title": "Investment Commitment Lifecycle"
+      },
+      "Feature": {
+        "id": "FEAT-UC-INV-003",
+        "title": "Cancel or withdraw an investment request"
+      },
+      "Story": {
+        "id": "STORY-BL-INV-003",
+        "title": "Implement Cancel or withdraw an investment request"
+      },
+      "Task": {
+        "id": "BL-INV-003",
+        "title": "Cancel or withdraw an investment request"
+      }
+    },
+    {
+      "id": "BL-ONB-001",
+      "title": "Register as a prospective investor",
+      "use_case_ids": [
+        "UC-ONB-001"
+      ],
+      "domain": "ONB",
+      "priority": "P0",
+      "current_gap_status": "IN_DEVELOPMENT",
+      "backlog_diff": "EXPAND",
+      "roadmap_phase": "Phase 3",
+      "dependencies": [
+        "BL-IAM-001"
+      ],
+      "acceptance_criteria": [
+        "Signup persists investor account",
+        "duplicate email blocked",
+        "registration emits auditable account-created event"
+      ],
+      "tracker_gate": {
+        "target_status": "READY_FOR_E2E_TEST",
+        "required_checks": [
+          "Linked use-case IDs are explicit in the item",
+          "Acceptance checks are implemented and testable",
+          "Positive and negative path tests exist",
+          "Audit and access-control expectations are verified where applicable",
+          "Traceability links are updated in delivery and evidence docs"
+        ]
+      },
+      "Initiative": {
+        "id": "INIT-001",
+        "title": "Ubuntu Capital OS Evidence-First Reconstruction"
+      },
+      "Epic": {
+        "id": "EPIC-ONB",
+        "title": "Investor Onboarding and Eligibility"
+      },
+      "Feature": {
+        "id": "FEAT-UC-ONB-001",
+        "title": "Register as a prospective investor"
+      },
+      "Story": {
+        "id": "STORY-BL-ONB-001",
+        "title": "Implement Register as a prospective investor"
+      },
+      "Task": {
+        "id": "BL-ONB-001",
+        "title": "Register as a prospective investor"
+      }
+    },
+    {
+      "id": "BL-ONB-002",
+      "title": "Complete investor profile and eligibility onboarding",
+      "use_case_ids": [
+        "UC-ONB-002"
+      ],
+      "domain": "ONB",
+      "priority": "P0",
+      "current_gap_status": "IN_DEVELOPMENT",
+      "backlog_diff": "EXPAND",
+      "roadmap_phase": "Phase 3",
+      "dependencies": [
+        "BL-ONB-001"
+      ],
+      "acceptance_criteria": [
+        "Onboarding step data persists and resumes",
+        "required fields validated per step",
+        "submit transitions investor to review state"
+      ],
+      "tracker_gate": {
+        "target_status": "READY_FOR_E2E_TEST",
+        "required_checks": [
+          "Linked use-case IDs are explicit in the item",
+          "Acceptance checks are implemented and testable",
+          "Positive and negative path tests exist",
+          "Audit and access-control expectations are verified where applicable",
+          "Traceability links are updated in delivery and evidence docs"
+        ]
+      },
+      "Initiative": {
+        "id": "INIT-001",
+        "title": "Ubuntu Capital OS Evidence-First Reconstruction"
+      },
+      "Epic": {
+        "id": "EPIC-ONB",
+        "title": "Investor Onboarding and Eligibility"
+      },
+      "Feature": {
+        "id": "FEAT-UC-ONB-002",
+        "title": "Complete investor profile and eligibility onboarding"
+      },
+      "Story": {
+        "id": "STORY-BL-ONB-002",
+        "title": "Implement Complete investor profile and eligibility onboarding"
+      },
+      "Task": {
+        "id": "BL-ONB-002",
+        "title": "Complete investor profile and eligibility onboarding"
+      }
+    },
+    {
+      "id": "BL-ONB-003",
+      "title": "Verify investor identity and compliance status",
+      "use_case_ids": [
+        "UC-ONB-003"
+      ],
+      "domain": "ONB",
+      "priority": "P0",
+      "current_gap_status": "IN_DEVELOPMENT",
+      "backlog_diff": "ADD",
+      "roadmap_phase": "Phase 3",
+      "dependencies": [
+        "BL-ONB-002",
+        "BL-INT-001"
+      ],
+      "acceptance_criteria": [
+        "KYC/AML decision states stored (`approved`, `pending`, `rejected`)",
+        "provider failure/retry path handled",
+        "decision changes are audited"
+      ],
+      "tracker_gate": {
+        "target_status": "READY_FOR_E2E_TEST",
+        "required_checks": [
+          "Linked use-case IDs are explicit in the item",
+          "Acceptance checks are implemented and testable",
+          "Positive and negative path tests exist",
+          "Audit and access-control expectations are verified where applicable",
+          "Traceability links are updated in delivery and evidence docs"
+        ]
+      },
+      "Initiative": {
+        "id": "INIT-001",
+        "title": "Ubuntu Capital OS Evidence-First Reconstruction"
+      },
+      "Epic": {
+        "id": "EPIC-ONB",
+        "title": "Investor Onboarding and Eligibility"
+      },
+      "Feature": {
+        "id": "FEAT-UC-ONB-003",
+        "title": "Verify investor identity and compliance status"
+      },
+      "Story": {
+        "id": "STORY-BL-ONB-003",
+        "title": "Implement Verify investor identity and compliance status"
+      },
+      "Task": {
+        "id": "BL-ONB-003",
+        "title": "Verify investor identity and compliance status"
+      }
+    },
+    {
+      "id": "BL-SET-001",
+      "title": "Receive funding instructions",
+      "use_case_ids": [
+        "UC-SET-001"
+      ],
+      "domain": "SET",
+      "priority": "P0",
+      "current_gap_status": "READY_FOR_DEVELOPMENT",
+      "backlog_diff": "ADD",
+      "roadmap_phase": "Phase 5",
+      "dependencies": [
+        "BL-INV-002",
+        "BL-AUD-001"
+      ],
+      "acceptance_criteria": [
+        "Funding instructions generated only for accepted commitments",
+        "instructions are immutable/versioned",
+        "delivery event captured"
+      ],
+      "tracker_gate": {
+        "target_status": "READY_FOR_E2E_TEST",
+        "required_checks": [
+          "Linked use-case IDs are explicit in the item",
+          "Acceptance checks are implemented and testable",
+          "Positive and negative path tests exist",
+          "Audit and access-control expectations are verified where applicable",
+          "Traceability links are updated in delivery and evidence docs"
+        ]
+      },
+      "Initiative": {
+        "id": "INIT-001",
+        "title": "Ubuntu Capital OS Evidence-First Reconstruction"
+      },
+      "Epic": {
+        "id": "EPIC-SET",
+        "title": "Funding, Settlement, and Reconciliation"
+      },
+      "Feature": {
+        "id": "FEAT-UC-SET-001",
+        "title": "Receive funding instructions"
+      },
+      "Story": {
+        "id": "STORY-BL-SET-001",
+        "title": "Implement Receive funding instructions"
+      },
+      "Task": {
+        "id": "BL-SET-001",
+        "title": "Receive funding instructions"
+      }
+    },
+    {
+      "id": "BL-SET-002",
+      "title": "Record and reconcile investor funds",
+      "use_case_ids": [
+        "UC-SET-002"
+      ],
+      "domain": "SET",
+      "priority": "P0",
+      "current_gap_status": "READY_FOR_DEVELOPMENT",
+      "backlog_diff": "ADD",
+      "roadmap_phase": "Phase 5",
+      "dependencies": [
+        "BL-SET-001",
+        "BL-INT-004",
+        "BL-AUD-001"
+      ],
+      "acceptance_criteria": [
+        "Incoming funds matched to commitment references",
+        "unmatched/partial funds flagged",
+        "reconciliation reports include resolved/unresolved totals"
+      ],
+      "tracker_gate": {
+        "target_status": "READY_FOR_E2E_TEST",
+        "required_checks": [
+          "Linked use-case IDs are explicit in the item",
+          "Acceptance checks are implemented and testable",
+          "Positive and negative path tests exist",
+          "Audit and access-control expectations are verified where applicable",
+          "Traceability links are updated in delivery and evidence docs"
+        ]
+      },
+      "Initiative": {
+        "id": "INIT-001",
+        "title": "Ubuntu Capital OS Evidence-First Reconstruction"
+      },
+      "Epic": {
+        "id": "EPIC-SET",
+        "title": "Funding, Settlement, and Reconciliation"
+      },
+      "Feature": {
+        "id": "FEAT-UC-SET-002",
+        "title": "Record and reconcile investor funds"
+      },
+      "Story": {
+        "id": "STORY-BL-SET-002",
+        "title": "Implement Record and reconcile investor funds"
+      },
+      "Task": {
+        "id": "BL-SET-002",
+        "title": "Record and reconcile investor funds"
+      }
+    },
+    {
+      "id": "BL-SET-003",
+      "title": "Resolve a settlement exception",
+      "use_case_ids": [
+        "UC-SET-003"
+      ],
+      "domain": "SET",
+      "priority": "P0",
+      "current_gap_status": "READY_FOR_DEVELOPMENT",
+      "backlog_diff": "ADD",
+      "roadmap_phase": "Phase 5",
+      "dependencies": [
+        "BL-SET-002",
+        "BL-AUD-001"
+      ],
+      "acceptance_criteria": [
+        "Settlement exception queue supports assign/escalate/resolve",
+        "maker-checker required for manual overrides",
+        "exception SLA metrics logged"
+      ],
+      "tracker_gate": {
+        "target_status": "READY_FOR_E2E_TEST",
+        "required_checks": [
+          "Linked use-case IDs are explicit in the item",
+          "Acceptance checks are implemented and testable",
+          "Positive and negative path tests exist",
+          "Audit and access-control expectations are verified where applicable",
+          "Traceability links are updated in delivery and evidence docs"
+        ]
+      },
+      "Initiative": {
+        "id": "INIT-001",
+        "title": "Ubuntu Capital OS Evidence-First Reconstruction"
+      },
+      "Epic": {
+        "id": "EPIC-SET",
+        "title": "Funding, Settlement, and Reconciliation"
+      },
+      "Feature": {
+        "id": "FEAT-UC-SET-003",
+        "title": "Resolve a settlement exception"
+      },
+      "Story": {
+        "id": "STORY-BL-SET-003",
+        "title": "Implement Resolve a settlement exception"
+      },
+      "Task": {
+        "id": "BL-SET-003",
+        "title": "Resolve a settlement exception"
+      }
+    },
+    {
+      "id": "BL-DD-001",
+      "title": "Initiate an NDA action for an opportunity",
+      "use_case_ids": [
+        "UC-DD-001"
+      ],
+      "domain": "DD",
+      "priority": "P1",
+      "current_gap_status": "IN_DEVELOPMENT",
+      "backlog_diff": "EXPAND",
+      "roadmap_phase": "Phase 3",
+      "dependencies": [
+        "BL-IAM-001",
+        "BL-ONB-003",
+        "BL-INT-002"
+      ],
+      "acceptance_criteria": [
+        "NDA initiation persists request and status",
+        "signer identity bound to account",
+        "completed NDA grants controlled data-room eligibility"
+      ],
+      "tracker_gate": {
+        "target_status": "READY_FOR_E2E_TEST",
+        "required_checks": [
+          "Linked use-case IDs are explicit in the item",
+          "Acceptance checks are implemented and testable",
+          "Positive and negative path tests exist",
+          "Audit and access-control expectations are verified where applicable",
+          "Traceability links are updated in delivery and evidence docs"
+        ]
+      },
+      "Initiative": {
+        "id": "INIT-001",
+        "title": "Ubuntu Capital OS Evidence-First Reconstruction"
+      },
+      "Epic": {
+        "id": "EPIC-DD",
+        "title": "Due Diligence Access Control"
+      },
+      "Feature": {
+        "id": "FEAT-UC-DD-001",
+        "title": "Initiate an NDA action for an opportunity"
+      },
+      "Story": {
+        "id": "STORY-BL-DD-001",
+        "title": "Implement Initiate an NDA action for an opportunity"
+      },
+      "Task": {
+        "id": "BL-DD-001",
+        "title": "Initiate an NDA action for an opportunity"
+      }
+    },
+    {
+      "id": "BL-DD-002",
+      "title": "Access confidential due-diligence materials",
+      "use_case_ids": [
+        "UC-DD-002"
+      ],
+      "domain": "DD",
+      "priority": "P1",
+      "current_gap_status": "READY_FOR_DEVELOPMENT",
+      "backlog_diff": "ADD",
+      "roadmap_phase": "Phase 3",
+      "dependencies": [
+        "BL-DD-001"
+      ],
+      "acceptance_criteria": [
+        "Restricted documents available only to NDA-authorized users",
+        "revoked/expired access denied",
+        "access/download events audited"
+      ],
+      "tracker_gate": {
+        "target_status": "READY_FOR_E2E_TEST",
+        "required_checks": [
+          "Linked use-case IDs are explicit in the item",
+          "Acceptance checks are implemented and testable",
+          "Positive and negative path tests exist",
+          "Audit and access-control expectations are verified where applicable",
+          "Traceability links are updated in delivery and evidence docs"
+        ]
+      },
+      "Initiative": {
+        "id": "INIT-001",
+        "title": "Ubuntu Capital OS Evidence-First Reconstruction"
+      },
+      "Epic": {
+        "id": "EPIC-DD",
+        "title": "Due Diligence Access Control"
+      },
+      "Feature": {
+        "id": "FEAT-UC-DD-002",
+        "title": "Access confidential due-diligence materials"
+      },
+      "Story": {
+        "id": "STORY-BL-DD-002",
+        "title": "Implement Access confidential due-diligence materials"
+      },
+      "Task": {
+        "id": "BL-DD-002",
+        "title": "Access confidential due-diligence materials"
+      }
+    },
+    {
+      "id": "BL-DOC-001",
+      "title": "View and download reports and tax documents",
+      "use_case_ids": [
+        "UC-DOC-001"
+      ],
+      "domain": "DOC",
+      "priority": "P1",
+      "current_gap_status": "IN_DEVELOPMENT",
+      "backlog_diff": "EXPAND",
+      "roadmap_phase": "Phase 6",
+      "dependencies": [
+        "BL-SET-002",
+        "BL-AUD-001"
+      ],
+      "acceptance_criteria": [
+        "Reports and tax docs generated with versioning",
+        "download authorization enforced",
+        "document access is logged per user/action"
+      ],
+      "tracker_gate": {
+        "target_status": "READY_FOR_E2E_TEST",
+        "required_checks": [
+          "Linked use-case IDs are explicit in the item",
+          "Acceptance checks are implemented and testable",
+          "Positive and negative path tests exist",
+          "Audit and access-control expectations are verified where applicable",
+          "Traceability links are updated in delivery and evidence docs"
+        ]
+      },
+      "Initiative": {
+        "id": "INIT-001",
+        "title": "Ubuntu Capital OS Evidence-First Reconstruction"
+      },
+      "Epic": {
+        "id": "EPIC-DOC",
+        "title": "Document and Tax Delivery"
+      },
+      "Feature": {
+        "id": "FEAT-UC-DOC-001",
+        "title": "View and download reports and tax documents"
+      },
+      "Story": {
+        "id": "STORY-BL-DOC-001",
+        "title": "Implement View and download reports and tax documents"
+      },
+      "Task": {
+        "id": "BL-DOC-001",
+        "title": "View and download reports and tax documents"
+      }
+    },
+    {
+      "id": "BL-NOTIFY-001",
+      "title": "Receive material platform notifications",
+      "use_case_ids": [
+        "UC-NOTIFY-001"
+      ],
+      "domain": "NOTIFY",
+      "priority": "P1",
+      "current_gap_status": "IN_DEVELOPMENT",
+      "backlog_diff": "EXPAND",
+      "roadmap_phase": "Phase 7",
+      "dependencies": [
+        "BL-INT-003",
+        "BL-IAM-001"
+      ],
+      "acceptance_criteria": [
+        "Notification preference updates persist",
+        "event triggers respect preferences",
+        "high-priority alerts bypass opt-out only when policy permits"
+      ],
+      "tracker_gate": {
+        "target_status": "READY_FOR_E2E_TEST",
+        "required_checks": [
+          "Linked use-case IDs are explicit in the item",
+          "Acceptance checks are implemented and testable",
+          "Positive and negative path tests exist",
+          "Audit and access-control expectations are verified where applicable",
+          "Traceability links are updated in delivery and evidence docs"
+        ]
+      },
+      "Initiative": {
+        "id": "INIT-001",
+        "title": "Ubuntu Capital OS Evidence-First Reconstruction"
+      },
+      "Epic": {
+        "id": "EPIC-NOTIFY",
+        "title": "Notification and Preference Engine"
+      },
+      "Feature": {
+        "id": "FEAT-UC-NOTIFY-001",
+        "title": "Receive material platform notifications"
+      },
+      "Story": {
+        "id": "STORY-BL-NOTIFY-001",
+        "title": "Implement Receive material platform notifications"
+      },
+      "Task": {
+        "id": "BL-NOTIFY-001",
+        "title": "Receive material platform notifications"
+      }
+    },
+    {
+      "id": "BL-OPP-001",
+      "title": "Browse visible investment opportunity cards and categories",
+      "use_case_ids": [
+        "UC-OPP-001"
+      ],
+      "domain": "OPP",
+      "priority": "P1",
+      "current_gap_status": "COMPONENT_COMPLETE",
+      "backlog_diff": "EXPAND",
+      "roadmap_phase": "Phase 2",
+      "dependencies": [
+        "BL-ADMIN-001"
+      ],
+      "acceptance_criteria": [
+        "Opportunity cards sourced from backend catalogue",
+        "eligibility and visibility rules enforced",
+        "stale/inactive opportunities excluded"
+      ],
+      "tracker_gate": {
+        "target_status": "READY_FOR_E2E_TEST",
+        "required_checks": [
+          "Linked use-case IDs are explicit in the item",
+          "Acceptance checks are implemented and testable",
+          "Positive and negative path tests exist",
+          "Audit and access-control expectations are verified where applicable",
+          "Traceability links are updated in delivery and evidence docs"
+        ]
+      },
+      "Initiative": {
+        "id": "INIT-001",
+        "title": "Ubuntu Capital OS Evidence-First Reconstruction"
+      },
+      "Epic": {
+        "id": "EPIC-OPP",
+        "title": "Opportunity Discovery Experience"
+      },
+      "Feature": {
+        "id": "FEAT-UC-OPP-001",
+        "title": "Browse visible investment opportunity cards and categories"
+      },
+      "Story": {
+        "id": "STORY-BL-OPP-001",
+        "title": "Implement Browse visible investment opportunity cards and categories"
+      },
+      "Task": {
+        "id": "BL-OPP-001",
+        "title": "Browse visible investment opportunity cards and categories"
+      }
+    },
+    {
+      "id": "BL-OPP-002",
+      "title": "Filter and sort opportunities",
+      "use_case_ids": [
+        "UC-OPP-002"
+      ],
+      "domain": "OPP",
+      "priority": "P1",
+      "current_gap_status": "IN_DEVELOPMENT",
+      "backlog_diff": "EXPAND",
+      "roadmap_phase": "Phase 2",
+      "dependencies": [
+        "BL-OPP-001"
+      ],
+      "acceptance_criteria": [
+        "Server-side filter and sort contract supports sector/status/location fields",
+        "invalid filter values rejected",
+        "query behavior covered by tests"
+      ],
+      "tracker_gate": {
+        "target_status": "READY_FOR_E2E_TEST",
+        "required_checks": [
+          "Linked use-case IDs are explicit in the item",
+          "Acceptance checks are implemented and testable",
+          "Positive and negative path tests exist",
+          "Audit and access-control expectations are verified where applicable",
+          "Traceability links are updated in delivery and evidence docs"
+        ]
+      },
+      "Initiative": {
+        "id": "INIT-001",
+        "title": "Ubuntu Capital OS Evidence-First Reconstruction"
+      },
+      "Epic": {
+        "id": "EPIC-OPP",
+        "title": "Opportunity Discovery Experience"
+      },
+      "Feature": {
+        "id": "FEAT-UC-OPP-002",
+        "title": "Filter and sort opportunities"
+      },
+      "Story": {
+        "id": "STORY-BL-OPP-002",
+        "title": "Implement Filter and sort opportunities"
+      },
+      "Task": {
+        "id": "BL-OPP-002",
+        "title": "Filter and sort opportunities"
+      }
+    },
+    {
+      "id": "BL-OPP-003",
+      "title": "View an opportunity detail page",
+      "use_case_ids": [
+        "UC-OPP-003"
+      ],
+      "domain": "OPP",
+      "priority": "P1",
+      "current_gap_status": "IN_DEVELOPMENT",
+      "backlog_diff": "EXPAND",
+      "roadmap_phase": "Phase 2",
+      "dependencies": [
+        "BL-OPP-001"
+      ],
+      "acceptance_criteria": [
+        "Detail page served from canonical API",
+        "unavailable/deprecated opportunity returns correct error state",
+        "detail-view action is traceable"
+      ],
+      "tracker_gate": {
+        "target_status": "READY_FOR_E2E_TEST",
+        "required_checks": [
+          "Linked use-case IDs are explicit in the item",
+          "Acceptance checks are implemented and testable",
+          "Positive and negative path tests exist",
+          "Audit and access-control expectations are verified where applicable",
+          "Traceability links are updated in delivery and evidence docs"
+        ]
+      },
+      "Initiative": {
+        "id": "INIT-001",
+        "title": "Ubuntu Capital OS Evidence-First Reconstruction"
+      },
+      "Epic": {
+        "id": "EPIC-OPP",
+        "title": "Opportunity Discovery Experience"
+      },
+      "Feature": {
+        "id": "FEAT-UC-OPP-003",
+        "title": "View an opportunity detail page"
+      },
+      "Story": {
+        "id": "STORY-BL-OPP-003",
+        "title": "Implement View an opportunity detail page"
+      },
+      "Task": {
+        "id": "BL-OPP-003",
+        "title": "View an opportunity detail page"
+      }
+    },
+    {
+      "id": "BL-OPS-001",
+      "title": "Respond to an investor support request",
+      "use_case_ids": [
+        "UC-OPS-001"
+      ],
+      "domain": "OPS",
+      "priority": "P1",
+      "current_gap_status": "IN_DEVELOPMENT",
+      "backlog_diff": "EXPAND",
+      "roadmap_phase": "Phase 6",
+      "dependencies": [
+        "BL-AUD-001"
+      ],
+      "acceptance_criteria": [
+        "Contact form creates support ticket with owner/priority",
+        "SLA timers start on creation",
+        "ticket lifecycle events are auditable"
+      ],
+      "tracker_gate": {
+        "target_status": "READY_FOR_E2E_TEST",
+        "required_checks": [
+          "Linked use-case IDs are explicit in the item",
+          "Acceptance checks are implemented and testable",
+          "Positive and negative path tests exist",
+          "Audit and access-control expectations are verified where applicable",
+          "Traceability links are updated in delivery and evidence docs"
+        ]
+      },
+      "Initiative": {
+        "id": "INIT-001",
+        "title": "Ubuntu Capital OS Evidence-First Reconstruction"
+      },
+      "Epic": {
+        "id": "EPIC-OPS",
+        "title": "Operations and Support Workflows"
+      },
+      "Feature": {
+        "id": "FEAT-UC-OPS-001",
+        "title": "Respond to an investor support request"
+      },
+      "Story": {
+        "id": "STORY-BL-OPS-001",
+        "title": "Implement Respond to an investor support request"
+      },
+      "Task": {
+        "id": "BL-OPS-001",
+        "title": "Respond to an investor support request"
+      }
+    },
+    {
+      "id": "BL-OPS-002",
+      "title": "Correct investor or investment data under control",
+      "use_case_ids": [
+        "UC-OPS-002"
+      ],
+      "domain": "OPS",
+      "priority": "P1",
+      "current_gap_status": "READY_FOR_DEVELOPMENT",
+      "backlog_diff": "ADD",
+      "roadmap_phase": "Phase 6",
+      "dependencies": [
+        "BL-ADMIN-003",
+        "BL-AUD-001"
+      ],
+      "acceptance_criteria": [
+        "Controlled correction requires authorization and reason",
+        "before/after values retained",
+        "approval workflow enforced for high-risk changes"
+      ],
+      "tracker_gate": {
+        "target_status": "READY_FOR_E2E_TEST",
+        "required_checks": [
+          "Linked use-case IDs are explicit in the item",
+          "Acceptance checks are implemented and testable",
+          "Positive and negative path tests exist",
+          "Audit and access-control expectations are verified where applicable",
+          "Traceability links are updated in delivery and evidence docs"
+        ]
+      },
+      "Initiative": {
+        "id": "INIT-001",
+        "title": "Ubuntu Capital OS Evidence-First Reconstruction"
+      },
+      "Epic": {
+        "id": "EPIC-OPS",
+        "title": "Operations and Support Workflows"
+      },
+      "Feature": {
+        "id": "FEAT-UC-OPS-002",
+        "title": "Correct investor or investment data under control"
+      },
+      "Story": {
+        "id": "STORY-BL-OPS-002",
+        "title": "Implement Correct investor or investment data under control"
+      },
+      "Task": {
+        "id": "BL-OPS-002",
+        "title": "Correct investor or investment data under control"
+      }
+    },
+    {
+      "id": "BL-PORT-001",
+      "title": "View pending investments",
+      "use_case_ids": [
+        "UC-PORT-001"
+      ],
+      "domain": "PORT",
+      "priority": "P1",
+      "current_gap_status": "COMPONENT_COMPLETE",
+      "backlog_diff": "EXPAND",
+      "roadmap_phase": "Phase 6",
+      "dependencies": [
+        "BL-INV-002"
+      ],
+      "acceptance_criteria": [
+        "Pending view reflects live commitment states",
+        "status counts reconcile with commitment records",
+        "unauthorized data access blocked"
+      ],
+      "tracker_gate": {
+        "target_status": "READY_FOR_E2E_TEST",
+        "required_checks": [
+          "Linked use-case IDs are explicit in the item",
+          "Acceptance checks are implemented and testable",
+          "Positive and negative path tests exist",
+          "Audit and access-control expectations are verified where applicable",
+          "Traceability links are updated in delivery and evidence docs"
+        ]
+      },
+      "Initiative": {
+        "id": "INIT-001",
+        "title": "Ubuntu Capital OS Evidence-First Reconstruction"
+      },
+      "Epic": {
+        "id": "EPIC-PORT",
+        "title": "Portfolio Visibility and Tracking"
+      },
+      "Feature": {
+        "id": "FEAT-UC-PORT-001",
+        "title": "View pending investments"
+      },
+      "Story": {
+        "id": "STORY-BL-PORT-001",
+        "title": "Implement View pending investments"
+      },
+      "Task": {
+        "id": "BL-PORT-001",
+        "title": "View pending investments"
+      }
+    },
+    {
+      "id": "BL-PORT-002",
+      "title": "View current holdings",
+      "use_case_ids": [
+        "UC-PORT-002"
+      ],
+      "domain": "PORT",
+      "priority": "P1",
+      "current_gap_status": "COMPONENT_COMPLETE",
+      "backlog_diff": "EXPAND",
+      "roadmap_phase": "Phase 6",
+      "dependencies": [
+        "BL-SET-002"
+      ],
+      "acceptance_criteria": [
+        "Holdings sourced from settled positions",
+        "asset metadata and ownership model are explicit",
+        "values reconcile with valuation source"
+      ],
+      "tracker_gate": {
+        "target_status": "READY_FOR_E2E_TEST",
+        "required_checks": [
+          "Linked use-case IDs are explicit in the item",
+          "Acceptance checks are implemented and testable",
+          "Positive and negative path tests exist",
+          "Audit and access-control expectations are verified where applicable",
+          "Traceability links are updated in delivery and evidence docs"
+        ]
+      },
+      "Initiative": {
+        "id": "INIT-001",
+        "title": "Ubuntu Capital OS Evidence-First Reconstruction"
+      },
+      "Epic": {
+        "id": "EPIC-PORT",
+        "title": "Portfolio Visibility and Tracking"
+      },
+      "Feature": {
+        "id": "FEAT-UC-PORT-002",
+        "title": "View current holdings"
+      },
+      "Story": {
+        "id": "STORY-BL-PORT-002",
+        "title": "Implement View current holdings"
+      },
+      "Task": {
+        "id": "BL-PORT-002",
+        "title": "View current holdings"
+      }
+    },
+    {
+      "id": "BL-PORT-003",
+      "title": "View portfolio performance",
+      "use_case_ids": [
+        "UC-PORT-003"
+      ],
+      "domain": "PORT",
+      "priority": "P1",
+      "current_gap_status": "IN_DEVELOPMENT",
+      "backlog_diff": "EXPAND",
+      "roadmap_phase": "Phase 6",
+      "dependencies": [
+        "BL-PORT-002",
+        "BL-REPORT-001"
+      ],
+      "acceptance_criteria": [
+        "Performance calculations defined and tested against known fixtures",
+        "chart uses real time-series data",
+        "recalculation events are traceable"
+      ],
+      "tracker_gate": {
+        "target_status": "READY_FOR_E2E_TEST",
+        "required_checks": [
+          "Linked use-case IDs are explicit in the item",
+          "Acceptance checks are implemented and testable",
+          "Positive and negative path tests exist",
+          "Audit and access-control expectations are verified where applicable",
+          "Traceability links are updated in delivery and evidence docs"
+        ]
+      },
+      "Initiative": {
+        "id": "INIT-001",
+        "title": "Ubuntu Capital OS Evidence-First Reconstruction"
+      },
+      "Epic": {
+        "id": "EPIC-PORT",
+        "title": "Portfolio Visibility and Tracking"
+      },
+      "Feature": {
+        "id": "FEAT-UC-PORT-003",
+        "title": "View portfolio performance"
+      },
+      "Story": {
+        "id": "STORY-BL-PORT-003",
+        "title": "Implement View portfolio performance"
+      },
+      "Task": {
+        "id": "BL-PORT-003",
+        "title": "View portfolio performance"
+      }
+    },
+    {
+      "id": "BL-PORT-004",
+      "title": "View portfolio activity history",
+      "use_case_ids": [
+        "UC-PORT-004"
+      ],
+      "domain": "PORT",
+      "priority": "P1",
+      "current_gap_status": "COMPONENT_COMPLETE",
+      "backlog_diff": "EXPAND",
+      "roadmap_phase": "Phase 6",
+      "dependencies": [
+        "BL-AUD-001",
+        "BL-INV-002"
+      ],
+      "acceptance_criteria": [
+        "Activity timeline generated from auditable events",
+        "filters/search supported",
+        "export output matches underlying event history"
+      ],
+      "tracker_gate": {
+        "target_status": "READY_FOR_E2E_TEST",
+        "required_checks": [
+          "Linked use-case IDs are explicit in the item",
+          "Acceptance checks are implemented and testable",
+          "Positive and negative path tests exist",
+          "Audit and access-control expectations are verified where applicable",
+          "Traceability links are updated in delivery and evidence docs"
+        ]
+      },
+      "Initiative": {
+        "id": "INIT-001",
+        "title": "Ubuntu Capital OS Evidence-First Reconstruction"
+      },
+      "Epic": {
+        "id": "EPIC-PORT",
+        "title": "Portfolio Visibility and Tracking"
+      },
+      "Feature": {
+        "id": "FEAT-UC-PORT-004",
+        "title": "View portfolio activity history"
+      },
+      "Story": {
+        "id": "STORY-BL-PORT-004",
+        "title": "Implement View portfolio activity history"
+      },
+      "Task": {
+        "id": "BL-PORT-004",
+        "title": "View portfolio activity history"
+      }
+    },
+    {
+      "id": "BL-PROFILE-001",
+      "title": "View and maintain investor profile",
+      "use_case_ids": [
+        "UC-PROFILE-001"
+      ],
+      "domain": "PROFILE",
+      "priority": "P1",
+      "current_gap_status": "IN_DEVELOPMENT",
+      "backlog_diff": "EXPAND",
+      "roadmap_phase": "Phase 3",
+      "dependencies": [
+        "BL-IAM-001",
+        "BL-ONB-002"
+      ],
+      "acceptance_criteria": [
+        "Profile updates persist with validation",
+        "sensitive fields have change controls",
+        "profile change history is queryable"
+      ],
+      "tracker_gate": {
+        "target_status": "READY_FOR_E2E_TEST",
+        "required_checks": [
+          "Linked use-case IDs are explicit in the item",
+          "Acceptance checks are implemented and testable",
+          "Positive and negative path tests exist",
+          "Audit and access-control expectations are verified where applicable",
+          "Traceability links are updated in delivery and evidence docs"
+        ]
+      },
+      "Initiative": {
+        "id": "INIT-001",
+        "title": "Ubuntu Capital OS Evidence-First Reconstruction"
+      },
+      "Epic": {
+        "id": "EPIC-PROFILE",
+        "title": "Investor Profile Management"
+      },
+      "Feature": {
+        "id": "FEAT-UC-PROFILE-001",
+        "title": "View and maintain investor profile"
+      },
+      "Story": {
+        "id": "STORY-BL-PROFILE-001",
+        "title": "Implement View and maintain investor profile"
+      },
+      "Task": {
+        "id": "BL-PROFILE-001",
+        "title": "View and maintain investor profile"
+      }
+    },
+    {
+      "id": "BL-REPORT-001",
+      "title": "Produce operational and compliance reports",
+      "use_case_ids": [
+        "UC-REPORT-001"
+      ],
+      "domain": "REPORT",
+      "priority": "P1",
+      "current_gap_status": "READY_FOR_DEVELOPMENT",
+      "backlog_diff": "ADD",
+      "roadmap_phase": "Phase 7",
+      "dependencies": [
+        "BL-AUD-001",
+        "BL-ADMIN-003"
+      ],
+      "acceptance_criteria": [
+        "Operational/compliance reports generated from authoritative stores",
+        "role-based report access enforced",
+        "schedule/manual runs both logged"
+      ],
+      "tracker_gate": {
+        "target_status": "READY_FOR_E2E_TEST",
+        "required_checks": [
+          "Linked use-case IDs are explicit in the item",
+          "Acceptance checks are implemented and testable",
+          "Positive and negative path tests exist",
+          "Audit and access-control expectations are verified where applicable",
+          "Traceability links are updated in delivery and evidence docs"
+        ]
+      },
+      "Initiative": {
+        "id": "INIT-001",
+        "title": "Ubuntu Capital OS Evidence-First Reconstruction"
+      },
+      "Epic": {
+        "id": "EPIC-REPORT",
+        "title": "Operational and Compliance Reporting"
+      },
+      "Feature": {
+        "id": "FEAT-UC-REPORT-001",
+        "title": "Produce operational and compliance reports"
+      },
+      "Story": {
+        "id": "STORY-BL-REPORT-001",
+        "title": "Implement Produce operational and compliance reports"
+      },
+      "Task": {
+        "id": "BL-REPORT-001",
+        "title": "Produce operational and compliance reports"
+      }
+    },
+    {
+      "id": "BL-EVENT-001",
+      "title": "Browse investment events and webinars",
+      "use_case_ids": [
+        "UC-EVENT-001"
+      ],
+      "domain": "EVENT",
+      "priority": "P2",
+      "current_gap_status": "COMPONENT_COMPLETE",
+      "backlog_diff": "EXPAND",
+      "roadmap_phase": "Phase 6",
+      "dependencies": [
+        "BL-ADMIN-004",
+        "BL-NOTIFY-001"
+      ],
+      "acceptance_criteria": [
+        "Event registration persists attendance intent",
+        "reminders trigger from schedule",
+        "cancellation/no-show paths are handled"
+      ],
+      "tracker_gate": {
+        "target_status": "READY_FOR_E2E_TEST",
+        "required_checks": [
+          "Linked use-case IDs are explicit in the item",
+          "Acceptance checks are implemented and testable",
+          "Positive and negative path tests exist",
+          "Audit and access-control expectations are verified where applicable",
+          "Traceability links are updated in delivery and evidence docs"
+        ]
+      },
+      "Initiative": {
+        "id": "INIT-001",
+        "title": "Ubuntu Capital OS Evidence-First Reconstruction"
+      },
+      "Epic": {
+        "id": "EPIC-EVENT",
+        "title": "Events and Webinar Engagement"
+      },
+      "Feature": {
+        "id": "FEAT-UC-EVENT-001",
+        "title": "Browse investment events and webinars"
+      },
+      "Story": {
+        "id": "STORY-BL-EVENT-001",
+        "title": "Implement Browse investment events and webinars"
+      },
+      "Task": {
+        "id": "BL-EVENT-001",
+        "title": "Browse investment events and webinars"
+      }
+    },
+    {
+      "id": "BL-NEWS-001",
+      "title": "View portfolio and opportunity news content",
+      "use_case_ids": [
+        "UC-NEWS-001"
+      ],
+      "domain": "NEWS",
+      "priority": "P2",
+      "current_gap_status": "COMPONENT_COMPLETE",
+      "backlog_diff": "EXPAND",
+      "roadmap_phase": "Phase 6",
+      "dependencies": [
+        "BL-ADMIN-004",
+        "BL-IAM-001"
+      ],
+      "acceptance_criteria": [
+        "News feed content sourced from managed catalogue",
+        "investor personalization rules applied",
+        "content publication has audit trail"
+      ],
+      "tracker_gate": {
+        "target_status": "READY_FOR_E2E_TEST",
+        "required_checks": [
+          "Linked use-case IDs are explicit in the item",
+          "Acceptance checks are implemented and testable",
+          "Positive and negative path tests exist",
+          "Audit and access-control expectations are verified where applicable",
+          "Traceability links are updated in delivery and evidence docs"
+        ]
+      },
+      "Initiative": {
+        "id": "INIT-001",
+        "title": "Ubuntu Capital OS Evidence-First Reconstruction"
+      },
+      "Epic": {
+        "id": "EPIC-NEWS",
+        "title": "News and Content Distribution"
+      },
+      "Feature": {
+        "id": "FEAT-UC-NEWS-001",
+        "title": "View portfolio and opportunity news content"
+      },
+      "Story": {
+        "id": "STORY-BL-NEWS-001",
+        "title": "Implement View portfolio and opportunity news content"
+      },
+      "Task": {
+        "id": "BL-NEWS-001",
+        "title": "View portfolio and opportunity news content"
+      }
+    },
+    {
+      "id": "BL-PUB-001",
+      "title": "Learn about the investment platform",
+      "use_case_ids": [
+        "UC-PUB-001"
+      ],
+      "domain": "PUB",
+      "priority": "P2",
+      "current_gap_status": "COMPONENT_COMPLETE",
+      "backlog_diff": "EXPAND",
+      "roadmap_phase": "Phase 0",
+      "dependencies": [],
+      "acceptance_criteria": [
+        "Public page instrumentation captures funnel events",
+        "legal/regulatory disclaimers are versioned",
+        "page content updates follow governance rules"
+      ],
+      "tracker_gate": {
+        "target_status": "READY_FOR_E2E_TEST",
+        "required_checks": [
+          "Linked use-case IDs are explicit in the item",
+          "Acceptance checks are implemented and testable",
+          "Positive and negative path tests exist",
+          "Audit and access-control expectations are verified where applicable",
+          "Traceability links are updated in delivery and evidence docs"
+        ]
+      },
+      "Initiative": {
+        "id": "INIT-001",
+        "title": "Ubuntu Capital OS Evidence-First Reconstruction"
+      },
+      "Epic": {
+        "id": "EPIC-PUB",
+        "title": "Public Platform Experience"
+      },
+      "Feature": {
+        "id": "FEAT-UC-PUB-001",
+        "title": "Learn about the investment platform"
+      },
+      "Story": {
+        "id": "STORY-BL-PUB-001",
+        "title": "Implement Learn about the investment platform"
+      },
+      "Task": {
+        "id": "BL-PUB-001",
+        "title": "Learn about the investment platform"
+      }
+    },
+    {
+      "id": "BL-REF-001",
+      "title": "Refer a prospective investor",
+      "use_case_ids": [
+        "UC-REF-001"
+      ],
+      "domain": "REF",
+      "priority": "P2",
+      "current_gap_status": "IN_DEVELOPMENT",
+      "backlog_diff": "EXPAND",
+      "roadmap_phase": "Phase 6",
+      "dependencies": [
+        "BL-IAM-001",
+        "BL-OPS-001"
+      ],
+      "acceptance_criteria": [
+        "Referral links are unique and attributable",
+        "referral submissions validated and persisted",
+        "anti-abuse checks applied"
+      ],
+      "tracker_gate": {
+        "target_status": "READY_FOR_E2E_TEST",
+        "required_checks": [
+          "Linked use-case IDs are explicit in the item",
+          "Acceptance checks are implemented and testable",
+          "Positive and negative path tests exist",
+          "Audit and access-control expectations are verified where applicable",
+          "Traceability links are updated in delivery and evidence docs"
+        ]
+      },
+      "Initiative": {
+        "id": "INIT-001",
+        "title": "Ubuntu Capital OS Evidence-First Reconstruction"
+      },
+      "Epic": {
+        "id": "EPIC-REF",
+        "title": "Referral Growth Workflows"
+      },
+      "Feature": {
+        "id": "FEAT-UC-REF-001",
+        "title": "Refer a prospective investor"
+      },
+      "Story": {
+        "id": "STORY-BL-REF-001",
+        "title": "Implement Refer a prospective investor"
+      },
+      "Task": {
+        "id": "BL-REF-001",
+        "title": "Refer a prospective investor"
+      }
+    }
+  ],
+  "summary": {
+    "total_items": 41,
+    "by_priority": {
+      "P0": 22,
+      "P1": 15,
+      "P2": 4
+    },
+    "unique_use_cases": 41
+  }
+}
