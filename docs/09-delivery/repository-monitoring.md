@@ -21,12 +21,14 @@ GitHub Actions timezone-aware schedules use an IANA timezone on each schedule en
 
 The monitor determines the previous successful run of the same workflow through the GitHub Actions API.
 
-- Normal run: previous successful run → current run.
+- Normal run: previous successful run → current run, compared by branch ancestry.
 - First run: preceding 12 hours.
 
 The workflow queries completed runs and then selects the most recent prior run whose conclusion is `success`.
 
 No repository checkpoint file is required, so the monitoring mechanism does not create self-generated checkpoint commits.
+
+If the previous successful head is no longer an ancestor of the current default-branch head, the monitor records a **HIGH integrity event** rather than silently falling back to a time window. It compares the prior and current repository states, captures the commits reachable from the current branch after their merge base (or the full current branch when histories are unrelated), and reports the rewrite explicitly. Changes removed by the rewrite cannot be recovered from the current branch and require human review.
 
 ## Default Branch Handling
 
@@ -49,7 +51,7 @@ The monitor uses the checked-out repository and GitHub API to inspect:
 - controlling documents and repository-integrity conditions;
 - contractor records under `contractors/80kDevelopers/`.
 
-Commit details and patches are derived locally from the full git checkout rather than expanding every commit through the REST API.
+Commit details and patches are derived locally from the full git checkout rather than expanding every commit through the REST API. For a merge commit, both the changed paths (including renames) and patch are calculated against the same first parent, so file reporting is consistent with the displayed patch.
 
 Pull requests are requested in descending `updated_at` order and pagination stops as soon as results fall outside the monitoring window. Detailed PR inspection is bounded to recently updated PRs, reducing API usage and rate-limit risk.
 
