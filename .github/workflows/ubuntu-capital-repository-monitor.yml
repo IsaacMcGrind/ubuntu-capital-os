@@ -23,12 +23,14 @@ jobs:
     name: Inspect repository changes and produce report
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    env:
+      DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
 
     steps:
-      - name: Checkout master
+      - name: Checkout repository default branch
         uses: actions/checkout@v4
         with:
-          ref: master
+          ref: ${{ github.event.repository.default_branch }}
           fetch-depth: 0
 
       - name: Set up Python
