@@ -64,7 +64,7 @@ jobs:
           name: ubuntu-capital-repository-monitor-${{ github.run_id }}
           path: monitoring-output/
           if-no-files-found: warn
-          retention-days: 90
+          retention-days: 7
 
       - name: Determine whether new repository activity occurred
         id: reportability
