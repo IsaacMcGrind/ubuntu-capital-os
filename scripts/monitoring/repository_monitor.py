@@ -1,11 +1,5 @@
 #!/usr/bin/env python3
-"""Read-only Ubuntu Capital OS repository monitor.
-
-The monitor produces a Markdown report for every run. It does not modify
-repository content. Commit inspection is performed locally from the checked-out
-repository to avoid one REST call per commit. Pull-request API calls are limited
-to PRs updated inside the monitoring window.
-"""
+"""Read-only Ubuntu Capital OS repository monitor."""
 
 from __future__ import annotations
 
@@ -127,21 +121,49 @@ def repository_default_branch() -> str:
     return branch
 
 
+def paginate_list(path: str, params: dict | None = None, *, max_pages: int = 100):
+    """Read every list page until GitHub returns a short/empty page."""
+    items = []
+    base = dict(params or {})
+    per_page = min(int(base.pop("per_page", 100)), 100)
+    for page in range(1, max_pages + 1):
+        query = dict(base)
+        query.update({"per_page": per_page, "page": page})
+        batch = api(path, query)
+        if not isinstance(batch, list):
+            raise RuntimeError(f"Expected list response while paginating {path}.")
+        items.extend(batch)
+        if len(batch) < per_page:
+            break
+    return items
+
+
 def prior_successful_run(now: datetime, branch: str) -> tuple[datetime, str]:
+    """Find the real previous successful run, paging through completed history."""
     current = api(f"/repos/{REPO}/actions/runs/{RUN_ID}")
     workflow_id = current["workflow_id"]
-    runs = api(
-        f"/repos/{REPO}/actions/workflows/{workflow_id}/runs",
-        {"branch": branch, "status": "completed", "per_page": 30},
-    ).get("workflow_runs", [])
-    for run in runs:
-        if str(run.get("id")) == str(RUN_ID):
-            continue
-        if run.get("conclusion") != "success":
-            continue
-        started = run.get("run_started_at") or run.get("created_at")
-        if started:
-            return parse_dt(started), f"previous successful workflow run #{run.get('run_number')}"
+    path = f"/repos/{REPO}/actions/workflows/{workflow_id}/runs"
+
+    # Workflow-runs responses are objects rather than bare lists, so paginate here.
+    for page in range(1, 101):
+        data = api(
+            path,
+            {"branch": branch, "status": "completed", "per_page": 100, "page": page},
+        )
+        runs = data.get("workflow_runs", []) if isinstance(data, dict) else []
+        if not runs:
+            break
+        for run in runs:
+            if str(run.get("id")) == str(RUN_ID):
+                continue
+            if run.get("conclusion") != "success":
+                continue
+            started = run.get("run_started_at") or run.get("created_at")
+            if started:
+                return parse_dt(started), f"previous successful workflow run #{run.get('run_number')}"
+        if len(runs) < 100:
+            break
+
     return now - timedelta(hours=12), "first-run fallback: preceding 12 hours"
 
 
@@ -161,9 +183,7 @@ def load_catalogue() -> tuple[dict[str, str], int | None, list[str]]:
         declared = int(m.group(1))
     issues: list[str] = []
     if declared is not None and declared != len(catalogue):
-        issues.append(
-            f"Use-case count mismatch: catalogue declares {declared}, but {len(catalogue)} UC rows were parsed."
-        )
+        issues.append(f"Use-case count mismatch: catalogue declares {declared}, but {len(catalogue)} UC rows were parsed.")
     return catalogue, declared, issues
 
 
@@ -177,12 +197,9 @@ def integrity_checks(catalogue_count: int) -> list[tuple[str, str]]:
     plan = WORKSPACE / "plan.md"
     if plan.exists():
         text = plan.read_text(encoding="utf-8")
-        stale_counts = sorted({int(x) for x in re.findall(r"\b(\d+)-use-case\b", text)})
-        for value in stale_counts:
+        for value in sorted({int(x) for x in re.findall(r"\b(\d+)-use-case\b", text)}):
             if value != catalogue_count:
-                checks.append(
-                    ("MEDIUM", f"`plan.md` references {value}-use-case while the parsed catalogue contains {catalogue_count}.")
-                )
+                checks.append(("MEDIUM", f"`plan.md` references {value}-use-case while the parsed catalogue contains {catalogue_count}."))
 
     contractor_root = WORKSPACE / "contractors"
     if contractor_root.exists():
@@ -205,13 +222,7 @@ def area_for(path: str) -> str:
 
 def collect_commit_activity(since: datetime, branch: str):
     since_iso = since.isoformat().replace("+00:00", "Z")
-    raw = git(
-        "log",
-        branch,
-        f"--since={since_iso}",
-        "--format=%H%x1f%an%x1f%aI%x1f%s",
-        "--no-merges",
-    )
+    raw = git("log", branch, f"--since={since_iso}", "--format=%H%x1f%an%x1f%aI%x1f%s", "--no-merges")
     results = []
     for line in raw.splitlines():
         if not line.strip():
@@ -223,101 +234,80 @@ def collect_commit_activity(since: datetime, branch: str):
             if not row.strip():
                 continue
             parts = row.split("\t")
-            status = parts[0]
-            filename = parts[-1]
-            files.append({"filename": filename, "status": status})
-        # Local patch extraction avoids REST expansion per commit. Cap each patch so
-        # a pathological commit cannot exhaust runner memory.
+            files.append({"filename": parts[-1], "status": parts[0]})
         patch = git("show", "--format=", "--unified=0", "--no-ext-diff", sha)
         if len(patch) > 200_000:
             patch = patch[:200_000] + "\n[patch truncated by monitor]"
-        results.append(
-            {
-                "sha": sha,
-                "short": sha[:7],
-                "message": message,
-                "author": author,
-                "time": timestamp,
-                "files": files,
-                "patch": patch,
-            }
-        )
+        results.append({"sha": sha, "short": sha[:7], "message": message, "author": author, "time": timestamp, "files": files, "patch": patch})
     return results
 
 
-def recent_pull_requests(since: datetime, max_pages: int = 5, max_recent: int = 50):
-    """Fetch only PRs updated in-window, stopping when sorted results become old."""
+def recent_pull_requests(since: datetime, max_recent: int = 50):
+    """Fetch updated PRs newest-first and stop immediately at the first old PR."""
     recent = []
-    for page in range(1, max_pages + 1):
+    for page in range(1, 101):
         batch = api(
             f"/repos/{REPO}/pulls",
-            {
-                "state": "all",
-                "sort": "updated",
-                "direction": "desc",
-                "per_page": 50,
-                "page": page,
-            },
+            {"state": "all", "sort": "updated", "direction": "desc", "per_page": 100, "page": page},
         )
-        if not batch:
+        if not isinstance(batch, list) or not batch:
             break
-        reached_old = False
         for pr in batch:
             if parse_dt(pr["updated_at"]) < since:
-                reached_old = True
-                break
+                return recent
             recent.append(pr)
             if len(recent) >= max_recent:
                 return recent
-        if reached_old or len(batch) < 50:
+        if len(batch) < 100:
             break
     return recent
-
-
-def one_page(path: str):
-    data = api(path, {"per_page": 100, "page": 1})
-    return data if isinstance(data, list) else []
 
 
 def collect_pr_activity(since: datetime):
     results = []
     for pr in recent_pull_requests(since):
         number = pr["number"]
-        files = one_page(f"/repos/{REPO}/pulls/{number}/files")
-        reviews = one_page(f"/repos/{REPO}/pulls/{number}/reviews")
-        review_comments = one_page(f"/repos/{REPO}/pulls/{number}/comments")
-        issue_comments = one_page(f"/repos/{REPO}/issues/{number}/comments")
 
-        recent_reviews = [
-            r for r in reviews if r.get("submitted_at") and parse_dt(r["submitted_at"]) >= since
-        ]
-        recent_review_comments = [
-            r for r in review_comments if r.get("updated_at") and parse_dt(r["updated_at"]) >= since
-        ]
-        recent_issue_comments = [
-            r for r in issue_comments if r.get("updated_at") and parse_dt(r["updated_at"]) >= since
-        ]
+        # GitHub caps the PR-files endpoint at 3,000 files (30 x 100). Read all of
+        # those pages; the other endpoints are paginated until exhaustion.
+        files = paginate_list(f"/repos/{REPO}/pulls/{number}/files", max_pages=30)
+        reviews = paginate_list(f"/repos/{REPO}/pulls/{number}/reviews")
+        review_comments = paginate_list(f"/repos/{REPO}/pulls/{number}/comments")
+        issue_comments = paginate_list(f"/repos/{REPO}/issues/{number}/comments")
 
-        patch = "\n".join(f.get("patch", "") for f in files if f.get("patch"))
-        if len(patch) > 200_000:
-            patch = patch[:200_000] + "\n[PR patch truncated by monitor]"
+        recent_reviews = [r for r in reviews if r.get("submitted_at") and parse_dt(r["submitted_at"]) >= since]
+        recent_review_comments = [r for r in review_comments if r.get("updated_at") and parse_dt(r["updated_at"]) >= since]
+        recent_issue_comments = [r for r in issue_comments if r.get("updated_at") and parse_dt(r["updated_at"]) >= since]
 
-        results.append(
-            {
-                "number": number,
-                "title": pr["title"],
-                "state": pr["state"],
-                "draft": pr.get("draft", False),
-                "merged_at": pr.get("merged_at"),
-                "updated_at": pr["updated_at"],
-                "author": pr.get("user", {}).get("login", "unknown"),
-                "files": [f.get("filename") for f in files if f.get("filename")],
-                "patch": patch,
-                "reviews": len(recent_reviews),
-                "review_comments": len(recent_review_comments),
-                "issue_comments": len(recent_issue_comments),
-            }
-        )
+        patch_parts = []
+        patch_size = 0
+        for f in files:
+            part = f.get("patch", "")
+            if not part:
+                continue
+            remaining = 200_000 - patch_size
+            if remaining <= 0:
+                break
+            patch_parts.append(part[:remaining])
+            patch_size += len(patch_parts[-1])
+        patch = "\n".join(patch_parts)
+        if patch_size >= 200_000:
+            patch += "\n[PR patch truncated by monitor]"
+
+        results.append({
+            "number": number,
+            "title": pr["title"],
+            "state": pr["state"],
+            "draft": pr.get("draft", False),
+            "merged_at": pr.get("merged_at"),
+            "updated_at": pr["updated_at"],
+            "author": pr.get("user", {}).get("login", "unknown"),
+            "files": [f.get("filename") for f in files if f.get("filename")],
+            "patch": patch,
+            "reviews": len(recent_reviews),
+            "review_comments": len(recent_review_comments),
+            "issue_comments": len(recent_issue_comments),
+        })
     return results
 
 
@@ -339,17 +329,13 @@ def significance(commits, prs, integrity, use_cases) -> str:
     if use_cases or any(p.get("merged_at") for p in prs):
         return "HIGH"
     unique_files = {f["filename"] for c in commits for f in c["files"]}
-    if prs or len(unique_files) >= 5:
-        return "MEDIUM"
-    return "LOW"
+    return "MEDIUM" if prs or len(unique_files) >= 5 else "LOW"
 
 
 def repository_health(integrity) -> str:
     if any(level == "HIGH" for level, _ in integrity):
         return "RED"
-    if integrity:
-        return "AMBER"
-    return "GREEN"
+    return "AMBER" if integrity else "GREEN"
 
 
 def set_output(name: str, value: str) -> None:
@@ -364,8 +350,7 @@ def main() -> None:
     branch = repository_default_branch()
     since, checkpoint_reason = prior_successful_run(now, branch)
     catalogue, _, catalogue_issues = load_catalogue()
-    integrity = [("MEDIUM", issue) for issue in catalogue_issues]
-    integrity += integrity_checks(len(catalogue))
+    integrity = [("MEDIUM", issue) for issue in catalogue_issues] + integrity_checks(len(catalogue))
 
     commits = collect_commit_activity(since, branch)
     prs = collect_pr_activity(since)
@@ -377,26 +362,12 @@ def main() -> None:
     )
     areas = sorted({area_for(f) for f in all_files})
     contractor_changes = [f for f in all_files if f.startswith("contractors/80kDevelopers/")]
-    governance_changes = [
-        f
-        for f in all_files
-        if f in {"AGENT.md", "plan.md", "README.md"} or f.startswith("docs/00-context/")
-    ]
+    governance_changes = [f for f in all_files if f in {"AGENT.md", "plan.md", "README.md"} or f.startswith("docs/00-context/")]
 
     severity = significance(commits, prs, integrity, use_cases)
     health = repository_health(integrity)
     score = len(commits) + len(prs) + len(use_cases)
-    momentum = (
-        "NO_CHANGE"
-        if score == 0
-        else "MAJOR"
-        if score >= 12
-        else "STRONG"
-        if score >= 7
-        else "MODERATE"
-        if score >= 3
-        else "LOW"
-    )
+    momentum = "NO_CHANGE" if score == 0 else "MAJOR" if score >= 12 else "STRONG" if score >= 7 else "MODERATE" if score >= 3 else "LOW"
 
     report_title = f"Ubuntu Capital OS Change Report — {johannesburg_display(now)}"
     set_output("report_title", report_title)
@@ -412,43 +383,32 @@ def main() -> None:
         "## 1. Executive Summary",
         "",
     ]
-
     if not commits and not prs:
         lines.append("No material Ubuntu Capital OS repository changes were detected during this monitoring window.")
     else:
-        lines.append(
-            f"Detected **{len(commits)} relevant commit(s)** and **{len(prs)} pull request(s) with activity** affecting **{len(all_files)} unique file(s)**."
-        )
-    lines.extend(
-        [
-            f"- Affected catalogued use cases: **{len(use_cases)}**",
-            f"- Overall significance: **{severity}**",
-            f"- Areas touched: {', '.join(areas) if areas else 'None'}",
-            "",
-            "## 2. Changes Detected",
-            "",
-        ]
-    )
+        lines.append(f"Detected **{len(commits)} relevant commit(s)** and **{len(prs)} pull request(s) with activity** affecting **{len(all_files)} unique file(s)**.")
+    lines.extend([
+        f"- Affected catalogued use cases: **{len(use_cases)}**",
+        f"- Overall significance: **{severity}**",
+        f"- Areas touched: {', '.join(areas) if areas else 'None'}",
+        "",
+        "## 2. Changes Detected",
+        "",
+    ])
 
     if commits:
-        lines.append("### Commits")
-        lines.append("")
+        lines.extend(["### Commits", ""])
         for c in commits:
-            lines.append(
-                f"- `{c['short']}` — **{c['message']}** — {c['author']} — {c['time']} — {len(c['files'])} file(s)"
-            )
+            lines.append(f"- `{c['short']}` — **{c['message']}** — {c['author']} — {c['time']} — {len(c['files'])} file(s)")
     else:
         lines.append("No commits were detected in the monitoring window.")
 
     lines.append("")
     if prs:
-        lines.append("### Pull Requests")
-        lines.append("")
+        lines.extend(["### Pull Requests", ""])
         for pr in prs:
             state = "MERGED" if pr.get("merged_at") else pr["state"].upper()
-            lines.append(
-                f"- PR #{pr['number']} — **{pr['title']}** — {state} — {pr['author']} — reviews: {pr['reviews']}, review comments: {pr['review_comments']}, conversation comments: {pr['issue_comments']}"
-            )
+            lines.append(f"- PR #{pr['number']} — **{pr['title']}** — {state} — {pr['author']} — reviews: {pr['reviews']}, review comments: {pr['review_comments']}, conversation comments: {pr['issue_comments']}")
     else:
         lines.append("No pull-request activity was detected in the monitoring window.")
 
@@ -456,40 +416,35 @@ def main() -> None:
     if use_cases:
         for uid in use_cases:
             domain = uid.split("-")[1]
-            lines.extend(
-                [
-                    f"### {uid} — {catalogue[uid]}",
-                    f"- **Observed change:** explicit use-case ID appears in changed repository evidence.",
-                    f"- **Business impact:** {DOMAIN_BENEFITS.get(domain, 'Requires business-impact review')}.",
-                    "- **Evidence impact:** review the changed evidence before changing `CONFIRMED`, `INFERRED`, `UNKNOWN`, or `CONTRADICTED` classification.",
-                    "- **Delivery impact:** no status is changed automatically by this monitor.",
-                    "- **Remaining gap:** verify E2E evidence before treating the use case as complete.",
-                    "",
-                ]
-            )
+            lines.extend([
+                f"### {uid} — {catalogue[uid]}",
+                "- **Observed change:** explicit use-case ID appears in changed repository evidence.",
+                f"- **Business impact:** {DOMAIN_BENEFITS.get(domain, 'Requires business-impact review')}.",
+                "- **Evidence impact:** review changed evidence before changing its evidence classification.",
+                "- **Delivery impact:** no status is changed automatically by this monitor.",
+                "- **Remaining gap:** verify E2E evidence before treating the use case as complete.",
+                "",
+            ])
     else:
         lines.append("No catalogued use cases were materially affected during this monitoring window.")
 
     lines.extend(["", "## 4. Implementation and Contractor Progress", ""])
     if contractor_changes:
         lines.append("Changes were detected under `contractors/80kDevelopers/`:")
-        for path in contractor_changes:
-            lines.append(f"- `{path}`")
+        lines.extend(f"- `{path}`" for path in contractor_changes)
         lines.append("Review contractor provenance against implementation and E2E evidence before changing delivery status.")
     else:
         lines.append("No contractor-delivery files changed during this window.")
 
     lines.extend(["", "## 5. Governance and Evidence Changes", ""])
     if governance_changes:
-        for path in governance_changes:
-            lines.append(f"- `{path}` changed; verify execution instructions and evidence references remain consistent.")
+        lines.extend(f"- `{path}` changed; verify execution instructions and evidence references remain consistent." for path in governance_changes)
     else:
         lines.append("No controlling governance or context files changed.")
 
     lines.extend(["", "## 6. Risks, Problems and Regressions", ""])
     if integrity:
-        for level, issue in integrity:
-            lines.append(f"- **{level}** — {issue}")
+        lines.extend(f"- **{level}** — {issue}" for level, issue in integrity)
     else:
         lines.append("No selected repository-integrity regressions were detected.")
 
@@ -512,7 +467,7 @@ def main() -> None:
         lines.append(f"{priority}. Review changed evidence for: {', '.join(use_cases)} and update statuses only if objective E2E evidence supports it.")
         priority += 1
     if contractor_changes:
-        lines.append(f"{priority}. Reconcile contractor changes against the 41-use-case catalogue and current implementation status.")
+        lines.append(f"{priority}. Reconcile contractor changes against the current use-case catalogue and implementation status.")
         priority += 1
     if priority == 1:
         lines.append("1. No immediate remediation required; continue scheduled monitoring.")
@@ -528,18 +483,16 @@ def main() -> None:
         lines.append("| — | — | No material change | Repository | None |")
 
     intervention = "YES" if health == "RED" or severity == "HIGH" else "NO"
-    lines.extend(
-        [
-            "",
-            "## 10. Overall Assessment",
-            "",
-            f"**Repository health:** `{health}`",
-            f"**Implementation momentum:** `{momentum}`",
-            f"**Immediate intervention required:** `{intervention}`",
-            "",
-            "The monitor is read-only. All status, evidence-classification, contractor-record, and implementation changes require human-reviewed repository updates.",
-        ]
-    )
+    lines.extend([
+        "",
+        "## 10. Overall Assessment",
+        "",
+        f"**Repository health:** `{health}`",
+        f"**Implementation momentum:** `{momentum}`",
+        f"**Immediate intervention required:** `{intervention}`",
+        "",
+        "The monitor is read-only. All status, evidence-classification, contractor-record, and implementation changes require human-reviewed repository updates.",
+    ])
 
     REPORT_PATH.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
