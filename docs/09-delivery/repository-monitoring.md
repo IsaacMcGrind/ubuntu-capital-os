@@ -15,6 +15,8 @@ It also supports manual execution through `workflow_dispatch`.
 
 Workflow: `.github/workflows/ubuntu-capital-repository-monitor.yml`
 
+GitHub Actions timezone-aware schedules use an IANA timezone on each schedule entry. The workflow therefore keeps `timezone: Africa/Johannesburg` alongside each cron expression.
+
 ## Monitoring Window
 
 The monitor determines the previous successful run of the same workflow through the GitHub Actions API.
@@ -22,13 +24,23 @@ The monitor determines the previous successful run of the same workflow through 
 - Normal run: previous successful run → current run.
 - First run: preceding 12 hours.
 
+The workflow queries completed runs and then selects the most recent prior run whose conclusion is `success`.
+
 No repository checkpoint file is required, so the monitoring mechanism does not create self-generated checkpoint commits.
+
+## Default Branch Handling
+
+The workflow and monitor do not hard-code `main` or `master`.
+
+The repository default branch is taken from `github.event.repository.default_branch` and passed to the monitoring script. The script falls back to repository metadata only if that environment value is unavailable.
+
+Scheduled GitHub Actions workflows run against the latest commit on the repository default branch.
 
 ## Sources Inspected
 
-The monitor uses the GitHub repository and API to inspect:
+The monitor uses the checked-out repository and GitHub API to inspect:
 
-- commits on `master`;
+- commits on the current repository default branch;
 - files added, modified, removed or renamed in those commits;
 - pull requests updated during the monitoring window;
 - recent PR reviews and review comments;
@@ -36,6 +48,10 @@ The monitor uses the GitHub repository and API to inspect:
 - the current use-case catalogue;
 - controlling documents and repository-integrity conditions;
 - contractor records under `contractors/80kDevelopers/`.
+
+Commit details and patches are derived locally from the full git checkout rather than expanding every commit through the REST API.
+
+Pull requests are requested in descending `updated_at` order and pagination stops as soon as results fall outside the monitoring window. Detailed PR inspection is bounded to recently updated PRs, reducing API usage and rate-limit risk.
 
 ## Report Outputs
 
@@ -110,6 +126,6 @@ The workflow does not:
 
 ## Operational Notes
 
-Scheduled workflows execute from the latest commit on the default branch. Therefore this monitoring workflow becomes active on its schedule only after the workflow file is merged into `master`.
+Scheduled workflows execute from the latest commit on the default branch. Therefore this monitoring workflow becomes active on its schedule only after the workflow file is merged into the repository default branch.
 
 The workflow can be manually run from the GitHub Actions UI after it exists on the default branch.
