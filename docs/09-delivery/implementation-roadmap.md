@@ -87,3 +87,11 @@ This roadmap separates a faithful reconstruction programme from later Ubuntu Cap
 ## Programme gate
 
 Current readiness is `READY_WITH_ASSUMPTIONS` for a discovery-and-interest prototype, but `PARTIALLY_READY` for a regulated production investment platform because onboarding, compliance, commitment, settlement, custody, valuation, internal permissions, and integration details remain incompletely evidenced.
+
+## Backlog translation artifact
+
+Use `docs/09-delivery/prioritized-backlog-diff.md` as the direct matrix-to-backlog translation for the current implementation gap pass.
+
+- It prioritizes critical domains first: IAM, ONB, INV, SET, ADMIN, AUD, INT.
+- It maps each use-case gap row to concrete backlog item IDs and acceptance checks.
+- It includes dependency-first sequencing deltas for implementation order.
