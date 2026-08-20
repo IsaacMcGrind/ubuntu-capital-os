@@ -4,8 +4,9 @@
 **Primary Actor:** Registered Investor  
 **Priority:** Critical  
 **Architecture Status:** Complete — decisions accepted  
-**Evidence Status:** Inferred  
-**Last Updated:** 2026-08-19
+**Requirement Evidence:** INFERRED  
+**Implementation Status:** IN_DEVELOPMENT  
+**Last Updated:** 2026-08-20
 
 ---
 
@@ -28,6 +29,8 @@ This analysis is based on the following project sources:
 - `docs/01-system-understanding/system-overview.md`
 - `docs/11-open-questions/open-questions.md`
 - `contractors/80kDevelopers/implementation-status.md`
+- `docs/09-delivery/implementation-coverage-gap-matrix.md`
+- `docs/09-delivery/prioritized-backlog-diff.md`
 - Ubuntu Capital OS Priority Use Cases & Business Benefits report, 09 August 2026
 
 Relevant source statements:
@@ -35,7 +38,15 @@ Relevant source statements:
 - UC-IAM-001 outcome: **Establish an authorised session**.
 - IAM domain purpose: authenticate users, protect private routes, manage sessions and account access.
 - The priority-use-case report states that sign-in protects private investor, opportunity and portfolio information.
-- Current implementation evidence does not yet verify the authentication mechanism, session lifecycle, route/API enforcement, MFA, audit trail or related security controls.
+- The current implementation repository has now been directly inspected and contains login and MFA user-interface components.
+- Direct inspection has not identified a backend authentication service or enforced session-management implementation.
+- The implementation coverage matrix therefore classifies UC-IAM-001 as `IN_DEVELOPMENT`, not `COMPLETE`.
+
+### Evidence interpretation
+
+The source requirement for UC-IAM-001 remains `INFERRED`; the existence of login/MFA screens confirms implementation intent, not the complete business capability.
+
+Implementation evidence is supporting current-state evidence and does not override the documented requirement or accepted architecture decisions.
 
 ---
 
@@ -69,23 +80,54 @@ Eligibility must therefore not be re-evaluated as part of every authentication e
 
 ## 3.2 Current State
 
-The Ubuntu Capital OS documentation defines an Identity and Access domain responsible for authentication, protected routes and sessions, but this capability is currently classified as **INFERRED**.
+Direct inspection of the current Ubuntu Capital implementation repository has materially improved the evidence for this use case.
 
-The contractor implementation register confirms that a deployed Ubuntu Capital web experience exists. However, the contractor source repository has not yet been inspectable through the connected GitHub context, so the implementation of UC-IAM-001 has not been verified end-to-end.
+### Confirmed implementation evidence
 
-The following remain unverified in the current implementation:
+The implementation coverage review identifies:
 
-- authentication provider;
-- credential mechanism;
-- session/token model;
-- MFA capability;
-- session expiry and revocation;
-- logout behaviour;
-- API-level protection;
-- brute-force and rate-limit controls;
-- audit and security-event capture.
+- `src/pages/Login.tsx` — login user-interface surface;
+- `src/pages/MfaVerify.tsx` — MFA verification user-interface surface.
 
-The current repository therefore provides **insufficient implementation evidence** to claim this use case complete.
+This confirms that sign-in and MFA are represented in the current front-end implementation.
+
+The implementation repository was also successfully built and its baseline test command succeeded during the implementation coverage review. Those checks establish repository health at the front-end level; they do **not** prove UC-IAM-001 end-to-end.
+
+### Not evidenced in the inspected implementation
+
+The repository review did not identify evidence of:
+
+- a backend authentication service;
+- server-side session establishment;
+- server-side session validation;
+- protected backend/API enforcement;
+- persistent authentication/session state;
+- authentication-provider integration;
+- logout/session-expiry implementation sufficient to satisfy UC-IAM-003;
+- audit-event persistence for authentication outcomes;
+- backend negative-path tests proving protected access is denied to unauthenticated callers.
+
+The implementation coverage matrix therefore classifies UC-IAM-001 as:
+
+> **IN_DEVELOPMENT — Login and MFA screens exist, but no auth service/session enforcement was found.**
+
+The contractor implementation assessment reaches the same conclusion at platform level: the current implementation is predominantly a front-end prototype and security/runtime audit controls remain only partially evidenced.
+
+### Current-state interpretation
+
+```text
+Current implementation
+----------------------
+Login UI                 CONFIRMED
+MFA UI                   CONFIRMED
+Authentication backend  NOT EVIDENCED
+Session enforcement     NOT EVIDENCED
+API protection          NOT EVIDENCED
+Auth audit persistence  NOT EVIDENCED
+E2E auth validation     NOT EVIDENCED
+```
+
+The presence of login and MFA pages is therefore **implementation evidence**, but not evidence that the documented outcome — an authorised session — is actually established and enforced end-to-end.
 
 ---
 
@@ -170,21 +212,33 @@ unless those claims are explicitly derived from and governed by the authoritativ
 A registered investor must be able to establish a trusted authorised session.
 
 **Current State**  
-IAM capability exists in the documented architecture, but the implementation cannot yet be verified end-to-end.
+Login and MFA user-interface components exist in the current React implementation, but direct repository inspection has not identified the backend authentication, session enforcement, persistence, API protection or audit evidence required to establish the documented outcome end-to-end.
 
 **Target Architecture**  
 A defined Identity and Access boundary owns authentication, session state and authenticated identity, while downstream domains own business eligibility and authorisation facts.
 
 **Gap**  
-The implementation must be verified or completed for:
+The implementation must add or verify:
 
-- authentication-provider integration;
-- session lifecycle;
-- protected route and API enforcement;
-- authenticated identity propagation;
-- security controls;
-- audit/security telemetry;
-- IAM-to-business-domain contracts.
+- standards-based authentication-provider integration;
+- server-side session establishment and validation;
+- protected route and backend/API enforcement;
+- authenticated identity propagation to protected capabilities;
+- authentication failure and negative-path handling;
+- audit/security event capture and persistence;
+- IAM-to-business-domain identity contracts;
+- automated validation proving valid login succeeds and unauthenticated/invalid access fails closed.
+
+### Delivery evidence gate
+
+The current delivery backlog defines the following concrete acceptance direction for UC-IAM-001:
+
+- successful login creates a server-recognised session;
+- invalid credentials are rejected;
+- protected routes reject unauthenticated requests;
+- relevant authentication outcomes produce audit evidence.
+
+These are delivery/verification criteria derived from the implementation gap analysis. They refine how the target can be proven without changing the accepted business boundary of this use case.
 
 ---
 
@@ -314,16 +368,18 @@ Who is this?
 
 # 7. Accepted Architecture Decisions
 
+The refreshed implementation evidence does not contradict any previously accepted architecture decision.
+
 | Decision ID | Decision | Status |
 |---|---|---|
-| IAM-D01 | Authentication and investor eligibility remain separate concerns. Login establishes identity/session and does not re-run or own eligibility determination. | Accepted |
-| IAM-D02 | Identity & Access is authoritative for authenticated principal and session state. Investor Onboarding & Eligibility is authoritative for eligibility/compliance state. | Accepted |
-| IAM-D03 | Use a standards-based identity-provider boundary rather than implementing credential/password authentication inside Ubuntu Capital OS. Vendor selection remains deferred. | Accepted |
-| IAM-D04 | Protected backend/API capabilities must independently validate authentication and required business permissions. Frontend route protection alone is insufficient. | Accepted |
-| IAM-D05 | Authentication/access events feed Audit & Evidence, while operational security telemetry and formal business audit evidence remain logically distinct concerns. | Accepted |
-| IAM-D06 | MFA capability must be supported in the production authentication architecture. Whether MFA is mandatory for every investor remains a later policy/security decision. | Accepted |
-| IAM-D07 | UC-IAM-001 establishes sessions. Account recovery and detailed session termination remain primarily within UC-IAM-002 and UC-IAM-003. | Accepted |
-| IAM-D08 | No microservice topology, queueing platform, cloud provider or database technology is selected from this use case alone. | Accepted |
+| IAM-D01 | Authentication and investor eligibility remain separate concerns. Login establishes identity/session and does not re-run or own eligibility determination. | Accepted — reaffirmed |
+| IAM-D02 | Identity & Access is authoritative for authenticated principal and session state. Investor Onboarding & Eligibility is authoritative for eligibility/compliance state. | Accepted — reaffirmed |
+| IAM-D03 | Use a standards-based identity-provider boundary rather than implementing credential/password authentication inside Ubuntu Capital OS. Vendor selection remains deferred. | Accepted — reaffirmed |
+| IAM-D04 | Protected backend/API capabilities must independently validate authentication and required business permissions. Frontend route protection alone is insufficient. | Accepted — reaffirmed; strengthened by current UI-only evidence |
+| IAM-D05 | Authentication/access events feed Audit & Evidence, while operational security telemetry and formal business audit evidence remain logically distinct concerns. | Accepted — reaffirmed |
+| IAM-D06 | MFA capability must be supported in the production authentication architecture. Whether MFA is mandatory for every investor remains a later policy/security decision. | Accepted — reaffirmed; current MFA UI is supporting evidence only |
+| IAM-D07 | UC-IAM-001 establishes sessions. Account recovery and detailed session termination remain primarily within UC-IAM-002 and UC-IAM-003. | Accepted — reaffirmed |
+| IAM-D08 | No microservice topology, queueing platform, cloud provider or database technology is selected from this use case alone. | Accepted — reaffirmed |
 
 ---
 
@@ -358,6 +414,8 @@ Authenticated identity
 Required business-domain controls
 ```
 
+The new implementation evidence does not require a structural HLA change. It validates that the existing target architecture addresses a real implementation gap between front-end authentication screens and an enforceable IAM capability.
+
 This clarification should be inherited by all subsequent use-case analyses.
 
 ---
@@ -380,10 +438,14 @@ These should be resolved by the use cases or architecture decisions that own tho
 
 ---
 
-## Architecture Outcome
+## Evidence Refresh Outcome
 
-UC-IAM-001 establishes the platform authentication boundary.
+The evidence refresh changes the **Current State**, not the accepted target architecture.
 
-The accepted architectural principle is:
+Previously, the implementation of UC-IAM-001 could not be inspected directly. The current repository evidence now establishes that login and MFA interfaces exist, while the authentication backend and enforceable session boundary remain unverified or absent from the inspected codebase.
+
+The architectural principle remains:
 
 > **Authentication establishes who the user is. Eligibility and downstream business domains determine what that authenticated user may access or do.**
+
+UC-IAM-001 remains architecturally complete as an analysis, while implementation delivery remains `IN_DEVELOPMENT` until the documented authorised-session outcome is implemented and verified end-to-end.
