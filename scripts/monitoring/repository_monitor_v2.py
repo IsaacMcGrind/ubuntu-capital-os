@@ -11,12 +11,13 @@ current implementation coverage gap matrix.
 from __future__ import annotations
 
 import re
-from collections import defaultdict
 from pathlib import Path
 
 import repository_monitor as base
 
 BROAD_REFERENCE_THRESHOLD = 8
+MAX_EVIDENCE_PATHS = 6
+MAX_SOURCES = 4
 IMPACT_RECORDS: dict[str, dict] = {}
 BROAD_REFERENCES: list[dict] = []
 ABSENT_DIRECT_IDS: list[str] = []
@@ -30,6 +31,10 @@ def changed_lines(patch: str) -> list[str]:
         and not line.startswith("+++")
         and not line.startswith("---")
     ]
+
+
+def ids_in_changed_lines(patch: str) -> set[str]:
+    return set(re.findall(base.USE_CASE_PATTERN, "\n".join(changed_lines(patch))))
 
 
 def normalize_paths(item: dict) -> list[str]:
@@ -106,58 +111,134 @@ def ensure_record(uid: str) -> dict:
 
 
 def add_direct_impact(uid: str, item: dict, paths: list[str], signal: str) -> None:
+    """Record only paths that actually supplied this UC signal."""
     record = ensure_record(uid)
     record["sources"].add(source_label(item))
-    record["files"].update(paths)
+    record["files"].update(path for path in paths if path)
     record["signals"].add(signal)
-    record["change_types"].update(classify_change_type(path) for path in paths)
-    if not paths:
+    if paths:
+        record["change_types"].update(classify_change_type(path) for path in paths if path)
+    else:
         record["change_types"].add("METADATA")
 
 
+def commit_file_patch(item: dict, file_entry: dict) -> str:
+    """Re-read the full local patch for one commit file so attribution survives display truncation."""
+    sha = item.get("sha")
+    filename = file_entry.get("filename")
+    previous = file_entry.get("previous_filename")
+    if not sha or not filename:
+        return ""
+    parent = base.first_parent(sha)
+    pathspec = [path for path in (previous, filename) if path]
+    if parent:
+        return base.git("diff", "--format=", "--unified=0", "--no-ext-diff", parent, sha, "--", *pathspec)
+    return base.git("show", "--format=", "--unified=0", "--no-ext-diff", sha, "--", *pathspec)
+
+
+def commit_file_evidence(item: dict) -> list[dict]:
+    evidence = []
+    for file_entry in item.get("files", []):
+        if not isinstance(file_entry, dict):
+            continue
+        paths = [path for path in (file_entry.get("previous_filename"), file_entry.get("filename")) if path]
+        patch = commit_file_patch(item, file_entry)
+        ids = ids_in_changed_lines(patch)
+        for path in paths:
+            ids.update(re.findall(base.USE_CASE_PATTERN, path))
+        evidence.append({"paths": paths, "ids": ids})
+    return evidence
+
+
+def pr_details_and_file_evidence(item: dict) -> tuple[str, list[dict]]:
+    """Fetch PR body and per-file patches so PR metadata and file attribution remain exact."""
+    number = item.get("number")
+    if not number:
+        return item.get("body") or "", []
+    detail = base.api(f"/repos/{base.REPO}/pulls/{number}")
+    body = detail.get("body") or ""
+    files = base.paginate_list(f"/repos/{base.REPO}/pulls/{number}/files", max_pages=30)
+    evidence = []
+    for file_entry in files:
+        filename = file_entry.get("filename")
+        previous = file_entry.get("previous_filename")
+        paths = [path for path in (previous, filename) if path]
+        ids = ids_in_changed_lines(file_entry.get("patch") or "")
+        for path in paths:
+            ids.update(re.findall(base.USE_CASE_PATTERN, path))
+        evidence.append({"paths": paths, "ids": ids})
+    return body, evidence
+
+
+def record_file_signals(item: dict, file_evidence: list[dict]) -> set[str]:
+    """Attribute bounded diff/path UC signals to only the file(s) that supplied them."""
+    file_ids = {uid for evidence in file_evidence for uid in evidence["ids"]}
+    if len(file_ids) > BROAD_REFERENCE_THRESHOLD:
+        BROAD_REFERENCES.append(
+            {
+                "source": source_label(item),
+                "files": sorted({path for evidence in file_evidence for path in evidence["paths"]}),
+                "ids": sorted(file_ids),
+            }
+        )
+        return file_ids
+
+    for evidence in file_evidence:
+        for uid in sorted(evidence["ids"]):
+            add_direct_impact(uid, item, evidence["paths"], "changed path or diff line in attributed file")
+    return file_ids
+
+
 def material_use_case_changes(catalogue: dict[str, str], commits, pull_requests, rewrite=None):
-    """Return only materially implicated use cases, not broad cross-reference mentions."""
+    """Return only materially implicated use cases, with per-signal path attribution."""
     IMPACT_RECORDS.clear()
     BROAD_REFERENCES.clear()
     ABSENT_DIRECT_IDS.clear()
 
     all_direct_ids: set[str] = set()
-    for item in commits + pull_requests:
-        paths = normalize_paths(item)
-        metadata = "\n".join(
-            value or ""
-            for value in (item.get("message"), item.get("title"), item.get("body"))
-        )
+
+    for item in commits:
+        metadata = item.get("message") or ""
         metadata_ids = set(re.findall(base.USE_CASE_PATTERN, metadata))
-        path_ids = {
-            uid
-            for path in paths
-            for uid in re.findall(base.USE_CASE_PATTERN, path)
-        }
-        line_ids = set(re.findall(base.USE_CASE_PATTERN, "\n".join(changed_lines(item.get("patch", "")))))
-
-        direct_ids = metadata_ids | path_ids
-        if len(line_ids) <= BROAD_REFERENCE_THRESHOLD:
-            direct_ids |= line_ids
-        elif line_ids:
-            BROAD_REFERENCES.append(
-                {
-                    "source": source_label(item),
-                    "files": paths,
-                    "ids": sorted(line_ids),
-                }
-            )
-
-        for uid in sorted(direct_ids):
-            signal_parts = []
-            if uid in metadata_ids:
-                signal_parts.append("commit/PR metadata")
-            if uid in path_ids:
-                signal_parts.append("dedicated changed path")
-            if uid in line_ids and len(line_ids) <= BROAD_REFERENCE_THRESHOLD:
-                signal_parts.append("changed diff line")
-            add_direct_impact(uid, item, paths, ", ".join(signal_parts) or "direct change evidence")
+        for uid in sorted(metadata_ids):
+            add_direct_impact(uid, item, [], "commit metadata")
             all_direct_ids.add(uid)
+
+        file_ids = record_file_signals(item, commit_file_evidence(item))
+        if len(file_ids) <= BROAD_REFERENCE_THRESHOLD:
+            all_direct_ids.update(file_ids)
+
+        # The hardened base collector scans the complete pre-truncation patch. Any ID
+        # not recovered above is retained without falsely attributing it to unrelated paths.
+        residual = set(item.get("use_case_ids", [])) - metadata_ids - file_ids
+        if residual:
+            if len(residual) <= BROAD_REFERENCE_THRESHOLD:
+                for uid in sorted(residual):
+                    add_direct_impact(uid, item, [], "complete pre-truncation patch evidence; exact path unavailable")
+                    all_direct_ids.add(uid)
+            else:
+                BROAD_REFERENCES.append({"source": source_label(item), "files": [], "ids": sorted(residual)})
+
+    for item in pull_requests:
+        body, file_evidence = pr_details_and_file_evidence(item)
+        metadata = "\n".join(value or "" for value in (item.get("title"), body))
+        metadata_ids = set(re.findall(base.USE_CASE_PATTERN, metadata))
+        for uid in sorted(metadata_ids):
+            add_direct_impact(uid, item, [], "PR title/body metadata")
+            all_direct_ids.add(uid)
+
+        file_ids = record_file_signals(item, file_evidence)
+        if len(file_ids) <= BROAD_REFERENCE_THRESHOLD:
+            all_direct_ids.update(file_ids)
+
+        residual = set(item.get("use_case_ids", [])) - metadata_ids - file_ids
+        if residual:
+            if len(residual) <= BROAD_REFERENCE_THRESHOLD:
+                for uid in sorted(residual):
+                    add_direct_impact(uid, item, [], "complete collector evidence; exact PR path unavailable")
+                    all_direct_ids.add(uid)
+            else:
+                BROAD_REFERENCES.append({"source": source_label(item), "files": [], "ids": sorted(residual)})
 
     if rewrite:
         rewrite_ids = set(rewrite.get("use_case_ids", []))
@@ -242,6 +323,14 @@ def business_consequence(uid: str, change_types: set[str]) -> str:
     return f"{benefit}. {suffix}"
 
 
+def compact_list(values: list[str], limit: int) -> str:
+    if not values:
+        return ""
+    shown = values[:limit]
+    suffix = f" … +{len(values) - limit} more" if len(values) > limit else ""
+    return "; ".join(shown) + suffix
+
+
 def render_use_case_section(catalogue: dict[str, str]) -> str:
     matrix = load_delivery_matrix()
     lines = ["## 3. Use-Case Impact", ""]
@@ -251,7 +340,7 @@ def render_use_case_section(catalogue: dict[str, str]) -> str:
         lines.append("No use case had direct material change evidence during this monitoring window.")
     else:
         lines.append(
-            f"**Materially impacted use cases: {len(material_ids)}.** A use case appears here only when the change directly names it in commit/PR metadata, a dedicated path, or a bounded changed diff. Broad documents that merely enumerate many use cases are not treated as individual delivery impacts."
+            f"**Materially impacted use cases: {len(material_ids)}.** A use case appears here only when the change directly names it in commit/PR metadata, an attributed changed path/diff, or a bounded history-state difference. Broad documents that merely enumerate many use cases are not treated as individual delivery impacts."
         )
         lines.append("")
         for uid in material_ids:
@@ -261,17 +350,18 @@ def render_use_case_section(catalogue: dict[str, str]) -> str:
             sources = sorted(record["sources"])
             signals = sorted(record["signals"])
             types = set(record["change_types"])
+            formatted_paths = [f"`{path}`" for path in paths]
             lines.extend(
                 [
                     f"### {uid} — {catalogue[uid]}",
                     f"- **Actual change:** {change_meaning(types)}.",
-                    f"- **Why this use case is included:** {'; '.join(signals)}.",
-                    f"- **Change source:** {'; '.join(sources)}.",
-                    f"- **Changed evidence:** {', '.join(f'`{path}`' for path in paths) if paths else 'PR/commit metadata only'}.",
+                    f"- **Why this use case is included:** {compact_list(signals, 4)}.",
+                    f"- **Change source:** {compact_list(sources, MAX_SOURCES)}.",
+                    f"- **Changed evidence:** {compact_list(formatted_paths, MAX_EVIDENCE_PATHS) if formatted_paths else 'metadata or pre-truncation evidence only; no unrelated paths attributed'}.",
                     f"- **Business consequence:** {business_consequence(uid, types)}",
                     f"- **Current delivery position:** `{delivery.get('status', 'UNKNOWN')}`.",
                     f"- **Delivery impact:** {delivery_implication(types, delivery.get('status', ''))}",
-                    f"- **Known gap:** {delivery.get('gap', 'No use-case-specific gap was available in the implementation coverage matrix.')} ",
+                    f"- **Known gap:** {delivery.get('gap', 'No use-case-specific gap was available in the implementation coverage matrix.')}",
                     f"- **Next evidence gate:** {delivery.get('next_gate', 'Perform targeted implementation/E2E verification before changing status.')}",
                     "",
                 ]
@@ -282,7 +372,7 @@ def render_use_case_section(catalogue: dict[str, str]) -> str:
         for ref in BROAD_REFERENCES:
             ids = ref["ids"]
             preview = ", ".join(ids[:6]) + (f" … +{len(ids) - 6} more" if len(ids) > 6 else "")
-            files = ", ".join(f"`{path}`" for path in ref["files"][:5]) or "metadata/state comparison"
+            files = compact_list([f"`{path}`" for path in ref["files"]], MAX_EVIDENCE_PATHS) or "metadata/state comparison"
             lines.append(
                 f"- **{ref['source']}** references **{len(ids)} use-case IDs** ({preview}) across {files}. This is treated as catalogue/architecture cross-reference coverage, not proof that all referenced use cases changed in delivery."
             )
@@ -301,7 +391,9 @@ def replace_section_three(report: str, catalogue: dict[str, str]) -> str:
     start = report.find("## 3. Use-Case Impact")
     end = report.find("## 4. Implementation and Contractor Progress")
     if start == -1 or end == -1 or end <= start:
-        raise RuntimeError("Could not locate report Section 3 boundaries for impact enrichment.")
+        # Governance/report headings may evolve independently. Preserve the complete base
+        # report rather than failing a scheduled monitoring run after it has been produced.
+        return report
     return report[:start] + render_use_case_section(catalogue) + "\n" + report[end:]
 
 
@@ -311,7 +403,8 @@ def main() -> None:
 
     catalogue, _, _ = base.load_catalogue()
     report = base.REPORT_PATH.read_text(encoding="utf-8")
-    base.REPORT_PATH.write_text(replace_section_three(report, catalogue), encoding="utf-8")
+    enriched = replace_section_three(report, catalogue)
+    base.REPORT_PATH.write_text(enriched, encoding="utf-8")
 
 
 if __name__ == "__main__":
