@@ -8,6 +8,7 @@ The directory includes:
 
 - `azure-architecture.md` — proposed Azure architecture and practical implementation/upskilling context;
 - `azure-mvp-cost-breakdown.md` — MVP cost-control and service-cost evidence;
+- `contribution-log.md` — repository-observable contributor attribution, including the confirmed `HarleyJoker` Azure architecture and MVP cost-analysis commits;
 - `implementation-status.md` — the current governed delivery assessment for this contractor workstream.
 
 Project-level acceptance of the Azure MVP direction is recorded separately under `docs/02-architecture/azure-mvp-platform-decision.md`, and the evidence-gated delivery sequence is recorded under `docs/09-delivery/azure-mvp-platform-delivery-plan.md`.
@@ -23,4 +24,4 @@ Contractor contribution does not independently:
 - mark Azure infrastructure `COMPONENT_COMPLETE` without deployment evidence;
 - mark any Ubuntu Capital use case `COMPLETE`.
 
-Use `implementation-status.md` as the current contractor-workstream status record and apply the evidence gates in `AGENT.md`, `plan.md`, delivery and traceability artifacts before changing status.
+Use `contribution-log.md` for confirmed contributor/artifact provenance, `implementation-status.md` as the current contractor-workstream status record, and apply the evidence gates in `AGENT.md`, `plan.md`, delivery and traceability artifacts before changing status.
