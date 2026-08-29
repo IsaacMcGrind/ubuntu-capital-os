@@ -1,7 +1,7 @@
 # Ubuntu Capital OS — Azure MVP Platform Decision
 
 **Decision ID:** ARCH-ADR-001  
-**Status:** CONFIRMED — project-owner direction  
+**Status:** CONFIRMED — source-traceable project-owner direction (`SRC-011`)  
 **Decision date:** 2026-08-29  
 **Scope:** MVP cloud hosting and platform-services layer  
 **Does not replace:** the technology-neutral logical architecture, business-domain architecture, legal model, settlement model, or use-case evidence gates.
@@ -28,13 +28,15 @@ The approved starting service set is:
 
 ## Evidence basis
 
-This decision reconciles:
+This decision reconciles the following source-inventoried evidence:
 
-- `contractors/HerLogicSolutions/azure-architecture.md`;
-- `contractors/HerLogicSolutions/azure-mvp-cost-breakdown.md`;
+- `SRC-011` — project-owner direction on 2026-08-29 confirming that the repository's Azure infrastructure direction is the selected MVP implementation direction;
+- `SRC-012` — `contractors/HerLogicSolutions/azure-architecture.md`;
+- `SRC-013` — `contractors/HerLogicSolutions/azure-mvp-cost-breakdown.md`;
 - the technology-neutral logical boundary in `docs/02-architecture/high-level-logical-architecture-v0.1.md`;
-- the priority architecture map in `docs/02-architecture/priority-use-case-architecture-map.md`;
-- project-owner direction on 2026-08-29 that the infrastructure documented in the repository is the chosen implementation direction.
+- the priority architecture map in `docs/02-architecture/priority-use-case-architecture-map.md`.
+
+`SRC-011` is the approval evidence that converts the contractor Azure proposal into a confirmed project-level platform decision. `SRC-012` and `SRC-013` support the proposed architecture and cost basis; they do not independently confer approval authority.
 
 ## What this decision changes
 
