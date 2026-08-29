@@ -60,7 +60,7 @@ The recommended next delivery step is the Azure foundation slice documented in `
 
 ## Repository structure and integrity note
 
-`plan.md` remains the canonical structure definition. The repository currently also contains a working architecture tree under `docs/02-architecture/`, introduced as part of the architecture workstream. This is a visible structure exception and should be reconciled deliberately rather than silently treated as a replacement for the canonical `docs/02-actors-and-permissions/` phase.
+`plan.md` remains the canonical structure definition. The repository currently contains `docs/02-architecture/`, while the plan-defined canonical `docs/02-actors-and-permissions/` phase is currently missing from the repository. The architecture tree is therefore an explicit structure exception that must be reconciled deliberately; it must not be read as if the canonical actors-and-permissions directory already exists or has been replaced.
 
 Key active areas include:
 
