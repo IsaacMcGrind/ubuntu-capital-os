@@ -10,7 +10,7 @@ Build the smallest secure Azure foundation capable of supporting the first compl
 
 > authenticated investor discovers an opportunity and submits a **non-binding expression of interest**.
 
-The foundation must prove deployability, authentication, protected backend execution, persistence, secrets handling, telemetry, and cost governance before regulated or financial workflows are expanded.
+The foundation must prove deployability, authentication, protected backend execution, persistence, secrets handling, telemetry, cost governance and reproducible infrastructure before regulated or financial workflows are expanded.
 
 ## 2. Delivery sequence
 
@@ -18,18 +18,20 @@ The foundation must prove deployability, authentication, protected backend execu
 |---:|---|---|---|---|
 | 1 | Azure subscription/resource baseline | Resource groups, RBAC, Cost Management | Cross-cutting | `COMPONENT_COMPLETE` |
 | 2 | Frontend deployment | Static Web Apps | UC-PUB-001, UC-IAM-001 | `COMPONENT_COMPLETE` |
-| 3 | Customer identity foundation | Entra External ID | UC-IAM-001/002/003 | `IN_DEVELOPMENT` |
+| 3 | Customer identity foundation | Entra External ID | UC-IAM-001/002/003 | `COMPONENT_COMPLETE` |
 | 4 | Protected API foundation | Azure Functions | IAM + all protected use cases | `COMPONENT_COMPLETE` |
 | 5 | Persistence foundation | Azure SQL | ONB, OPP, INV, PORT, ADMIN, AUD | `COMPONENT_COMPLETE` |
 | 6 | Secrets/service identity | Key Vault + Managed Identity | Cross-cutting | `COMPONENT_COMPLETE` |
 | 7 | Observability | Application Insights + Azure Monitor | AUD/OPS and all runtime flows | `COMPONENT_COMPLETE` |
-| 8 | CI/CD deployment evidence | GitHub Actions/Azure DevOps | Cross-cutting | `COMPONENT_COMPLETE` |
+| 8 | Reproducible infrastructure + CI/CD deployment evidence | IaC/declarative provisioning + GitHub Actions/Azure DevOps | Cross-cutting | `COMPONENT_COMPLETE` |
 | 9 | Opportunity read model/API | Functions + SQL | UC-OPP-001/002/003 | `IN_DEVELOPMENT` |
 | 10 | Non-binding EOI workflow | Functions + SQL | UC-INV-001 | `IN_DEVELOPMENT` |
 | 11 | Audit evidence for first slice | SQL/storage + telemetry separation | UC-AUD-001 | `IN_DEVELOPMENT` |
 | 12 | E2E acceptance evidence | deployed Azure environment | first vertical slice | `READY_FOR_ACCEPTANCE` |
 
 Each sequence item has a one-to-one work-package ID below. Evidence must be recorded against the matching ID so that delivery cannot be skipped or attributed to the wrong package.
+
+`WP-AZ-003` work-package completion is distinct from the broader `UC-IAM-001` use-case status. The Entra External ID foundation can become `COMPONENT_COMPLETE` when its own package evidence gate is satisfied while `UC-IAM-001` remains `IN_DEVELOPMENT` until backend enforcement, application integration and E2E evidence are complete.
 
 ## 3. Work-package evidence gates
 
@@ -71,7 +73,12 @@ Each sequence item has a one-to-one work-package ID below. Evidence must be reco
 - valid test investor can authenticate;
 - invalid/unauthenticated access fails;
 - protected API cannot rely on frontend route protection alone;
-- no credential handling is implemented directly in Ubuntu Capital application code.
+- no credential handling is implemented directly in Ubuntu Capital application code;
+- identity-foundation configuration and tests are reproducible and documented.
+
+**Work-package status rule**
+- when the evidence above is satisfied, `WP-AZ-003` may reach `COMPONENT_COMPLETE`;
+- this does **not** by itself move `UC-IAM-001` to `COMPLETE`.
 
 ### WP-AZ-004 — Azure Functions API foundation
 
@@ -126,19 +133,26 @@ Each sequence item has a one-to-one work-package ID below. Evidence must be reco
 - alert or alert-rule evidence;
 - telemetry contains no credentials/tokens/sensitive payloads.
 
-### WP-AZ-008 — CI/CD deployment evidence
+### WP-AZ-008 — Reproducible infrastructure and CI/CD deployment evidence
 
 **Deliverables**
-- repeatable build, test and deployment workflow for the selected Azure MVP resources;
+- version-controlled infrastructure-as-code or equivalent declarative provisioning definitions for Foundation Slice A resources that are reasonably automatable;
+- repeatable provisioning/reconciliation workflow capable of creating a clean DEV/MVP foundation or reconciling drift against declared state;
+- repeatable application build, test and deployment workflow;
 - environment-specific configuration handled outside committed secrets;
-- deployment result linked to the repository revision that produced it;
-- failure path that prevents a failed build/test from being treated as a successful deployment.
+- deployment result linked to the application revision and infrastructure-definition revision that produced it;
+- failure paths that prevent failed infrastructure validation, build or test from being treated as a successful deployment;
+- documented and justified manual Azure steps where automation is not practical, with no material untracked Foundation state.
 
 **Evidence gate**
-- successful workflow run with build/test/deploy steps;
-- failed validation demonstrably blocks deployment;
-- deployed revision can be traced back to a commit/PR;
-- deployment credentials use an approved service identity/connection and are not committed to the repository.
+- version-controlled provisioning definitions exist for Foundation resources;
+- successful clean provision or reconciliation run is evidenced;
+- infrastructure validation/plan output is recorded with sensitive values redacted where required;
+- successful application workflow run contains build/test/deploy steps;
+- failed infrastructure or application validation demonstrably blocks deployment;
+- deployed application and infrastructure state can be traced back to repository revisions;
+- deployment credentials use an approved service identity/connection and are not committed to the repository;
+- reconstruction/operational notes are recorded for any unavoidable manual step.
 
 ### WP-AZ-009 — Opportunity API
 
@@ -200,7 +214,19 @@ Each sequence item has a one-to-one work-package ID below. Evidence must be reco
 - no unresolved critical question invalidates the non-binding first-slice interpretation;
 - evidence is linked into the delivery tracker/traceability model before `READY_FOR_ACCEPTANCE` is considered.
 
-## 4. Deferred services
+## 4. Foundation Slice A completion rule
+
+Foundation Slice A consists of `WP-AZ-001` through `WP-AZ-008`.
+
+It may be described as `COMPONENT_COMPLETE` only when:
+
+1. every Foundation work package has satisfied its own evidence gate and reached `COMPONENT_COMPLETE`;
+2. `WP-AZ-003` identity-foundation completion is not confused with completion of `UC-IAM-001`;
+3. the Azure Foundation can be recreated or reconciled from version-controlled provisioning definitions plus explicitly documented unavoidable manual steps;
+4. application deployment is repeatable and blocked by failed infrastructure validation, build or test;
+5. the resulting infrastructure/application revisions and evidence references reconcile in the Foundation Slice A evidence register.
+
+## 5. Deferred services
 
 Do not add the following until a measured/validated requirement exists:
 
@@ -216,7 +242,7 @@ Do not add the following until a measured/validated requirement exists:
 - multi-region deployment;
 - geo-redundant storage.
 
-## 5. Environment strategy
+## 6. Environment strategy
 
 MVP baseline:
 
@@ -228,7 +254,7 @@ LOCAL DEVELOPMENT
 
 Additional QA/SIT/UAT/staging environments are introduced only when the delivery and approval model requires them.
 
-## 6. Delivery roles and ownership
+## 7. Delivery roles and ownership
 
 The repository currently records distinct responsibilities:
 
@@ -239,7 +265,7 @@ The repository currently records distinct responsibilities:
 
 Contractor provenance does not grant independent authority to change business/legal requirements or mark use cases complete.
 
-## 7. First-slice exit criteria
+## 8. First-slice exit criteria
 
 The first business slice may move to `READY_FOR_ACCEPTANCE` only when all of the following are evidenced in the deployed target environment:
 
@@ -256,6 +282,6 @@ The first business slice may move to `READY_FOR_ACCEPTANCE` only when all of the
 11. no unresolved critical question invalidates the non-binding interpretation;
 12. captured E2E evidence is linked into the delivery tracker/traceability model.
 
-## 8. Next action
+## 9. Next action
 
-Start with **WP-AZ-001 through WP-AZ-008** as Foundation Slice A, then implement **WP-AZ-009 and WP-AZ-010** as the first business vertical slice. Complete **WP-AZ-011 and WP-AZ-012** before the slice is considered for `READY_FOR_ACCEPTANCE`.
+Start with **WP-AZ-001 through WP-AZ-008** as Foundation Slice A, using `docs/09-delivery/foundation-slice-a-execution-package.md` as the detailed execution contract and `docs/09-delivery/foundation-slice-a-evidence-register.md` as the evidence ledger. Then implement **WP-AZ-009 and WP-AZ-010** as the first business vertical slice. Complete **WP-AZ-011 and WP-AZ-012** before the slice is considered for `READY_FOR_ACCEPTANCE`.
