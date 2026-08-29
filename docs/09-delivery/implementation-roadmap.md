@@ -28,7 +28,11 @@ This roadmap separates faithful system reconstruction, Azure platform enablement
 
 **Status:** `READY_FOR_DEVELOPMENT`.
 
-**Primary artifact:** `docs/09-delivery/azure-mvp-platform-delivery-plan.md`.
+**Primary delivery plan:** `docs/09-delivery/azure-mvp-platform-delivery-plan.md`.  
+**Execution package:** `docs/09-delivery/foundation-slice-a-execution-package.md`.  
+**Evidence register:** `docs/09-delivery/foundation-slice-a-evidence-register.md`.
+
+Foundation Slice A is now explicitly documented as `WP-AZ-001` through `WP-AZ-008`. The execution package defines implementation tasks, acceptance criteria, evidence gates, ownership/authority boundaries, environment expectations and handoff conditions. The evidence register is the canonical working record for Foundation Slice A implementation proof. No Azure implementation completion is claimed until those gates are satisfied.
 
 **Chosen platform services:**
 - Azure Static Web Apps;
@@ -135,7 +139,7 @@ This roadmap separates faithful system reconstruction, Azure platform enablement
 |---|---|---|
 | Logical architecture | `READY_WITH_ASSUMPTIONS` | capability boundaries are usable; critical legal/business unknowns remain |
 | Azure MVP platform selection | `CONFIRMED` | cloud provider/core MVP services selected |
-| Azure resource deployment | `READY_FOR_DEVELOPMENT` | target selected; deployment evidence not yet recorded |
+| Azure resource deployment | `READY_FOR_DEVELOPMENT` | target selected; Foundation Slice A execution package exists; deployment evidence not yet recorded |
 | Current application implementation | `PARTIALLY_READY` | meaningful UI prototype; backend/business capability incomplete |
 | 41-use-case delivery | 0 `COMPLETE` | no objective E2E-complete use case yet |
 | First non-binding EOI slice | `READY_FOR_DEVELOPMENT` after foundation | preferred next vertical slice |
@@ -147,15 +151,19 @@ This roadmap separates faithful system reconstruction, Azure platform enablement
 - `docs/09-delivery/implementation-analysis-refresh-2026-08-29.md` — architecture-aware status analysis.
 - `docs/09-delivery/implementation-coverage-gap-matrix.md` — 41-use-case implementation evidence/status baseline.
 - `docs/09-delivery/azure-mvp-platform-delivery-plan.md` — Azure foundation implementation/evidence gates.
+- `docs/09-delivery/foundation-slice-a-execution-package.md` — executable `WP-AZ-001` through `WP-AZ-008` task/acceptance/evidence package.
+- `docs/09-delivery/foundation-slice-a-evidence-register.md` — Foundation Slice A evidence checklist and traceability register.
 - `docs/09-delivery/prioritized-backlog-diff.md` — existing implementation-gap-to-backlog translation.
 - `docs/02-architecture/azure-mvp-platform-decision.md` — confirmed Azure target decision.
 
 ## Immediate execution queue
 
-1. Provision and evidence the Azure MVP resource/cost-governance baseline.
-2. Deploy the current React/Vite application to Azure Static Web Apps through repeatable CI/CD.
-3. Integrate Microsoft Entra External ID for UC-IAM-001 and implement protected Azure Functions API validation.
-4. Establish Azure SQL persistence, Key Vault/Managed Identity and Application Insights/Azure Monitor foundations.
-5. Implement the opportunity read API and non-binding EOI vertical slice.
-6. Capture automated/E2E evidence and update the coverage matrix/tracker/traceability.
-7. Progress onboarding, NDA, integrations and later regulated journeys only as their critical questions are resolved.
+1. Execute `WP-AZ-001`: provision and evidence the Azure MVP resource/cost-governance baseline.
+2. Execute `WP-AZ-002`: deploy the current React/Vite application to Azure Static Web Apps through repeatable CI/CD.
+3. Execute `WP-AZ-003` and `WP-AZ-004`: integrate Microsoft Entra External ID for UC-IAM-001 and implement protected Azure Functions API validation.
+4. Execute `WP-AZ-005` through `WP-AZ-007`: establish Azure SQL persistence, Key Vault/Managed Identity and Application Insights/Azure Monitor foundations.
+5. Execute `WP-AZ-008`: prove repeatable gated CI/CD and source-to-deployment traceability.
+6. Reconcile Foundation Slice A evidence and status in `foundation-slice-a-evidence-register.md`.
+7. Implement the opportunity read API and non-binding EOI vertical slice (`WP-AZ-009`/`WP-AZ-010`).
+8. Capture audit/E2E evidence (`WP-AZ-011`/`WP-AZ-012`) and update the coverage matrix/tracker/traceability.
+9. Progress onboarding, NDA, integrations and later regulated journeys only as their critical questions are resolved.
