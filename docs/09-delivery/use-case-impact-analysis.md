@@ -10,16 +10,37 @@ That behaviour is useful for identifier discovery, but it is not a real change-i
 
 A use case is counted as **materially impacted** only when the monitoring window contains direct, attributable evidence such as:
 
-- the use-case ID in focused commit metadata or pull-request metadata;
+- the use-case ID in focused commit metadata or pull-request metadata that actually changed in the window;
 - the use-case ID in a dedicated changed file path;
 - the use-case ID in a bounded changed diff where the change is specific enough to attribute to the use case;
-- a bounded default-branch state difference during a history-integrity event.
+- a bounded default-branch or pull-request head state difference during a history-integrity event.
 
 Broad-reference suppression is applied **per attributed source**. If one changed file, PR body, or commit message enumerates more than eight distinct use-case IDs, that source is treated as **broad cross-reference coverage** rather than automatically claiming that every referenced use case changed in delivery. A batch change that touches many independent use-case-specific files still records each directly affected use case because each file is evaluated independently.
 
 PR titles remain direct metadata because they are short, explicit change labels. PR bodies are thresholded independently so templates, checklists, architecture summaries, or mapping descriptions cannot recreate an "all 41 impacted" result simply by listing the catalogue.
 
 Review/conversation-comment-only IDs and unchanged-context IDs are not promoted to material impact when their provenance cannot be established.
+
+## Pull-request checkpoint provenance
+
+The monitor persists a small machine-readable `monitoring-output/state.json` snapshot inside the existing 7-day workflow artifact. The snapshot records the current head SHA, title, and body for every open pull request.
+
+On the next successful run, that checkpoint allows the monitor to distinguish:
+
+- a newly created PR;
+- a PR merged during the monitoring window;
+- commits that entered an existing PR since the previous successful monitor run, regardless of the commits' author/committer dates;
+- a force-pushed or rewritten PR head;
+- an in-window edit to an existing PR title or body; and
+- review/comment-only activity that did not change structural PR evidence.
+
+This avoids using commit timestamps as a proxy for when a commit entered a PR. It also avoids GitHub's list-PR-commits 250-commit cap: when an existing PR head changes, the monitor compares the prior checkpoint head SHA with the current head through local git ancestry and inspects exactly the new commit range.
+
+If the previous state artifact is unavailable or expired, the monitor degrades conservatively: it does not replay an existing PR's historical title/body/diff as fresh material impact merely because the PR `updated_at` changed.
+
+## Oversized-diff handling
+
+For PR-head deltas and created/merged PR comparisons, use-case evidence is derived from locally fetched git objects and per-file diffs. The monitor therefore does not rely on GitHub's optional REST `patch` field, which can be omitted for oversized textual diffs. Missing REST patch text does not silently become "no use-case impact".
 
 ## Per-use-case analysis
 
@@ -44,6 +65,8 @@ For every materially impacted use case, Section 3 reports:
 - Broad files or metadata sources that enumerate many use cases are reported as cross-reference changes instead of inflating the material-impact count.
 - Reviewer comments alone cannot manufacture a material use-case impact claim.
 - History-rewrite evidence is attributed per changed file before change type is inferred.
+- Existing PR metadata is material only when the checkpoint proves that title/body changed in the monitoring window.
+- A commit is considered newly added to an existing PR by head ancestry against the previous monitor checkpoint, not by the commit's authored/committed timestamp.
 
 ## Why this improves Ubuntu Capital OS
 
