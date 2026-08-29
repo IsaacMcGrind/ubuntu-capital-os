@@ -89,11 +89,13 @@ The current recorded matrix remains the authoritative implementation coverage vi
 
 ### Coverage summary
 
+The counts below are derived from the row-level statuses in `implementation-coverage-gap-matrix.md`.
+
 | Status | Count | Interpretation |
 |---|---:|---|
-| `COMPONENT_COMPLETE` | 8 | UI/page-level component evidence only; not E2E business completion |
+| `COMPONENT_COMPLETE` | 7 | UI/page-level component evidence only; not E2E business completion |
 | `IN_DEVELOPMENT` | 16 | Partial/prototype implementation evidence exists |
-| `READY_FOR_DEVELOPMENT` | 17 | No substantive implementation evidence recorded |
+| `READY_FOR_DEVELOPMENT` | 18 | No substantive implementation evidence recorded |
 | `COMPLETE` | 0 | No use case has objective E2E completion evidence |
 
 ### Readiness interpretation
