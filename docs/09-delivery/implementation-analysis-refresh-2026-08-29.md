@@ -129,11 +129,11 @@ The principal gap is no longer "what cloud should we use?". The principal gap is
 | Documents | Blob + Functions + SQL metadata | Reports/download UI | Authorised file service, generation/upload, retention, access logs |
 | Notifications | Functions + provider TBD | Preference UI | trigger catalogue, persistence, delivery integration, delivery evidence |
 | Administration | Protected admin APIs/UI | no substantive admin capability | RBAC admin, opportunity lifecycle, reference data, controlled operations |
-| Audit & Reporting | SQL/storage + App Insights/Monitor for operational telemetry | no business audit pipeline | immutable/material event model, retention, review/reporting interfaces |
+| Audit & Reporting | SQL/storage + Application Insights/Azure Monitor for operational telemetry | no business audit pipeline | immutable/material event model, retention, review/reporting interfaces |
 
 ## 6. Azure foundation implementation status
 
-The Azure service selection is `CONFIRMED` as target architecture. Actual deployment is `NOT_ANALYSED` unless concrete Azure resource/deployment evidence is added.
+The Azure service selection is `CONFIRMED` as target architecture. The Azure foundation workstream is consistently `READY_FOR_DEVELOPMENT`: the target and evidence gates are defined, but no Azure provisioning/deployment evidence has yet been recorded. Absence of deployment evidence is an evidence gap, not a separate `NOT_ANALYSED` delivery status.
 
 | Azure capability | Target | Current delivery status | Evidence required |
 |---|---|---|---|
@@ -173,7 +173,7 @@ Still required:
 
 ### Phase 1 — Foundational capabilities
 
-**Status:** `IN_DEVELOPMENT` at UI level; backend foundation not proven.
+**Status:** `IN_DEVELOPMENT` at UI level; Azure foundation workstream `READY_FOR_DEVELOPMENT`; backend foundation not proven.
 
 Priority implementation sequence:
 
@@ -185,7 +185,7 @@ Priority implementation sequence:
 6. Azure SQL persistence foundation.
 7. audit-event model and persistence.
 8. Key Vault/Managed Identity.
-9. Application Insights/Monitor.
+9. Application Insights/Azure Monitor.
 10. automated build/test/deploy evidence.
 
 ### Phase 2 — First complete vertical slice
@@ -234,7 +234,7 @@ React/Vite frontend
     -> protected Azure Functions API
     -> Azure SQL persistence baseline
     -> Key Vault / Managed Identity
-    -> Application Insights / Monitor
+    -> Application Insights / Azure Monitor
     -> CI/CD evidence
 ```
 
@@ -255,6 +255,7 @@ Only after this foundation is proven should the team complete the first business
 
 **Architecture:** `READY_WITH_ASSUMPTIONS` for MVP cloud implementation.  
 **Cloud platform selection:** `CONFIRMED`.  
+**Azure foundation workstream:** `READY_FOR_DEVELOPMENT`; deployment evidence not yet recorded.  
 **Application implementation:** `PARTIALLY_READY` / prototype-heavy.  
 **First vertical slice:** `READY_FOR_DEVELOPMENT` after foundation dependencies.  
 **Regulated investment platform:** `PARTIALLY_READY`; critical business/legal/integration questions remain open.  
