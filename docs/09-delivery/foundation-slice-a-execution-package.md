@@ -28,6 +28,7 @@ The following rules are controlling:
 6. Evidence must be stored or linked in the Foundation Slice A evidence register.
 7. Any unresolved contradiction in ownership, status, IDs, evidence or environment configuration must be reconciled before progression.
 8. Production-grade regulated transaction capability is outside this slice.
+9. Foundation infrastructure must be reproducible from version-controlled provisioning definitions; manually configured Azure state alone cannot satisfy `WP-AZ-008` or the Foundation exit gate.
 
 ## 3. Foundation Slice A target architecture
 
@@ -50,6 +51,7 @@ Protected Azure Functions API
         +--> Application Insights / Azure Monitor
 
 CI/CD -> repeatable build/test/deploy -> Azure DEV/MVP
+Infrastructure as code -> recreate/reconcile Foundation resources
 Cost Management -> budgets / alerts / ownership
 ```
 
@@ -98,12 +100,14 @@ May provide application, integration, deployment and implementation evidence acc
 |---:|---|---|---|---|
 | 1 | `WP-AZ-001` | Azure baseline | `COMPONENT_COMPLETE` | none |
 | 2 | `WP-AZ-002` | Static Web Apps frontend | `COMPONENT_COMPLETE` | WP-AZ-001 |
-| 3 | `WP-AZ-003` | Entra External ID | `IN_DEVELOPMENT` | WP-AZ-001/002 |
+| 3 | `WP-AZ-003` | Entra External ID foundation | `COMPONENT_COMPLETE` | WP-AZ-001/002 |
 | 4 | `WP-AZ-004` | Protected Functions API | `COMPONENT_COMPLETE` | WP-AZ-003 |
 | 5 | `WP-AZ-005` | Azure SQL persistence | `COMPONENT_COMPLETE` | WP-AZ-004 |
 | 6 | `WP-AZ-006` | Key Vault + Managed Identity | `COMPONENT_COMPLETE` | WP-AZ-001/004/005 |
 | 7 | `WP-AZ-007` | Application Insights + Azure Monitor | `COMPONENT_COMPLETE` | WP-AZ-004 |
-| 8 | `WP-AZ-008` | CI/CD deployment evidence | `COMPONENT_COMPLETE` | all deployment targets used by the slice |
+| 8 | `WP-AZ-008` | Reproducible infrastructure + CI/CD deployment evidence | `COMPONENT_COMPLETE` | all Foundation resources and deployment targets |
+
+`WP-AZ-003` work-package completion is distinct from the broader `UC-IAM-001` use-case status. The identity foundation may reach `COMPONENT_COMPLETE` when its own evidence gate is satisfied while `UC-IAM-001` remains `IN_DEVELOPMENT` until protected backend enforcement, application integration and later E2E evidence reconcile.
 
 The sequence may overlap where technically safe, but evidence gates must still reconcile before Foundation Slice A is considered complete.
 
@@ -182,7 +186,8 @@ Establish the selected customer identity foundation for Ubuntu Capital investor 
 - valid test investor can authenticate;
 - invalid/unauthenticated flow fails safely;
 - authentication is not treated as complete based only on frontend route protection;
-- credential handling is delegated to the selected identity platform.
+- credential handling is delegated to the selected identity platform;
+- configuration and tests required by this identity-foundation package are reproducible and documented.
 
 **Required evidence**
 - redacted configuration evidence;
@@ -294,46 +299,56 @@ Make the DEV/MVP platform observable without logging sensitive data.
 - alert-rule evidence;
 - telemetry redaction/safety verification.
 
-### WP-AZ-008 — CI/CD deployment evidence
+### WP-AZ-008 — Reproducible infrastructure and CI/CD deployment evidence
 
 **Objective**  
-Make Foundation Slice A reproducible from source control rather than manually reconstructed Azure state.
+Make Foundation Slice A reproducible from source control rather than dependent on manually reconstructed Azure state.
 
 **Implementation tasks**
-- implement repeatable build/test/deploy workflow;
-- ensure failed build/test prevents successful deployment classification;
+- define the Foundation Azure resources in version-controlled infrastructure-as-code or equivalent declarative provisioning definitions;
+- include the resource-group baseline and all Foundation resources/configuration owned by `WP-AZ-001` and `WP-AZ-002` through `WP-AZ-007` that are reasonably automatable;
+- implement a repeatable provisioning/reconciliation workflow that can create a clean DEV/MVP foundation or reconcile drift against the declared state;
+- implement repeatable application build/test/deploy workflow;
+- ensure failed infrastructure validation or failed application build/test prevents successful deployment classification;
 - isolate environment configuration from committed secrets;
 - use approved service identity/connection;
-- record deployed revision;
+- record deployed revision and infrastructure-definition revision;
 - document rollback/recovery approach appropriate for MVP scope.
 
 **Acceptance criteria**
-- successful build/test/deploy workflow run exists;
-- intentionally failed validation demonstrates deployment blocking;
-- deployed revision maps to commit/PR;
+- version-controlled provisioning definitions exist for the Foundation Azure resources;
+- an authorised contributor can provision a clean DEV/MVP foundation or reconcile an existing one from those definitions without relying on undocumented portal-only steps;
+- infrastructure validation/plan and application build/test/deploy workflow evidence exists;
+- intentionally failed infrastructure or application validation demonstrates deployment blocking;
+- deployed application and provisioned infrastructure map to repository revisions;
 - deployment credentials are not committed;
-- another authorised contributor can understand the deployment process from repository documentation.
+- any unavoidable manual Azure steps are explicitly documented, justified and cannot represent material untracked Foundation state.
 
 **Required evidence**
-- successful workflow run link/reference;
-- failed/blocking workflow evidence;
-- deployed SHA/version;
+- infrastructure-as-code/declarative provisioning path and revision;
+- successful clean provision or reconciliation run reference;
+- infrastructure validation/plan output with sensitive identifiers redacted where required;
+- successful application workflow run link/reference;
+- failed/blocking infrastructure or application workflow evidence;
+- deployed application SHA/version and infrastructure-definition revision;
 - service identity/connection evidence with secrets redacted;
-- operational deployment notes.
+- operational deployment and reconstruction notes.
 
 ## 8. Cross-cutting acceptance controls
 
 Foundation Slice A cannot be declared `COMPONENT_COMPLETE` as a whole unless:
 
 - all eight work-package evidence records exist;
+- all eight work packages individually satisfy their `COMPONENT_COMPLETE` evidence gates;
 - no work package is advanced solely from design intent;
 - deployment and identity configuration are reproducible/documented;
+- Foundation Azure resources can be created or reconciled from version-controlled provisioning definitions, with any unavoidable manual steps explicitly documented and justified;
 - cost governance is active;
 - unauthenticated backend access is denied;
 - persistence has objective integration evidence;
 - secret handling and service identity are evidenced;
 - runtime telemetry and failure visibility are evidenced;
-- CI/CD maps deployed state to source revision;
+- CI/CD maps deployed application and infrastructure state to source revisions;
 - no unresolved critical repository-integrity contradiction remains.
 
 ## 9. Evidence storage and traceability contract
@@ -360,6 +375,8 @@ READY_FOR_DEVELOPMENT
 
 A work package must not skip directly to `COMPONENT_COMPLETE` without its evidence gate.
 
+Work-package status and business use-case status are evaluated independently. In particular, `WP-AZ-003` may be `COMPONENT_COMPLETE` while `UC-IAM-001` remains `IN_DEVELOPMENT` until the wider authentication use-case evidence is satisfied.
+
 Foundation Slice A completion does not advance the first business vertical slice to `COMPLETE`; it only establishes the platform prerequisites for `WP-AZ-009` onward.
 
 ## 11. Handoff to the first business vertical slice
@@ -385,4 +402,5 @@ This documentation package is complete when:
 4. environment and deployment expectations are recorded;
 5. evidence storage and redaction rules are recorded;
 6. roadmap and parent delivery-plan references reconcile;
-7. no claim is made that Azure resources are already implemented without evidence.
+7. Foundation reproducibility requirements are explicit and version-controlled infrastructure reconstruction is required before Foundation completion;
+8. no claim is made that Azure resources are already implemented without evidence.
