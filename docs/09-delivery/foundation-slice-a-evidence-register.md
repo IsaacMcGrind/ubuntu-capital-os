@@ -13,6 +13,7 @@
 - Architecture/design documents are not implementation evidence unless the record explicitly says the evidence only proves design intent.
 - External evidence links must be stable enough for an authorised project reviewer to retrieve later.
 - A work package cannot move to `COMPONENT_COMPLETE` until its required evidence gate is reconciled here or in an explicitly linked canonical evidence artifact.
+- `WP-AZ-008` requires version-controlled infrastructure provisioning/reconciliation evidence; manual Azure configuration alone cannot satisfy the Foundation reproducibility gate.
 
 ## Register
 
@@ -25,7 +26,7 @@
 | FSA-EV-005 | WP-AZ-005 | Planned evidence placeholder | Pending | Pending | Pending | `UNKNOWN` | Nothing yet; placeholder for Azure SQL evidence | Persistence implementation | OPEN |
 | FSA-EV-006 | WP-AZ-006 | Planned evidence placeholder | Pending | Pending | Pending | `UNKNOWN` | Nothing yet; placeholder for Key Vault/Managed Identity evidence | Runtime secret/service-identity integration | OPEN |
 | FSA-EV-007 | WP-AZ-007 | Planned evidence placeholder | Pending | Pending | Pending | `UNKNOWN` | Nothing yet; placeholder for Application Insights/Azure Monitor evidence | Runtime observability | OPEN |
-| FSA-EV-008 | WP-AZ-008 | Planned evidence placeholder | Pending | Pending | Pending | `UNKNOWN` | Nothing yet; placeholder for CI/CD deployment evidence | Repeatable gated deployment | OPEN |
+| FSA-EV-008 | WP-AZ-008 | Planned evidence placeholder | Pending | Pending | Pending | `UNKNOWN` | Nothing yet; placeholder for reproducible infrastructure + CI/CD evidence | Infrastructure reconstruction/reconciliation or repeatable gated deployment | OPEN |
 
 ## Work-package evidence checklist
 
@@ -53,13 +54,15 @@ Required before `COMPONENT_COMPLETE`:
 
 ### WP-AZ-003 — Entra External ID
 
-Required before its target progression:
+Required before `COMPONENT_COMPLETE` for the **work package**:
 - [ ] customer identity configuration evidence;
 - [ ] frontend sign-in integration evidence;
 - [ ] successful valid-investor sign-in test;
 - [ ] invalid/unauthenticated test;
 - [ ] backend token/principal validation contract;
 - [ ] confirmation application code does not handle user credentials directly.
+
+`WP-AZ-003` completion does not by itself make `UC-IAM-001` complete; the broader authentication use case remains governed by protected backend enforcement and E2E evidence.
 
 ### WP-AZ-004 — Protected Azure Functions API
 
@@ -100,15 +103,20 @@ Required before `COMPONENT_COMPLETE`:
 - [ ] telemetry retention/cost configuration;
 - [ ] sensitive-data logging review.
 
-### WP-AZ-008 — CI/CD deployment evidence
+### WP-AZ-008 — Reproducible infrastructure and CI/CD deployment evidence
 
 Required before `COMPONENT_COMPLETE`:
-- [ ] successful build/test/deploy workflow run;
-- [ ] failed validation shown to block deployment;
-- [ ] deployed revision traceability;
+- [ ] version-controlled infrastructure-as-code or equivalent declarative provisioning definitions for Foundation resources;
+- [ ] successful clean provision or reconciliation run for the Azure DEV/MVP Foundation;
+- [ ] infrastructure validation/plan evidence;
+- [ ] successful application build/test/deploy workflow run;
+- [ ] failed infrastructure or application validation shown to block deployment;
+- [ ] deployed application revision traceability;
+- [ ] infrastructure-definition revision traceability;
 - [ ] approved service identity/connection evidence;
 - [ ] no committed deployment credential;
-- [ ] deployment/rollback operational notes.
+- [ ] deployment, reconstruction/reconciliation and rollback operational notes;
+- [ ] any unavoidable manual Azure steps explicitly documented and justified.
 
 ## Foundation Slice A acceptance summary
 
@@ -116,11 +124,11 @@ Required before `COMPONENT_COMPLETE`:
 |---|---|---:|---|---|
 | WP-AZ-001 | `READY_FOR_DEVELOPMENT` | No | FSA-EV-001 | Awaiting implementation evidence |
 | WP-AZ-002 | `READY_FOR_DEVELOPMENT` | No | FSA-EV-002 | Awaiting implementation evidence |
-| WP-AZ-003 | `READY_FOR_DEVELOPMENT` | No | FSA-EV-003 | Awaiting implementation evidence |
+| WP-AZ-003 | `READY_FOR_DEVELOPMENT` | No | FSA-EV-003 | Awaiting work-package identity-foundation evidence; UC-IAM-001 remains independently governed |
 | WP-AZ-004 | `READY_FOR_DEVELOPMENT` | No | FSA-EV-004 | Awaiting implementation evidence |
 | WP-AZ-005 | `READY_FOR_DEVELOPMENT` | No | FSA-EV-005 | Awaiting implementation evidence |
 | WP-AZ-006 | `READY_FOR_DEVELOPMENT` | No | FSA-EV-006 | Awaiting implementation evidence |
 | WP-AZ-007 | `READY_FOR_DEVELOPMENT` | No | FSA-EV-007 | Awaiting implementation evidence |
-| WP-AZ-008 | `READY_FOR_DEVELOPMENT` | No | FSA-EV-008 | Awaiting implementation evidence |
+| WP-AZ-008 | `READY_FOR_DEVELOPMENT` | No | FSA-EV-008 | Awaiting reproducible infrastructure + CI/CD evidence |
 
 **Foundation Slice A overall:** `READY_FOR_DEVELOPMENT` — execution package documented; no infrastructure implementation completion is claimed.
