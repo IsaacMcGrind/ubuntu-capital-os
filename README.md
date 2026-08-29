@@ -41,12 +41,12 @@ This is a target architecture decision, not proof that these Azure resources are
 
 ## Delivery position
 
-The recorded implementation coverage remains:
+The recorded implementation coverage is derived from the 41 row-level statuses in `docs/09-delivery/implementation-coverage-gap-matrix.md`:
 
 - **41 use cases mapped**
-- **8 `COMPONENT_COMPLETE`** — UI/page-level only
+- **7 `COMPONENT_COMPLETE`** — UI/page-level only
 - **16 `IN_DEVELOPMENT`** — partial/prototype evidence
-- **17 `READY_FOR_DEVELOPMENT`** — no substantive implementation evidence
+- **18 `READY_FOR_DEVELOPMENT`** — no substantive implementation evidence
 - **0 `COMPLETE`**
 
 The recommended next delivery step is the Azure foundation slice documented in `docs/09-delivery/azure-mvp-platform-delivery-plan.md`, followed by the first complete business vertical slice: authenticated opportunity discovery plus a **non-binding expression of interest**.
