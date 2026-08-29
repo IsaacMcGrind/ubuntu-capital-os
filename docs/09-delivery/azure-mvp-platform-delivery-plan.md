@@ -29,6 +29,8 @@ The foundation must prove deployability, authentication, protected backend execu
 | 11 | Audit evidence for first slice | SQL/storage + telemetry separation | UC-AUD-001 | `IN_DEVELOPMENT` |
 | 12 | E2E acceptance evidence | deployed Azure environment | first vertical slice | `READY_FOR_ACCEPTANCE` |
 
+Each sequence item has a one-to-one work-package ID below. Evidence must be recorded against the matching ID so that delivery cannot be skipped or attributed to the wrong package.
+
 ## 3. Work-package evidence gates
 
 ### WP-AZ-001 — Azure baseline
@@ -124,7 +126,21 @@ The foundation must prove deployability, authentication, protected backend execu
 - alert or alert-rule evidence;
 - telemetry contains no credentials/tokens/sensitive payloads.
 
-### WP-AZ-008 — Opportunity API
+### WP-AZ-008 — CI/CD deployment evidence
+
+**Deliverables**
+- repeatable build, test and deployment workflow for the selected Azure MVP resources;
+- environment-specific configuration handled outside committed secrets;
+- deployment result linked to the repository revision that produced it;
+- failure path that prevents a failed build/test from being treated as a successful deployment.
+
+**Evidence gate**
+- successful workflow run with build/test/deploy steps;
+- failed validation demonstrably blocks deployment;
+- deployed revision can be traced back to a commit/PR;
+- deployment credentials use an approved service identity/connection and are not committed to the repository.
+
+### WP-AZ-009 — Opportunity API
 
 **Deliverables**
 - canonical opportunity read model;
@@ -137,7 +153,7 @@ The foundation must prove deployability, authentication, protected backend execu
 - unavailable/restricted opportunity test;
 - traceable request-to-data evidence.
 
-### WP-AZ-009 — Non-binding expression of interest
+### WP-AZ-010 — Non-binding expression of interest
 
 **Deliverables**
 - EOI endpoint/workflow;
@@ -154,6 +170,35 @@ The foundation must prove deployability, authentication, protected backend execu
 - invalid input is rejected;
 - database failure is safely surfaced/recoverable;
 - action remains explicitly non-binding.
+
+### WP-AZ-011 — Audit evidence for first slice
+
+**Deliverables**
+- business audit events for authentication-sensitive and EOI actions;
+- actor, action, resource, timestamp, outcome and correlation references;
+- separation between business audit evidence and operational telemetry;
+- authorised review/query path for the captured audit records.
+
+**Evidence gate**
+- successful and denied first-slice actions create the required audit records;
+- records can be correlated to the originating request without exposing credentials/tokens;
+- audit evidence persists independently of transient application logs;
+- authorised reviewer can retrieve the relevant evidence for the acceptance scenario.
+
+### WP-AZ-012 — E2E acceptance evidence
+
+**Deliverables**
+- deployed-environment E2E scenario for the first vertical slice;
+- positive and mandatory negative-path test evidence;
+- traceability links from use case to implementation, deployment, test and evidence artifacts;
+- acceptance package suitable for a human readiness decision.
+
+**Evidence gate**
+- authorised investor can authenticate, discover permitted opportunity data and submit a non-binding EOI end to end;
+- unauthorised, duplicate, invalid, unavailable-opportunity and backend-failure scenarios are evidenced;
+- persistence, audit, telemetry and deployment references reconcile to the tested revision;
+- no unresolved critical question invalidates the non-binding first-slice interpretation;
+- evidence is linked into the delivery tracker/traceability model before `READY_FOR_ACCEPTANCE` is considered.
 
 ## 4. Deferred services
 
@@ -213,4 +258,4 @@ The first business slice may move to `READY_FOR_ACCEPTANCE` only when all of the
 
 ## 8. Next action
 
-Start with **WP-AZ-001 through WP-AZ-007** as Foundation Slice A, then implement **WP-AZ-008 and WP-AZ-009** as the first business vertical slice.
+Start with **WP-AZ-001 through WP-AZ-008** as Foundation Slice A, then implement **WP-AZ-009 and WP-AZ-010** as the first business vertical slice. Complete **WP-AZ-011 and WP-AZ-012** before the slice is considered for `READY_FOR_ACCEPTANCE`.
