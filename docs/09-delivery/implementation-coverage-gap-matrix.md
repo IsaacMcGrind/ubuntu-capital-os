@@ -15,10 +15,12 @@ Important gating rule: `COMPONENT_COMPLETE` in this matrix means UI/page-level e
 
 ## Coverage Summary
 
+The summary below is derived from the 41 row-level delivery statuses in this matrix.
+
 - Total use cases mapped: 41
-- `COMPONENT_COMPLETE` (UI-level only): 8
+- `COMPONENT_COMPLETE` (UI-level only): 7
 - `IN_DEVELOPMENT` (partial/prototype): 16
-- `READY_FOR_DEVELOPMENT` (no substantive implementation evidence): 17
+- `READY_FOR_DEVELOPMENT` (no substantive implementation evidence): 18
 - `COMPLETE`: 0
 
 ## Use-case Mapping

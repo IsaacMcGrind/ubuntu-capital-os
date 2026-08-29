@@ -70,6 +70,12 @@ contractors/
   80kDevelopers/
     README.md
     implementation-status.md
+  Corefinity/
+    README.md
+    implementation-status.md
+  HerLogicSolutions/
+    README.md
+    implementation-status.md
 
 schemas/
   use-case.schema.json
@@ -112,6 +118,10 @@ Establish a reliable baseline before implementation begins.
 - `docs/00-context/system-boundary.md`
 - `contractors/80kDevelopers/README.md`
 - `contractors/80kDevelopers/implementation-status.md`
+- `contractors/Corefinity/README.md`
+- `contractors/Corefinity/implementation-status.md`
+- `contractors/HerLogicSolutions/README.md`
+- `contractors/HerLogicSolutions/implementation-status.md`
 - completed evidence register
 - architecture decision log or baseline section
 
