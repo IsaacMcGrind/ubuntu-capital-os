@@ -6,45 +6,75 @@ Ubuntu Capital OS is the evidence-first system reconstruction and delivery repos
 
 `PARTIALLY_READY`
 
-The repository baseline captures the supplied reference-platform evidence, reverse-engineering material, the 41-use-case catalogue, the execution protocol, and the current Ubuntu Capital implementation references. Material behaviour that has not been directly evidenced remains explicitly classified as `INFERRED` or `UNKNOWN`.
+Architecture readiness has materially improved: the repository now contains a system boundary, high-level logical architecture, priority use-case architecture map, detailed UC-IAM-001 architecture analysis, and a confirmed Azure MVP cloud platform direction.
+
+Implementation readiness remains lower than architecture readiness. The current recorded implementation evidence still describes a predominantly React/Vite front-end prototype with no use case yet supported by objective end-to-end completion evidence.
 
 ## Current Ubuntu Capital implementation
 
-The current implementation supplied by the project owner is now tracked as part of the OS context:
+The current implementation tracked by the OS is:
 
 - **Live website:** https://80kdevelopers.com/ubuntucapital/
 - **Implementation source repository:** https://github.com/HarleyJoker/ubuntu-capital-platform
 - **Implementation provenance:** `contractors/80kDevelopers/`
 
-The connected ChatGPT GitHub application cannot currently inspect `HarleyJoker/ubuntu-capital-platform`; the access attempt returned `404 Not Found`. Therefore the existence of the deployed website is recorded as implementation progress, while exact use-case coverage remains unverified until the codebase and live flows can be reconciled against the 41-use-case catalogue.
+The connected ChatGPT GitHub application cannot directly inspect `HarleyJoker/ubuntu-capital-platform`. The current 41-use-case implementation coverage matrix is therefore treated as recorded implementation evidence from the prior inspection captured in this OS repository. No new source-code inspection is implied by later architecture or infrastructure documentation.
+
+## Architecture and chosen MVP cloud platform
+
+Technology-neutral architecture is recorded under `docs/02-architecture/` and remains authoritative for logical capability ownership and system boundaries.
+
+The MVP cloud implementation direction is now confirmed in `docs/02-architecture/azure-mvp-platform-decision.md`:
+
+- Azure Static Web Apps — React/Vite frontend hosting
+- Microsoft Entra External ID — customer identity/authentication
+- Azure Functions — backend/API compute
+- Azure SQL Database — relational persistence where required
+- Azure Blob Storage — documents/generated files
+- Azure Key Vault — secrets/configuration
+- Managed Identity — Azure service-to-service identity where supported
+- Application Insights + Azure Monitor — telemetry, health and alerting
+- Azure Cost Management — budgets and cost governance
+- GitHub Actions or Azure DevOps — repeatable CI/CD as delivery requires
+
+This is a target architecture decision, not proof that these Azure resources are already deployed or integrated.
+
+## Delivery position
+
+The recorded implementation coverage remains:
+
+- **41 use cases mapped**
+- **8 `COMPONENT_COMPLETE`** — UI/page-level only
+- **16 `IN_DEVELOPMENT`** — partial/prototype evidence
+- **17 `READY_FOR_DEVELOPMENT`** — no substantive implementation evidence
+- **0 `COMPLETE`**
+
+The recommended next delivery step is the Azure foundation slice documented in `docs/09-delivery/azure-mvp-platform-delivery-plan.md`, followed by the first complete business vertical slice: authenticated opportunity discovery plus a **non-binding expression of interest**.
 
 ## Controlling documents
 
 - `AGENT.md` defines how autonomous agents and contributors must operate.
 - `plan.md` is the single controlling execution plan and canonical repository-structure definition.
-- Documents under `docs/` are reconstruction and delivery outputs. They must not compete with `plan.md` as execution instructions.
+- Documents under `docs/` are reconstruction, architecture and delivery outputs. They must not compete with `plan.md` as execution instructions.
 - `contractors/` records implementation provenance and contractor delivery evidence. It does not replace use-case, traceability, testing, or E2E evidence under `docs/`.
 
-## Canonical repository structure
+## Repository structure and integrity note
 
-- `docs/00-context` — source inventory, terminology, and system boundary
-- `docs/01-system-understanding` — system purpose, evidence, and assumptions
-- `docs/02-actors-and-permissions` — actors, roles, authority, and permissions matrix
+`plan.md` remains the canonical structure definition. The repository currently also contains a working architecture tree under `docs/02-architecture/`, introduced as part of the architecture workstream. This is a visible structure exception and should be reconciled deliberately rather than silently treated as a replacement for the canonical `docs/02-actors-and-permissions/` phase.
+
+Key active areas include:
+
+- `docs/00-context` — source inventory, terminology and boundary context
+- `docs/01-system-understanding` — system purpose, evidence and assumptions
+- `docs/02-architecture` — working system/logical architecture and architecture decisions
 - `docs/03-functional-domains` — domains and capability map
 - `docs/04-use-cases` — master catalogue and detailed specifications
-- `docs/05-business-rules` — extracted rules and controls
-- `docs/06-journeys` — end-to-end journeys and diagrams
-- `docs/07-state-models` — lifecycle and transition models
-- `docs/08-integrations` — integration catalogue and dependency behaviour
-- `docs/09-delivery` — implementation roadmap, backlog, and E2E tracker
-- `docs/10-traceability` — source-to-requirement-to-test-to-evidence traceability
+- `docs/09-delivery` — implementation analysis, roadmap, coverage, backlog and monitoring
 - `docs/11-open-questions` — unresolved questions
-- `docs/12-validation` — validation plan for inferred and unknown behaviour
-- `docs/13-risks` — gap and risk register
-- `contractors/80kDevelopers` — current 80K Developers implementation references, provenance, and delivery-status evidence
-- `schemas` — JSON schemas for structured outputs
-- `data` — machine-readable reconstruction artefacts
-- `output` — executive reconstruction summaries
+- `contractors/80kDevelopers` — implementation evidence/provenance
+- `contractors/HerLogicSolutions` — Azure cloud architecture/cost workstream evidence
+- `contractors/Corefinity` — architecture contribution provenance where recorded
+- `schemas`, `data`, `output` — structured evidence, machine-readable artifacts and summaries
 
 ## Evidence policy
 
@@ -55,10 +85,12 @@ Every material finding uses one of:
 - `UNKNOWN`
 - `CONTRADICTED`
 
-A `CONFIRMED` classification requires direct supplied evidence. Every non-confirmed finding must state the uncertainty, impact, evidence needed, and validation method.
+A `CONFIRMED` classification requires direct supplied evidence. Every non-confirmed finding must state the uncertainty, impact, evidence needed and validation method.
+
+Architecture selection does not promote delivery status. A use case can become `COMPLETE` only when its required vertical-slice and E2E evidence exists.
 
 ## Integrity policy
 
-Counts, links, IDs, evidence classifications, directory names, implementation claims, and required outputs must reconcile across the repository. A contributor or agent must repair inconsistencies before progressing to the next phase.
+Counts, links, IDs, evidence classifications, directory names, implementation claims and required outputs must reconcile across the repository. A contributor or agent must repair inconsistencies before progressing to the next phase.
 
-The source base is still insufficient to reproduce regulated investment execution faithfully. The next evidence priority is to gain access to the current implementation repository, walk the deployed website against the 41 use cases, and directly validate onboarding, accreditation/KYC, opportunity detail, NDA, commitment, settlement, portfolio update, reporting, administration, security, testing, and failure-recovery behaviour.
+The source base is still insufficient to reproduce regulated investment execution faithfully. Critical remaining evidence priorities include onboarding/eligibility rules, KYC/AML integration, NDA lifecycle, investment legal meaning, settlement/custody/reconciliation, portfolio valuation, internal permissions, audit/reporting, retention/privacy, and operational recovery.
