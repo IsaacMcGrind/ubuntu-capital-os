@@ -2,9 +2,9 @@
 """Provenance-safe impact analysis for Ubuntu Capital repository monitoring.
 
 This version builds on repository_monitor_v2 but replaces the material-use-case
-classifier so broad-reference thresholds are applied per attributed file, PR
-comment-only IDs are never promoted to material impact, and history rewrites retain
-per-file attribution.
+classifier so broad-reference thresholds are applied per attributed file and
+metadata source, PR comment-only IDs are never promoted to material impact, and
+history rewrites retain per-file attribution.
 """
 
 from __future__ import annotations
@@ -13,6 +13,38 @@ import re
 
 import repository_monitor as base
 import repository_monitor_v2 as v2
+
+
+def record_metadata_signals(
+    item: dict,
+    text: str,
+    signal: str,
+    *,
+    always_direct: bool = False,
+) -> set[str]:
+    """Classify metadata IDs without letting broad metadata inflate impact counts.
+
+    Short, focused metadata is useful direct evidence. A PR body or commit message
+    that enumerates many use cases is instead treated as cross-reference coverage,
+    matching the same safeguard applied to broad changed files.
+    """
+    ids = set(re.findall(base.USE_CASE_PATTERN, text or ""))
+    if not ids:
+        return set()
+
+    if not always_direct and len(ids) > v2.BROAD_REFERENCE_THRESHOLD:
+        v2.BROAD_REFERENCES.append(
+            {
+                "source": v2.source_label(item) + f" — broad {signal}",
+                "files": [],
+                "ids": sorted(ids),
+            }
+        )
+        return set()
+
+    for uid in sorted(ids):
+        v2.add_direct_impact(uid, item, [], signal)
+    return ids
 
 
 def record_file_signals_per_file(item: dict, file_evidence: list[dict]) -> set[str]:
@@ -86,10 +118,12 @@ def material_use_case_changes(catalogue: dict[str, str], commits, pull_requests,
     all_direct_ids: set[str] = set()
 
     for item in commits:
-        metadata_ids = set(re.findall(base.USE_CASE_PATTERN, item.get("message") or ""))
-        for uid in sorted(metadata_ids):
-            v2.add_direct_impact(uid, item, [], "commit metadata")
-            all_direct_ids.add(uid)
+        metadata_ids = record_metadata_signals(
+            item,
+            item.get("message") or "",
+            "commit metadata",
+        )
+        all_direct_ids.update(metadata_ids)
 
         direct_file_ids = record_file_signals_per_file(item, v2.commit_file_evidence(item))
         all_direct_ids.update(direct_file_ids)
@@ -110,16 +144,32 @@ def material_use_case_changes(catalogue: dict[str, str], commits, pull_requests,
                     all_direct_ids.add(uid)
             else:
                 v2.BROAD_REFERENCES.append(
-                    {"source": v2.source_label(item), "files": [], "ids": sorted(residual)}
+                    {
+                        "source": v2.source_label(item) + " — broad unattributed commit references",
+                        "files": [],
+                        "ids": sorted(residual),
+                    }
                 )
 
     for item in pull_requests:
         body, file_evidence = v2.pr_details_and_file_evidence(item)
-        metadata = "\n".join(value or "" for value in (item.get("title"), body))
-        metadata_ids = set(re.findall(base.USE_CASE_PATTERN, metadata))
-        for uid in sorted(metadata_ids):
-            v2.add_direct_impact(uid, item, [], "PR title/body metadata")
-            all_direct_ids.add(uid)
+
+        # A focused PR title is always intentional direct metadata. The body is
+        # thresholded independently because templates/mapping descriptions often
+        # enumerate many use cases without materially changing each one.
+        title_ids = record_metadata_signals(
+            item,
+            item.get("title") or "",
+            "PR title metadata",
+            always_direct=True,
+        )
+        body_ids = record_metadata_signals(
+            item,
+            body,
+            "PR body metadata",
+        )
+        metadata_ids = title_ids | body_ids
+        all_direct_ids.update(metadata_ids)
 
         direct_file_ids = record_file_signals_per_file(item, file_evidence)
         all_direct_ids.update(direct_file_ids)
