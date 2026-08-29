@@ -77,23 +77,23 @@ This roadmap separates faithful system reconstruction, Azure platform enablement
 
 ## Phase 3 — Controlled Due Diligence and Investor Onboarding
 
-**Included use cases:** UC-ONB-001 to UC-ONB-003, UC-DD-001, UC-DD-002, UC-PROFILE-001, UC-INT-001 and UC-INT-002 where validated.
+**Included use cases:** UC-ONB-001 to UC-ONB-003, UC-DD-001, UC-DD-002 and UC-PROFILE-001.
 
-**Business outcome:** prospective investors can become eligible and receive controlled access to restricted deal material.
+**Business outcome:** prospective investors can progress through onboarding and controlled due-diligence preparation while the external-integration work required for KYC/AML and e-signature is delivered under Phase 4.
 
-**Technical outcome:** persisted onboarding state, eligibility rules, KYC/AML integration, compliance review, NDA/e-sign evidence, Blob-backed restricted document access, expiry/revocation and notifications.
+**Technical outcome:** persisted onboarding state, eligibility rules, compliance-review state, NDA/data-room state models, Blob-backed restricted document access, expiry/revocation and notification hooks. Phase 3 cannot exit until its required Phase 4 external-integration dependencies are proven.
 
-**Exit criteria:** legal/compliance owners approve rules; external-provider behaviour is confirmed; access-leakage and recovery tests pass.
+**Exit criteria:** legal/compliance owners approve rules; required external-provider dependencies are complete; access-leakage and recovery tests pass.
 
-## Phase 4 — Investment Commitment and Communications
+## Phase 4 — External Integrations, Investment Commitment and Communications
 
-**Included use cases:** UC-INV-001 to UC-INV-003, UC-INT-003 and related notification capability.
+**Included use cases:** UC-INT-001, UC-INT-002, UC-INT-003, UC-INV-001 to UC-INV-003 and related notification capability.
 
-**Business outcome:** eligible investors can submit and manage investment intent under approved legal rules.
+**Business outcome:** validated external identity/agreement/messaging integrations support eligibility, due diligence and investment-intent workflows under approved legal rules.
 
-**Technical outcome:** commitment/EOI lifecycle, approvals, idempotency, limits, retries, notifications, audit and operational recovery.
+**Technical outcome:** KYC/AML provider integration, e-signature evidence, commitment/EOI lifecycle, approvals, idempotency, limits, retries, notifications, audit and operational recovery.
 
-**Exit criteria:** binding/non-binding interpretation is explicit and approved; all critical states and exception paths are validated.
+**Exit criteria:** provider behaviour is validated; binding/non-binding interpretation is explicit and approved; all critical states and exception paths are validated.
 
 ## Phase 5 — Funding, Settlement and Reconciliation
 
