@@ -155,9 +155,35 @@ def collect_pr_activity_with_window_provenance(since):
     return items
 
 
+def paginated_commit_detail(sha: str) -> tuple[dict, list[dict]]:
+    """Fetch every available file page for a GitHub commit.
+
+    The GitHub commit endpoint paginates large file lists. Using a single response
+    can silently omit later files and therefore lose directly attributable UC IDs.
+    Metadata is taken from the first page; file entries are accumulated until the
+    endpoint returns fewer than 100 files, with the documented 3,000-file ceiling.
+    """
+    first: dict | None = None
+    files: list[dict] = []
+    for page in range(1, 31):
+        detail = base.api(
+            f"/repos/{base.REPO}/commits/{sha}",
+            {"per_page": 100, "page": page},
+        )
+        if first is None:
+            first = detail
+        batch = detail.get("files", []) if isinstance(detail, dict) else []
+        files.extend(batch)
+        if len(batch) < 100:
+            break
+    if first is None:
+        raise RuntimeError(f"GitHub did not return commit detail for {sha}.")
+    return first, files
+
+
 def api_commit_evidence(sha: str) -> tuple[dict, list[dict]]:
-    """Return full-message metadata and per-file changed evidence for one PR commit."""
-    detail = base.api(f"/repos/{base.REPO}/commits/{sha}")
+    """Return full-message metadata and complete per-file evidence for one PR commit."""
+    detail, files = paginated_commit_detail(sha)
     commit_meta = detail.get("commit", {})
     message = commit_meta.get("message") or ""
     synthetic = {
@@ -167,7 +193,7 @@ def api_commit_evidence(sha: str) -> tuple[dict, list[dict]]:
         "files": [],
     }
     evidence: list[dict] = []
-    for file_entry in detail.get("files", []):
+    for file_entry in files:
         filename = file_entry.get("filename")
         previous = file_entry.get("previous_filename")
         paths = [path for path in (previous, filename) if path]
@@ -251,9 +277,15 @@ def material_use_case_changes(catalogue: dict[str, str], commits, pull_requests,
         if mode == "none":
             residual = set(item.get("use_case_ids", []))
             if residual:
+                suffix = "comment/review-only window activity"
+                if item.get("material_pr_verification_error"):
+                    suffix = (
+                        "structural activity verification unavailable: "
+                        + item["material_pr_verification_error"]
+                    )
                 v2.BROAD_REFERENCES.append(
                     {
-                        "source": v2.source_label(item) + " — comment/review-only window activity",
+                        "source": v2.source_label(item) + f" — {suffix}",
                         "files": [],
                         "ids": sorted(residual),
                     }
