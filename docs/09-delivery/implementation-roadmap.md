@@ -155,7 +155,7 @@ This roadmap separates faithful system reconstruction, Azure platform enablement
 1. Provision and evidence the Azure MVP resource/cost-governance baseline.
 2. Deploy the current React/Vite application to Azure Static Web Apps through repeatable CI/CD.
 3. Integrate Microsoft Entra External ID for UC-IAM-001 and implement protected Azure Functions API validation.
-4. Establish Azure SQL persistence, Key Vault/Managed Identity and App Insights/Monitor foundations.
+4. Establish Azure SQL persistence, Key Vault/Managed Identity and Application Insights/Azure Monitor foundations.
 5. Implement the opportunity read API and non-binding EOI vertical slice.
 6. Capture automated/E2E evidence and update the coverage matrix/tracker/traceability.
 7. Progress onboarding, NDA, integrations and later regulated journeys only as their critical questions are resolved.
