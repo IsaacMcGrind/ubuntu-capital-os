@@ -7,6 +7,7 @@ Corefinity contribution evidence is supporting project evidence only. It does no
 ## Current evidence boundary
 
 - Architecture-analysis contributions are referenced in Ubuntu Capital OS architecture and delivery documentation where recorded.
+- `contribution-log.md` records repository-observable contributor attribution, including the confirmed `kg-m3` architecture contribution merged through PR #11.
 - `new.md` is an existing historical placeholder and is not delivery evidence by itself.
 - No independent product, backend, deployment, infrastructure, or end-to-end implementation completion is established merely by the existence of this contractor directory.
 
@@ -20,4 +21,4 @@ Corefinity does not have independent authority through this repository to:
 - approve production readiness;
 - redefine contractor or project authority.
 
-See `implementation-status.md` for the currently recorded contribution status.
+See `contribution-log.md` for confirmed contributor/artifact provenance and `implementation-status.md` for the currently recorded contribution status.
