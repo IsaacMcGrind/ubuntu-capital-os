@@ -162,8 +162,8 @@ Foundation Slice A is now explicitly documented as `WP-AZ-001` through `WP-AZ-00
 2. Execute `WP-AZ-002`: deploy the current React/Vite application to Azure Static Web Apps through repeatable CI/CD.
 3. Execute `WP-AZ-003` and `WP-AZ-004`: integrate Microsoft Entra External ID for UC-IAM-001 and implement protected Azure Functions API validation.
 4. Execute `WP-AZ-005` through `WP-AZ-007`: establish Azure SQL persistence, Key Vault/Managed Identity and Application Insights/Azure Monitor foundations.
-5. Execute `WP-AZ-008`: prove repeatable gated CI/CD and source-to-deployment traceability.
-6. Reconcile Foundation Slice A evidence and status in `foundation-slice-a-evidence-register.md`.
+5. Execute `WP-AZ-008`: prove version-controlled Foundation infrastructure reconstruction/reconciliation, gated CI/CD and source-to-deployment traceability.
+6. Reconcile Foundation Slice A evidence and status in `docs/09-delivery/foundation-slice-a-evidence-register.md`.
 7. Implement the opportunity read API and non-binding EOI vertical slice (`WP-AZ-009`/`WP-AZ-010`).
 8. Capture audit/E2E evidence (`WP-AZ-011`/`WP-AZ-012`) and update the coverage matrix/tracker/traceability.
 9. Progress onboarding, NDA, integrations and later regulated journeys only as their critical questions are resolved.
