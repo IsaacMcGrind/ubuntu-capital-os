@@ -22,7 +22,7 @@ The foundation must prove deployability, authentication, protected backend execu
 | 4 | Protected API foundation | Azure Functions | IAM + all protected use cases | `COMPONENT_COMPLETE` |
 | 5 | Persistence foundation | Azure SQL | ONB, OPP, INV, PORT, ADMIN, AUD | `COMPONENT_COMPLETE` |
 | 6 | Secrets/service identity | Key Vault + Managed Identity | Cross-cutting | `COMPONENT_COMPLETE` |
-| 7 | Observability | App Insights + Azure Monitor | AUD/OPS and all runtime flows | `COMPONENT_COMPLETE` |
+| 7 | Observability | Application Insights + Azure Monitor | AUD/OPS and all runtime flows | `COMPONENT_COMPLETE` |
 | 8 | CI/CD deployment evidence | GitHub Actions/Azure DevOps | Cross-cutting | `COMPONENT_COMPLETE` |
 | 9 | Opportunity read model/API | Functions + SQL | UC-OPP-001/002/003 | `IN_DEVELOPMENT` |
 | 10 | Non-binding EOI workflow | Functions + SQL | UC-INV-001 | `IN_DEVELOPMENT` |
