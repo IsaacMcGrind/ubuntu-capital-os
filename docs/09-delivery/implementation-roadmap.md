@@ -7,6 +7,8 @@
 
 This roadmap separates faithful system reconstruction, Azure platform enablement, business-capability delivery and later production hardening. No production investment transaction should be released until critical legal, compliance, settlement, custody, ownership and permission questions are resolved.
 
+`plan.md` remains the controlling implementation sequence. This roadmap is subordinate to it. Because required canonical outputs and repository-integrity conditions are still incomplete, implementation progression must stop until the applicable Phase 0 through Phase 4 requirements and `AGENT.md` validation rules reconcile. The post-merge repository-level finding is recorded in `docs/09-delivery/foundation-slice-a-governance-reconciliation.md`.
+
 ## Phase 0 — Context and Architecture Baseline
 
 **Status:** `ANALYSIS_IN_PROGRESS` — materially advanced.
@@ -22,17 +24,18 @@ This roadmap separates faithful system reconstruction, Azure platform enablement
 - Azure cloud architecture and MVP cost baseline;
 - evidence-grounded repository monitoring.
 
-**Remaining gate:** reconcile repository structure/traceability, close critical architecture/open-question dependencies, and preserve the distinction between architecture selection and implementation evidence.
+**Remaining gate:** reconcile repository structure, plan-required outputs, traceability, validation, open-question/risk linkage and all other integrity conditions required before implementation progression.
 
 ## Phase 1A — Azure MVP Platform Foundation
 
-**Status:** `READY_FOR_DEVELOPMENT`.
+**Status:** `READY_FOR_DEVELOPMENT` as a documented technical package; **execution is blocked by the pre-implementation repository gate**.
 
 **Primary delivery plan:** `docs/09-delivery/azure-mvp-platform-delivery-plan.md`.  
 **Execution package:** `docs/09-delivery/foundation-slice-a-execution-package.md`.  
-**Evidence register:** `docs/09-delivery/foundation-slice-a-evidence-register.md`.
+**Evidence register:** `docs/09-delivery/foundation-slice-a-evidence-register.md`.  
+**Governance reconciliation:** `docs/09-delivery/foundation-slice-a-governance-reconciliation.md`.
 
-Foundation Slice A is now explicitly documented as `WP-AZ-001` through `WP-AZ-008`. The execution package defines implementation tasks, acceptance criteria, evidence gates, ownership/authority boundaries, environment expectations and handoff conditions. The evidence register is the canonical working record for Foundation Slice A implementation proof. No Azure implementation completion is claimed until those gates are satisfied.
+Foundation Slice A is documented as `WP-AZ-001` through `WP-AZ-008`. The package defines future implementation tasks, acceptance criteria, evidence gates, ownership/authority boundaries, environment expectations and handoff conditions. It must not start or advance until the controlling Phase 0 through Phase 4 outputs and repository validation rules are sufficiently reconciled to permit implementation under `AGENT.md` and `plan.md`.
 
 **Chosen platform services:**
 - Azure Static Web Apps;
@@ -47,13 +50,17 @@ Foundation Slice A is now explicitly documented as `WP-AZ-001` through `WP-AZ-00
 - Azure Cost Management;
 - CI/CD through GitHub Actions or Azure DevOps as delivery requires.
 
+Azure Blob Storage is part of the confirmed target service set but is intentionally deferred outside `WP-AZ-001` through `WP-AZ-008`. It becomes implementation work when a business slice requires controlled document/generated-file storage; Foundation Slice A does not claim Blob implementation evidence.
+
 **Business outcome:** establish a deployable, authenticated, observable and cost-governed platform shell that can support the first complete business vertical slice.
 
 **Technical outcome:** repeatable frontend deployment, server-side authentication enforcement, protected API foundation, persistence baseline, secrets/service identity, telemetry and cost controls.
 
 **Required evidence:** resource inventory, deployment URL, successful CI/CD run, valid/invalid authentication tests, protected API denial test, SQL migration/integration evidence, Key Vault/Managed Identity evidence, telemetry traces and budget alerts.
 
-**Exit criteria:** Foundation Slice A reaches `COMPONENT_COMPLETE` without claiming any business use case `COMPLETE`.
+**Start gate:** do not start or advance `WP-AZ-001` through `WP-AZ-008` until the pre-implementation repository gate in `docs/09-delivery/foundation-slice-a-governance-reconciliation.md` is satisfied.
+
+**Exit criteria:** after the start gate is satisfied and execution begins, every Foundation work package must meet its objective evidence gate before Foundation Slice A as a whole can be described as `COMPONENT_COMPLETE`. No business use case becomes `COMPLETE` from Foundation completion.
 
 ## Phase 1B — Foundational Business Capabilities
 
@@ -67,9 +74,11 @@ Foundation Slice A is now explicitly documented as `WP-AZ-001` through `WP-AZ-00
 
 **Required evidence:** positive/negative access tests, session/token tests, audit records, deployment reference and security review.
 
+Operational telemetry produced by Foundation `WP-AZ-007` does not satisfy `UC-AUD-001`. Business audit evidence remains separately governed and is required for the first EOI slice under `WP-AZ-011`.
+
 ## Phase 2 — First Complete Vertical Slice: Discover and Express Interest
 
-**Status:** `READY_FOR_DEVELOPMENT` after Phase 1A/1B dependencies are usable.
+**Status:** `BLOCKED_BY_CONTEXT` until the Foundation and first-slice start gates reconcile.
 
 **Included use cases:** UC-OPP-001, UC-OPP-002, UC-OPP-003 and a deliberately non-binding subset of UC-INV-001.
 
@@ -77,7 +86,11 @@ Foundation Slice A is now explicitly documented as `WP-AZ-001` through `WP-AZ-00
 
 **Technical outcome:** investor UI, protected catalogue API, persistence, policy enforcement, audit, telemetry, automated tests and E2E acceptance work together in the deployed Azure environment.
 
-**Exit criteria:** valid, invalid, duplicate, unauthorised, unavailable-opportunity, stale-data and system-failure scenarios pass with captured evidence.
+**Start gate:** `WP-AZ-009`, `WP-AZ-010`, `WP-AZ-011`, and `WP-AZ-012` must not start, advance, or be promoted until Foundation Slice A has satisfied its evidence gates and all plan-required outputs material to the first business slice are present and internally consistent.
+
+**Repository-integrity prerequisite:** actor/permission evidence, first-slice business rules, journey/state definitions, relevant integration records, backlog coverage, E2E tracker, source-to-evidence traceability, validation coverage, open-question/risk reconciliation and other plan-required artifacts material to this slice must exist and be internally consistent.
+
+**Exit criteria:** valid, invalid, duplicate, unauthorised, unavailable-opportunity, stale-data and system-failure scenarios pass with captured evidence; traceability and E2E records reconcile; no unresolved critical question invalidates the explicitly non-binding interpretation.
 
 ## Phase 3 — Controlled Due Diligence and Investor Onboarding
 
@@ -138,11 +151,11 @@ Foundation Slice A is now explicitly documented as `WP-AZ-001` through `WP-AZ-00
 | Area | Status | Meaning |
 |---|---|---|
 | Logical architecture | `READY_WITH_ASSUMPTIONS` | capability boundaries are usable; critical legal/business unknowns remain |
-| Azure MVP platform selection | `CONFIRMED` | cloud provider/core MVP services selected |
-| Azure resource deployment | `READY_FOR_DEVELOPMENT` | target selected; Foundation Slice A execution package exists; deployment evidence not yet recorded |
+| Azure MVP platform selection | `CONFIRMED` | cloud provider/core MVP services selected; this is evidence classification, not delivery completion |
+| Azure resource deployment | `READY_FOR_DEVELOPMENT` | technical package defined, but execution blocked until repository prerequisites reconcile |
 | Current application implementation | `PARTIALLY_READY` | meaningful UI prototype; backend/business capability incomplete |
 | 41-use-case delivery | 0 `COMPLETE` | no objective E2E-complete use case yet |
-| First non-binding EOI slice | `READY_FOR_DEVELOPMENT` after foundation | preferred next vertical slice |
+| First non-binding EOI slice | `BLOCKED_BY_CONTEXT` | WP-AZ-009..012 cannot start or advance until Foundation + integrity gates reconcile |
 | Regulated settlement platform | `PARTIALLY_READY` / blocked | critical legal, custody, settlement and integration evidence missing |
 | Production | `NOT_READY` | production hardening and acceptance not satisfied |
 
@@ -151,19 +164,21 @@ Foundation Slice A is now explicitly documented as `WP-AZ-001` through `WP-AZ-00
 - `docs/09-delivery/implementation-analysis-refresh-2026-08-29.md` — architecture-aware status analysis.
 - `docs/09-delivery/implementation-coverage-gap-matrix.md` — 41-use-case implementation evidence/status baseline.
 - `docs/09-delivery/azure-mvp-platform-delivery-plan.md` — Azure foundation implementation/evidence gates.
-- `docs/09-delivery/foundation-slice-a-execution-package.md` — executable `WP-AZ-001` through `WP-AZ-008` task/acceptance/evidence package.
-- `docs/09-delivery/foundation-slice-a-evidence-register.md` — Foundation Slice A evidence checklist and traceability register.
+- `docs/09-delivery/foundation-slice-a-execution-package.md` — future `WP-AZ-001` through `WP-AZ-008` task/acceptance/evidence package, blocked from execution until prerequisites reconcile.
+- `docs/09-delivery/foundation-slice-a-evidence-register.md` — Foundation Slice A evidence checklist and future traceability register.
+- `docs/09-delivery/foundation-slice-a-governance-reconciliation.md` — post-merge full-repository reconciliation and explicit start gates.
 - `docs/09-delivery/prioritized-backlog-diff.md` — existing implementation-gap-to-backlog translation.
 - `docs/02-architecture/azure-mvp-platform-decision.md` — confirmed Azure target decision.
 
 ## Immediate execution queue
 
-1. Execute `WP-AZ-001`: provision and evidence the Azure MVP resource/cost-governance baseline.
-2. Execute `WP-AZ-002`: deploy the current React/Vite application to Azure Static Web Apps through repeatable CI/CD.
-3. Execute `WP-AZ-003` and `WP-AZ-004`: integrate Microsoft Entra External ID for UC-IAM-001 and implement protected Azure Functions API validation.
-4. Execute `WP-AZ-005` through `WP-AZ-007`: establish Azure SQL persistence, Key Vault/Managed Identity and Application Insights/Azure Monitor foundations.
-5. Execute `WP-AZ-008`: prove version-controlled Foundation infrastructure reconstruction/reconciliation, gated CI/CD and source-to-deployment traceability.
-6. Reconcile Foundation Slice A evidence and status in `docs/09-delivery/foundation-slice-a-evidence-register.md`.
-7. Implement the opportunity read API and non-binding EOI vertical slice (`WP-AZ-009`/`WP-AZ-010`).
-8. Capture audit/E2E evidence (`WP-AZ-011`/`WP-AZ-012`) and update the coverage matrix/tracker/traceability.
-9. Progress onboarding, NDA, integrations and later regulated journeys only as their critical questions are resolved.
+The queue follows the controlling `plan.md` and does not authorize implementation while required outputs are inconsistent or missing.
+
+1. Reconcile the Phase 0 through Phase 4 plan-required outputs and `AGENT.md` validation conditions, including canonical actors/permissions, business rules, journeys, state models, integrations, backlog, E2E tracker, traceability, validation, risks, structured data, links, IDs and counts.
+2. Confirm the Foundation start gate in `docs/09-delivery/foundation-slice-a-governance-reconciliation.md` is satisfied.
+3. Only then execute `WP-AZ-001` through `WP-AZ-008` and capture objective evidence.
+4. Reconcile all Foundation evidence gates.
+5. Confirm the separate first-business-slice start gate is satisfied in full.
+6. Only then start or advance `WP-AZ-009` through `WP-AZ-012`.
+7. Do not consider the first slice `READY_FOR_ACCEPTANCE` until business audit, deployed E2E evidence, delivery tracking and traceability reconcile.
+8. Progress Blob-backed document capabilities, onboarding, NDA, specialist integrations and later regulated journeys only as their actual use-case dependencies and critical questions are resolved.

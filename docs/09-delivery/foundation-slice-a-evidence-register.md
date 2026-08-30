@@ -1,8 +1,10 @@
 # Ubuntu Capital OS — Foundation Slice A Evidence Register
 
 **Scope:** `WP-AZ-001` through `WP-AZ-008`  
-**Status:** evidence register initialized; implementation evidence must be added as work is performed.  
-**Execution package:** `docs/09-delivery/foundation-slice-a-execution-package.md`
+**Delivery package status:** `READY_FOR_DEVELOPMENT`  
+**Execution gate:** `BLOCKED_BY_CONTEXT` until the pre-implementation repository gate is satisfied  
+**Execution package:** `docs/09-delivery/foundation-slice-a-execution-package.md`  
+**Governance reconciliation:** `docs/09-delivery/foundation-slice-a-governance-reconciliation.md`
 
 ## Evidence handling rules
 
@@ -12,8 +14,10 @@
 - Evidence classification must use `CONFIRMED`, `INFERRED`, `UNKNOWN` or `CONTRADICTED`.
 - Architecture/design documents are not implementation evidence unless the record explicitly says the evidence only proves design intent.
 - External evidence links must be stable enough for an authorised project reviewer to retrieve later.
-- A work package cannot move to `COMPONENT_COMPLETE` until its required evidence gate is reconciled here or in an explicitly linked canonical evidence artifact.
+- A work package cannot move to `IN_DEVELOPMENT` or `COMPONENT_COMPLETE` while the Foundation execution gate is `BLOCKED_BY_CONTEXT`.
+- After the start gate is satisfied, a work package cannot move to `COMPONENT_COMPLETE` until its required evidence gate is reconciled here or in an explicitly linked canonical evidence artifact.
 - `WP-AZ-008` requires version-controlled infrastructure provisioning/reconciliation evidence; manual Azure configuration alone cannot satisfy the Foundation reproducibility gate.
+- While the Foundation execution gate is open, this register remains a planning/evidence template. Do not populate it in a way that implies authorised implementation work has started or that a delivery status has advanced.
 
 ## Register
 
@@ -25,10 +29,12 @@
 | FSA-EV-004 | WP-AZ-004 | Planned evidence placeholder | Pending | Pending | Pending | `UNKNOWN` | Nothing yet; placeholder for protected Functions API evidence | Server-side access enforcement | OPEN |
 | FSA-EV-005 | WP-AZ-005 | Planned evidence placeholder | Pending | Pending | Pending | `UNKNOWN` | Nothing yet; placeholder for Azure SQL evidence | Persistence implementation | OPEN |
 | FSA-EV-006 | WP-AZ-006 | Planned evidence placeholder | Pending | Pending | Pending | `UNKNOWN` | Nothing yet; placeholder for Key Vault/Managed Identity evidence | Runtime secret/service-identity integration | OPEN |
-| FSA-EV-007 | WP-AZ-007 | Planned evidence placeholder | Pending | Pending | Pending | `UNKNOWN` | Nothing yet; placeholder for Application Insights/Azure Monitor evidence | Runtime observability | OPEN |
+| FSA-EV-007 | WP-AZ-007 | Planned evidence placeholder | Pending | Pending | Pending | `UNKNOWN` | Nothing yet; placeholder for Application Insights/Azure Monitor evidence | Runtime observability or business audit | OPEN |
 | FSA-EV-008 | WP-AZ-008 | Planned evidence placeholder | Pending | Pending | Pending | `UNKNOWN` | Nothing yet; placeholder for reproducible infrastructure + CI/CD evidence | Infrastructure reconstruction/reconciliation or repeatable gated deployment | OPEN |
 
 ## Work-package evidence checklist
+
+The checklists below become executable evidence gates only after the Foundation start gate is satisfied.
 
 ### WP-AZ-001 — Azure baseline
 
@@ -103,6 +109,8 @@ Required before `COMPONENT_COMPLETE`:
 - [ ] telemetry retention/cost configuration;
 - [ ] sensitive-data logging review.
 
+`WP-AZ-007` proves operational observability only. It does not satisfy `UC-AUD-001` and does not replace the business-audit evidence required by `WP-AZ-011`.
+
 ### WP-AZ-008 — Reproducible infrastructure and CI/CD deployment evidence
 
 Required before `COMPONENT_COMPLETE`:
@@ -120,15 +128,16 @@ Required before `COMPONENT_COMPLETE`:
 
 ## Foundation Slice A acceptance summary
 
-| Work package | Current status | Evidence gate satisfied? | Evidence IDs | Notes |
-|---|---|---:|---|---|
-| WP-AZ-001 | `READY_FOR_DEVELOPMENT` | No | FSA-EV-001 | Awaiting implementation evidence |
-| WP-AZ-002 | `READY_FOR_DEVELOPMENT` | No | FSA-EV-002 | Awaiting implementation evidence |
-| WP-AZ-003 | `READY_FOR_DEVELOPMENT` | No | FSA-EV-003 | Awaiting work-package identity-foundation evidence; UC-IAM-001 remains independently governed |
-| WP-AZ-004 | `READY_FOR_DEVELOPMENT` | No | FSA-EV-004 | Awaiting implementation evidence |
-| WP-AZ-005 | `READY_FOR_DEVELOPMENT` | No | FSA-EV-005 | Awaiting implementation evidence |
-| WP-AZ-006 | `READY_FOR_DEVELOPMENT` | No | FSA-EV-006 | Awaiting implementation evidence |
-| WP-AZ-007 | `READY_FOR_DEVELOPMENT` | No | FSA-EV-007 | Awaiting implementation evidence |
-| WP-AZ-008 | `READY_FOR_DEVELOPMENT` | No | FSA-EV-008 | Awaiting reproducible infrastructure + CI/CD evidence |
+| Work package | Recorded delivery status | Execution gate | Evidence gate satisfied? | Evidence IDs | Notes |
+|---|---|---|---:|---|---|
+| WP-AZ-001 | `READY_FOR_DEVELOPMENT` | `BLOCKED_BY_CONTEXT` | No | FSA-EV-001 | Do not start or advance until repository prerequisites reconcile |
+| WP-AZ-002 | `READY_FOR_DEVELOPMENT` | `BLOCKED_BY_CONTEXT` | No | FSA-EV-002 | Do not start or advance until repository prerequisites reconcile |
+| WP-AZ-003 | `READY_FOR_DEVELOPMENT` | `BLOCKED_BY_CONTEXT` | No | FSA-EV-003 | Do not start or advance; UC-IAM-001 remains independently governed |
+| WP-AZ-004 | `READY_FOR_DEVELOPMENT` | `BLOCKED_BY_CONTEXT` | No | FSA-EV-004 | Do not start or advance until repository prerequisites reconcile |
+| WP-AZ-005 | `READY_FOR_DEVELOPMENT` | `BLOCKED_BY_CONTEXT` | No | FSA-EV-005 | Do not start or advance until repository prerequisites reconcile |
+| WP-AZ-006 | `READY_FOR_DEVELOPMENT` | `BLOCKED_BY_CONTEXT` | No | FSA-EV-006 | Do not start or advance until repository prerequisites reconcile |
+| WP-AZ-007 | `READY_FOR_DEVELOPMENT` | `BLOCKED_BY_CONTEXT` | No | FSA-EV-007 | Operational telemetry only; business audit remains separate and work is not yet authorised |
+| WP-AZ-008 | `READY_FOR_DEVELOPMENT` | `BLOCKED_BY_CONTEXT` | No | FSA-EV-008 | Reproducibility/CI-CD work is not yet authorised |
 
-**Foundation Slice A overall:** `READY_FOR_DEVELOPMENT` — execution package documented; no infrastructure implementation completion is claimed.
+**Foundation Slice A package:** `READY_FOR_DEVELOPMENT`.  
+**Foundation Slice A execution gate:** `BLOCKED_BY_CONTEXT` — do not start or advance implementation work until the governance start gate is satisfied. No infrastructure implementation completion is claimed.
