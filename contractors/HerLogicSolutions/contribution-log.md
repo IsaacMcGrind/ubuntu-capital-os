@@ -2,11 +2,23 @@
 
 This log records repository-observable contribution provenance associated with the HerLogic Solutions workstream. It is evidence of authored project artifacts, not proof that Azure infrastructure has been provisioned or that any Ubuntu Capital use case is complete.
 
+## Contractor identity — `HarleyJoker`
+
+**Evidence classification:** `CONFIRMED` for contractor affiliation based on project-owner attestation.  
+**Primary evidence:** `SRC-017` in `docs/00-context/source-inventory.md`.  
+**GitHub account:** `HarleyJoker`.  
+**Project-owner-supplied contact:** `mbuyanaledi@gmail.com`.  
+**Contractor affiliation:** HerLogic Solutions.  
+**Repository relationship:** `HarleyJoker` is the owner of the current implementation source repository `HarleyJoker/ubuntu-capital-platform`.
+
+This contractor identity is distinct from the exact Git-object identity preserved below. `SRC-015` records commits authored/committed as `mbuyazinaledi <mbuyazinaledi@gmail.com>`. The project-owner attestation confirms `HarleyJoker` as a HerLogic Solutions contractor, but the repository does not silently rewrite the Git objects or assume that `mbuyanaledi@gmail.com` and `mbuyazinaledi@gmail.com` are the same email alias/credential unless that relationship is separately confirmed.
+
 ## Repository Git identity: `mbuyazinaledi <mbuyazinaledi@gmail.com>`
 
 **Evidence classification:** `CONFIRMED` for the Git author/committer identity and committed artifacts listed below.  
 **Primary evidence:** `SRC-015` in `docs/00-context/source-inventory.md`.  
-**GitHub-handle mapping:** `UNKNOWN` — the repository evidence reviewed does not establish that this Git identity is the same identity as GitHub account `HarleyJoker`; no such mapping is inferred here.  
+**Contractor context:** the artifacts are recorded under the HerLogic Solutions workstream; `SRC-017` separately confirms `HarleyJoker` as a HerLogic Solutions contractor.  
+**Exact Git-identity-to-contact-email relationship:** not assumed beyond the evidence above because the Git-object email differs from the project-owner-supplied contact email.  
 **Contribution type:** Azure cloud architecture and MVP cost analysis.  
 **Delivery implication:** materially reduced uncertainty around the Azure MVP platform and cost-control direction; implementation/deployment evidence remains separately gated.
 
