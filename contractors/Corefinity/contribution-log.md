@@ -4,10 +4,14 @@ This log records repository-observable contribution provenance associated with C
 
 ## Contributor: `kg-m3`
 
-**Evidence classification:** `CONFIRMED` for repository authorship and merged artifacts.  
-**Primary evidence:** `SRC-014` for merged PR #11; `SRC-016` for branch-synchronisation commit provenance.  
+**Evidence classification:** `CONFIRMED` for contractor affiliation, repository authorship and merged artifacts.  
+**Primary evidence:** `SRC-017` for project-owner confirmation that `kg-m3` is the Corefinity contractor identity; `SRC-014` for merged PR #11; `SRC-016` for branch-synchronisation commit provenance.  
 **Contribution type:** architecture analysis and documentation.  
 **Delivery implication:** architecture understanding materially improved; no backend, infrastructure, deployment, or E2E completion is established by these contributions alone.
+
+### Contractor identity
+
+`SRC-017` records the project-owner attestation that GitHub account `kg-m3` is the Corefinity contractor identity for this project. This confirms contractor affiliation; it does not expand Corefinity's authority or convert contribution provenance into implementation/E2E completion evidence.
 
 ### Merged architecture contribution — PR #11
 
