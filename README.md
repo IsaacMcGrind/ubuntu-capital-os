@@ -51,11 +51,11 @@ The recorded implementation coverage is derived from the 41 row-level statuses i
 - **18 `READY_FOR_DEVELOPMENT`** — no substantive implementation evidence
 - **0 `COMPLETE`**
 
-Foundation Slice A is the next Azure infrastructure workstream and may proceed in parallel with the remaining repository-integrity and reconstruction work permitted by `plan.md`. Its execution package is `docs/09-delivery/foundation-slice-a-execution-package.md`; its evidence is recorded in `docs/09-delivery/foundation-slice-a-evidence-register.md`.
+Foundation Slice A remains the planned Azure infrastructure package, documented in `docs/09-delivery/foundation-slice-a-execution-package.md` with evidence intended for `docs/09-delivery/foundation-slice-a-evidence-register.md`.
 
-The post-merge full-repository review is recorded in `docs/09-delivery/foundation-slice-a-governance-reconciliation.md`. It makes explicit that infrastructure execution does not bypass the plan-required actor/permission, business-rule, journey/state, integration, backlog, tracker, traceability, validation, open-question, and risk evidence needed for the first business slice. Foundation programme-level completion and advancement into the first business vertical slice remain gated by that reconciliation.
+**Foundation implementation must not start or advance yet.** The repository still has plan-required canonical outputs and integrity conditions that do not reconcile. Under `AGENT.md` and the controlling `plan.md`, those gaps must be repaired before implementation progression. The post-merge full-repository review and exact gates are recorded in `docs/09-delivery/foundation-slice-a-governance-reconciliation.md`.
 
-The intended first complete business vertical slice remains authenticated opportunity discovery plus a **non-binding expression of interest**.
+After the pre-implementation repository gate is satisfied, Foundation Slice A may be executed. The first business vertical slice—authenticated opportunity discovery plus a **non-binding expression of interest**—must not start or advance through `WP-AZ-009` to `WP-AZ-012` until Foundation evidence and the separate first-slice integrity prerequisites both reconcile.
 
 ## Controlling documents
 
@@ -69,7 +69,7 @@ The intended first complete business vertical slice remains authenticated opport
 
 `plan.md` remains the canonical structure definition. The repository currently contains `docs/02-architecture/`, while the plan-defined canonical `docs/02-actors-and-permissions/` phase is currently missing from the repository. The architecture tree is therefore an explicit structure exception that must be reconciled deliberately; it must not be read as if the canonical actors-and-permissions directory already exists or has been replaced.
 
-Other plan-required reconstruction, validation, traceability and machine-readable outputs also remain incomplete or absent. Foundation Slice A does not silently close those gaps. Material first-slice outputs must reconcile before programme-level Foundation completion or business-slice acceptance progression.
+Other plan-required reconstruction, validation, traceability and machine-readable outputs also remain incomplete or absent. These gaps block Foundation implementation progression; they are not merely programme-level reporting concerns.
 
 Key active areas include:
 
@@ -102,6 +102,6 @@ Foundation operational telemetry under `WP-AZ-007` is not equivalent to business
 
 ## Integrity policy
 
-Counts, links, IDs, evidence classifications, directory names, implementation claims and required outputs must reconcile across the repository. A contributor or agent must repair inconsistencies before progressing to the next phase or claiming a status that depends on those inconsistencies being resolved.
+Counts, links, IDs, evidence classifications, directory names, implementation claims and required outputs must reconcile across the repository. A contributor or agent must repair inconsistencies before progressing to implementation or claiming a status that depends on those inconsistencies being resolved.
 
 The source base is still insufficient to reproduce regulated investment execution faithfully. Critical remaining evidence priorities include onboarding/eligibility rules, KYC/AML integration, NDA lifecycle, investment legal meaning, settlement/custody/reconciliation, portfolio valuation, internal permissions, audit/reporting, retention/privacy, and operational recovery.
