@@ -24,7 +24,7 @@ This package is not currently authorisation to begin Azure implementation.
 
 `AGENT.md` and `plan.md` remain controlling. `WP-AZ-001` through `WP-AZ-008` must not start or advance until the applicable Phase 0 through Phase 4 required outputs and repository-integrity rules have reconciled as defined in `docs/09-delivery/foundation-slice-a-governance-reconciliation.md`.
 
-Planning, acceptance criteria, architecture and evidence templates may be maintained while the gate is open, but that activity must not change delivery status or be treated as implementation evidence.
+Planning, acceptance criteria, architecture and evidence templates may be maintained while the gate is unsatisfied, but that activity must not change delivery status or be treated as implementation evidence.
 
 ## 2. Governing evidence rules
 
@@ -40,7 +40,7 @@ The following rules are controlling:
 8. Any unresolved contradiction in ownership, status, IDs, evidence or environment configuration must be reconciled before progression.
 9. Production-grade regulated transaction capability is outside this slice.
 10. Foundation infrastructure must be reproducible from version-controlled provisioning definitions; manually configured Azure state alone cannot satisfy `WP-AZ-008` or the Foundation exit gate.
-11. Foundation completion does not automatically authorise `WP-AZ-009` through `WP-AZ-012`; their separate first-business-slice start gate must also be satisfied.
+11. Foundation completion does not automatically authorise `WP-AZ-009` through `WP-AZ-012`; their separate first-business-slice start gate — including the controlling `plan.md` Phase 5 foundational product-capability exit criteria — must also be satisfied.
 
 ## 3. Foundation Slice A target architecture
 
@@ -317,7 +317,7 @@ Make the DEV/MVP platform observable without logging sensitive data.
 
 **Scope rule**
 - this package proves operational observability only;
-- it does not satisfy `UC-AUD-001` or the business-audit requirements of `WP-AZ-011`.
+- it does not satisfy `UC-AUD-001`, the `plan.md` Phase 5 business audit-event framework, or the business-audit evidence requirements of `WP-AZ-011`.
 
 ### WP-AZ-008 — Reproducible infrastructure and CI/CD deployment evidence
 
@@ -385,7 +385,7 @@ Sensitive Azure values must be redacted. The evidence register must not contain 
 
 Default recorded status for `WP-AZ-001` through `WP-AZ-008` remains `READY_FOR_DEVELOPMENT` unless stronger evidence already exists and is reconciled into this repository.
 
-While the Foundation start gate is open, **no work package may transition to `IN_DEVELOPMENT` or `COMPONENT_COMPLETE`**.
+Until the Foundation start gate is satisfied, **no work package may transition to `IN_DEVELOPMENT` or `COMPONENT_COMPLETE`**.
 
 After the gate is satisfied, allowed transitions are:
 
@@ -405,14 +405,17 @@ Foundation completion is necessary but not sufficient for handoff.
 
 `WP-AZ-009`, `WP-AZ-010`, `WP-AZ-011`, and `WP-AZ-012` must not start or advance until:
 
-1. Foundation Slice A evidence has been accepted; and
-2. the full first-business-slice integrity gate in `docs/09-delivery/foundation-slice-a-governance-reconciliation.md` is satisfied, including permissions, rules, journey/state, integrations, backlog, E2E tracker, traceability, validation, and open-question/risk reconciliation.
+1. Foundation Slice A evidence has been accepted;
+2. the full first-business-slice integrity gate in `docs/09-delivery/foundation-slice-a-governance-reconciliation.md` is satisfied, including permissions, rules, journey/state, integrations, backlog, E2E tracker, traceability, validation, and open-question/risk reconciliation; and
+3. the `plan.md` Phase 5 foundational product capabilities and Phase 5 exit criteria required before Phase 6 are complete and objectively evidenced.
 
-Only after both conditions are true may the first slice proceed:
+The Phase 5 prerequisite includes the shared capabilities needed by the slice: authentication/session handling, role and permission enforcement, investor identity baseline, shared validation/safe error handling, permitted opportunity read-model foundation, business audit-event framework, structured logging/correlation, persistence migrations, test harness/CI quality gates, and environment/secrets strategy. Its exit evidence must show that an authorised test investor can authenticate and securely load a permitted opportunity catalogue, cross-user access is denied and tested, and failures produce safe errors with traceable logs.
+
+Only after all three conditions are true may the Phase 6 first slice proceed:
 
 - `WP-AZ-009` — Opportunity API;
 - `WP-AZ-010` — non-binding expression of interest;
-- `WP-AZ-011` — business audit evidence;
+- `WP-AZ-011` — concrete business-audit evidence produced through the established audit-event framework;
 - `WP-AZ-012` — deployed E2E acceptance evidence.
 
 The intended first E2E journey remains:
@@ -431,5 +434,5 @@ This documentation package is complete when:
 6. roadmap and parent delivery-plan references reconcile;
 7. Foundation reproducibility requirements are explicit and version-controlled infrastructure reconstruction is required before Foundation completion;
 8. the pre-implementation hard start gate is explicit and prevents work-package status progression while controlling repository prerequisites remain unresolved;
-9. the separate first-business-slice gate explicitly blocks `WP-AZ-009` through `WP-AZ-012` from starting or advancing until all required prerequisites reconcile;
+9. the separate first-business-slice gate explicitly blocks `WP-AZ-009` through `WP-AZ-012` from starting or advancing until the first-slice integrity prerequisites and the controlling `plan.md` Phase 5 foundational product-capability exit criteria reconcile;
 10. no claim is made that Azure resources are already implemented without evidence.
