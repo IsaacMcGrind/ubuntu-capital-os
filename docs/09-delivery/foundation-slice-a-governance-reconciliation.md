@@ -45,10 +45,11 @@ The exact controlling test is not whether a document can be drafted around a mis
 
 ## 4. First-business-slice start gate
 
-`WP-AZ-009`, `WP-AZ-010`, `WP-AZ-011`, and `WP-AZ-012` must not **start, advance, or be promoted** until both of the following are true:
+`WP-AZ-009`, `WP-AZ-010`, `WP-AZ-011`, and `WP-AZ-012` must not **start, advance, or be promoted** until all of the following are true:
 
-1. Foundation Slice A (`WP-AZ-001` through `WP-AZ-008`) has satisfied its own objective evidence gates; and
-2. all plan-required outputs material to the first business slice are present and internally consistent.
+1. Foundation Slice A (`WP-AZ-001` through `WP-AZ-008`) has satisfied its own objective evidence gates;
+2. all plan-required outputs material to the first business slice are present and internally consistent; and
+3. the `plan.md` Phase 5 foundational product capabilities and exit criteria required by Phase 6 are complete and evidenced before the business slice starts.
 
 The first-slice integrity set includes:
 
@@ -62,7 +63,21 @@ The first-slice integrity set includes:
 - validation coverage for success and mandatory negative paths;
 - open-question and risk reconciliation for anything that could invalidate the non-binding interpretation.
 
-A partially reconciled subset is not sufficient to start `WP-AZ-009` through `WP-AZ-012`.
+The Phase 5 foundational capability gate additionally requires objective evidence for the shared product capabilities that the first vertical slice depends on, including:
+
+- application shell and route structure;
+- authentication and session handling;
+- role and permission enforcement;
+- investor profile identity baseline;
+- shared validation and safe error handling;
+- opportunity read model/seed-data foundation required by the selected slice;
+- business audit-event framework, distinct from operational telemetry;
+- structured logging and correlation IDs;
+- persistence migrations;
+- test harness and CI quality gates;
+- environment configuration and secrets strategy.
+
+Before Phase 6 business-slice work starts, the Phase 5 exit evidence must show that an authorised test investor can authenticate and securely load a permitted opportunity catalogue, cross-user access is denied and tested, and failures produce safe errors with traceable logs. A partially reconciled subset is not sufficient to start `WP-AZ-009` through `WP-AZ-012`.
 
 ## 5. Azure Blob Storage scope clarification
 
@@ -80,7 +95,7 @@ Foundation Slice A `WP-AZ-007` covers **operational telemetry and monitoring** t
 
 It does not satisfy the business-audit requirement for `UC-AUD-001`.
 
-Business audit evidence for the first EOI slice remains in `WP-AZ-011`, where actor, action, resource, outcome, timestamp, correlation, persistence, authorised review, and separation from transient application logs must be proven.
+The shared business audit-event framework required by `plan.md` Phase 5 must exist and be evidenced before Phase 6 business-slice implementation starts. `WP-AZ-011` then captures and verifies the concrete business-audit evidence produced by the first EOI slice, including actor, action, resource, outcome, timestamp, correlation, persistence, authorised review, and separation from transient application logs.
 
 ## 7. Status and evidence rules
 
@@ -91,7 +106,7 @@ The following rules remain controlling:
 - `WP-AZ-001` through `WP-AZ-008` remain at their existing recorded statuses until the Foundation execution prerequisite is satisfied and implementation evidence exists;
 - a work package reaches `COMPONENT_COMPLETE` only when its own evidence gate is satisfied;
 - Foundation completion does not promote any business use case to `COMPLETE`;
-- `WP-AZ-009` through `WP-AZ-012` cannot start or advance until the first-business-slice start gate is satisfied;
+- `WP-AZ-009` through `WP-AZ-012` cannot start or advance until the first-business-slice start gate, including the required Phase 5 foundational product-capability exit criteria, is satisfied;
 - the first business vertical slice cannot reach `READY_FOR_ACCEPTANCE` without deployed E2E evidence and reconciled traceability;
 - regulated settlement remains outside the first slice and blocked by unresolved legal/financial operating-model evidence.
 
@@ -102,9 +117,10 @@ The active sequence is:
 1. Reconcile the Phase 0 through Phase 4 repository outputs and integrity conditions required by `AGENT.md` and `plan.md`.
 2. Only after that gate is satisfied, execute `WP-AZ-001` through `WP-AZ-008` and populate `foundation-slice-a-evidence-register.md` with objective implementation evidence.
 3. Reconcile all Foundation evidence gates; do not infer business-use-case completion from infrastructure completion.
-4. Confirm the separate first-business-slice start gate is fully satisfied.
-5. Only then start or advance `WP-AZ-009` and `WP-AZ-010`.
-6. Complete `WP-AZ-011` business-audit evidence and `WP-AZ-012` deployed E2E acceptance evidence before considering `READY_FOR_ACCEPTANCE`.
+4. Complete and evidence the `plan.md` Phase 5 foundational product capabilities and its exit criteria, including role/permission enforcement, shared validation/error handling, business audit-event framework, test harness/quality gates, and the authorised permitted-opportunity catalogue path.
+5. Confirm the separate first-business-slice start gate is fully satisfied.
+6. Only then start or advance `WP-AZ-009` through `WP-AZ-012` as Phase 6 business-slice work.
+7. Complete first-slice business-audit evidence and deployed E2E acceptance evidence before considering `READY_FOR_ACCEPTANCE`.
 
 ## 9. Definition of reconciliation complete
 
@@ -115,4 +131,4 @@ This governance reconciliation may move beyond `ANALYSIS_IN_PROGRESS` only when:
 - Blob Storage is explicitly selected-but-deferred rather than silently omitted;
 - operational telemetry is distinguished from business audit evidence;
 - no Foundation or use-case status is promoted because documentation exists;
-- `WP-AZ-009` through `WP-AZ-012` are explicitly blocked from starting or advancing until the first-slice integrity prerequisites reconcile.
+- `WP-AZ-009` through `WP-AZ-012` are explicitly blocked from starting or advancing until both the first-slice integrity prerequisites and the controlling Phase 5 foundational product-capability exit criteria reconcile.
