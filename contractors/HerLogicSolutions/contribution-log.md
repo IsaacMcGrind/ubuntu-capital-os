@@ -5,12 +5,14 @@ This log records repository-observable contribution provenance associated with t
 ## Repository Git identity: `mbuyazinaledi <mbuyazinaledi@gmail.com>`
 
 **Evidence classification:** `CONFIRMED` for the Git author/committer identity and committed artifacts listed below.  
+**Primary evidence:** `SRC-015` in `docs/00-context/source-inventory.md`.  
 **GitHub-handle mapping:** `UNKNOWN` — the repository evidence reviewed does not establish that this Git identity is the same identity as GitHub account `HarleyJoker`; no such mapping is inferred here.  
 **Contribution type:** Azure cloud architecture and MVP cost analysis.  
 **Delivery implication:** materially reduced uncertainty around the Azure MVP platform and cost-control direction; implementation/deployment evidence remains separately gated.
 
 ### Commit `552503e9223c105ac247cb7482f11477381cbea9`
 
+- **Source:** `SRC-015`
 - **Date:** 2026-08-20
 - **Git author/committer:** `mbuyazinaledi <mbuyazinaledi@gmail.com>`
 - **Message:** `Add azure architecture for learning path and platform cloud workstream`
@@ -34,6 +36,7 @@ Confirmed contribution includes:
 
 ### Commit `e44066ef89b1f054c44d2e5441f7f4217ae6f894`
 
+- **Source:** `SRC-015`
 - **Date:** 2026-08-23
 - **Git author/committer:** `mbuyazinaledi <mbuyazinaledi@gmail.com>`
 - **Message:** `added azure cost  breakdown`
