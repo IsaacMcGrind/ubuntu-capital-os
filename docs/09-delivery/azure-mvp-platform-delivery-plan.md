@@ -18,7 +18,7 @@ The foundation must prove deployability, authentication, protected backend execu
 
 **Do not start or advance `WP-AZ-001` through `WP-AZ-008` while the repository still fails the applicable Phase 0 through Phase 4 outputs or `AGENT.md` integrity rules.** The exact pre-implementation gate is recorded in `docs/09-delivery/foundation-slice-a-governance-reconciliation.md`.
 
-Planning and acceptance criteria may be maintained while that gate is open, but documentation alone must not change delivery status or be treated as implementation progress.
+Planning and acceptance criteria may be maintained while that gate is unsatisfied, but documentation alone must not change delivery status or be treated as implementation progress.
 
 ## 2. Delivery sequence
 
@@ -147,7 +147,7 @@ Azure Blob Storage remains selected by `ARCH-ADR-001` for documents/generated fi
 
 **Scope rule**
 - `WP-AZ-007` proves operational observability only;
-- it does not satisfy `UC-AUD-001` business-audit requirements or replace `WP-AZ-011`.
+- it does not satisfy `UC-AUD-001` business-audit requirements or replace the Phase 5 business audit-event framework or `WP-AZ-011` slice audit evidence.
 
 ### WP-AZ-008 — Reproducible infrastructure and CI/CD deployment evidence
 
@@ -173,7 +173,7 @@ Azure Blob Storage remains selected by `ARCH-ADR-001` for documents/generated fi
 ### WP-AZ-009 — Opportunity API
 
 **Start prerequisite**  
-Do not start or advance this package until Foundation Slice A is evidenced and the full first-business-slice integrity gate in `foundation-slice-a-governance-reconciliation.md` is satisfied.
+Do not start or advance this package until Foundation Slice A is evidenced, the full first-business-slice integrity gate in `docs/09-delivery/foundation-slice-a-governance-reconciliation.md` is satisfied, and the `plan.md` Phase 5 foundational product capabilities and exit criteria required by Phase 6 are complete and evidenced.
 
 **Deliverables**
 - canonical opportunity read model;
@@ -189,7 +189,7 @@ Do not start or advance this package until Foundation Slice A is evidenced and t
 ### WP-AZ-010 — Non-binding expression of interest
 
 **Start prerequisite**  
-Do not start or advance this package until Foundation Slice A is evidenced and the full first-business-slice integrity gate is satisfied.
+Do not start or advance this package until Foundation Slice A is evidenced, the full first-business-slice integrity gate is satisfied, and the `plan.md` Phase 5 foundational product capabilities and exit criteria required by Phase 6 are complete and evidenced.
 
 **Deliverables**
 - EOI endpoint/workflow;
@@ -210,10 +210,10 @@ Do not start or advance this package until Foundation Slice A is evidenced and t
 ### WP-AZ-011 — Audit evidence for first slice
 
 **Start prerequisite**  
-Do not start or advance this package until Foundation Slice A is evidenced and the full first-business-slice integrity gate is satisfied.
+Do not start or advance this package until Foundation Slice A is evidenced, the full first-business-slice integrity gate is satisfied, and the `plan.md` Phase 5 foundational product capabilities and exit criteria — including the shared business audit-event framework — are complete and evidenced.
 
 **Deliverables**
-- business audit events for authentication-sensitive and EOI actions;
+- concrete business audit events for authentication-sensitive and EOI actions produced through the pre-existing Phase 5 audit-event framework;
 - actor, action, resource, timestamp, outcome and correlation references;
 - separation between business audit evidence and operational telemetry;
 - authorised review/query path for the captured audit records.
@@ -227,7 +227,7 @@ Do not start or advance this package until Foundation Slice A is evidenced and t
 ### WP-AZ-012 — E2E acceptance evidence
 
 **Start prerequisite**  
-Do not start or advance this package until Foundation Slice A is evidenced and the full first-business-slice integrity gate is satisfied.
+Do not start or advance this package until Foundation Slice A is evidenced, the full first-business-slice integrity gate is satisfied, and the `plan.md` Phase 5 foundational product capabilities and exit criteria required by Phase 6 are complete and evidenced.
 
 **Deliverables**
 - deployed-environment E2E scenario for the first vertical slice;
@@ -254,7 +254,7 @@ Foundation execution can begin only after the pre-implementation repository gate
 4. application deployment is repeatable and blocked by failed infrastructure validation, build or test;
 5. the resulting infrastructure/application revisions and evidence references reconcile in the Foundation Slice A evidence register.
 
-This completion rule does not promote any business use case to `COMPLETE` and does not by itself authorize `WP-AZ-009` through `WP-AZ-012`; their separate start gate must also be satisfied.
+This completion rule does not promote any business use case to `COMPLETE` and does not by itself authorize `WP-AZ-009` through `WP-AZ-012`; their separate start gate and the controlling Phase 5 foundational product-capability exit criteria must also be satisfied.
 
 ## 5. Deferred services and scoped deferrals
 
@@ -301,8 +301,11 @@ Contractor provenance does not grant independent authority to change business/le
 
 `WP-AZ-009` through `WP-AZ-012` must not start or advance until:
 
-1. Foundation Slice A has satisfied its evidence gates; and
-2. the first-slice outputs required by `plan.md` reconcile, including actor/permission evidence, business rules, journey/state definitions, relevant integration/validation records, backlog/tracker/traceability, and risk/open-question linkage.
+1. Foundation Slice A has satisfied its evidence gates;
+2. the first-slice outputs required by `plan.md` reconcile, including actor/permission evidence, business rules, journey/state definitions, relevant integration/validation records, backlog/tracker/traceability, and risk/open-question linkage; and
+3. the `plan.md` Phase 5 foundational product capabilities and exit criteria required before Phase 6 are complete and objectively evidenced.
+
+The Phase 5 gate includes the shared capabilities the first slice relies on: authentication/session handling, role/permission enforcement, investor identity baseline, shared validation and safe errors, the permitted opportunity read-model foundation, business audit-event framework, structured logging/correlation, persistence migrations, test harness/CI quality gates, and environment/secrets strategy. Before Phase 6 starts, evidence must show that an authorised test investor can authenticate and securely load a permitted opportunity catalogue, cross-user access is denied and tested, and failures produce safe errors with traceable logs.
 
 The first business slice may move to `READY_FOR_ACCEPTANCE` only when all of the following are evidenced in the deployed target environment:
 
@@ -312,7 +315,7 @@ The first business slice may move to `READY_FOR_ACCEPTANCE` only when all of the
 4. investor can submit a non-binding EOI;
 5. EOI is persisted with stable status and duplicate protection;
 6. operator access is authorised and scoped;
-7. business audit evidence is created independently of operational telemetry;
+7. business audit evidence is created independently of operational telemetry through the established audit-event framework;
 8. runtime requests/failures are observable;
 9. automated tests cover positive and mandatory negative paths;
 10. CI/CD deployment reference exists;
@@ -325,6 +328,7 @@ The first business slice may move to `READY_FOR_ACCEPTANCE` only when all of the
 2. Confirm the Foundation start gate is satisfied.
 3. Only then execute **WP-AZ-001 through WP-AZ-008** using `foundation-slice-a-execution-package.md` and populate the evidence register.
 4. Reconcile all Foundation evidence gates.
-5. Confirm the separate first-business-slice start gate is fully satisfied.
-6. Only then start or advance **WP-AZ-009 through WP-AZ-012**.
-7. Do not consider the first slice `READY_FOR_ACCEPTANCE` until its business-audit, E2E, tracker and traceability evidence reconciles.
+5. Complete and evidence the `plan.md` Phase 5 foundational product capabilities and its exit criteria.
+6. Confirm the separate first-business-slice start gate is fully satisfied.
+7. Only then start or advance **WP-AZ-009 through WP-AZ-012** as Phase 6 business-slice work.
+8. Do not consider the first slice `READY_FOR_ACCEPTANCE` until its business-audit, E2E, tracker and traceability evidence reconciles.
