@@ -1,0 +1,13 @@
+{
+  "status": "ANALYSIS_IN_PROGRESS",
+  "items": [
+    {"journeyId":"JRN-001","name":"Visitor becomes authenticated platform user","evidenceStatus":"INFERRED","useCaseIds":["UC-PUB-001","UC-IAM-001","UC-ONB-001"],"status":"READY_FOR_DEVELOPMENT"},
+    {"journeyId":"JRN-002","name":"Investor discovers and evaluates opportunity","evidenceStatus":"INFERRED","useCaseIds":["UC-OPP-001","UC-OPP-002","UC-OPP-003"],"status":"IN_DEVELOPMENT"},
+    {"journeyId":"JRN-003","name":"Investor signs NDA and accesses controlled material","evidenceStatus":"INFERRED","useCaseIds":["UC-DD-001","UC-DD-002"],"status":"READY_FOR_DEVELOPMENT"},
+    {"journeyId":"JRN-004","name":"Investor submits non-binding EOI","evidenceStatus":"INFERRED","useCaseIds":["UC-INV-001","UC-INV-002"],"status":"READY_FOR_DEVELOPMENT"},
+    {"journeyId":"JRN-005","name":"Investor monitors pending activity and portfolio information","evidenceStatus":"INFERRED","useCaseIds":["UC-PORT-001","UC-PORT-002","UC-PORT-003","UC-PORT-004"],"status":"IN_DEVELOPMENT"},
+    {"journeyId":"JRN-006","name":"Investor obtains reports and documents","evidenceStatus":"INFERRED","useCaseIds":["UC-DOC-001"],"status":"IN_DEVELOPMENT"},
+    {"journeyId":"JRN-007","name":"Operator publishes and manages opportunity","evidenceStatus":"INFERRED","useCaseIds":["UC-ADMIN-001","UC-ADMIN-002"],"status":"READY_FOR_DEVELOPMENT"},
+    {"journeyId":"JRN-008","name":"Support/operations resolves failed process","evidenceStatus":"INFERRED","useCaseIds":["UC-OPS-001","UC-OPS-002","UC-AUD-002"],"status":"READY_FOR_DEVELOPMENT"}
+  ]
+}

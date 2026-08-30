@@ -1,0 +1,12 @@
+{
+  "status": "ANALYSIS_IN_PROGRESS",
+  "items": [
+    {"modelId":"STM-001","entity":"Session","evidenceStatus":"INFERRED","states":["Unauthenticated","Authenticated","Expired","SignedOut"],"transitions":[{"from":"Unauthenticated","to":"Authenticated"},{"from":"Authenticated","to":"Expired"},{"from":"Authenticated","to":"SignedOut"}]},
+    {"modelId":"STM-002","entity":"Investor Onboarding","evidenceStatus":"INFERRED","states":["Draft","Submitted","UnderReview","Approved","Rejected"],"transitions":[{"from":"Draft","to":"Submitted"},{"from":"Submitted","to":"UnderReview"},{"from":"UnderReview","to":"Approved"},{"from":"UnderReview","to":"Rejected"}]},
+    {"modelId":"STM-003","entity":"Opportunity","evidenceStatus":"INFERRED","states":["Draft","Published","Paused","Closed","Archived"],"transitions":[{"from":"Draft","to":"Published"},{"from":"Published","to":"Paused"},{"from":"Published","to":"Closed"},{"from":"Closed","to":"Archived"}]},
+    {"modelId":"STM-004","entity":"NDA Access Grant","evidenceStatus":"INFERRED","states":["NotRequested","Requested","Granted","Revoked","Expired"],"transitions":[{"from":"NotRequested","to":"Requested"},{"from":"Requested","to":"Granted"},{"from":"Granted","to":"Revoked"},{"from":"Granted","to":"Expired"}]},
+    {"modelId":"STM-005","entity":"EOI/Commitment","evidenceStatus":"INFERRED","states":["Draft","Submitted","PendingReview","Accepted","Rejected","Cancelled"],"transitions":[{"from":"Draft","to":"Submitted"},{"from":"Submitted","to":"PendingReview"},{"from":"PendingReview","to":"Accepted"},{"from":"PendingReview","to":"Rejected"},{"from":"PendingReview","to":"Cancelled"}]},
+    {"modelId":"STM-006","entity":"Settlement Record","evidenceStatus":"UNKNOWN","states":["InstructionIssued","FundsExpected","FundsReceived","Matched","Exception","Settled"],"transitions":[{"from":"InstructionIssued","to":"FundsExpected"},{"from":"FundsExpected","to":"FundsReceived"},{"from":"FundsReceived","to":"Matched"},{"from":"FundsReceived","to":"Exception"},{"from":"Matched","to":"Settled"}]},
+    {"modelId":"STM-007","entity":"Investor Document","evidenceStatus":"INFERRED","states":["Draft","Published","Superseded","Archived"],"transitions":[{"from":"Draft","to":"Published"},{"from":"Published","to":"Superseded"},{"from":"Published","to":"Archived"}]}
+  ]
+}

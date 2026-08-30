@@ -1,0 +1,11 @@
+{
+  "status": "ANALYSIS_IN_PROGRESS",
+  "items": [
+    {"integrationId":"INTG-001","name":"Customer identity provider","direction":"Bidirectional","evidenceStatus":"INFERRED","relatedUseCases":["UC-IAM-001","UC-IAM-002","UC-IAM-003"],"notes":"Entra External ID selected as architecture direction"},
+    {"integrationId":"INTG-002","name":"KYC/AML provider","direction":"Bidirectional","evidenceStatus":"UNKNOWN","relatedUseCases":["UC-ONB-003","UC-INT-001"],"notes":"Vendor unresolved"},
+    {"integrationId":"INTG-003","name":"Agreement/e-signature provider","direction":"Bidirectional","evidenceStatus":"UNKNOWN","relatedUseCases":["UC-DD-001","UC-INT-002"],"notes":"Vendor unresolved"},
+    {"integrationId":"INTG-004","name":"Messaging provider","direction":"Outbound","evidenceStatus":"INFERRED","relatedUseCases":["UC-NOTIFY-001","UC-INT-003"],"notes":"Channel matrix unresolved"},
+    {"integrationId":"INTG-005","name":"Banking/payment provider","direction":"Bidirectional","evidenceStatus":"UNKNOWN","relatedUseCases":["UC-SET-001","UC-SET-002","UC-SET-003","UC-INT-004"],"notes":"Settlement model unresolved"},
+    {"integrationId":"INTG-006","name":"Document storage","direction":"Bidirectional","evidenceStatus":"INFERRED","relatedUseCases":["UC-DOC-001","UC-DD-002"],"notes":"Blob selected as target service; implementation deferred"}
+  ]
+}
