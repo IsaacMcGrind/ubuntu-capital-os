@@ -1,16 +1,18 @@
 # HerLogic Solutions — Contribution Log
 
-This log records repository-observable contribution provenance associated with HerLogic Solutions contributors. It is evidence of authored project artifacts, not proof that Azure infrastructure has been provisioned or that any Ubuntu Capital use case is complete.
+This log records repository-observable contribution provenance associated with the HerLogic Solutions workstream. It is evidence of authored project artifacts, not proof that Azure infrastructure has been provisioned or that any Ubuntu Capital use case is complete.
 
-## Contributor: `HarleyJoker`
+## Repository Git identity: `mbuyazinaledi <mbuyazinaledi@gmail.com>`
 
-**Evidence classification:** `CONFIRMED` for repository authorship and committed artifacts.  
+**Evidence classification:** `CONFIRMED` for the Git author/committer identity and committed artifacts listed below.  
+**GitHub-handle mapping:** `UNKNOWN` — the repository evidence reviewed does not establish that this Git identity is the same identity as GitHub account `HarleyJoker`; no such mapping is inferred here.  
 **Contribution type:** Azure cloud architecture and MVP cost analysis.  
 **Delivery implication:** materially reduced uncertainty around the Azure MVP platform and cost-control direction; implementation/deployment evidence remains separately gated.
 
 ### Commit `552503e9223c105ac247cb7482f11477381cbea9`
 
 - **Date:** 2026-08-20
+- **Git author/committer:** `mbuyazinaledi <mbuyazinaledi@gmail.com>`
 - **Message:** `Add azure architecture for learning path and platform cloud workstream`
 - **Artifact:** `contractors/HerLogicSolutions/azure-architecture.md`
 - **Commit:** https://github.com/IsaacMcGrind/ubuntu-capital-os/commit/552503e9223c105ac247cb7482f11477381cbea9
@@ -33,7 +35,8 @@ Confirmed contribution includes:
 ### Commit `e44066ef89b1f054c44d2e5441f7f4217ae6f894`
 
 - **Date:** 2026-08-23
-- **Message:** `added azure cost breakdown`
+- **Git author/committer:** `mbuyazinaledi <mbuyazinaledi@gmail.com>`
+- **Message:** `added azure cost  breakdown`
 - **Artifact:** `contractors/HerLogicSolutions/azure-mvp-cost-breakdown.md`
 - **Commit:** https://github.com/IsaacMcGrind/ubuntu-capital-os/commit/e44066ef89b1f054c44d2e5441f7f4217ae6f894
 
