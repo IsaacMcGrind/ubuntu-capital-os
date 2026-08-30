@@ -12,13 +12,17 @@ Build the smallest secure Azure foundation capable of supporting the first compl
 
 The foundation must prove deployability, authentication, protected backend execution, persistence, secrets handling, telemetry, cost governance and reproducible infrastructure before regulated or financial workflows are expanded.
 
-### Governance boundary
+### Governance boundary and start gate
 
-`plan.md` remains the controlling implementation sequence. This Azure plan is a subordinate delivery plan for the platform workstream and does not replace or close plan-required reconstruction outputs.
+`plan.md` remains the controlling implementation sequence. This Azure plan is a subordinate delivery plan and does not replace or close plan-required reconstruction outputs.
 
-Foundation Slice A (`WP-AZ-001` through `WP-AZ-008`) may proceed as documented parallel infrastructure work where it remains reversible and does not define unresolved regulated business behaviour as fact. Programme-level Foundation completion and progression into `WP-AZ-009` through `WP-AZ-012` remain subject to the repository-integrity prerequisites in `docs/09-delivery/foundation-slice-a-governance-reconciliation.md`.
+**Do not start or advance `WP-AZ-001` through `WP-AZ-008` while the repository still fails the applicable Phase 0 through Phase 4 outputs or `AGENT.md` integrity rules.** The exact pre-implementation gate is recorded in `docs/09-delivery/foundation-slice-a-governance-reconciliation.md`.
+
+Planning and acceptance criteria may be maintained while that gate is open, but documentation alone must not change delivery status or be treated as implementation progress.
 
 ## 2. Delivery sequence
+
+The sequence below becomes executable only after the Foundation start gate is satisfied.
 
 | Order | Work package | Primary Azure capability | Main use-case dependency | Target status after evidence |
 |---:|---|---|---|---|
@@ -85,7 +89,7 @@ Azure Blob Storage remains selected by `ARCH-ADR-001` for documents/generated fi
 - identity-foundation configuration and tests are reproducible and documented.
 
 **Work-package status rule**
-- when the evidence above is satisfied, `WP-AZ-003` may reach `COMPONENT_COMPLETE`;
+- when the start gate has been satisfied and the evidence above is present, `WP-AZ-003` may reach `COMPONENT_COMPLETE`;
 - this does **not** by itself move `UC-IAM-001` to `COMPLETE`.
 
 ### WP-AZ-004 — Azure Functions API foundation
@@ -168,6 +172,9 @@ Azure Blob Storage remains selected by `ARCH-ADR-001` for documents/generated fi
 
 ### WP-AZ-009 — Opportunity API
 
+**Start prerequisite**  
+Do not start or advance this package until Foundation Slice A is evidenced and the full first-business-slice integrity gate in `foundation-slice-a-governance-reconciliation.md` is satisfied.
+
 **Deliverables**
 - canonical opportunity read model;
 - server-side filtering/sorting contract where required;
@@ -180,6 +187,9 @@ Azure Blob Storage remains selected by `ARCH-ADR-001` for documents/generated fi
 - traceable request-to-data evidence.
 
 ### WP-AZ-010 — Non-binding expression of interest
+
+**Start prerequisite**  
+Do not start or advance this package until Foundation Slice A is evidenced and the full first-business-slice integrity gate is satisfied.
 
 **Deliverables**
 - EOI endpoint/workflow;
@@ -199,6 +209,9 @@ Azure Blob Storage remains selected by `ARCH-ADR-001` for documents/generated fi
 
 ### WP-AZ-011 — Audit evidence for first slice
 
+**Start prerequisite**  
+Do not start or advance this package until Foundation Slice A is evidenced and the full first-business-slice integrity gate is satisfied.
+
 **Deliverables**
 - business audit events for authentication-sensitive and EOI actions;
 - actor, action, resource, timestamp, outcome and correlation references;
@@ -212,6 +225,9 @@ Azure Blob Storage remains selected by `ARCH-ADR-001` for documents/generated fi
 - authorised reviewer can retrieve the relevant evidence for the acceptance scenario.
 
 ### WP-AZ-012 — E2E acceptance evidence
+
+**Start prerequisite**  
+Do not start or advance this package until Foundation Slice A is evidenced and the full first-business-slice integrity gate is satisfied.
 
 **Deliverables**
 - deployed-environment E2E scenario for the first vertical slice;
@@ -230,16 +246,15 @@ Azure Blob Storage remains selected by `ARCH-ADR-001` for documents/generated fi
 
 Foundation Slice A consists of `WP-AZ-001` through `WP-AZ-008`.
 
-Each technical work package may reach `COMPONENT_COMPLETE` when its own evidence gate is satisfied. The **programme-level Foundation status** may be described as fully reconciled `COMPONENT_COMPLETE` only when:
+Foundation execution can begin only after the pre-implementation repository gate is satisfied. After that, Foundation Slice A as a whole may be described as `COMPONENT_COMPLETE` only when:
 
 1. every Foundation work package has satisfied its own evidence gate and reached `COMPONENT_COMPLETE`;
 2. `WP-AZ-003` identity-foundation completion is not confused with completion of `UC-IAM-001`;
 3. the Azure Foundation can be recreated or reconciled from version-controlled provisioning definitions plus explicitly documented unavoidable manual steps;
 4. application deployment is repeatable and blocked by failed infrastructure validation, build or test;
-5. the resulting infrastructure/application revisions and evidence references reconcile in the Foundation Slice A evidence register;
-6. the material first-slice repository-integrity prerequisites identified in `docs/09-delivery/foundation-slice-a-governance-reconciliation.md` are present and internally consistent before progression into the first business vertical slice.
+5. the resulting infrastructure/application revisions and evidence references reconcile in the Foundation Slice A evidence register.
 
-This completion rule does not promote any business use case to `COMPLETE`.
+This completion rule does not promote any business use case to `COMPLETE` and does not by itself authorize `WP-AZ-009` through `WP-AZ-012`; their separate start gate must also be satisfied.
 
 ## 5. Deferred services and scoped deferrals
 
@@ -282,9 +297,12 @@ The repository currently records distinct responsibilities:
 
 Contractor provenance does not grant independent authority to change business/legal requirements or mark use cases complete.
 
-## 8. First-slice prerequisites and exit criteria
+## 8. First-slice start and exit criteria
 
-Before `WP-AZ-009` through `WP-AZ-012` are progressed as the first business vertical slice, the material first-slice outputs required by `plan.md` must reconcile, including actor/permission evidence, business rules, journey/state definitions, relevant integration/validation records, backlog/tracker/traceability, and risk/open-question linkage.
+`WP-AZ-009` through `WP-AZ-012` must not start or advance until:
+
+1. Foundation Slice A has satisfied its evidence gates; and
+2. the first-slice outputs required by `plan.md` reconcile, including actor/permission evidence, business rules, journey/state definitions, relevant integration/validation records, backlog/tracker/traceability, and risk/open-question linkage.
 
 The first business slice may move to `READY_FOR_ACCEPTANCE` only when all of the following are evidenced in the deployed target environment:
 
@@ -303,10 +321,10 @@ The first business slice may move to `READY_FOR_ACCEPTANCE` only when all of the
 
 ## 9. Next action
 
-Use this Azure delivery plan as a subordinate infrastructure/business-delivery workstream under `plan.md`.
-
-1. Reconcile the plan-required first-slice repository-integrity outputs identified in `docs/09-delivery/foundation-slice-a-governance-reconciliation.md`.
-2. In parallel, execute **WP-AZ-001 through WP-AZ-008** as Foundation Slice A, using `docs/09-delivery/foundation-slice-a-execution-package.md` as the detailed execution contract and `docs/09-delivery/foundation-slice-a-evidence-register.md` as the evidence ledger.
-3. Do not promote programme-level Foundation completion or begin the first business slice solely because infrastructure work is documented or technically deployed; both the technical evidence gates and material repository-integrity prerequisites must reconcile.
-4. Then implement **WP-AZ-009 and WP-AZ-010** as the first business vertical slice against approved requirements and traceability.
-5. Complete **WP-AZ-011 and WP-AZ-012** before the slice is considered for `READY_FOR_ACCEPTANCE`.
+1. Reconcile the Phase 0 through Phase 4 plan-required outputs and `AGENT.md` repository-integrity conditions identified in `docs/09-delivery/foundation-slice-a-governance-reconciliation.md`.
+2. Confirm the Foundation start gate is satisfied.
+3. Only then execute **WP-AZ-001 through WP-AZ-008** using `foundation-slice-a-execution-package.md` and populate the evidence register.
+4. Reconcile all Foundation evidence gates.
+5. Confirm the separate first-business-slice start gate is fully satisfied.
+6. Only then start or advance **WP-AZ-009 through WP-AZ-012**.
+7. Do not consider the first slice `READY_FOR_ACCEPTANCE` until its business-audit, E2E, tracker and traceability evidence reconciles.
