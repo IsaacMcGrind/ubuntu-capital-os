@@ -1,6 +1,7 @@
 # Ubuntu Capital OS — Foundation Slice A Governance Reconciliation
 
-**Status:** `CONFIRMED` repository-governance reconciliation  
+**Status:** `ANALYSIS_IN_PROGRESS`  
+**Evidence classification:** `CONFIRMED`  
 **Assessment date:** 2026-08-30  
 **Related merged PR:** #18 — Foundation Slice A execution package  
 **Controlling documents:** `AGENT.md`, `plan.md`  
@@ -10,43 +11,46 @@
 
 This document records the post-merge repository-level review of Foundation Slice A against the full Ubuntu Capital OS governance context.
 
-It exists to prevent the Foundation execution package from being interpreted as permission to bypass earlier evidence, traceability, or canonical-output requirements in `plan.md` and `AGENT.md`.
+It exists to prevent the Foundation execution package from being interpreted as permission to bypass earlier evidence, traceability, canonical-output, or phase-exit requirements in `plan.md` and `AGENT.md`.
 
 ## 2. Review conclusion
 
-The Foundation Slice A package is internally coherent and remains the correct infrastructure execution package for `WP-AZ-001` through `WP-AZ-008`.
+The Foundation Slice A package is internally coherent as a future infrastructure execution package for `WP-AZ-001` through `WP-AZ-008`.
 
-However, the wider repository still contains known reconstruction and canonical-structure gaps. `plan.md` remains the controlling execution plan, and `AGENT.md` requires repository inconsistencies and missing required outputs to remain visible and to block unsupported status progression.
+However, the wider repository still contains known reconstruction and canonical-structure gaps. `plan.md` remains the controlling execution plan, and `AGENT.md` requires progression to stop when required outputs, links, counts, traceability, or other integrity conditions do not reconcile.
 
-Therefore Foundation Slice A is treated as a **permitted parallel infrastructure workstream**, not as proof that earlier reconstruction phases are complete.
+Accordingly, **Foundation Slice A implementation must not start or advance while those prerequisite repository outputs remain materially incomplete or inconsistent**. The Foundation package may be maintained as planning documentation, but its work-package statuses must remain unchanged until the controlling prerequisites are reconciled.
 
-This interpretation uses the existing `plan.md` rule that phases execute in order unless a documented dependency permits parallel work. The parallel work is allowed because Foundation Slice A establishes reversible platform infrastructure and does not define regulated investment behaviour as fact.
+No parallel-execution exception is created by this document. Any future exception to the ordered plan would need to be explicitly dependency-based and recorded in the controlling plan without conflicting with `AGENT.md` integrity rules.
 
-## 3. Parallel-work boundary
+## 3. Foundation execution prerequisite
 
-The following may proceed in Foundation Slice A while remaining reconstruction work continues:
+Before `WP-AZ-001` through `WP-AZ-008` may begin or advance, the repository must reconcile the controlling Phase 0 through Phase 4 outputs and validation rules that precede implementation.
 
-- Azure DEV/MVP resource and cost-governance baseline;
-- Static Web Apps deployment;
-- Entra External ID foundation;
-- protected Azure Functions API foundation;
-- Azure SQL persistence foundation for non-financial test state;
-- Key Vault and Managed Identity;
-- Application Insights and Azure Monitor;
-- version-controlled infrastructure provisioning and gated CI/CD.
+This includes, at minimum:
 
-This parallel work does **not**:
+- canonical actor and permissions outputs;
+- complete use-case specifications and business rules required by the planned first slice;
+- journeys and state models;
+- integration catalogue and validation design;
+- development backlog and machine-readable backlog outputs;
+- E2E delivery tracker;
+- source-to-use-case-to-implementation-to-test/evidence traceability;
+- open-question and risk linkage;
+- required schemas and structured data outputs;
+- canonical directory/output gaps identified by `plan.md` and `AGENT.md`;
+- reconciliation of links, IDs, counts, evidence classifications, and required files.
 
-- close Phase 0 through Phase 4 reconstruction deliverables;
-- make any business use case `COMPLETE`;
-- prove legal eligibility, accreditation, NDA, investment, settlement, custody, ownership, valuation, retention, or operating-policy rules;
-- permit the first business vertical slice to bypass its backlog, journey, state, permissions, validation, traceability, and E2E evidence requirements.
+The exact controlling test is not whether a document can be drafted around a missing artifact. The test is whether the repository satisfies the applicable `AGENT.md` validation rules and the Phase 0–4 exit criteria in `plan.md` sufficiently to permit implementation progression.
 
-## 4. Repository-integrity gate
+## 4. First-business-slice start gate
 
-Before Foundation Slice A can be treated as fully reconciled `COMPONENT_COMPLETE` at programme level, and before `WP-AZ-009` through `WP-AZ-012` are promoted as the first complete business slice, the repository must reconcile the plan-required outputs that are material to that slice.
+`WP-AZ-009`, `WP-AZ-010`, `WP-AZ-011`, and `WP-AZ-012` must not **start, advance, or be promoted** until both of the following are true:
 
-At minimum this includes:
+1. Foundation Slice A (`WP-AZ-001` through `WP-AZ-008`) has satisfied its own objective evidence gates; and
+2. all plan-required outputs material to the first business slice are present and internally consistent.
+
+The first-slice integrity set includes:
 
 - actor and permissions evidence for authenticated investor and authorised operator access;
 - first-slice business rules and explicit non-binding EOI assumptions;
@@ -58,13 +62,13 @@ At minimum this includes:
 - validation coverage for success and mandatory negative paths;
 - open-question and risk reconciliation for anything that could invalidate the non-binding interpretation.
 
-Known canonical repository-structure gaps remain visible in `README.md` and `plan.md`; this document does not silently declare them complete.
+A partially reconciled subset is not sufficient to start `WP-AZ-009` through `WP-AZ-012`.
 
 ## 5. Azure Blob Storage scope clarification
 
 `ARCH-ADR-001` confirms Azure Blob Storage as the selected platform service for documents and generated files.
 
-Blob Storage is **selected but intentionally deferred from Foundation Slice A (`WP-AZ-001` through `WP-AZ-008`)** because the first Foundation objective does not require confidential-document or report storage to prove the authenticated platform shell.
+Blob Storage is **selected but intentionally deferred from Foundation Slice A (`WP-AZ-001` through `WP-AZ-008`)** because the Foundation objective does not require confidential-document or report storage to prove the authenticated platform shell.
 
 Blob implementation belongs with the first use case that actually requires document storage or controlled document access, such as due-diligence/data-room or investor-document delivery. At that point the delivery package must define container/access design, authorised backend mediation, retention requirements, and evidence gates.
 
@@ -80,12 +84,14 @@ Business audit evidence for the first EOI slice remains in `WP-AZ-011`, where ac
 
 ## 7. Status and evidence rules
 
-The following status rules remain controlling:
+The following rules remain controlling:
 
 - architecture selection is not implementation evidence;
-- each `WP-AZ-001` through `WP-AZ-008` package starts at `READY_FOR_DEVELOPMENT` unless stronger evidence is reconciled;
+- planning documentation does not advance work-package delivery status;
+- `WP-AZ-001` through `WP-AZ-008` remain at their existing recorded statuses until the Foundation execution prerequisite is satisfied and implementation evidence exists;
 - a work package reaches `COMPONENT_COMPLETE` only when its own evidence gate is satisfied;
 - Foundation completion does not promote any business use case to `COMPLETE`;
+- `WP-AZ-009` through `WP-AZ-012` cannot start or advance until the first-business-slice start gate is satisfied;
 - the first business vertical slice cannot reach `READY_FOR_ACCEPTANCE` without deployed E2E evidence and reconciled traceability;
 - regulated settlement remains outside the first slice and blocked by unresolved legal/financial operating-model evidence.
 
@@ -93,18 +99,20 @@ The following status rules remain controlling:
 
 The active sequence is:
 
-1. Reconcile first-slice repository-integrity outputs and keep known canonical-structure gaps explicit.
-2. In parallel, execute `WP-AZ-001` through `WP-AZ-008` and populate `foundation-slice-a-evidence-register.md` with objective implementation evidence.
-3. Do not treat Foundation Slice A as programme-level `COMPONENT_COMPLETE` until both its technical evidence gates and the material repository-integrity gate reconcile.
-4. Implement `WP-AZ-009` and `WP-AZ-010` only against approved first-slice requirements and traceability.
-5. Complete `WP-AZ-011` business-audit evidence and `WP-AZ-012` deployed E2E acceptance evidence before considering `READY_FOR_ACCEPTANCE`.
+1. Reconcile the Phase 0 through Phase 4 repository outputs and integrity conditions required by `AGENT.md` and `plan.md`.
+2. Only after that gate is satisfied, execute `WP-AZ-001` through `WP-AZ-008` and populate `foundation-slice-a-evidence-register.md` with objective implementation evidence.
+3. Reconcile all Foundation evidence gates; do not infer business-use-case completion from infrastructure completion.
+4. Confirm the separate first-business-slice start gate is fully satisfied.
+5. Only then start or advance `WP-AZ-009` and `WP-AZ-010`.
+6. Complete `WP-AZ-011` business-audit evidence and `WP-AZ-012` deployed E2E acceptance evidence before considering `READY_FOR_ACCEPTANCE`.
 
 ## 9. Definition of reconciliation complete
 
-This governance reconciliation is complete when:
+This governance reconciliation may move beyond `ANALYSIS_IN_PROGRESS` only when:
 
-- Foundation Slice A is explicitly understood as parallel infrastructure work rather than a replacement for the controlling plan;
+- the repository no longer relies on a parallel-work interpretation that conflicts with the controlling integrity rules;
+- required pre-implementation outputs are reconciled before Foundation implementation starts;
 - Blob Storage is explicitly selected-but-deferred rather than silently omitted;
 - operational telemetry is distinguished from business audit evidence;
 - no Foundation or use-case status is promoted because documentation exists;
-- first-slice implementation cannot bypass plan-required traceability, validation, permissions, state, backlog, and E2E evidence.
+- `WP-AZ-009` through `WP-AZ-012` are explicitly blocked from starting or advancing until the first-slice integrity prerequisites reconcile.
