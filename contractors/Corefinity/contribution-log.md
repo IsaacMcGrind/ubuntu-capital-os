@@ -5,11 +5,13 @@ This log records repository-observable contribution provenance associated with C
 ## Contributor: `kg-m3`
 
 **Evidence classification:** `CONFIRMED` for repository authorship and merged artifacts.  
+**Primary evidence:** `SRC-014` for merged PR #11; `SRC-016` for branch-synchronisation commit provenance.  
 **Contribution type:** architecture analysis and documentation.  
 **Delivery implication:** architecture understanding materially improved; no backend, infrastructure, deployment, or E2E completion is established by these contributions alone.
 
 ### Merged architecture contribution — PR #11
 
+- **Source:** `SRC-014`
 - **Pull request:** `#11 — docs: add foundational architecture and UC-IAM-001 analysis`
 - **Author:** `kg-m3`
 - **Merged:** 2026-08-24
@@ -29,7 +31,12 @@ The merged PR added the following four architecture artifacts:
 
 ### Supporting branch synchronisation
 
-Repository history also shows `kg-m3`-associated branch synchronisation activity on `corefinity-docs`, including PRs #7 and #10 and merge commits used to keep the architecture branch aligned with `master`. These are recorded as delivery-process provenance, not as separate business or architecture outcomes.
+`SRC-016` confirms `kg-m3`-associated branch-synchronisation commits on `corefinity-docs`, including:
+
+- `0a88c582a3253b44537ab9a26e4ae8b362254e5b`;
+- `64a02d50a2d3028b238198efb7e87e2051e793a7`.
+
+These are recorded as delivery-process provenance, not as separate business or architecture outcomes. The Git metadata reviewed does **not** by itself establish that these commits correspond to PR #7 or PR #10, so no PR-number mapping is asserted here.
 
 ## Governance boundary
 
