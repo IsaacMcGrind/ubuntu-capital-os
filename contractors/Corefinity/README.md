@@ -6,6 +6,7 @@ Corefinity contribution evidence is supporting project evidence only. It does no
 
 ## Current evidence boundary
 
+- `SRC-017` records the project-owner confirmation that GitHub account `kg-m3` is the Corefinity contractor identity for this project.
 - Architecture-analysis contributions are referenced in Ubuntu Capital OS architecture and delivery documentation where recorded.
 - `contribution-log.md` records repository-observable contributor attribution, including the confirmed `kg-m3` architecture contribution merged through PR #11.
 - `new.md` is an existing historical placeholder and is not delivery evidence by itself.
