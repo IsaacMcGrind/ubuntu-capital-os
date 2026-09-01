@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ubuntu-capital.local/schemas/integration.schema.json",
+  "title": "Integration",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["integrationId", "name", "direction", "evidenceStatus", "relatedUseCases"],
+  "properties": {
+    "integrationId": {"type": "string", "pattern": "^INTG-[0-9]{3}$"},
+    "name": {"type": "string", "minLength": 1},
+    "direction": {"enum": ["Inbound", "Outbound", "Bidirectional"]},
+    "evidenceStatus": {"enum": ["CONFIRMED", "INFERRED", "UNKNOWN", "CONTRADICTED"]},
+    "relatedUseCases": {"type": "array", "items": {"type": "string", "pattern": "^UC-[A-Z0-9]+-[0-9]{3}$"}},
+    "notes": {"type": "string"}
+  }
+}

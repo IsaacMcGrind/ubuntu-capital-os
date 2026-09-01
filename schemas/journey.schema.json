@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ubuntu-capital.local/schemas/journey.schema.json",
+  "title": "Journey",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["journeyId", "name", "evidenceStatus", "useCaseIds", "status"],
+  "properties": {
+    "journeyId": {"type": "string", "pattern": "^JRN-[0-9]{3}$"},
+    "name": {"type": "string", "minLength": 1},
+    "evidenceStatus": {"enum": ["CONFIRMED", "INFERRED", "UNKNOWN", "CONTRADICTED"]},
+    "useCaseIds": {"type": "array", "items": {"type": "string", "pattern": "^UC-[A-Z0-9]+-[0-9]{3}$"}},
+    "status": {"type": "string", "minLength": 1}
+  }
+}

@@ -1,0 +1,2913 @@
+{
+  "status": "ANALYSIS_IN_PROGRESS",
+  "generatedAt": "2026-08-31",
+  "items": [
+    {
+      "useCaseId": "UC-PUB-001",
+      "domainCode": "PUB",
+      "name": "Learn about the investment platform",
+      "objective": "Understand the proposition and decide whether to register",
+      "primaryActor": "Prospective investor",
+      "supportingActors": [],
+      "evidenceStatus": "CONFIRMED",
+      "sourceReferences": [
+        "SRC-001"
+      ],
+      "preconditions": [
+        "Dependencies and access controls are satisfied"
+      ],
+      "trigger": "Actor initiates Learn about the investment platform",
+      "mainFlow": [
+        "Actor starts flow",
+        "System validates request",
+        "System processes and records state",
+        "System returns outcome"
+      ],
+      "alternateFlows": [
+        "Optional alternate path may apply based on actor state"
+      ],
+      "exceptionFlows": [
+        "Validation failure",
+        "Authorization failure",
+        "System/integration failure"
+      ],
+      "postconditions": [
+        "State is updated consistently and visible to authorized actors"
+      ],
+      "businessRules": [
+        "BR-010"
+      ],
+      "dataEntities": [],
+      "integrations": [],
+      "permissions": [],
+      "auditRequirements": [
+        "Sensitive actions must be auditable"
+      ],
+      "nonFunctionalRequirements": [
+        "Security",
+        "Observability",
+        "Reliability"
+      ],
+      "dependencies": [
+        "None"
+      ],
+      "priority": "HIGH",
+      "risk": "HIGH",
+      "acceptanceCriteria": [
+        "Success path works",
+        "Failure paths handled safely"
+      ],
+      "e2eCompletionCriteria": [
+        "Flow executes end-to-end with expected policy outcomes"
+      ],
+      "e2eEvidenceRequired": [
+        "Automated or reproducible E2E evidence",
+        "Traceability update"
+      ]
+    },
+    {
+      "useCaseId": "UC-IAM-001",
+      "domainCode": "IAM",
+      "name": "Sign in to the private investor portal",
+      "objective": "Establish an authorised session",
+      "primaryActor": "Registered investor",
+      "supportingActors": [],
+      "evidenceStatus": "INFERRED",
+      "sourceReferences": [
+        "SRC-004"
+      ],
+      "uncertainty": "Authoritative implementation evidence is incomplete or unresolved.",
+      "impact": "Misclassification may cause incorrect delivery sequencing or control gaps.",
+      "evidenceNeeded": [
+        "Direct implementation evidence",
+        "Validated test evidence",
+        "Confirmed policy/contract details"
+      ],
+      "validationMethod": [
+        "Targeted tests",
+        "Traceability reconciliation",
+        "Owner-approved evidence review"
+      ],
+      "preconditions": [
+        "Dependencies and access controls are satisfied"
+      ],
+      "trigger": "Actor initiates Sign in to the private investor portal",
+      "mainFlow": [
+        "Actor starts flow",
+        "System validates request",
+        "System processes and records state",
+        "System returns outcome"
+      ],
+      "alternateFlows": [
+        "Optional alternate path may apply based on actor state"
+      ],
+      "exceptionFlows": [
+        "Validation failure",
+        "Authorization failure",
+        "System/integration failure"
+      ],
+      "postconditions": [
+        "State is updated consistently and visible to authorized actors"
+      ],
+      "businessRules": [
+        "BR-010"
+      ],
+      "dataEntities": [],
+      "integrations": [],
+      "permissions": [],
+      "auditRequirements": [
+        "Sensitive actions must be auditable"
+      ],
+      "nonFunctionalRequirements": [
+        "Security",
+        "Observability",
+        "Reliability"
+      ],
+      "dependencies": [
+        "Account exists"
+      ],
+      "priority": "CRITICAL",
+      "risk": "CRITICAL",
+      "acceptanceCriteria": [
+        "Success path works",
+        "Failure paths handled safely"
+      ],
+      "e2eCompletionCriteria": [
+        "Flow executes end-to-end with expected policy outcomes"
+      ],
+      "e2eEvidenceRequired": [
+        "Automated or reproducible E2E evidence",
+        "Traceability update"
+      ]
+    },
+    {
+      "useCaseId": "UC-IAM-002",
+      "domainCode": "IAM",
+      "name": "Recover account access",
+      "objective": "Regain access after credential or access failure",
+      "primaryActor": "Registered investor",
+      "supportingActors": [],
+      "evidenceStatus": "UNKNOWN",
+      "sourceReferences": [
+        "SRC-004"
+      ],
+      "uncertainty": "Authoritative implementation evidence is incomplete or unresolved.",
+      "impact": "Misclassification may cause incorrect delivery sequencing or control gaps.",
+      "evidenceNeeded": [
+        "Direct implementation evidence",
+        "Validated test evidence",
+        "Confirmed policy/contract details"
+      ],
+      "validationMethod": [
+        "Targeted tests",
+        "Traceability reconciliation",
+        "Owner-approved evidence review"
+      ],
+      "preconditions": [
+        "Dependencies and access controls are satisfied"
+      ],
+      "trigger": "Actor initiates Recover account access",
+      "mainFlow": [
+        "Actor starts flow",
+        "System validates request",
+        "System processes and records state",
+        "System returns outcome"
+      ],
+      "alternateFlows": [
+        "Optional alternate path may apply based on actor state"
+      ],
+      "exceptionFlows": [
+        "Validation failure",
+        "Authorization failure",
+        "System/integration failure"
+      ],
+      "postconditions": [
+        "State is updated consistently and visible to authorized actors"
+      ],
+      "businessRules": [
+        "BR-010"
+      ],
+      "dataEntities": [],
+      "integrations": [],
+      "permissions": [],
+      "auditRequirements": [
+        "Sensitive actions must be auditable"
+      ],
+      "nonFunctionalRequirements": [
+        "Security",
+        "Observability",
+        "Reliability"
+      ],
+      "dependencies": [
+        "Identity verification"
+      ],
+      "priority": "HIGH",
+      "risk": "HIGH",
+      "acceptanceCriteria": [
+        "Success path works",
+        "Failure paths handled safely"
+      ],
+      "e2eCompletionCriteria": [
+        "Flow executes end-to-end with expected policy outcomes"
+      ],
+      "e2eEvidenceRequired": [
+        "Automated or reproducible E2E evidence",
+        "Traceability update"
+      ]
+    },
+    {
+      "useCaseId": "UC-IAM-003",
+      "domainCode": "IAM",
+      "name": "End or expire an investor session",
+      "objective": "Prevent continued unauthorised access",
+      "primaryActor": "Investor / system",
+      "supportingActors": [],
+      "evidenceStatus": "UNKNOWN",
+      "sourceReferences": [
+        "SRC-004"
+      ],
+      "uncertainty": "Authoritative implementation evidence is incomplete or unresolved.",
+      "impact": "Misclassification may cause incorrect delivery sequencing or control gaps.",
+      "evidenceNeeded": [
+        "Direct implementation evidence",
+        "Validated test evidence",
+        "Confirmed policy/contract details"
+      ],
+      "validationMethod": [
+        "Targeted tests",
+        "Traceability reconciliation",
+        "Owner-approved evidence review"
+      ],
+      "preconditions": [
+        "Dependencies and access controls are satisfied"
+      ],
+      "trigger": "Actor initiates End or expire an investor session",
+      "mainFlow": [
+        "Actor starts flow",
+        "System validates request",
+        "System processes and records state",
+        "System returns outcome"
+      ],
+      "alternateFlows": [
+        "Optional alternate path may apply based on actor state"
+      ],
+      "exceptionFlows": [
+        "Validation failure",
+        "Authorization failure",
+        "System/integration failure"
+      ],
+      "postconditions": [
+        "State is updated consistently and visible to authorized actors"
+      ],
+      "businessRules": [
+        "BR-010"
+      ],
+      "dataEntities": [],
+      "integrations": [],
+      "permissions": [],
+      "auditRequirements": [
+        "Sensitive actions must be auditable"
+      ],
+      "nonFunctionalRequirements": [
+        "Security",
+        "Observability",
+        "Reliability"
+      ],
+      "dependencies": [
+        "Active session"
+      ],
+      "priority": "HIGH",
+      "risk": "HIGH",
+      "acceptanceCriteria": [
+        "Success path works",
+        "Failure paths handled safely"
+      ],
+      "e2eCompletionCriteria": [
+        "Flow executes end-to-end with expected policy outcomes"
+      ],
+      "e2eEvidenceRequired": [
+        "Automated or reproducible E2E evidence",
+        "Traceability update"
+      ]
+    },
+    {
+      "useCaseId": "UC-ONB-001",
+      "domainCode": "ONB",
+      "name": "Register as a prospective investor",
+      "objective": "Create an investor account and begin onboarding",
+      "primaryActor": "Prospective investor",
+      "supportingActors": [],
+      "evidenceStatus": "INFERRED",
+      "sourceReferences": [
+        "SRC-004"
+      ],
+      "uncertainty": "Authoritative implementation evidence is incomplete or unresolved.",
+      "impact": "Misclassification may cause incorrect delivery sequencing or control gaps.",
+      "evidenceNeeded": [
+        "Direct implementation evidence",
+        "Validated test evidence",
+        "Confirmed policy/contract details"
+      ],
+      "validationMethod": [
+        "Targeted tests",
+        "Traceability reconciliation",
+        "Owner-approved evidence review"
+      ],
+      "preconditions": [
+        "Dependencies and access controls are satisfied"
+      ],
+      "trigger": "Actor initiates Register as a prospective investor",
+      "mainFlow": [
+        "Actor starts flow",
+        "System validates request",
+        "System processes and records state",
+        "System returns outcome"
+      ],
+      "alternateFlows": [
+        "Optional alternate path may apply based on actor state"
+      ],
+      "exceptionFlows": [
+        "Validation failure",
+        "Authorization failure",
+        "System/integration failure"
+      ],
+      "postconditions": [
+        "State is updated consistently and visible to authorized actors"
+      ],
+      "businessRules": [
+        "BR-010"
+      ],
+      "dataEntities": [],
+      "integrations": [],
+      "permissions": [],
+      "auditRequirements": [
+        "Sensitive actions must be auditable"
+      ],
+      "nonFunctionalRequirements": [
+        "Security",
+        "Observability",
+        "Reliability"
+      ],
+      "dependencies": [
+        "Public experience, IAM"
+      ],
+      "priority": "CRITICAL",
+      "risk": "CRITICAL",
+      "acceptanceCriteria": [
+        "Success path works",
+        "Failure paths handled safely"
+      ],
+      "e2eCompletionCriteria": [
+        "Flow executes end-to-end with expected policy outcomes"
+      ],
+      "e2eEvidenceRequired": [
+        "Automated or reproducible E2E evidence",
+        "Traceability update"
+      ]
+    },
+    {
+      "useCaseId": "UC-ONB-002",
+      "domainCode": "ONB",
+      "name": "Complete investor profile and eligibility onboarding",
+      "objective": "Submit information needed to determine platform eligibility",
+      "primaryActor": "Prospective investor",
+      "supportingActors": [],
+      "evidenceStatus": "INFERRED",
+      "sourceReferences": [
+        "SRC-004"
+      ],
+      "uncertainty": "Authoritative implementation evidence is incomplete or unresolved.",
+      "impact": "Misclassification may cause incorrect delivery sequencing or control gaps.",
+      "evidenceNeeded": [
+        "Direct implementation evidence",
+        "Validated test evidence",
+        "Confirmed policy/contract details"
+      ],
+      "validationMethod": [
+        "Targeted tests",
+        "Traceability reconciliation",
+        "Owner-approved evidence review"
+      ],
+      "preconditions": [
+        "Dependencies and access controls are satisfied"
+      ],
+      "trigger": "Actor initiates Complete investor profile and eligibility onboarding",
+      "mainFlow": [
+        "Actor starts flow",
+        "System validates request",
+        "System processes and records state",
+        "System returns outcome"
+      ],
+      "alternateFlows": [
+        "Optional alternate path may apply based on actor state"
+      ],
+      "exceptionFlows": [
+        "Validation failure",
+        "Authorization failure",
+        "System/integration failure"
+      ],
+      "postconditions": [
+        "State is updated consistently and visible to authorized actors"
+      ],
+      "businessRules": [
+        "BR-010"
+      ],
+      "dataEntities": [],
+      "integrations": [],
+      "permissions": [],
+      "auditRequirements": [
+        "Sensitive actions must be auditable"
+      ],
+      "nonFunctionalRequirements": [
+        "Security",
+        "Observability",
+        "Reliability"
+      ],
+      "dependencies": [
+        "Registration"
+      ],
+      "priority": "CRITICAL",
+      "risk": "CRITICAL",
+      "acceptanceCriteria": [
+        "Success path works",
+        "Failure paths handled safely"
+      ],
+      "e2eCompletionCriteria": [
+        "Flow executes end-to-end with expected policy outcomes"
+      ],
+      "e2eEvidenceRequired": [
+        "Automated or reproducible E2E evidence",
+        "Traceability update"
+      ]
+    },
+    {
+      "useCaseId": "UC-ONB-003",
+      "domainCode": "ONB",
+      "name": "Verify investor identity and compliance status",
+      "objective": "Establish KYC/AML and accreditation status",
+      "primaryActor": "Compliance actor / external service",
+      "supportingActors": [],
+      "evidenceStatus": "INFERRED",
+      "sourceReferences": [
+        "SRC-004"
+      ],
+      "uncertainty": "Authoritative implementation evidence is incomplete or unresolved.",
+      "impact": "Misclassification may cause incorrect delivery sequencing or control gaps.",
+      "evidenceNeeded": [
+        "Direct implementation evidence",
+        "Validated test evidence",
+        "Confirmed policy/contract details"
+      ],
+      "validationMethod": [
+        "Targeted tests",
+        "Traceability reconciliation",
+        "Owner-approved evidence review"
+      ],
+      "preconditions": [
+        "Dependencies and access controls are satisfied"
+      ],
+      "trigger": "Actor initiates Verify investor identity and compliance status",
+      "mainFlow": [
+        "Actor starts flow",
+        "System validates request",
+        "System processes and records state",
+        "System returns outcome"
+      ],
+      "alternateFlows": [
+        "Optional alternate path may apply based on actor state"
+      ],
+      "exceptionFlows": [
+        "Validation failure",
+        "Authorization failure",
+        "System/integration failure"
+      ],
+      "postconditions": [
+        "State is updated consistently and visible to authorized actors"
+      ],
+      "businessRules": [
+        "BR-010"
+      ],
+      "dataEntities": [],
+      "integrations": [],
+      "permissions": [],
+      "auditRequirements": [
+        "Sensitive actions must be auditable"
+      ],
+      "nonFunctionalRequirements": [
+        "Security",
+        "Observability",
+        "Reliability"
+      ],
+      "dependencies": [
+        "Profile submission, integrations"
+      ],
+      "priority": "CRITICAL",
+      "risk": "CRITICAL",
+      "acceptanceCriteria": [
+        "Success path works",
+        "Failure paths handled safely"
+      ],
+      "e2eCompletionCriteria": [
+        "Flow executes end-to-end with expected policy outcomes"
+      ],
+      "e2eEvidenceRequired": [
+        "Automated or reproducible E2E evidence",
+        "Traceability update"
+      ]
+    },
+    {
+      "useCaseId": "UC-OPP-001",
+      "domainCode": "OPP",
+      "name": "Browse visible investment opportunity cards and categories",
+      "objective": "Discover available opportunity summaries shown by the reference interface",
+      "primaryActor": "Eligible investor",
+      "supportingActors": [],
+      "evidenceStatus": "CONFIRMED",
+      "sourceReferences": [
+        "SRC-001"
+      ],
+      "preconditions": [
+        "Dependencies and access controls are satisfied"
+      ],
+      "trigger": "Actor initiates Browse visible investment opportunity cards and categories",
+      "mainFlow": [
+        "Actor starts flow",
+        "System validates request",
+        "System processes and records state",
+        "System returns outcome"
+      ],
+      "alternateFlows": [
+        "Optional alternate path may apply based on actor state"
+      ],
+      "exceptionFlows": [
+        "Validation failure",
+        "Authorization failure",
+        "System/integration failure"
+      ],
+      "postconditions": [
+        "State is updated consistently and visible to authorized actors"
+      ],
+      "businessRules": [
+        "BR-010"
+      ],
+      "dataEntities": [],
+      "integrations": [],
+      "permissions": [],
+      "auditRequirements": [
+        "Sensitive actions must be auditable"
+      ],
+      "nonFunctionalRequirements": [
+        "Security",
+        "Observability",
+        "Reliability"
+      ],
+      "dependencies": [
+        "IAM, access status"
+      ],
+      "priority": "CRITICAL",
+      "risk": "CRITICAL",
+      "acceptanceCriteria": [
+        "Success path works",
+        "Failure paths handled safely"
+      ],
+      "e2eCompletionCriteria": [
+        "Flow executes end-to-end with expected policy outcomes"
+      ],
+      "e2eEvidenceRequired": [
+        "Automated or reproducible E2E evidence",
+        "Traceability update"
+      ]
+    },
+    {
+      "useCaseId": "UC-OPP-002",
+      "domainCode": "OPP",
+      "name": "Filter and sort opportunities",
+      "objective": "Narrow the opportunity set by investor-relevant criteria",
+      "primaryActor": "Eligible investor",
+      "supportingActors": [],
+      "evidenceStatus": "INFERRED",
+      "sourceReferences": [
+        "SRC-004"
+      ],
+      "uncertainty": "Authoritative implementation evidence is incomplete or unresolved.",
+      "impact": "Misclassification may cause incorrect delivery sequencing or control gaps.",
+      "evidenceNeeded": [
+        "Direct implementation evidence",
+        "Validated test evidence",
+        "Confirmed policy/contract details"
+      ],
+      "validationMethod": [
+        "Targeted tests",
+        "Traceability reconciliation",
+        "Owner-approved evidence review"
+      ],
+      "preconditions": [
+        "Dependencies and access controls are satisfied"
+      ],
+      "trigger": "Actor initiates Filter and sort opportunities",
+      "mainFlow": [
+        "Actor starts flow",
+        "System validates request",
+        "System processes and records state",
+        "System returns outcome"
+      ],
+      "alternateFlows": [
+        "Optional alternate path may apply based on actor state"
+      ],
+      "exceptionFlows": [
+        "Validation failure",
+        "Authorization failure",
+        "System/integration failure"
+      ],
+      "postconditions": [
+        "State is updated consistently and visible to authorized actors"
+      ],
+      "businessRules": [
+        "BR-010"
+      ],
+      "dataEntities": [],
+      "integrations": [],
+      "permissions": [],
+      "auditRequirements": [
+        "Sensitive actions must be auditable"
+      ],
+      "nonFunctionalRequirements": [
+        "Security",
+        "Observability",
+        "Reliability"
+      ],
+      "dependencies": [
+        "Opportunity catalogue"
+      ],
+      "priority": "HIGH",
+      "risk": "HIGH",
+      "acceptanceCriteria": [
+        "Success path works",
+        "Failure paths handled safely"
+      ],
+      "e2eCompletionCriteria": [
+        "Flow executes end-to-end with expected policy outcomes"
+      ],
+      "e2eEvidenceRequired": [
+        "Automated or reproducible E2E evidence",
+        "Traceability update"
+      ]
+    },
+    {
+      "useCaseId": "UC-OPP-003",
+      "domainCode": "OPP",
+      "name": "View an opportunity detail page",
+      "objective": "Understand the opportunity, terms, status, and next action",
+      "primaryActor": "Eligible investor",
+      "supportingActors": [],
+      "evidenceStatus": "INFERRED",
+      "sourceReferences": [
+        "SRC-004"
+      ],
+      "uncertainty": "Authoritative implementation evidence is incomplete or unresolved.",
+      "impact": "Misclassification may cause incorrect delivery sequencing or control gaps.",
+      "evidenceNeeded": [
+        "Direct implementation evidence",
+        "Validated test evidence",
+        "Confirmed policy/contract details"
+      ],
+      "validationMethod": [
+        "Targeted tests",
+        "Traceability reconciliation",
+        "Owner-approved evidence review"
+      ],
+      "preconditions": [
+        "Dependencies and access controls are satisfied"
+      ],
+      "trigger": "Actor initiates View an opportunity detail page",
+      "mainFlow": [
+        "Actor starts flow",
+        "System validates request",
+        "System processes and records state",
+        "System returns outcome"
+      ],
+      "alternateFlows": [
+        "Optional alternate path may apply based on actor state"
+      ],
+      "exceptionFlows": [
+        "Validation failure",
+        "Authorization failure",
+        "System/integration failure"
+      ],
+      "postconditions": [
+        "State is updated consistently and visible to authorized actors"
+      ],
+      "businessRules": [
+        "BR-010"
+      ],
+      "dataEntities": [],
+      "integrations": [],
+      "permissions": [],
+      "auditRequirements": [
+        "Sensitive actions must be auditable"
+      ],
+      "nonFunctionalRequirements": [
+        "Security",
+        "Observability",
+        "Reliability"
+      ],
+      "dependencies": [
+        "Opportunity available"
+      ],
+      "priority": "CRITICAL",
+      "risk": "CRITICAL",
+      "acceptanceCriteria": [
+        "Success path works",
+        "Failure paths handled safely"
+      ],
+      "e2eCompletionCriteria": [
+        "Flow executes end-to-end with expected policy outcomes"
+      ],
+      "e2eEvidenceRequired": [
+        "Automated or reproducible E2E evidence",
+        "Traceability update"
+      ]
+    },
+    {
+      "useCaseId": "UC-DD-001",
+      "domainCode": "DD",
+      "name": "Initiate an NDA action for an opportunity",
+      "objective": "Begin the process required to access restricted opportunity content",
+      "primaryActor": "Eligible investor",
+      "supportingActors": [],
+      "evidenceStatus": "CONFIRMED",
+      "sourceReferences": [
+        "SRC-001"
+      ],
+      "preconditions": [
+        "Dependencies and access controls are satisfied"
+      ],
+      "trigger": "Actor initiates Initiate an NDA action for an opportunity",
+      "mainFlow": [
+        "Actor starts flow",
+        "System validates request",
+        "System processes and records state",
+        "System returns outcome"
+      ],
+      "alternateFlows": [
+        "Optional alternate path may apply based on actor state"
+      ],
+      "exceptionFlows": [
+        "Validation failure",
+        "Authorization failure",
+        "System/integration failure"
+      ],
+      "postconditions": [
+        "State is updated consistently and visible to authorized actors"
+      ],
+      "businessRules": [
+        "BR-010"
+      ],
+      "dataEntities": [],
+      "integrations": [],
+      "permissions": [],
+      "auditRequirements": [
+        "Sensitive actions must be auditable"
+      ],
+      "nonFunctionalRequirements": [
+        "Security",
+        "Observability",
+        "Reliability"
+      ],
+      "dependencies": [
+        "Opportunity, identity, agreement service"
+      ],
+      "priority": "HIGH",
+      "risk": "HIGH",
+      "acceptanceCriteria": [
+        "Success path works",
+        "Failure paths handled safely"
+      ],
+      "e2eCompletionCriteria": [
+        "Flow executes end-to-end with expected policy outcomes"
+      ],
+      "e2eEvidenceRequired": [
+        "Automated or reproducible E2E evidence",
+        "Traceability update"
+      ]
+    },
+    {
+      "useCaseId": "UC-DD-002",
+      "domainCode": "DD",
+      "name": "Access confidential due-diligence materials",
+      "objective": "Review restricted opportunity material",
+      "primaryActor": "NDA-authorised investor",
+      "supportingActors": [],
+      "evidenceStatus": "INFERRED",
+      "sourceReferences": [
+        "SRC-004"
+      ],
+      "uncertainty": "Authoritative implementation evidence is incomplete or unresolved.",
+      "impact": "Misclassification may cause incorrect delivery sequencing or control gaps.",
+      "evidenceNeeded": [
+        "Direct implementation evidence",
+        "Validated test evidence",
+        "Confirmed policy/contract details"
+      ],
+      "validationMethod": [
+        "Targeted tests",
+        "Traceability reconciliation",
+        "Owner-approved evidence review"
+      ],
+      "preconditions": [
+        "Dependencies and access controls are satisfied"
+      ],
+      "trigger": "Actor initiates Access confidential due-diligence materials",
+      "mainFlow": [
+        "Actor starts flow",
+        "System validates request",
+        "System processes and records state",
+        "System returns outcome"
+      ],
+      "alternateFlows": [
+        "Optional alternate path may apply based on actor state"
+      ],
+      "exceptionFlows": [
+        "Validation failure",
+        "Authorization failure",
+        "System/integration failure"
+      ],
+      "postconditions": [
+        "State is updated consistently and visible to authorized actors"
+      ],
+      "businessRules": [
+        "BR-010"
+      ],
+      "dataEntities": [],
+      "integrations": [],
+      "permissions": [],
+      "auditRequirements": [
+        "Sensitive actions must be auditable"
+      ],
+      "nonFunctionalRequirements": [
+        "Security",
+        "Observability",
+        "Reliability"
+      ],
+      "dependencies": [
+        "Valid NDA/access grant"
+      ],
+      "priority": "HIGH",
+      "risk": "HIGH",
+      "acceptanceCriteria": [
+        "Success path works",
+        "Failure paths handled safely"
+      ],
+      "e2eCompletionCriteria": [
+        "Flow executes end-to-end with expected policy outcomes"
+      ],
+      "e2eEvidenceRequired": [
+        "Automated or reproducible E2E evidence",
+        "Traceability update"
+      ]
+    },
+    {
+      "useCaseId": "UC-INV-001",
+      "domainCode": "INV",
+      "name": "Submit an investment commitment",
+      "objective": "Record an intention or binding commitment to invest",
+      "primaryActor": "Eligible investor",
+      "supportingActors": [],
+      "evidenceStatus": "INFERRED",
+      "sourceReferences": [
+        "SRC-004"
+      ],
+      "uncertainty": "Authoritative implementation evidence is incomplete or unresolved.",
+      "impact": "Misclassification may cause incorrect delivery sequencing or control gaps.",
+      "evidenceNeeded": [
+        "Direct implementation evidence",
+        "Validated test evidence",
+        "Confirmed policy/contract details"
+      ],
+      "validationMethod": [
+        "Targeted tests",
+        "Traceability reconciliation",
+        "Owner-approved evidence review"
+      ],
+      "preconditions": [
+        "Dependencies and access controls are satisfied"
+      ],
+      "trigger": "Actor initiates Submit an investment commitment",
+      "mainFlow": [
+        "Actor starts flow",
+        "System validates request",
+        "System processes and records state",
+        "System returns outcome"
+      ],
+      "alternateFlows": [
+        "Optional alternate path may apply based on actor state"
+      ],
+      "exceptionFlows": [
+        "Validation failure",
+        "Authorization failure",
+        "System/integration failure"
+      ],
+      "postconditions": [
+        "State is updated consistently and visible to authorized actors"
+      ],
+      "businessRules": [
+        "BR-010"
+      ],
+      "dataEntities": [],
+      "integrations": [],
+      "permissions": [],
+      "auditRequirements": [
+        "Sensitive actions must be auditable"
+      ],
+      "nonFunctionalRequirements": [
+        "Security",
+        "Observability",
+        "Reliability"
+      ],
+      "dependencies": [
+        "Opportunity open, DD where required, eligibility"
+      ],
+      "priority": "CRITICAL",
+      "risk": "CRITICAL",
+      "acceptanceCriteria": [
+        "Success path works",
+        "Failure paths handled safely"
+      ],
+      "e2eCompletionCriteria": [
+        "Flow executes end-to-end with expected policy outcomes"
+      ],
+      "e2eEvidenceRequired": [
+        "Automated or reproducible E2E evidence",
+        "Traceability update"
+      ]
+    },
+    {
+      "useCaseId": "UC-INV-002",
+      "domainCode": "INV",
+      "name": "Review and resolve a pending investment",
+      "objective": "Reach an accepted, rejected, cancelled, or remediated status",
+      "primaryActor": "Investor / operations",
+      "supportingActors": [],
+      "evidenceStatus": "CONFIRMED",
+      "sourceReferences": [
+        "SRC-001"
+      ],
+      "preconditions": [
+        "Dependencies and access controls are satisfied"
+      ],
+      "trigger": "Actor initiates Review and resolve a pending investment",
+      "mainFlow": [
+        "Actor starts flow",
+        "System validates request",
+        "System processes and records state",
+        "System returns outcome"
+      ],
+      "alternateFlows": [
+        "Optional alternate path may apply based on actor state"
+      ],
+      "exceptionFlows": [
+        "Validation failure",
+        "Authorization failure",
+        "System/integration failure"
+      ],
+      "postconditions": [
+        "State is updated consistently and visible to authorized actors"
+      ],
+      "businessRules": [
+        "BR-010"
+      ],
+      "dataEntities": [],
+      "integrations": [],
+      "permissions": [],
+      "auditRequirements": [
+        "Sensitive actions must be auditable"
+      ],
+      "nonFunctionalRequirements": [
+        "Security",
+        "Observability",
+        "Reliability"
+      ],
+      "dependencies": [
+        "Commitment exists"
+      ],
+      "priority": "CRITICAL",
+      "risk": "CRITICAL",
+      "acceptanceCriteria": [
+        "Success path works",
+        "Failure paths handled safely"
+      ],
+      "e2eCompletionCriteria": [
+        "Flow executes end-to-end with expected policy outcomes"
+      ],
+      "e2eEvidenceRequired": [
+        "Automated or reproducible E2E evidence",
+        "Traceability update"
+      ]
+    },
+    {
+      "useCaseId": "UC-INV-003",
+      "domainCode": "INV",
+      "name": "Cancel or withdraw an investment request",
+      "objective": "Stop an eligible pending commitment",
+      "primaryActor": "Investor / authorised operator",
+      "supportingActors": [],
+      "evidenceStatus": "UNKNOWN",
+      "sourceReferences": [
+        "SRC-004"
+      ],
+      "uncertainty": "Authoritative implementation evidence is incomplete or unresolved.",
+      "impact": "Misclassification may cause incorrect delivery sequencing or control gaps.",
+      "evidenceNeeded": [
+        "Direct implementation evidence",
+        "Validated test evidence",
+        "Confirmed policy/contract details"
+      ],
+      "validationMethod": [
+        "Targeted tests",
+        "Traceability reconciliation",
+        "Owner-approved evidence review"
+      ],
+      "preconditions": [
+        "Dependencies and access controls are satisfied"
+      ],
+      "trigger": "Actor initiates Cancel or withdraw an investment request",
+      "mainFlow": [
+        "Actor starts flow",
+        "System validates request",
+        "System processes and records state",
+        "System returns outcome"
+      ],
+      "alternateFlows": [
+        "Optional alternate path may apply based on actor state"
+      ],
+      "exceptionFlows": [
+        "Validation failure",
+        "Authorization failure",
+        "System/integration failure"
+      ],
+      "postconditions": [
+        "State is updated consistently and visible to authorized actors"
+      ],
+      "businessRules": [
+        "BR-010"
+      ],
+      "dataEntities": [],
+      "integrations": [],
+      "permissions": [],
+      "auditRequirements": [
+        "Sensitive actions must be auditable"
+      ],
+      "nonFunctionalRequirements": [
+        "Security",
+        "Observability",
+        "Reliability"
+      ],
+      "dependencies": [
+        "Pending commitment, cancellation policy"
+      ],
+      "priority": "MEDIUM",
+      "risk": "MEDIUM",
+      "acceptanceCriteria": [
+        "Success path works",
+        "Failure paths handled safely"
+      ],
+      "e2eCompletionCriteria": [
+        "Flow executes end-to-end with expected policy outcomes"
+      ],
+      "e2eEvidenceRequired": [
+        "Automated or reproducible E2E evidence",
+        "Traceability update"
+      ]
+    },
+    {
+      "useCaseId": "UC-SET-001",
+      "domainCode": "SET",
+      "name": "Receive funding instructions",
+      "objective": "Obtain approved settlement instructions",
+      "primaryActor": "Accepted investor",
+      "supportingActors": [],
+      "evidenceStatus": "UNKNOWN",
+      "sourceReferences": [
+        "SRC-004"
+      ],
+      "uncertainty": "Authoritative implementation evidence is incomplete or unresolved.",
+      "impact": "Misclassification may cause incorrect delivery sequencing or control gaps.",
+      "evidenceNeeded": [
+        "Direct implementation evidence",
+        "Validated test evidence",
+        "Confirmed policy/contract details"
+      ],
+      "validationMethod": [
+        "Targeted tests",
+        "Traceability reconciliation",
+        "Owner-approved evidence review"
+      ],
+      "preconditions": [
+        "Dependencies and access controls are satisfied"
+      ],
+      "trigger": "Actor initiates Receive funding instructions",
+      "mainFlow": [
+        "Actor starts flow",
+        "System validates request",
+        "System processes and records state",
+        "System returns outcome"
+      ],
+      "alternateFlows": [
+        "Optional alternate path may apply based on actor state"
+      ],
+      "exceptionFlows": [
+        "Validation failure",
+        "Authorization failure",
+        "System/integration failure"
+      ],
+      "postconditions": [
+        "State is updated consistently and visible to authorized actors"
+      ],
+      "businessRules": [
+        "BR-010"
+      ],
+      "dataEntities": [],
+      "integrations": [],
+      "permissions": [],
+      "auditRequirements": [
+        "Sensitive actions must be auditable"
+      ],
+      "nonFunctionalRequirements": [
+        "Security",
+        "Observability",
+        "Reliability"
+      ],
+      "dependencies": [
+        "Accepted commitment"
+      ],
+      "priority": "CRITICAL",
+      "risk": "CRITICAL",
+      "acceptanceCriteria": [
+        "Success path works",
+        "Failure paths handled safely"
+      ],
+      "e2eCompletionCriteria": [
+        "Flow executes end-to-end with expected policy outcomes"
+      ],
+      "e2eEvidenceRequired": [
+        "Automated or reproducible E2E evidence",
+        "Traceability update"
+      ]
+    },
+    {
+      "useCaseId": "UC-SET-002",
+      "domainCode": "SET",
+      "name": "Record and reconcile investor funds",
+      "objective": "Match funds to the correct commitment",
+      "primaryActor": "Operations / banking integration",
+      "supportingActors": [],
+      "evidenceStatus": "UNKNOWN",
+      "sourceReferences": [
+        "SRC-004"
+      ],
+      "uncertainty": "Authoritative implementation evidence is incomplete or unresolved.",
+      "impact": "Misclassification may cause incorrect delivery sequencing or control gaps.",
+      "evidenceNeeded": [
+        "Direct implementation evidence",
+        "Validated test evidence",
+        "Confirmed policy/contract details"
+      ],
+      "validationMethod": [
+        "Targeted tests",
+        "Traceability reconciliation",
+        "Owner-approved evidence review"
+      ],
+      "preconditions": [
+        "Dependencies and access controls are satisfied"
+      ],
+      "trigger": "Actor initiates Record and reconcile investor funds",
+      "mainFlow": [
+        "Actor starts flow",
+        "System validates request",
+        "System processes and records state",
+        "System returns outcome"
+      ],
+      "alternateFlows": [
+        "Optional alternate path may apply based on actor state"
+      ],
+      "exceptionFlows": [
+        "Validation failure",
+        "Authorization failure",
+        "System/integration failure"
+      ],
+      "postconditions": [
+        "State is updated consistently and visible to authorized actors"
+      ],
+      "businessRules": [
+        "BR-010"
+      ],
+      "dataEntities": [],
+      "integrations": [],
+      "permissions": [],
+      "auditRequirements": [
+        "Sensitive actions must be auditable"
+      ],
+      "nonFunctionalRequirements": [
+        "Security",
+        "Observability",
+        "Reliability"
+      ],
+      "dependencies": [
+        "Funding receipt, reference data"
+      ],
+      "priority": "CRITICAL",
+      "risk": "CRITICAL",
+      "acceptanceCriteria": [
+        "Success path works",
+        "Failure paths handled safely"
+      ],
+      "e2eCompletionCriteria": [
+        "Flow executes end-to-end with expected policy outcomes"
+      ],
+      "e2eEvidenceRequired": [
+        "Automated or reproducible E2E evidence",
+        "Traceability update"
+      ]
+    },
+    {
+      "useCaseId": "UC-SET-003",
+      "domainCode": "SET",
+      "name": "Resolve a settlement exception",
+      "objective": "Correct unmatched, partial, late, duplicate, or reversed funding",
+      "primaryActor": "Operations",
+      "supportingActors": [],
+      "evidenceStatus": "UNKNOWN",
+      "sourceReferences": [
+        "SRC-004"
+      ],
+      "uncertainty": "Authoritative implementation evidence is incomplete or unresolved.",
+      "impact": "Misclassification may cause incorrect delivery sequencing or control gaps.",
+      "evidenceNeeded": [
+        "Direct implementation evidence",
+        "Validated test evidence",
+        "Confirmed policy/contract details"
+      ],
+      "validationMethod": [
+        "Targeted tests",
+        "Traceability reconciliation",
+        "Owner-approved evidence review"
+      ],
+      "preconditions": [
+        "Dependencies and access controls are satisfied"
+      ],
+      "trigger": "Actor initiates Resolve a settlement exception",
+      "mainFlow": [
+        "Actor starts flow",
+        "System validates request",
+        "System processes and records state",
+        "System returns outcome"
+      ],
+      "alternateFlows": [
+        "Optional alternate path may apply based on actor state"
+      ],
+      "exceptionFlows": [
+        "Validation failure",
+        "Authorization failure",
+        "System/integration failure"
+      ],
+      "postconditions": [
+        "State is updated consistently and visible to authorized actors"
+      ],
+      "businessRules": [
+        "BR-010"
+      ],
+      "dataEntities": [],
+      "integrations": [],
+      "permissions": [],
+      "auditRequirements": [
+        "Sensitive actions must be auditable"
+      ],
+      "nonFunctionalRequirements": [
+        "Security",
+        "Observability",
+        "Reliability"
+      ],
+      "dependencies": [
+        "Settlement exception"
+      ],
+      "priority": "HIGH",
+      "risk": "HIGH",
+      "acceptanceCriteria": [
+        "Success path works",
+        "Failure paths handled safely"
+      ],
+      "e2eCompletionCriteria": [
+        "Flow executes end-to-end with expected policy outcomes"
+      ],
+      "e2eEvidenceRequired": [
+        "Automated or reproducible E2E evidence",
+        "Traceability update"
+      ]
+    },
+    {
+      "useCaseId": "UC-PORT-001",
+      "domainCode": "PORT",
+      "name": "View pending investments",
+      "objective": "Understand investments awaiting completion or resolution",
+      "primaryActor": "Investor",
+      "supportingActors": [],
+      "evidenceStatus": "CONFIRMED",
+      "sourceReferences": [
+        "SRC-001"
+      ],
+      "preconditions": [
+        "Dependencies and access controls are satisfied"
+      ],
+      "trigger": "Actor initiates View pending investments",
+      "mainFlow": [
+        "Actor starts flow",
+        "System validates request",
+        "System processes and records state",
+        "System returns outcome"
+      ],
+      "alternateFlows": [
+        "Optional alternate path may apply based on actor state"
+      ],
+      "exceptionFlows": [
+        "Validation failure",
+        "Authorization failure",
+        "System/integration failure"
+      ],
+      "postconditions": [
+        "State is updated consistently and visible to authorized actors"
+      ],
+      "businessRules": [
+        "BR-010"
+      ],
+      "dataEntities": [],
+      "integrations": [],
+      "permissions": [],
+      "auditRequirements": [
+        "Sensitive actions must be auditable"
+      ],
+      "nonFunctionalRequirements": [
+        "Security",
+        "Observability",
+        "Reliability"
+      ],
+      "dependencies": [
+        "IAM, investment records"
+      ],
+      "priority": "HIGH",
+      "risk": "HIGH",
+      "acceptanceCriteria": [
+        "Success path works",
+        "Failure paths handled safely"
+      ],
+      "e2eCompletionCriteria": [
+        "Flow executes end-to-end with expected policy outcomes"
+      ],
+      "e2eEvidenceRequired": [
+        "Automated or reproducible E2E evidence",
+        "Traceability update"
+      ]
+    },
+    {
+      "useCaseId": "UC-PORT-002",
+      "domainCode": "PORT",
+      "name": "View current holdings",
+      "objective": "See owned companies, funds, or alternative assets",
+      "primaryActor": "Investor",
+      "supportingActors": [],
+      "evidenceStatus": "CONFIRMED",
+      "sourceReferences": [
+        "SRC-001"
+      ],
+      "preconditions": [
+        "Dependencies and access controls are satisfied"
+      ],
+      "trigger": "Actor initiates View current holdings",
+      "mainFlow": [
+        "Actor starts flow",
+        "System validates request",
+        "System processes and records state",
+        "System returns outcome"
+      ],
+      "alternateFlows": [
+        "Optional alternate path may apply based on actor state"
+      ],
+      "exceptionFlows": [
+        "Validation failure",
+        "Authorization failure",
+        "System/integration failure"
+      ],
+      "postconditions": [
+        "State is updated consistently and visible to authorized actors"
+      ],
+      "businessRules": [
+        "BR-010"
+      ],
+      "dataEntities": [],
+      "integrations": [],
+      "permissions": [],
+      "auditRequirements": [
+        "Sensitive actions must be auditable"
+      ],
+      "nonFunctionalRequirements": [
+        "Security",
+        "Observability",
+        "Reliability"
+      ],
+      "dependencies": [
+        "Completed investments"
+      ],
+      "priority": "CRITICAL",
+      "risk": "CRITICAL",
+      "acceptanceCriteria": [
+        "Success path works",
+        "Failure paths handled safely"
+      ],
+      "e2eCompletionCriteria": [
+        "Flow executes end-to-end with expected policy outcomes"
+      ],
+      "e2eEvidenceRequired": [
+        "Automated or reproducible E2E evidence",
+        "Traceability update"
+      ]
+    },
+    {
+      "useCaseId": "UC-PORT-003",
+      "domainCode": "PORT",
+      "name": "View portfolio performance",
+      "objective": "Understand portfolio value and performance",
+      "primaryActor": "Investor",
+      "supportingActors": [],
+      "evidenceStatus": "CONFIRMED",
+      "sourceReferences": [
+        "SRC-001"
+      ],
+      "preconditions": [
+        "Dependencies and access controls are satisfied"
+      ],
+      "trigger": "Actor initiates View portfolio performance",
+      "mainFlow": [
+        "Actor starts flow",
+        "System validates request",
+        "System processes and records state",
+        "System returns outcome"
+      ],
+      "alternateFlows": [
+        "Optional alternate path may apply based on actor state"
+      ],
+      "exceptionFlows": [
+        "Validation failure",
+        "Authorization failure",
+        "System/integration failure"
+      ],
+      "postconditions": [
+        "State is updated consistently and visible to authorized actors"
+      ],
+      "businessRules": [
+        "BR-010"
+      ],
+      "dataEntities": [],
+      "integrations": [],
+      "permissions": [],
+      "auditRequirements": [
+        "Sensitive actions must be auditable"
+      ],
+      "nonFunctionalRequirements": [
+        "Security",
+        "Observability",
+        "Reliability"
+      ],
+      "dependencies": [
+        "Holdings, valuations, cash flows"
+      ],
+      "priority": "CRITICAL",
+      "risk": "CRITICAL",
+      "acceptanceCriteria": [
+        "Success path works",
+        "Failure paths handled safely"
+      ],
+      "e2eCompletionCriteria": [
+        "Flow executes end-to-end with expected policy outcomes"
+      ],
+      "e2eEvidenceRequired": [
+        "Automated or reproducible E2E evidence",
+        "Traceability update"
+      ]
+    },
+    {
+      "useCaseId": "UC-PORT-004",
+      "domainCode": "PORT",
+      "name": "View portfolio activity history",
+      "objective": "Review material portfolio and account events",
+      "primaryActor": "Investor",
+      "supportingActors": [],
+      "evidenceStatus": "CONFIRMED",
+      "sourceReferences": [
+        "SRC-001"
+      ],
+      "preconditions": [
+        "Dependencies and access controls are satisfied"
+      ],
+      "trigger": "Actor initiates View portfolio activity history",
+      "mainFlow": [
+        "Actor starts flow",
+        "System validates request",
+        "System processes and records state",
+        "System returns outcome"
+      ],
+      "alternateFlows": [
+        "Optional alternate path may apply based on actor state"
+      ],
+      "exceptionFlows": [
+        "Validation failure",
+        "Authorization failure",
+        "System/integration failure"
+      ],
+      "postconditions": [
+        "State is updated consistently and visible to authorized actors"
+      ],
+      "businessRules": [
+        "BR-010"
+      ],
+      "dataEntities": [],
+      "integrations": [],
+      "permissions": [],
+      "auditRequirements": [
+        "Sensitive actions must be auditable"
+      ],
+      "nonFunctionalRequirements": [
+        "Security",
+        "Observability",
+        "Reliability"
+      ],
+      "dependencies": [
+        "Auditable events"
+      ],
+      "priority": "HIGH",
+      "risk": "HIGH",
+      "acceptanceCriteria": [
+        "Success path works",
+        "Failure paths handled safely"
+      ],
+      "e2eCompletionCriteria": [
+        "Flow executes end-to-end with expected policy outcomes"
+      ],
+      "e2eEvidenceRequired": [
+        "Automated or reproducible E2E evidence",
+        "Traceability update"
+      ]
+    },
+    {
+      "useCaseId": "UC-DOC-001",
+      "domainCode": "DOC",
+      "name": "View and download reports and tax documents",
+      "objective": "Obtain authorised portfolio and tax documentation",
+      "primaryActor": "Investor",
+      "supportingActors": [],
+      "evidenceStatus": "CONFIRMED",
+      "sourceReferences": [
+        "SRC-001"
+      ],
+      "preconditions": [
+        "Dependencies and access controls are satisfied"
+      ],
+      "trigger": "Actor initiates View and download reports and tax documents",
+      "mainFlow": [
+        "Actor starts flow",
+        "System validates request",
+        "System processes and records state",
+        "System returns outcome"
+      ],
+      "alternateFlows": [
+        "Optional alternate path may apply based on actor state"
+      ],
+      "exceptionFlows": [
+        "Validation failure",
+        "Authorization failure",
+        "System/integration failure"
+      ],
+      "postconditions": [
+        "State is updated consistently and visible to authorized actors"
+      ],
+      "businessRules": [
+        "BR-010"
+      ],
+      "dataEntities": [],
+      "integrations": [],
+      "permissions": [],
+      "auditRequirements": [
+        "Sensitive actions must be auditable"
+      ],
+      "nonFunctionalRequirements": [
+        "Security",
+        "Observability",
+        "Reliability"
+      ],
+      "dependencies": [
+        "Generated/uploaded documents"
+      ],
+      "priority": "HIGH",
+      "risk": "HIGH",
+      "acceptanceCriteria": [
+        "Success path works",
+        "Failure paths handled safely"
+      ],
+      "e2eCompletionCriteria": [
+        "Flow executes end-to-end with expected policy outcomes"
+      ],
+      "e2eEvidenceRequired": [
+        "Automated or reproducible E2E evidence",
+        "Traceability update"
+      ]
+    },
+    {
+      "useCaseId": "UC-NEWS-001",
+      "domainCode": "NEWS",
+      "name": "View portfolio and opportunity news content",
+      "objective": "Stay informed about investments and opportunities",
+      "primaryActor": "Investor",
+      "supportingActors": [],
+      "evidenceStatus": "CONFIRMED",
+      "sourceReferences": [
+        "SRC-001"
+      ],
+      "preconditions": [
+        "Dependencies and access controls are satisfied"
+      ],
+      "trigger": "Actor initiates View portfolio and opportunity news content",
+      "mainFlow": [
+        "Actor starts flow",
+        "System validates request",
+        "System processes and records state",
+        "System returns outcome"
+      ],
+      "alternateFlows": [
+        "Optional alternate path may apply based on actor state"
+      ],
+      "exceptionFlows": [
+        "Validation failure",
+        "Authorization failure",
+        "System/integration failure"
+      ],
+      "postconditions": [
+        "State is updated consistently and visible to authorized actors"
+      ],
+      "businessRules": [
+        "BR-010"
+      ],
+      "dataEntities": [],
+      "integrations": [],
+      "permissions": [],
+      "auditRequirements": [
+        "Sensitive actions must be auditable"
+      ],
+      "nonFunctionalRequirements": [
+        "Security",
+        "Observability",
+        "Reliability"
+      ],
+      "dependencies": [
+        "Content catalogue, preferences"
+      ],
+      "priority": "MEDIUM",
+      "risk": "MEDIUM",
+      "acceptanceCriteria": [
+        "Success path works",
+        "Failure paths handled safely"
+      ],
+      "e2eCompletionCriteria": [
+        "Flow executes end-to-end with expected policy outcomes"
+      ],
+      "e2eEvidenceRequired": [
+        "Automated or reproducible E2E evidence",
+        "Traceability update"
+      ]
+    },
+    {
+      "useCaseId": "UC-EVENT-001",
+      "domainCode": "EVENT",
+      "name": "Browse investment events and webinars",
+      "objective": "Discover relevant educational or engagement events",
+      "primaryActor": "Investor",
+      "supportingActors": [],
+      "evidenceStatus": "CONFIRMED",
+      "sourceReferences": [
+        "SRC-001"
+      ],
+      "preconditions": [
+        "Dependencies and access controls are satisfied"
+      ],
+      "trigger": "Actor initiates Browse investment events and webinars",
+      "mainFlow": [
+        "Actor starts flow",
+        "System validates request",
+        "System processes and records state",
+        "System returns outcome"
+      ],
+      "alternateFlows": [
+        "Optional alternate path may apply based on actor state"
+      ],
+      "exceptionFlows": [
+        "Validation failure",
+        "Authorization failure",
+        "System/integration failure"
+      ],
+      "postconditions": [
+        "State is updated consistently and visible to authorized actors"
+      ],
+      "businessRules": [
+        "BR-010"
+      ],
+      "dataEntities": [],
+      "integrations": [],
+      "permissions": [],
+      "auditRequirements": [
+        "Sensitive actions must be auditable"
+      ],
+      "nonFunctionalRequirements": [
+        "Security",
+        "Observability",
+        "Reliability"
+      ],
+      "dependencies": [
+        "Event catalogue"
+      ],
+      "priority": "LOW",
+      "risk": "LOW",
+      "acceptanceCriteria": [
+        "Success path works",
+        "Failure paths handled safely"
+      ],
+      "e2eCompletionCriteria": [
+        "Flow executes end-to-end with expected policy outcomes"
+      ],
+      "e2eEvidenceRequired": [
+        "Automated or reproducible E2E evidence",
+        "Traceability update"
+      ]
+    },
+    {
+      "useCaseId": "UC-PROFILE-001",
+      "domainCode": "PROFILE",
+      "name": "View and maintain investor profile",
+      "objective": "Keep account and investor information current",
+      "primaryActor": "Investor",
+      "supportingActors": [],
+      "evidenceStatus": "CONFIRMED",
+      "sourceReferences": [
+        "SRC-001"
+      ],
+      "preconditions": [
+        "Dependencies and access controls are satisfied"
+      ],
+      "trigger": "Actor initiates View and maintain investor profile",
+      "mainFlow": [
+        "Actor starts flow",
+        "System validates request",
+        "System processes and records state",
+        "System returns outcome"
+      ],
+      "alternateFlows": [
+        "Optional alternate path may apply based on actor state"
+      ],
+      "exceptionFlows": [
+        "Validation failure",
+        "Authorization failure",
+        "System/integration failure"
+      ],
+      "postconditions": [
+        "State is updated consistently and visible to authorized actors"
+      ],
+      "businessRules": [
+        "BR-010"
+      ],
+      "dataEntities": [],
+      "integrations": [],
+      "permissions": [],
+      "auditRequirements": [
+        "Sensitive actions must be auditable"
+      ],
+      "nonFunctionalRequirements": [
+        "Security",
+        "Observability",
+        "Reliability"
+      ],
+      "dependencies": [
+        "IAM"
+      ],
+      "priority": "HIGH",
+      "risk": "HIGH",
+      "acceptanceCriteria": [
+        "Success path works",
+        "Failure paths handled safely"
+      ],
+      "e2eCompletionCriteria": [
+        "Flow executes end-to-end with expected policy outcomes"
+      ],
+      "e2eEvidenceRequired": [
+        "Automated or reproducible E2E evidence",
+        "Traceability update"
+      ]
+    },
+    {
+      "useCaseId": "UC-REF-001",
+      "domainCode": "REF",
+      "name": "Refer a prospective investor",
+      "objective": "Submit a referral through the platform",
+      "primaryActor": "Investor",
+      "supportingActors": [],
+      "evidenceStatus": "CONFIRMED",
+      "sourceReferences": [
+        "SRC-001"
+      ],
+      "preconditions": [
+        "Dependencies and access controls are satisfied"
+      ],
+      "trigger": "Actor initiates Refer a prospective investor",
+      "mainFlow": [
+        "Actor starts flow",
+        "System validates request",
+        "System processes and records state",
+        "System returns outcome"
+      ],
+      "alternateFlows": [
+        "Optional alternate path may apply based on actor state"
+      ],
+      "exceptionFlows": [
+        "Validation failure",
+        "Authorization failure",
+        "System/integration failure"
+      ],
+      "postconditions": [
+        "State is updated consistently and visible to authorized actors"
+      ],
+      "businessRules": [
+        "BR-010"
+      ],
+      "dataEntities": [],
+      "integrations": [],
+      "permissions": [],
+      "auditRequirements": [
+        "Sensitive actions must be auditable"
+      ],
+      "nonFunctionalRequirements": [
+        "Security",
+        "Observability",
+        "Reliability"
+      ],
+      "dependencies": [
+        "IAM"
+      ],
+      "priority": "LOW",
+      "risk": "LOW",
+      "acceptanceCriteria": [
+        "Success path works",
+        "Failure paths handled safely"
+      ],
+      "e2eCompletionCriteria": [
+        "Flow executes end-to-end with expected policy outcomes"
+      ],
+      "e2eEvidenceRequired": [
+        "Automated or reproducible E2E evidence",
+        "Traceability update"
+      ]
+    },
+    {
+      "useCaseId": "UC-NOTIFY-001",
+      "domainCode": "NOTIFY",
+      "name": "Receive material platform notifications",
+      "objective": "Be informed of required actions and significant events",
+      "primaryActor": "Investor",
+      "supportingActors": [],
+      "evidenceStatus": "INFERRED",
+      "sourceReferences": [
+        "SRC-004"
+      ],
+      "uncertainty": "Authoritative implementation evidence is incomplete or unresolved.",
+      "impact": "Misclassification may cause incorrect delivery sequencing or control gaps.",
+      "evidenceNeeded": [
+        "Direct implementation evidence",
+        "Validated test evidence",
+        "Confirmed policy/contract details"
+      ],
+      "validationMethod": [
+        "Targeted tests",
+        "Traceability reconciliation",
+        "Owner-approved evidence review"
+      ],
+      "preconditions": [
+        "Dependencies and access controls are satisfied"
+      ],
+      "trigger": "Actor initiates Receive material platform notifications",
+      "mainFlow": [
+        "Actor starts flow",
+        "System validates request",
+        "System processes and records state",
+        "System returns outcome"
+      ],
+      "alternateFlows": [
+        "Optional alternate path may apply based on actor state"
+      ],
+      "exceptionFlows": [
+        "Validation failure",
+        "Authorization failure",
+        "System/integration failure"
+      ],
+      "postconditions": [
+        "State is updated consistently and visible to authorized actors"
+      ],
+      "businessRules": [
+        "BR-010"
+      ],
+      "dataEntities": [],
+      "integrations": [],
+      "permissions": [],
+      "auditRequirements": [
+        "Sensitive actions must be auditable"
+      ],
+      "nonFunctionalRequirements": [
+        "Security",
+        "Observability",
+        "Reliability"
+      ],
+      "dependencies": [
+        "Event triggers, delivery channels"
+      ],
+      "priority": "HIGH",
+      "risk": "HIGH",
+      "acceptanceCriteria": [
+        "Success path works",
+        "Failure paths handled safely"
+      ],
+      "e2eCompletionCriteria": [
+        "Flow executes end-to-end with expected policy outcomes"
+      ],
+      "e2eEvidenceRequired": [
+        "Automated or reproducible E2E evidence",
+        "Traceability update"
+      ]
+    },
+    {
+      "useCaseId": "UC-OPS-001",
+      "domainCode": "OPS",
+      "name": "Respond to an investor support request",
+      "objective": "Resolve an investor question or incident",
+      "primaryActor": "Support operator",
+      "supportingActors": [],
+      "evidenceStatus": "CONFIRMED",
+      "sourceReferences": [
+        "SRC-001"
+      ],
+      "preconditions": [
+        "Dependencies and access controls are satisfied"
+      ],
+      "trigger": "Actor initiates Respond to an investor support request",
+      "mainFlow": [
+        "Actor starts flow",
+        "System validates request",
+        "System processes and records state",
+        "System returns outcome"
+      ],
+      "alternateFlows": [
+        "Optional alternate path may apply based on actor state"
+      ],
+      "exceptionFlows": [
+        "Validation failure",
+        "Authorization failure",
+        "System/integration failure"
+      ],
+      "postconditions": [
+        "State is updated consistently and visible to authorized actors"
+      ],
+      "businessRules": [
+        "BR-010"
+      ],
+      "dataEntities": [],
+      "integrations": [],
+      "permissions": [],
+      "auditRequirements": [
+        "Sensitive actions must be auditable"
+      ],
+      "nonFunctionalRequirements": [
+        "Security",
+        "Observability",
+        "Reliability"
+      ],
+      "dependencies": [
+        "Support channel, access controls"
+      ],
+      "priority": "HIGH",
+      "risk": "HIGH",
+      "acceptanceCriteria": [
+        "Success path works",
+        "Failure paths handled safely"
+      ],
+      "e2eCompletionCriteria": [
+        "Flow executes end-to-end with expected policy outcomes"
+      ],
+      "e2eEvidenceRequired": [
+        "Automated or reproducible E2E evidence",
+        "Traceability update"
+      ]
+    },
+    {
+      "useCaseId": "UC-OPS-002",
+      "domainCode": "OPS",
+      "name": "Correct investor or investment data under control",
+      "objective": "Resolve verified data defects without compromising auditability",
+      "primaryActor": "Authorised operator",
+      "supportingActors": [],
+      "evidenceStatus": "UNKNOWN",
+      "sourceReferences": [
+        "SRC-004"
+      ],
+      "uncertainty": "Authoritative implementation evidence is incomplete or unresolved.",
+      "impact": "Misclassification may cause incorrect delivery sequencing or control gaps.",
+      "evidenceNeeded": [
+        "Direct implementation evidence",
+        "Validated test evidence",
+        "Confirmed policy/contract details"
+      ],
+      "validationMethod": [
+        "Targeted tests",
+        "Traceability reconciliation",
+        "Owner-approved evidence review"
+      ],
+      "preconditions": [
+        "Dependencies and access controls are satisfied"
+      ],
+      "trigger": "Actor initiates Correct investor or investment data under control",
+      "mainFlow": [
+        "Actor starts flow",
+        "System validates request",
+        "System processes and records state",
+        "System returns outcome"
+      ],
+      "alternateFlows": [
+        "Optional alternate path may apply based on actor state"
+      ],
+      "exceptionFlows": [
+        "Validation failure",
+        "Authorization failure",
+        "System/integration failure"
+      ],
+      "postconditions": [
+        "State is updated consistently and visible to authorized actors"
+      ],
+      "businessRules": [
+        "BR-010"
+      ],
+      "dataEntities": [],
+      "integrations": [],
+      "permissions": [],
+      "auditRequirements": [
+        "Sensitive actions must be auditable"
+      ],
+      "nonFunctionalRequirements": [
+        "Security",
+        "Observability",
+        "Reliability"
+      ],
+      "dependencies": [
+        "Approval, audit, reason codes"
+      ],
+      "priority": "HIGH",
+      "risk": "HIGH",
+      "acceptanceCriteria": [
+        "Success path works",
+        "Failure paths handled safely"
+      ],
+      "e2eCompletionCriteria": [
+        "Flow executes end-to-end with expected policy outcomes"
+      ],
+      "e2eEvidenceRequired": [
+        "Automated or reproducible E2E evidence",
+        "Traceability update"
+      ]
+    },
+    {
+      "useCaseId": "UC-ADMIN-001",
+      "domainCode": "ADMIN",
+      "name": "Create and publish an investment opportunity",
+      "objective": "Make a reviewed opportunity discoverable to eligible investors",
+      "primaryActor": "Opportunity administrator",
+      "supportingActors": [],
+      "evidenceStatus": "INFERRED",
+      "sourceReferences": [
+        "SRC-004"
+      ],
+      "uncertainty": "Authoritative implementation evidence is incomplete or unresolved.",
+      "impact": "Misclassification may cause incorrect delivery sequencing or control gaps.",
+      "evidenceNeeded": [
+        "Direct implementation evidence",
+        "Validated test evidence",
+        "Confirmed policy/contract details"
+      ],
+      "validationMethod": [
+        "Targeted tests",
+        "Traceability reconciliation",
+        "Owner-approved evidence review"
+      ],
+      "preconditions": [
+        "Dependencies and access controls are satisfied"
+      ],
+      "trigger": "Actor initiates Create and publish an investment opportunity",
+      "mainFlow": [
+        "Actor starts flow",
+        "System validates request",
+        "System processes and records state",
+        "System returns outcome"
+      ],
+      "alternateFlows": [
+        "Optional alternate path may apply based on actor state"
+      ],
+      "exceptionFlows": [
+        "Validation failure",
+        "Authorization failure",
+        "System/integration failure"
+      ],
+      "postconditions": [
+        "State is updated consistently and visible to authorized actors"
+      ],
+      "businessRules": [
+        "BR-010"
+      ],
+      "dataEntities": [],
+      "integrations": [],
+      "permissions": [],
+      "auditRequirements": [
+        "Sensitive actions must be auditable"
+      ],
+      "nonFunctionalRequirements": [
+        "Security",
+        "Observability",
+        "Reliability"
+      ],
+      "dependencies": [
+        "Permissions, content, compliance approval"
+      ],
+      "priority": "CRITICAL",
+      "risk": "CRITICAL",
+      "acceptanceCriteria": [
+        "Success path works",
+        "Failure paths handled safely"
+      ],
+      "e2eCompletionCriteria": [
+        "Flow executes end-to-end with expected policy outcomes"
+      ],
+      "e2eEvidenceRequired": [
+        "Automated or reproducible E2E evidence",
+        "Traceability update"
+      ]
+    },
+    {
+      "useCaseId": "UC-ADMIN-002",
+      "domainCode": "ADMIN",
+      "name": "Update, close, pause, or archive an opportunity",
+      "objective": "Maintain opportunity lifecycle accurately",
+      "primaryActor": "Opportunity administrator",
+      "supportingActors": [],
+      "evidenceStatus": "INFERRED",
+      "sourceReferences": [
+        "SRC-004"
+      ],
+      "uncertainty": "Authoritative implementation evidence is incomplete or unresolved.",
+      "impact": "Misclassification may cause incorrect delivery sequencing or control gaps.",
+      "evidenceNeeded": [
+        "Direct implementation evidence",
+        "Validated test evidence",
+        "Confirmed policy/contract details"
+      ],
+      "validationMethod": [
+        "Targeted tests",
+        "Traceability reconciliation",
+        "Owner-approved evidence review"
+      ],
+      "preconditions": [
+        "Dependencies and access controls are satisfied"
+      ],
+      "trigger": "Actor initiates Update, close, pause, or archive an opportunity",
+      "mainFlow": [
+        "Actor starts flow",
+        "System validates request",
+        "System processes and records state",
+        "System returns outcome"
+      ],
+      "alternateFlows": [
+        "Optional alternate path may apply based on actor state"
+      ],
+      "exceptionFlows": [
+        "Validation failure",
+        "Authorization failure",
+        "System/integration failure"
+      ],
+      "postconditions": [
+        "State is updated consistently and visible to authorized actors"
+      ],
+      "businessRules": [
+        "BR-010"
+      ],
+      "dataEntities": [],
+      "integrations": [],
+      "permissions": [],
+      "auditRequirements": [
+        "Sensitive actions must be auditable"
+      ],
+      "nonFunctionalRequirements": [
+        "Security",
+        "Observability",
+        "Reliability"
+      ],
+      "dependencies": [
+        "Existing opportunity"
+      ],
+      "priority": "HIGH",
+      "risk": "HIGH",
+      "acceptanceCriteria": [
+        "Success path works",
+        "Failure paths handled safely"
+      ],
+      "e2eCompletionCriteria": [
+        "Flow executes end-to-end with expected policy outcomes"
+      ],
+      "e2eEvidenceRequired": [
+        "Automated or reproducible E2E evidence",
+        "Traceability update"
+      ]
+    },
+    {
+      "useCaseId": "UC-ADMIN-003",
+      "domainCode": "ADMIN",
+      "name": "Manage users, roles, permissions, and data scope",
+      "objective": "Enforce authorised access",
+      "primaryActor": "Access administrator",
+      "supportingActors": [],
+      "evidenceStatus": "INFERRED",
+      "sourceReferences": [
+        "SRC-004"
+      ],
+      "uncertainty": "Authoritative implementation evidence is incomplete or unresolved.",
+      "impact": "Misclassification may cause incorrect delivery sequencing or control gaps.",
+      "evidenceNeeded": [
+        "Direct implementation evidence",
+        "Validated test evidence",
+        "Confirmed policy/contract details"
+      ],
+      "validationMethod": [
+        "Targeted tests",
+        "Traceability reconciliation",
+        "Owner-approved evidence review"
+      ],
+      "preconditions": [
+        "Dependencies and access controls are satisfied"
+      ],
+      "trigger": "Actor initiates Manage users, roles, permissions, and data scope",
+      "mainFlow": [
+        "Actor starts flow",
+        "System validates request",
+        "System processes and records state",
+        "System returns outcome"
+      ],
+      "alternateFlows": [
+        "Optional alternate path may apply based on actor state"
+      ],
+      "exceptionFlows": [
+        "Validation failure",
+        "Authorization failure",
+        "System/integration failure"
+      ],
+      "postconditions": [
+        "State is updated consistently and visible to authorized actors"
+      ],
+      "businessRules": [
+        "BR-010"
+      ],
+      "dataEntities": [],
+      "integrations": [],
+      "permissions": [],
+      "auditRequirements": [
+        "Sensitive actions must be auditable"
+      ],
+      "nonFunctionalRequirements": [
+        "Security",
+        "Observability",
+        "Reliability"
+      ],
+      "dependencies": [
+        "Governance model"
+      ],
+      "priority": "CRITICAL",
+      "risk": "CRITICAL",
+      "acceptanceCriteria": [
+        "Success path works",
+        "Failure paths handled safely"
+      ],
+      "e2eCompletionCriteria": [
+        "Flow executes end-to-end with expected policy outcomes"
+      ],
+      "e2eEvidenceRequired": [
+        "Automated or reproducible E2E evidence",
+        "Traceability update"
+      ]
+    },
+    {
+      "useCaseId": "UC-ADMIN-004",
+      "domainCode": "ADMIN",
+      "name": "Manage platform content and reference data",
+      "objective": "Keep categories, sectors, themes, locations, events, and content current",
+      "primaryActor": "Administrator",
+      "supportingActors": [],
+      "evidenceStatus": "INFERRED",
+      "sourceReferences": [
+        "SRC-004"
+      ],
+      "uncertainty": "Authoritative implementation evidence is incomplete or unresolved.",
+      "impact": "Misclassification may cause incorrect delivery sequencing or control gaps.",
+      "evidenceNeeded": [
+        "Direct implementation evidence",
+        "Validated test evidence",
+        "Confirmed policy/contract details"
+      ],
+      "validationMethod": [
+        "Targeted tests",
+        "Traceability reconciliation",
+        "Owner-approved evidence review"
+      ],
+      "preconditions": [
+        "Dependencies and access controls are satisfied"
+      ],
+      "trigger": "Actor initiates Manage platform content and reference data",
+      "mainFlow": [
+        "Actor starts flow",
+        "System validates request",
+        "System processes and records state",
+        "System returns outcome"
+      ],
+      "alternateFlows": [
+        "Optional alternate path may apply based on actor state"
+      ],
+      "exceptionFlows": [
+        "Validation failure",
+        "Authorization failure",
+        "System/integration failure"
+      ],
+      "postconditions": [
+        "State is updated consistently and visible to authorized actors"
+      ],
+      "businessRules": [
+        "BR-010"
+      ],
+      "dataEntities": [],
+      "integrations": [],
+      "permissions": [],
+      "auditRequirements": [
+        "Sensitive actions must be auditable"
+      ],
+      "nonFunctionalRequirements": [
+        "Security",
+        "Observability",
+        "Reliability"
+      ],
+      "dependencies": [
+        "Admin permissions"
+      ],
+      "priority": "MEDIUM",
+      "risk": "MEDIUM",
+      "acceptanceCriteria": [
+        "Success path works",
+        "Failure paths handled safely"
+      ],
+      "e2eCompletionCriteria": [
+        "Flow executes end-to-end with expected policy outcomes"
+      ],
+      "e2eEvidenceRequired": [
+        "Automated or reproducible E2E evidence",
+        "Traceability update"
+      ]
+    },
+    {
+      "useCaseId": "UC-AUD-001",
+      "domainCode": "AUD",
+      "name": "Record and review audit events",
+      "objective": "Establish traceability for sensitive and material actions",
+      "primaryActor": "Compliance / authorised operator",
+      "supportingActors": [],
+      "evidenceStatus": "INFERRED",
+      "sourceReferences": [
+        "SRC-004"
+      ],
+      "uncertainty": "Authoritative implementation evidence is incomplete or unresolved.",
+      "impact": "Misclassification may cause incorrect delivery sequencing or control gaps.",
+      "evidenceNeeded": [
+        "Direct implementation evidence",
+        "Validated test evidence",
+        "Confirmed policy/contract details"
+      ],
+      "validationMethod": [
+        "Targeted tests",
+        "Traceability reconciliation",
+        "Owner-approved evidence review"
+      ],
+      "preconditions": [
+        "Dependencies and access controls are satisfied"
+      ],
+      "trigger": "Actor initiates Record and review audit events",
+      "mainFlow": [
+        "Actor starts flow",
+        "System validates request",
+        "System processes and records state",
+        "System returns outcome"
+      ],
+      "alternateFlows": [
+        "Optional alternate path may apply based on actor state"
+      ],
+      "exceptionFlows": [
+        "Validation failure",
+        "Authorization failure",
+        "System/integration failure"
+      ],
+      "postconditions": [
+        "State is updated consistently and visible to authorized actors"
+      ],
+      "businessRules": [
+        "BR-010"
+      ],
+      "dataEntities": [],
+      "integrations": [],
+      "permissions": [],
+      "auditRequirements": [
+        "Sensitive actions must be auditable"
+      ],
+      "nonFunctionalRequirements": [
+        "Security",
+        "Observability",
+        "Reliability"
+      ],
+      "dependencies": [
+        "Event instrumentation"
+      ],
+      "priority": "CRITICAL",
+      "risk": "CRITICAL",
+      "acceptanceCriteria": [
+        "Success path works",
+        "Failure paths handled safely"
+      ],
+      "e2eCompletionCriteria": [
+        "Flow executes end-to-end with expected policy outcomes"
+      ],
+      "e2eEvidenceRequired": [
+        "Automated or reproducible E2E evidence",
+        "Traceability update"
+      ]
+    },
+    {
+      "useCaseId": "UC-AUD-002",
+      "domainCode": "AUD",
+      "name": "Investigate a compliance or security event",
+      "objective": "Determine facts, impact, and remediation",
+      "primaryActor": "Compliance / security actor",
+      "supportingActors": [],
+      "evidenceStatus": "UNKNOWN",
+      "sourceReferences": [
+        "SRC-004"
+      ],
+      "uncertainty": "Authoritative implementation evidence is incomplete or unresolved.",
+      "impact": "Misclassification may cause incorrect delivery sequencing or control gaps.",
+      "evidenceNeeded": [
+        "Direct implementation evidence",
+        "Validated test evidence",
+        "Confirmed policy/contract details"
+      ],
+      "validationMethod": [
+        "Targeted tests",
+        "Traceability reconciliation",
+        "Owner-approved evidence review"
+      ],
+      "preconditions": [
+        "Dependencies and access controls are satisfied"
+      ],
+      "trigger": "Actor initiates Investigate a compliance or security event",
+      "mainFlow": [
+        "Actor starts flow",
+        "System validates request",
+        "System processes and records state",
+        "System returns outcome"
+      ],
+      "alternateFlows": [
+        "Optional alternate path may apply based on actor state"
+      ],
+      "exceptionFlows": [
+        "Validation failure",
+        "Authorization failure",
+        "System/integration failure"
+      ],
+      "postconditions": [
+        "State is updated consistently and visible to authorized actors"
+      ],
+      "businessRules": [
+        "BR-010"
+      ],
+      "dataEntities": [],
+      "integrations": [],
+      "permissions": [],
+      "auditRequirements": [
+        "Sensitive actions must be auditable"
+      ],
+      "nonFunctionalRequirements": [
+        "Security",
+        "Observability",
+        "Reliability"
+      ],
+      "dependencies": [
+        "Audit, logs, access evidence"
+      ],
+      "priority": "HIGH",
+      "risk": "HIGH",
+      "acceptanceCriteria": [
+        "Success path works",
+        "Failure paths handled safely"
+      ],
+      "e2eCompletionCriteria": [
+        "Flow executes end-to-end with expected policy outcomes"
+      ],
+      "e2eEvidenceRequired": [
+        "Automated or reproducible E2E evidence",
+        "Traceability update"
+      ]
+    },
+    {
+      "useCaseId": "UC-REPORT-001",
+      "domainCode": "REPORT",
+      "name": "Produce operational and compliance reports",
+      "objective": "Monitor platform operations, risk, and regulatory obligations",
+      "primaryActor": "Authorised manager",
+      "supportingActors": [],
+      "evidenceStatus": "INFERRED",
+      "sourceReferences": [
+        "SRC-004"
+      ],
+      "uncertainty": "Authoritative implementation evidence is incomplete or unresolved.",
+      "impact": "Misclassification may cause incorrect delivery sequencing or control gaps.",
+      "evidenceNeeded": [
+        "Direct implementation evidence",
+        "Validated test evidence",
+        "Confirmed policy/contract details"
+      ],
+      "validationMethod": [
+        "Targeted tests",
+        "Traceability reconciliation",
+        "Owner-approved evidence review"
+      ],
+      "preconditions": [
+        "Dependencies and access controls are satisfied"
+      ],
+      "trigger": "Actor initiates Produce operational and compliance reports",
+      "mainFlow": [
+        "Actor starts flow",
+        "System validates request",
+        "System processes and records state",
+        "System returns outcome"
+      ],
+      "alternateFlows": [
+        "Optional alternate path may apply based on actor state"
+      ],
+      "exceptionFlows": [
+        "Validation failure",
+        "Authorization failure",
+        "System/integration failure"
+      ],
+      "postconditions": [
+        "State is updated consistently and visible to authorized actors"
+      ],
+      "businessRules": [
+        "BR-010"
+      ],
+      "dataEntities": [],
+      "integrations": [],
+      "permissions": [],
+      "auditRequirements": [
+        "Sensitive actions must be auditable"
+      ],
+      "nonFunctionalRequirements": [
+        "Security",
+        "Observability",
+        "Reliability"
+      ],
+      "dependencies": [
+        "Source data, reporting permissions"
+      ],
+      "priority": "HIGH",
+      "risk": "HIGH",
+      "acceptanceCriteria": [
+        "Success path works",
+        "Failure paths handled safely"
+      ],
+      "e2eCompletionCriteria": [
+        "Flow executes end-to-end with expected policy outcomes"
+      ],
+      "e2eEvidenceRequired": [
+        "Automated or reproducible E2E evidence",
+        "Traceability update"
+      ]
+    },
+    {
+      "useCaseId": "UC-INT-001",
+      "domainCode": "INT",
+      "name": "Exchange identity or KYC/AML data with an external provider",
+      "objective": "Verify investor status reliably",
+      "primaryActor": "Platform / provider",
+      "supportingActors": [],
+      "evidenceStatus": "UNKNOWN",
+      "sourceReferences": [
+        "SRC-004"
+      ],
+      "uncertainty": "Authoritative implementation evidence is incomplete or unresolved.",
+      "impact": "Misclassification may cause incorrect delivery sequencing or control gaps.",
+      "evidenceNeeded": [
+        "Direct implementation evidence",
+        "Validated test evidence",
+        "Confirmed policy/contract details"
+      ],
+      "validationMethod": [
+        "Targeted tests",
+        "Traceability reconciliation",
+        "Owner-approved evidence review"
+      ],
+      "preconditions": [
+        "Dependencies and access controls are satisfied"
+      ],
+      "trigger": "Actor initiates Exchange identity or KYC/AML data with an external provider",
+      "mainFlow": [
+        "Actor starts flow",
+        "System validates request",
+        "System processes and records state",
+        "System returns outcome"
+      ],
+      "alternateFlows": [
+        "Optional alternate path may apply based on actor state"
+      ],
+      "exceptionFlows": [
+        "Validation failure",
+        "Authorization failure",
+        "System/integration failure"
+      ],
+      "postconditions": [
+        "State is updated consistently and visible to authorized actors"
+      ],
+      "businessRules": [
+        "BR-010"
+      ],
+      "dataEntities": [],
+      "integrations": [],
+      "permissions": [],
+      "auditRequirements": [
+        "Sensitive actions must be auditable"
+      ],
+      "nonFunctionalRequirements": [
+        "Security",
+        "Observability",
+        "Reliability"
+      ],
+      "dependencies": [
+        "Integration contract"
+      ],
+      "priority": "CRITICAL",
+      "risk": "CRITICAL",
+      "acceptanceCriteria": [
+        "Success path works",
+        "Failure paths handled safely"
+      ],
+      "e2eCompletionCriteria": [
+        "Flow executes end-to-end with expected policy outcomes"
+      ],
+      "e2eEvidenceRequired": [
+        "Automated or reproducible E2E evidence",
+        "Traceability update"
+      ]
+    },
+    {
+      "useCaseId": "UC-INT-002",
+      "domainCode": "INT",
+      "name": "Execute or record electronic agreements",
+      "objective": "Capture enforceable agreement evidence",
+      "primaryActor": "Platform / e-signature provider",
+      "supportingActors": [],
+      "evidenceStatus": "UNKNOWN",
+      "sourceReferences": [
+        "SRC-004"
+      ],
+      "uncertainty": "Authoritative implementation evidence is incomplete or unresolved.",
+      "impact": "Misclassification may cause incorrect delivery sequencing or control gaps.",
+      "evidenceNeeded": [
+        "Direct implementation evidence",
+        "Validated test evidence",
+        "Confirmed policy/contract details"
+      ],
+      "validationMethod": [
+        "Targeted tests",
+        "Traceability reconciliation",
+        "Owner-approved evidence review"
+      ],
+      "preconditions": [
+        "Dependencies and access controls are satisfied"
+      ],
+      "trigger": "Actor initiates Execute or record electronic agreements",
+      "mainFlow": [
+        "Actor starts flow",
+        "System validates request",
+        "System processes and records state",
+        "System returns outcome"
+      ],
+      "alternateFlows": [
+        "Optional alternate path may apply based on actor state"
+      ],
+      "exceptionFlows": [
+        "Validation failure",
+        "Authorization failure",
+        "System/integration failure"
+      ],
+      "postconditions": [
+        "State is updated consistently and visible to authorized actors"
+      ],
+      "businessRules": [
+        "BR-010"
+      ],
+      "dataEntities": [],
+      "integrations": [],
+      "permissions": [],
+      "auditRequirements": [
+        "Sensitive actions must be auditable"
+      ],
+      "nonFunctionalRequirements": [
+        "Security",
+        "Observability",
+        "Reliability"
+      ],
+      "dependencies": [
+        "Agreement templates"
+      ],
+      "priority": "HIGH",
+      "risk": "HIGH",
+      "acceptanceCriteria": [
+        "Success path works",
+        "Failure paths handled safely"
+      ],
+      "e2eCompletionCriteria": [
+        "Flow executes end-to-end with expected policy outcomes"
+      ],
+      "e2eEvidenceRequired": [
+        "Automated or reproducible E2E evidence",
+        "Traceability update"
+      ]
+    },
+    {
+      "useCaseId": "UC-INT-003",
+      "domainCode": "INT",
+      "name": "Deliver email or in-app communications",
+      "objective": "Notify actors and preserve delivery evidence",
+      "primaryActor": "Platform / messaging provider",
+      "supportingActors": [],
+      "evidenceStatus": "INFERRED",
+      "sourceReferences": [
+        "SRC-004"
+      ],
+      "uncertainty": "Authoritative implementation evidence is incomplete or unresolved.",
+      "impact": "Misclassification may cause incorrect delivery sequencing or control gaps.",
+      "evidenceNeeded": [
+        "Direct implementation evidence",
+        "Validated test evidence",
+        "Confirmed policy/contract details"
+      ],
+      "validationMethod": [
+        "Targeted tests",
+        "Traceability reconciliation",
+        "Owner-approved evidence review"
+      ],
+      "preconditions": [
+        "Dependencies and access controls are satisfied"
+      ],
+      "trigger": "Actor initiates Deliver email or in-app communications",
+      "mainFlow": [
+        "Actor starts flow",
+        "System validates request",
+        "System processes and records state",
+        "System returns outcome"
+      ],
+      "alternateFlows": [
+        "Optional alternate path may apply based on actor state"
+      ],
+      "exceptionFlows": [
+        "Validation failure",
+        "Authorization failure",
+        "System/integration failure"
+      ],
+      "postconditions": [
+        "State is updated consistently and visible to authorized actors"
+      ],
+      "businessRules": [
+        "BR-010"
+      ],
+      "dataEntities": [],
+      "integrations": [],
+      "permissions": [],
+      "auditRequirements": [
+        "Sensitive actions must be auditable"
+      ],
+      "nonFunctionalRequirements": [
+        "Security",
+        "Observability",
+        "Reliability"
+      ],
+      "dependencies": [
+        "Notification event"
+      ],
+      "priority": "HIGH",
+      "risk": "HIGH",
+      "acceptanceCriteria": [
+        "Success path works",
+        "Failure paths handled safely"
+      ],
+      "e2eCompletionCriteria": [
+        "Flow executes end-to-end with expected policy outcomes"
+      ],
+      "e2eEvidenceRequired": [
+        "Automated or reproducible E2E evidence",
+        "Traceability update"
+      ]
+    },
+    {
+      "useCaseId": "UC-INT-004",
+      "domainCode": "INT",
+      "name": "Exchange settlement data with banking or payment services",
+      "objective": "Support funding and reconciliation",
+      "primaryActor": "Platform / financial service",
+      "supportingActors": [],
+      "evidenceStatus": "UNKNOWN",
+      "sourceReferences": [
+        "SRC-004"
+      ],
+      "uncertainty": "Authoritative implementation evidence is incomplete or unresolved.",
+      "impact": "Misclassification may cause incorrect delivery sequencing or control gaps.",
+      "evidenceNeeded": [
+        "Direct implementation evidence",
+        "Validated test evidence",
+        "Confirmed policy/contract details"
+      ],
+      "validationMethod": [
+        "Targeted tests",
+        "Traceability reconciliation",
+        "Owner-approved evidence review"
+      ],
+      "preconditions": [
+        "Dependencies and access controls are satisfied"
+      ],
+      "trigger": "Actor initiates Exchange settlement data with banking or payment services",
+      "mainFlow": [
+        "Actor starts flow",
+        "System validates request",
+        "System processes and records state",
+        "System returns outcome"
+      ],
+      "alternateFlows": [
+        "Optional alternate path may apply based on actor state"
+      ],
+      "exceptionFlows": [
+        "Validation failure",
+        "Authorization failure",
+        "System/integration failure"
+      ],
+      "postconditions": [
+        "State is updated consistently and visible to authorized actors"
+      ],
+      "businessRules": [
+        "BR-010"
+      ],
+      "dataEntities": [],
+      "integrations": [],
+      "permissions": [],
+      "auditRequirements": [
+        "Sensitive actions must be auditable"
+      ],
+      "nonFunctionalRequirements": [
+        "Security",
+        "Observability",
+        "Reliability"
+      ],
+      "dependencies": [
+        "Banking/payment integration"
+      ],
+      "priority": "CRITICAL",
+      "risk": "CRITICAL",
+      "acceptanceCriteria": [
+        "Success path works",
+        "Failure paths handled safely"
+      ],
+      "e2eCompletionCriteria": [
+        "Flow executes end-to-end with expected policy outcomes"
+      ],
+      "e2eEvidenceRequired": [
+        "Automated or reproducible E2E evidence",
+        "Traceability update"
+      ]
+    }
+  ]
+}

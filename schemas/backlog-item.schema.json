@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ubuntu-capital.local/schemas/backlog-item.schema.json",
+  "title": "Backlog Item",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "title", "priority", "status", "useCaseIds", "dependencies"],
+  "properties": {
+    "id": {"type": "string", "minLength": 1},
+    "title": {"type": "string", "minLength": 1},
+    "priority": {"enum": ["P0", "P1", "P2", "P3"]},
+    "status": {"type": "string", "minLength": 1},
+    "useCaseIds": {"type": "array", "items": {"type": "string", "pattern": "^UC-[A-Z0-9]+-[0-9]{3}$"}},
+    "dependencies": {"type": "array", "items": {"type": "string"}},
+    "acceptanceCriteria": {"type": "array", "items": {"type": "string"}}
+  }
+}

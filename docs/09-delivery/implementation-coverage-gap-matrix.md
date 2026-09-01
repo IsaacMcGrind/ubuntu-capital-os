@@ -10,15 +10,26 @@ Evidence basis used for this pass:
 - Shared portal navigation from `src/components/PortalLayout.tsx`
 - Opportunity and portfolio data sources from `src/data/opportunities.ts`
 - Baseline verification run: `npm test -- --run` and `npm run build` (both succeeded)
+- Local refresh verification run (2026-08-31):
+	- `npm run lint` completed with 0 errors and 8 warnings (`react-refresh/only-export-components` in UI component files)
+	- `npm test` passed (`1` test file, `2` tests)
+	- `npm run build` succeeded (Vite production build completed), with non-blocking warnings for Browserslist staleness, Tailwind ambiguous utility classes, and bundle chunk size
+- Step-2 verification implementation run (2026-08-31):
+	- Added route-session guard and login session bootstrap in `src/App.tsx` and `src/pages/Login.tsx`
+	- Added EOI validation and duplicate-protection workflow in `src/pages/DealDetail.tsx`
+	- Added verification tests in `src/test/auth-and-eoi.test.tsx`
+	- Verification outcome: `npm test` passed (`2` test files, `6` tests), `npm run build` succeeded, `npm run lint` completed with warnings only
 
 Important gating rule: `COMPONENT_COMPLETE` in this matrix means UI/page-level evidence exists. It is not equivalent to end-to-end business completion for regulated investment workflows.
 
 ## Coverage Summary
 
+The summary below is derived from the 41 row-level delivery statuses in this matrix.
+
 - Total use cases mapped: 41
-- `COMPONENT_COMPLETE` (UI-level only): 8
+- `COMPONENT_COMPLETE` (UI-level only): 7
 - `IN_DEVELOPMENT` (partial/prototype): 16
-- `READY_FOR_DEVELOPMENT` (no substantive implementation evidence): 17
+- `READY_FOR_DEVELOPMENT` (no substantive implementation evidence): 18
 - `COMPLETE`: 0
 
 ## Use-case Mapping
@@ -26,7 +37,7 @@ Important gating rule: `COMPONENT_COMPLETE` in this matrix means UI/page-level e
 | Use Case ID | Delivery Status | Implementation Evidence | Gap Summary | Next Evidence Gate |
 |---|---|---|---|---|
 | UC-PUB-001 | COMPONENT_COMPLETE | `src/pages/Index.tsx` | Public proposition and navigation are implemented as front-end UI. | Add analytics/events and traceable acceptance test evidence. |
-| UC-IAM-001 | IN_DEVELOPMENT | `src/pages/Login.tsx`, `src/pages/MfaVerify.tsx` | Login and MFA screens exist, but no auth service/session enforcement was found. | Implement backend auth, session management, and auth-path tests. |
+| UC-IAM-001 | IN_DEVELOPMENT | `src/pages/Login.tsx`, `src/App.tsx`, `src/lib/session.ts`, `src/test/auth-and-eoi.test.tsx` | Prototype session handling now exists via localStorage-backed login bootstrap and route guards for `/myportfolio/*`; backend identity/session authority remains unimplemented. | Replace local session simulation with backend identity/session integration and authorization-boundary tests. |
 | UC-IAM-002 | IN_DEVELOPMENT | `src/pages/ForgotPassword.tsx` | Reset UI exists only; no token, identity, or email flow evidence. | Implement reset token lifecycle and recovery-path validation. |
 | UC-IAM-003 | READY_FOR_DEVELOPMENT | No explicit logout/session-expiry logic found | Session termination/expiry behavior is not evidenced. | Implement explicit sign-out, expiry, and unauthorized-session handling tests. |
 | UC-ONB-001 | IN_DEVELOPMENT | `src/pages/Signup.tsx` | Registration form UI exists without backend account creation evidence. | Add account creation workflow, persistence, and validation tests. |
@@ -37,7 +48,7 @@ Important gating rule: `COMPONENT_COMPLETE` in this matrix means UI/page-level e
 | UC-OPP-003 | IN_DEVELOPMENT | `src/pages/DealDetail.tsx` | Detail page exists with static copy and local data. | Add canonical opportunity detail API, policy checks, and audit events. |
 | UC-DD-001 | IN_DEVELOPMENT | `src/pages/DealDetail.tsx` (`Request data room` action) | NDA trigger affordance exists; no enforceable NDA process was found. | Implement NDA workflow, signature evidence, and access-state transitions. |
 | UC-DD-002 | READY_FOR_DEVELOPMENT | No protected data-room route/service found | Restricted due-diligence content access is not implemented. | Add protected content service, authorization checks, and access logs. |
-| UC-INV-001 | IN_DEVELOPMENT | `src/pages/DealDetail.tsx` (`Express interest`) | Interest/commitment action exists as UI control without workflow backend. | Implement commitment lifecycle and policy validation for binding vs non-binding modes. |
+| UC-INV-001 | IN_DEVELOPMENT | `src/pages/DealDetail.tsx`, `src/lib/eoi.ts`, `src/test/auth-and-eoi.test.tsx` | EOI now validates required/minimum amount and blocks duplicate submissions per deal in local prototype storage; no backend workflow, policy engine, or persistence boundary exists yet. | Implement server-backed EOI lifecycle, authorization/audit boundaries, and failure-path tests across API and persistence layers. |
 | UC-INV-002 | IN_DEVELOPMENT | `src/pages/PortfolioPending.tsx` | Pending area exists with static in-memory rows. | Add status transitions, operator decisions, and exception handling traces. |
 | UC-INV-003 | READY_FOR_DEVELOPMENT | No cancel/withdraw workflow evidence found | Cancellation policy and execution path are absent. | Implement withdrawal rules, audit trail, and user/operator permissions. |
 | UC-SET-001 | READY_FOR_DEVELOPMENT | No funding-instruction service/routes found | Funding instruction generation and delivery are absent. | Implement settlement instruction pipeline and communication evidence. |
@@ -72,3 +83,4 @@ Important gating rule: `COMPONENT_COMPLETE` in this matrix means UI/page-level e
 1. This matrix is evidence from implementation code inspection, not a production-readiness declaration.
 2. `COMPONENT_COMPLETE` rows still require backend, security, persistence, and E2E verification before any use case can become `COMPLETE`.
 3. External implementation evidence has been treated as supporting evidence under the repository evidence hierarchy, not canonical requirement truth.
+4. The 2026-08-31 local verification run confirms codebase health at lint/test/build level but does not satisfy business-flow E2E acceptance evidence.
