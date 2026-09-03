@@ -95,6 +95,8 @@ output/
   system-reconstruction-summary.md
 ```
 
+The required-output tree is the canonical maintenance contract. File presence does not by itself satisfy a phase exit criterion. As of the 2026-09-03 reassessment, the canonical Phase 0–4 directories and major structured outputs materially exist; remaining work is therefore primarily validation, approval, reconciliation and gap closure rather than recreating those outputs from scratch.
+
 ## 4. Phase 0 — Context and Architecture Baseline
 
 ### Objective
@@ -440,20 +442,20 @@ Make the platform operable, supportable, and auditable.
 
 ## 15. Immediate Execution Queue
 
+The current queue must use the artifacts that already exist. Do not recreate canonical Phase 0–4 outputs merely because an older status document described them as absent.
+
 Execute these tasks next, in order:
 
-1. Complete source inventory and terminology, including current implementation and contractor provenance.
-2. Gain repository access to `HarleyJoker/ubuntu-capital-platform` and perform implementation inventory when access becomes available.
-3. Produce actors and permissions matrix.
-4. Produce capability map.
-5. Upgrade the 41-use-case catalogue to all mandatory fields.
-6. Reconcile the current implementation against the 41 use cases without overstating visual completion as E2E completion.
-7. Fully specify the foundational and first-slice use cases.
-8. Extract business rules.
-9. Create journeys and state models for the first slice.
-10. Create integration and validation records for the first slice.
-11. Generate backlog, tracker, and traceability entries for the first slice.
-12. Continue or remediate implementation only after the relevant analysis and evidence meet exit criteria.
+1. Validate the existing Phase 0–4 outputs against the applicable phase exit criteria and `AGENT.md` integrity rules, using `docs/09-delivery/pre-implementation-gate-reassessment-2026-09-03.md` as the current reconciliation point.
+2. Produce a residual-gaps list that distinguishes `PRESENT_AND_ACCEPTABLE`, `PRESENT_BUT_PARTIAL`, `PRESENT_BUT_INCONSISTENT`, and `MISSING` so that already completed reconstruction work is not reopened unnecessarily.
+3. Gain repository access to `HarleyJoker/ubuntu-capital-platform` and refresh the implementation inventory when access becomes available; until then, preserve the current recorded implementation evidence boundary.
+4. Close the remaining P0 business/legal decisions required for the Foundation and first slice: EOI meaning, jurisdiction/eligibility, NDA policy, operator authority, logical data ownership, and authoritative state transitions.
+5. Close the remaining architecture/security/NFR readiness items identified by the current Solution Architecture audit, including threat model, authorization design, privacy/retention, measurable availability/performance/recovery/cost targets, and the minimum ADR set.
+6. Reconcile source → use case → architecture → implementation → validation traceability and verify schemas, structured data, links, IDs, counts, statuses, open-question references, and risk references.
+7. Run and record a formal pre-implementation readiness review with an explicit `GO`, `CONDITIONAL_GO`, or `NO_GO` decision for Foundation Slice A.
+8. Only if that decision authorises execution, begin the permitted subset of `WP-AZ-001` through `WP-AZ-008` and capture objective evidence in `docs/09-delivery/foundation-slice-a-evidence-register.md`.
+9. Keep `WP-AZ-009` through `WP-AZ-012` blocked until Foundation evidence and the separate Phase 5 / first-business-slice gate are satisfied.
+10. Continue regulated onboarding, NDA, settlement, custody, portfolio and production-hardening work only as their own evidence and dependency gates are satisfied.
 
 ## 16. Agent Completion Protocol
 
