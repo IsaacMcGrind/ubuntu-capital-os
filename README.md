@@ -55,22 +55,24 @@ Foundation Slice A remains the planned Azure infrastructure package, documented 
 
 The repository materially advanced its canonical reconstruction outputs in commit `d2d6f7bfe90ef04ec846eb11308cf551977cd33d`: actors and permissions, detailed use-case specifications, business rules, journeys, state models, integration records, structured data, backlog/tracker/traceability/validation/risk artifacts and related schemas now exist in the canonical structure. Their existence removes the earlier claim that these directories or files were absent.
 
-**Foundation implementation must still not be treated as authorised solely because those files now exist.** The remaining gate is evidence quality and exit-criteria reconciliation: approvals, unresolved legal/business rules, complete traceability, validation coverage, architecture/security/NFR decisions, and internal consistency must be assessed against `AGENT.md` and the controlling `plan.md`. The current reassessment is recorded in `docs/09-delivery/pre-implementation-gate-reassessment-2026-09-03.md`.
+**Foundation implementation must still not be treated as authorised solely because those files now exist.** The remaining gate is evidence quality and exit-criteria reconciliation: approvals, unresolved legal/business rules, complete traceability, validation coverage, architecture/security/NFR decisions, architecture-tree disposition, and internal consistency must be assessed against `AGENT.md` and the controlling `plan.md`. The current reassessment is recorded in `docs/09-delivery/pre-implementation-gate-reassessment-2026-09-03.md`.
 
-After that pre-implementation gate is formally satisfied, Foundation Slice A may be executed. The first business vertical slice—authenticated opportunity discovery plus a **non-binding expression of interest**—must not start or advance through `WP-AZ-009` to `WP-AZ-012` until Foundation evidence and the separate first-slice integrity prerequisites both reconcile.
+After that pre-implementation gate is formally satisfied with a recorded `GO` or explicitly scoped `CONDITIONAL_GO`, Foundation Slice A may be executed. The first business vertical slice—authenticated opportunity discovery plus a **non-binding expression of interest**—must not start or advance through `WP-AZ-009` to `WP-AZ-012` until Foundation evidence and the separate first-slice integrity prerequisites both reconcile.
 
 ## Controlling documents
 
 - `AGENT.md` defines how autonomous agents and contributors must operate.
 - `plan.md` is the single controlling execution plan and canonical repository-structure definition.
 - Documents under `docs/` are reconstruction, architecture and delivery outputs. They must not compete with `plan.md` as execution instructions.
-- `docs/09-delivery/foundation-slice-a-governance-reconciliation.md` records the 2026-08-30 post-merge governance finding and remains historical evidence of that assessment.
-- `docs/09-delivery/pre-implementation-gate-reassessment-2026-09-03.md` reconciles that earlier finding against the newer canonical outputs now present on `master`.
+- `docs/09-delivery/foundation-slice-a-governance-reconciliation.md` remains a live compatibility gate reference because several Foundation delivery artifacts point to it; it is **not sufficient by itself** to authorise implementation and now explicitly delegates current readiness evaluation to the 2026-09-03 reassessment.
+- `docs/09-delivery/pre-implementation-gate-reassessment-2026-09-03.md` is the current Foundation readiness reconciliation and requires closure/disposition of ADR, security, privacy, NFR, traceability, validation, business/legal and structure items plus a formal `GO`, `CONDITIONAL_GO`, or `NO_GO` decision.
 - `contractors/` records implementation provenance and contractor delivery evidence. It does not replace use-case, traceability, testing, or E2E evidence under `docs/`.
 
 ## Repository structure and integrity note
 
-`plan.md` remains the canonical structure definition. The repository now contains both the working architecture tree under `docs/02-architecture/` and the plan-defined canonical actors-and-permissions outputs under `docs/02-actors-and-permissions/`.
+`plan.md` remains the canonical structure definition. The repository now contains the plan-defined canonical actors-and-permissions outputs under `docs/02-actors-and-permissions/`.
+
+The working architecture tree under `docs/02-architecture/` is an **explicit unresolved structure exception**: it is actively used and contains material architecture evidence, but it is not currently declared in the canonical required-output tree in `plan.md`. That exception must be formally dispositioned before the repository-integrity gate is closed—either by amending the canonical contract to include the architecture tree or by recording an approved exception that is consistent with `AGENT.md` and the controlling plan. Its existence must not be silently treated as canonical reconciliation.
 
 Other plan-required reconstruction, validation, traceability and machine-readable outputs also now exist. Presence is not equivalent to approval or completion: several remain `ANALYSIS_IN_PROGRESS`, contain `INFERRED`/`UNKNOWN` evidence, or have incomplete traceability and validation closure. Those substantive gaps—not the prior directory-absence claim—are what continue to govern Foundation readiness.
 
@@ -79,7 +81,7 @@ Key active areas include:
 - `docs/00-context` — source inventory, terminology and boundary context
 - `docs/01-system-understanding` — system purpose, evidence and assumptions
 - `docs/02-actors-and-permissions` — canonical actors and permissions evidence
-- `docs/02-architecture` — working system/logical architecture, Blueprint and architecture decisions
+- `docs/02-architecture` — working system/logical architecture, Blueprint and architecture decisions; explicit structure exception pending disposition
 - `docs/03-functional-domains` — domains and capability map
 - `docs/04-use-cases` — master catalogue and detailed specifications
 - `docs/05-business-rules` — business-rule register
