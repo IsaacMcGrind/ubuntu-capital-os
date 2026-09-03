@@ -89,7 +89,7 @@ Those artifacts may still require completion, approval, correction or validation
 3. Close the P0 business/legal/security/NFR and ADR gaps identified by the current Solution Architecture audit.
 4. Reconcile traceability and validation evidence for the Foundation-relevant and first-slice-relevant scope.
 5. Record the formal pre-implementation gate decision.
-6. If the decision is `GO` or an explicitly scoped `CONDITIONAL_GO`, begin only the authorised Foundation work packages and capture objective evidence in `foundation-slice-a-evidence-register.md`.
+6. If the decision is `GO` or an explicitly scoped `CONDITIONAL_GO`, begin only the authorised Foundation work packages and capture objective evidence in `docs/09-delivery/foundation-slice-a-evidence-register.md`.
 7. Keep `WP-AZ-009` through `WP-AZ-012` blocked until Foundation evidence and the separate Phase 5 / first-business-slice gate are satisfied.
 
 ## 7. Status boundary
