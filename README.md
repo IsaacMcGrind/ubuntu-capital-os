@@ -6,7 +6,7 @@ Ubuntu Capital OS is the evidence-first system reconstruction and delivery repos
 
 `PARTIALLY_READY`
 
-Architecture readiness has materially improved: the repository now contains a system boundary, high-level logical architecture, priority use-case architecture map, detailed UC-IAM-001 architecture analysis, and a confirmed Azure MVP cloud platform direction.
+Architecture readiness has materially improved: the repository now contains a system boundary, high-level logical architecture, priority use-case architecture map, detailed UC-IAM-001 architecture analysis, a Phase 1 MVP architecture Blueprint, and a confirmed Azure MVP cloud platform direction.
 
 Implementation readiness remains lower than architecture readiness. The current recorded implementation evidence still describes a predominantly React/Vite front-end prototype with no use case yet supported by objective end-to-end completion evidence.
 
@@ -24,7 +24,7 @@ The connected ChatGPT GitHub application cannot directly inspect `HarleyJoker/ub
 
 Technology-neutral architecture is recorded under `docs/02-architecture/` and remains authoritative for logical capability ownership and system boundaries.
 
-The MVP cloud implementation direction is now confirmed in `docs/02-architecture/azure-mvp-platform-decision.md`:
+The MVP cloud implementation direction is confirmed in `docs/02-architecture/azure-mvp-platform-decision.md`:
 
 - Azure Static Web Apps — React/Vite frontend hosting
 - Microsoft Entra External ID — customer identity/authentication
@@ -53,33 +53,44 @@ The recorded implementation coverage is derived from the 41 row-level statuses i
 
 Foundation Slice A remains the planned Azure infrastructure package, documented in `docs/09-delivery/foundation-slice-a-execution-package.md` with evidence intended for `docs/09-delivery/foundation-slice-a-evidence-register.md`.
 
-**Foundation implementation must not start or advance yet.** The repository still has plan-required canonical outputs and integrity conditions that do not reconcile. Under `AGENT.md` and the controlling `plan.md`, those gaps must be repaired before implementation progression. The post-merge full-repository review and exact gates are recorded in `docs/09-delivery/foundation-slice-a-governance-reconciliation.md`.
+The repository materially advanced its canonical reconstruction outputs in commit `d2d6f7bfe90ef04ec846eb11308cf551977cd33d`: actors and permissions, detailed use-case specifications, business rules, journeys, state models, integration records, structured data, backlog/tracker/traceability/validation/risk artifacts and related schemas now exist in the canonical structure. Their existence removes the earlier claim that these directories or files were absent.
 
-After the pre-implementation repository gate is satisfied, Foundation Slice A may be executed. The first business vertical slice—authenticated opportunity discovery plus a **non-binding expression of interest**—must not start or advance through `WP-AZ-009` to `WP-AZ-012` until Foundation evidence and the separate first-slice integrity prerequisites both reconcile.
+**Foundation implementation must still not be treated as authorised solely because those files now exist.** The remaining gate is evidence quality and exit-criteria reconciliation: approvals, unresolved legal/business rules, complete traceability, validation coverage, architecture/security/NFR decisions, and internal consistency must be assessed against `AGENT.md` and the controlling `plan.md`. The current reassessment is recorded in `docs/09-delivery/pre-implementation-gate-reassessment-2026-09-03.md`.
+
+After that pre-implementation gate is formally satisfied, Foundation Slice A may be executed. The first business vertical slice—authenticated opportunity discovery plus a **non-binding expression of interest**—must not start or advance through `WP-AZ-009` to `WP-AZ-012` until Foundation evidence and the separate first-slice integrity prerequisites both reconcile.
 
 ## Controlling documents
 
 - `AGENT.md` defines how autonomous agents and contributors must operate.
 - `plan.md` is the single controlling execution plan and canonical repository-structure definition.
 - Documents under `docs/` are reconstruction, architecture and delivery outputs. They must not compete with `plan.md` as execution instructions.
-- `docs/09-delivery/foundation-slice-a-governance-reconciliation.md` is a subordinate reconciliation of the Foundation workstream against `AGENT.md` and `plan.md`; it does not override either controlling document.
+- `docs/09-delivery/foundation-slice-a-governance-reconciliation.md` records the 2026-08-30 post-merge governance finding and remains historical evidence of that assessment.
+- `docs/09-delivery/pre-implementation-gate-reassessment-2026-09-03.md` reconciles that earlier finding against the newer canonical outputs now present on `master`.
 - `contractors/` records implementation provenance and contractor delivery evidence. It does not replace use-case, traceability, testing, or E2E evidence under `docs/`.
 
 ## Repository structure and integrity note
 
-`plan.md` remains the canonical structure definition. The repository currently contains `docs/02-architecture/`, while the plan-defined canonical `docs/02-actors-and-permissions/` phase is currently missing from the repository. The architecture tree is therefore an explicit structure exception that must be reconciled deliberately; it must not be read as if the canonical actors-and-permissions directory already exists or has been replaced.
+`plan.md` remains the canonical structure definition. The repository now contains both the working architecture tree under `docs/02-architecture/` and the plan-defined canonical actors-and-permissions outputs under `docs/02-actors-and-permissions/`.
 
-Other plan-required reconstruction, validation, traceability and machine-readable outputs also remain incomplete or absent. These gaps block Foundation implementation progression; they are not merely programme-level reporting concerns.
+Other plan-required reconstruction, validation, traceability and machine-readable outputs also now exist. Presence is not equivalent to approval or completion: several remain `ANALYSIS_IN_PROGRESS`, contain `INFERRED`/`UNKNOWN` evidence, or have incomplete traceability and validation closure. Those substantive gaps—not the prior directory-absence claim—are what continue to govern Foundation readiness.
 
 Key active areas include:
 
 - `docs/00-context` — source inventory, terminology and boundary context
 - `docs/01-system-understanding` — system purpose, evidence and assumptions
-- `docs/02-architecture` — working system/logical architecture and architecture decisions
+- `docs/02-actors-and-permissions` — canonical actors and permissions evidence
+- `docs/02-architecture` — working system/logical architecture, Blueprint and architecture decisions
 - `docs/03-functional-domains` — domains and capability map
 - `docs/04-use-cases` — master catalogue and detailed specifications
-- `docs/09-delivery` — implementation analysis, roadmap, coverage, backlog, Foundation execution/evidence, governance reconciliation and monitoring
+- `docs/05-business-rules` — business-rule register
+- `docs/06-journeys` — end-to-end journey models
+- `docs/07-state-models` — lifecycle/state models
+- `docs/08-integrations` — integration catalogue
+- `docs/09-delivery` — implementation analysis, roadmap, coverage, backlog, tracker, Foundation execution/evidence, governance reconciliation and monitoring
+- `docs/10-traceability` — source/use-case/implementation/test/evidence traceability
 - `docs/11-open-questions` — unresolved questions
+- `docs/12-validation` — validation planning
+- `docs/13-risks` — risk/gap register
 - `contractors/80kDevelopers` — implementation evidence/provenance
 - `contractors/HerLogicSolutions` — Azure cloud architecture/cost workstream evidence
 - `contractors/Corefinity` — architecture contribution provenance where recorded
@@ -104,4 +115,4 @@ Foundation operational telemetry under `WP-AZ-007` is not equivalent to business
 
 Counts, links, IDs, evidence classifications, directory names, implementation claims and required outputs must reconcile across the repository. A contributor or agent must repair inconsistencies before progressing to implementation or claiming a status that depends on those inconsistencies being resolved.
 
-The source base is still insufficient to reproduce regulated investment execution faithfully. Critical remaining evidence priorities include onboarding/eligibility rules, KYC/AML integration, NDA lifecycle, investment legal meaning, settlement/custody/reconciliation, portfolio valuation, internal permissions, audit/reporting, retention/privacy, and operational recovery.
+The source base is still insufficient to reproduce regulated investment execution faithfully. Critical remaining evidence priorities include onboarding/eligibility rules, KYC/AML integration, NDA lifecycle, investment legal meaning, settlement/custody/reconciliation, portfolio valuation, approved internal permissions, business audit/reporting, retention/privacy, operational recovery, and measurable security/NFR targets.
