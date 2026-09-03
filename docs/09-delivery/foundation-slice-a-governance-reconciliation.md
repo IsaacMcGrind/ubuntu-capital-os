@@ -7,6 +7,19 @@
 **Controlling documents:** `AGENT.md`, `plan.md`  
 **Related delivery artifacts:** `docs/09-delivery/implementation-roadmap.md`, `docs/09-delivery/azure-mvp-platform-delivery-plan.md`, `docs/09-delivery/foundation-slice-a-execution-package.md`, `docs/09-delivery/foundation-slice-a-evidence-register.md`
 
+## Current applicability and compatibility rule
+
+This document remains a compatibility start-gate reference because several live Foundation delivery artifacts point to it. It must **not** be interpreted as a self-contained current authorisation test.
+
+For any live reference to this document from the Foundation execution package, Azure delivery plan, implementation roadmap, or related delivery artifact, the current gate is the combined test formed by:
+
+1. this governance reconciliation;
+2. `docs/09-delivery/pre-implementation-gate-reassessment-2026-09-03.md`;
+3. the current `AGENT.md` and controlling `plan.md`; and
+4. a formally recorded `GO` or explicitly scoped `CONDITIONAL_GO` readiness decision.
+
+Satisfying only the 2026-08-30 checklist is **necessary but not sufficient** to start or advance `WP-AZ-001` through `WP-AZ-008`. The 2026-09-03 reassessment adds the current ADR, security, privacy, NFR, traceability, validation, business/legal, architecture-structure, and formal-readiness-decision requirements. Until those requirements are satisfied or explicitly dispositioned by the controlling authority, Foundation execution remains `BLOCKED_BY_CONTEXT`.
+
 ## 1. Purpose
 
 This document records the post-merge repository-level review of Foundation Slice A against the full Ubuntu Capital OS governance context.
@@ -42,6 +55,8 @@ This includes, at minimum:
 - reconciliation of links, IDs, counts, evidence classifications, and required files.
 
 The exact controlling test is not whether a document can be drafted around a missing artifact. The test is whether the repository satisfies the applicable `AGENT.md` validation rules and the Phase 0–4 exit criteria in `plan.md` sufficiently to permit implementation progression.
+
+The current interpretation of that test is maintained in `docs/09-delivery/pre-implementation-gate-reassessment-2026-09-03.md`; if the two documents appear to differ, the newer reassessment governs current-state readiness reporting without overriding `AGENT.md` or `plan.md`.
 
 ## 4. First-business-slice start gate
 
@@ -108,19 +123,21 @@ The following rules remain controlling:
 - Foundation completion does not promote any business use case to `COMPLETE`;
 - `WP-AZ-009` through `WP-AZ-012` cannot start or advance until the first-business-slice start gate, including the required Phase 5 foundational product-capability exit criteria, is satisfied;
 - the first business vertical slice cannot reach `READY_FOR_ACCEPTANCE` without deployed E2E evidence and reconciled traceability;
-- regulated settlement remains outside the first slice and blocked by unresolved legal/financial operating-model evidence.
+- regulated settlement remains outside the first slice and blocked by unresolved legal/financial operating-model evidence;
+- no Foundation package may start from this document alone; the current reassessment and formal readiness decision are also mandatory.
 
 ## 8. Dependency-aware next sequence
 
 The active sequence is:
 
-1. Reconcile the Phase 0 through Phase 4 repository outputs and integrity conditions required by `AGENT.md` and `plan.md`.
-2. Only after that gate is satisfied, execute `WP-AZ-001` through `WP-AZ-008` and populate `foundation-slice-a-evidence-register.md` with objective implementation evidence.
-3. Reconcile all Foundation evidence gates; do not infer business-use-case completion from infrastructure completion.
-4. Complete and evidence the `plan.md` Phase 5 foundational product capabilities and its exit criteria, including role/permission enforcement, shared validation/error handling, business audit-event framework, test harness/quality gates, and the authorised permitted-opportunity catalogue path.
-5. Confirm the separate first-business-slice start gate is fully satisfied.
-6. Only then start or advance `WP-AZ-009` through `WP-AZ-012` as Phase 6 business-slice work.
-7. Complete first-slice business-audit evidence and deployed E2E acceptance evidence before considering `READY_FOR_ACCEPTANCE`.
+1. Apply `docs/09-delivery/pre-implementation-gate-reassessment-2026-09-03.md` to the current repository baseline and close or disposition its residual ADR, security, privacy, NFR, business/legal, traceability, validation, and repository-structure items.
+2. Record a formal `GO`, explicitly scoped `CONDITIONAL_GO`, or `NO_GO` decision for Foundation Slice A.
+3. Only after a `GO` or authorised `CONDITIONAL_GO`, execute the permitted `WP-AZ-001` through `WP-AZ-008` scope and populate `docs/09-delivery/foundation-slice-a-evidence-register.md` with objective implementation evidence.
+4. Reconcile all Foundation evidence gates; do not infer business-use-case completion from infrastructure completion.
+5. Complete and evidence the `plan.md` Phase 5 foundational product capabilities and its exit criteria, including role/permission enforcement, shared validation/error handling, business audit-event framework, test harness/quality gates, and the authorised permitted-opportunity catalogue path.
+6. Confirm the separate first-business-slice start gate is fully satisfied.
+7. Only then start or advance `WP-AZ-009` through `WP-AZ-012` as Phase 6 business-slice work.
+8. Complete first-slice business-audit evidence and deployed E2E acceptance evidence before considering `READY_FOR_ACCEPTANCE`.
 
 ## 9. Definition of reconciliation complete
 
@@ -128,6 +145,8 @@ This governance reconciliation may move beyond `ANALYSIS_IN_PROGRESS` only when:
 
 - the repository no longer relies on a parallel-work interpretation that conflicts with the controlling integrity rules;
 - required pre-implementation outputs are reconciled before Foundation implementation starts;
+- the current pre-implementation reassessment has a recorded `GO` or explicitly scoped `CONDITIONAL_GO` before any authorised Foundation work starts;
+- the `docs/02-architecture/` structure exception has been formally dispositioned or the canonical structure has been amended;
 - Blob Storage is explicitly selected-but-deferred rather than silently omitted;
 - operational telemetry is distinguished from business audit evidence;
 - no Foundation or use-case status is promoted because documentation exists;
