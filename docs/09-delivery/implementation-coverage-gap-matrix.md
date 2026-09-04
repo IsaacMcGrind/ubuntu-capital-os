@@ -22,6 +22,8 @@ Evidence basis used for this pass:
 
 Important gating rule: `COMPONENT_COMPLETE` in this historical matrix means UI/page-level evidence was reported in the unpinned snapshot. It is not equivalent to current implementation status or end-to-end business completion for regulated investment workflows.
 
+Current reproducible verification for all rows: `BLOCKED_BY_CONTEXT` until an authorised revision-pinned inspection and durable run evidence are recorded.
+
 ## Coverage Summary
 
 The summary below is derived from the 41 historical row-level delivery statuses in this matrix. It is not a current implementation-status roll-up.
@@ -34,7 +36,7 @@ The summary below is derived from the 41 historical row-level delivery statuses 
 
 ## Use-case Mapping
 
-| Use Case ID | Delivery Status | Implementation Evidence | Gap Summary | Next Evidence Gate |
+| Use Case ID | Historical Snapshot Label | Historical Snapshot Implementation Evidence | Gap Summary | Next Evidence Gate |
 |---|---|---|---|---|
 | UC-PUB-001 | COMPONENT_COMPLETE | `src/pages/Index.tsx` | Public proposition and navigation are implemented as front-end UI. | Add analytics/events and traceable acceptance test evidence. |
 | UC-IAM-001 | IN_DEVELOPMENT | `src/pages/Login.tsx`, `src/App.tsx`, `src/lib/session.ts`, `src/test/auth-and-eoi.test.tsx` | The inspected snapshot contains localStorage-backed login bootstrap and route guards for `/myportfolio/*`; no backend identity/session authority was evidenced within that snapshot. | Replace local session simulation with backend identity/session integration and authorization-boundary tests. |

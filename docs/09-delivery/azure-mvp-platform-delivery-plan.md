@@ -41,7 +41,7 @@ The sequence below becomes executable only after the current Foundation start ga
 
 Each sequence item has a one-to-one work-package ID below. Evidence must be recorded against the matching ID so that delivery cannot be skipped or attributed to the wrong package.
 
-`WP-AZ-003` work-package completion is distinct from the broader `UC-IAM-001` use-case status. The Entra External ID foundation can become `COMPONENT_COMPLETE` when its own package evidence gate is satisfied while `UC-IAM-001` remains `IN_DEVELOPMENT` until backend enforcement, application integration and E2E evidence are complete.
+`WP-AZ-003` work-package completion is distinct from the broader `UC-IAM-001` use-case status. The Entra External ID foundation can become `COMPONENT_COMPLETE` when its own package evidence gate is satisfied. `UC-IAM-001` retains an `IN_DEVELOPMENT` historical snapshot label for traceability, while current reproducible verification remains `BLOCKED_BY_CONTEXT` until backend enforcement, application integration and E2E evidence are complete.
 
 Azure Blob Storage remains selected by `ARCH-ADR-001` for documents/generated files but is intentionally not a Foundation Slice A work package. It is deferred until a business slice requires controlled document or generated-file storage; its omission from `WP-AZ-001` through `WP-AZ-008` is not a reversal of the architecture decision and is not implementation evidence.
 
@@ -291,7 +291,7 @@ Additional QA/SIT/UAT/staging environments are introduced only when the delivery
 The repository currently records distinct responsibilities:
 
 - Ubuntu Capital OS: authoritative requirements, architecture boundaries, evidence gates and delivery status;
-- 80K Developers implementation evidence: current application/prototype delivery provenance;
+- 80K Developers implementation evidence: historical/partial application-prototype delivery provenance; current source state is unverified;
 - HerLogic Solutions: Azure cloud architecture/cost workstream and practical Azure implementation learning path;
 - Corefinity: architecture-analysis contribution provenance where recorded.
 

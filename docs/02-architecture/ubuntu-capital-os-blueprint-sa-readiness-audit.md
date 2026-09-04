@@ -143,7 +143,7 @@ All Foundation work packages remain `READY_FOR_DEVELOPMENT` with execution `BLOC
 | Blob appears part of active Foundation | Label as selected target, deferred until a controlled-document use case. |
 | NDA appears mandatory for every EOI | Make NDA conditional on opportunity/resource policy. |
 | Mapping omits data ownership | Add the authoritative logical owner per business entity. |
-| Identity flow appears implemented | Mark as target flow; current implementation is frontend session simulation. |
+| Identity flow appears implemented | Mark as target flow; the reported unpinned snapshot described frontend session simulation, while current implementation state remains unverified. |
 | Readiness path uses four generic gates | Replace with the controlling governance and delivery sequence below. |
 | Evidence baseline absent | Add repository, branch, commit SHA and assessment date. |
 

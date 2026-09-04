@@ -124,7 +124,7 @@ The sequence below is defined but **must not be executed until the Foundation st
 | 7 | `WP-AZ-007` | Application Insights + Azure Monitor | `COMPONENT_COMPLETE` | WP-AZ-004 |
 | 8 | `WP-AZ-008` | Reproducible infrastructure + CI/CD deployment evidence | `COMPONENT_COMPLETE` | all Foundation resources and deployment targets |
 
-`WP-AZ-003` work-package completion is distinct from the broader `UC-IAM-001` use-case status. The identity foundation may reach `COMPONENT_COMPLETE` when its own evidence gate is satisfied while `UC-IAM-001` remains `IN_DEVELOPMENT` until protected backend enforcement, application integration and later E2E evidence reconcile.
+`WP-AZ-003` work-package completion is distinct from the broader `UC-IAM-001` use-case status. The identity foundation may reach `COMPONENT_COMPLETE` when its own evidence gate is satisfied. `UC-IAM-001` retains an `IN_DEVELOPMENT` historical snapshot label for traceability, while current reproducible verification remains `BLOCKED_BY_CONTEXT` until protected backend enforcement, application integration and later E2E evidence reconcile.
 
 Once the start gate is satisfied, work packages may overlap only where their stated dependencies and evidence integrity allow it.
 
@@ -399,7 +399,7 @@ READY_FOR_DEVELOPMENT
 
 A work package must not skip directly to `COMPONENT_COMPLETE` without its evidence gate.
 
-Work-package status and business use-case status are evaluated independently. In particular, `WP-AZ-003` may be `COMPONENT_COMPLETE` while `UC-IAM-001` remains `IN_DEVELOPMENT` until the wider authentication use-case evidence is satisfied.
+Work-package status and business use-case status are evaluated independently. In particular, `WP-AZ-003` may be `COMPONENT_COMPLETE` while `UC-IAM-001` retains only its historical `IN_DEVELOPMENT` snapshot label; current reproducible verification remains `BLOCKED_BY_CONTEXT` until the wider authentication use-case evidence is satisfied.
 
 ## 11. Handoff to the first business vertical slice
 
