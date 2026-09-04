@@ -155,10 +155,12 @@ All Foundation work packages remain `READY_FOR_DEVELOPMENT` with execution `BLOC
 6. Complete the first-slice API, error, audit, persistence and integration contracts.
 7. Approve measurable availability, performance, recovery, retention and cost NFRs.
 8. Complete the ADR set.
-9. Reconcile source → use case → architecture → implementation → validation traceability.
-10. Run an Architecture Readiness Review and record `GO`, `CONDITIONAL GO` or `NO-GO`.
+9. Reconcile the **pre-start planned traceability chain** for the proposed Foundation/first-slice scope as `source -> use case -> backlog -> architecture/design (where applicable) -> planned implementation target -> planned test/validation -> planned durable-evidence target -> planned tracker/status`. Actual implementation, test-run, deployment and durable-evidence records are not required before authorised execution because they cannot exist for not-yet-started work.
+10. Run an Architecture Readiness Review. A non-authorising `NO-GO` may be recorded immediately while blockers remain. An execution-authorising `GO` or explicitly scoped `CONDITIONAL GO` may be recorded only after the non-waivable closure set, required planned pre-start traceability and readiness-decision authority reconcile.
 
 ### P1 — Execute only after the readiness gate opens
+
+After an effective authorised `GO` or explicitly scoped `CONDITIONAL GO`, replace the applicable planned targets progressively with the **realised delivery chain**: `source -> use case -> backlog -> architecture/design (where applicable) -> implementation evidence -> test/run evidence -> durable evidence -> validation/status`. Missing required realised hops block work-package/use-case status promotion, E2E readiness and acceptance; they do not make the pre-start decision circular.
 
 ```mermaid
 flowchart LR
@@ -196,6 +198,7 @@ The Blueprint establishes a useful target architecture, but current evidence doe
 - `docs/09-delivery/e2e-delivery-tracker.md`
 - `docs/09-delivery/foundation-slice-a-evidence-register.md`
 - `docs/09-delivery/foundation-slice-a-governance-reconciliation.md`
+- `docs/09-delivery/pre-implementation-gate-reassessment-2026-09-03.md`
 - `docs/10-traceability/traceability-matrix.md`
 - `docs/11-open-questions/open-questions.md`
 - `docs/12-validation/validation-plan.md`
