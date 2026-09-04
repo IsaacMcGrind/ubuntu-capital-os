@@ -251,7 +251,8 @@ Create a development-ready, dependency-aware implementation system.
 - Convert use cases into Initiative → Epic → Feature → User Story → Technical/Test Task hierarchy.
 - Add business value, acceptance criteria, dependencies, risk, discipline, evidence, and status to every item.
 - Build the E2E delivery tracker.
-- Build complete traceability using the required chain **source -> use case -> backlog -> implementation -> test -> durable evidence -> status**. Architecture/design and validation references may be added, but they do not replace any required hop.
+- Build complete **pre-start planned traceability** for the proposed implementation scope using `source -> use case -> backlog -> architecture/design (where applicable) -> planned implementation target -> planned test/validation -> planned durable-evidence target -> planned tracker/status`.
+- Define how those planned targets will be replaced by realised implementation, test/run and durable-evidence references after authorised execution begins.
 - Generate and validate `backlog.json`.
 
 ### Deliverables
@@ -266,8 +267,9 @@ Create a development-ready, dependency-aware implementation system.
 
 - Every backlog item traces to at least one use case.
 - Every critical use case has frontend, backend, database, security, tests, deployment, documentation, and evidence work represented.
-- Every applicable critical trace chain has stable source, use-case, backlog, implementation, test, durable-evidence and status references; `Pending` in a required hop keeps the chain incomplete.
-- The E2E tracker reconciles to the same stable IDs and evidence rather than substituting for missing evidence.
+- Every applicable critical **planned pre-start** trace chain has stable source, use-case, backlog, architecture/design where applicable, planned implementation, planned test/validation, planned durable-evidence and planned tracker/status references. A missing required planned hop keeps the chain incomplete.
+- Post-build implementation/test-run/durable evidence is **not** required to exit this pre-implementation phase because it can only be produced after authorised execution. Those realised hops become mandatory for later status promotion and acceptance.
+- The E2E tracker reconciles to the same stable planned IDs and targets rather than substituting for missing planned traceability.
 - The tracker uses only approved status values.
 
 ## 9. Phase 5 — Foundational Product Capabilities
@@ -297,12 +299,14 @@ Implement only the shared capabilities needed by the first vertical slice.
 - audit records
 - API request/response samples
 - deployment/build reference
+- realised traceability replacing the applicable planned Phase 4 targets with implementation, test/run and durable-evidence references
 
 ### Exit Criteria
 
 - An authorised test investor can authenticate and securely load a permitted opportunity catalogue.
 - Cross-user access is denied and tested.
 - Failures produce safe errors and traceable logs.
+- Required realised traceability for completed work reconciles from source/use case/backlog through implementation, test/run, durable evidence and status.
 
 ## 10. Phase 6 — First Complete Vertical Slice
 
@@ -344,6 +348,7 @@ This slice is deliberately non-binding until investment settlement, accreditatio
 
 - UI, API, database, security, audit, notification/simulation, automated tests, deployment, and captured E2E evidence are complete.
 - No unresolved critical question invalidates the interpretation of the slice.
+- Realised source/use-case/backlog/implementation/test/durable-evidence/status traceability reconciles.
 - Tracker status reaches `READY_FOR_ACCEPTANCE`, then `COMPLETE` only after acceptance evidence.
 
 ## 11. Phase 7 — Core Business Journeys
@@ -455,13 +460,14 @@ Execute these tasks next, in order:
 3. Gain repository access to `HarleyJoker/ubuntu-capital-platform` and refresh the implementation inventory when access becomes available; until then, preserve the current recorded implementation evidence boundary.
 4. Close the remaining P0 business/legal decisions required for the Foundation and first slice: EOI meaning, jurisdiction/eligibility, NDA policy, operator authority, logical data ownership, and authoritative state transitions.
 5. Close the remaining architecture/security/NFR readiness items identified by the current Solution Architecture audit, including threat model, authorization design, privacy/retention, measurable availability/performance/recovery/cost targets, the first-slice API/error/audit/persistence/integration contracts, and the minimum ADR set.
-6. Reconcile **source -> use case -> backlog -> architecture/design (where applicable) -> implementation -> test -> durable evidence -> validation/status** for the applicable Foundation and first-slice scope. Update `docs/10-traceability/traceability-matrix.md` and `docs/09-delivery/e2e-delivery-tracker.md` to the same stable IDs/evidence, and verify schemas, structured data, links, IDs, counts, statuses, open-question references, and risk references. A required `Pending` hop keeps the chain incomplete.
+6. Reconcile the **pre-start planned traceability chain** for the proposed Foundation/first-slice scope as `source -> use case -> backlog -> architecture/design (where applicable) -> planned implementation target -> planned test/validation -> planned durable-evidence target -> planned tracker/status`. Update `docs/10-traceability/traceability-matrix.md` and `docs/09-delivery/e2e-delivery-tracker.md` to the same stable planned IDs/targets, and verify schemas, structured data, links, IDs, counts, statuses, open-question references, and risk references. Do not require implementation/test-run/deployment/durable evidence that can only be produced after authorised execution starts.
 7. Reconcile `output/system-reconstruction-summary.md`, `README.md`, the implementation roadmap and all live delivery/gate artifacts with the same current readiness position; no summary may state that the business slice can proceed while Foundation/Phase 5 gates remain blocked.
 8. Define and record the readiness-decision approving authority and decision-control contract. Until authority exists, `GO` and `CONDITIONAL_GO` cannot open the gate and `NO_GO` remains effective.
-9. Run and record a formal pre-implementation readiness review with an explicit `GO`, `CONDITIONAL_GO`, or `NO_GO` decision only after all non-waivable integrity conditions and required traceability hops for the proposed scope reconcile.
+9. Run and record a formal pre-implementation readiness review with an explicit `GO`, `CONDITIONAL_GO`, or `NO_GO` decision only after all non-waivable integrity conditions and required **planned pre-start** traceability hops for the proposed scope reconcile.
 10. Only if an effective authorised decision permits execution, begin the exact permitted subset of `WP-AZ-001` through `WP-AZ-008` and capture objective evidence in `docs/09-delivery/foundation-slice-a-evidence-register.md`.
-11. Keep `WP-AZ-009` through `WP-AZ-012` blocked until Foundation evidence and the separate Phase 5 / first-business-slice gate are satisfied.
-12. Continue regulated onboarding, NDA, settlement, custody, portfolio and production-hardening work only as their own evidence and dependency gates are satisfied.
+11. During authorised delivery, replace planned targets progressively with realised `implementation -> test/run -> durable evidence -> validation/status` references. A missing required realised hop blocks work-package/use-case status promotion and acceptance, not the pre-start decision itself.
+12. Keep `WP-AZ-009` through `WP-AZ-012` blocked until Foundation evidence and the separate Phase 5 / first-business-slice gate are satisfied.
+13. Continue regulated onboarding, NDA, settlement, custody, portfolio and production-hardening work only as their own evidence and dependency gates are satisfied.
 
 ## 16. Agent Completion Protocol
 
