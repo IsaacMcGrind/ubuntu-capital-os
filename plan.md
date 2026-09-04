@@ -284,7 +284,7 @@ Implement only the shared capabilities needed by the first vertical slice.
 - role and permission enforcement
 - investor profile identity baseline
 - shared validation and error contract
-- opportunity read model and seed data
+- protected API bootstrap/authorization probe and non-business test data
 - audit event framework
 - structured logging and correlation IDs
 - persistence migrations
@@ -303,10 +303,12 @@ Implement only the shared capabilities needed by the first vertical slice.
 
 ### Exit Criteria
 
-- An authorised test investor can authenticate and securely load a permitted opportunity catalogue.
-- Cross-user access is denied and tested.
+- An authorised test investor can authenticate, establish a server-validated session, and call a protected bootstrap/authorization test surface without receiving another user's data.
+- Unauthenticated, insufficient-role, and cross-user access are denied and tested.
 - Failures produce safe errors and traceable logs.
 - Required realised traceability for completed work reconciles from source/use case/backlog through implementation, test/run, durable evidence and status.
+
+`WP-AZ-009` owns the opportunity read model, seed/test data, access policy enforcement, and permitted catalogue API in Phase 6. Those catalogue outputs are not Phase 5 exit prerequisites; Phase 5 proves the shared authentication, authorization, validation, audit, persistence, observability, deployment, and test foundations that `WP-AZ-009` consumes.
 
 ## 10. Phase 6 — First Complete Vertical Slice
 

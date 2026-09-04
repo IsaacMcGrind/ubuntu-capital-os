@@ -89,14 +89,14 @@ The Phase 5 foundational capability gate additionally requires objective evidenc
 - role and permission enforcement;
 - investor profile identity baseline;
 - shared validation and safe error handling;
-- opportunity read model/seed-data foundation required by the selected slice;
+- protected API bootstrap/authorization probe and non-business test data;
 - business audit-event framework, distinct from operational telemetry;
 - structured logging and correlation IDs;
 - persistence migrations;
 - test harness and CI quality gates;
 - environment configuration and secrets strategy.
 
-Before Phase 6 business-slice work starts, the Phase 5 exit evidence must show that an authorised test investor can authenticate and securely load a permitted opportunity catalogue, cross-user access is denied and tested, and failures produce safe errors with traceable logs. A partially reconciled subset is not sufficient to start `WP-AZ-009` through `WP-AZ-012`.
+Before Phase 6 business-slice work starts, the Phase 5 exit evidence must show that an authorised test investor can authenticate, establish a server-validated session, and call a protected bootstrap/authorization test surface; unauthenticated, insufficient-role, and cross-user access are denied and tested; and failures produce safe errors with traceable logs. The opportunity read model, seed/test data, access policy enforcement, and permitted catalogue API remain `WP-AZ-009` deliverables and are not Phase 5 exit prerequisites. A partially reconciled subset of the shared Phase 5 capabilities is not sufficient to start `WP-AZ-009` through `WP-AZ-012`.
 
 Once first-slice execution is authorised and begins, realised implementation, test/run, durable-evidence and validation/status links are required for delivery-status promotion and acceptance in accordance with `plan.md` and `docs/10-traceability/traceability-matrix.md`.
 
@@ -142,7 +142,7 @@ The active sequence is:
 3. Only after an effective `GO` or authorised `CONDITIONAL_GO`, execute the permitted `WP-AZ-001` through `WP-AZ-008` scope and populate `docs/09-delivery/foundation-slice-a-evidence-register.md` with objective implementation evidence.
 4. During authorised Foundation delivery, reconcile realised implementation/test-run/durable-evidence/status links against the planned chain; do not promote a package while a required realised hop is missing.
 5. Reconcile all Foundation evidence gates; do not infer business-use-case completion from infrastructure completion.
-6. Complete and evidence the `plan.md` Phase 5 foundational product capabilities and its exit criteria, including role/permission enforcement, shared validation/error handling, business audit-event framework, test harness/quality gates, and the authorised permitted-opportunity catalogue path.
+6. Complete and evidence the `plan.md` Phase 5 shared foundational product capabilities and its exit criteria, including role/permission enforcement, protected API bootstrap/authorization testing, shared validation/error handling, business audit-event framework, persistence/observability foundations, and test harness/quality gates. Do not require the `WP-AZ-009` opportunity catalogue/API as an input to its own start gate.
 7. Confirm the separate first-business-slice start gate is fully satisfied.
 8. Only then start or advance `WP-AZ-009` through `WP-AZ-012` as Phase 6 business-slice work.
 9. Complete first-slice business-audit evidence and deployed E2E acceptance evidence before considering `READY_FOR_ACCEPTANCE`.

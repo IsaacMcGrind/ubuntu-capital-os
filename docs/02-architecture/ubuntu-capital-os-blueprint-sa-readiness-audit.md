@@ -1,12 +1,16 @@
 # Ubuntu Capital OS Blueprint — Solution Architecture Readiness Audit
 
-**Document status:** Architecture governance assessment  
-**Assessment date:** 2026-08-31  
+**Document status:** Architecture governance assessment with post-baseline amendment  
+**Original assessment date:** 2026-08-31  
 **Blueprint assessed:** `Ubuntu_Capital_OS_Blueprint(2).pdf`  
 **Repository assessed:** `IsaacMcGrind/ubuntu-capital-os`  
-**Evidence branch:** `master`  
-**Evidence commit:** `d2d6f7bfe90ef04ec846eb11308cf551977cd33d`  
-**Target documentation branch:** `corefinity-docs`  
+**Original evidence branch:** `master`  
+**Original evidence commit:** `d2d6f7bfe90ef04ec846eb11308cf551977cd33d`  
+**Original target documentation branch:** `corefinity-docs`  
+**Post-baseline amendment date:** 2026-09-04  
+**Post-baseline amendment branch:** `fix/reconcile-current-repository-status` (PR #27)  
+**Post-baseline evidence commit:** `7aee0967c2dbe7584c06f2a4bab1b2feee403d19`  
+**Amendment scope:** Sections 6, 8 and 11 incorporate the later pre-implementation reassessment, planned-versus-realised traceability model, readiness-authority control, and Phase 5/Phase 6 handoff. The quantitative snapshot in Section 2 remains tied to the original evidence commit.  
 **SA recommendation:** `NO-GO FOR UNRESTRICTED IMPLEMENTATION`
 
 ## 1. Purpose
@@ -128,7 +132,7 @@ All Foundation work packages remain `READY_FOR_DEVELOPMENT` with execution `BLOC
 | `WP-AZ-007` | Application Insights and Azure Monitor | Not satisfied |
 | `WP-AZ-008` | Infrastructure as Code and CI/CD | Not satisfied |
 
-`WP-AZ-009` through `WP-AZ-012` must not start until the Foundation evidence gates and controlling Phase 5 exit criteria are satisfied.
+`WP-AZ-009` through `WP-AZ-012` must not start until the Foundation evidence gates and controlling Phase 5 **shared-capability** exit criteria are satisfied. `WP-AZ-009` then implements the opportunity read model, seed/test data, access policy enforcement, and permitted catalogue API as Phase 6 work; none of those `WP-AZ-009` outputs is a Phase 5 exit prerequisite.
 
 ## 7. Blueprint corrections required
 
