@@ -53,7 +53,7 @@ The evidence classification below applies to the **repository-state finding**, n
 | Actor and permission definition | `PARTIAL` | `CONFIRMED` | Artifacts exist, but several roles/permissions remain `INFERRED` or `UNKNOWN` and are not production approvals. |
 | Use-case specification | `PARTIAL` | `CONFIRMED` | Detailed files and structured data exist, but regulated/business semantics remain unresolved in several areas. |
 | Journeys/state/integration models | `PARTIAL` | `CONFIRMED` | Models exist; several transitions/providers/rules remain inferred or unknown. |
-| Backlog/tracker/traceability | `PARTIAL` | `CONFIRMED` | Artifacts exist, but the Solution Architecture audit records 0 complete traceability chains and 5 partial chains. |
+| Backlog/tracker/traceability | `PARTIAL` | `CONFIRMED` | Artifacts exist, but the required source -> use case -> backlog -> implementation -> test -> evidence chain is incomplete; the current matrix contains only partial chains. |
 | Validation/evidence | `PARTIAL` | `CONFIRMED` | Validation artifacts exist, but security, persistence, integration and deployed E2E evidence remain incomplete. |
 | Architecture/security/NFR decisions | `NOT_SATISFIED` | `CONFIRMED` | Threat model, privacy/retention, availability/performance, RTO/RPO, recovery, cost guardrails and several ADRs remain unresolved. |
 | First-slice technical contracts | `NOT_SATISFIED` | `CONFIRMED` | The Solution Architecture audit still requires completion of the first-slice API, error, audit, persistence and integration contracts before Foundation implementation. |
@@ -76,10 +76,12 @@ The gate is therefore narrowed from a broad "missing repository structure" block
 5. complete the required threat model, authorization design, privacy/retention position and measurable NFR baseline;
 6. complete the first-slice API, error, audit, persistence and integration contracts required by the Solution Architecture P0 closure set;
 7. complete the minimum ADR set identified by the Solution Architecture readiness audit;
-8. reconcile source → use case → architecture → implementation → validation traceability to the level required by the applicable phase exit criteria;
+8. reconcile the required traceability chain for the applicable Foundation/first-slice scope as **source -> use case -> backlog -> architecture/design (where applicable) -> implementation -> test -> durable evidence -> validation/status**, with stable IDs and repository-accessible evidence. No `Pending` required hop may be treated as a complete chain;
 9. demonstrate that structured data/schema validation, links, IDs, counts, open-question/risk references and status values reconcile;
 10. define, in the controlling governance, the approving authority and decision-control contract for any execution-authorising readiness decision;
 11. record a formal Architecture / Pre-Implementation Readiness Review outcome of `GO`, `CONDITIONAL_GO`, or `NO_GO` only after the decision-control contract below is satisfied.
+
+A readiness review **must not issue `GO` or `CONDITIONAL_GO` for a scope whose required traceability chain is still partial**. A general reference to `backlog.json`, a local test path without durable run/revision evidence, or an E2E tracker row without the underlying evidence does not satisfy this closure condition.
 
 ### 4.1 Readiness decision authority and `CONDITIONAL_GO` controls
 
@@ -118,9 +120,9 @@ The `docs/02-architecture/` issue is different: the directory exists and is acti
 2. Produce an explicit residual-gaps register from that validation; do not reopen work that is already present and internally consistent.
 3. Disposition the `docs/02-architecture/` canonical-structure exception.
 4. Close the P0 business/legal/security/NFR, first-slice technical-contract and ADR gaps identified by the current Solution Architecture audit.
-5. Reconcile traceability and validation evidence for the Foundation-relevant and first-slice-relevant scope.
+5. Reconcile **source -> use case -> backlog -> architecture/design (where applicable) -> implementation -> test -> durable evidence -> validation/status** for Foundation-relevant and first-slice-relevant scope, and update `docs/10-traceability/traceability-matrix.md` plus `docs/09-delivery/e2e-delivery-tracker.md` so both point to the same stable IDs and evidence.
 6. Define and record the readiness-decision approving authority and decision-control contract.
-7. Record the formal pre-implementation gate decision.
+7. Record the formal pre-implementation gate decision only after the required traceability and other closure conditions are satisfied.
 8. Only after an effective `GO`, or a `CONDITIONAL_GO` that satisfies Section 4.1 without waiving any integrity stop condition, begin only the authorised Foundation work packages and capture objective evidence in `docs/09-delivery/foundation-slice-a-evidence-register.md`.
 9. Keep `WP-AZ-009` through `WP-AZ-012` blocked until Foundation evidence and the separate Phase 5 / first-business-slice gate are satisfied.
 
