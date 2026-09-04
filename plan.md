@@ -199,7 +199,7 @@ Convert the current catalogue into a complete, structured reconstruction specifi
 
 ### Exit Criteria
 
-- Every use case has evidence status, source references, permissions, audit events, failure paths, acceptance criteria, and E2E completion evidence.
+- Every use case has evidence status, source references, permissions, audit events, failure paths, acceptance criteria, **E2E completion criteria, and a stable planned E2E evidence target**. Actual E2E completion evidence is produced only after authorised implementation and is required for later status promotion and acceptance, not for the pre-implementation Phase 2 exit.
 - Critical unknowns remain visible and are linked to open questions.
 - JSON validates against Draft 2020-12 schema.
 
