@@ -1,13 +1,13 @@
 # Ubuntu Capital OS — Foundation Slice A Execution Package
 
-**Status:** `READY_FOR_DEVELOPMENT`  
-**Execution gate:** `BLOCKED_BY_CONTEXT` until the current pre-implementation reassessment is closed by a formal `GO` or explicitly scoped `CONDITIONAL_GO`  
+**Status:** `IN_DEVELOPMENT`  
+**Execution gate:** `AUTHORISED_GO` via `docs/09-delivery/foundation-slice-a-go-decision-2026-09-05.md`  
 **Execution scope:** `WP-AZ-001` through `WP-AZ-008`  
 **Architecture decision:** `ARCH-ADR-001`  
 **Parent delivery plan:** `docs/09-delivery/azure-mvp-platform-delivery-plan.md`  
 **Programme roadmap:** `docs/09-delivery/implementation-roadmap.md`  
 **Governance reconciliation:** `docs/09-delivery/foundation-slice-a-governance-reconciliation.md`  
-**Current readiness reassessment:** `docs/09-delivery/pre-implementation-gate-reassessment-2026-09-03.md`
+**Current readiness decision:** `docs/09-delivery/foundation-slice-a-go-decision-2026-09-05.md`
 
 ## 1. Purpose
 
@@ -21,17 +21,15 @@ Foundation Slice A does **not** make any Ubuntu Capital business use case `COMPL
 
 ### Hard start gate
 
-This package is not currently authorisation to begin Azure implementation.
+This package is now authorised to begin Azure Foundation implementation for the exact approved scope.
 
-`AGENT.md` and `plan.md` remain controlling. The 2026-08-30 governance reconciliation remains part of the compatibility chain, but `WP-AZ-001` through `WP-AZ-008` must not start or advance merely because that older checklist is satisfied. The applicable Phase 0 through Phase 4 requirements, repository-integrity rules, and residual closure set in `docs/09-delivery/pre-implementation-gate-reassessment-2026-09-03.md` must reconcile, and a formal readiness review must record either `GO` or an explicitly scoped `CONDITIONAL_GO` that identifies the Foundation work authorised to proceed.
-
-Planning, acceptance criteria, architecture and evidence templates may be maintained while the gate is unsatisfied, but that activity must not change delivery status or be treated as implementation evidence.
+`AGENT.md` and `plan.md` remain controlling. The 2026-08-30 governance reconciliation remains part of the compatibility chain, and active execution authority is recorded in `docs/09-delivery/foundation-slice-a-go-decision-2026-09-05.md` (`GO-2026-09-05-FSA-001`). Work must remain within `WP-AZ-001` through `WP-AZ-008`, and status promotion remains evidence-gated.
 
 ## 2. Governing evidence rules
 
 The following rules are controlling:
 
-1. No `WP-AZ-001` through `WP-AZ-008` implementation may start or advance until `AGENT.md`, `plan.md`, `docs/09-delivery/foundation-slice-a-governance-reconciliation.md`, `docs/09-delivery/pre-implementation-gate-reassessment-2026-09-03.md`, and a formal `GO` or explicitly scoped `CONDITIONAL_GO` decision reconcile.
+1. `WP-AZ-001` through `WP-AZ-008` implementation is authorised by `GO-2026-09-05-FSA-001` and must remain within its exact scope and controls.
 2. Architecture selection is not implementation evidence.
 3. A work package advances only when its evidence gate is satisfied.
 4. No use case becomes `COMPLETE` without objective E2E evidence.
@@ -103,7 +101,7 @@ Recorded scope:
 - Azure cost-governance implementation;
 - cloud deployment support within approved architecture.
 
-HerLogic Solutions does **not** have authority to change legal/business rules, waive repository-integrity gates, or mark Ubuntu Capital use cases complete.
+HerLogic Solutions may issue execution-authorising decisions within approved governance scope per `docs/09-delivery/foundation-slice-a-go-decision-2026-09-05.md`, but does **not** have authority to change legal/business rules, waive repository-integrity gates, or mark Ubuntu Capital use cases complete.
 
 ### 80K Developers / implementation contributors
 

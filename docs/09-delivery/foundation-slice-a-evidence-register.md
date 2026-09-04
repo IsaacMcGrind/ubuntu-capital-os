@@ -1,13 +1,13 @@
 # Ubuntu Capital OS — Foundation Slice A Evidence Register
 
 **Scope:** `WP-AZ-001` through `WP-AZ-008`  
-**Delivery package status:** `READY_FOR_DEVELOPMENT`  
-**Execution gate:** `BLOCKED_BY_CONTEXT` until the current pre-implementation reassessment results in a formal `GO` or explicitly scoped `CONDITIONAL_GO`  
+**Delivery package status:** `IN_DEVELOPMENT`  
+**Execution gate:** `AUTHORISED_GO` via `docs/09-delivery/foundation-slice-a-go-decision-2026-09-05.md`  
 **Execution package:** `docs/09-delivery/foundation-slice-a-execution-package.md`  
 **Governance reconciliation:** `docs/09-delivery/foundation-slice-a-governance-reconciliation.md`  
-**Current readiness reassessment:** `docs/09-delivery/pre-implementation-gate-reassessment-2026-09-03.md`
+**Current readiness decision:** `docs/09-delivery/foundation-slice-a-go-decision-2026-09-05.md`
 
-The 2026-08-30 governance reconciliation remains part of the controlling compatibility chain, but it is not sufficient on its own to authorize Foundation work. The current readiness reassessment, `AGENT.md`, `plan.md`, and a formal `GO` or explicitly scoped `CONDITIONAL_GO` must also reconcile before any `WP-AZ-001` through `WP-AZ-008` package starts or advances.
+The 2026-08-30 governance reconciliation remains part of the controlling compatibility chain. Foundation execution is now authorised for `WP-AZ-001` through `WP-AZ-008` under `GO-2026-09-05-FSA-001` with scope and condition controls defined in `docs/09-delivery/foundation-slice-a-go-decision-2026-09-05.md`.
 
 ## Evidence handling rules
 
@@ -17,10 +17,8 @@ The 2026-08-30 governance reconciliation remains part of the controlling compati
 - Evidence classification must use `CONFIRMED`, `INFERRED`, `UNKNOWN` or `CONTRADICTED`.
 - Architecture/design documents are not implementation evidence unless the record explicitly says the evidence only proves design intent.
 - External evidence links must be stable enough for an authorised project reviewer to retrieve later.
-- A work package cannot move to `IN_DEVELOPMENT` or `COMPONENT_COMPLETE` while the Foundation execution gate is `BLOCKED_BY_CONTEXT`.
-- The Foundation execution gate remains blocked until the current reassessment closure set is reconciled and a formal readiness decision explicitly authorizes the applicable work.
-- While the Foundation execution gate remains blocked, this register is a planning/evidence template only. Do not populate it with records that imply unauthorised implementation has started or that delivery status has advanced.
-- After a valid `GO` or explicitly scoped `CONDITIONAL_GO` opens the gate for a work package and authorised delivery begins, capture objective realised implementation, test/run, deployment and operational evidence here as it is produced. Evidence capture documents authorised work; it does not by itself promote delivery status.
+- Foundation execution is authorised only for the exact scope in `GO-2026-09-05-FSA-001`; no unlisted work package is authorised by this register.
+- Capture objective realised implementation, test/run, deployment and operational evidence here as it is produced. Evidence capture documents authorised work; it does not by itself promote delivery status.
 - After the start gate is satisfied, a work package cannot move to `COMPONENT_COMPLETE` until its required evidence gate is reconciled here or in an explicitly linked canonical evidence artifact and the governed status transition is recorded.
 - `WP-AZ-008` requires version-controlled infrastructure provisioning/reconciliation evidence; manual Azure configuration alone cannot satisfy the Foundation reproducibility gate.
 
@@ -28,6 +26,7 @@ The 2026-08-30 governance reconciliation remains part of the controlling compati
 
 | Evidence ID | Work package | Evidence type | Reference / location | Captured date | Owner | Classification | Proves | Does not prove | Review status |
 |---|---|---|---|---|---|---|---|---|---|
+| FSA-EV-000 | WP-AZ-001 to WP-AZ-008 | Readiness decision evidence | `docs/09-delivery/foundation-slice-a-go-decision-2026-09-05.md` | 2026-09-05 | Project Owner | `CONFIRMED` | Foundation execution gate is open for the authorised scope in AZURE DEV/MVP | Completion of any work-package evidence gate or any business use-case completion | ACCEPTED |
 | FSA-EV-001 | WP-AZ-001 | Planned evidence placeholder | Pending | Pending | Pending | `UNKNOWN` | Nothing yet; placeholder for Azure resource baseline evidence | Provisioning, RBAC or cost controls | OPEN |
 | FSA-EV-002 | WP-AZ-002 | Planned evidence placeholder | Pending | Pending | Pending | `UNKNOWN` | Nothing yet; placeholder for Static Web Apps deployment evidence | Successful deployment | OPEN |
 | FSA-EV-003 | WP-AZ-003 | Planned evidence placeholder | Pending | Pending | Pending | `UNKNOWN` | Nothing yet; placeholder for Entra External ID evidence | Authentication integration | OPEN |
@@ -135,14 +134,14 @@ Required before `COMPONENT_COMPLETE`:
 
 | Work package | Recorded delivery status | Execution gate | Evidence gate satisfied? | Evidence IDs | Notes |
 |---|---|---|---:|---|---|
-| WP-AZ-001 | `READY_FOR_DEVELOPMENT` | `BLOCKED_BY_CONTEXT` | No | FSA-EV-001 | Await current reassessment closure + formal readiness authorization |
-| WP-AZ-002 | `READY_FOR_DEVELOPMENT` | `BLOCKED_BY_CONTEXT` | No | FSA-EV-002 | Await current reassessment closure + formal readiness authorization |
-| WP-AZ-003 | `READY_FOR_DEVELOPMENT` | `BLOCKED_BY_CONTEXT` | No | FSA-EV-003 | Do not start or advance; UC-IAM-001 remains independently governed |
-| WP-AZ-004 | `READY_FOR_DEVELOPMENT` | `BLOCKED_BY_CONTEXT` | No | FSA-EV-004 | Await current reassessment closure + formal readiness authorization |
-| WP-AZ-005 | `READY_FOR_DEVELOPMENT` | `BLOCKED_BY_CONTEXT` | No | FSA-EV-005 | Await current reassessment closure + formal readiness authorization |
-| WP-AZ-006 | `READY_FOR_DEVELOPMENT` | `BLOCKED_BY_CONTEXT` | No | FSA-EV-006 | Await current reassessment closure + formal readiness authorization |
-| WP-AZ-007 | `READY_FOR_DEVELOPMENT` | `BLOCKED_BY_CONTEXT` | No | FSA-EV-007 | Operational telemetry only; business audit remains separate and work is not yet authorised |
-| WP-AZ-008 | `READY_FOR_DEVELOPMENT` | `BLOCKED_BY_CONTEXT` | No | FSA-EV-008 | Reproducibility/CI-CD work is not yet authorised |
+| WP-AZ-001 | `IN_DEVELOPMENT` | `AUTHORISED_GO` | No | FSA-EV-001 | Authorised to start and record realised evidence |
+| WP-AZ-002 | `IN_DEVELOPMENT` | `AUTHORISED_GO` | No | FSA-EV-002 | Authorised to start and record realised evidence |
+| WP-AZ-003 | `IN_DEVELOPMENT` | `AUTHORISED_GO` | No | FSA-EV-003 | UC-IAM-001 remains independently governed for use-case completion |
+| WP-AZ-004 | `IN_DEVELOPMENT` | `AUTHORISED_GO` | No | FSA-EV-004 | Authorised to start and record realised evidence |
+| WP-AZ-005 | `IN_DEVELOPMENT` | `AUTHORISED_GO` | No | FSA-EV-005 | Authorised to start and record realised evidence |
+| WP-AZ-006 | `IN_DEVELOPMENT` | `AUTHORISED_GO` | No | FSA-EV-006 | Authorised to start and record realised evidence |
+| WP-AZ-007 | `IN_DEVELOPMENT` | `AUTHORISED_GO` | No | FSA-EV-007 | Operational telemetry scope remains distinct from business audit scope |
+| WP-AZ-008 | `IN_DEVELOPMENT` | `AUTHORISED_GO` | No | FSA-EV-008 | Reproducibility/CI-CD evidence required before completion |
 
-**Foundation Slice A package:** `READY_FOR_DEVELOPMENT`.  
-**Foundation Slice A execution gate:** `BLOCKED_BY_CONTEXT` — no `WP-AZ-001` through `WP-AZ-008` implementation may start or advance until `AGENT.md`, `plan.md`, `docs/09-delivery/foundation-slice-a-governance-reconciliation.md`, `docs/09-delivery/pre-implementation-gate-reassessment-2026-09-03.md`, and a formal `GO` or explicitly scoped `CONDITIONAL_GO` decision reconcile. No infrastructure implementation completion is claimed.
+**Foundation Slice A package:** `IN_DEVELOPMENT`.  
+**Foundation Slice A execution gate:** `AUTHORISED_GO` via `GO-2026-09-05-FSA-001` — `WP-AZ-001` through `WP-AZ-008` may start and advance within authorised scope, and progress must be recorded here with objective realised evidence. No infrastructure implementation completion is claimed.

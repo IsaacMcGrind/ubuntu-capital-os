@@ -1,6 +1,6 @@
 # Ubuntu Capital OS — Azure MVP Platform Delivery Plan
 
-**Status:** `READY_FOR_DEVELOPMENT`  
+**Status:** `IN_DEVELOPMENT`  
 **Architecture decision:** `ARCH-ADR-001`  
 **Purpose:** convert the chosen Azure MVP platform direction into evidence-gated delivery work without treating infrastructure selection as implementation completion.
 
@@ -16,13 +16,11 @@ The foundation must prove deployability, authentication, protected backend execu
 
 `plan.md` remains the controlling implementation sequence. This Azure plan is a subordinate delivery plan and does not replace or close plan-required reconstruction outputs.
 
-**Do not start or advance `WP-AZ-001` through `WP-AZ-008` while the Foundation execution gate is `BLOCKED_BY_CONTEXT`.** The live gate is the combined governance chain of `AGENT.md`, `plan.md`, `docs/09-delivery/foundation-slice-a-governance-reconciliation.md`, and the current `docs/09-delivery/pre-implementation-gate-reassessment-2026-09-03.md`. The older governance reconciliation is necessary context but is not sufficient on its own. A formal readiness review must record `GO` or an explicitly scoped `CONDITIONAL_GO` before any applicable Foundation work may start or advance.
-
-Planning and acceptance criteria may be maintained while that gate is unsatisfied, but documentation alone must not change delivery status or be treated as implementation progress.
+`WP-AZ-001` through `WP-AZ-008` are now authorised to start and advance within the exact scope and controls defined in `docs/09-delivery/foundation-slice-a-go-decision-2026-09-05.md` (`GO-2026-09-05-FSA-001`). The governance chain remains `AGENT.md`, `plan.md`, and `docs/09-delivery/foundation-slice-a-governance-reconciliation.md`, and all status promotions remain evidence-gated.
 
 ## 2. Delivery sequence
 
-The sequence below becomes executable only after the current Foundation start gate is satisfied and the formal readiness decision authorizes the applicable work.
+The sequence below is executable for Foundation Slice A (`WP-AZ-001` through `WP-AZ-008`) under `GO-2026-09-05-FSA-001`.
 
 | Order | Work package | Primary Azure capability | Main use-case dependency | Target status after evidence |
 |---:|---|---|---|---|
@@ -325,11 +323,11 @@ The first business slice may move to `READY_FOR_ACCEPTANCE` only when all of the
 
 ## 9. Next action
 
-1. Validate the materially present Phase 0 through Phase 4 outputs against `plan.md` exit criteria and `AGENT.md` integrity rules rather than recreating them.
-2. A non-authorising `NO_GO` may be recorded or refreshed immediately if validation identifies blockers, integrity failures, partial required planned traceability, unresolved `OQ-016`, or other non-waivable conditions. Such a decision keeps the Foundation gate blocked and does not require those blockers to be closed first.
-3. For an execution-authorising `GO` or explicitly scoped `CONDITIONAL_GO`, close or formally disposition all required residual blockers in `docs/09-delivery/pre-implementation-gate-reassessment-2026-09-03.md`, including the `docs/02-architecture/` structure exception, business/legal decisions, actor/permission approval, data ownership/state transitions, architecture/security/NFR closure, ADR coverage, planned pre-start traceability, validation consistency, and readiness-authority requirements.
-4. Record the applicable formal readiness decision under the controlling decision contract. `GO` / `CONDITIONAL_GO` cannot open the gate unless the non-waivable closure set and approving authority reconcile.
-5. Only if authorised, execute **WP-AZ-001 through WP-AZ-008** using `docs/09-delivery/foundation-slice-a-execution-package.md` and populate `docs/09-delivery/foundation-slice-a-evidence-register.md` with objective realised evidence as authorised work proceeds.
+1. Execute **WP-AZ-001 through WP-AZ-008** under `GO-2026-09-05-FSA-001` using `docs/09-delivery/foundation-slice-a-execution-package.md`.
+2. Capture objective realised evidence continuously in `docs/09-delivery/foundation-slice-a-evidence-register.md` and reconcile status only when each work-package evidence gate is satisfied.
+3. Maintain planned-to-realised traceability links in `docs/10-traceability/traceability-matrix.md` and `docs/09-delivery/e2e-delivery-tracker.md` as implementation/testing evidence is produced.
+4. Keep downstream scope controls in place: `WP-AZ-009` through `WP-AZ-012` remain blocked until Foundation evidence gates and first-slice start-gate prerequisites are satisfied.
+5. If critical contradictions or non-waivable integrity failures emerge during execution, pause affected scope and issue a governance review update before status promotion.
 6. Reconcile all Foundation evidence gates.
 7. Complete and evidence the `plan.md` Phase 5 foundational product capabilities and its exit criteria.
 8. Confirm the separate first-business-slice start gate is fully satisfied.

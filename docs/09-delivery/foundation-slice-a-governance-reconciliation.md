@@ -6,6 +6,7 @@
 **Related merged PR:** #18 — Foundation Slice A execution package  
 **Controlling documents:** `AGENT.md`, `plan.md`  
 **Related delivery artifacts:** `docs/09-delivery/implementation-roadmap.md`, `docs/09-delivery/azure-mvp-platform-delivery-plan.md`, `docs/09-delivery/foundation-slice-a-execution-package.md`, `docs/09-delivery/foundation-slice-a-evidence-register.md`
+**Active execution-authorising decision:** `docs/09-delivery/foundation-slice-a-go-decision-2026-09-05.md` (`GO-2026-09-05-FSA-001`)
 
 ## Current applicability and compatibility rule
 
@@ -21,6 +22,10 @@ For any live reference to this document from the Foundation execution package, A
 Satisfying only the 2026-08-30 checklist is **necessary but not sufficient** to start or advance `WP-AZ-001` through `WP-AZ-008`. The 2026-09-03 reassessment adds the current ADR, security, privacy, NFR, traceability, validation, business/legal, architecture-structure, readiness-authority, and formal-readiness-decision requirements. Until those requirements are satisfied or validly dispositioned under the controlling governance, Foundation execution remains `BLOCKED_BY_CONTEXT`.
 
 The traceability terms in this document use the current two-stage model from `plan.md` and the reassessment: **planned pre-start traceability** is required before an execution-authorising decision; **realised implementation/test/durable-evidence traceability** is produced only after authorised delivery begins and governs later status promotion and acceptance. No retained wording in this compatibility document may be read as requiring post-build evidence before the start decision.
+
+## 2026-09-05 execution amendment
+
+The execution-authorising `GO` decision in `docs/09-delivery/foundation-slice-a-go-decision-2026-09-05.md` is now active for Foundation scope `WP-AZ-001` through `WP-AZ-008`. Historical blocked-state wording in this document reflects the 2026-08-30 to 2026-09-03 assessment period and must be interpreted through the active decision record.
 
 ## 1. Purpose
 

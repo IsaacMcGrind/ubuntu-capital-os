@@ -10,6 +10,8 @@ The table preserves labels reported from an unpinned local snapshot for historic
 | UC-IAM-001 | IN_DEVELOPMENT | BLOCKED_BY_CONTEXT | NONE RECORDED | 2026-08-31 | The snapshot reportedly included route-session guard/login tests; current source and backend auth/session authority are not verified. |
 | UC-OPP-001 | COMPONENT_COMPLETE | BLOCKED_BY_CONTEXT | NONE RECORDED | 2026-08-31 | The snapshot reportedly used static data and was not E2E validated; current behaviour is unverified. |
 | UC-INV-001 | IN_DEVELOPMENT | BLOCKED_BY_CONTEXT | NONE RECORDED | 2026-08-31 | The snapshot reportedly included EOI validation/duplicate tests; current source, server lifecycle, and persistence are unverified. |
+| UC-DD-001 | READY_FOR_DEVELOPMENT | BLOCKED_BY_CONTEXT | NONE RECORDED | 2026-09-05 | Planned tracker row added for stable traceability targeting; no current E2E evidence is recorded. |
+| UC-INT-003 | READY_FOR_DEVELOPMENT | BLOCKED_BY_CONTEXT | NONE RECORDED | 2026-09-05 | Planned tracker row added for stable traceability targeting; no current E2E evidence is recorded. |
 | UC-AUD-001 | READY_FOR_DEVELOPMENT | BLOCKED_BY_CONTEXT | NONE RECORDED | 2026-08-31 | The snapshot did not evidence a business-audit pipeline; current implementation state is unverified. |
 
 ## Tracker policy
