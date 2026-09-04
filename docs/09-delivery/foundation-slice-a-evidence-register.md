@@ -2,9 +2,12 @@
 
 **Scope:** `WP-AZ-001` through `WP-AZ-008`  
 **Delivery package status:** `READY_FOR_DEVELOPMENT`  
-**Execution gate:** `BLOCKED_BY_CONTEXT` until the pre-implementation repository gate is satisfied  
+**Execution gate:** `BLOCKED_BY_CONTEXT` until the current pre-implementation reassessment results in a formal `GO` or explicitly scoped `CONDITIONAL_GO`  
 **Execution package:** `docs/09-delivery/foundation-slice-a-execution-package.md`  
-**Governance reconciliation:** `docs/09-delivery/foundation-slice-a-governance-reconciliation.md`
+**Governance reconciliation:** `docs/09-delivery/foundation-slice-a-governance-reconciliation.md`  
+**Current readiness reassessment:** `docs/09-delivery/pre-implementation-gate-reassessment-2026-09-03.md`
+
+The 2026-08-30 governance reconciliation remains part of the controlling compatibility chain, but it is not sufficient on its own to authorize Foundation work. The current readiness reassessment, `AGENT.md`, `plan.md`, and a formal `GO` or explicitly scoped `CONDITIONAL_GO` must also reconcile before any `WP-AZ-001` through `WP-AZ-008` package starts or advances.
 
 ## Evidence handling rules
 
@@ -15,6 +18,7 @@
 - Architecture/design documents are not implementation evidence unless the record explicitly says the evidence only proves design intent.
 - External evidence links must be stable enough for an authorised project reviewer to retrieve later.
 - A work package cannot move to `IN_DEVELOPMENT` or `COMPONENT_COMPLETE` while the Foundation execution gate is `BLOCKED_BY_CONTEXT`.
+- The Foundation execution gate remains blocked until the current reassessment closure set is reconciled and a formal readiness decision explicitly authorizes the applicable work.
 - After the start gate is satisfied, a work package cannot move to `COMPONENT_COMPLETE` until its required evidence gate is reconciled here or in an explicitly linked canonical evidence artifact.
 - `WP-AZ-008` requires version-controlled infrastructure provisioning/reconciliation evidence; manual Azure configuration alone cannot satisfy the Foundation reproducibility gate.
 - While the Foundation execution gate is open, this register remains a planning/evidence template. Do not populate it in a way that implies authorised implementation work has started or that a delivery status has advanced.
@@ -34,7 +38,7 @@
 
 ## Work-package evidence checklist
 
-The checklists below become executable evidence gates only after the Foundation start gate is satisfied.
+The checklists below become executable evidence gates only after the current Foundation start gate is satisfied by the controlling governance chain and formal readiness decision.
 
 ### WP-AZ-001 — Azure baseline
 
@@ -130,14 +134,14 @@ Required before `COMPONENT_COMPLETE`:
 
 | Work package | Recorded delivery status | Execution gate | Evidence gate satisfied? | Evidence IDs | Notes |
 |---|---|---|---:|---|---|
-| WP-AZ-001 | `READY_FOR_DEVELOPMENT` | `BLOCKED_BY_CONTEXT` | No | FSA-EV-001 | Do not start or advance until repository prerequisites reconcile |
-| WP-AZ-002 | `READY_FOR_DEVELOPMENT` | `BLOCKED_BY_CONTEXT` | No | FSA-EV-002 | Do not start or advance until repository prerequisites reconcile |
+| WP-AZ-001 | `READY_FOR_DEVELOPMENT` | `BLOCKED_BY_CONTEXT` | No | FSA-EV-001 | Await current reassessment closure + formal readiness authorization |
+| WP-AZ-002 | `READY_FOR_DEVELOPMENT` | `BLOCKED_BY_CONTEXT` | No | FSA-EV-002 | Await current reassessment closure + formal readiness authorization |
 | WP-AZ-003 | `READY_FOR_DEVELOPMENT` | `BLOCKED_BY_CONTEXT` | No | FSA-EV-003 | Do not start or advance; UC-IAM-001 remains independently governed |
-| WP-AZ-004 | `READY_FOR_DEVELOPMENT` | `BLOCKED_BY_CONTEXT` | No | FSA-EV-004 | Do not start or advance until repository prerequisites reconcile |
-| WP-AZ-005 | `READY_FOR_DEVELOPMENT` | `BLOCKED_BY_CONTEXT` | No | FSA-EV-005 | Do not start or advance until repository prerequisites reconcile |
-| WP-AZ-006 | `READY_FOR_DEVELOPMENT` | `BLOCKED_BY_CONTEXT` | No | FSA-EV-006 | Do not start or advance until repository prerequisites reconcile |
+| WP-AZ-004 | `READY_FOR_DEVELOPMENT` | `BLOCKED_BY_CONTEXT` | No | FSA-EV-004 | Await current reassessment closure + formal readiness authorization |
+| WP-AZ-005 | `READY_FOR_DEVELOPMENT` | `BLOCKED_BY_CONTEXT` | No | FSA-EV-005 | Await current reassessment closure + formal readiness authorization |
+| WP-AZ-006 | `READY_FOR_DEVELOPMENT` | `BLOCKED_BY_CONTEXT` | No | FSA-EV-006 | Await current reassessment closure + formal readiness authorization |
 | WP-AZ-007 | `READY_FOR_DEVELOPMENT` | `BLOCKED_BY_CONTEXT` | No | FSA-EV-007 | Operational telemetry only; business audit remains separate and work is not yet authorised |
 | WP-AZ-008 | `READY_FOR_DEVELOPMENT` | `BLOCKED_BY_CONTEXT` | No | FSA-EV-008 | Reproducibility/CI-CD work is not yet authorised |
 
 **Foundation Slice A package:** `READY_FOR_DEVELOPMENT`.  
-**Foundation Slice A execution gate:** `BLOCKED_BY_CONTEXT` — do not start or advance implementation work until the governance start gate is satisfied. No infrastructure implementation completion is claimed.
+**Foundation Slice A execution gate:** `BLOCKED_BY_CONTEXT` — no `WP-AZ-001` through `WP-AZ-008` implementation may start or advance until `AGENT.md`, `plan.md`, `docs/09-delivery/foundation-slice-a-governance-reconciliation.md`, `docs/09-delivery/pre-implementation-gate-reassessment-2026-09-03.md`, and a formal `GO` or explicitly scoped `CONDITIONAL_GO` decision reconcile. No infrastructure implementation completion is claimed.
