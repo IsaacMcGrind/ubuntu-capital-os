@@ -13,19 +13,19 @@ The live website is treated as current implementation evidence supplied by the p
 
 ## Delivery Evidence Recorded
 
-| Delivery Item | Current Status | Evidence | Notes |
-|---|---|---|---|
-| Ubuntu Capital website deployment | COMPONENT_COMPLETE | User-supplied live URL | Confirms a deployed web experience exists, not that every business use case is E2E complete. |
-| Source-code repository identified | COMPONENT_COMPLETE | User-supplied GitHub URL | Repository identity is known. |
-| Exact inspected source revision and durable run | BLOCKED_BY_CONTEXT | Repository-authored inspection summary; source SHA/run not recorded | The reported local inspection cannot be reproduced or treated as current until branch, commit SHA, run identity, and durable evidence are recorded. |
-| 41-use-case implementation reconciliation | ANALYSIS_IN_PROGRESS | Existing route/mock-data coverage artifacts | The artifacts support a historical/partial front-end UI assessment; their source-revision provenance and currentness remain unverified. |
-| Regulated investor onboarding / KYC / AML implementation evidence | NOT_IMPLEMENTED_OR_UNVERIFIED | No backend or identity services identified | No API, server, database, or verification logic was located. |
-| NDA end-to-end lifecycle implementation evidence | PARTIAL | UI route and static pages exist | The repository includes NDA-facing flows as interface states, but no real legal workflow or persisted record logic was identified. |
-| Investment commitment / expression-of-interest implementation evidence | PARTIAL | UI opportunities and dashboard flows exist | The app models deal listings and portfolio data, but no live commitment or fund movement logic was found. |
-| Settlement / reconciliation implementation evidence | NOT_IMPLEMENTED_OR_UNVERIFIED | No payment or settlement service identified | Financial execution cannot be assumed. |
-| Portfolio holdings / performance implementation evidence | PARTIAL | Portfolio pages and mock holdings data exist | The behaviour is demonstrably UI-level mock data, not a live portfolio system. |
-| Admin / operations / support implementation evidence | NOT_IMPLEMENTED_OR_UNVERIFIED | No operational/admin backend or workflows identified | Must inspect controlled operational workflows; none were found in the current codebase. |
-| Security / audit / test / deployment evidence | PARTIAL | Test suite exists and builds successfully | Security and runtime audit controls are not evidenced beyond front-end scaffolding. |
+| Delivery Item | Historical Snapshot Finding | Current Evidence State | Evidence Basis | Notes |
+|---|---|---|---|---|
+| Ubuntu Capital website deployment | Not snapshot-dependent | COMPONENT_COMPLETE | Project-owner-supplied live URL | Confirms that a deployed web-experience reference was supplied, not current uptime or E2E business completion. |
+| Source-code repository identified | Not snapshot-dependent | COMPONENT_COMPLETE | Project-owner-supplied GitHub URL | Confirms repository identity only, not current contents. |
+| Exact inspected source revision and durable run | UNKNOWN | BLOCKED_BY_CONTEXT | Repository-authored inspection summary; source SHA/run not recorded | The reported local inspection cannot be reproduced or treated as current until branch, commit SHA, run identity, and durable evidence are recorded. |
+| 41-use-case implementation reconciliation | ANALYSIS_IN_PROGRESS | BLOCKED_BY_CONTEXT | Existing route/mock-data coverage artifacts | The artifacts support a historical/partial front-end UI assessment; their source-revision provenance and currentness remain unverified. |
+| Regulated investor onboarding / KYC / AML implementation evidence | Not evidenced in reported snapshot | BLOCKED_BY_CONTEXT | Historical snapshot reported no backend or identity services | No current API, server, database, or verification-logic conclusion may be drawn until revision-pinned inspection. |
+| NDA end-to-end lifecycle implementation evidence | PARTIAL UI in reported snapshot | BLOCKED_BY_CONTEXT | Historical snapshot reported UI routes/static pages | Current legal workflow and persisted-record behaviour are unverified. |
+| Investment commitment / expression-of-interest implementation evidence | PARTIAL UI in reported snapshot | BLOCKED_BY_CONTEXT | Historical snapshot reported opportunity/dashboard flows | Current commitment, EOI, and fund-movement behaviour are unverified. |
+| Settlement / reconciliation implementation evidence | Not evidenced in reported snapshot | BLOCKED_BY_CONTEXT | Historical snapshot reported no payment/settlement service | Financial execution remains unverified and must not be assumed. |
+| Portfolio holdings / performance implementation evidence | PARTIAL UI in reported snapshot | BLOCKED_BY_CONTEXT | Historical snapshot reported portfolio pages/mock data | Current holdings, performance, and persistence behaviour are unverified. |
+| Admin / operations / support implementation evidence | Not evidenced in reported snapshot | BLOCKED_BY_CONTEXT | Historical snapshot reported no operational/admin backend | Current controlled operational workflows are unverified. |
+| Security / audit / test / deployment evidence | PARTIAL scaffolding in reported snapshot | BLOCKED_BY_CONTEXT | Historical snapshot reported a passing local test/build run | Current security/runtime audit controls and codebase health are unverified until the source revision and durable run are pinned. |
 
 Detailed mapping evidence is recorded in:
 

@@ -8,17 +8,17 @@ Ubuntu Capital OS is the evidence-first system reconstruction and delivery repos
 
 Architecture readiness has materially improved: the repository now contains a system boundary, high-level logical architecture, priority use-case architecture map, detailed UC-IAM-001 architecture analysis, a Phase 1 MVP architecture Blueprint, and a confirmed Azure MVP cloud platform direction.
 
-Implementation readiness remains lower than architecture readiness. The current recorded implementation evidence still describes a predominantly React/Vite front-end prototype with no use case yet supported by objective end-to-end completion evidence.
+Application-source readiness cannot currently be established from reproducible repository evidence. Historical artifacts describe a predominantly React/Vite front-end prototype, but the inspected branch, commit SHA, run identity, and durable raw evidence were not recorded. Current source verification is therefore `BLOCKED_BY_CONTEXT`, and no use case is supported by objective end-to-end completion evidence in this repository.
 
-## Current Ubuntu Capital implementation
+## Ubuntu Capital implementation references
 
-The current implementation tracked by the OS is:
+The OS records these project-owner-supplied references:
 
-- **Live website:** https://80kdevelopers.com/ubuntucapital/
-- **Implementation source repository:** https://github.com/HarleyJoker/ubuntu-capital-platform
-- **Implementation provenance:** `contractors/80kDevelopers/`
+- **Live website reference:** https://80kdevelopers.com/ubuntucapital/
+- **Stated implementation source repository:** https://github.com/HarleyJoker/ubuntu-capital-platform
+- **Implementation provenance records:** `contractors/80kDevelopers/`
 
-The connected ChatGPT GitHub application cannot directly inspect `HarleyJoker/ubuntu-capital-platform`. The current 41-use-case implementation coverage matrix is therefore treated as recorded implementation evidence from the prior inspection captured in this OS repository. No new source-code inspection is implied by later architecture or infrastructure documentation.
+The connected ChatGPT GitHub application has not established current source access to `HarleyJoker/ubuntu-capital-platform`. The 41-use-case coverage matrix records a historical, partial mapping from a reported local inspection whose exact branch, commit SHA, run identity, and durable raw-evidence reference are missing. It is not current implementation-status evidence. Later architecture or infrastructure documentation does not refresh or validate that snapshot.
 
 ## Architecture and chosen MVP cloud platform
 
@@ -43,13 +43,15 @@ Azure Blob Storage remains part of the confirmed MVP platform decision, but it i
 
 ## Delivery position
 
-The recorded implementation coverage is derived from the 41 row-level statuses in `docs/09-delivery/implementation-coverage-gap-matrix.md`:
+The historical, unpinned coverage snapshot in `docs/09-delivery/implementation-coverage-gap-matrix.md` contains 41 row-level labels:
 
-- **41 use cases mapped**
-- **7 `COMPONENT_COMPLETE`** — UI/page-level only
-- **16 `IN_DEVELOPMENT`** — partial/prototype evidence
-- **18 `READY_FOR_DEVELOPMENT`** — no substantive implementation evidence
-- **0 `COMPLETE`**
+- **41 use cases mapped in the historical snapshot**
+- **7 historical `COMPONENT_COMPLETE` labels** — reported UI/page-level evidence only
+- **16 historical `IN_DEVELOPMENT` labels** — reported partial/prototype evidence
+- **18 historical `READY_FOR_DEVELOPMENT` labels** — no substantive implementation evidence reported
+- **0 `COMPLETE`** — no objective E2E-completion evidence is recorded
+
+The first three counts describe only that unpinned snapshot; they must not be used as a current implementation-status roll-up until revision-pinned inspection and durable run evidence are recorded.
 
 Foundation Slice A remains the planned Azure infrastructure package, documented in `docs/09-delivery/foundation-slice-a-execution-package.md` with evidence intended for `docs/09-delivery/foundation-slice-a-evidence-register.md`.
 

@@ -20,7 +20,7 @@ This roadmap separates faithful system reconstruction, Azure platform enablement
 - high-level logical architecture v0.1;
 - priority use-case architecture map;
 - UC-IAM-001 detailed architecture analysis;
-- 41-use-case implementation coverage matrix;
+- historical 41-use-case implementation coverage matrix from an unpinned reported snapshot;
 - Azure cloud architecture and MVP cost baseline;
 - evidence-grounded repository monitoring;
 - canonical actors/permissions, business rules, journeys, state models, integrations, backlog/tracker/traceability/validation/risk artifacts and structured data materially present.
@@ -68,7 +68,7 @@ Azure Blob Storage is part of the confirmed target service set but is intentiona
 
 **Included use cases:** UC-IAM-001, foundational parts of UC-ADMIN-003 and UC-AUD-001.
 
-**Current status:** UC-IAM-001 remains `IN_DEVELOPMENT`; administration and audit foundations remain `READY_FOR_DEVELOPMENT` in the recorded implementation matrix.
+**Historical snapshot labels:** UC-IAM-001 was recorded as `IN_DEVELOPMENT`; administration and audit foundations were recorded as `READY_FOR_DEVELOPMENT`. Those labels come from an unpinned reported snapshot and are not current delivery assertions. Current reproducible application-source verification remains `BLOCKED_BY_CONTEXT` pending an authorised revision-pinned inspection and durable run evidence.
 
 **Business outcome:** authorised users can enter a protected investor workspace.
 
@@ -155,16 +155,17 @@ Operational telemetry produced by Foundation `WP-AZ-007` does not satisfy `UC-AU
 | Logical architecture | `READY_WITH_ASSUMPTIONS` | capability boundaries are usable; critical legal/business unknowns remain |
 | Azure MVP platform selection | `CONFIRMED` | cloud provider/core MVP services selected; this is evidence classification, not delivery completion |
 | Azure resource deployment | `READY_FOR_DEVELOPMENT` | technical package defined; execution remains `BLOCKED_BY_CONTEXT` pending current reassessment + formal readiness decision |
-| Current application implementation | `PARTIALLY_READY` | meaningful UI prototype; backend/business capability incomplete |
-| 41-use-case delivery | 0 `COMPLETE` | no objective E2E-complete use case yet |
+| Current application-source verification | `BLOCKED_BY_CONTEXT` | stated repository identity is known, but the latest source revision and runtime behaviour are not reproducibly verified |
+| Historical unpinned application snapshot | `PARTIALLY_READY` (historical label only) | reported UI prototype observations cannot be promoted to current status without revision-pinned evidence |
+| 41-use-case delivery | 0 `COMPLETE` | no objective E2E-complete use case is recorded |
 | First non-binding EOI slice | `BLOCKED_BY_CONTEXT` | WP-AZ-009..012 cannot start or advance until Foundation + Phase 5 + first-slice integrity gates reconcile |
-| Regulated settlement platform | `PARTIALLY_READY` / blocked | critical legal, custody, settlement and integration evidence missing |
+| Regulated settlement capability | `BLOCKED_BY_CONTEXT` | current implementation is unverified and critical legal, custody, settlement, and integration evidence is missing |
 | Production | `NOT_READY` | production hardening and acceptance not satisfied |
 
 ## Active delivery artifacts
 
 - `docs/09-delivery/implementation-analysis-refresh-2026-08-29.md` — historical architecture-aware status snapshot; `HISTORICAL_SNAPSHOT` / `NON_EXECUTABLE`, not an execution authority.
-- `docs/09-delivery/implementation-coverage-gap-matrix.md` — 41-use-case implementation evidence/status baseline.
+- `docs/09-delivery/implementation-coverage-gap-matrix.md` — historical/partial 41-use-case snapshot mapping; not a current implementation-status baseline until revision-pinned evidence is recorded.
 - `docs/09-delivery/azure-mvp-platform-delivery-plan.md` — Azure foundation implementation/evidence gates.
 - `docs/09-delivery/foundation-slice-a-execution-package.md` — future `WP-AZ-001` through `WP-AZ-008` task/acceptance/evidence package, blocked from execution until the current readiness gate authorizes work.
 - `docs/09-delivery/foundation-slice-a-evidence-register.md` — Foundation Slice A evidence checklist and future traceability register.
