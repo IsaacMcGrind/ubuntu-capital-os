@@ -9,7 +9,7 @@
 **Original target documentation branch:** `corefinity-docs`  
 **Post-baseline amendment date:** 2026-09-04  
 **Post-baseline amendment branch:** `fix/reconcile-current-repository-status` (PR #27)  
-**Post-baseline evidence commit:** `7aee0967c2dbe7584c06f2a4bab1b2feee403d19`  
+**Post-baseline evidence commit:** `0e90af17cdfab695ecacd622fc7d591a3aaf5451`  
 **Amendment scope:** Sections 6, 8 and 11 incorporate the later pre-implementation reassessment, planned-versus-realised traceability model, readiness-authority control, and Phase 5/Phase 6 handoff. The quantitative snapshot in Section 2 remains tied to the original evidence commit.  
 **SA recommendation:** `NO-GO FOR UNRESTRICTED IMPLEMENTATION`
 
