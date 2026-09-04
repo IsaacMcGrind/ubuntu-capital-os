@@ -97,6 +97,8 @@ output/
 
 The required-output tree is the canonical maintenance contract. File presence does not by itself satisfy a phase exit criterion. As of the 2026-09-03 reassessment, the canonical Phase 0–4 directories and major structured outputs materially exist; remaining work is therefore primarily validation, approval, reconciliation and gap closure rather than recreating those outputs from scratch.
 
+The working `docs/02-architecture/` tree is an explicit structure exception because it is actively used but not declared in the canonical tree above. It must be formally dispositioned before the repository-integrity gate can close.
+
 ## 4. Phase 0 — Context and Architecture Baseline
 
 ### Objective
@@ -249,7 +251,7 @@ Create a development-ready, dependency-aware implementation system.
 - Convert use cases into Initiative → Epic → Feature → User Story → Technical/Test Task hierarchy.
 - Add business value, acceptance criteria, dependencies, risk, discipline, evidence, and status to every item.
 - Build the E2E delivery tracker.
-- Build complete source-to-evidence traceability.
+- Build complete traceability using the required chain **source -> use case -> backlog -> implementation -> test -> durable evidence -> status**. Architecture/design and validation references may be added, but they do not replace any required hop.
 - Generate and validate `backlog.json`.
 
 ### Deliverables
@@ -264,6 +266,8 @@ Create a development-ready, dependency-aware implementation system.
 
 - Every backlog item traces to at least one use case.
 - Every critical use case has frontend, backend, database, security, tests, deployment, documentation, and evidence work represented.
+- Every applicable critical trace chain has stable source, use-case, backlog, implementation, test, durable-evidence and status references; `Pending` in a required hop keeps the chain incomplete.
+- The E2E tracker reconciles to the same stable IDs and evidence rather than substituting for missing evidence.
 - The tracker uses only approved status values.
 
 ## 9. Phase 5 — Foundational Product Capabilities
@@ -450,12 +454,14 @@ Execute these tasks next, in order:
 2. Produce a residual-gaps list that distinguishes `PRESENT_AND_ACCEPTABLE`, `PRESENT_BUT_PARTIAL`, `PRESENT_BUT_INCONSISTENT`, and `MISSING` so that already completed reconstruction work is not reopened unnecessarily.
 3. Gain repository access to `HarleyJoker/ubuntu-capital-platform` and refresh the implementation inventory when access becomes available; until then, preserve the current recorded implementation evidence boundary.
 4. Close the remaining P0 business/legal decisions required for the Foundation and first slice: EOI meaning, jurisdiction/eligibility, NDA policy, operator authority, logical data ownership, and authoritative state transitions.
-5. Close the remaining architecture/security/NFR readiness items identified by the current Solution Architecture audit, including threat model, authorization design, privacy/retention, measurable availability/performance/recovery/cost targets, and the minimum ADR set.
-6. Reconcile source → use case → architecture → implementation → validation traceability and verify schemas, structured data, links, IDs, counts, statuses, open-question references, and risk references.
-7. Run and record a formal pre-implementation readiness review with an explicit `GO`, `CONDITIONAL_GO`, or `NO_GO` decision for Foundation Slice A.
-8. Only if that decision authorises execution, begin the permitted subset of `WP-AZ-001` through `WP-AZ-008` and capture objective evidence in `docs/09-delivery/foundation-slice-a-evidence-register.md`.
-9. Keep `WP-AZ-009` through `WP-AZ-012` blocked until Foundation evidence and the separate Phase 5 / first-business-slice gate are satisfied.
-10. Continue regulated onboarding, NDA, settlement, custody, portfolio and production-hardening work only as their own evidence and dependency gates are satisfied.
+5. Close the remaining architecture/security/NFR readiness items identified by the current Solution Architecture audit, including threat model, authorization design, privacy/retention, measurable availability/performance/recovery/cost targets, the first-slice API/error/audit/persistence/integration contracts, and the minimum ADR set.
+6. Reconcile **source -> use case -> backlog -> architecture/design (where applicable) -> implementation -> test -> durable evidence -> validation/status** for the applicable Foundation and first-slice scope. Update `docs/10-traceability/traceability-matrix.md` and `docs/09-delivery/e2e-delivery-tracker.md` to the same stable IDs/evidence, and verify schemas, structured data, links, IDs, counts, statuses, open-question references, and risk references. A required `Pending` hop keeps the chain incomplete.
+7. Reconcile `output/system-reconstruction-summary.md`, `README.md`, the implementation roadmap and all live delivery/gate artifacts with the same current readiness position; no summary may state that the business slice can proceed while Foundation/Phase 5 gates remain blocked.
+8. Define and record the readiness-decision approving authority and decision-control contract. Until authority exists, `GO` and `CONDITIONAL_GO` cannot open the gate and `NO_GO` remains effective.
+9. Run and record a formal pre-implementation readiness review with an explicit `GO`, `CONDITIONAL_GO`, or `NO_GO` decision only after all non-waivable integrity conditions and required traceability hops for the proposed scope reconcile.
+10. Only if an effective authorised decision permits execution, begin the exact permitted subset of `WP-AZ-001` through `WP-AZ-008` and capture objective evidence in `docs/09-delivery/foundation-slice-a-evidence-register.md`.
+11. Keep `WP-AZ-009` through `WP-AZ-012` blocked until Foundation evidence and the separate Phase 5 / first-business-slice gate are satisfied.
+12. Continue regulated onboarding, NDA, settlement, custody, portfolio and production-hardening work only as their own evidence and dependency gates are satisfied.
 
 ## 16. Agent Completion Protocol
 
