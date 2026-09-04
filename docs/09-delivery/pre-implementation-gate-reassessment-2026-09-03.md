@@ -53,7 +53,7 @@ The evidence classification below applies to the **repository-state finding**, n
 | Actor and permission definition | `PARTIAL` | `CONFIRMED` | Artifacts exist, but several roles/permissions remain `INFERRED` or `UNKNOWN` and are not production approvals. |
 | Use-case specification | `PARTIAL` | `CONFIRMED` | Detailed files and structured data exist, but regulated/business semantics remain unresolved in several areas. |
 | Journeys/state/integration models | `PARTIAL` | `CONFIRMED` | Models exist; several transitions/providers/rules remain inferred or unknown. |
-| Backlog/tracker/traceability | `PARTIAL` | `CONFIRMED` | Artifacts exist, but the required source -> use case -> backlog -> implementation -> test -> evidence chain is incomplete; the current matrix contains only partial chains. |
+| Backlog/tracker/traceability | `PARTIAL` | `CONFIRMED` | Artifacts exist. Pre-start traceability must identify stable planned links from source/use case through backlog, design, planned implementation, planned validation/test, planned evidence target and tracker/status; actual implementation/test-run/durable-evidence links are populated only after authorised delivery begins. |
 | Validation/evidence | `PARTIAL` | `CONFIRMED` | Validation artifacts exist, but security, persistence, integration and deployed E2E evidence remain incomplete. |
 | Architecture/security/NFR decisions | `NOT_SATISFIED` | `CONFIRMED` | Threat model, privacy/retention, availability/performance, RTO/RPO, recovery, cost guardrails and several ADRs remain unresolved. |
 | First-slice technical contracts | `NOT_SATISFIED` | `CONFIRMED` | The Solution Architecture audit still requires completion of the first-slice API, error, audit, persistence and integration contracts before Foundation implementation. |
@@ -76,12 +76,13 @@ The gate is therefore narrowed from a broad "missing repository structure" block
 5. complete the required threat model, authorization design, privacy/retention position and measurable NFR baseline;
 6. complete the first-slice API, error, audit, persistence and integration contracts required by the Solution Architecture P0 closure set;
 7. complete the minimum ADR set identified by the Solution Architecture readiness audit;
-8. reconcile the required traceability chain for the applicable Foundation/first-slice scope as **source -> use case -> backlog -> architecture/design (where applicable) -> implementation -> test -> durable evidence -> validation/status**, with stable IDs and repository-accessible evidence. No `Pending` required hop may be treated as a complete chain;
-9. demonstrate that structured data/schema validation, links, IDs, counts, open-question/risk references and status values reconcile;
-10. define, in the controlling governance, the approving authority and decision-control contract for any execution-authorising readiness decision;
-11. record a formal Architecture / Pre-Implementation Readiness Review outcome of `GO`, `CONDITIONAL_GO`, or `NO_GO` only after the decision-control contract below is satisfied.
+8. before a readiness decision can authorise implementation, reconcile **planned pre-start traceability** for the proposed scope as `source -> use case -> backlog -> architecture/design (where applicable) -> planned implementation target -> planned test/validation -> planned durable-evidence target -> planned tracker/status`. Every planned hop must have a stable repository-accessible ID or target. The start gate does **not** require implementation, test-run, deployment or durable evidence that can only be produced after authorised execution begins;
+9. after authorised implementation begins, progressively replace the planned targets with **realised delivery traceability** as `source -> use case -> backlog -> architecture/design (where applicable) -> implementation evidence -> test/run evidence -> durable evidence -> validation/status`, and do not promote the affected work package or use case while a required realised hop remains `Pending`;
+10. demonstrate that structured data/schema validation, links, IDs, counts, open-question/risk references and status values reconcile;
+11. define, in the controlling governance, the approving authority and decision-control contract for any execution-authorising readiness decision;
+12. record a formal Architecture / Pre-Implementation Readiness Review outcome of `GO`, `CONDITIONAL_GO`, or `NO_GO` only after the decision-control contract and the required **planned pre-start** traceability above are satisfied.
 
-A readiness review **must not issue `GO` or `CONDITIONAL_GO` for a scope whose required traceability chain is still partial**. A general reference to `backlog.json`, a local test path without durable run/revision evidence, or an E2E tracker row without the underlying evidence does not satisfy this closure condition.
+A readiness review **must not issue `GO` or `CONDITIONAL_GO` for a scope whose required planned pre-start traceability is partial**. It must also **not** require post-build implementation/test/deployment/durable-evidence records as a prerequisite to starting the very work that will produce them. A general reference to `backlog.json`, an undefined future test, or an E2E tracker row without stable planned targets does not satisfy the pre-start closure condition. Once execution begins, the stricter realised traceability and evidence rules govern status promotion and acceptance.
 
 ### 4.1 Readiness decision authority and `CONDITIONAL_GO` controls
 
@@ -98,7 +99,7 @@ Before a future `CONDITIONAL_GO` can authorise any Foundation work, the controll
 - explicit statement that no unlisted work package is authorised;
 - links to the evidence/register entries supporting the decision.
 
-A `CONDITIONAL_GO` **cannot waive or override** any `AGENT.md` repository-integrity stop condition. In particular, it cannot authorise progression while there are broken/missing controlling links, unreconciled required outputs, schema-validation failures, duplicate/conflicting canonical IDs or directories, broken required traceability, unsupported `CONFIRMED` claims, or unresolved contradictions material to the authorised scope. It also cannot waive unresolved legal/regulatory/business semantics that determine whether the proposed implementation behaviour is valid. Any such condition keeps the affected scope `BLOCKED_BY_CONTEXT` and requires `NO_GO` for that scope until repaired.
+A `CONDITIONAL_GO` **cannot waive or override** any `AGENT.md` repository-integrity stop condition. In particular, it cannot authorise progression while there are broken/missing controlling links, unreconciled required outputs, schema-validation failures, duplicate/conflicting canonical IDs or directories, broken required **planned pre-start traceability**, unsupported `CONFIRMED` claims, or unresolved contradictions material to the authorised scope. It also cannot waive unresolved legal/regulatory/business semantics that determine whether the proposed implementation behaviour is valid. Any such condition keeps the affected scope `BLOCKED_BY_CONTEXT` and requires `NO_GO` for that scope until repaired.
 
 ## 5. What is no longer a blocker
 
@@ -120,11 +121,12 @@ The `docs/02-architecture/` issue is different: the directory exists and is acti
 2. Produce an explicit residual-gaps register from that validation; do not reopen work that is already present and internally consistent.
 3. Disposition the `docs/02-architecture/` canonical-structure exception.
 4. Close the P0 business/legal/security/NFR, first-slice technical-contract and ADR gaps identified by the current Solution Architecture audit.
-5. Reconcile **source -> use case -> backlog -> architecture/design (where applicable) -> implementation -> test -> durable evidence -> validation/status** for Foundation-relevant and first-slice-relevant scope, and update `docs/10-traceability/traceability-matrix.md` plus `docs/09-delivery/e2e-delivery-tracker.md` so both point to the same stable IDs and evidence.
+5. Reconcile the **planned pre-start** chain for the proposed Foundation/first-slice scope as `source -> use case -> backlog -> architecture/design (where applicable) -> planned implementation target -> planned test/validation -> planned durable-evidence target -> planned tracker/status`, and update `docs/10-traceability/traceability-matrix.md` plus `docs/09-delivery/e2e-delivery-tracker.md` so both point to the same stable planned IDs/targets.
 6. Define and record the readiness-decision approving authority and decision-control contract.
-7. Record the formal pre-implementation gate decision only after the required traceability and other closure conditions are satisfied.
+7. Record the formal pre-implementation gate decision only after the required planned pre-start traceability and other non-waivable closure conditions are satisfied.
 8. Only after an effective `GO`, or a `CONDITIONAL_GO` that satisfies Section 4.1 without waiving any integrity stop condition, begin only the authorised Foundation work packages and capture objective evidence in `docs/09-delivery/foundation-slice-a-evidence-register.md`.
-9. Keep `WP-AZ-009` through `WP-AZ-012` blocked until Foundation evidence and the separate Phase 5 / first-business-slice gate are satisfied.
+9. During authorised delivery, populate and reconcile the realised chain `source -> use case -> backlog -> architecture/design (where applicable) -> implementation evidence -> test/run evidence -> durable evidence -> validation/status`; required realised hops govern status promotion, `COMPONENT_COMPLETE`, E2E readiness and acceptance rather than the start decision.
+10. Keep `WP-AZ-009` through `WP-AZ-012` blocked until Foundation evidence and the separate Phase 5 / first-business-slice gate are satisfied.
 
 ## 7. Status boundary
 
@@ -137,6 +139,7 @@ This reassessment does not:
 - silently treat the architecture-tree exception as resolved;
 - define an approving authority where the repository currently has none;
 - allow a conditional decision to waive `AGENT.md` integrity failures;
+- require post-build implementation/test/evidence as a prerequisite to starting authorised work;
 - override `AGENT.md` or `plan.md`.
 
 It corrects the repository's current-state reporting so that the remaining block is based on **substantive readiness evidence, explicit structural disposition, controlled decision authority and non-waivable integrity requirements**, not stale file-presence assumptions.
