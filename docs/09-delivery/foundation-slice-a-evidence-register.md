@@ -19,9 +19,10 @@ The 2026-08-30 governance reconciliation remains part of the controlling compati
 - External evidence links must be stable enough for an authorised project reviewer to retrieve later.
 - A work package cannot move to `IN_DEVELOPMENT` or `COMPONENT_COMPLETE` while the Foundation execution gate is `BLOCKED_BY_CONTEXT`.
 - The Foundation execution gate remains blocked until the current reassessment closure set is reconciled and a formal readiness decision explicitly authorizes the applicable work.
-- After the start gate is satisfied, a work package cannot move to `COMPONENT_COMPLETE` until its required evidence gate is reconciled here or in an explicitly linked canonical evidence artifact.
+- While the Foundation execution gate remains blocked, this register is a planning/evidence template only. Do not populate it with records that imply unauthorised implementation has started or that delivery status has advanced.
+- After a valid `GO` or explicitly scoped `CONDITIONAL_GO` opens the gate for a work package and authorised delivery begins, capture objective realised implementation, test/run, deployment and operational evidence here as it is produced. Evidence capture documents authorised work; it does not by itself promote delivery status.
+- After the start gate is satisfied, a work package cannot move to `COMPONENT_COMPLETE` until its required evidence gate is reconciled here or in an explicitly linked canonical evidence artifact and the governed status transition is recorded.
 - `WP-AZ-008` requires version-controlled infrastructure provisioning/reconciliation evidence; manual Azure configuration alone cannot satisfy the Foundation reproducibility gate.
-- While the Foundation execution gate is open, this register remains a planning/evidence template. Do not populate it in a way that implies authorised implementation work has started or that a delivery status has advanced.
 
 ## Register
 
