@@ -51,9 +51,9 @@ For every materially impacted use case, Section 3 reports:
 3. **Change source** — the exact commit or pull request responsible.
 4. **Changed evidence** — only the repository paths attributed to that use-case signal.
 5. **Business consequence** — the domain-level business outcome plus the consequence of the specific change type.
-6. **Current delivery position** — read from `docs/09-delivery/implementation-coverage-gap-matrix.md` where available.
-7. **Delivery impact** — what the observed change can and cannot justify about delivery progression.
-8. **Known gap** — the current implementation gap from the coverage matrix.
+6. **Historical snapshot delivery label** — read from `docs/09-delivery/implementation-coverage-gap-matrix.md` where available and explicitly identified as unpinned historical evidence.
+7. **Delivery impact** — what the observed change can and cannot justify about delivery progression or current verification.
+8. **Known historical snapshot gap** — the gap recorded for the unpinned snapshot; it must not be presented as a current-source finding without revision-pinned evidence.
 9. **Next evidence gate** — the next verification step already defined for that use case.
 
 ## Interpretation rules
@@ -62,6 +62,7 @@ For every materially impacted use case, Section 3 reports:
 - Delivery-evidence changes do **not** automatically promote delivery status.
 - Requirement changes trigger implementation/test reconciliation, not automatic progress.
 - Implementation or test changes may represent delivery progression, but status still requires objective evidence gates.
+- Historical coverage labels and gaps remain snapshot-scoped. Monitoring output must not call them current unless the changed evidence pins the inspected source revision, run identity, and durable record.
 - Broad files or metadata sources that enumerate many use cases are reported as cross-reference changes instead of inflating the material-impact count.
 - Reviewer comments alone cannot manufacture a material use-case impact claim.
 - History-rewrite evidence is attributed per changed file before change type is inferred.
