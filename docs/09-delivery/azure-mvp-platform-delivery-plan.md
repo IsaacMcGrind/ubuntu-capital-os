@@ -326,11 +326,12 @@ The first business slice may move to `READY_FOR_ACCEPTANCE` only when all of the
 ## 9. Next action
 
 1. Validate the materially present Phase 0 through Phase 4 outputs against `plan.md` exit criteria and `AGENT.md` integrity rules rather than recreating them.
-2. Close or explicitly disposition the residual blockers in `docs/09-delivery/pre-implementation-gate-reassessment-2026-09-03.md`, including the `docs/02-architecture/` structure exception, business/legal decisions, actor/permission approval, data ownership/state transitions, architecture/security/NFR closure, ADR coverage and traceability/validation consistency.
-3. Record a formal `GO`, explicitly scoped `CONDITIONAL_GO`, or `NO_GO` readiness decision.
-4. Only if authorised, execute **WP-AZ-001 through WP-AZ-008** using `docs/09-delivery/foundation-slice-a-execution-package.md` and populate `docs/09-delivery/foundation-slice-a-evidence-register.md`.
-5. Reconcile all Foundation evidence gates.
-6. Complete and evidence the `plan.md` Phase 5 foundational product capabilities and its exit criteria.
-7. Confirm the separate first-business-slice start gate is fully satisfied.
-8. Only then start or advance **WP-AZ-009 through WP-AZ-012** as Phase 6 business-slice work.
-9. Do not consider the first slice `READY_FOR_ACCEPTANCE` until its business-audit, E2E, tracker and traceability evidence reconciles.
+2. A non-authorising `NO_GO` may be recorded or refreshed immediately if validation identifies blockers, integrity failures, partial required planned traceability, unresolved `OQ-016`, or other non-waivable conditions. Such a decision keeps the Foundation gate blocked and does not require those blockers to be closed first.
+3. For an execution-authorising `GO` or explicitly scoped `CONDITIONAL_GO`, close or formally disposition all required residual blockers in `docs/09-delivery/pre-implementation-gate-reassessment-2026-09-03.md`, including the `docs/02-architecture/` structure exception, business/legal decisions, actor/permission approval, data ownership/state transitions, architecture/security/NFR closure, ADR coverage, planned pre-start traceability, validation consistency, and readiness-authority requirements.
+4. Record the applicable formal readiness decision under the controlling decision contract. `GO` / `CONDITIONAL_GO` cannot open the gate unless the non-waivable closure set and approving authority reconcile.
+5. Only if authorised, execute **WP-AZ-001 through WP-AZ-008** using `docs/09-delivery/foundation-slice-a-execution-package.md` and populate `docs/09-delivery/foundation-slice-a-evidence-register.md` with objective realised evidence as authorised work proceeds.
+6. Reconcile all Foundation evidence gates.
+7. Complete and evidence the `plan.md` Phase 5 foundational product capabilities and its exit criteria.
+8. Confirm the separate first-business-slice start gate is fully satisfied.
+9. Only then start or advance **WP-AZ-009 through WP-AZ-012** as Phase 6 business-slice work.
+10. Do not consider the first slice `READY_FOR_ACCEPTANCE` until its business-audit, E2E, tracker and traceability evidence reconciles.
