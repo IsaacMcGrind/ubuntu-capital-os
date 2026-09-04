@@ -1,8 +1,11 @@
 # HerLogic Solutions — Ubuntu Capital Azure Workstream Status
 
-**Assessment date:** 2026-08-29  
+**Original assessment date:** 2026-08-29  
+**Gate reconciliation date:** 2026-09-04  
 **Workstream:** Azure cloud infrastructure and platform services  
-**Current delivery status:** `READY_FOR_DEVELOPMENT`
+**Planning/package status:** `READY_FOR_DEVELOPMENT`  
+**Execution status:** `BLOCKED_BY_CONTEXT`  
+**Current readiness position:** `NO-GO FOR UNRESTRICTED IMPLEMENTATION`
 
 ## Scope
 
@@ -65,7 +68,15 @@ No repository evidence in this workstream currently proves that the following ha
 
 Therefore the infrastructure workstream must not be described as `COMPONENT_COMPLETE` or `COMPLETE` yet.
 
-## Next evidence gates
+## Current execution boundary
+
+`READY_FOR_DEVELOPMENT` means the delivery packages and evidence gates are defined; it does **not** authorize implementation. This contractor workstream remains `BLOCKED_BY_CONTEXT` under `AGENT.md`, the controlling `plan.md`, `docs/09-delivery/foundation-slice-a-governance-reconciliation.md`, and `docs/09-delivery/pre-implementation-gate-reassessment-2026-09-03.md`.
+
+No `WP-AZ-001` through `WP-AZ-008` work may start or advance until `OQ-016` is resolved in controlling governance and an authorised readiness decision records `GO` or an explicitly scoped `CONDITIONAL_GO` for the exact work-package scope without waiving repository-integrity, legal, regulatory, business, security, NFR, traceability, or validation conditions. While blockers remain, `NO_GO` is the effective non-authorising outcome.
+
+## Next evidence gates after authorisation
+
+The sequence below is executable only for the exact scope authorised by that readiness decision. Until then it is a future evidence plan, not an instruction to provision, deploy, configure, or integrate Azure resources.
 
 1. Record Azure resource inventory, environment ownership and RBAC.
 2. Configure budget/cost alerts.
@@ -84,6 +95,7 @@ The workstream may continue to support practical HerLogic Solutions Azure upskil
 ## Status conclusion
 
 **Architecture contribution:** materially complete enough to guide MVP implementation.  
-**Infrastructure implementation:** `READY_FOR_DEVELOPMENT`.  
+**Infrastructure planning/package definition:** `READY_FOR_DEVELOPMENT`.  
+**Infrastructure execution:** `BLOCKED_BY_CONTEXT`; no Azure implementation is currently authorised.  
 **E2E delivery evidence:** not yet recorded.  
 **Authority to mark Ubuntu Capital use cases complete:** none; completion remains governed by Ubuntu Capital OS evidence gates.
