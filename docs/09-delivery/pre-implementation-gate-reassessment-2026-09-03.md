@@ -13,7 +13,7 @@ This reassessment reconciles the 2026-08-30 Foundation governance finding agains
 
 The earlier governance finding correctly blocked Foundation execution because required Phase 0–4 outputs and repository-integrity conditions did not reconcile at that time. Since then, the repository has materially advanced. The current gate must therefore be based on the quality, approval and internal consistency of the artifacts that now exist—not on an outdated assertion that those directories or files are missing.
 
-Any Foundation delivery artifact that still points to `docs/09-delivery/foundation-slice-a-governance-reconciliation.md` must be read through that document's compatibility rule: the older checklist is necessary but not sufficient, and this reassessment plus a formal `GO` or explicitly scoped `CONDITIONAL_GO` decision are mandatory before Foundation implementation starts or advances.
+Any Foundation delivery artifact that still points to `docs/09-delivery/foundation-slice-a-governance-reconciliation.md` must be read through that document's compatibility rule: the older checklist is necessary but not sufficient, and this reassessment plus an effective formal readiness decision are mandatory before Foundation implementation starts or advances.
 
 ## 2. Current repository-output presence
 
@@ -44,18 +44,22 @@ The presence of these outputs is evidence of reconstruction progress only. It is
 
 ## 3. Reassessed gate position
 
-| Gate area | Current position | Reason |
-|---|---|---|
-| Canonical file/directory presence | `MATERIALLY_RECONCILED` | The previously missing actors/permissions and other Phase 0–4 outputs now exist. |
-| Architecture-tree disposition | `NOT_SATISFIED` | `docs/02-architecture/` is an active working architecture tree but is not declared in the canonical required-output tree in `plan.md`; this exception must be formally accepted/dispositioned or the canonical contract amended. |
-| Actor and permission definition | `PARTIAL` | Artifacts exist, but several roles/permissions remain `INFERRED` or `UNKNOWN` and are not production approvals. |
-| Use-case specification | `PARTIAL` | Detailed files and structured data exist, but regulated/business semantics remain unresolved in several areas. |
-| Journeys/state/integration models | `PARTIAL` | Models exist; several transitions/providers/rules remain inferred or unknown. |
-| Backlog/tracker/traceability | `PARTIAL` | Artifacts exist, but the Solution Architecture audit records 0 complete traceability chains and 5 partial chains. |
-| Validation/evidence | `PARTIAL` | Validation artifacts exist, but security, persistence, integration and deployed E2E evidence remain incomplete. |
-| Architecture/security/NFR decisions | `NOT_SATISFIED` | Threat model, privacy/retention, availability/performance, RTO/RPO, recovery, cost guardrails and several ADRs remain unresolved. |
-| Azure Foundation evidence | `NOT_STARTED` | `WP-AZ-001` through `WP-AZ-008` still have 0 of 8 objective evidence gates satisfied. |
-| Business/legal readiness for first slice | `NOT_SATISFIED` | EOI meaning, eligibility/jurisdiction, NDA policy, operator authority and data ownership remain open. |
+The evidence classification below applies to the **repository-state finding**, not to the underlying business rule or regulated behaviour. Each row is `CONFIRMED` because the stated current position is directly supported by repository artifacts, open-question/risk records, delivery evidence registers, or the current Solution Architecture audit. Where the underlying product behaviour remains inferred or unknown, this reassessment does not promote it to confirmed.
+
+| Gate area | Current position | Evidence classification | Reason |
+|---|---|---|---|
+| Canonical file/directory presence | `MATERIALLY_RECONCILED` | `CONFIRMED` | The previously missing actors/permissions and other Phase 0–4 outputs now exist. |
+| Architecture-tree disposition | `NOT_SATISFIED` | `CONFIRMED` | `docs/02-architecture/` is an active working architecture tree but is not declared in the canonical required-output tree in `plan.md`; this exception must be formally accepted/dispositioned or the canonical contract amended. |
+| Actor and permission definition | `PARTIAL` | `CONFIRMED` | Artifacts exist, but several roles/permissions remain `INFERRED` or `UNKNOWN` and are not production approvals. |
+| Use-case specification | `PARTIAL` | `CONFIRMED` | Detailed files and structured data exist, but regulated/business semantics remain unresolved in several areas. |
+| Journeys/state/integration models | `PARTIAL` | `CONFIRMED` | Models exist; several transitions/providers/rules remain inferred or unknown. |
+| Backlog/tracker/traceability | `PARTIAL` | `CONFIRMED` | Artifacts exist, but the Solution Architecture audit records 0 complete traceability chains and 5 partial chains. |
+| Validation/evidence | `PARTIAL` | `CONFIRMED` | Validation artifacts exist, but security, persistence, integration and deployed E2E evidence remain incomplete. |
+| Architecture/security/NFR decisions | `NOT_SATISFIED` | `CONFIRMED` | Threat model, privacy/retention, availability/performance, RTO/RPO, recovery, cost guardrails and several ADRs remain unresolved. |
+| First-slice technical contracts | `NOT_SATISFIED` | `CONFIRMED` | The Solution Architecture audit still requires completion of the first-slice API, error, audit, persistence and integration contracts before Foundation implementation. |
+| Azure Foundation evidence | `NOT_STARTED` | `CONFIRMED` | `WP-AZ-001` through `WP-AZ-008` still have 0 of 8 objective evidence gates satisfied. |
+| Business/legal readiness for first slice | `NOT_SATISFIED` | `CONFIRMED` | EOI meaning, eligibility/jurisdiction, NDA policy, operator authority and data ownership remain open. |
+| Readiness-decision authority | `NOT_SATISFIED` | `CONFIRMED` | The repository does not yet define which approved role/person may issue an execution-authorising `GO` or `CONDITIONAL_GO`, so no such decision can currently open the gate. |
 
 ## 4. Current Foundation decision
 
@@ -70,10 +74,29 @@ The gate is therefore narrowed from a broad "missing repository structure" block
 3. close or formally bound the unresolved EOI, jurisdiction/eligibility, NDA and operator-authority decisions that could invalidate the first-slice interpretation;
 4. complete logical data ownership and authoritative state-transition decisions for the first slice;
 5. complete the required threat model, authorization design, privacy/retention position and measurable NFR baseline;
-6. complete the minimum ADR set identified by the Solution Architecture readiness audit;
-7. reconcile source → use case → architecture → implementation → validation traceability to the level required by the applicable phase exit criteria;
-8. demonstrate that structured data/schema validation, links, IDs, counts, open-question/risk references and status values reconcile;
-9. record a formal Architecture / Pre-Implementation Readiness Review outcome of `GO`, `CONDITIONAL_GO`, or `NO_GO`.
+6. complete the first-slice API, error, audit, persistence and integration contracts required by the Solution Architecture P0 closure set;
+7. complete the minimum ADR set identified by the Solution Architecture readiness audit;
+8. reconcile source → use case → architecture → implementation → validation traceability to the level required by the applicable phase exit criteria;
+9. demonstrate that structured data/schema validation, links, IDs, counts, open-question/risk references and status values reconcile;
+10. define, in the controlling governance, the approving authority and decision-control contract for any execution-authorising readiness decision;
+11. record a formal Architecture / Pre-Implementation Readiness Review outcome of `GO`, `CONDITIONAL_GO`, or `NO_GO` only after the decision-control contract below is satisfied.
+
+### 4.1 Readiness decision authority and `CONDITIONAL_GO` controls
+
+**Current authority status: `UNKNOWN`.** No current repository artifact identifies an approved role or person with authority to issue an execution-authorising `GO` or `CONDITIONAL_GO`. Therefore, until that authority is explicitly recorded in controlling governance, `GO` and `CONDITIONAL_GO` are reporting labels only and **must not open the Foundation execution gate**. `NO_GO` remains the effective current decision.
+
+Before a future `CONDITIONAL_GO` can authorise any Foundation work, the controlling governance must identify the approving authority and the decision record must include all of the following:
+
+- decision ID, date, approver identity/role and evidence of that authority;
+- exact authorised work-package scope (`WP-AZ-*` IDs) and environment;
+- every open condition, residual risk and dependency relevant to that scope;
+- named owner and due date for each condition;
+- explicit evidence required to close each condition;
+- expiry/review date or trigger that automatically returns the scope to `BLOCKED_BY_CONTEXT` if conditions are not closed;
+- explicit statement that no unlisted work package is authorised;
+- links to the evidence/register entries supporting the decision.
+
+A `CONDITIONAL_GO` **cannot waive or override** any `AGENT.md` repository-integrity stop condition. In particular, it cannot authorise progression while there are broken/missing controlling links, unreconciled required outputs, schema-validation failures, duplicate/conflicting canonical IDs or directories, broken required traceability, unsupported `CONFIRMED` claims, or unresolved contradictions material to the authorised scope. It also cannot waive unresolved legal/regulatory/business semantics that determine whether the proposed implementation behaviour is valid. Any such condition keeps the affected scope `BLOCKED_BY_CONTEXT` and requires `NO_GO` for that scope until repaired.
 
 ## 5. What is no longer a blocker
 
@@ -94,11 +117,12 @@ The `docs/02-architecture/` issue is different: the directory exists and is acti
 1. Validate the existing Phase 0–4 artifacts against their `plan.md` exit criteria and `AGENT.md` integrity rules.
 2. Produce an explicit residual-gaps register from that validation; do not reopen work that is already present and internally consistent.
 3. Disposition the `docs/02-architecture/` canonical-structure exception.
-4. Close the P0 business/legal/security/NFR and ADR gaps identified by the current Solution Architecture audit.
+4. Close the P0 business/legal/security/NFR, first-slice technical-contract and ADR gaps identified by the current Solution Architecture audit.
 5. Reconcile traceability and validation evidence for the Foundation-relevant and first-slice-relevant scope.
-6. Record the formal pre-implementation gate decision.
-7. If the decision is `GO` or an explicitly scoped `CONDITIONAL_GO`, begin only the authorised Foundation work packages and capture objective evidence in `docs/09-delivery/foundation-slice-a-evidence-register.md`.
-8. Keep `WP-AZ-009` through `WP-AZ-012` blocked until Foundation evidence and the separate Phase 5 / first-business-slice gate are satisfied.
+6. Define and record the readiness-decision approving authority and decision-control contract.
+7. Record the formal pre-implementation gate decision.
+8. Only after an effective `GO`, or a `CONDITIONAL_GO` that satisfies Section 4.1 without waiving any integrity stop condition, begin only the authorised Foundation work packages and capture objective evidence in `docs/09-delivery/foundation-slice-a-evidence-register.md`.
+9. Keep `WP-AZ-009` through `WP-AZ-012` blocked until Foundation evidence and the separate Phase 5 / first-business-slice gate are satisfied.
 
 ## 7. Status boundary
 
@@ -109,6 +133,8 @@ This reassessment does not:
 - mark any use case `COMPLETE`;
 - convert inferred permissions or regulated behaviour into confirmed facts;
 - silently treat the architecture-tree exception as resolved;
+- define an approving authority where the repository currently has none;
+- allow a conditional decision to waive `AGENT.md` integrity failures;
 - override `AGENT.md` or `plan.md`.
 
-It corrects the repository's current-state reporting so that the remaining block is based on **substantive readiness evidence and explicit structural disposition**, not stale file-presence assumptions.
+It corrects the repository's current-state reporting so that the remaining block is based on **substantive readiness evidence, explicit structural disposition, controlled decision authority and non-waivable integrity requirements**, not stale file-presence assumptions.
