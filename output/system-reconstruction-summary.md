@@ -122,11 +122,12 @@ The discovery/non-binding-EOI concept remains the preferred first vertical slice
 Do **not** restart Phase 0 or recreate canonical artifacts that already exist. Execute the current residual-closure queue in `plan.md`:
 
 1. validate existing Phase 0–4 outputs against phase exit criteria and `AGENT.md` integrity rules;
-2. reconcile the required source → use case → backlog → architecture/implementation → test → evidence → validation/status chain for the applicable scope;
+2. reconcile the **pre-start planned traceability** required for the proposed scope as `source -> use case -> backlog -> architecture/design (where applicable) -> planned implementation target -> planned test/validation target -> planned durable-evidence target -> planned tracker/status`, using stable repository-accessible IDs or targets and aligning `docs/10-traceability/traceability-matrix.md` with `docs/09-delivery/e2e-delivery-tracker.md`;
 3. close or formally bound the business/legal, permissions, data-ownership/state, first-slice technical-contract, architecture/security/NFR and ADR gaps;
 4. disposition the `docs/02-architecture/` canonical-structure exception;
 5. define readiness-decision authority and the controlled decision contract;
-6. record the formal pre-implementation readiness outcome;
-7. only after an effective authorized decision, begin the permitted Foundation work and capture objective evidence in `docs/09-delivery/foundation-slice-a-evidence-register.md`.
+6. record the formal pre-implementation readiness outcome only after the applicable planned pre-start traceability and other non-waivable closure conditions are satisfied;
+7. only after an effective authorised decision, begin the exact permitted Foundation work packages and capture objective implementation evidence in `docs/09-delivery/foundation-slice-a-evidence-register.md`;
+8. during authorised delivery, progressively reconcile the **realised** chain as `source -> use case -> backlog -> architecture/design (where applicable) -> implementation evidence -> test/run evidence -> durable evidence -> validation/status`; missing required realised hops block status promotion, E2E readiness and acceptance rather than the earlier start decision.
 
 No use case or `WP-AZ-*` package is promoted by this summary.
