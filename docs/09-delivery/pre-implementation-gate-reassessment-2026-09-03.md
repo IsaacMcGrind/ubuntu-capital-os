@@ -1,8 +1,12 @@
 # Ubuntu Capital OS — Pre-Implementation Gate Reassessment
 
-**Status:** `ANALYSIS_IN_PROGRESS`  
-**Assessment date:** 2026-09-03  
-**Evidence baseline:** current `master` through merged PR #24  
+**Status:** `ANALYSIS_IN_PROGRESS` with post-baseline amendments  
+**Original assessment date:** 2026-09-03  
+**Original evidence baseline:** `master` through merged PR #24 at merge commit `2a44d3622d1e410e3eca82d6f21be3bea3ecf8d3`  
+**Post-baseline amendment date:** 2026-09-04  
+**Post-baseline amendment branch:** `fix/reconcile-current-repository-status` (PR #27)  
+**Post-baseline evidence commit:** `2148ac6b36fde26a427c741e7b59ecc82ef6fbce`  
+**Amendment scope:** the current findings and execution sequence incorporate PR #27's readiness-authority control (`OQ-016`), linked risk (`RSK-006`), planned-versus-realised traceability model, pre-start E2E criterion, Phase 5/Phase 6 handoff, and reconciled live delivery entry points. The original PR #24 baseline remains preserved as the starting snapshot rather than being represented as containing those later controls.  
 **Controlling documents:** `AGENT.md`, `plan.md`  
 **Current Foundation gate:** this reassessment plus `docs/09-delivery/foundation-slice-a-governance-reconciliation.md` and a formal readiness decision  
 **Supersedes for current-state reporting:** the stale assumption that canonical Phase 0–4 outputs are absent
