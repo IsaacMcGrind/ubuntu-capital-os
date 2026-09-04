@@ -5,7 +5,7 @@ The base monitor remains responsible for repository/activity collection and inte
 checks. This layer narrows use-case impact to material evidence instead of treating
 any textual UC-ID mention as a delivery impact, then replaces Section 3 with a
 change-specific analysis grounded in changed files, commit/PR metadata and the
-current implementation coverage gap matrix.
+historical/partial implementation coverage snapshot; its labels are not current source verification unless a revision-pinned inspection is recorded.
 """
 
 from __future__ import annotations
@@ -82,7 +82,9 @@ def load_delivery_matrix() -> dict[str, dict[str, str]]:
     if not path.exists():
         return {}
     matrix: dict[str, dict[str, str]] = {}
-    for line in path.read_text(encoding="utf-8").splitlines():
+    raw = path.read_text(encoding="utf-8")
+    snapshot_only = "Current reproducible verification for all rows: `BLOCKED_BY_CONTEXT`" in raw
+    for line in raw.splitlines():
         if not line.startswith("| UC-"):
             continue
         cells = [cell.strip() for cell in line.strip().strip("|").split("|")]
@@ -90,7 +92,8 @@ def load_delivery_matrix() -> dict[str, dict[str, str]]:
             continue
         uid, status, evidence, gap, next_gate = cells[:5]
         matrix[uid] = {
-            "status": status,
+            "status": "BLOCKED_BY_CONTEXT" if snapshot_only else status,
+            "historical_status": status,
             "evidence": evidence,
             "gap": gap,
             "next_gate": next_gate,
@@ -298,11 +301,11 @@ def delivery_implication(change_types: set[str], status: str) -> str:
         )
     if "ARCHITECTURE" in change_types:
         return (
-            f"Design clarity improved or changed, but this is not implementation completion. Current delivery position remains `{current}` unless implementation/E2E evidence also changed."
+            f"Design clarity improved or changed, but this is not implementation completion. Current reproducible verification remains `{current}` unless implementation/E2E evidence also changed."
         )
     if "REQUIREMENT" in change_types:
         return (
-            f"The expected behaviour or control definition changed. Current delivery position is `{current}`; implementation and tests should be checked for alignment with the revised requirement."
+            f"The expected behaviour or control definition changed. Current reproducible verification is `{current}`; implementation and tests should be checked for alignment with the revised requirement."
         )
     return f"No implementation progression is established by this evidence alone. Current recorded delivery position: `{current}`."
 
@@ -359,10 +362,11 @@ def render_use_case_section(catalogue: dict[str, str]) -> str:
                     f"- **Change source:** {compact_list(sources, MAX_SOURCES)}.",
                     f"- **Changed evidence:** {compact_list(formatted_paths, MAX_EVIDENCE_PATHS) if formatted_paths else 'metadata or pre-truncation evidence only; no unrelated paths attributed'}.",
                     f"- **Business consequence:** {business_consequence(uid, types)}",
-                    f"- **Current delivery position:** `{delivery.get('status', 'UNKNOWN')}`.",
+                    f"- **Current reproducible verification:** `{delivery.get('status', 'UNKNOWN')}`.",
+                    f"- **Historical snapshot label:** `{delivery.get('historical_status', 'UNKNOWN')}`.",
                     f"- **Delivery impact:** {delivery_implication(types, delivery.get('status', ''))}",
-                    f"- **Known gap:** {delivery.get('gap', 'No use-case-specific gap was available in the implementation coverage matrix.')}",
-                    f"- **Next evidence gate:** {delivery.get('next_gate', 'Perform targeted implementation/E2E verification before changing status.')}",
+                    f"- **Historical snapshot gap:** {delivery.get('gap', 'No use-case-specific gap was available in the historical coverage snapshot.')}",
+                    f"- **Next evidence gate:** {delivery.get('next_gate', 'Perform revision-pinned implementation/E2E verification before changing status.')}",
                     "",
                 ]
             )

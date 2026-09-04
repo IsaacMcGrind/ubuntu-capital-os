@@ -5,8 +5,9 @@
 **Priority:** Critical  
 **Architecture Status:** Complete — decisions accepted  
 **Requirement Evidence:** INFERRED  
-**Implementation Status:** IN_DEVELOPMENT  
-**Last Updated:** 2026-08-20
+**Current Reproducible Implementation Verification:** BLOCKED_BY_CONTEXT  
+**Historical Snapshot Label:** IN_DEVELOPMENT  
+**Last Updated:** 2026-09-04
 
 ---
 
@@ -38,15 +39,15 @@ Relevant source statements:
 - UC-IAM-001 outcome: **Establish an authorised session**.
 - IAM domain purpose: authenticate users, protect private routes, manage sessions and account access.
 - The priority-use-case report states that sign-in protects private investor, opportunity and portfolio information.
-- The current implementation repository has now been directly inspected and contains login and MFA user-interface components.
-- Direct inspection has not identified a backend authentication service or enforced session-management implementation.
-- The implementation coverage matrix therefore classifies UC-IAM-001 as `IN_DEVELOPMENT`, not `COMPLETE`.
+- Repository artifacts report that an unpinned local snapshot contained login and MFA user-interface components.
+- That historical inspection did not report a backend authentication service or enforced session-management implementation within the inspected snapshot.
+- The implementation coverage matrix therefore preserves `IN_DEVELOPMENT` as a historical snapshot label only. Current reproducible implementation verification is `BLOCKED_BY_CONTEXT` because the source branch, commit SHA, run identity, and durable raw evidence are not recorded.
 
 ### Evidence interpretation
 
-The source requirement for UC-IAM-001 remains `INFERRED`; the existence of login/MFA screens confirms implementation intent, not the complete business capability.
+The source requirement for UC-IAM-001 remains `INFERRED`. Reported login/MFA screens in an unpinned snapshot support historical implementation intent, not current behaviour or the complete business capability.
 
-Implementation evidence is supporting current-state evidence and does not override the documented requirement or accepted architecture decisions.
+The snapshot observations are historical/partial supporting evidence and do not override the documented requirement or accepted architecture decisions. They must not be promoted to current-state evidence until an authorised revision-pinned inspection and durable run record exist.
 
 ---
 
@@ -78,24 +79,22 @@ Eligibility must therefore not be re-evaluated as part of every authentication e
 
 ---
 
-## 3.2 Current State
+## 3.2 Historical Snapshot Evidence and Current Verification Boundary
 
-Direct inspection of the current Ubuntu Capital implementation repository has materially improved the evidence for this use case.
+Repository artifacts report a local inspection of an implementation-repository snapshot, but the exact branch, commit SHA, run identity, and durable raw-evidence reference are not recorded. The observations below are therefore historical/partial only and cannot establish present implementation behaviour.
 
-### Confirmed implementation evidence
+### Reported snapshot observations
 
-The implementation coverage review identifies:
+The historical coverage review references:
 
-- `src/pages/Login.tsx` — login user-interface surface;
-- `src/pages/MfaVerify.tsx` — MFA verification user-interface surface.
+- `src/pages/Login.tsx` — reported login user-interface surface;
+- `src/pages/MfaVerify.tsx` — reported MFA verification user-interface surface.
 
-This confirms that sign-in and MFA are represented in the current front-end implementation.
+The artifacts also report that the snapshot built successfully and passed its baseline tests. Those unpinned results may guide reinspection, but they do not confirm current repository health or UC-IAM-001 end-to-end behaviour.
 
-The implementation repository was also successfully built and its baseline test command succeeded during the implementation coverage review. Those checks establish repository health at the front-end level; they do **not** prove UC-IAM-001 end-to-end.
+### Not evidenced in the reported snapshot
 
-### Not evidenced in the inspected implementation
-
-The repository review did not identify evidence of:
+The historical review did not report evidence of:
 
 - a backend authentication service;
 - server-side session establishment;
@@ -107,27 +106,35 @@ The repository review did not identify evidence of:
 - audit-event persistence for authentication outcomes;
 - backend negative-path tests proving protected access is denied to unauthenticated callers.
 
-The implementation coverage matrix therefore classifies UC-IAM-001 as:
+Absence from an unpinned historical snapshot is not proof of current absence. The coverage matrix preserves the following historical label:
 
-> **IN_DEVELOPMENT — Login and MFA screens exist, but no auth service/session enforcement was found.**
+> **IN_DEVELOPMENT — the reported snapshot contained login/MFA UI, while no backend auth service/session enforcement was reported.**
 
-The contractor implementation assessment reaches the same conclusion at platform level: the current implementation is predominantly a front-end prototype and security/runtime audit controls remain only partially evidenced.
+Current reproducible source verification is:
 
-### Current-state interpretation
+> **BLOCKED_BY_CONTEXT — inspected source revision and durable run evidence are missing.**
+
+### Evidence interpretation
 
 ```text
-Current implementation
-----------------------
-Login UI                 CONFIRMED
-MFA UI                   CONFIRMED
-Authentication backend  NOT EVIDENCED
-Session enforcement     NOT EVIDENCED
-API protection          NOT EVIDENCED
-Auth audit persistence  NOT EVIDENCED
-E2E auth validation     NOT EVIDENCED
+Historical unpinned snapshot
+----------------------------
+Login UI                 REPORTED
+MFA UI                   REPORTED
+Authentication backend  NOT EVIDENCED IN SNAPSHOT
+Session enforcement     NOT EVIDENCED IN SNAPSHOT
+API protection          NOT EVIDENCED IN SNAPSHOT
+Auth audit persistence  NOT EVIDENCED IN SNAPSHOT
+E2E auth validation     NOT EVIDENCED IN SNAPSHOT
+
+Current reproducible verification
+---------------------------------
+Source revision          UNKNOWN
+Durable run evidence     UNKNOWN
+Implementation status   BLOCKED_BY_CONTEXT
 ```
 
-The presence of login and MFA pages is therefore **implementation evidence**, but not evidence that the documented outcome — an authorised session — is actually established and enforced end-to-end.
+These snapshot observations support architecture-gap and validation planning. They do not prove whether the documented outcome—an authorised session—is currently established and enforced end to end.
 
 ---
 
@@ -206,13 +213,13 @@ unless those claims are explicitly derived from and governed by the authoritativ
 
 ## 3.4 Gap
 
-### Requirement → Current State → Target Architecture → Gap
+### Requirement → Historical Snapshot Boundary → Target Architecture → Gap
 
 **Requirement**  
 A registered investor must be able to establish a trusted authorised session.
 
-**Current State**  
-Login and MFA user-interface components exist in the current React implementation, but direct repository inspection has not identified the backend authentication, session enforcement, persistence, API protection or audit evidence required to establish the documented outcome end-to-end.
+**Historical Snapshot / Current Verification Boundary**  
+An unpinned reported snapshot described login and MFA user-interface components and did not evidence the backend authentication, session enforcement, persistence, API protection, or audit capability required for the end-to-end outcome. Because the source revision and durable run are unknown, those observations do not establish current implementation behaviour; current reproducible verification remains `BLOCKED_BY_CONTEXT`.
 
 **Target Architecture**  
 A defined Identity and Access boundary owns authentication, session state and authenticated identity, while downstream domains own business eligibility and authorisation facts.
@@ -238,7 +245,7 @@ The current delivery backlog defines the following concrete acceptance direction
 - protected routes reject unauthenticated requests;
 - relevant authentication outcomes produce audit evidence.
 
-These are delivery/verification criteria derived from the implementation gap analysis. They refine how the target can be proven without changing the accepted business boundary of this use case.
+These are future delivery/verification criteria derived from the historical gap analysis and target architecture. They refine how the target can be proven without converting the unpinned snapshot into current implementation evidence or changing the accepted business boundary of this use case.
 
 ---
 
@@ -368,16 +375,16 @@ Who is this?
 
 # 7. Accepted Architecture Decisions
 
-The refreshed implementation evidence does not contradict any previously accepted architecture decision.
+The reported historical snapshot evidence does not contradict any previously accepted architecture decision. Because the snapshot is unpinned, it is not current implementation verification.
 
 | Decision ID | Decision | Status |
 |---|---|---|
 | IAM-D01 | Authentication and investor eligibility remain separate concerns. Login establishes identity/session and does not re-run or own eligibility determination. | Accepted — reaffirmed |
 | IAM-D02 | Identity & Access is authoritative for authenticated principal and session state. Investor Onboarding & Eligibility is authoritative for eligibility/compliance state. | Accepted — reaffirmed |
 | IAM-D03 | Use a standards-based identity-provider boundary rather than implementing credential/password authentication inside Ubuntu Capital OS. Vendor selection remains deferred. | Accepted — reaffirmed |
-| IAM-D04 | Protected backend/API capabilities must independently validate authentication and required business permissions. Frontend route protection alone is insufficient. | Accepted — reaffirmed; strengthened by current UI-only evidence |
+| IAM-D04 | Protected backend/API capabilities must independently validate authentication and required business permissions. Frontend route protection alone is insufficient. | Accepted — reaffirmed; historically reported UI-only evidence supports reinspection priorities |
 | IAM-D05 | Authentication/access events feed Audit & Evidence, while operational security telemetry and formal business audit evidence remain logically distinct concerns. | Accepted — reaffirmed |
-| IAM-D06 | MFA capability must be supported in the production authentication architecture. Whether MFA is mandatory for every investor remains a later policy/security decision. | Accepted — reaffirmed; current MFA UI is supporting evidence only |
+| IAM-D06 | MFA capability must be supported in the production authentication architecture. Whether MFA is mandatory for every investor remains a later policy/security decision. | Accepted — reaffirmed; historically reported MFA UI does not establish current behaviour |
 | IAM-D07 | UC-IAM-001 establishes sessions. Account recovery and detailed session termination remain primarily within UC-IAM-002 and UC-IAM-003. | Accepted — reaffirmed |
 | IAM-D08 | No microservice topology, queueing platform, cloud provider or database technology is selected from this use case alone. | Accepted — reaffirmed |
 
@@ -414,7 +421,7 @@ Authenticated identity
 Required business-domain controls
 ```
 
-The new implementation evidence does not require a structural HLA change. It validates that the existing target architecture addresses a real implementation gap between front-end authentication screens and an enforceable IAM capability.
+The historical snapshot evidence does not require a structural HLA change. It supports the planned validation of a possible gap between reported front-end authentication screens and an enforceable IAM capability; current implementation state remains unverified.
 
 This clarification should be inherited by all subsequent use-case analyses.
 
@@ -438,14 +445,14 @@ These should be resolved by the use cases or architecture decisions that own tho
 
 ---
 
-## Evidence Refresh Outcome
+## Historical Evidence Outcome and Current Verification
 
-The evidence refresh changes the **Current State**, not the accepted target architecture.
+The historical snapshot record informs validation priorities; it does not change the accepted target architecture or establish current implementation state.
 
-Previously, the implementation of UC-IAM-001 could not be inspected directly. The current repository evidence now establishes that login and MFA interfaces exist, while the authentication backend and enforceable session boundary remain unverified or absent from the inspected codebase.
+Repository artifacts report login and MFA interfaces in an unpinned snapshot, while backend authentication and an enforceable session boundary were not evidenced in that snapshot. The exact source revision and durable run record remain `UNKNOWN`, so current reproducible implementation verification is `BLOCKED_BY_CONTEXT`.
 
 The architectural principle remains:
 
 > **Authentication establishes who the user is. Eligibility and downstream business domains determine what that authenticated user may access or do.**
 
-UC-IAM-001 remains architecturally complete as an analysis, while implementation delivery remains `IN_DEVELOPMENT` until the documented authorised-session outcome is implemented and verified end-to-end.
+UC-IAM-001 remains architecturally complete as an analysis. `IN_DEVELOPMENT` is retained only as a historical snapshot label; no current delivery status may be asserted until revision-pinned evidence exists, and eventual completion still requires the authorised-session outcome to be implemented and verified end to end.
