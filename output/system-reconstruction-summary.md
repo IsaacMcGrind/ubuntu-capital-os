@@ -39,7 +39,7 @@ Authentication, registration, filtering and sorting behaviour, opportunity-detai
 
 ### Unknown
 
-Settlement mechanics, custody/ownership structure, vendors, cancellation rules, detailed permissions, tax-document production, data correction authority, readiness-decision authority, and several failure/recovery behaviours are unknown.
+Settlement mechanics, custody/ownership structure, vendors, cancellation rules, detailed permissions, tax-document production, data correction authority, readiness-decision authority (`OQ-016`), and several failure/recovery behaviours are unknown.
 
 ### Contradicted
 
@@ -95,11 +95,13 @@ The controlling phase sequence is defined in `plan.md`.
 - First-slice API, error, audit, persistence, and integration contracts.
 - Threat model, authorization design, privacy/retention, measurable NFRs, recovery and cost guardrails.
 - Tax-document generation and approval.
-- Readiness-decision authority and controlled GO/CONDITIONAL_GO governance.
+- Readiness-decision authority and controlled GO/CONDITIONAL_GO governance (`OQ-016`).
 
 ## 10. Critical Open Questions
 
 Critical business, legal, regulatory, permissions, provider, operational and readiness-authority questions remain open. The canonical source is `docs/11-open-questions/open-questions.md`; this summary must not be used to infer that an unresolved question has been closed.
+
+`OQ-016` is the canonical readiness-authority question: it asks who may issue an execution-authorising `GO` or `CONDITIONAL_GO` and what decision-control contract governs that authority. It remains `OPEN` and `CRITICAL`. A non-authorising `NO_GO` may still be recorded while `OQ-016` is open; resolving `OQ-016` is required before `GO` or `CONDITIONAL_GO` can carry execution authority.
 
 ## 11. Readiness Assessment
 
@@ -111,7 +113,7 @@ The supplied context supports an investor-facing marketplace and portfolio model
 
 **Foundation Slice A execution:** `BLOCKED_BY_CONTEXT`.
 
-The current pre-implementation decision is **`NO-GO FOR UNRESTRICTED IMPLEMENTATION`**. Canonical Phase 0–4 artifacts materially exist, but presence is not approval or completion. The current gate is defined by `AGENT.md`, controlling `plan.md`, `docs/09-delivery/foundation-slice-a-governance-reconciliation.md`, and `docs/09-delivery/pre-implementation-gate-reassessment-2026-09-03.md`. No `GO` or `CONDITIONAL_GO` can open the gate until readiness-decision authority is formally defined and the non-waivable integrity and substantive closure conditions are satisfied.
+The current pre-implementation decision is **`NO-GO FOR UNRESTRICTED IMPLEMENTATION`**. Canonical Phase 0–4 artifacts materially exist, but presence is not approval or completion. The current gate is defined by `AGENT.md`, controlling `plan.md`, `docs/09-delivery/foundation-slice-a-governance-reconciliation.md`, and `docs/09-delivery/pre-implementation-gate-reassessment-2026-09-03.md`. No execution-authorising `GO` or `CONDITIONAL_GO` can open the gate until readiness-decision authority under `OQ-016` is formally defined and the non-waivable integrity and substantive closure conditions are satisfied. A `NO_GO` finding may be recorded or refreshed immediately while blockers remain because it does not authorise execution.
 
 **First business slice execution:** `BLOCKED_BY_CONTEXT`.
 
@@ -125,8 +127,8 @@ Do **not** restart Phase 0 or recreate canonical artifacts that already exist. E
 2. reconcile the **pre-start planned traceability** required for the proposed scope as `source -> use case -> backlog -> architecture/design (where applicable) -> planned implementation target -> planned test/validation target -> planned durable-evidence target -> planned tracker/status`, using stable repository-accessible IDs or targets and aligning `docs/10-traceability/traceability-matrix.md` with `docs/09-delivery/e2e-delivery-tracker.md`;
 3. close or formally bound the business/legal, permissions, data-ownership/state, first-slice technical-contract, architecture/security/NFR and ADR gaps;
 4. disposition the `docs/02-architecture/` canonical-structure exception;
-5. define readiness-decision authority and the controlled decision contract;
-6. record the formal pre-implementation readiness outcome only after the applicable planned pre-start traceability and other non-waivable closure conditions are satisfied;
+5. resolve `OQ-016` by defining readiness-decision authority and the controlled decision contract in controlling governance;
+6. while blockers remain, record or refresh a durable `NO_GO` outcome for the evaluated scope. Only after `OQ-016`, applicable planned pre-start traceability and other non-waivable closure conditions are satisfied may an execution-authorising `GO` or `CONDITIONAL_GO` be issued;
 7. only after an effective authorised decision, begin the exact permitted Foundation work packages and capture objective implementation evidence in `docs/09-delivery/foundation-slice-a-evidence-register.md`;
 8. during authorised delivery, progressively reconcile the **realised** chain as `source -> use case -> backlog -> architecture/design (where applicable) -> implementation evidence -> test/run evidence -> durable evidence -> validation/status`; missing required realised hops block status promotion, E2E readiness and acceptance rather than the earlier start decision.
 
