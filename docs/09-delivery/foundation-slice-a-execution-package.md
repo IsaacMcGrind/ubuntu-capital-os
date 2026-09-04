@@ -1,12 +1,13 @@
 # Ubuntu Capital OS — Foundation Slice A Execution Package
 
 **Status:** `READY_FOR_DEVELOPMENT`  
-**Execution gate:** `BLOCKED_BY_CONTEXT` until the pre-implementation repository gate is satisfied  
+**Execution gate:** `BLOCKED_BY_CONTEXT` until the current pre-implementation reassessment is closed by a formal `GO` or explicitly scoped `CONDITIONAL_GO`  
 **Execution scope:** `WP-AZ-001` through `WP-AZ-008`  
 **Architecture decision:** `ARCH-ADR-001`  
 **Parent delivery plan:** `docs/09-delivery/azure-mvp-platform-delivery-plan.md`  
 **Programme roadmap:** `docs/09-delivery/implementation-roadmap.md`  
-**Governance reconciliation:** `docs/09-delivery/foundation-slice-a-governance-reconciliation.md`
+**Governance reconciliation:** `docs/09-delivery/foundation-slice-a-governance-reconciliation.md`  
+**Current readiness reassessment:** `docs/09-delivery/pre-implementation-gate-reassessment-2026-09-03.md`
 
 ## 1. Purpose
 
@@ -22,7 +23,7 @@ Foundation Slice A does **not** make any Ubuntu Capital business use case `COMPL
 
 This package is not currently authorisation to begin Azure implementation.
 
-`AGENT.md` and `plan.md` remain controlling. `WP-AZ-001` through `WP-AZ-008` must not start or advance until the applicable Phase 0 through Phase 4 required outputs and repository-integrity rules have reconciled as defined in `docs/09-delivery/foundation-slice-a-governance-reconciliation.md`.
+`AGENT.md` and `plan.md` remain controlling. The 2026-08-30 governance reconciliation remains part of the compatibility chain, but `WP-AZ-001` through `WP-AZ-008` must not start or advance merely because that older checklist is satisfied. The applicable Phase 0 through Phase 4 requirements, repository-integrity rules, and residual closure set in `docs/09-delivery/pre-implementation-gate-reassessment-2026-09-03.md` must reconcile, and a formal readiness review must record either `GO` or an explicitly scoped `CONDITIONAL_GO` that identifies the Foundation work authorised to proceed.
 
 Planning, acceptance criteria, architecture and evidence templates may be maintained while the gate is unsatisfied, but that activity must not change delivery status or be treated as implementation evidence.
 
@@ -30,13 +31,13 @@ Planning, acceptance criteria, architecture and evidence templates may be mainta
 
 The following rules are controlling:
 
-1. The pre-implementation repository gate must be satisfied before any `WP-AZ-001` through `WP-AZ-008` implementation starts or advances.
+1. No `WP-AZ-001` through `WP-AZ-008` implementation may start or advance until `AGENT.md`, `plan.md`, `docs/09-delivery/foundation-slice-a-governance-reconciliation.md`, `docs/09-delivery/pre-implementation-gate-reassessment-2026-09-03.md`, and a formal `GO` or explicitly scoped `CONDITIONAL_GO` decision reconcile.
 2. Architecture selection is not implementation evidence.
 3. A work package advances only when its evidence gate is satisfied.
 4. No use case becomes `COMPLETE` without objective E2E evidence.
 5. Secrets, credentials, tokens and sensitive payloads must not be committed to the repository or exposed to client code.
 6. Every deployment result must be traceable to the repository revision that produced it.
-7. Evidence must be stored or linked in the Foundation Slice A evidence register.
+7. Evidence must be stored or linked in `docs/09-delivery/foundation-slice-a-evidence-register.md`.
 8. Any unresolved contradiction in ownership, status, IDs, evidence or environment configuration must be reconciled before progression.
 9. Production-grade regulated transaction capability is outside this slice.
 10. Foundation infrastructure must be reproducible from version-controlled provisioning definitions; manually configured Azure state alone cannot satisfy `WP-AZ-008` or the Foundation exit gate.
@@ -110,7 +111,7 @@ May provide application, integration, deployment and implementation evidence acc
 
 ## 6. Execution sequence
 
-The sequence below is defined but **must not be executed until the Foundation start gate is satisfied**.
+The sequence below is defined but **must not be executed until the Foundation start gate is satisfied by the current reassessment and formal readiness decision**.
 
 | Order | Work package | Delivery objective | Target status after evidence | Primary dependency |
 |---:|---|---|---|---|
@@ -123,7 +124,7 @@ The sequence below is defined but **must not be executed until the Foundation st
 | 7 | `WP-AZ-007` | Application Insights + Azure Monitor | `COMPONENT_COMPLETE` | WP-AZ-004 |
 | 8 | `WP-AZ-008` | Reproducible infrastructure + CI/CD deployment evidence | `COMPONENT_COMPLETE` | all Foundation resources and deployment targets |
 
-`WP-AZ-003` work-package completion is distinct from the broader `UC-IAM-001` use-case status. The identity foundation may reach `COMPONENT_COMPLETE` when its own evidence gate is satisfied while `UC-IAM-001` remains `IN_DEVELOPMENT` until protected backend enforcement, application integration and later E2E evidence reconcile.
+`WP-AZ-003` work-package completion is distinct from the broader `UC-IAM-001` use-case status. The identity foundation may reach `COMPONENT_COMPLETE` when its own evidence gate is satisfied. `UC-IAM-001` retains an `IN_DEVELOPMENT` historical snapshot label for traceability, while current reproducible verification remains `BLOCKED_BY_CONTEXT` until protected backend enforcement, application integration and later E2E evidence reconcile.
 
 Once the start gate is satisfied, work packages may overlap only where their stated dependencies and evidence integrity allow it.
 
@@ -356,8 +357,9 @@ Make Foundation Slice A reproducible from source control rather than dependent o
 
 ## 8. Cross-cutting acceptance controls
 
-Foundation Slice A cannot begin until its start gate is satisfied, and cannot be declared `COMPONENT_COMPLETE` as a whole unless:
+Foundation Slice A cannot begin until its current readiness start gate is satisfied, and cannot be declared `COMPONENT_COMPLETE` as a whole unless:
 
+- the formal readiness decision authorizes the applicable Foundation work;
 - all eight work-package evidence records exist;
 - all eight work packages individually satisfy their `COMPONENT_COMPLETE` evidence gates;
 - no work package is advanced solely from design intent;
@@ -385,7 +387,7 @@ Sensitive Azure values must be redacted. The evidence register must not contain 
 
 Default recorded status for `WP-AZ-001` through `WP-AZ-008` remains `READY_FOR_DEVELOPMENT` unless stronger evidence already exists and is reconciled into this repository.
 
-Until the Foundation start gate is satisfied, **no work package may transition to `IN_DEVELOPMENT` or `COMPONENT_COMPLETE`**.
+Until the current Foundation start gate is satisfied and the formal readiness decision authorizes work, **no work package may transition to `IN_DEVELOPMENT` or `COMPONENT_COMPLETE`**.
 
 After the gate is satisfied, allowed transitions are:
 
@@ -397,7 +399,7 @@ READY_FOR_DEVELOPMENT
 
 A work package must not skip directly to `COMPONENT_COMPLETE` without its evidence gate.
 
-Work-package status and business use-case status are evaluated independently. In particular, `WP-AZ-003` may be `COMPONENT_COMPLETE` while `UC-IAM-001` remains `IN_DEVELOPMENT` until the wider authentication use-case evidence is satisfied.
+Work-package status and business use-case status are evaluated independently. In particular, `WP-AZ-003` may be `COMPONENT_COMPLETE` while `UC-IAM-001` retains only its historical `IN_DEVELOPMENT` snapshot label; current reproducible verification remains `BLOCKED_BY_CONTEXT` until the wider authentication use-case evidence is satisfied.
 
 ## 11. Handoff to the first business vertical slice
 
@@ -406,12 +408,13 @@ Foundation completion is necessary but not sufficient for handoff.
 `WP-AZ-009`, `WP-AZ-010`, `WP-AZ-011`, and `WP-AZ-012` must not start or advance until:
 
 1. Foundation Slice A evidence has been accepted;
-2. the full first-business-slice integrity gate in `docs/09-delivery/foundation-slice-a-governance-reconciliation.md` is satisfied, including permissions, rules, journey/state, integrations, backlog, E2E tracker, traceability, validation, and open-question/risk reconciliation; and
-3. the `plan.md` Phase 5 foundational product capabilities and Phase 5 exit criteria required before Phase 6 are complete and objectively evidenced.
+2. the current readiness position and any formal readiness conditions still permit progression;
+3. the full first-business-slice integrity gate in `docs/09-delivery/foundation-slice-a-governance-reconciliation.md` and `docs/09-delivery/pre-implementation-gate-reassessment-2026-09-03.md` is satisfied, including permissions, rules, journey/state, integrations, backlog, E2E tracker, traceability, validation, and open-question/risk reconciliation; and
+4. the `plan.md` Phase 5 foundational product capabilities and Phase 5 exit criteria required before Phase 6 are complete and objectively evidenced.
 
-The Phase 5 prerequisite includes the shared capabilities needed by the slice: authentication/session handling, role and permission enforcement, investor identity baseline, shared validation/safe error handling, permitted opportunity read-model foundation, business audit-event framework, structured logging/correlation, persistence migrations, test harness/CI quality gates, and environment/secrets strategy. Its exit evidence must show that an authorised test investor can authenticate and securely load a permitted opportunity catalogue, cross-user access is denied and tested, and failures produce safe errors with traceable logs.
+The Phase 5 prerequisite includes only the shared capabilities needed by the slice: authentication/session handling, role and permission enforcement, investor identity baseline, shared validation/safe error handling, protected API bootstrap/authorization testing, business audit-event framework, structured logging/correlation, persistence migrations, test harness/CI quality gates, and environment/secrets strategy. Its exit evidence must show that an authorised test investor can authenticate, establish a server-validated session, and call a protected bootstrap/authorization test surface; unauthenticated, insufficient-role, and cross-user access must be denied and tested; and failures must produce safe errors with traceable logs. The opportunity read model, seed/test data, access policy enforcement, and permitted catalogue API are owned by `WP-AZ-009` after this handoff and are not Phase 5 exit prerequisites.
 
-Only after all three conditions are true may the Phase 6 first slice proceed:
+Only after all conditions are true may the Phase 6 first slice proceed:
 
 - `WP-AZ-009` — Opportunity API;
 - `WP-AZ-010` — non-binding expression of interest;
@@ -433,6 +436,6 @@ This documentation package is complete when:
 5. evidence storage and redaction rules are recorded;
 6. roadmap and parent delivery-plan references reconcile;
 7. Foundation reproducibility requirements are explicit and version-controlled infrastructure reconstruction is required before Foundation completion;
-8. the pre-implementation hard start gate is explicit and prevents work-package status progression while controlling repository prerequisites remain unresolved;
+8. the current pre-implementation hard start gate explicitly includes the 2026-09-03 reassessment and formal readiness decision, and prevents work-package status progression while that gate remains blocked;
 9. the separate first-business-slice gate explicitly blocks `WP-AZ-009` through `WP-AZ-012` from starting or advancing until the first-slice integrity prerequisites and the controlling `plan.md` Phase 5 foundational product-capability exit criteria reconcile;
 10. no claim is made that Azure resources are already implemented without evidence.

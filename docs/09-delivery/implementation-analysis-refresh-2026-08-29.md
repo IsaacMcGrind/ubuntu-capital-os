@@ -1,9 +1,15 @@
 # Ubuntu Capital OS — Implementation Analysis Refresh
 
+**Document status:** `HISTORICAL_SNAPSHOT` — `NON_EXECUTABLE`  
 **Assessment date:** 2026-08-29  
-**Overall status:** `PARTIALLY_READY`  
-**Architecture readiness:** materially improved  
-**Implementation readiness:** unchanged at business-capability level unless new implementation evidence is added  
+**Superseded for execution/readiness decisions by:** `docs/09-delivery/pre-implementation-gate-reassessment-2026-09-03.md`, together with `AGENT.md`, controlling `plan.md`, and `docs/09-delivery/foundation-slice-a-governance-reconciliation.md`  
+**Current Foundation execution state:** `BLOCKED_BY_CONTEXT`
+
+> **Execution warning:** This document preserves the 2026-08-29 architecture/implementation assessment as historical evidence. Its "priority implementation sequence", "immediate delivery recommendation", and readiness wording must **not** be used to authorize Azure Foundation or business-slice work. The current gate requires the 2026-09-03 reassessment, non-waivable `AGENT.md` integrity conditions, complete required traceability, formal readiness-decision authority, and an effective authorized readiness decision. Until those conditions are satisfied, `WP-AZ-001` through `WP-AZ-008` remain blocked; `WP-AZ-009` through `WP-AZ-012` remain separately blocked by Foundation evidence plus the controlling Phase 5/first-slice gates.
+
+**Historical overall status at assessment date:** `PARTIALLY_READY`  
+**Historical architecture readiness:** materially improved  
+**Historical implementation readiness:** unchanged at business-capability level unless new implementation evidence is added  
 **Production readiness:** not ready
 
 ## 1. Executive assessment
@@ -25,7 +31,7 @@ The recorded implementation evidence still describes the application as predomin
 
 ## 2. Evidence boundary for this refresh
 
-This refresh is grounded in repository evidence currently available in `ubuntu-capital-os`.
+This refresh is grounded in repository evidence currently available in `ubuntu-capital-os` as of the assessment date.
 
 Primary evidence:
 
@@ -42,9 +48,9 @@ Primary evidence:
 
 No new direct source-code inspection of `HarleyJoker/ubuntu-capital-platform` was performed as part of this refresh. Therefore existing implementation statuses are preserved unless the OS repository itself contains stronger delivery evidence.
 
-## 3. What has materially changed
+## 3. What had materially changed by 2026-08-29
 
-### 3.1 Logical architecture is now established
+### 3.1 Logical architecture was established
 
 The logical architecture defines authoritative capability ownership for:
 
@@ -59,11 +65,11 @@ The logical architecture defines authoritative capability ownership for:
 - Notifications;
 - Administration, Audit & Evidence, and Management Reporting.
 
-This reduces ambiguity around where business state belongs and prevents implementation components from becoming accidental owners of business decisions.
+This reduced ambiguity around where business state belongs and prevented implementation components from becoming accidental owners of business decisions.
 
-### 3.2 MVP cloud platform is now selected
+### 3.2 MVP cloud platform was selected
 
-The Azure MVP platform decision establishes the following target implementation path:
+The Azure MVP platform decision established the following target implementation path:
 
 - Azure Static Web Apps;
 - Microsoft Entra External ID;
@@ -77,19 +83,19 @@ The Azure MVP platform decision establishes the following target implementation 
 - Azure Cost Management;
 - CI/CD using the existing GitHub/Azure delivery capability.
 
-This closes the cloud-provider/platform-service selection gap for the MVP without changing the technology-neutral logical capability boundaries.
+This closed the cloud-provider/platform-service selection gap for the MVP without changing the technology-neutral logical capability boundaries.
 
-### 3.3 Monitoring and governance are stronger
+### 3.3 Monitoring and governance were stronger
 
-The repository monitor is now evidence-grounded and designed to distinguish direct material change from broad use-case references. This improves repository governance and reduces false progress claims.
+The repository monitor was evidence-grounded and designed to distinguish direct material change from broad use-case references. This improved repository governance and reduced false progress claims.
 
-## 4. Current implementation position
+## 4. Historical implementation position
 
-The current recorded matrix remains the authoritative implementation coverage view for the 41 use cases until stronger code/E2E evidence is added.
+The recorded matrix remained the authoritative implementation coverage view for the 41 use cases until stronger code/E2E evidence was added.
 
 ### Coverage summary
 
-The counts below are derived from the row-level statuses in `implementation-coverage-gap-matrix.md`.
+The counts below were derived from the row-level statuses in `implementation-coverage-gap-matrix.md`.
 
 | Status | Count | Interpretation |
 |---|---:|---|
@@ -117,9 +123,9 @@ The counts below are derived from the row-level statuses in `implementation-cove
 
 ## 5. Architecture-to-implementation gap
 
-The principal gap is no longer "what cloud should we use?". The principal gap is now **turning the accepted logical architecture and Azure platform decision into secure, traceable vertical slices**.
+The principal gap was no longer "what cloud should we use?". The principal gap became **turning the accepted logical architecture and Azure platform decision into secure, traceable vertical slices**.
 
-| Architecture capability | Target platform direction | Current implementation evidence | Delivery gap |
+| Architecture capability | Target platform direction | Current implementation evidence at assessment date | Delivery gap |
 |---|---|---|---|
 | Identity & Access | Entra External ID + protected Azure Functions | Login/MFA UI | Provider integration, token/session validation, server-side enforcement, negative-path tests, audit |
 | Investor Onboarding & Eligibility | Functions + SQL + external KYC/AML integration | Multi-step onboarding UI | Persistence, rules, workflow state, provider integration, compliance decisions |
@@ -133,11 +139,11 @@ The principal gap is no longer "what cloud should we use?". The principal gap is
 | Administration | Protected admin APIs/UI | no substantive admin capability | RBAC admin, opportunity lifecycle, reference data, controlled operations |
 | Audit & Reporting | SQL/storage + Application Insights/Azure Monitor for operational telemetry | no business audit pipeline | immutable/material event model, retention, review/reporting interfaces |
 
-## 6. Azure foundation implementation status
+## 6. Historical Azure foundation implementation status
 
-The Azure service selection is `CONFIRMED` as target architecture. The Azure foundation workstream is consistently `READY_FOR_DEVELOPMENT`: the target and evidence gates are defined, but no Azure provisioning/deployment evidence has yet been recorded. Absence of deployment evidence is an evidence gap, not a separate `NOT_ANALYSED` delivery status.
+The Azure service selection was `CONFIRMED` as target architecture. At this assessment point the Azure foundation workstream was described as `READY_FOR_DEVELOPMENT`: the target and evidence gates were defined, but no Azure provisioning/deployment evidence had yet been recorded. **That historical delivery description is not current authorization to start work.** Current execution is `BLOCKED_BY_CONTEXT` under the superseding readiness gate.
 
-| Azure capability | Target | Current delivery status | Evidence required |
+| Azure capability | Target | Historical delivery status | Evidence required |
 |---|---|---|---|
 | Static Web Apps | frontend hosting | `READY_FOR_DEVELOPMENT` | resource/deployment URL, build/deploy run, environment configuration |
 | Entra External ID | customer authentication | `READY_FOR_DEVELOPMENT` | tenant/app config, user flow/policy, token validation, protected API test |
@@ -149,15 +155,15 @@ The Azure service selection is `CONFIRMED` as target architecture. The Azure fou
 | Application Insights | telemetry | `READY_FOR_DEVELOPMENT` | request/dependency/exception traces and correlation evidence |
 | Azure Monitor | alerts/health | `READY_FOR_DEVELOPMENT` | dashboard/alerts and failure-test evidence |
 | Cost Management | budgets/alerts | `READY_FOR_DEVELOPMENT` | budget threshold and notification evidence |
-| CI/CD | repeatable deployment | partial capability exists historically | build/test/deploy pipeline for the selected Azure resources |
+| CI/CD | repeatable deployment | partial capability existed historically | build/test/deploy pipeline for the selected Azure resources |
 
-## 7. Delivery status by programme phase
+## 7. Historical delivery status by programme phase
 
 ### Phase 0 — Context and architecture baseline
 
-**Status:** `ANALYSIS_IN_PROGRESS` / materially advanced.
+**Historical status:** `ANALYSIS_IN_PROGRESS` / materially advanced.
 
-Completed or materially advanced:
+Completed or materially advanced at the assessment date:
 
 - system boundary;
 - logical architecture;
@@ -167,7 +173,7 @@ Completed or materially advanced:
 - implementation coverage matrix;
 - repository monitoring.
 
-Still required:
+Still required at the time:
 
 - reconcile architecture directory placement with the canonical `plan.md` repository structure;
 - formalise remaining architecture decisions and open-question ownership;
@@ -175,9 +181,9 @@ Still required:
 
 ### Phase 1 — Foundational capabilities
 
-**Status:** `IN_DEVELOPMENT` at UI level; Azure foundation workstream `READY_FOR_DEVELOPMENT`; backend foundation not proven.
+**Historical status:** `IN_DEVELOPMENT` at UI level; Azure foundation workstream `READY_FOR_DEVELOPMENT`; backend foundation not proven.
 
-Priority implementation sequence:
+The following was the **historical priority implementation sequence proposed on 2026-08-29; it is non-executable and superseded by the current gate**:
 
 1. Azure resource/environment baseline.
 2. Static Web Apps deployment of the current frontend.
@@ -192,21 +198,23 @@ Priority implementation sequence:
 
 ### Phase 2 — First complete vertical slice
 
-**Status:** `READY_FOR_DEVELOPMENT` once Phase 1 access/persistence controls are usable.
+**Historical status wording:** `READY_FOR_DEVELOPMENT` once Phase 1 access/persistence controls were usable.
 
-Target slice remains:
+Target slice remained:
 
 > authenticated investor discovers an opportunity and submits a **non-binding expression of interest**.
 
-Settlement remains outside this first slice.
+Settlement remained outside this first slice.
+
+**Current correction:** the first business slice is `BLOCKED_BY_CONTEXT`; it must not start based on this historical status wording.
 
 ### Phases 3–7
 
-**Status:** predominantly `READY_FOR_DEVELOPMENT` / blocked by unresolved legal, compliance, data and integration decisions.
+**Historical status:** predominantly `READY_FOR_DEVELOPMENT` / blocked by unresolved legal, compliance, data and integration decisions.
 
-## 8. Critical blockers
+## 8. Critical blockers recorded in the historical assessment
 
-The highest-impact unresolved blockers remain:
+The highest-impact unresolved blockers remained:
 
 1. supported investor jurisdictions;
 2. eligibility/accreditation rules;
@@ -221,13 +229,11 @@ The highest-impact unresolved blockers remain:
 11. retention/privacy requirements;
 12. controlled correction/override rules.
 
-Azure selection does not resolve these business/legal operating-model questions.
+Azure selection did not resolve these business/legal operating-model questions.
 
-## 9. Immediate delivery recommendation
+## 9. Historical delivery recommendation — superseded
 
-The next delivery objective should be **Foundation Slice A — deployable authenticated platform shell**.
-
-Definition:
+The 2026-08-29 assessment recommended **Foundation Slice A — deployable authenticated platform shell** as the next delivery objective:
 
 ```text
 React/Vite frontend
@@ -240,27 +246,18 @@ React/Vite frontend
     -> CI/CD evidence
 ```
 
-Acceptance evidence should prove:
+Historical acceptance evidence was expected to prove repeatable deployment, authentication, protected API denial, server-side identity, SQL read/write, secret protection, telemetry, and cost alerts.
 
-- deployment is repeatable;
-- a test investor can sign in;
-- an unauthenticated request to a protected API fails closed;
-- authenticated identity is available server-side;
-- a protected API can read/write a non-financial test record to Azure SQL;
-- secrets are not exposed to the browser/repository;
-- requests and failures are traceable in telemetry;
-- cost budget/alerts exist.
+**This recommendation is now superseded for execution.** Do not start any Foundation work from this section. Follow `docs/09-delivery/pre-implementation-gate-reassessment-2026-09-03.md` and the current `plan.md` queue. Foundation work can begin only after all non-waivable integrity/readiness conditions reconcile, readiness-decision authority is defined, and an effective authorized readiness decision opens an exact work-package scope.
 
-Only after this foundation is proven should the team complete the first business vertical slice across opportunity discovery and non-binding EOI.
+## 10. Historical status conclusion and current boundary
 
-## 10. Status conclusion
-
-**Architecture:** `READY_WITH_ASSUMPTIONS` for MVP cloud implementation.  
+**Historical architecture:** `READY_WITH_ASSUMPTIONS` for MVP cloud implementation.  
 **Cloud platform selection:** `CONFIRMED`.  
-**Azure foundation workstream:** `READY_FOR_DEVELOPMENT`; deployment evidence not yet recorded.  
+**Historical Azure foundation description:** `READY_FOR_DEVELOPMENT`; deployment evidence not recorded.  
 **Application implementation:** `PARTIALLY_READY` / prototype-heavy.  
-**First vertical slice:** `READY_FOR_DEVELOPMENT` after foundation dependencies.  
+**Historical first-slice wording:** `READY_FOR_DEVELOPMENT` after foundation dependencies.  
 **Regulated investment platform:** `PARTIALLY_READY`; critical business/legal/integration questions remain open.  
 **Production:** `NOT_READY`.
 
-No current evidence justifies changing any use case to `COMPLETE`.
+**Current execution boundary:** Foundation Slice A is `BLOCKED_BY_CONTEXT` under the 2026-09-03 reassessment, and the first business slice is also `BLOCKED_BY_CONTEXT`. No current evidence justifies changing any use case to `COMPLETE`, and nothing in this historical document authorizes implementation.

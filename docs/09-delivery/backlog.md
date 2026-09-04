@@ -15,3 +15,5 @@ Machine-readable backlog source is docs/09-delivery/backlog.json.
 ## Current note
 
 The backlog contains dependency rules and acceptance gates, but implementation progression remains blocked until repository prerequisites reconcile per docs/09-delivery/foundation-slice-a-governance-reconciliation.md.
+
+Per-item gap labels in the machine-readable backlog were translated from the unpinned historical implementation-coverage snapshot. They are stored as `historical_snapshot_gap_status` planning context, not as current implementation status. An authorised revision-pinned inspection and durable run evidence are required before any current-source status is asserted or promoted.

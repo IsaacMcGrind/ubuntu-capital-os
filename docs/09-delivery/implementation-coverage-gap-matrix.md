@@ -2,7 +2,7 @@
 
 Status: `ANALYSIS_IN_PROGRESS`
 
-This matrix maps the currently inspected implementation repository (`/Users/officialnumbr10/Dev/ubuntu-capital-platform`) to the 41-use-case catalogue in `docs/04-use-cases/use-case-catalogue.md`.
+This matrix records a historical, partial mapping from a reported local snapshot at `/Users/officialnumbr10/Dev/ubuntu-capital-platform` to the 41-use-case catalogue in `docs/04-use-cases/use-case-catalogue.md`. The inspected branch, commit SHA, run identity, and durable raw-evidence reference were not recorded. The observations and verification results below are therefore snapshot-scoped supporting evidence only and must not be treated as evidence of the current implementation state.
 
 Evidence basis used for this pass:
 
@@ -20,11 +20,13 @@ Evidence basis used for this pass:
 	- Added verification tests in `src/test/auth-and-eoi.test.tsx`
 	- Verification outcome: `npm test` passed (`2` test files, `6` tests), `npm run build` succeeded, `npm run lint` completed with warnings only
 
-Important gating rule: `COMPONENT_COMPLETE` in this matrix means UI/page-level evidence exists. It is not equivalent to end-to-end business completion for regulated investment workflows.
+Important gating rule: `COMPONENT_COMPLETE` in this historical matrix means UI/page-level evidence was reported in the unpinned snapshot. It is not equivalent to current implementation status or end-to-end business completion for regulated investment workflows.
+
+Current reproducible verification for all rows: `BLOCKED_BY_CONTEXT` until an authorised revision-pinned inspection and durable run evidence are recorded.
 
 ## Coverage Summary
 
-The summary below is derived from the 41 row-level delivery statuses in this matrix.
+The summary below is derived from the 41 historical row-level delivery statuses in this matrix. It is not a current implementation-status roll-up.
 
 - Total use cases mapped: 41
 - `COMPONENT_COMPLETE` (UI-level only): 7
@@ -34,10 +36,10 @@ The summary below is derived from the 41 row-level delivery statuses in this mat
 
 ## Use-case Mapping
 
-| Use Case ID | Delivery Status | Implementation Evidence | Gap Summary | Next Evidence Gate |
+| Use Case ID | Historical Snapshot Label | Historical Snapshot Implementation Evidence | Gap Summary | Next Evidence Gate |
 |---|---|---|---|---|
 | UC-PUB-001 | COMPONENT_COMPLETE | `src/pages/Index.tsx` | Public proposition and navigation are implemented as front-end UI. | Add analytics/events and traceable acceptance test evidence. |
-| UC-IAM-001 | IN_DEVELOPMENT | `src/pages/Login.tsx`, `src/App.tsx`, `src/lib/session.ts`, `src/test/auth-and-eoi.test.tsx` | Prototype session handling now exists via localStorage-backed login bootstrap and route guards for `/myportfolio/*`; backend identity/session authority remains unimplemented. | Replace local session simulation with backend identity/session integration and authorization-boundary tests. |
+| UC-IAM-001 | IN_DEVELOPMENT | `src/pages/Login.tsx`, `src/App.tsx`, `src/lib/session.ts`, `src/test/auth-and-eoi.test.tsx` | The inspected snapshot contains localStorage-backed login bootstrap and route guards for `/myportfolio/*`; no backend identity/session authority was evidenced within that snapshot. | Replace local session simulation with backend identity/session integration and authorization-boundary tests. |
 | UC-IAM-002 | IN_DEVELOPMENT | `src/pages/ForgotPassword.tsx` | Reset UI exists only; no token, identity, or email flow evidence. | Implement reset token lifecycle and recovery-path validation. |
 | UC-IAM-003 | READY_FOR_DEVELOPMENT | No explicit logout/session-expiry logic found | Session termination/expiry behavior is not evidenced. | Implement explicit sign-out, expiry, and unauthorized-session handling tests. |
 | UC-ONB-001 | IN_DEVELOPMENT | `src/pages/Signup.tsx` | Registration form UI exists without backend account creation evidence. | Add account creation workflow, persistence, and validation tests. |
@@ -48,7 +50,7 @@ The summary below is derived from the 41 row-level delivery statuses in this mat
 | UC-OPP-003 | IN_DEVELOPMENT | `src/pages/DealDetail.tsx` | Detail page exists with static copy and local data. | Add canonical opportunity detail API, policy checks, and audit events. |
 | UC-DD-001 | IN_DEVELOPMENT | `src/pages/DealDetail.tsx` (`Request data room` action) | NDA trigger affordance exists; no enforceable NDA process was found. | Implement NDA workflow, signature evidence, and access-state transitions. |
 | UC-DD-002 | READY_FOR_DEVELOPMENT | No protected data-room route/service found | Restricted due-diligence content access is not implemented. | Add protected content service, authorization checks, and access logs. |
-| UC-INV-001 | IN_DEVELOPMENT | `src/pages/DealDetail.tsx`, `src/lib/eoi.ts`, `src/test/auth-and-eoi.test.tsx` | EOI now validates required/minimum amount and blocks duplicate submissions per deal in local prototype storage; no backend workflow, policy engine, or persistence boundary exists yet. | Implement server-backed EOI lifecycle, authorization/audit boundaries, and failure-path tests across API and persistence layers. |
+| UC-INV-001 | IN_DEVELOPMENT | `src/pages/DealDetail.tsx`, `src/lib/eoi.ts`, `src/test/auth-and-eoi.test.tsx` | The inspected snapshot's EOI flow validates required/minimum amount and blocks duplicate submissions per deal in local prototype storage; no backend workflow, policy engine, or persistence boundary was evidenced within that snapshot. | Implement server-backed EOI lifecycle, authorization/audit boundaries, and failure-path tests across API and persistence layers. |
 | UC-INV-002 | IN_DEVELOPMENT | `src/pages/PortfolioPending.tsx` | Pending area exists with static in-memory rows. | Add status transitions, operator decisions, and exception handling traces. |
 | UC-INV-003 | READY_FOR_DEVELOPMENT | No cancel/withdraw workflow evidence found | Cancellation policy and execution path are absent. | Implement withdrawal rules, audit trail, and user/operator permissions. |
 | UC-SET-001 | READY_FOR_DEVELOPMENT | No funding-instruction service/routes found | Funding instruction generation and delivery are absent. | Implement settlement instruction pipeline and communication evidence. |
@@ -66,7 +68,7 @@ The summary below is derived from the 41 row-level delivery statuses in this mat
 | UC-NOTIFY-001 | IN_DEVELOPMENT | `src/pages/PortfolioNotifications.tsx` | Notification preferences UI exists with local toggles only. | Implement trigger engine, channel delivery, and preference persistence. |
 | UC-OPS-001 | IN_DEVELOPMENT | `src/pages/Contact.tsx` | Support contact form exists without ticket workflow evidence. | Implement support case creation, routing, and SLA/audit instrumentation. |
 | UC-OPS-002 | READY_FOR_DEVELOPMENT | No controlled correction workflow found | Controlled data correction and maker-checker governance are absent. | Implement governed correction workflow with approvals and immutable audit trail. |
-| UC-ADMIN-001 | READY_FOR_DEVELOPMENT | No admin opportunity-creation surface found | Opportunity publish workflow is absent in current codebase. | Implement admin create/publish flow with compliance gates. |
+| UC-ADMIN-001 | READY_FOR_DEVELOPMENT | No admin opportunity-creation surface found | Opportunity publish workflow was not evidenced in the inspected snapshot. | Implement admin create/publish flow with compliance gates. |
 | UC-ADMIN-002 | READY_FOR_DEVELOPMENT | No admin lifecycle management surface found | Opportunity update/close/archive controls are absent. | Implement lifecycle controls and investor-facing state propagation. |
 | UC-ADMIN-003 | READY_FOR_DEVELOPMENT | No users/roles/permissions admin flow found | Access governance controls are absent. | Implement RBAC administration and scoped access controls. |
 | UC-ADMIN-004 | READY_FOR_DEVELOPMENT | No reference-data/content admin flow found | Platform content/reference-data management is absent. | Implement admin content/reference-data tools with approval workflow. |
@@ -80,7 +82,7 @@ The summary below is derived from the 41 row-level delivery statuses in this mat
 
 ## Notes for Reconciliation
 
-1. This matrix is evidence from implementation code inspection, not a production-readiness declaration.
-2. `COMPONENT_COMPLETE` rows still require backend, security, persistence, and E2E verification before any use case can become `COMPLETE`.
+1. This matrix records reported results from an unpinned historical code inspection. Until the source revision, run identity, and durable raw evidence are recorded and reproduced, it is supporting evidence only—not a current-state or production-readiness declaration.
+2. `COMPONENT_COMPLETE` rows still require revision-pinned backend, security, persistence, and E2E verification before any use case can become `COMPLETE`.
 3. External implementation evidence has been treated as supporting evidence under the repository evidence hierarchy, not canonical requirement truth.
-4. The 2026-08-31 local verification run confirms codebase health at lint/test/build level but does not satisfy business-flow E2E acceptance evidence.
+4. The reported 2026-08-31 local verification run describes snapshot-scoped lint/test/build results; without a pinned source revision and durable run evidence, it does not confirm current codebase health or satisfy business-flow E2E acceptance evidence.

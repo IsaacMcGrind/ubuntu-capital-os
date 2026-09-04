@@ -2,7 +2,7 @@
 
 Status: `ANALYSIS_IN_PROGRESS`
 
-This pass translates `docs/09-delivery/implementation-coverage-gap-matrix.md` into backlog-ready diffs.
+This pass translates the historical, partial snapshot labels in `docs/09-delivery/implementation-coverage-gap-matrix.md` into backlog-ready work proposals. The source snapshot is unpinned, so its labels are planning inputs only—not current implementation statuses. Acceptance checks remain proposed future evidence gates and must be reconciled against an authorised revision-pinned inspection before execution or status promotion.
 
 Tracker-ready payloads generated from this diff:
 
@@ -22,7 +22,7 @@ Legend:
 
 ## Critical Domain Backlog Diff
 
-| Priority | Use Case ID | Current Gap Status | Backlog Diff | Backlog Item ID | Concrete Acceptance Checks |
+| Priority | Use Case ID | Historical Snapshot Gap Label | Backlog Diff | Backlog Item ID | Concrete Acceptance Checks |
 |---|---|---|---|---|---|
 | P0 | UC-IAM-001 | IN_DEVELOPMENT | EXPAND | BL-IAM-001 | Successful login creates server session; invalid credentials rejected with audit event; protected routes deny unauthenticated requests. |
 | P0 | UC-IAM-002 | IN_DEVELOPMENT | ADD | BL-IAM-002 | Password reset token issued, expires, and is single-use; reset email delivery is logged; invalid/expired token path covered by tests. |
@@ -49,7 +49,7 @@ Legend:
 
 ## Remaining Gap Alignment Backlog Diff
 
-| Priority | Use Case ID | Current Gap Status | Backlog Diff | Backlog Item ID | Concrete Acceptance Checks |
+| Priority | Use Case ID | Historical Snapshot Gap Label | Backlog Diff | Backlog Item ID | Concrete Acceptance Checks |
 |---|---|---|---|---|---|
 | P1 | UC-DD-001 | IN_DEVELOPMENT | EXPAND | BL-DD-001 | NDA initiation persists request and status; signer identity bound to account; completed NDA grants controlled data-room eligibility. |
 | P1 | UC-DD-002 | READY_FOR_DEVELOPMENT | ADD | BL-DD-002 | Restricted documents available only to NDA-authorized users; revoked/expired access denied; access/download events audited. |

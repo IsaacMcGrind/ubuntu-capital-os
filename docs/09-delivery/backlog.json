@@ -1,5 +1,5 @@
 {
-  "payload_version": "2026-08-20.backlog-diff-pass-3",
+  "payload_version": "2026-09-04.backlog-evidence-boundary-v1",
   "source_artifacts": [
     "docs/09-delivery/prioritized-backlog-diff.md",
     "docs/09-delivery/implementation-coverage-gap-matrix.md",
@@ -43,7 +43,7 @@
       ],
       "domain": "ADMIN",
       "priority": "P0",
-      "current_gap_status": "READY_FOR_DEVELOPMENT",
+      "historical_snapshot_gap_status": "READY_FOR_DEVELOPMENT",
       "backlog_diff": "ADD",
       "roadmap_phase": "Phase 6",
       "dependencies": [
@@ -94,7 +94,7 @@
       ],
       "domain": "ADMIN",
       "priority": "P0",
-      "current_gap_status": "READY_FOR_DEVELOPMENT",
+      "historical_snapshot_gap_status": "READY_FOR_DEVELOPMENT",
       "backlog_diff": "ADD",
       "roadmap_phase": "Phase 6",
       "dependencies": [
@@ -145,7 +145,7 @@
       ],
       "domain": "ADMIN",
       "priority": "P0",
-      "current_gap_status": "READY_FOR_DEVELOPMENT",
+      "historical_snapshot_gap_status": "READY_FOR_DEVELOPMENT",
       "backlog_diff": "ADD",
       "roadmap_phase": "Phase 6",
       "dependencies": [
@@ -196,7 +196,7 @@
       ],
       "domain": "ADMIN",
       "priority": "P0",
-      "current_gap_status": "READY_FOR_DEVELOPMENT",
+      "historical_snapshot_gap_status": "READY_FOR_DEVELOPMENT",
       "backlog_diff": "ADD",
       "roadmap_phase": "Phase 6",
       "dependencies": [
@@ -247,7 +247,7 @@
       ],
       "domain": "AUD",
       "priority": "P0",
-      "current_gap_status": "READY_FOR_DEVELOPMENT",
+      "historical_snapshot_gap_status": "READY_FOR_DEVELOPMENT",
       "backlog_diff": "ADD",
       "roadmap_phase": "Phase 7",
       "dependencies": [
@@ -297,7 +297,7 @@
       ],
       "domain": "AUD",
       "priority": "P0",
-      "current_gap_status": "READY_FOR_DEVELOPMENT",
+      "historical_snapshot_gap_status": "READY_FOR_DEVELOPMENT",
       "backlog_diff": "ADD",
       "roadmap_phase": "Phase 7",
       "dependencies": [
@@ -347,7 +347,7 @@
       ],
       "domain": "IAM",
       "priority": "P0",
-      "current_gap_status": "IN_DEVELOPMENT",
+      "historical_snapshot_gap_status": "IN_DEVELOPMENT",
       "backlog_diff": "EXPAND",
       "roadmap_phase": "Phase 1",
       "dependencies": [],
@@ -395,7 +395,7 @@
       ],
       "domain": "IAM",
       "priority": "P0",
-      "current_gap_status": "IN_DEVELOPMENT",
+      "historical_snapshot_gap_status": "IN_DEVELOPMENT",
       "backlog_diff": "ADD",
       "roadmap_phase": "Phase 1",
       "dependencies": [
@@ -445,7 +445,7 @@
       ],
       "domain": "IAM",
       "priority": "P0",
-      "current_gap_status": "READY_FOR_DEVELOPMENT",
+      "historical_snapshot_gap_status": "READY_FOR_DEVELOPMENT",
       "backlog_diff": "ADD",
       "roadmap_phase": "Phase 1",
       "dependencies": [
@@ -495,7 +495,7 @@
       ],
       "domain": "INT",
       "priority": "P0",
-      "current_gap_status": "READY_FOR_DEVELOPMENT",
+      "historical_snapshot_gap_status": "READY_FOR_DEVELOPMENT",
       "backlog_diff": "ADD",
       "roadmap_phase": "Phase 4",
       "dependencies": [
@@ -545,7 +545,7 @@
       ],
       "domain": "INT",
       "priority": "P0",
-      "current_gap_status": "READY_FOR_DEVELOPMENT",
+      "historical_snapshot_gap_status": "READY_FOR_DEVELOPMENT",
       "backlog_diff": "ADD",
       "roadmap_phase": "Phase 4",
       "dependencies": [
@@ -595,7 +595,7 @@
       ],
       "domain": "INT",
       "priority": "P0",
-      "current_gap_status": "READY_FOR_DEVELOPMENT",
+      "historical_snapshot_gap_status": "READY_FOR_DEVELOPMENT",
       "backlog_diff": "ADD",
       "roadmap_phase": "Phase 4",
       "dependencies": [
@@ -645,7 +645,7 @@
       ],
       "domain": "INT",
       "priority": "P0",
-      "current_gap_status": "READY_FOR_DEVELOPMENT",
+      "historical_snapshot_gap_status": "READY_FOR_DEVELOPMENT",
       "backlog_diff": "ADD",
       "roadmap_phase": "Phase 4",
       "dependencies": [
@@ -696,7 +696,7 @@
       ],
       "domain": "INV",
       "priority": "P0",
-      "current_gap_status": "IN_DEVELOPMENT",
+      "historical_snapshot_gap_status": "IN_DEVELOPMENT",
       "backlog_diff": "EXPAND",
       "roadmap_phase": "Phase 4",
       "dependencies": [
@@ -749,7 +749,7 @@
       ],
       "domain": "INV",
       "priority": "P0",
-      "current_gap_status": "IN_DEVELOPMENT",
+      "historical_snapshot_gap_status": "IN_DEVELOPMENT",
       "backlog_diff": "EXPAND",
       "roadmap_phase": "Phase 4",
       "dependencies": [
@@ -799,7 +799,7 @@
       ],
       "domain": "INV",
       "priority": "P0",
-      "current_gap_status": "READY_FOR_DEVELOPMENT",
+      "historical_snapshot_gap_status": "READY_FOR_DEVELOPMENT",
       "backlog_diff": "ADD",
       "roadmap_phase": "Phase 4",
       "dependencies": [
@@ -849,7 +849,7 @@
       ],
       "domain": "ONB",
       "priority": "P0",
-      "current_gap_status": "IN_DEVELOPMENT",
+      "historical_snapshot_gap_status": "IN_DEVELOPMENT",
       "backlog_diff": "EXPAND",
       "roadmap_phase": "Phase 3",
       "dependencies": [
@@ -899,7 +899,7 @@
       ],
       "domain": "ONB",
       "priority": "P0",
-      "current_gap_status": "IN_DEVELOPMENT",
+      "historical_snapshot_gap_status": "IN_DEVELOPMENT",
       "backlog_diff": "EXPAND",
       "roadmap_phase": "Phase 3",
       "dependencies": [
@@ -949,7 +949,7 @@
       ],
       "domain": "ONB",
       "priority": "P0",
-      "current_gap_status": "IN_DEVELOPMENT",
+      "historical_snapshot_gap_status": "IN_DEVELOPMENT",
       "backlog_diff": "ADD",
       "roadmap_phase": "Phase 3",
       "dependencies": [
@@ -1000,7 +1000,7 @@
       ],
       "domain": "SET",
       "priority": "P0",
-      "current_gap_status": "READY_FOR_DEVELOPMENT",
+      "historical_snapshot_gap_status": "READY_FOR_DEVELOPMENT",
       "backlog_diff": "ADD",
       "roadmap_phase": "Phase 5",
       "dependencies": [
@@ -1051,7 +1051,7 @@
       ],
       "domain": "SET",
       "priority": "P0",
-      "current_gap_status": "READY_FOR_DEVELOPMENT",
+      "historical_snapshot_gap_status": "READY_FOR_DEVELOPMENT",
       "backlog_diff": "ADD",
       "roadmap_phase": "Phase 5",
       "dependencies": [
@@ -1103,7 +1103,7 @@
       ],
       "domain": "SET",
       "priority": "P0",
-      "current_gap_status": "READY_FOR_DEVELOPMENT",
+      "historical_snapshot_gap_status": "READY_FOR_DEVELOPMENT",
       "backlog_diff": "ADD",
       "roadmap_phase": "Phase 5",
       "dependencies": [
@@ -1154,7 +1154,7 @@
       ],
       "domain": "DD",
       "priority": "P1",
-      "current_gap_status": "IN_DEVELOPMENT",
+      "historical_snapshot_gap_status": "IN_DEVELOPMENT",
       "backlog_diff": "EXPAND",
       "roadmap_phase": "Phase 3",
       "dependencies": [
@@ -1206,7 +1206,7 @@
       ],
       "domain": "DD",
       "priority": "P1",
-      "current_gap_status": "READY_FOR_DEVELOPMENT",
+      "historical_snapshot_gap_status": "READY_FOR_DEVELOPMENT",
       "backlog_diff": "ADD",
       "roadmap_phase": "Phase 3",
       "dependencies": [
@@ -1256,7 +1256,7 @@
       ],
       "domain": "DOC",
       "priority": "P1",
-      "current_gap_status": "IN_DEVELOPMENT",
+      "historical_snapshot_gap_status": "IN_DEVELOPMENT",
       "backlog_diff": "EXPAND",
       "roadmap_phase": "Phase 6",
       "dependencies": [
@@ -1307,7 +1307,7 @@
       ],
       "domain": "NOTIFY",
       "priority": "P1",
-      "current_gap_status": "IN_DEVELOPMENT",
+      "historical_snapshot_gap_status": "IN_DEVELOPMENT",
       "backlog_diff": "EXPAND",
       "roadmap_phase": "Phase 7",
       "dependencies": [
@@ -1358,7 +1358,7 @@
       ],
       "domain": "OPP",
       "priority": "P1",
-      "current_gap_status": "COMPONENT_COMPLETE",
+      "historical_snapshot_gap_status": "COMPONENT_COMPLETE",
       "backlog_diff": "EXPAND",
       "roadmap_phase": "Phase 2",
       "dependencies": [
@@ -1408,7 +1408,7 @@
       ],
       "domain": "OPP",
       "priority": "P1",
-      "current_gap_status": "IN_DEVELOPMENT",
+      "historical_snapshot_gap_status": "IN_DEVELOPMENT",
       "backlog_diff": "EXPAND",
       "roadmap_phase": "Phase 2",
       "dependencies": [
@@ -1458,7 +1458,7 @@
       ],
       "domain": "OPP",
       "priority": "P1",
-      "current_gap_status": "IN_DEVELOPMENT",
+      "historical_snapshot_gap_status": "IN_DEVELOPMENT",
       "backlog_diff": "EXPAND",
       "roadmap_phase": "Phase 2",
       "dependencies": [
@@ -1508,7 +1508,7 @@
       ],
       "domain": "OPS",
       "priority": "P1",
-      "current_gap_status": "IN_DEVELOPMENT",
+      "historical_snapshot_gap_status": "IN_DEVELOPMENT",
       "backlog_diff": "EXPAND",
       "roadmap_phase": "Phase 6",
       "dependencies": [
@@ -1558,7 +1558,7 @@
       ],
       "domain": "OPS",
       "priority": "P1",
-      "current_gap_status": "READY_FOR_DEVELOPMENT",
+      "historical_snapshot_gap_status": "READY_FOR_DEVELOPMENT",
       "backlog_diff": "ADD",
       "roadmap_phase": "Phase 6",
       "dependencies": [
@@ -1609,7 +1609,7 @@
       ],
       "domain": "PORT",
       "priority": "P1",
-      "current_gap_status": "COMPONENT_COMPLETE",
+      "historical_snapshot_gap_status": "COMPONENT_COMPLETE",
       "backlog_diff": "EXPAND",
       "roadmap_phase": "Phase 6",
       "dependencies": [
@@ -1659,7 +1659,7 @@
       ],
       "domain": "PORT",
       "priority": "P1",
-      "current_gap_status": "COMPONENT_COMPLETE",
+      "historical_snapshot_gap_status": "COMPONENT_COMPLETE",
       "backlog_diff": "EXPAND",
       "roadmap_phase": "Phase 6",
       "dependencies": [
@@ -1709,7 +1709,7 @@
       ],
       "domain": "PORT",
       "priority": "P1",
-      "current_gap_status": "IN_DEVELOPMENT",
+      "historical_snapshot_gap_status": "IN_DEVELOPMENT",
       "backlog_diff": "EXPAND",
       "roadmap_phase": "Phase 6",
       "dependencies": [
@@ -1760,7 +1760,7 @@
       ],
       "domain": "PORT",
       "priority": "P1",
-      "current_gap_status": "COMPONENT_COMPLETE",
+      "historical_snapshot_gap_status": "COMPONENT_COMPLETE",
       "backlog_diff": "EXPAND",
       "roadmap_phase": "Phase 6",
       "dependencies": [
@@ -1811,7 +1811,7 @@
       ],
       "domain": "PROFILE",
       "priority": "P1",
-      "current_gap_status": "IN_DEVELOPMENT",
+      "historical_snapshot_gap_status": "IN_DEVELOPMENT",
       "backlog_diff": "EXPAND",
       "roadmap_phase": "Phase 3",
       "dependencies": [
@@ -1862,7 +1862,7 @@
       ],
       "domain": "REPORT",
       "priority": "P1",
-      "current_gap_status": "READY_FOR_DEVELOPMENT",
+      "historical_snapshot_gap_status": "READY_FOR_DEVELOPMENT",
       "backlog_diff": "ADD",
       "roadmap_phase": "Phase 7",
       "dependencies": [
@@ -1913,7 +1913,7 @@
       ],
       "domain": "EVENT",
       "priority": "P2",
-      "current_gap_status": "COMPONENT_COMPLETE",
+      "historical_snapshot_gap_status": "COMPONENT_COMPLETE",
       "backlog_diff": "EXPAND",
       "roadmap_phase": "Phase 6",
       "dependencies": [
@@ -1964,7 +1964,7 @@
       ],
       "domain": "NEWS",
       "priority": "P2",
-      "current_gap_status": "COMPONENT_COMPLETE",
+      "historical_snapshot_gap_status": "COMPONENT_COMPLETE",
       "backlog_diff": "EXPAND",
       "roadmap_phase": "Phase 6",
       "dependencies": [
@@ -2015,7 +2015,7 @@
       ],
       "domain": "PUB",
       "priority": "P2",
-      "current_gap_status": "COMPONENT_COMPLETE",
+      "historical_snapshot_gap_status": "COMPONENT_COMPLETE",
       "backlog_diff": "EXPAND",
       "roadmap_phase": "Phase 0",
       "dependencies": [],
@@ -2063,7 +2063,7 @@
       ],
       "domain": "REF",
       "priority": "P2",
-      "current_gap_status": "IN_DEVELOPMENT",
+      "historical_snapshot_gap_status": "IN_DEVELOPMENT",
       "backlog_diff": "EXPAND",
       "roadmap_phase": "Phase 6",
       "dependencies": [
@@ -2115,5 +2115,6 @@
       "P2": 4
     },
     "unique_use_cases": 41
-  }
+  },
+  "evidence_boundary": "Per-item historical_snapshot_gap_status values were translated from an unpinned historical implementation snapshot. They are planning context only and must not be treated as current source or delivery status until an authorised revision-pinned inspection and durable run evidence are recorded."
 }
