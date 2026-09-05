@@ -68,7 +68,9 @@ The implementation ledger treats the 41 catalogued business use cases, eight Fou
 |---|---:|---|
 | `VERIFIED_IMPLEMENTED` | 0 | No capability has current revision-pinned implementation and verification evidence |
 | `IMPLEMENTED_AND_VERIFIED` during this assessment | 0 | This assessment made no product or infrastructure implementation claim |
-| `BLOCKED` / current verification unavailable | 50 | 41 use cases lack revision-pinned E2E evidence; eight Foundation packages lack objective completion evidence; the monitor is broken at the current head |
+| `AUTHORISED_UNVERIFIED` | 8 | GO-authorised Foundation packages may execute, but each still lacks its objective completion evidence |
+| `FAILING_ACTIONABLE` | 1 | The repository monitor has a confirmed current-head regression that can be repaired within this repository |
+| `BLOCKED_BY_CONTEXT` | 41 | Business use cases lack revision-pinned application source and E2E evidence, so current implementation verification cannot proceed |
 | `AMBIGUOUS` | 0 | Material uncertainty is represented as explicit `UNKNOWN` or governed blockers |
 | `NOT_REQUIRED` / obsolete | 0 | Historical documents remain evidence records rather than current execution authority |
 
@@ -168,9 +170,9 @@ No application feature is promoted from historical evidence. The prior React/Vit
 **Evidence needed:** resource inventory, source revision, workflow runs, deployment references, negative-path tests, migrations and telemetry evidence.  
 **Validation method:** execute each `WP-AZ-001` through `WP-AZ-008` evidence checklist and record durable references.
 
-### Contradicted documentation
+### Contradicted documentation at the assessed baseline — reconciled by this change
 
-The live executive summary and the older Solution Architecture audit still contain pre-GO wording that describes Foundation execution as blocked and `OQ-016` as open. Those statements conflict with the active 2026-09-05 decision and open-question register. They require reconciliation, while their original historical findings should remain preserved as dated evidence.
+At the pinned `e1bbbe2fa5bcb3570271ac3bdbcba5b3072ad256` baseline, the executive summary and older Solution Architecture audit contained pre-GO wording that described Foundation execution as blocked and `OQ-016` as open. This change reconciles the live documentation by updating the executive summary and adding a current-status amendment to the audit while preserving the original dated findings as historical evidence.
 
 The `docs/02-architecture/` tree also remains an explicitly unresolved canonical-structure exception under `plan.md`.
 
