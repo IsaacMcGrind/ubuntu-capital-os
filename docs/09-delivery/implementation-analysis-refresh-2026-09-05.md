@@ -80,16 +80,16 @@ Historical snapshot labels are not counted as current implementation evidence.
 
 | Work package | Authorised to execute? | Objective evidence gate | Current defensible status |
 |---|---:|---:|---|
-| `WP-AZ-001` Azure baseline | Yes | Not satisfied | `IN_DEVELOPMENT` process state; implementation `UNKNOWN` |
-| `WP-AZ-002` Static Web Apps | Yes | Not satisfied | `IN_DEVELOPMENT` process state; implementation `UNKNOWN` |
-| `WP-AZ-003` Entra External ID | Yes | Not satisfied | `IN_DEVELOPMENT` process state; implementation `UNKNOWN` |
-| `WP-AZ-004` Protected Functions API | Yes | Not satisfied | `IN_DEVELOPMENT` process state; implementation `UNKNOWN` |
-| `WP-AZ-005` Azure SQL | Yes | Not satisfied | `IN_DEVELOPMENT` process state; implementation `UNKNOWN` |
-| `WP-AZ-006` Key Vault / Managed Identity | Yes | Not satisfied | `IN_DEVELOPMENT` process state; implementation `UNKNOWN` |
-| `WP-AZ-007` Application Insights / Monitor | Yes | Not satisfied | `IN_DEVELOPMENT` process state; implementation `UNKNOWN` |
-| `WP-AZ-008` IaC and CI/CD | Yes | Not satisfied | `IN_DEVELOPMENT` process state; implementation `UNKNOWN` |
+| `WP-AZ-001` Azure baseline | Yes | Not satisfied | `READY_FOR_DEVELOPMENT` delivery status; implementation `UNKNOWN` |
+| `WP-AZ-002` Static Web Apps | Yes | Not satisfied | `READY_FOR_DEVELOPMENT` delivery status; implementation `UNKNOWN` |
+| `WP-AZ-003` Entra External ID | Yes | Not satisfied | `READY_FOR_DEVELOPMENT` delivery status; implementation `UNKNOWN` |
+| `WP-AZ-004` Protected Functions API | Yes | Not satisfied | `READY_FOR_DEVELOPMENT` delivery status; implementation `UNKNOWN` |
+| `WP-AZ-005` Azure SQL | Yes | Not satisfied | `READY_FOR_DEVELOPMENT` delivery status; implementation `UNKNOWN` |
+| `WP-AZ-006` Key Vault / Managed Identity | Yes | Not satisfied | `READY_FOR_DEVELOPMENT` delivery status; implementation `UNKNOWN` |
+| `WP-AZ-007` Application Insights / Monitor | Yes | Not satisfied | `READY_FOR_DEVELOPMENT` delivery status; implementation `UNKNOWN` |
+| `WP-AZ-008` IaC and CI/CD | Yes | Not satisfied | `READY_FOR_DEVELOPMENT` delivery status; implementation `UNKNOWN` |
 
-The `IN_DEVELOPMENT` label records that execution is authorised and may be underway. It must not be presented as evidence that implementation exists. Promotion to `COMPONENT_COMPLETE` remains prohibited until each work package's required evidence is accepted.
+`AUTHORISED_GO` is the active gate decision, not evidence that delivery has started. With no recorded execution evidence at this baseline, each work package remains `READY_FOR_DEVELOPMENT`. Transition to `IN_DEVELOPMENT` requires a recorded start or equivalent execution evidence, and promotion to `COMPONENT_COMPLETE` remains prohibited until the package's required evidence is accepted.
 
 ## 6. Business use-case coverage
 
