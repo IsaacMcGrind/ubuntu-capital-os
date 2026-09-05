@@ -39,7 +39,7 @@ Authentication, registration, filtering and sorting behaviour, opportunity-detai
 
 ### Unknown
 
-Settlement mechanics, custody/ownership structure, vendors, cancellation rules, detailed permissions, tax-document production, data correction authority, readiness-decision authority (`OQ-016`), and several failure/recovery behaviours are unknown.
+Settlement mechanics, custody/ownership structure, vendors, cancellation rules, detailed permissions, tax-document production, data correction authority, and several failure/recovery behaviours are unknown. Readiness-decision authority is now defined and `OQ-016` is closed.
 
 ### Contradicted
 
@@ -95,13 +95,13 @@ The controlling phase sequence is defined in `plan.md`.
 - First-slice API, error, audit, persistence, and integration contracts.
 - Threat model, authorization design, privacy/retention, measurable NFRs, recovery and cost guardrails.
 - Tax-document generation and approval.
-- Readiness-decision authority and controlled GO/CONDITIONAL_GO governance (`OQ-016`).
+- Continued enforcement of the now-defined readiness-decision authority and controlled GO/CONDITIONAL_GO governance (`OQ-016`, closed).
 
 ## 10. Critical Open Questions
 
 Critical business, legal, regulatory, permissions, provider, operational and readiness-authority questions remain open. The canonical source is `docs/11-open-questions/open-questions.md`; this summary must not be used to infer that an unresolved question has been closed.
 
-`OQ-016` is the canonical readiness-authority question: it asks who may issue an execution-authorising `GO` or `CONDITIONAL_GO` and what decision-control contract governs that authority. It remains `OPEN` and `CRITICAL`. A non-authorising `NO_GO` may still be recorded while `OQ-016` is open; resolving `OQ-016` is required before `GO` or `CONDITIONAL_GO` can carry execution authority.
+`OQ-016` is closed. The active authority model and decision-control contract are recorded in `docs/09-delivery/foundation-slice-a-go-decision-2026-09-05.md`. Future decisions must retain explicit scope, non-waivable conditions, evidence links and residual-risk controls.
 
 ## 11. Readiness Assessment
 
@@ -111,9 +111,9 @@ The supplied context supports an investor-facing marketplace and portfolio model
 
 **Architecture direction:** materially improved and usable with assumptions, but several architecture/security/NFR and ADR closures remain outstanding.
 
-**Foundation Slice A execution:** `BLOCKED_BY_CONTEXT`.
+**Foundation Slice A execution:** `AUTHORISED_GO` for `WP-AZ-001` through `WP-AZ-008`; delivery package `IN_DEVELOPMENT`; 0 of 8 objective evidence gates satisfied.
 
-The current pre-implementation decision is **`NO-GO FOR UNRESTRICTED IMPLEMENTATION`**. Canonical Phase 0–4 artifacts materially exist, but presence is not approval or completion. The current gate is defined by `AGENT.md`, controlling `plan.md`, `docs/09-delivery/foundation-slice-a-governance-reconciliation.md`, and `docs/09-delivery/pre-implementation-gate-reassessment-2026-09-03.md`. No execution-authorising `GO` or `CONDITIONAL_GO` can open the gate until readiness-decision authority under `OQ-016` is formally defined and the non-waivable integrity and substantive closure conditions are satisfied. A `NO_GO` finding may be recorded or refreshed immediately while blockers remain because it does not authorise execution.
+The active decision is `GO-2026-09-05-FSA-001`, limited to Foundation work packages `WP-AZ-001` through `WP-AZ-008` in Azure DEV/MVP. It authorises execution but does not prove implementation: the Foundation evidence register still records 0 of 8 objective evidence gates satisfied. No business use case is promoted by this decision, and `WP-AZ-009` through `WP-AZ-012` remain blocked by their separate gates.
 
 **First business slice execution:** `BLOCKED_BY_CONTEXT`.
 
@@ -133,3 +133,7 @@ Do **not** restart Phase 0 or recreate canonical artifacts that already exist. E
 8. during authorised delivery, progressively reconcile the **realised** chain as `source -> use case -> backlog -> architecture/design (where applicable) -> implementation evidence -> test/run evidence -> durable evidence -> validation/status`; missing required realised hops block status promotion, E2E readiness and acceptance rather than the earlier start decision.
 
 No use case or `WP-AZ-*` package is promoted by this summary.
+
+## 13. Current Implementation Assessment
+
+The current revision-pinned implementation assessment is `docs/09-delivery/implementation-analysis-refresh-2026-09-05.md`, based on OS commit `e1bbbe2fa5bcb3570271ac3bdbcba5b3072ad256`.

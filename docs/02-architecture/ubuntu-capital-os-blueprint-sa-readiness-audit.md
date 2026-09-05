@@ -13,6 +13,8 @@
 **Amendment scope:** Sections 6, 8 and 11 incorporate the later pre-implementation reassessment, planned-versus-realised traceability model, readiness-authority control, and Phase 5/Phase 6 handoff. The quantitative snapshot in Section 2 remains tied to the original evidence commit.  
 **SA recommendation:** `NO-GO FOR UNRESTRICTED IMPLEMENTATION`
 
+**2026-09-05 current-status amendment:** `GO-2026-09-05-FSA-001` now authorises `WP-AZ-001` through `WP-AZ-008` only. The original and 2026-09-04 audit findings remain historical architecture evidence; any wording below that describes Foundation execution as blocked or readiness authority as undefined is superseded for current execution status by the active GO decision. All eight Foundation completion evidence gates remain unsatisfied, and `WP-AZ-009` through `WP-AZ-012` remain blocked.
+
 ## 1. Purpose
 
 This document audits the Ubuntu Capital OS Blueprint against current repository evidence from a Solution Architect perspective.

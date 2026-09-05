@@ -164,6 +164,7 @@ Operational telemetry produced by Foundation `WP-AZ-007` does not satisfy `UC-AU
 
 ## Active delivery artifacts
 
+- `docs/09-delivery/implementation-analysis-refresh-2026-09-05.md` — current revision-pinned implementation assessment at OS evidence commit `e1bbbe2fa5bcb3570271ac3bdbcba5b3072ad256`.
 - `docs/09-delivery/implementation-analysis-refresh-2026-08-29.md` — historical architecture-aware status snapshot; `HISTORICAL_SNAPSHOT` / `NON_EXECUTABLE`, not an execution authority.
 - `docs/09-delivery/implementation-coverage-gap-matrix.md` — historical/partial 41-use-case snapshot mapping; not a current implementation-status baseline until revision-pinned evidence is recorded.
 - `docs/09-delivery/azure-mvp-platform-delivery-plan.md` — Azure foundation implementation/evidence gates.
