@@ -123,14 +123,14 @@ The discovery/non-binding-EOI concept remains the preferred first vertical slice
 
 Do **not** restart Phase 0 or recreate canonical artifacts that already exist. Execute the current residual-closure queue in `plan.md`:
 
-1. validate existing Phase 0–4 outputs against phase exit criteria and `AGENT.md` integrity rules;
-2. reconcile the **pre-start planned traceability** required for the proposed scope as `source -> use case -> backlog -> architecture/design (where applicable) -> planned implementation target -> planned test/validation target -> planned durable-evidence target -> planned tracker/status`, using stable repository-accessible IDs or targets and aligning `docs/10-traceability/traceability-matrix.md` with `docs/09-delivery/e2e-delivery-tracker.md`;
-3. close or formally bound the business/legal, permissions, data-ownership/state, first-slice technical-contract, architecture/security/NFR and ADR gaps;
-4. disposition the `docs/02-architecture/` canonical-structure exception;
-5. resolve `OQ-016` by defining readiness-decision authority and the controlled decision contract in controlling governance;
-6. while blockers remain, record or refresh a durable `NO_GO` outcome for the evaluated scope. Only after `OQ-016`, applicable planned pre-start traceability and other non-waivable closure conditions are satisfied may an execution-authorising `GO` or `CONDITIONAL_GO` be issued;
-7. only after an effective authorised decision, begin the exact permitted Foundation work packages and capture objective implementation evidence in `docs/09-delivery/foundation-slice-a-evidence-register.md`;
-8. during authorised delivery, progressively reconcile the **realised** chain as `source -> use case -> backlog -> architecture/design (where applicable) -> implementation evidence -> test/run evidence -> durable evidence -> validation/status`; missing required realised hops block status promotion, E2E readiness and acceptance rather than the earlier start decision.
+1. execute only the active `GO-2026-09-05-FSA-001` scope, `WP-AZ-001` through `WP-AZ-008`, in governed dependency order;
+2. capture objective implementation, test/run, deployment and operational evidence in `docs/09-delivery/foundation-slice-a-evidence-register.md` as each Foundation package progresses;
+3. maintain the **realised** chain as `source -> use case -> backlog -> architecture/design (where applicable) -> implementation evidence -> test/run evidence -> durable evidence -> validation/status`; missing required realised hops block status promotion and acceptance;
+4. repair the current repository-monitor path/import regression and validate the repaired workflow at a pinned commit;
+5. formally disposition the `docs/02-architecture/`, `docs/engineering-sessions/` and `output/pdf/` canonical-structure exceptions;
+6. obtain revision-pinned access to the application source and refresh its lint, test, build, security and implementation evidence;
+7. keep `WP-AZ-009` through `WP-AZ-012` blocked until Foundation evidence, Phase 5 shared-capability exit criteria and first-slice integrity requirements reconcile;
+8. close or formally bound the remaining business/legal, permissions, data-ownership/state, first-slice technical-contract, architecture/security/NFR and ADR gaps before their dependent business scope is authorised.
 
 No use case or `WP-AZ-*` package is promoted by this summary.
 
