@@ -1,13 +1,13 @@
 # Ubuntu Capital OS — Foundation Slice A Evidence Register
 
 **Scope:** `WP-AZ-001` through `WP-AZ-008`  
-**Delivery package status:** `IN_DEVELOPMENT`  
+**Delivery package status:** `READY_FOR_DEVELOPMENT`  
 **Execution gate:** `AUTHORISED_GO` via `docs/09-delivery/foundation-slice-a-go-decision-2026-09-05.md`  
 **Execution package:** `docs/09-delivery/foundation-slice-a-execution-package.md`  
 **Governance reconciliation:** `docs/09-delivery/foundation-slice-a-governance-reconciliation.md`  
 **Current readiness decision:** `docs/09-delivery/foundation-slice-a-go-decision-2026-09-05.md`
 
-The 2026-08-30 governance reconciliation remains part of the controlling compatibility chain. Foundation execution is now authorised for `WP-AZ-001` through `WP-AZ-008` under `GO-2026-09-05-FSA-001` with scope and condition controls defined in `docs/09-delivery/foundation-slice-a-go-decision-2026-09-05.md`.
+The 2026-08-30 governance reconciliation remains part of the controlling compatibility chain. Foundation execution is authorised for `WP-AZ-001` through `WP-AZ-008` under `GO-2026-09-05-FSA-001` with scope and condition controls defined in `docs/09-delivery/foundation-slice-a-go-decision-2026-09-05.md`. No realised execution evidence is recorded, so the work packages remain ready to begin.
 
 ## Evidence handling rules
 
@@ -134,14 +134,14 @@ Required before `COMPONENT_COMPLETE`:
 
 | Work package | Recorded delivery status | Execution gate | Evidence gate satisfied? | Evidence IDs | Notes |
 |---|---|---|---:|---|---|
-| WP-AZ-001 | `IN_DEVELOPMENT` | `AUTHORISED_GO` | No | FSA-EV-001 | Authorised to start and record realised evidence |
-| WP-AZ-002 | `IN_DEVELOPMENT` | `AUTHORISED_GO` | No | FSA-EV-002 | Authorised to start and record realised evidence |
-| WP-AZ-003 | `IN_DEVELOPMENT` | `AUTHORISED_GO` | No | FSA-EV-003 | UC-IAM-001 remains independently governed for use-case completion |
-| WP-AZ-004 | `IN_DEVELOPMENT` | `AUTHORISED_GO` | No | FSA-EV-004 | Authorised to start and record realised evidence |
-| WP-AZ-005 | `IN_DEVELOPMENT` | `AUTHORISED_GO` | No | FSA-EV-005 | Authorised to start and record realised evidence |
-| WP-AZ-006 | `IN_DEVELOPMENT` | `AUTHORISED_GO` | No | FSA-EV-006 | Authorised to start and record realised evidence |
-| WP-AZ-007 | `IN_DEVELOPMENT` | `AUTHORISED_GO` | No | FSA-EV-007 | Operational telemetry scope remains distinct from business audit scope |
-| WP-AZ-008 | `IN_DEVELOPMENT` | `AUTHORISED_GO` | No | FSA-EV-008 | Reproducibility/CI-CD evidence required before completion |
+| WP-AZ-001 | `READY_FOR_DEVELOPMENT` | `AUTHORISED_GO` | No | FSA-EV-001 | Authorised to start and record realised evidence |
+| WP-AZ-002 | `READY_FOR_DEVELOPMENT` | `AUTHORISED_GO` | No | FSA-EV-002 | Authorised to start and record realised evidence |
+| WP-AZ-003 | `READY_FOR_DEVELOPMENT` | `AUTHORISED_GO` | No | FSA-EV-003 | UC-IAM-001 remains independently governed for use-case completion |
+| WP-AZ-004 | `READY_FOR_DEVELOPMENT` | `AUTHORISED_GO` | No | FSA-EV-004 | Authorised to start and record realised evidence |
+| WP-AZ-005 | `READY_FOR_DEVELOPMENT` | `AUTHORISED_GO` | No | FSA-EV-005 | Authorised to start and record realised evidence |
+| WP-AZ-006 | `READY_FOR_DEVELOPMENT` | `AUTHORISED_GO` | No | FSA-EV-006 | Authorised to start and record realised evidence |
+| WP-AZ-007 | `READY_FOR_DEVELOPMENT` | `AUTHORISED_GO` | No | FSA-EV-007 | Operational telemetry scope remains distinct from business audit scope |
+| WP-AZ-008 | `READY_FOR_DEVELOPMENT` | `AUTHORISED_GO` | No | FSA-EV-008 | Reproducibility/CI-CD evidence required before completion |
 
-**Foundation Slice A package:** `IN_DEVELOPMENT`.  
-**Foundation Slice A execution gate:** `AUTHORISED_GO` via `GO-2026-09-05-FSA-001` — `WP-AZ-001` through `WP-AZ-008` may start and advance within authorised scope, and progress must be recorded here with objective realised evidence. No infrastructure implementation completion is claimed.
+**Foundation Slice A package:** `READY_FOR_DEVELOPMENT`.  
+**Foundation Slice A execution gate:** `AUTHORISED_GO` via `GO-2026-09-05-FSA-001` — `WP-AZ-001` through `WP-AZ-008` may start and advance within authorised scope. They remain `READY_FOR_DEVELOPMENT` until a recorded start or equivalent realised execution evidence supports a transition, and progress must be recorded here with objective evidence. No infrastructure implementation completion is claimed.
