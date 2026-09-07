@@ -14,7 +14,7 @@
 
 Ubuntu Capital OS is a strong evidence-first reconstruction, architecture and delivery-governance repository. It is not yet a deployable Ubuntu Capital application repository.
 
-Foundation Slice A has bounded Azure DEV/MVP authority under `GO-2026-09-05-FSA-001`, but execution remains deferred until the controlling `plan.md` pre-execution steps 1–9 reconcile, and no Foundation work package has objective completion evidence. A concurrent master commit landed during this assessment and introduced a confirmed repository-monitor regression; the assessment baseline was advanced to that new head. The evidence register still contains eight planned placeholders, all classified `UNKNOWN`, and records zero satisfied evidence gates. The active `GO` therefore proves permission to execute the bounded Foundation scope; it does not prove that Azure resources, application infrastructure or runtime capabilities exist.
+Foundation Slice A has bounded Azure DEV/MVP authority under `GO-2026-09-05-FSA-001`, but execution remains deferred until the controlling `plan.md` pre-execution steps 1–9 reconcile, and no Foundation work package has objective completion evidence. A concurrent master commit landed during this assessment and introduced a confirmed repository-monitor regression; the assessment baseline was advanced to that new head. The evidence register still contains eight planned placeholders, all classified `UNKNOWN`, and records zero satisfied evidence gates. The active `GO` therefore proves the bounded scope and decision authority recorded on 2026-09-05; it must be revalidated after the controlling prerequisites close before it permits execution, and it does not prove that Azure resources, application infrastructure or runtime capabilities exist.
 
 The stated application repository, `HarleyJoker/ubuntu-capital-platform`, returned `404 Not Found` through the connected GitHub installation during this assessment (`SRC-018` in `docs/00-context/source-inventory.md`). This dated access outcome does not prove repository absence; its current branch, commit, source contents and runtime behaviour remain unavailable. Historical React/Vite observations are retained as supporting evidence only and cannot be promoted to current implementation status.
 
@@ -182,7 +182,7 @@ The `docs/02-architecture/` tree also remains an explicitly unresolved canonical
 
 **Decision:** `GO` remains active for `WP-AZ-001` through `WP-AZ-008` only.
 
-This analysis does not revoke or broaden the decision. Execution may proceed within that scope only after the controlling `plan.md` pre-execution steps 1–9 reconcile, and no work package may be promoted without objective evidence.
+This analysis does not revoke or broaden the recorded decision. After the controlling `plan.md` pre-execution prerequisites reconcile, a formal readiness review must revalidate or replace the decision before execution may proceed; no work package may be promoted without objective evidence.
 
 ### Foundational product capabilities and first business slice
 
@@ -208,8 +208,8 @@ Settlement, custody, binding investment, eligibility, NDA, valuation, tax, priva
 3. Close or formally bound the remaining P0 business/legal, permissions, data-ownership/state, first-slice technical-contract, architecture/security/NFR and ADR gaps.
 4. Reconcile the pre-start planned traceability chain, structured data, links, stable IDs, counts, statuses, open questions and risks.
 5. Reconcile all live summaries, roadmaps and delivery/gate artifacts, including formal disposition of `docs/02-architecture/`, `docs/engineering-sessions/` and `output/pdf/` in the canonical repository structure.
-6. Preserve the defined readiness-decision authority and formal `GO-2026-09-05-FSA-001` review as recorded outcomes of the controlling plan's authority and readiness steps; the GO does not bypass the preceding reconciliation work.
-7. Only after the preceding controlling-plan steps reconcile, execute the exact permitted subset of `WP-AZ-001` through `WP-AZ-008` in governed dependency order; do not begin source-dependent packages until the application revision is pinned.
+6. Preserve the defined readiness-decision authority, then—after steps 1–5 reconcile—run and record a new or explicitly revalidated formal readiness review. `GO-2026-09-05-FSA-001` establishes the bounded scope and prior decision but cannot substitute for that post-reconciliation review.
+7. Only after the preceding controlling-plan steps reconcile and the formal readiness review records an effective `GO` or `CONDITIONAL_GO`, execute its exact permitted subset of `WP-AZ-001` through `WP-AZ-008` in governed dependency order; do not begin source-dependent packages until the application revision is pinned.
 8. Populate `FSA-EV-001` through `FSA-EV-008` with realised implementation, test/run, deployment and operational evidence, and maintain the realised traceability chain as work progresses.
 9. Repair the confirmed repository-monitor regression in a separate focused change, add automated tests, and validate the workflow at a pinned repaired commit.
 10. Re-run this analysis after material source or Foundation evidence changes, and keep all business-slice and regulated-scope work blocked until their distinct gates open.
