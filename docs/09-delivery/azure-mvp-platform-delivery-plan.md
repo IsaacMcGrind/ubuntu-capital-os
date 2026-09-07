@@ -1,6 +1,6 @@
 # Ubuntu Capital OS — Azure MVP Platform Delivery Plan
 
-**Status:** `IN_DEVELOPMENT`  
+**Status:** `READY_FOR_DEVELOPMENT`  
 **Architecture decision:** `ARCH-ADR-001`  
 **Purpose:** convert the chosen Azure MVP platform direction into evidence-gated delivery work without treating infrastructure selection as implementation completion.
 
