@@ -1,7 +1,9 @@
 # Ubuntu Capital OS — Foundation Slice A Execution Package
 
+> **Current Foundation decision — 2026-09-07:** Thembinkosi Mtsweni completed the formal post-prerequisite readiness review and revalidated `GO-2026-09-05-FSA-001`. The execution gate for `WP-AZ-001` through `WP-AZ-008` is `OPEN_FOR_AUTHORISED_EXECUTION` in Azure DEV/MVP. This authorises governed start only; implementation, completion, business-use-case and production claims remain evidence-gated. Source: `SRC-020`.
+
 **Status:** `READY_FOR_DEVELOPMENT`  
-**Execution gate:** `CLOSED_PENDING_REVALIDATION`; `GO-2026-09-05-FSA-001` is prior bounded scope/authority evidence only  
+**Execution gate:** `OPEN_FOR_AUTHORISED_EXECUTION`; `GO-2026-09-05-FSA-001` was revalidated on 2026-09-07  
 **Execution scope:** `WP-AZ-001` through `WP-AZ-008`  
 **Architecture decision:** `ARCH-ADR-001`  
 **Parent delivery plan:** `docs/09-delivery/azure-mvp-platform-delivery-plan.md`  
@@ -21,7 +23,7 @@ Foundation Slice A does **not** make any Ubuntu Capital business use case `COMPL
 
 ### Hard start gate
 
-`GO-2026-09-05-FSA-001` records the exact prior Foundation scope and authority, but package execution remains deferred until the controlling `plan.md` pre-execution steps reconcile and a formal readiness review revalidates or replaces that decision.
+`GO-2026-09-05-FSA-001` records the exact Foundation scope and authority. The project owner completed the formal post-prerequisite readiness review on 2026-09-07, so package execution may begin in governed dependency order.
 
 `AGENT.md` and `plan.md` remain controlling. The 2026-08-30 governance reconciliation remains part of the compatibility chain, and bounded execution authority is recorded in `docs/09-delivery/foundation-slice-a-go-decision-2026-09-05.md` (`GO-2026-09-05-FSA-001`). Only after the controlling prerequisites reconcile and a post-reconciliation formal review records an effective `GO` or `CONDITIONAL_GO` may work begin within its exact permitted subset of `WP-AZ-001` through `WP-AZ-008`; status promotion remains evidence-gated.
 
@@ -29,7 +31,7 @@ Foundation Slice A does **not** make any Ubuntu Capital business use case `COMPL
 
 The following rules are controlling:
 
-1. `GO-2026-09-05-FSA-001` records prior bounded authority for `WP-AZ-001` through `WP-AZ-008`; implementation may begin only after the controlling `plan.md` pre-execution prerequisites reconcile and a formal readiness review records an effective decision, and must remain within that decision's exact controls.
+1. `GO-2026-09-05-FSA-001` is the effective bounded authority for `WP-AZ-001` through `WP-AZ-008` after the 2026-09-07 formal review; implementation may begin and must remain within that decision's exact controls.
 2. Architecture selection is not implementation evidence.
 3. A work package advances only when its evidence gate is satisfied.
 4. No use case becomes `COMPLETE` without objective E2E evidence.
