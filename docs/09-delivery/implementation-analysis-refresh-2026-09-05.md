@@ -1,12 +1,14 @@
 # Ubuntu Capital OS — Implementation Analysis Refresh
 
+> **Post-assessment Foundation decision — 2026-09-07:** Thembinkosi Mtsweni completed the formal post-prerequisite readiness review and revalidated `GO-2026-09-05-FSA-001`. The execution gate for `WP-AZ-001` through `WP-AZ-008` is now `OPEN_FOR_AUTHORISED_EXECUTION` in Azure DEV/MVP. This supersedes only the pending-revalidation statements in this dated assessment; its implementation, business-slice, production and evidence findings remain unchanged. Source: `SRC-020`.
+
 **Document status:** `CURRENT_IMPLEMENTATION_ASSESSMENT`  
 **Assessment date:** 2026-09-05  
 **Repository:** `IsaacMcGrind/ubuntu-capital-os`  
 **Evidence branch:** `master`  
 **Evidence commit:** `e1bbbe2fa5bcb3570271ac3bdbcba5b3072ad256`  
 **Controlling instructions:** `.agent.md`, `AGENT.md`, `plan.md`  
-**Current Foundation decision:** `GO-2026-09-05-FSA-001` — recorded bounded scope; `CLOSED_PENDING_REVALIDATION` and non-executable  
+**Current Foundation decision:** `GO-2026-09-05-FSA-001` — revalidated and effective; `OPEN_FOR_AUTHORISED_EXECUTION`  
 **Overall implementation assessment:** `PARTIALLY_READY`  
 **Production readiness:** `NOT_READY`
 
@@ -14,7 +16,7 @@
 
 Ubuntu Capital OS is a strong evidence-first reconstruction, architecture and delivery-governance repository. It is not yet a deployable Ubuntu Capital application repository.
 
-Foundation Slice A has bounded Azure DEV/MVP authority under `GO-2026-09-05-FSA-001`, but execution remains deferred until the controlling `plan.md` pre-execution steps 1–9 reconcile, and no Foundation work package has objective completion evidence. A concurrent master commit landed during this assessment and introduced a confirmed repository-monitor regression; the assessment baseline was advanced to that new head. The evidence register still contains eight planned placeholders, all classified `UNKNOWN`, and records zero satisfied evidence gates. The recorded `GO` proves only the bounded scope and decision authority recorded on 2026-09-05; it must be revalidated after the controlling prerequisites close before it permits execution, and it does not prove that Azure resources, application infrastructure or runtime capabilities exist.
+Foundation Slice A has bounded Azure DEV/MVP authority under `GO-2026-09-05-FSA-001`, but execution remains deferred until the controlling `plan.md` pre-execution steps 1–9 reconcile, and no Foundation work package has objective completion evidence. A concurrent master commit landed during this assessment and introduced a confirmed repository-monitor regression; the assessment baseline was advanced to that new head. The evidence register still contains eight planned placeholders, all classified `UNKNOWN`, and records zero satisfied evidence gates. The `GO` was formally revalidated by the project owner on 2026-09-07 and permits governed Foundation execution; it does not prove that Azure resources, application infrastructure or runtime capabilities exist.
 
 The stated application repository, `HarleyJoker/ubuntu-capital-platform`, returned `404 Not Found` through the connected GitHub installation during this assessment (`SRC-018` in `docs/00-context/source-inventory.md`). This dated access outcome does not prove repository absence; its current branch, commit, source contents and runtime behaviour remain unavailable. Historical React/Vite observations are retained as supporting evidence only and cannot be promoted to current implementation status.
 
@@ -68,7 +70,7 @@ The implementation ledger treats the 41 catalogued business use cases, eight Fou
 |---|---:|---|
 | `VERIFIED_IMPLEMENTED` | 0 | No capability has current revision-pinned implementation and verification evidence |
 | `IMPLEMENTED_AND_VERIFIED` during this assessment | 0 | This assessment made no product or infrastructure implementation claim |
-| `GATE_CLOSED_UNVERIFIED` | 8 | The recorded GO defines the bounded Foundation scope, but no package is executable pending prerequisite closure and formal revalidation; each package also lacks objective completion evidence |
+| `AUTHORISED_UNSTARTED` | 8 | The revalidated GO authorises the bounded Foundation scope, but no package has recorded start or objective completion evidence |
 | `FAILING_ACTIONABLE` | 1 | The repository monitor has a confirmed current-head regression that can be repaired within this repository |
 | `BLOCKED_BY_CONTEXT` | 41 | Business use cases lack revision-pinned application source and E2E evidence, so current implementation verification cannot proceed |
 | `AMBIGUOUS` | 0 | Material uncertainty is represented as explicit `UNKNOWN` or governed blockers |
@@ -80,16 +82,16 @@ Historical snapshot labels are not counted as current implementation evidence.
 
 | Work package | Executable now? | Objective evidence gate | Current defensible status |
 |---|---:|---:|---|
-| `WP-AZ-001` Azure baseline | No — pending revalidation | Not satisfied | `READY_FOR_DEVELOPMENT`; execution `BLOCKED_BY_CONTEXT`; implementation `UNKNOWN` |
-| `WP-AZ-002` Static Web Apps | No — pending revalidation | Not satisfied | `READY_FOR_DEVELOPMENT`; execution `BLOCKED_BY_CONTEXT`; implementation `UNKNOWN` |
-| `WP-AZ-003` Entra External ID | No — pending revalidation | Not satisfied | `READY_FOR_DEVELOPMENT`; execution `BLOCKED_BY_CONTEXT`; implementation `UNKNOWN` |
-| `WP-AZ-004` Protected Functions API | No — pending revalidation | Not satisfied | `READY_FOR_DEVELOPMENT`; execution `BLOCKED_BY_CONTEXT`; implementation `UNKNOWN` |
-| `WP-AZ-005` Azure SQL | No — pending revalidation | Not satisfied | `READY_FOR_DEVELOPMENT`; execution `BLOCKED_BY_CONTEXT`; implementation `UNKNOWN` |
-| `WP-AZ-006` Key Vault / Managed Identity | No — pending revalidation | Not satisfied | `READY_FOR_DEVELOPMENT`; execution `BLOCKED_BY_CONTEXT`; implementation `UNKNOWN` |
-| `WP-AZ-007` Application Insights / Monitor | No — pending revalidation | Not satisfied | `READY_FOR_DEVELOPMENT`; execution `BLOCKED_BY_CONTEXT`; implementation `UNKNOWN` |
-| `WP-AZ-008` IaC and CI/CD | No — pending revalidation | Not satisfied | `READY_FOR_DEVELOPMENT`; execution `BLOCKED_BY_CONTEXT`; implementation `UNKNOWN` |
+| `WP-AZ-001` Azure baseline | Yes — revalidated 2026-09-07 | Not satisfied | `READY_FOR_DEVELOPMENT`; execution `AUTHORISED`; implementation `UNKNOWN` |
+| `WP-AZ-002` Static Web Apps | Yes — revalidated 2026-09-07 | Not satisfied | `READY_FOR_DEVELOPMENT`; execution `AUTHORISED`; implementation `UNKNOWN` |
+| `WP-AZ-003` Entra External ID | Yes — revalidated 2026-09-07 | Not satisfied | `READY_FOR_DEVELOPMENT`; execution `AUTHORISED`; implementation `UNKNOWN` |
+| `WP-AZ-004` Protected Functions API | Yes — revalidated 2026-09-07 | Not satisfied | `READY_FOR_DEVELOPMENT`; execution `AUTHORISED`; implementation `UNKNOWN` |
+| `WP-AZ-005` Azure SQL | Yes — revalidated 2026-09-07 | Not satisfied | `READY_FOR_DEVELOPMENT`; execution `AUTHORISED`; implementation `UNKNOWN` |
+| `WP-AZ-006` Key Vault / Managed Identity | Yes — revalidated 2026-09-07 | Not satisfied | `READY_FOR_DEVELOPMENT`; execution `AUTHORISED`; implementation `UNKNOWN` |
+| `WP-AZ-007` Application Insights / Monitor | Yes — revalidated 2026-09-07 | Not satisfied | `READY_FOR_DEVELOPMENT`; execution `AUTHORISED`; implementation `UNKNOWN` |
+| `WP-AZ-008` IaC and CI/CD | Yes — revalidated 2026-09-07 | Not satisfied | `READY_FOR_DEVELOPMENT`; execution `AUTHORISED`; implementation `UNKNOWN` |
 
-The effective execution gate is `CLOSED_PENDING_REVALIDATION`. The prior GO remains bounded scope and authority evidence only. Each work package retains its `READY_FOR_DEVELOPMENT` preparation status but is not executable. After a formal review records a new or explicitly revalidated effective decision, transition to `IN_DEVELOPMENT` requires a recorded start or equivalent execution evidence, and promotion to `COMPONENT_COMPLETE` remains prohibited until the package's required evidence is accepted.
+The effective execution gate is `OPEN_FOR_AUTHORISED_EXECUTION`. The project owner formally revalidated the bounded GO on 2026-09-07. Each work package retains `READY_FOR_DEVELOPMENT` until a recorded start or equivalent realised execution evidence supports transition to `IN_DEVELOPMENT`; promotion to `COMPONENT_COMPLETE` remains prohibited until the package's required evidence is accepted.
 
 ## 6. Business use-case coverage
 
@@ -141,7 +143,7 @@ The latest previously inspected workflow run, `33930899000`, succeeded against t
 
 ### Confirmed
 
-1. The recorded project-owner `GO` defines the prior bounded scope for `WP-AZ-001` through `WP-AZ-008` in Azure DEV/MVP but is non-executable pending formal revalidation.
+1. The project-owner `GO` defines and authorises the bounded scope for `WP-AZ-001` through `WP-AZ-008` in Azure DEV/MVP after formal revalidation on 2026-09-07.
 2. `OQ-016` is closed and readiness-decision authority is defined.
 3. All canonical files required by the `plan.md` repository-output tree are materially present.
 4. The repository monitor is broken at the current head; its last successful inspected run belongs to the previous revision.
@@ -180,9 +182,9 @@ The `docs/02-architecture/` tree also remains an explicitly unresolved canonical
 
 ### Foundation Slice A
 
-**Decision:** prior bounded `GO` retained as evidence; effective execution gate is `CLOSED_PENDING_REVALIDATION` for `WP-AZ-001` through `WP-AZ-008`.
+**Decision:** bounded `GO` formally revalidated; effective execution gate is `OPEN_FOR_AUTHORISED_EXECUTION` for `WP-AZ-001` through `WP-AZ-008`.
 
-This analysis does not erase or broaden the recorded decision. It marks that decision non-executable. After the controlling `plan.md` pre-execution prerequisites reconcile, a formal readiness review must revalidate or replace it before execution may proceed; no work package may be promoted without objective evidence.
+The 2026-09-07 formal review makes the recorded decision executable without broadening it. Foundation work may begin in governed dependency order; no work package may be promoted without objective evidence.
 
 ### Foundational product capabilities and first business slice
 
@@ -208,7 +210,7 @@ Settlement, custody, binding investment, eligibility, NDA, valuation, tax, priva
 3. Close or formally bound the remaining P0 business/legal, permissions, data-ownership/state, first-slice technical-contract, architecture/security/NFR and ADR gaps.
 4. Reconcile the pre-start planned traceability chain, structured data, links, stable IDs, counts, statuses, open questions and risks.
 5. Reconcile all live summaries, roadmaps and delivery/gate artifacts, including formal disposition of `docs/02-architecture/`, `docs/engineering-sessions/` and `output/pdf/` in the canonical repository structure.
-6. Preserve the defined readiness-decision authority, then—after steps 1–5 reconcile—run and record a new or explicitly revalidated formal readiness review. `GO-2026-09-05-FSA-001` establishes the bounded scope and prior decision but cannot substitute for that post-reconciliation review.
+6. Preserve the defined readiness-decision authority and the completed 2026-09-07 formal review that explicitly revalidated `GO-2026-09-05-FSA-001`.
 7. Only after the preceding controlling-plan steps reconcile and the formal readiness review records an effective `GO` or `CONDITIONAL_GO`, execute its exact permitted subset of `WP-AZ-001` through `WP-AZ-008` in governed dependency order; do not begin source-dependent packages until the application revision is pinned.
 8. Populate `FSA-EV-001` through `FSA-EV-008` with realised implementation, test/run, deployment and operational evidence, and maintain the realised traceability chain as work progresses.
 9. Repair the confirmed repository-monitor regression in a separate focused change, add automated tests, and validate the workflow at a pinned repaired commit.
@@ -235,6 +237,6 @@ Settlement, custody, binding investment, eligibility, NDA, valuation, tax, priva
 
 ## 12. Final assessment
 
-Ubuntu Capital OS contains a governed Foundation specification and a recorded bounded scope decision, but Foundation execution is not currently authorised pending formal revalidation. It is not implementation-complete, business-slice-ready or production-ready.
+Ubuntu Capital OS contains a governed Foundation specification and an effective bounded scope decision. Foundation execution is authorised, but it has not started and is not implementation-complete, business-slice-ready or production-ready.
 
 The next valuable evidence is not another unpinned prototype description. It is a revision-pinned application checkout and the first accepted Foundation implementation records.
