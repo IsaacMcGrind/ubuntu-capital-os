@@ -9,7 +9,7 @@
 **Amendment scope:** the current findings and execution sequence incorporate PR #27's readiness-authority control (`OQ-016`), linked risk (`RSK-006`), planned-versus-realised traceability model, pre-start E2E criterion, Phase 5/Phase 6 handoff, and reconciled live delivery entry points. The original PR #24 baseline remains preserved as the starting snapshot rather than being represented as containing those later controls.  
 **Controlling documents:** `AGENT.md`, `plan.md`  
 **Current Foundation gate at assessment time:** this reassessment plus `docs/09-delivery/foundation-slice-a-governance-reconciliation.md` and a formal readiness decision  
-**Superseded by active decision:** `docs/09-delivery/foundation-slice-a-go-decision-2026-09-05.md` (`GO-2026-09-05-FSA-001`) for current execution authority
+**Superseded by effective revalidated decision:** `docs/09-delivery/foundation-slice-a-go-decision-2026-09-05.md` (`GO-2026-09-05-FSA-001`) for current execution authority
 **Supersedes for current-state reporting:** the stale assumption that canonical Phase 0–4 outputs are absent
 
 ## 1. Purpose
@@ -19,6 +19,12 @@ This reassessment reconciles the 2026-08-30 Foundation governance finding agains
 The earlier governance finding correctly blocked Foundation execution because required Phase 0–4 outputs and repository-integrity conditions did not reconcile at that time. Since then, the repository has materially advanced. The current gate must therefore be based on the quality, approval and internal consistency of the artifacts that now exist—not on an outdated assertion that those directories or files are missing.
 
 Any Foundation delivery artifact that still points to `docs/09-delivery/foundation-slice-a-governance-reconciliation.md` must be read through that document's compatibility rule: the older checklist is necessary but not sufficient, and this reassessment plus an effective formal readiness decision are mandatory before Foundation implementation starts or advances.
+
+## 1.1 Current status amendment — 2026-09-07
+
+Thembinkosi Mtsweni, as Ubuntu Capital project owner and final approving authority, completed the formal post-prerequisite readiness review and explicitly revalidated `GO-2026-09-05-FSA-001`. `OQ-016` is closed, readiness-decision authority is defined, and the effective gate for `WP-AZ-001` through `WP-AZ-008` is `OPEN_FOR_AUTHORISED_EXECUTION` in Azure DEV/MVP. Source: `SRC-020`.
+
+For current execution decisions, this amendment supersedes the historical `OQ-016`-open, authority-`UNKNOWN`, effective-`NO_GO`, and pre-revalidation queue statements retained in Sections 3, 4, 4.1 and 6. Those statements remain part of the dated assessment history and must not be treated as current blockers. The revalidated GO authorises governed start only: all eight implementation evidence gates remain unsatisfied, package status remains `READY_FOR_DEVELOPMENT` until start evidence is recorded, `WP-AZ-009` through `WP-AZ-012` remain separately blocked, and production remains unauthorised.
 
 ## 2. Current repository-output presence
 
