@@ -101,7 +101,7 @@ The controlling phase sequence is defined in `plan.md`.
 
 Critical business, legal, regulatory, permissions, provider, operational and readiness-authority questions remain open. The canonical source is `docs/11-open-questions/open-questions.md`; this summary must not be used to infer that an unresolved question has been closed.
 
-`OQ-016` is closed. The active authority model and decision-control contract are recorded in `docs/09-delivery/foundation-slice-a-go-decision-2026-09-05.md`. Future decisions must retain explicit scope, non-waivable conditions, evidence links and residual-risk controls.
+`OQ-016` is closed. The authority model and decision-control contract are recorded in `docs/09-delivery/foundation-slice-a-go-decision-2026-09-05.md`; its prior bounded GO is currently non-executable pending formal revalidation. Future decisions must retain explicit scope, non-waivable conditions, evidence links and residual-risk controls.
 
 ## 11. Readiness Assessment
 
@@ -111,9 +111,9 @@ The supplied context supports an investor-facing marketplace and portfolio model
 
 **Architecture direction:** materially improved and usable with assumptions, but several architecture/security/NFR and ADR closures remain outstanding.
 
-**Foundation Slice A execution:** `AUTHORISED_GO` for `WP-AZ-001` through `WP-AZ-008`; work packages remain `READY_FOR_DEVELOPMENT`; 0 of 8 objective evidence gates satisfied.
+**Foundation Slice A execution:** `CLOSED_PENDING_REVALIDATION` for `WP-AZ-001` through `WP-AZ-008`; preparation status remains `READY_FOR_DEVELOPMENT`; 0 of 8 objective evidence gates satisfied.
 
-The active decision is `GO-2026-09-05-FSA-001`, limited to Foundation work packages `WP-AZ-001` through `WP-AZ-008` in Azure DEV/MVP. It authorises execution but does not prove implementation: the Foundation evidence register still records 0 of 8 objective evidence gates satisfied. No business use case is promoted by this decision, and `WP-AZ-009` through `WP-AZ-012` remain blocked by their separate gates.
+The recorded prior decision is `GO-2026-09-05-FSA-001`, limited to Foundation work packages `WP-AZ-001` through `WP-AZ-008` in Azure DEV/MVP. It preserves bounded scope and authority evidence but does not currently authorise execution and does not prove implementation: the Foundation evidence register still records 0 of 8 objective evidence gates satisfied. No business use case is promoted by this decision, and `WP-AZ-009` through `WP-AZ-012` remain blocked by their separate gates.
 
 **First business slice execution:** `BLOCKED_BY_CONTEXT`.
 
