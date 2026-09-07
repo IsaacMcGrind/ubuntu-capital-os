@@ -328,10 +328,10 @@ The first business slice may move to `READY_FOR_ACCEPTANCE` only when all of the
 3. Only then execute **WP-AZ-001 through WP-AZ-008** using `docs/09-delivery/foundation-slice-a-execution-package.md`.
 4. Capture objective realised evidence continuously in `docs/09-delivery/foundation-slice-a-evidence-register.md` and reconcile status only when each work-package evidence gate is satisfied.
 5. Maintain planned-to-realised traceability links in `docs/10-traceability/traceability-matrix.md` and `docs/09-delivery/e2e-delivery-tracker.md` as implementation/testing evidence is produced.
-4. Keep downstream scope controls in place: `WP-AZ-009` through `WP-AZ-012` remain blocked until Foundation evidence gates and first-slice start-gate prerequisites are satisfied.
-5. If critical contradictions or non-waivable integrity failures emerge during execution, pause affected scope and issue a governance review update before status promotion.
-6. Reconcile all Foundation evidence gates.
-7. Complete and evidence the `plan.md` Phase 5 foundational product capabilities and its exit criteria.
-8. Confirm the separate first-business-slice start gate is fully satisfied.
-9. Only then start or advance **WP-AZ-009 through WP-AZ-012** as Phase 6 business-slice work.
-10. Do not consider the first slice `READY_FOR_ACCEPTANCE` until its business-audit, E2E, tracker and traceability evidence reconciles.
+6. Keep downstream scope controls in place: `WP-AZ-009` through `WP-AZ-012` remain blocked until Foundation evidence gates and first-slice start-gate prerequisites are satisfied.
+7. If critical contradictions or non-waivable integrity failures emerge during execution, pause affected scope and issue a governance review update before status promotion.
+8. Reconcile all Foundation evidence gates.
+9. Complete and evidence the `plan.md` Phase 5 foundational product capabilities and its exit criteria.
+10. Confirm the separate first-business-slice start gate is fully satisfied.
+11. Only then start or advance **WP-AZ-009 through WP-AZ-012** as Phase 6 business-slice work.
+12. Do not consider the first slice `READY_FOR_ACCEPTANCE` until its business-audit, E2E, tracker and traceability evidence reconciles.
