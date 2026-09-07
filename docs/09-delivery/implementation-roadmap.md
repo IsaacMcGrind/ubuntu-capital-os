@@ -29,7 +29,7 @@ This roadmap separates faithful system reconstruction, Azure platform enablement
 
 ## Phase 1A — Azure MVP Platform Foundation
 
-**Status:** `IN_DEVELOPMENT` under authorised `GO-2026-09-05-FSA-001` for `WP-AZ-001` through `WP-AZ-008`.
+**Status:** `READY_FOR_DEVELOPMENT` under authorised `GO-2026-09-05-FSA-001` for `WP-AZ-001` through `WP-AZ-008`; no realised start evidence is recorded.
 
 **Primary delivery plan:** `docs/09-delivery/azure-mvp-platform-delivery-plan.md`.  
 **Execution package:** `docs/09-delivery/foundation-slice-a-execution-package.md`.  
