@@ -1,7 +1,7 @@
 # Ubuntu Capital OS — Foundation Slice A Execution Package
 
 **Status:** `READY_FOR_DEVELOPMENT`  
-**Execution gate:** `AUTHORISED_GO` via `docs/09-delivery/foundation-slice-a-go-decision-2026-09-05.md`  
+**Execution gate:** `CLOSED_PENDING_REVALIDATION`; `GO-2026-09-05-FSA-001` is prior bounded scope/authority evidence only  
 **Execution scope:** `WP-AZ-001` through `WP-AZ-008`  
 **Architecture decision:** `ARCH-ADR-001`  
 **Parent delivery plan:** `docs/09-delivery/azure-mvp-platform-delivery-plan.md`  
