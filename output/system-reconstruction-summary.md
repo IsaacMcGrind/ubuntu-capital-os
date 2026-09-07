@@ -1,5 +1,7 @@
 # System Reconstruction Summary
 
+> **Current Foundation decision — 2026-09-07:** Thembinkosi Mtsweni completed the formal post-prerequisite readiness review and revalidated `GO-2026-09-05-FSA-001`. The execution gate for `WP-AZ-001` through `WP-AZ-008` is `OPEN_FOR_AUTHORISED_EXECUTION` in Azure DEV/MVP. This authorises governed start only; implementation, completion, business-use-case and production claims remain evidence-gated. Source: `SRC-020`.
+
 ## 1. System Purpose
 
 Ubuntu Capital OS is being modelled as a private-market investment platform inspired by the supplied reference system. The visible product enables investors to discover investment opportunities and navigate portfolio areas including pending investments, holdings, performance, activity, reports, and tax documents. A complete production reconstruction would also require regulated onboarding, controlled due diligence, commitment, settlement, administration, compliance, support, and recovery capabilities that are not yet fully evidenced.
@@ -101,7 +103,7 @@ The controlling phase sequence is defined in `plan.md`.
 
 Critical business, legal, regulatory, permissions, provider, operational and readiness-authority questions remain open. The canonical source is `docs/11-open-questions/open-questions.md`; this summary must not be used to infer that an unresolved question has been closed.
 
-`OQ-016` is closed. The authority model and decision-control contract are recorded in `docs/09-delivery/foundation-slice-a-go-decision-2026-09-05.md`; its prior bounded GO is currently non-executable pending formal revalidation. Future decisions must retain explicit scope, non-waivable conditions, evidence links and residual-risk controls.
+`OQ-016` is closed. The authority model and decision-control contract are recorded in `docs/09-delivery/foundation-slice-a-go-decision-2026-09-05.md`; its bounded GO was formally revalidated and made effective on 2026-09-07. Future decisions must retain explicit scope, non-waivable conditions, evidence links and residual-risk controls.
 
 ## 11. Readiness Assessment
 
@@ -111,9 +113,9 @@ The supplied context supports an investor-facing marketplace and portfolio model
 
 **Architecture direction:** materially improved and usable with assumptions, but several architecture/security/NFR and ADR closures remain outstanding.
 
-**Foundation Slice A execution:** `CLOSED_PENDING_REVALIDATION` for `WP-AZ-001` through `WP-AZ-008`; preparation status remains `READY_FOR_DEVELOPMENT`; 0 of 8 objective evidence gates satisfied.
+**Foundation Slice A execution:** `OPEN_FOR_AUTHORISED_EXECUTION` for `WP-AZ-001` through `WP-AZ-008`; package status remains `READY_FOR_DEVELOPMENT`; 0 of 8 objective evidence gates satisfied.
 
-The recorded prior decision is `GO-2026-09-05-FSA-001`, limited to Foundation work packages `WP-AZ-001` through `WP-AZ-008` in Azure DEV/MVP. It preserves bounded scope and authority evidence but does not currently authorise execution and does not prove implementation: the Foundation evidence register still records 0 of 8 objective evidence gates satisfied. No business use case is promoted by this decision, and `WP-AZ-009` through `WP-AZ-012` remain blocked by their separate gates.
+The effective decision is `GO-2026-09-05-FSA-001`, limited to Foundation work packages `WP-AZ-001` through `WP-AZ-008` in Azure DEV/MVP. It authorises governed execution but does not prove implementation: the Foundation evidence register still records 0 of 8 objective evidence gates satisfied. No business use case is promoted by this decision, and `WP-AZ-009` through `WP-AZ-012` remain blocked by their separate gates.
 
 **First business slice execution:** `BLOCKED_BY_CONTEXT`.
 
@@ -128,8 +130,8 @@ Do **not** restart Phase 0 or recreate canonical artifacts that already exist. E
 3. close or formally bound the remaining P0 business/legal, permissions, data-ownership/state, first-slice technical-contract, architecture/security/NFR and ADR gaps;
 4. reconcile the pre-start planned traceability chain, structured data, links, stable IDs, counts, statuses, open questions and risks;
 5. reconcile this summary, `README.md`, the roadmap and all live delivery/gate artifacts, including formal disposition of the `docs/02-architecture/`, `docs/engineering-sessions/` and `output/pdf/` structure exceptions;
-6. preserve the defined readiness-decision authority, then—after steps 1–5 reconcile—run and record a new or explicitly revalidated formal readiness review; `GO-2026-09-05-FSA-001` establishes the bounded scope and prior decision but cannot substitute for that post-reconciliation review;
-7. only after the preceding controlling-plan steps reconcile and the formal readiness review records an effective `GO` or `CONDITIONAL_GO`, begin its exact permitted subset of `WP-AZ-001` through `WP-AZ-008` in governed dependency order; do not begin source-dependent packages such as `WP-AZ-002` and `WP-AZ-003` until the application branch and commit are pinned;
+6. preserve the defined readiness-decision authority and the completed 2026-09-07 formal review that explicitly revalidated `GO-2026-09-05-FSA-001`;
+7. begin the exact permitted `WP-AZ-001` through `WP-AZ-008` scope in governed dependency order under the effective GO; do not begin source-dependent packages such as `WP-AZ-002` and `WP-AZ-003` until the application branch and commit are pinned;
 8. capture objective implementation, test/run, deployment and operational evidence in `docs/09-delivery/foundation-slice-a-evidence-register.md`, and maintain the realised traceability chain as each package progresses;
 9. repair the repository-monitor path/import regression in a separate focused change and validate the repaired workflow at a pinned commit;
 10. keep `WP-AZ-009` through `WP-AZ-012` blocked until Foundation evidence, Phase 5 shared-capability exit criteria and first-slice integrity requirements reconcile.
