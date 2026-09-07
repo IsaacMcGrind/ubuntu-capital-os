@@ -1,5 +1,7 @@
 # Ubuntu Capital OS — Azure MVP Platform Delivery Plan
 
+> **Current Foundation decision — 2026-09-07:** Thembinkosi Mtsweni completed the formal post-prerequisite readiness review and revalidated `GO-2026-09-05-FSA-001`. The execution gate for `WP-AZ-001` through `WP-AZ-008` is `OPEN_FOR_AUTHORISED_EXECUTION` in Azure DEV/MVP. This authorises governed start only; implementation, completion, business-use-case and production claims remain evidence-gated. Source: `SRC-020`.
+
 **Status:** `READY_FOR_DEVELOPMENT`  
 **Architecture decision:** `ARCH-ADR-001`  
 **Purpose:** convert the chosen Azure MVP platform direction into evidence-gated delivery work without treating infrastructure selection as implementation completion.
@@ -16,7 +18,7 @@ The foundation must prove deployability, authentication, protected backend execu
 
 `plan.md` remains the controlling implementation sequence. This Azure plan is a subordinate delivery plan and does not replace or close plan-required reconstruction outputs.
 
-`GO-2026-09-05-FSA-001` records bounded authority for `WP-AZ-001` through `WP-AZ-008`, but execution remains deferred until the controlling `plan.md` pre-execution steps reconcile and a formal readiness review revalidates or replaces that decision. The governance chain remains `AGENT.md`, `plan.md`, and `docs/09-delivery/foundation-slice-a-governance-reconciliation.md`; the GO does not bypass unresolved integrity prerequisites, and all status promotions remain evidence-gated.
+`GO-2026-09-05-FSA-001` is the effective bounded authority for `WP-AZ-001` through `WP-AZ-008` after the 2026-09-07 formal project-owner review. The governance chain remains `AGENT.md`, `plan.md`, and `docs/09-delivery/foundation-slice-a-governance-reconciliation.md`; execution must follow governed dependency order, and all status promotions remain evidence-gated.
 
 ## 2. Delivery sequence
 
@@ -324,7 +326,7 @@ The first business slice may move to `READY_FOR_ACCEPTANCE` only when all of the
 ## 9. Next action
 
 1. Complete and reconcile the controlling `plan.md` pre-execution steps: Phase 0–4 validation, residual-gap classification, application-source pinning, P0/architecture closure, planned traceability, live-artifact reconciliation, readiness authority and the formal readiness review.
-2. Preserve the defined readiness-decision authority and `GO-2026-09-05-FSA-001` as the prior bounded decision, then run and record a new or explicitly revalidated formal readiness review after those prerequisites reconcile.
+2. Preserve the defined readiness-decision authority and the effective 2026-09-07 revalidation of `GO-2026-09-05-FSA-001`.
 3. Only if that post-reconciliation review records an effective `GO` or `CONDITIONAL_GO`, execute its exact permitted subset of **WP-AZ-001 through WP-AZ-008** using `docs/09-delivery/foundation-slice-a-execution-package.md`.
 4. Capture objective realised evidence continuously in `docs/09-delivery/foundation-slice-a-evidence-register.md` and reconcile status only when each work-package evidence gate is satisfied.
 5. Maintain planned-to-realised traceability links in `docs/10-traceability/traceability-matrix.md` and `docs/09-delivery/e2e-delivery-tracker.md` as implementation/testing evidence is produced.
