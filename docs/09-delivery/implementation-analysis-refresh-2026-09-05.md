@@ -203,14 +203,16 @@ Settlement, custody, binding investment, eligibility, NDA, valuation, tax, priva
 
 ## 10. Dependency-first execution queue
 
-1. Obtain authorised access to `HarleyJoker/ubuntu-capital-platform` or record the replacement canonical application repository.
-2. Pin the exact application branch and commit, then capture current lint, test, build and dependency results durably.
-3. Execute Foundation work in the governed dependency order beginning with `WP-AZ-001`; establish version-controlled IaC and CI/CD early enough to prevent undocumented portal-only state.
-4. Populate `FSA-EV-001` through `FSA-EV-008` with real implementation, test/run, deployment and operational evidence.
-5. Repair the confirmed repository-monitor regression, add automated tests, and preserve the intended report semantics.
-6. Formally disposition `docs/02-architecture/`, `docs/engineering-sessions/` and `output/pdf/` in the canonical repository structure.
-7. Re-run this analysis from the pinned application revision after Foundation evidence changes.
-8. Keep all business-slice and regulated-scope work blocked until their distinct gates open.
+1. Validate the existing Phase 0–4 outputs against their exit criteria and `AGENT.md` integrity rules, then classify residual gaps without recreating accepted artifacts.
+2. Obtain authorised access to `HarleyJoker/ubuntu-capital-platform` or record the replacement canonical repository; pin its exact branch and commit, then capture current lint, test, build, security and implementation evidence.
+3. Close or formally bound the remaining P0 business/legal, permissions, data-ownership/state, first-slice technical-contract, architecture/security/NFR and ADR gaps.
+4. Reconcile the pre-start planned traceability chain, structured data, links, stable IDs, counts, statuses, open questions and risks.
+5. Reconcile all live summaries, roadmaps and delivery/gate artifacts, including formal disposition of `docs/02-architecture/`, `docs/engineering-sessions/` and `output/pdf/` in the canonical repository structure.
+6. Preserve the defined readiness-decision authority and formal `GO-2026-09-05-FSA-001` review as recorded outcomes of the controlling plan's authority and readiness steps; the GO does not bypass the preceding reconciliation work.
+7. Only after the preceding controlling-plan steps reconcile, execute the exact permitted subset of `WP-AZ-001` through `WP-AZ-008` in governed dependency order; do not begin source-dependent packages until the application revision is pinned.
+8. Populate `FSA-EV-001` through `FSA-EV-008` with realised implementation, test/run, deployment and operational evidence, and maintain the realised traceability chain as work progresses.
+9. Repair the confirmed repository-monitor regression in a separate focused change, add automated tests, and validate the workflow at a pinned repaired commit.
+10. Re-run this analysis after material source or Foundation evidence changes, and keep all business-slice and regulated-scope work blocked until their distinct gates open.
 
 ## 11. Verification performed
 
