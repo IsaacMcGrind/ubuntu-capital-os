@@ -70,7 +70,7 @@ The implementation ledger treats the 41 catalogued business use cases, eight Fou
 |---|---:|---|
 | `VERIFIED_IMPLEMENTED` | 0 | No capability has current revision-pinned implementation and verification evidence |
 | `IMPLEMENTED_AND_VERIFIED` during this assessment | 0 | This assessment made no product or infrastructure implementation claim |
-| `AUTHORISED_UNSTARTED` | 8 | The revalidated GO authorises the bounded Foundation scope, but no package has recorded start or objective completion evidence |
+| `READY_FOR_DEVELOPMENT` | 8 | The revalidated GO authorises the bounded Foundation scope, but no package has recorded start or objective completion evidence |
 | `FAILING_ACTIONABLE` | 1 | The repository monitor has a confirmed current-head regression that can be repaired within this repository |
 | `BLOCKED_BY_CONTEXT` | 41 | Business use cases lack revision-pinned application source and E2E evidence, so current implementation verification cannot proceed |
 | `AMBIGUOUS` | 0 | Material uncertainty is represented as explicit `UNKNOWN` or governed blockers |
@@ -82,14 +82,14 @@ Historical snapshot labels are not counted as current implementation evidence.
 
 | Work package | Executable now? | Objective evidence gate | Current defensible status |
 |---|---:|---:|---|
-| `WP-AZ-001` Azure baseline | Yes — revalidated 2026-09-07 | Not satisfied | `READY_FOR_DEVELOPMENT`; execution `AUTHORISED`; implementation `UNKNOWN` |
-| `WP-AZ-002` Static Web Apps | Yes — revalidated 2026-09-07 | Not satisfied | `READY_FOR_DEVELOPMENT`; execution `AUTHORISED`; implementation `UNKNOWN` |
-| `WP-AZ-003` Entra External ID | Yes — revalidated 2026-09-07 | Not satisfied | `READY_FOR_DEVELOPMENT`; execution `AUTHORISED`; implementation `UNKNOWN` |
-| `WP-AZ-004` Protected Functions API | Yes — revalidated 2026-09-07 | Not satisfied | `READY_FOR_DEVELOPMENT`; execution `AUTHORISED`; implementation `UNKNOWN` |
-| `WP-AZ-005` Azure SQL | Yes — revalidated 2026-09-07 | Not satisfied | `READY_FOR_DEVELOPMENT`; execution `AUTHORISED`; implementation `UNKNOWN` |
-| `WP-AZ-006` Key Vault / Managed Identity | Yes — revalidated 2026-09-07 | Not satisfied | `READY_FOR_DEVELOPMENT`; execution `AUTHORISED`; implementation `UNKNOWN` |
-| `WP-AZ-007` Application Insights / Monitor | Yes — revalidated 2026-09-07 | Not satisfied | `READY_FOR_DEVELOPMENT`; execution `AUTHORISED`; implementation `UNKNOWN` |
-| `WP-AZ-008` IaC and CI/CD | Yes — revalidated 2026-09-07 | Not satisfied | `READY_FOR_DEVELOPMENT`; execution `AUTHORISED`; implementation `UNKNOWN` |
+| `WP-AZ-001` Azure baseline | Yes — revalidated 2026-09-07 | Not satisfied | `READY_FOR_DEVELOPMENT`; execution gate `OPEN_FOR_AUTHORISED_EXECUTION`; implementation `UNKNOWN` |
+| `WP-AZ-002` Static Web Apps | Yes — revalidated 2026-09-07 | Not satisfied | `READY_FOR_DEVELOPMENT`; execution gate `OPEN_FOR_AUTHORISED_EXECUTION`; implementation `UNKNOWN` |
+| `WP-AZ-003` Entra External ID | Yes — revalidated 2026-09-07 | Not satisfied | `READY_FOR_DEVELOPMENT`; execution gate `OPEN_FOR_AUTHORISED_EXECUTION`; implementation `UNKNOWN` |
+| `WP-AZ-004` Protected Functions API | Yes — revalidated 2026-09-07 | Not satisfied | `READY_FOR_DEVELOPMENT`; execution gate `OPEN_FOR_AUTHORISED_EXECUTION`; implementation `UNKNOWN` |
+| `WP-AZ-005` Azure SQL | Yes — revalidated 2026-09-07 | Not satisfied | `READY_FOR_DEVELOPMENT`; execution gate `OPEN_FOR_AUTHORISED_EXECUTION`; implementation `UNKNOWN` |
+| `WP-AZ-006` Key Vault / Managed Identity | Yes — revalidated 2026-09-07 | Not satisfied | `READY_FOR_DEVELOPMENT`; execution gate `OPEN_FOR_AUTHORISED_EXECUTION`; implementation `UNKNOWN` |
+| `WP-AZ-007` Application Insights / Monitor | Yes — revalidated 2026-09-07 | Not satisfied | `READY_FOR_DEVELOPMENT`; execution gate `OPEN_FOR_AUTHORISED_EXECUTION`; implementation `UNKNOWN` |
+| `WP-AZ-008` IaC and CI/CD | Yes — revalidated 2026-09-07 | Not satisfied | `READY_FOR_DEVELOPMENT`; execution gate `OPEN_FOR_AUTHORISED_EXECUTION`; implementation `UNKNOWN` |
 
 The effective execution gate is `OPEN_FOR_AUTHORISED_EXECUTION`. The project owner formally revalidated the bounded GO on 2026-09-07. Each work package retains `READY_FOR_DEVELOPMENT` until a recorded start or equivalent realised execution evidence supports transition to `IN_DEVELOPMENT`; promotion to `COMPONENT_COMPLETE` remains prohibited until the package's required evidence is accepted.
 
