@@ -16,7 +16,7 @@ Ubuntu Capital OS is a strong evidence-first reconstruction, architecture and de
 
 Foundation Slice A is authorised to start in Azure DEV/MVP, but no Foundation work package has objective completion evidence. A concurrent master commit landed during this assessment and introduced a confirmed repository-monitor regression; the assessment baseline was advanced to that new head. The evidence register still contains eight planned placeholders, all classified `UNKNOWN`, and records zero satisfied evidence gates. The active `GO` therefore proves permission to execute the bounded Foundation scope; it does not prove that Azure resources, application infrastructure or runtime capabilities exist.
 
-The stated application repository, `HarleyJoker/ubuntu-capital-platform`, returned `404 Not Found` through the connected GitHub installation during this assessment. Its current branch, commit, source contents and runtime behaviour remain unavailable. Historical React/Vite observations are retained as supporting evidence only and cannot be promoted to current implementation status.
+The stated application repository, `HarleyJoker/ubuntu-capital-platform`, returned `404 Not Found` through the connected GitHub installation during this assessment (`SRC-018` in `docs/00-context/source-inventory.md`). This dated access outcome does not prove repository absence; its current branch, commit, source contents and runtime behaviour remain unavailable. Historical React/Vite observations are retained as supporting evidence only and cannot be promoted to current implementation status.
 
 No business use case has objective end-to-end completion evidence.
 
@@ -117,7 +117,7 @@ The current source gap prevents a defensible refreshed allocation of the 41 use 
 
 ### MON-001 — Repository change monitor
 
-**Status:** `BLOCKED` by confirmed current-head regression  
+**Status:** `FAILING_ACTIONABLE` — confirmed current-head regression  
 **Affected commit:** `e1bbbe2fa5bcb3570271ac3bdbcba5b3072ad256`
 
 The current master revision:
