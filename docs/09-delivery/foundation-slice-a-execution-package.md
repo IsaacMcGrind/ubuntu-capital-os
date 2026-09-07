@@ -1,6 +1,6 @@
 # Ubuntu Capital OS — Foundation Slice A Execution Package
 
-**Status:** `IN_DEVELOPMENT`  
+**Status:** `READY_FOR_DEVELOPMENT`  
 **Execution gate:** `AUTHORISED_GO` via `docs/09-delivery/foundation-slice-a-go-decision-2026-09-05.md`  
 **Execution scope:** `WP-AZ-001` through `WP-AZ-008`  
 **Architecture decision:** `ARCH-ADR-001`  
