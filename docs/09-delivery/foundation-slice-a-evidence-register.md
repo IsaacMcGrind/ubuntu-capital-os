@@ -1,13 +1,15 @@
 # Ubuntu Capital OS — Foundation Slice A Evidence Register
 
+> **Current Foundation decision — 2026-09-07:** Thembinkosi Mtsweni completed the formal post-prerequisite readiness review and revalidated `GO-2026-09-05-FSA-001`. The execution gate for `WP-AZ-001` through `WP-AZ-008` is `OPEN_FOR_AUTHORISED_EXECUTION` in Azure DEV/MVP. This authorises governed start only; implementation, completion, business-use-case and production claims remain evidence-gated. Source: `SRC-020`.
+
 **Scope:** `WP-AZ-001` through `WP-AZ-008`  
-**Delivery package status:** `IN_DEVELOPMENT`  
-**Execution gate:** `AUTHORISED_GO` via `docs/09-delivery/foundation-slice-a-go-decision-2026-09-05.md`  
+**Delivery package status:** `READY_FOR_DEVELOPMENT`  
+**Execution gate:** `OPEN_FOR_AUTHORISED_EXECUTION`; `GO-2026-09-05-FSA-001` was revalidated on 2026-09-07  
 **Execution package:** `docs/09-delivery/foundation-slice-a-execution-package.md`  
 **Governance reconciliation:** `docs/09-delivery/foundation-slice-a-governance-reconciliation.md`  
 **Current readiness decision:** `docs/09-delivery/foundation-slice-a-go-decision-2026-09-05.md`
 
-The 2026-08-30 governance reconciliation remains part of the controlling compatibility chain. Foundation execution is now authorised for `WP-AZ-001` through `WP-AZ-008` under `GO-2026-09-05-FSA-001` with scope and condition controls defined in `docs/09-delivery/foundation-slice-a-go-decision-2026-09-05.md`.
+The 2026-08-30 governance reconciliation remains part of the controlling compatibility chain. `GO-2026-09-05-FSA-001` is effective for `WP-AZ-001` through `WP-AZ-008` after the 2026-09-07 project-owner formal review. No realised execution evidence is recorded, so the work packages remain `READY_FOR_DEVELOPMENT` until governed start evidence is captured.
 
 ## Evidence handling rules
 
@@ -17,7 +19,7 @@ The 2026-08-30 governance reconciliation remains part of the controlling compati
 - Evidence classification must use `CONFIRMED`, `INFERRED`, `UNKNOWN` or `CONTRADICTED`.
 - Architecture/design documents are not implementation evidence unless the record explicitly says the evidence only proves design intent.
 - External evidence links must be stable enough for an authorised project reviewer to retrieve later.
-- Foundation execution is authorised only for the exact scope in `GO-2026-09-05-FSA-001`; no unlisted work package is authorised by this register.
+- The formal post-prerequisite review revalidated `GO-2026-09-05-FSA-001` on 2026-09-07. Execution may proceed only for that decision's exact scope; this register records evidence and does not broaden the authority.
 - Capture objective realised implementation, test/run, deployment and operational evidence here as it is produced. Evidence capture documents authorised work; it does not by itself promote delivery status.
 - After the start gate is satisfied, a work package cannot move to `COMPONENT_COMPLETE` until its required evidence gate is reconciled here or in an explicitly linked canonical evidence artifact and the governed status transition is recorded.
 - `WP-AZ-008` requires version-controlled infrastructure provisioning/reconciliation evidence; manual Azure configuration alone cannot satisfy the Foundation reproducibility gate.
@@ -26,7 +28,7 @@ The 2026-08-30 governance reconciliation remains part of the controlling compati
 
 | Evidence ID | Work package | Evidence type | Reference / location | Captured date | Owner | Classification | Proves | Does not prove | Review status |
 |---|---|---|---|---|---|---|---|---|---|
-| FSA-EV-000 | WP-AZ-001 to WP-AZ-008 | Readiness decision evidence | `docs/09-delivery/foundation-slice-a-go-decision-2026-09-05.md` | 2026-09-05 | Project Owner | `CONFIRMED` | Foundation execution gate is open for the authorised scope in AZURE DEV/MVP | Completion of any work-package evidence gate or any business use-case completion | ACCEPTED |
+| FSA-EV-000 | WP-AZ-001 to WP-AZ-008 | Readiness decision evidence | `docs/09-delivery/foundation-slice-a-go-decision-2026-09-05.md` | 2026-09-05 | Project Owner | `CONFIRMED` | Records the bounded Foundation scope and decision authority as of 2026-09-05 | Post-reconciliation permission to start, completion of any work-package evidence gate, or any business use-case completion | ACCEPTED |
 | FSA-EV-001 | WP-AZ-001 | Planned evidence placeholder | Pending | Pending | Pending | `UNKNOWN` | Nothing yet; placeholder for Azure resource baseline evidence | Provisioning, RBAC or cost controls | OPEN |
 | FSA-EV-002 | WP-AZ-002 | Planned evidence placeholder | Pending | Pending | Pending | `UNKNOWN` | Nothing yet; placeholder for Static Web Apps deployment evidence | Successful deployment | OPEN |
 | FSA-EV-003 | WP-AZ-003 | Planned evidence placeholder | Pending | Pending | Pending | `UNKNOWN` | Nothing yet; placeholder for Entra External ID evidence | Authentication integration | OPEN |
@@ -38,7 +40,7 @@ The 2026-08-30 governance reconciliation remains part of the controlling compati
 
 ## Work-package evidence checklist
 
-The checklists below become executable evidence gates only after the current Foundation start gate is satisfied by the controlling governance chain and formal readiness decision.
+The checklists below become executable evidence gates only after the controlling `plan.md` pre-execution steps reconcile and a subsequent formal readiness review records an effective Foundation decision.
 
 ### WP-AZ-001 — Azure baseline
 
@@ -134,14 +136,14 @@ Required before `COMPONENT_COMPLETE`:
 
 | Work package | Recorded delivery status | Execution gate | Evidence gate satisfied? | Evidence IDs | Notes |
 |---|---|---|---:|---|---|
-| WP-AZ-001 | `IN_DEVELOPMENT` | `AUTHORISED_GO` | No | FSA-EV-001 | Authorised to start and record realised evidence |
-| WP-AZ-002 | `IN_DEVELOPMENT` | `AUTHORISED_GO` | No | FSA-EV-002 | Authorised to start and record realised evidence |
-| WP-AZ-003 | `IN_DEVELOPMENT` | `AUTHORISED_GO` | No | FSA-EV-003 | UC-IAM-001 remains independently governed for use-case completion |
-| WP-AZ-004 | `IN_DEVELOPMENT` | `AUTHORISED_GO` | No | FSA-EV-004 | Authorised to start and record realised evidence |
-| WP-AZ-005 | `IN_DEVELOPMENT` | `AUTHORISED_GO` | No | FSA-EV-005 | Authorised to start and record realised evidence |
-| WP-AZ-006 | `IN_DEVELOPMENT` | `AUTHORISED_GO` | No | FSA-EV-006 | Authorised to start and record realised evidence |
-| WP-AZ-007 | `IN_DEVELOPMENT` | `AUTHORISED_GO` | No | FSA-EV-007 | Operational telemetry scope remains distinct from business audit scope |
-| WP-AZ-008 | `IN_DEVELOPMENT` | `AUTHORISED_GO` | No | FSA-EV-008 | Reproducibility/CI-CD evidence required before completion |
+| WP-AZ-001 | `READY_FOR_DEVELOPMENT` | `OPEN_FOR_AUTHORISED_EXECUTION` | Yes | FSA-EV-001 | Authorised scope; start authorised; capture start evidence before status transition |
+| WP-AZ-002 | `READY_FOR_DEVELOPMENT` | `OPEN_FOR_AUTHORISED_EXECUTION` | Yes | FSA-EV-002 | Authorised scope; start authorised; capture start evidence before status transition |
+| WP-AZ-003 | `READY_FOR_DEVELOPMENT` | `OPEN_FOR_AUTHORISED_EXECUTION` | Yes | FSA-EV-003 | UC-IAM-001 remains independently governed for use-case completion |
+| WP-AZ-004 | `READY_FOR_DEVELOPMENT` | `OPEN_FOR_AUTHORISED_EXECUTION` | Yes | FSA-EV-004 | Authorised scope; start authorised; capture start evidence before status transition |
+| WP-AZ-005 | `READY_FOR_DEVELOPMENT` | `OPEN_FOR_AUTHORISED_EXECUTION` | Yes | FSA-EV-005 | Authorised scope; start authorised; capture start evidence before status transition |
+| WP-AZ-006 | `READY_FOR_DEVELOPMENT` | `OPEN_FOR_AUTHORISED_EXECUTION` | Yes | FSA-EV-006 | Authorised scope; start authorised; capture start evidence before status transition |
+| WP-AZ-007 | `READY_FOR_DEVELOPMENT` | `OPEN_FOR_AUTHORISED_EXECUTION` | Yes | FSA-EV-007 | Operational telemetry scope remains distinct from business audit scope |
+| WP-AZ-008 | `READY_FOR_DEVELOPMENT` | `OPEN_FOR_AUTHORISED_EXECUTION` | Yes | FSA-EV-008 | Reproducibility/CI-CD evidence required before completion |
 
-**Foundation Slice A package:** `IN_DEVELOPMENT`.  
-**Foundation Slice A execution gate:** `AUTHORISED_GO` via `GO-2026-09-05-FSA-001` — `WP-AZ-001` through `WP-AZ-008` may start and advance within authorised scope, and progress must be recorded here with objective realised evidence. No infrastructure implementation completion is claimed.
+**Foundation Slice A package:** `READY_FOR_DEVELOPMENT`.  
+**Foundation Slice A effective gate:** `OPEN_FOR_AUTHORISED_EXECUTION` — `GO-2026-09-05-FSA-001` was revalidated by the project owner on 2026-09-07 for `WP-AZ-001` through `WP-AZ-008`. The packages remain `READY_FOR_DEVELOPMENT`; a recorded start or equivalent realised execution evidence is required before transition, and progress must be recorded here with objective evidence. No infrastructure implementation completion is claimed.

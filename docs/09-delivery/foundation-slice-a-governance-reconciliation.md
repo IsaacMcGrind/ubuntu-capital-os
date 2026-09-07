@@ -1,12 +1,14 @@
 # Ubuntu Capital OS — Foundation Slice A Governance Reconciliation
 
+> **Current Foundation decision — 2026-09-07:** Thembinkosi Mtsweni completed the formal post-prerequisite readiness review and revalidated `GO-2026-09-05-FSA-001`. The execution gate for `WP-AZ-001` through `WP-AZ-008` is `OPEN_FOR_AUTHORISED_EXECUTION` in Azure DEV/MVP. This authorises governed start only; implementation, completion, business-use-case and production claims remain evidence-gated. Source: `SRC-020`.
+
 **Status:** `ANALYSIS_IN_PROGRESS`  
 **Evidence classification:** `CONFIRMED`  
 **Assessment date:** 2026-08-30  
 **Related merged PR:** #18 — Foundation Slice A execution package  
 **Controlling documents:** `AGENT.md`, `plan.md`  
 **Related delivery artifacts:** `docs/09-delivery/implementation-roadmap.md`, `docs/09-delivery/azure-mvp-platform-delivery-plan.md`, `docs/09-delivery/foundation-slice-a-execution-package.md`, `docs/09-delivery/foundation-slice-a-evidence-register.md`
-**Active execution-authorising decision:** `docs/09-delivery/foundation-slice-a-go-decision-2026-09-05.md` (`GO-2026-09-05-FSA-001`)
+**Effective revalidated decision:** `docs/09-delivery/foundation-slice-a-go-decision-2026-09-05.md` (`GO-2026-09-05-FSA-001`); effective execution gate: `OPEN_FOR_AUTHORISED_EXECUTION`
 
 ## Current applicability and compatibility rule
 
@@ -17,15 +19,15 @@ For any live reference to this document from the Foundation execution package, A
 1. this governance reconciliation;
 2. `docs/09-delivery/pre-implementation-gate-reassessment-2026-09-03.md`;
 3. the current `AGENT.md` and controlling `plan.md`; and
-4. a formally recorded execution-authorising `GO` or explicitly scoped `CONDITIONAL_GO` readiness decision issued only after readiness authority is defined.
+4. a new or explicitly revalidated execution-authorising `GO` or scoped `CONDITIONAL_GO`, recorded by the defined readiness authority only after the controlling prerequisites reconcile.
 
-Satisfying only the 2026-08-30 checklist is **necessary but not sufficient** to start or advance `WP-AZ-001` through `WP-AZ-008`. The 2026-09-03 reassessment adds the current ADR, security, privacy, NFR, traceability, validation, business/legal, architecture-structure, readiness-authority, and formal-readiness-decision requirements. Until those requirements are satisfied or validly dispositioned under the controlling governance, Foundation execution remains `BLOCKED_BY_CONTEXT`.
+Satisfying only the 2026-08-30 checklist is **necessary but not sufficient** to start or advance `WP-AZ-001` through `WP-AZ-008`. The 2026-09-03 reassessment adds the current ADR, security, privacy, NFR, traceability, validation, business/legal, architecture-structure, readiness-authority, and formal-readiness-decision requirements. Those requirements were accepted as reconciled in the project-owner formal review recorded by `SRC-020`. Foundation execution is now authorised, while implementation status and completion remain evidence-gated.
 
 The traceability terms in this document use the current two-stage model from `plan.md` and the reassessment: **planned pre-start traceability** is required before an execution-authorising decision; **realised implementation/test/durable-evidence traceability** is produced only after authorised delivery begins and governs later status promotion and acceptance. No retained wording in this compatibility document may be read as requiring post-build evidence before the start decision.
 
 ## 2026-09-05 execution amendment
 
-The execution-authorising `GO` decision in `docs/09-delivery/foundation-slice-a-go-decision-2026-09-05.md` is now active for Foundation scope `WP-AZ-001` through `WP-AZ-008`. Historical blocked-state wording in this document reflects the 2026-08-30 to 2026-09-03 assessment period and must be interpreted through the active decision record.
+`GO-2026-09-05-FSA-001` is the current execution authority for `WP-AZ-001` through `WP-AZ-008` after the project-owner formal review recorded by `SRC-020`. The effective gate is `OPEN_FOR_AUTHORISED_EXECUTION`: historical undefined-authority, open-`OQ-016`, and interim pending-revalidation wording is superseded. Evidence gates and all non-waivable boundaries remain in force.
 
 ## 1. Purpose
 
@@ -143,8 +145,8 @@ The following rules remain controlling:
 The active sequence is:
 
 1. Apply `docs/09-delivery/pre-implementation-gate-reassessment-2026-09-03.md` to the current repository baseline and close or disposition its residual ADR, security, privacy, NFR, business/legal, planned-traceability, validation, and repository-structure items.
-2. Resolve canonical `OQ-016` before any execution-authorising `GO` or `CONDITIONAL_GO`; while blockers remain, record or refresh `NO_GO` as the non-authorising outcome.
-3. Only after an effective `GO` or authorised `CONDITIONAL_GO`, execute the permitted `WP-AZ-001` through `WP-AZ-008` scope and populate `docs/09-delivery/foundation-slice-a-evidence-register.md` with objective implementation evidence.
+2. Preserve the closed `OQ-016` authority outcome and the effective formal revalidation recorded on 2026-09-07.
+3. Begin the permitted `WP-AZ-001` through `WP-AZ-008` scope in governed dependency order and populate `docs/09-delivery/foundation-slice-a-evidence-register.md` with objective implementation evidence.
 4. During authorised Foundation delivery, reconcile realised implementation/test-run/durable-evidence/status links against the planned chain; do not promote a package while a required realised hop is missing.
 5. Reconcile all Foundation evidence gates; do not infer business-use-case completion from infrastructure completion.
 6. Complete and evidence the `plan.md` Phase 5 shared foundational product capabilities and its exit criteria, including role/permission enforcement, protected API bootstrap/authorization testing, shared validation/error handling, business audit-event framework, persistence/observability foundations, and test harness/quality gates. Do not require the `WP-AZ-009` opportunity catalogue/API as an input to its own start gate.
@@ -158,7 +160,7 @@ This governance reconciliation may move beyond `ANALYSIS_IN_PROGRESS` only when:
 
 - the repository no longer relies on a parallel-work interpretation that conflicts with the controlling integrity rules;
 - required pre-implementation outputs and **planned pre-start traceability** are reconciled before Foundation implementation starts;
-- an execution-authorising `GO` or explicitly scoped `CONDITIONAL_GO` is recorded before any authorised Foundation work starts, with readiness authority and decision controls resolved under the current reassessment;
+- after all controlling prerequisites reconcile, the defined readiness authority records a new or explicitly revalidated execution-authorising `GO` or scoped `CONDITIONAL_GO` before any Foundation work starts;
 - the `docs/02-architecture/` structure exception has been formally dispositioned or the canonical structure has been amended;
 - Blob Storage is explicitly selected-but-deferred rather than silently omitted;
 - operational telemetry is distinguished from business audit evidence;

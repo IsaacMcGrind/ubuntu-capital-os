@@ -1,7 +1,9 @@
 # Ubuntu Capital OS — Foundation Slice A Execution Package
 
-**Status:** `IN_DEVELOPMENT`  
-**Execution gate:** `AUTHORISED_GO` via `docs/09-delivery/foundation-slice-a-go-decision-2026-09-05.md`  
+> **Current Foundation decision — 2026-09-07:** Thembinkosi Mtsweni completed the formal post-prerequisite readiness review and revalidated `GO-2026-09-05-FSA-001`. The execution gate for `WP-AZ-001` through `WP-AZ-008` is `OPEN_FOR_AUTHORISED_EXECUTION` in Azure DEV/MVP. This authorises governed start only; implementation, completion, business-use-case and production claims remain evidence-gated. Source: `SRC-020`.
+
+**Status:** `READY_FOR_DEVELOPMENT`  
+**Execution gate:** `OPEN_FOR_AUTHORISED_EXECUTION`; `GO-2026-09-05-FSA-001` was revalidated on 2026-09-07  
 **Execution scope:** `WP-AZ-001` through `WP-AZ-008`  
 **Architecture decision:** `ARCH-ADR-001`  
 **Parent delivery plan:** `docs/09-delivery/azure-mvp-platform-delivery-plan.md`  
@@ -21,15 +23,15 @@ Foundation Slice A does **not** make any Ubuntu Capital business use case `COMPL
 
 ### Hard start gate
 
-This package is now authorised to begin Azure Foundation implementation for the exact approved scope.
+`GO-2026-09-05-FSA-001` records the exact Foundation scope and authority. The project owner completed the formal post-prerequisite readiness review on 2026-09-07, so package execution may begin in governed dependency order.
 
-`AGENT.md` and `plan.md` remain controlling. The 2026-08-30 governance reconciliation remains part of the compatibility chain, and active execution authority is recorded in `docs/09-delivery/foundation-slice-a-go-decision-2026-09-05.md` (`GO-2026-09-05-FSA-001`). Work must remain within `WP-AZ-001` through `WP-AZ-008`, and status promotion remains evidence-gated.
+`AGENT.md` and `plan.md` remain controlling. The 2026-08-30 governance reconciliation remains part of the compatibility chain, and bounded execution authority is recorded in `docs/09-delivery/foundation-slice-a-go-decision-2026-09-05.md` (`GO-2026-09-05-FSA-001`). Only after the controlling prerequisites reconcile and a post-reconciliation formal review records an effective `GO` or `CONDITIONAL_GO` may work begin within its exact permitted subset of `WP-AZ-001` through `WP-AZ-008`; status promotion remains evidence-gated.
 
 ## 2. Governing evidence rules
 
 The following rules are controlling:
 
-1. `WP-AZ-001` through `WP-AZ-008` implementation is authorised by `GO-2026-09-05-FSA-001` and must remain within its exact scope and controls.
+1. `GO-2026-09-05-FSA-001` is the effective bounded authority for `WP-AZ-001` through `WP-AZ-008` after the 2026-09-07 formal review; implementation may begin and must remain within that decision's exact controls.
 2. Architecture selection is not implementation evidence.
 3. A work package advances only when its evidence gate is satisfied.
 4. No use case becomes `COMPLETE` without objective E2E evidence.
@@ -385,9 +387,9 @@ Sensitive Azure values must be redacted. The evidence register must not contain 
 
 Default recorded status for `WP-AZ-001` through `WP-AZ-008` remains `READY_FOR_DEVELOPMENT` unless stronger evidence already exists and is reconciled into this repository.
 
-Until the current Foundation start gate is satisfied and the formal readiness decision authorizes work, **no work package may transition to `IN_DEVELOPMENT` or `COMPONENT_COMPLETE`**.
+Until the controlling `plan.md` pre-execution steps reconcile and a subsequent formal readiness review records an effective Foundation decision, **no work package may transition to `IN_DEVELOPMENT` or `COMPONENT_COMPLETE`**.
 
-After the gate is satisfied, allowed transitions are:
+After those prerequisites reconcile, allowed transitions are:
 
 ```text
 READY_FOR_DEVELOPMENT

@@ -6,6 +6,8 @@ Ubuntu Capital OS is the evidence-first system reconstruction and delivery repos
 
 `PARTIALLY_READY`
 
+Current revision-pinned assessment: `docs/09-delivery/implementation-analysis-refresh-2026-09-05.md` at OS evidence commit `e1bbbe2fa5bcb3570271ac3bdbcba5b3072ad256`.
+
 Architecture readiness has materially improved: the repository now contains a system boundary, high-level logical architecture, priority use-case architecture map, detailed UC-IAM-001 architecture analysis, a Phase 1 MVP architecture Blueprint, and a confirmed Azure MVP cloud platform direction.
 
 Application-source readiness cannot currently be established from reproducible repository evidence. Historical artifacts describe a predominantly React/Vite front-end prototype, but the inspected branch, commit SHA, run identity, and durable raw evidence were not recorded. Current source verification is therefore `BLOCKED_BY_CONTEXT`, and no use case is supported by objective end-to-end completion evidence in this repository.
@@ -55,19 +57,21 @@ The first three counts describe only that unpinned snapshot; they must not be us
 
 Foundation Slice A remains the planned Azure infrastructure package, documented in `docs/09-delivery/foundation-slice-a-execution-package.md` with evidence intended for `docs/09-delivery/foundation-slice-a-evidence-register.md`.
 
+**Current Foundation decision (2026-09-07):** Thembinkosi Mtsweni completed the formal post-prerequisite readiness review and revalidated `GO-2026-09-05-FSA-001`. `WP-AZ-001` through `WP-AZ-008` are authorised to begin in governed dependency order in Azure DEV/MVP. The packages remain `READY_FOR_DEVELOPMENT` until start evidence is recorded; 0 of 8 completion evidence gates are satisfied. Source: `SRC-020`.
+
 The repository materially advanced its canonical reconstruction outputs in commit `d2d6f7bfe90ef04ec846eb11308cf551977cd33d`: actors and permissions, detailed use-case specifications, business rules, journeys, state models, integration records, structured data, backlog/tracker/traceability/validation/risk artifacts and related schemas now exist in the canonical structure. Their existence removes the earlier claim that these directories or files were absent.
 
-**Foundation implementation must still not be treated as authorised solely because those files now exist.** The remaining gate is evidence quality and exit-criteria reconciliation: approvals, unresolved legal/business rules, complete traceability, validation coverage, architecture/security/NFR decisions, architecture-tree disposition, and internal consistency must be assessed against `AGENT.md` and the controlling `plan.md`. The current reassessment is recorded in `docs/09-delivery/pre-implementation-gate-reassessment-2026-09-03.md`.
+**Foundation implementation is authorised by the recorded project-owner decision, not by file presence alone.** Evidence quality, exit criteria, traceability, security, status promotion and completion remain governed by `AGENT.md`, the controlling `plan.md`, and the Foundation evidence register.
 
-After that pre-implementation gate is formally satisfied with a recorded `GO` or explicitly scoped `CONDITIONAL_GO`, Foundation Slice A may be executed. The first business vertical slice—authenticated opportunity discovery plus a **non-binding expression of interest**—must not start or advance through `WP-AZ-009` to `WP-AZ-012` until Foundation evidence and the separate first-slice integrity prerequisites both reconcile.
+The pre-implementation gate was formally satisfied for the bounded Foundation scope by the 2026-09-07 revalidation, so Foundation Slice A may be executed in governed dependency order. The first business vertical slice—authenticated opportunity discovery plus a **non-binding expression of interest**—must not start or advance through `WP-AZ-009` to `WP-AZ-012` until Foundation evidence and the separate first-slice integrity prerequisites both reconcile.
 
 ## Controlling documents
 
 - `AGENT.md` defines how autonomous agents and contributors must operate.
 - `plan.md` is the single controlling execution plan and canonical repository-structure definition.
 - Documents under `docs/` are reconstruction, architecture and delivery outputs. They must not compete with `plan.md` as execution instructions.
-- `docs/09-delivery/foundation-slice-a-governance-reconciliation.md` remains a live compatibility gate reference because several Foundation delivery artifacts point to it; it is **not sufficient by itself** to authorise implementation and now explicitly delegates current readiness evaluation to the 2026-09-03 reassessment.
-- `docs/09-delivery/pre-implementation-gate-reassessment-2026-09-03.md` is the current Foundation readiness reconciliation and requires closure/disposition of ADR, security, privacy, NFR, traceability, validation, business/legal and structure items plus a formal `GO`, `CONDITIONAL_GO`, or `NO_GO` decision.
+- `docs/09-delivery/foundation-slice-a-governance-reconciliation.md` remains a live compatibility reference; current authority is the effective decision in `foundation-slice-a-go-decision-2026-09-05.md` as revalidated on 2026-09-07.
+- `docs/09-delivery/pre-implementation-gate-reassessment-2026-09-03.md` is the historical prerequisite reassessment that informed the now-completed formal readiness review.
 - `contractors/` records implementation provenance and contractor delivery evidence. It does not replace use-case, traceability, testing, or E2E evidence under `docs/`.
 
 ## Repository structure and integrity note
@@ -76,7 +80,7 @@ After that pre-implementation gate is formally satisfied with a recorded `GO` or
 
 The working architecture tree under `docs/02-architecture/` is an **explicit unresolved structure exception**: it is actively used and contains material architecture evidence, but it is not currently declared in the canonical required-output tree in `plan.md`. That exception must be formally dispositioned before the repository-integrity gate is closed—either by amending the canonical contract to include the architecture tree or by recording an approved exception that is consistent with `AGENT.md` and the controlling plan. Its existence must not be silently treated as canonical reconciliation.
 
-Other plan-required reconstruction, validation, traceability and machine-readable outputs also now exist. Presence is not equivalent to approval or completion: several remain `ANALYSIS_IN_PROGRESS`, contain `INFERRED`/`UNKNOWN` evidence, or have incomplete traceability and validation closure. Those substantive gaps—not the prior directory-absence claim—are what continue to govern Foundation readiness.
+Other plan-required reconstruction, validation, traceability and machine-readable outputs also now exist. Presence is not equivalent to approval or completion: several remain `ANALYSIS_IN_PROGRESS`, contain `INFERRED`/`UNKNOWN` evidence, or have incomplete traceability and validation closure. Those substantive gaps—not the prior directory-absence claim—continue to govern evidence-based status promotion, downstream business-slice readiness and production readiness.
 
 Key active areas include:
 

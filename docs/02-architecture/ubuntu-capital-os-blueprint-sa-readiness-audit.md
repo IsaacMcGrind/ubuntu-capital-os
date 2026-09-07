@@ -13,6 +13,10 @@
 **Amendment scope:** Sections 6, 8 and 11 incorporate the later pre-implementation reassessment, planned-versus-realised traceability model, readiness-authority control, and Phase 5/Phase 6 handoff. The quantitative snapshot in Section 2 remains tied to the original evidence commit.  
 **SA recommendation:** `NO-GO FOR UNRESTRICTED IMPLEMENTATION`
 
+**2026-09-05 current-status amendment:** `GO-2026-09-05-FSA-001` records bounded authority for `WP-AZ-001` through `WP-AZ-008` only. The original and 2026-09-04 audit findings remain historical architecture evidence; only wording that treats readiness authority as undefined or `OQ-016` as open is superseded. Foundation execution remains deferred until the controlling `plan.md` pre-execution steps 1–9 reconcile and a formal readiness decision is revalidated afterward. All eight Foundation completion evidence gates remain unsatisfied, and `WP-AZ-009` through `WP-AZ-012` remain blocked.
+
+**2026-09-07 formal readiness amendment:** Thembinkosi Mtsweni, as project owner and final approving authority, completed the formal post-prerequisite review and revalidated `GO-2026-09-05-FSA-001`. The bounded Foundation gate for `WP-AZ-001` through `WP-AZ-008` is `OPEN_FOR_AUTHORISED_EXECUTION` in Azure DEV/MVP. This supersedes the 2026-09-05 deferral statement but does not satisfy implementation evidence gates, authorise the first business slice, or establish production readiness. Source: `SRC-020`.
+
 ## 1. Purpose
 
 This document audits the Ubuntu Capital OS Blueprint against current repository evidence from a Solution Architect perspective.
@@ -28,7 +32,7 @@ It distinguishes:
 
 The Blueprint is a defensible **target-architecture presentation**. It correctly separates logical capabilities, Azure implementation, identity responsibilities and the business-audit boundary.
 
-The repository does not yet support an implementation-readiness claim:
+The repository supports only the bounded Foundation start authorised on 2026-09-07; it does not support an unrestricted platform or production-readiness claim:
 
 | Measure | Current evidence |
 |---|---:|
@@ -119,7 +123,7 @@ The following are not approved or evidenced:
 
 ## 6. Blocked delivery gates
 
-All Foundation work packages remain `READY_FOR_DEVELOPMENT` with execution `BLOCKED_BY_CONTEXT`:
+All Foundation work packages remain `READY_FOR_DEVELOPMENT` with execution `OPEN_FOR_AUTHORISED_EXECUTION`:
 
 | Work package | Capability | Evidence gate |
 |---|---|---|
@@ -149,7 +153,7 @@ All Foundation work packages remain `READY_FOR_DEVELOPMENT` with execution `BLOC
 
 ## 8. Solution Architect next steps
 
-### P0 — Close before Foundation implementation
+### P0 — Closed for bounded Foundation start on 2026-09-07
 
 1. Reconcile Phase 0–4 repository outputs and integrity rules.
 2. Resolve EOI, jurisdiction, eligibility, NDA and operator-authority decisions.

@@ -1,5 +1,7 @@
 # Ubuntu Capital OS — Implementation Roadmap
 
+> **Current Foundation decision — 2026-09-07:** Thembinkosi Mtsweni completed the formal post-prerequisite readiness review and revalidated `GO-2026-09-05-FSA-001`. The execution gate for `WP-AZ-001` through `WP-AZ-008` is `OPEN_FOR_AUTHORISED_EXECUTION` in Azure DEV/MVP. This authorises governed start only; implementation, completion, business-use-case and production claims remain evidence-gated. Source: `SRC-020`.
+
 **Current programme status:** `PARTIALLY_READY`  
 **Architecture readiness:** `READY_WITH_ASSUMPTIONS` for MVP cloud implementation  
 **Cloud platform:** Azure MVP direction confirmed by `ARCH-ADR-001`  
@@ -7,7 +9,7 @@
 
 This roadmap separates faithful system reconstruction, Azure platform enablement, business-capability delivery and later production hardening. No production investment transaction should be released until critical legal, compliance, settlement, custody, ownership and permission questions are resolved.
 
-`plan.md` remains the controlling implementation sequence. This roadmap is subordinate to it. The major canonical Phase 0 through Phase 4 outputs now materially exist. Foundation Slice A progression is authorised under `docs/09-delivery/foundation-slice-a-go-decision-2026-09-05.md`, while downstream business-slice progression remains separately gated by validation, approval, traceability reconciliation, architecture/security/NFR closure, structure-exception disposition, and scope-specific readiness controls.
+`plan.md` remains the controlling implementation sequence. This roadmap is subordinate to it. The major canonical Phase 0 through Phase 4 outputs now materially exist. Foundation Slice A's bounded scope is recorded in `docs/09-delivery/foundation-slice-a-go-decision-2026-09-05.md`, and progression is `OPEN_FOR_AUTHORISED_EXECUTION` after the 2026-09-07 formal review, while downstream business-slice progression remains separately gated by validation, approval, traceability reconciliation, architecture/security/NFR closure, structure-exception disposition, and scope-specific readiness controls.
 
 ## Phase 0 — Context and Architecture Baseline
 
@@ -29,7 +31,7 @@ This roadmap separates faithful system reconstruction, Azure platform enablement
 
 ## Phase 1A — Azure MVP Platform Foundation
 
-**Status:** `IN_DEVELOPMENT` under authorised `GO-2026-09-05-FSA-001` for `WP-AZ-001` through `WP-AZ-008`.
+**Status:** `READY_FOR_DEVELOPMENT` for `WP-AZ-001` through `WP-AZ-008`; execution gate `OPEN_FOR_AUTHORISED_EXECUTION`; no realised start evidence is recorded.
 
 **Primary delivery plan:** `docs/09-delivery/azure-mvp-platform-delivery-plan.md`.  
 **Execution package:** `docs/09-delivery/foundation-slice-a-execution-package.md`.  
@@ -37,7 +39,7 @@ This roadmap separates faithful system reconstruction, Azure platform enablement
 **Governance reconciliation:** `docs/09-delivery/foundation-slice-a-governance-reconciliation.md`.  
 **Current readiness decision:** `docs/09-delivery/foundation-slice-a-go-decision-2026-09-05.md`.
 
-Foundation Slice A is documented as `WP-AZ-001` through `WP-AZ-008`. The package defines implementation tasks, acceptance criteria, evidence gates, ownership/authority boundaries, environment expectations and handoff conditions. It is authorised to start and advance within the exact approved scope in `GO-2026-09-05-FSA-001`. The older governance reconciliation remains a required compatibility reference and does not override current decision scope controls.
+Foundation Slice A is documented as `WP-AZ-001` through `WP-AZ-008`. The package defines implementation tasks, acceptance criteria, evidence gates, ownership/authority boundaries, environment expectations and handoff conditions. `GO-2026-09-05-FSA-001` records that exact scope and authority and was revalidated by the project owner on 2026-09-07. Execution may begin in governed dependency order. The older governance reconciliation remains a required compatibility reference and does not override current decision scope controls.
 
 **Chosen platform services:**
 - Azure Static Web Apps;
@@ -60,7 +62,7 @@ Azure Blob Storage is part of the confirmed target service set but is intentiona
 
 **Required evidence:** resource inventory, deployment URL, successful CI/CD run, valid/invalid authentication tests, protected API denial test, SQL migration/integration evidence, Key Vault/Managed Identity evidence, telemetry traces and budget alerts.
 
-**Start gate status:** satisfied for `WP-AZ-001` through `WP-AZ-008` by `docs/09-delivery/foundation-slice-a-go-decision-2026-09-05.md`; all completion/status promotion remains evidence-gated.
+**Start gate status:** satisfied by the formal project-owner review recorded on 2026-09-07. `GO-2026-09-05-FSA-001` is effective for its bounded scope; implementation completion and all status promotion remain evidence-gated.
 
 **Exit criteria:** after the start gate is satisfied and execution begins, every Foundation work package must meet its objective evidence gate before Foundation Slice A as a whole can be described as `COMPONENT_COMPLETE`. No business use case becomes `COMPLETE` from Foundation completion.
 
@@ -154,7 +156,7 @@ Operational telemetry produced by Foundation `WP-AZ-007` does not satisfy `UC-AU
 |---|---|---|
 | Logical architecture | `READY_WITH_ASSUMPTIONS` | capability boundaries are usable; critical legal/business unknowns remain |
 | Azure MVP platform selection | `CONFIRMED` | cloud provider/core MVP services selected; this is evidence classification, not delivery completion |
-| Azure resource deployment | `IN_DEVELOPMENT` | execution authorised for Foundation Slice A under `GO-2026-09-05-FSA-001`; completion remains evidence-gated |
+| Azure resource deployment | `READY_FOR_DEVELOPMENT` | execution is authorised by the revalidated bounded GO; no realised start or deployment evidence is recorded |
 | Current application-source verification | `BLOCKED_BY_CONTEXT` | stated repository identity is known, but the latest source revision and runtime behaviour are not reproducibly verified |
 | Historical unpinned application snapshot | `PARTIALLY_READY` (historical label only) | reported UI prototype observations cannot be promoted to current status without revision-pinned evidence |
 | 41-use-case delivery | 0 `COMPLETE` | no objective E2E-complete use case is recorded |
@@ -164,10 +166,11 @@ Operational telemetry produced by Foundation `WP-AZ-007` does not satisfy `UC-AU
 
 ## Active delivery artifacts
 
+- `docs/09-delivery/implementation-analysis-refresh-2026-09-05.md` — current revision-pinned implementation assessment at OS evidence commit `e1bbbe2fa5bcb3570271ac3bdbcba5b3072ad256`.
 - `docs/09-delivery/implementation-analysis-refresh-2026-08-29.md` — historical architecture-aware status snapshot; `HISTORICAL_SNAPSHOT` / `NON_EXECUTABLE`, not an execution authority.
 - `docs/09-delivery/implementation-coverage-gap-matrix.md` — historical/partial 41-use-case snapshot mapping; not a current implementation-status baseline until revision-pinned evidence is recorded.
 - `docs/09-delivery/azure-mvp-platform-delivery-plan.md` — Azure foundation implementation/evidence gates.
-- `docs/09-delivery/foundation-slice-a-execution-package.md` — active `WP-AZ-001` through `WP-AZ-008` execution/acceptance/evidence package under authorised scope.
+- `docs/09-delivery/foundation-slice-a-execution-package.md` — active execution/acceptance/evidence package for the bounded `WP-AZ-001` through `WP-AZ-008` scope; execution is authorised.
 - `docs/09-delivery/foundation-slice-a-evidence-register.md` — active Foundation Slice A evidence checklist and traceability register for ongoing progress capture.
 - `docs/09-delivery/foundation-slice-a-governance-reconciliation.md` — compatibility/governance chain for Foundation start gates.
 - `docs/09-delivery/pre-implementation-gate-reassessment-2026-09-03.md` — current repository-state reassessment and residual closure set that must feed the formal readiness decision.
@@ -176,16 +179,19 @@ Operational telemetry produced by Foundation `WP-AZ-007` does not satisfy `UC-AU
 
 ## Immediate execution queue
 
-The queue follows the controlling `plan.md`. Existing canonical outputs must be validated and reconciled rather than recreated, and Foundation work proceeds only within the authorised GO scope.
+The queue follows the controlling `plan.md`. Existing canonical outputs were accepted as reconciled by the project owner during the formal review recorded on 2026-09-07. `GO-2026-09-05-FSA-001` is the effective bounded authority; the next executable action is governed Foundation delivery.
 
 1. Validate the existing Phase 0 through Phase 4 outputs against their `plan.md` exit criteria and `AGENT.md` integrity rules.
 2. Classify residual items as `PRESENT_AND_ACCEPTABLE`, `PRESENT_BUT_PARTIAL`, `PRESENT_BUT_INCONSISTENT`, or `MISSING`; disposition the `docs/02-architecture/` structure exception explicitly.
-3. Close or explicitly bound the material EOI, jurisdiction, eligibility, NDA, operator-authority, data-ownership and state-transition decisions.
-4. Close the architecture/security/NFR gaps, first-slice API/error/audit/persistence/integration contracts, and minimum ADR set identified by the current Solution Architecture readiness evidence.
-5. Reconcile the **pre-start planned traceability chain** as `source -> use case -> backlog -> architecture/design (where applicable) -> planned implementation target -> planned test/validation -> planned durable-evidence target -> planned tracker/status`. Update `docs/10-traceability/traceability-matrix.md` and `docs/09-delivery/e2e-delivery-tracker.md` to the same stable planned IDs/targets, and reconcile schemas, links, IDs, counts, evidence classifications, open questions and risks. Do not require implementation/test-run/durable evidence that can only be produced after authorised work starts.
-6. Keep readiness-authority and decision-control records current for any future scope expansion beyond the current Foundation GO.
-7. Execute `WP-AZ-001` through `WP-AZ-008` and capture objective evidence in `docs/09-delivery/foundation-slice-a-evidence-register.md` as progress is produced.
-8. During authorised execution, populate the **realised delivery chain** as `source -> use case -> backlog -> architecture/design (where applicable) -> implementation evidence -> test/run evidence -> durable evidence -> validation/status`, and update the E2E tracker. A required realised `Pending` hop blocks status promotion, `COMPONENT_COMPLETE`, E2E readiness or acceptance, but does not make the pre-start decision circular.
-9. Reconcile all Foundation evidence gates and preserve the distinction between Foundation completion and business-use-case completion.
-10. Keep `WP-AZ-009` through `WP-AZ-012` blocked until Foundation evidence, the controlling Phase 5 capabilities/exit criteria, and the first-slice integrity gate all reconcile.
-11. Progress Blob-backed document capabilities, onboarding, NDA, specialist integrations and later regulated journeys only as their actual use-case dependencies and critical questions are resolved.
+3. Gain repository access to `HarleyJoker/ubuntu-capital-platform` and pin the application-source revision before refreshing the implementation inventory. Until access is available, preserve the recorded `BLOCKED_BY_CONTEXT` evidence boundary.
+4. Close or explicitly bound the material EOI, jurisdiction, eligibility, NDA, operator-authority, data-ownership and state-transition decisions.
+5. Close the architecture/security/NFR gaps, first-slice API/error/audit/persistence/integration contracts, and minimum ADR set identified by the current Solution Architecture readiness evidence.
+6. Reconcile the **pre-start planned traceability chain** as `source -> use case -> backlog -> architecture/design (where applicable) -> planned implementation target -> planned test/validation -> planned durable-evidence target -> planned tracker/status`. Update `docs/10-traceability/traceability-matrix.md` and `docs/09-delivery/e2e-delivery-tracker.md` to the same stable planned IDs/targets, and reconcile schemas, links, IDs, counts, evidence classifications, open questions and risks. Do not require implementation/test-run/durable evidence that can only be produced after authorised work starts.
+7. Reconcile `output/system-reconstruction-summary.md`, `README.md`, this roadmap, and all live delivery/gate artifacts to the same current readiness position.
+8. Keep the readiness-authority and decision-control contract current for the exact proposed execution scope.
+9. **Completed 2026-09-07:** the project owner ran the formal post-prerequisite readiness review and explicitly revalidated `GO-2026-09-05-FSA-001`.
+10. Only if that effective post-reconciliation decision permits execution, begin its exact authorised subset of `WP-AZ-001` through `WP-AZ-008` and capture objective evidence in `docs/09-delivery/foundation-slice-a-evidence-register.md`.
+11. During authorised execution, populate the **realised delivery chain** as `source -> use case -> backlog -> architecture/design (where applicable) -> implementation evidence -> test/run evidence -> durable evidence -> validation/status`, and update the E2E tracker. A required realised `Pending` hop blocks status promotion, `COMPONENT_COMPLETE`, E2E readiness or acceptance, but does not make the pre-start decision circular.
+12. Reconcile all Foundation evidence gates and preserve the distinction between Foundation completion and business-use-case completion.
+13. Keep `WP-AZ-009` through `WP-AZ-012` blocked until Foundation evidence, the controlling Phase 5 capabilities/exit criteria, and the first-slice integrity gate all reconcile.
+14. Progress Blob-backed document capabilities, onboarding, NDA, specialist integrations and later regulated journeys only as their actual use-case dependencies and critical questions are resolved.

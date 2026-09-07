@@ -1,5 +1,7 @@
 # System Reconstruction Summary
 
+> **Current Foundation decision — 2026-09-07:** Thembinkosi Mtsweni completed the formal post-prerequisite readiness review and revalidated `GO-2026-09-05-FSA-001`. The execution gate for `WP-AZ-001` through `WP-AZ-008` is `OPEN_FOR_AUTHORISED_EXECUTION` in Azure DEV/MVP. This authorises governed start only; implementation, completion, business-use-case and production claims remain evidence-gated. Source: `SRC-020`.
+
 ## 1. System Purpose
 
 Ubuntu Capital OS is being modelled as a private-market investment platform inspired by the supplied reference system. The visible product enables investors to discover investment opportunities and navigate portfolio areas including pending investments, holdings, performance, activity, reports, and tax documents. A complete production reconstruction would also require regulated onboarding, controlled due diligence, commitment, settlement, administration, compliance, support, and recovery capabilities that are not yet fully evidenced.
@@ -39,7 +41,7 @@ Authentication, registration, filtering and sorting behaviour, opportunity-detai
 
 ### Unknown
 
-Settlement mechanics, custody/ownership structure, vendors, cancellation rules, detailed permissions, tax-document production, data correction authority, readiness-decision authority (`OQ-016`), and several failure/recovery behaviours are unknown.
+Settlement mechanics, custody/ownership structure, vendors, cancellation rules, detailed permissions, tax-document production, data correction authority, and several failure/recovery behaviours are unknown. Readiness-decision authority is now defined and `OQ-016` is closed.
 
 ### Contradicted
 
@@ -95,13 +97,13 @@ The controlling phase sequence is defined in `plan.md`.
 - First-slice API, error, audit, persistence, and integration contracts.
 - Threat model, authorization design, privacy/retention, measurable NFRs, recovery and cost guardrails.
 - Tax-document generation and approval.
-- Readiness-decision authority and controlled GO/CONDITIONAL_GO governance (`OQ-016`).
+- Continued enforcement of the now-defined readiness-decision authority and controlled GO/CONDITIONAL_GO governance (`OQ-016`, closed).
 
 ## 10. Critical Open Questions
 
 Critical business, legal, regulatory, permissions, provider, operational and readiness-authority questions remain open. The canonical source is `docs/11-open-questions/open-questions.md`; this summary must not be used to infer that an unresolved question has been closed.
 
-`OQ-016` is the canonical readiness-authority question: it asks who may issue an execution-authorising `GO` or `CONDITIONAL_GO` and what decision-control contract governs that authority. It remains `OPEN` and `CRITICAL`. A non-authorising `NO_GO` may still be recorded while `OQ-016` is open; resolving `OQ-016` is required before `GO` or `CONDITIONAL_GO` can carry execution authority.
+`OQ-016` is closed. The authority model and decision-control contract are recorded in `docs/09-delivery/foundation-slice-a-go-decision-2026-09-05.md`; its bounded GO was formally revalidated and made effective on 2026-09-07. Future decisions must retain explicit scope, non-waivable conditions, evidence links and residual-risk controls.
 
 ## 11. Readiness Assessment
 
@@ -111,9 +113,9 @@ The supplied context supports an investor-facing marketplace and portfolio model
 
 **Architecture direction:** materially improved and usable with assumptions, but several architecture/security/NFR and ADR closures remain outstanding.
 
-**Foundation Slice A execution:** `BLOCKED_BY_CONTEXT`.
+**Foundation Slice A execution:** `OPEN_FOR_AUTHORISED_EXECUTION` for `WP-AZ-001` through `WP-AZ-008`; package status remains `READY_FOR_DEVELOPMENT`; 0 of 8 objective evidence gates satisfied.
 
-The current pre-implementation decision is **`NO-GO FOR UNRESTRICTED IMPLEMENTATION`**. Canonical Phase 0–4 artifacts materially exist, but presence is not approval or completion. The current gate is defined by `AGENT.md`, controlling `plan.md`, `docs/09-delivery/foundation-slice-a-governance-reconciliation.md`, and `docs/09-delivery/pre-implementation-gate-reassessment-2026-09-03.md`. No execution-authorising `GO` or `CONDITIONAL_GO` can open the gate until readiness-decision authority under `OQ-016` is formally defined and the non-waivable integrity and substantive closure conditions are satisfied. A `NO_GO` finding may be recorded or refreshed immediately while blockers remain because it does not authorise execution.
+The effective decision is `GO-2026-09-05-FSA-001`, limited to Foundation work packages `WP-AZ-001` through `WP-AZ-008` in Azure DEV/MVP. It authorises governed execution but does not prove implementation: the Foundation evidence register still records 0 of 8 objective evidence gates satisfied. No business use case is promoted by this decision, and `WP-AZ-009` through `WP-AZ-012` remain blocked by their separate gates.
 
 **First business slice execution:** `BLOCKED_BY_CONTEXT`.
 
@@ -123,13 +125,19 @@ The discovery/non-binding-EOI concept remains the preferred first vertical slice
 
 Do **not** restart Phase 0 or recreate canonical artifacts that already exist. Execute the current residual-closure queue in `plan.md`:
 
-1. validate existing Phase 0–4 outputs against phase exit criteria and `AGENT.md` integrity rules;
-2. reconcile the **pre-start planned traceability** required for the proposed scope as `source -> use case -> backlog -> architecture/design (where applicable) -> planned implementation target -> planned test/validation target -> planned durable-evidence target -> planned tracker/status`, using stable repository-accessible IDs or targets and aligning `docs/10-traceability/traceability-matrix.md` with `docs/09-delivery/e2e-delivery-tracker.md`;
-3. close or formally bound the business/legal, permissions, data-ownership/state, first-slice technical-contract, architecture/security/NFR and ADR gaps;
-4. disposition the `docs/02-architecture/` canonical-structure exception;
-5. resolve `OQ-016` by defining readiness-decision authority and the controlled decision contract in controlling governance;
-6. while blockers remain, record or refresh a durable `NO_GO` outcome for the evaluated scope. Only after `OQ-016`, applicable planned pre-start traceability and other non-waivable closure conditions are satisfied may an execution-authorising `GO` or `CONDITIONAL_GO` be issued;
-7. only after an effective authorised decision, begin the exact permitted Foundation work packages and capture objective implementation evidence in `docs/09-delivery/foundation-slice-a-evidence-register.md`;
-8. during authorised delivery, progressively reconcile the **realised** chain as `source -> use case -> backlog -> architecture/design (where applicable) -> implementation evidence -> test/run evidence -> durable evidence -> validation/status`; missing required realised hops block status promotion, E2E readiness and acceptance rather than the earlier start decision.
+1. validate the existing Phase 0–4 outputs against their exit criteria and `AGENT.md` integrity rules, then classify residual gaps without recreating accepted artifacts;
+2. obtain authorised, revision-pinned access to the application source and capture its current lint, test, build, security and implementation evidence;
+3. close or formally bound the remaining P0 business/legal, permissions, data-ownership/state, first-slice technical-contract, architecture/security/NFR and ADR gaps;
+4. reconcile the pre-start planned traceability chain, structured data, links, stable IDs, counts, statuses, open questions and risks;
+5. reconcile this summary, `README.md`, the roadmap and all live delivery/gate artifacts, including formal disposition of the `docs/02-architecture/`, `docs/engineering-sessions/` and `output/pdf/` structure exceptions;
+6. preserve the defined readiness-decision authority and the completed 2026-09-07 formal review that explicitly revalidated `GO-2026-09-05-FSA-001`;
+7. begin the exact permitted `WP-AZ-001` through `WP-AZ-008` scope in governed dependency order under the effective GO; do not begin source-dependent packages such as `WP-AZ-002` and `WP-AZ-003` until the application branch and commit are pinned;
+8. capture objective implementation, test/run, deployment and operational evidence in `docs/09-delivery/foundation-slice-a-evidence-register.md`, and maintain the realised traceability chain as each package progresses;
+9. repair the repository-monitor path/import regression in a separate focused change and validate the repaired workflow at a pinned commit;
+10. keep `WP-AZ-009` through `WP-AZ-012` blocked until Foundation evidence, Phase 5 shared-capability exit criteria and first-slice integrity requirements reconcile.
 
 No use case or `WP-AZ-*` package is promoted by this summary.
+
+## 13. Current Implementation Assessment
+
+The current revision-pinned implementation assessment is `docs/09-delivery/implementation-analysis-refresh-2026-09-05.md`, based on OS commit `e1bbbe2fa5bcb3570271ac3bdbcba5b3072ad256`.
