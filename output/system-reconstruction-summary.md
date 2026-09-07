@@ -111,7 +111,7 @@ The supplied context supports an investor-facing marketplace and portfolio model
 
 **Architecture direction:** materially improved and usable with assumptions, but several architecture/security/NFR and ADR closures remain outstanding.
 
-**Foundation Slice A execution:** `AUTHORISED_GO` for `WP-AZ-001` through `WP-AZ-008`; delivery package `IN_DEVELOPMENT`; 0 of 8 objective evidence gates satisfied.
+**Foundation Slice A execution:** `AUTHORISED_GO` for `WP-AZ-001` through `WP-AZ-008`; work packages remain `READY_FOR_DEVELOPMENT`; 0 of 8 objective evidence gates satisfied.
 
 The active decision is `GO-2026-09-05-FSA-001`, limited to Foundation work packages `WP-AZ-001` through `WP-AZ-008` in Azure DEV/MVP. It authorises execution but does not prove implementation: the Foundation evidence register still records 0 of 8 objective evidence gates satisfied. No business use case is promoted by this decision, and `WP-AZ-009` through `WP-AZ-012` remain blocked by their separate gates.
 
