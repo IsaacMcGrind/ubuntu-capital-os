@@ -14,7 +14,7 @@
 
 Ubuntu Capital OS is a strong evidence-first reconstruction, architecture and delivery-governance repository. It is not yet a deployable Ubuntu Capital application repository.
 
-Foundation Slice A is authorised to start in Azure DEV/MVP, but no Foundation work package has objective completion evidence. A concurrent master commit landed during this assessment and introduced a confirmed repository-monitor regression; the assessment baseline was advanced to that new head. The evidence register still contains eight planned placeholders, all classified `UNKNOWN`, and records zero satisfied evidence gates. The active `GO` therefore proves permission to execute the bounded Foundation scope; it does not prove that Azure resources, application infrastructure or runtime capabilities exist.
+Foundation Slice A has bounded Azure DEV/MVP authority under `GO-2026-09-05-FSA-001`, but execution remains deferred until the controlling `plan.md` pre-execution steps 1–9 reconcile, and no Foundation work package has objective completion evidence. A concurrent master commit landed during this assessment and introduced a confirmed repository-monitor regression; the assessment baseline was advanced to that new head. The evidence register still contains eight planned placeholders, all classified `UNKNOWN`, and records zero satisfied evidence gates. The active `GO` therefore proves permission to execute the bounded Foundation scope; it does not prove that Azure resources, application infrastructure or runtime capabilities exist.
 
 The stated application repository, `HarleyJoker/ubuntu-capital-platform`, returned `404 Not Found` through the connected GitHub installation during this assessment (`SRC-018` in `docs/00-context/source-inventory.md`). This dated access outcome does not prove repository absence; its current branch, commit, source contents and runtime behaviour remain unavailable. Historical React/Vite observations are retained as supporting evidence only and cannot be promoted to current implementation status.
 
@@ -68,7 +68,7 @@ The implementation ledger treats the 41 catalogued business use cases, eight Fou
 |---|---:|---|
 | `VERIFIED_IMPLEMENTED` | 0 | No capability has current revision-pinned implementation and verification evidence |
 | `IMPLEMENTED_AND_VERIFIED` during this assessment | 0 | This assessment made no product or infrastructure implementation claim |
-| `AUTHORISED_UNVERIFIED` | 8 | GO-authorised Foundation packages may execute, but each still lacks its objective completion evidence |
+| `AUTHORISED_UNVERIFIED` | 8 | The GO authorises the bounded Foundation scope, but execution remains deferred pending controlling prerequisites and each package lacks objective completion evidence |
 | `FAILING_ACTIONABLE` | 1 | The repository monitor has a confirmed current-head regression that can be repaired within this repository |
 | `BLOCKED_BY_CONTEXT` | 41 | Business use cases lack revision-pinned application source and E2E evidence, so current implementation verification cannot proceed |
 | `AMBIGUOUS` | 0 | Material uncertainty is represented as explicit `UNKNOWN` or governed blockers |
@@ -182,7 +182,7 @@ The `docs/02-architecture/` tree also remains an explicitly unresolved canonical
 
 **Decision:** `GO` remains active for `WP-AZ-001` through `WP-AZ-008` only.
 
-This analysis does not revoke or broaden the decision. Execution may proceed within that scope, but no work package may be promoted without objective evidence.
+This analysis does not revoke or broaden the decision. Execution may proceed within that scope only after the controlling `plan.md` pre-execution steps 1–9 reconcile, and no work package may be promoted without objective evidence.
 
 ### Foundational product capabilities and first business slice
 
