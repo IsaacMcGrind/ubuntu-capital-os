@@ -16,11 +16,11 @@ The foundation must prove deployability, authentication, protected backend execu
 
 `plan.md` remains the controlling implementation sequence. This Azure plan is a subordinate delivery plan and does not replace or close plan-required reconstruction outputs.
 
-`GO-2026-09-05-FSA-001` authorises `WP-AZ-001` through `WP-AZ-008` within its exact scope and controls, but execution remains deferred until the controlling `plan.md` pre-execution steps 1–9 reconcile. The governance chain remains `AGENT.md`, `plan.md`, and `docs/09-delivery/foundation-slice-a-governance-reconciliation.md`; the GO does not bypass unresolved integrity prerequisites, and all status promotions remain evidence-gated.
+`GO-2026-09-05-FSA-001` records bounded authority for `WP-AZ-001` through `WP-AZ-008`, but execution remains deferred until the controlling `plan.md` pre-execution steps reconcile and a formal readiness review revalidates or replaces that decision. The governance chain remains `AGENT.md`, `plan.md`, and `docs/09-delivery/foundation-slice-a-governance-reconciliation.md`; the GO does not bypass unresolved integrity prerequisites, and all status promotions remain evidence-gated.
 
 ## 2. Delivery sequence
 
-The sequence below defines the Foundation Slice A delivery order after the controlling `plan.md` pre-execution steps reconcile and the effective `GO-2026-09-05-FSA-001` remains valid. It is not an instruction to begin `WP-AZ-001` through `WP-AZ-008` before those prerequisites are satisfied.
+The sequence below defines the Foundation Slice A delivery order after the controlling `plan.md` pre-execution steps reconcile and a formal readiness review records an effective `GO` or `CONDITIONAL_GO`. It is not an instruction to begin `WP-AZ-001` through `WP-AZ-008` before those prerequisites are satisfied.
 
 | Order | Work package | Primary Azure capability | Main use-case dependency | Target status after evidence |
 |---:|---|---|---|---|
@@ -324,8 +324,8 @@ The first business slice may move to `READY_FOR_ACCEPTANCE` only when all of the
 ## 9. Next action
 
 1. Complete and reconcile the controlling `plan.md` pre-execution steps: Phase 0–4 validation, residual-gap classification, application-source pinning, P0/architecture closure, planned traceability, live-artifact reconciliation, readiness authority and the formal readiness review.
-2. Preserve `GO-2026-09-05-FSA-001` as the bounded Foundation authority and confirm it remains effective after those prerequisites reconcile; the decision alone does not permit bypassing them.
-3. Only then execute **WP-AZ-001 through WP-AZ-008** using `docs/09-delivery/foundation-slice-a-execution-package.md`.
+2. Preserve the defined readiness-decision authority and `GO-2026-09-05-FSA-001` as the prior bounded decision, then run and record a new or explicitly revalidated formal readiness review after those prerequisites reconcile.
+3. Only if that post-reconciliation review records an effective `GO` or `CONDITIONAL_GO`, execute its exact permitted subset of **WP-AZ-001 through WP-AZ-008** using `docs/09-delivery/foundation-slice-a-execution-package.md`.
 4. Capture objective realised evidence continuously in `docs/09-delivery/foundation-slice-a-evidence-register.md` and reconcile status only when each work-package evidence gate is satisfied.
 5. Maintain planned-to-realised traceability links in `docs/10-traceability/traceability-matrix.md` and `docs/09-delivery/e2e-delivery-tracker.md` as implementation/testing evidence is produced.
 6. Keep downstream scope controls in place: `WP-AZ-009` through `WP-AZ-012` remain blocked until Foundation evidence gates and first-slice start-gate prerequisites are satisfied.
