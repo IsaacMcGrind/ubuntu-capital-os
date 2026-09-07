@@ -154,7 +154,7 @@ Operational telemetry produced by Foundation `WP-AZ-007` does not satisfy `UC-AU
 |---|---|---|
 | Logical architecture | `READY_WITH_ASSUMPTIONS` | capability boundaries are usable; critical legal/business unknowns remain |
 | Azure MVP platform selection | `CONFIRMED` | cloud provider/core MVP services selected; this is evidence classification, not delivery completion |
-| Azure resource deployment | `IN_DEVELOPMENT` | execution authorised for Foundation Slice A under `GO-2026-09-05-FSA-001`; completion remains evidence-gated |
+| Azure resource deployment | `READY_FOR_DEVELOPMENT` | execution is authorised for Foundation Slice A under `GO-2026-09-05-FSA-001`, but no realised start evidence is recorded; completion remains evidence-gated |
 | Current application-source verification | `BLOCKED_BY_CONTEXT` | stated repository identity is known, but the latest source revision and runtime behaviour are not reproducibly verified |
 | Historical unpinned application snapshot | `PARTIALLY_READY` (historical label only) | reported UI prototype observations cannot be promoted to current status without revision-pinned evidence |
 | 41-use-case delivery | 0 `COMPLETE` | no objective E2E-complete use case is recorded |
