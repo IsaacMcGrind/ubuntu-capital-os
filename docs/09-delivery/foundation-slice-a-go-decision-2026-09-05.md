@@ -3,10 +3,11 @@
 Decision ID: GO-2026-09-05-FSA-001  
 Decision date: 2026-09-05  
 Decision outcome: GO  
-Decision status: ACTIVE  
-Authorised scope: WP-AZ-001 through WP-AZ-008 (Foundation Slice A only)  
-Authorised environment: AZURE DEV/MVP  
-Supersedes as current execution decision: docs/09-delivery/pre-implementation-gate-reassessment-2026-09-03.md decision section for Foundation start authority
+Decision status: RECORDED_PENDING_REVALIDATION  
+Previously authorised scope: WP-AZ-001 through WP-AZ-008 (Foundation Slice A only)  
+Previously authorised environment: AZURE DEV/MVP  
+Effective execution gate: CLOSED_PENDING_REVALIDATION  
+Historical supersession scope: docs/09-delivery/pre-implementation-gate-reassessment-2026-09-03.md decision section for Foundation start authority; this record is not current execution authority until formally revalidated or replaced
 
 ## 1. Authority model
 
@@ -18,7 +19,7 @@ Execution-authorising GO authority is defined as:
   - Corefinity;
   - HerLogicSolutions.
 
-For this decision, Ubuntu Capital project owner authority has been exercised and the GO is approved.
+The Ubuntu Capital project owner approved this bounded GO on 2026-09-05. It is retained as authority and scope evidence, but it is not currently executable: the controlling prerequisites and a formal post-prerequisite readiness review must revalidate or replace it.
 
 ## 2. Conditions and boundaries
 
@@ -41,4 +42,4 @@ Execution progress must be recorded as it is produced in:
 
 ## 4. Residual risk statement
 
-This GO authorises Foundation implementation start only. It does not remove existing business/legal unknowns for non-foundation scope and does not authorise WP-AZ-009 through WP-AZ-012.
+This recorded GO previously authorised Foundation implementation start within its bounded scope. It does not currently authorise implementation start. Execution remains closed until the controlling `plan.md` prerequisites reconcile and a formal post-prerequisite readiness review records a new or explicitly revalidated effective decision. It does not remove existing business/legal unknowns for non-foundation scope and does not authorise `WP-AZ-009` through `WP-AZ-012`.
