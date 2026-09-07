@@ -26,7 +26,7 @@ The 2026-08-30 governance reconciliation remains part of the controlling compati
 
 | Evidence ID | Work package | Evidence type | Reference / location | Captured date | Owner | Classification | Proves | Does not prove | Review status |
 |---|---|---|---|---|---|---|---|---|---|
-| FSA-EV-000 | WP-AZ-001 to WP-AZ-008 | Readiness decision evidence | `docs/09-delivery/foundation-slice-a-go-decision-2026-09-05.md` | 2026-09-05 | Project Owner | `CONFIRMED` | Foundation execution gate is open for the authorised scope in AZURE DEV/MVP | Completion of any work-package evidence gate or any business use-case completion | ACCEPTED |
+| FSA-EV-000 | WP-AZ-001 to WP-AZ-008 | Readiness decision evidence | `docs/09-delivery/foundation-slice-a-go-decision-2026-09-05.md` | 2026-09-05 | Project Owner | `CONFIRMED` | Records the bounded Foundation scope and decision authority as of 2026-09-05 | Post-reconciliation permission to start, completion of any work-package evidence gate, or any business use-case completion | ACCEPTED |
 | FSA-EV-001 | WP-AZ-001 | Planned evidence placeholder | Pending | Pending | Pending | `UNKNOWN` | Nothing yet; placeholder for Azure resource baseline evidence | Provisioning, RBAC or cost controls | OPEN |
 | FSA-EV-002 | WP-AZ-002 | Planned evidence placeholder | Pending | Pending | Pending | `UNKNOWN` | Nothing yet; placeholder for Static Web Apps deployment evidence | Successful deployment | OPEN |
 | FSA-EV-003 | WP-AZ-003 | Planned evidence placeholder | Pending | Pending | Pending | `UNKNOWN` | Nothing yet; placeholder for Entra External ID evidence | Authentication integration | OPEN |
@@ -38,7 +38,7 @@ The 2026-08-30 governance reconciliation remains part of the controlling compati
 
 ## Work-package evidence checklist
 
-The checklists below become executable evidence gates only after the controlling `plan.md` pre-execution steps 1–9 reconcile and the formal Foundation decision remains effective.
+The checklists below become executable evidence gates only after the controlling `plan.md` pre-execution steps reconcile and a subsequent formal readiness review records an effective Foundation decision.
 
 ### WP-AZ-001 — Azure baseline
 
@@ -144,4 +144,4 @@ Required before `COMPONENT_COMPLETE`:
 | WP-AZ-008 | `READY_FOR_DEVELOPMENT` | `AUTHORISED_GO` | No | FSA-EV-008 | Reproducibility/CI-CD evidence required before completion |
 
 **Foundation Slice A package:** `READY_FOR_DEVELOPMENT`.  
-**Foundation Slice A execution gate:** `AUTHORISED_GO` via `GO-2026-09-05-FSA-001` — the decision authorises only `WP-AZ-001` through `WP-AZ-008`, but execution remains deferred until the controlling `plan.md` pre-execution steps 1–9 reconcile. The packages remain `READY_FOR_DEVELOPMENT`; after prerequisites reconcile, a recorded start or equivalent realised execution evidence is required before transition, and progress must be recorded here with objective evidence. No infrastructure implementation completion is claimed.
+**Foundation Slice A decision record:** `AUTHORISED_GO` via `GO-2026-09-05-FSA-001` — the decision records bounded authority for `WP-AZ-001` through `WP-AZ-008`, but execution remains deferred until the controlling `plan.md` pre-execution steps reconcile and a formal readiness review revalidates or replaces it. The packages remain `READY_FOR_DEVELOPMENT`; after prerequisites reconcile, a recorded start or equivalent realised execution evidence is required before transition, and progress must be recorded here with objective evidence. No infrastructure implementation completion is claimed.
