@@ -37,7 +37,7 @@ This roadmap separates faithful system reconstruction, Azure platform enablement
 **Governance reconciliation:** `docs/09-delivery/foundation-slice-a-governance-reconciliation.md`.  
 **Current readiness decision:** `docs/09-delivery/foundation-slice-a-go-decision-2026-09-05.md`.
 
-Foundation Slice A is documented as `WP-AZ-001` through `WP-AZ-008`. The package defines implementation tasks, acceptance criteria, evidence gates, ownership/authority boundaries, environment expectations and handoff conditions. It is authorised to start and advance within the exact approved scope in `GO-2026-09-05-FSA-001`. The older governance reconciliation remains a required compatibility reference and does not override current decision scope controls.
+Foundation Slice A is documented as `WP-AZ-001` through `WP-AZ-008`. The package defines implementation tasks, acceptance criteria, evidence gates, ownership/authority boundaries, environment expectations and handoff conditions. `GO-2026-09-05-FSA-001` authorises that exact scope, but execution remains deferred until the controlling `plan.md` pre-execution steps 1–9 reconcile. The older governance reconciliation remains a required compatibility reference and does not override current decision scope controls.
 
 **Chosen platform services:**
 - Azure Static Web Apps;
