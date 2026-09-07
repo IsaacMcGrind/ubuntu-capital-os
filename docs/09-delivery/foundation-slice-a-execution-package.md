@@ -21,15 +21,15 @@ Foundation Slice A does **not** make any Ubuntu Capital business use case `COMPL
 
 ### Hard start gate
 
-`GO-2026-09-05-FSA-001` authorises the exact Foundation scope, but package execution remains deferred until the controlling `plan.md` pre-execution steps 1–9 reconcile.
+`GO-2026-09-05-FSA-001` records the exact prior Foundation scope and authority, but package execution remains deferred until the controlling `plan.md` pre-execution steps reconcile and a formal readiness review revalidates or replaces that decision.
 
-`AGENT.md` and `plan.md` remain controlling. The 2026-08-30 governance reconciliation remains part of the compatibility chain, and bounded execution authority is recorded in `docs/09-delivery/foundation-slice-a-go-decision-2026-09-05.md` (`GO-2026-09-05-FSA-001`). Only after the controlling prerequisites reconcile may work begin within `WP-AZ-001` through `WP-AZ-008`; status promotion remains evidence-gated.
+`AGENT.md` and `plan.md` remain controlling. The 2026-08-30 governance reconciliation remains part of the compatibility chain, and bounded execution authority is recorded in `docs/09-delivery/foundation-slice-a-go-decision-2026-09-05.md` (`GO-2026-09-05-FSA-001`). Only after the controlling prerequisites reconcile and a post-reconciliation formal review records an effective `GO` or `CONDITIONAL_GO` may work begin within its exact permitted subset of `WP-AZ-001` through `WP-AZ-008`; status promotion remains evidence-gated.
 
 ## 2. Governing evidence rules
 
 The following rules are controlling:
 
-1. `WP-AZ-001` through `WP-AZ-008` are the only scope authorised by `GO-2026-09-05-FSA-001`; implementation may begin only after the controlling `plan.md` pre-execution prerequisites reconcile and must remain within the decision's exact controls.
+1. `GO-2026-09-05-FSA-001` records prior bounded authority for `WP-AZ-001` through `WP-AZ-008`; implementation may begin only after the controlling `plan.md` pre-execution prerequisites reconcile and a formal readiness review records an effective decision, and must remain within that decision's exact controls.
 2. Architecture selection is not implementation evidence.
 3. A work package advances only when its evidence gate is satisfied.
 4. No use case becomes `COMPLETE` without objective E2E evidence.
@@ -385,7 +385,7 @@ Sensitive Azure values must be redacted. The evidence register must not contain 
 
 Default recorded status for `WP-AZ-001` through `WP-AZ-008` remains `READY_FOR_DEVELOPMENT` unless stronger evidence already exists and is reconciled into this repository.
 
-Until the controlling `plan.md` pre-execution steps 1–9 reconcile and the formal Foundation decision remains effective, **no work package may transition to `IN_DEVELOPMENT` or `COMPONENT_COMPLETE`**.
+Until the controlling `plan.md` pre-execution steps reconcile and a subsequent formal readiness review records an effective Foundation decision, **no work package may transition to `IN_DEVELOPMENT` or `COMPONENT_COMPLETE`**.
 
 After those prerequisites reconcile, allowed transitions are:
 
