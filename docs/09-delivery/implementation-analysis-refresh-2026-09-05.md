@@ -130,7 +130,7 @@ The current master revision:
 
 The next workflow invocation cannot reach the configured script path. Even if the workflow path were changed to `repository_monitor_v.py`, the remaining file cannot import its deleted dependencies.
 
-The latest previously inspected workflow run, `33930899000`, succeeded against the earlier commit `966e2e07ff127d4096383e7e88d0a6c451585ed9`. No workflow run is recorded for the new head, so that earlier success does not verify the current revision.
+The latest previously inspected workflow run, `33930899000`, succeeded against the earlier commit `966e2e07ff127d4096383e7e88d0a6c451585ed9`. At the dated 2026-09-05 retrieval, no workflow run was recorded for assessed head `e1bbbe2fa5bcb3570271ac3bdbcba5b3072ad256`, so that earlier success does not verify the assessed revision or later heads. This time-bound workflow-history evidence is registered as `SRC-019` in `docs/00-context/source-inventory.md`.
 
 **Impact:** twice-daily change reporting, history-integrity detection and material-change issue publication are unavailable at the current head.  
 **Evidence needed:** restore a coherent monitor implementation and run the workflow at a pinned repaired commit.  
