@@ -123,14 +123,16 @@ The discovery/non-binding-EOI concept remains the preferred first vertical slice
 
 Do **not** restart Phase 0 or recreate canonical artifacts that already exist. Execute the current residual-closure queue in `plan.md`:
 
-1. obtain authorised, revision-pinned access to the application source and capture its current lint, test, build, security and implementation evidence;
-2. execute only the active `GO-2026-09-05-FSA-001` scope, `WP-AZ-001` through `WP-AZ-008`, in governed dependency order; do not begin source-dependent packages such as `WP-AZ-002` and `WP-AZ-003` until the application branch and commit are pinned;
-3. capture objective implementation, test/run, deployment and operational evidence in `docs/09-delivery/foundation-slice-a-evidence-register.md` as each Foundation package progresses;
-4. maintain the **realised** chain as `source -> use case -> backlog -> architecture/design (where applicable) -> implementation evidence -> test/run evidence -> durable evidence -> validation/status`; missing required realised hops block status promotion and acceptance;
-5. repair the current repository-monitor path/import regression and validate the repaired workflow at a pinned commit;
-6. formally disposition the `docs/02-architecture/`, `docs/engineering-sessions/` and `output/pdf/` canonical-structure exceptions;
-7. keep `WP-AZ-009` through `WP-AZ-012` blocked until Foundation evidence, Phase 5 shared-capability exit criteria and first-slice integrity requirements reconcile;
-8. close or formally bound the remaining business/legal, permissions, data-ownership/state, first-slice technical-contract, architecture/security/NFR and ADR gaps before their dependent business scope is authorised.
+1. validate the existing Phase 0–4 outputs against their exit criteria and `AGENT.md` integrity rules, then classify residual gaps without recreating accepted artifacts;
+2. obtain authorised, revision-pinned access to the application source and capture its current lint, test, build, security and implementation evidence;
+3. close or formally bound the remaining P0 business/legal, permissions, data-ownership/state, first-slice technical-contract, architecture/security/NFR and ADR gaps;
+4. reconcile the pre-start planned traceability chain, structured data, links, stable IDs, counts, statuses, open questions and risks;
+5. reconcile this summary, `README.md`, the roadmap and all live delivery/gate artifacts, including formal disposition of the `docs/02-architecture/`, `docs/engineering-sessions/` and `output/pdf/` structure exceptions;
+6. preserve the defined readiness-decision authority and the formal `GO-2026-09-05-FSA-001` review as the recorded outcomes of the controlling plan's authority and readiness steps; the GO does not bypass the preceding reconciliation work;
+7. only after the preceding controlling-plan steps reconcile, begin the exact permitted subset of `WP-AZ-001` through `WP-AZ-008` in governed dependency order; do not begin source-dependent packages such as `WP-AZ-002` and `WP-AZ-003` until the application branch and commit are pinned;
+8. capture objective implementation, test/run, deployment and operational evidence in `docs/09-delivery/foundation-slice-a-evidence-register.md`, and maintain the realised traceability chain as each package progresses;
+9. repair the repository-monitor path/import regression in a separate focused change and validate the repaired workflow at a pinned commit;
+10. keep `WP-AZ-009` through `WP-AZ-012` blocked until Foundation evidence, Phase 5 shared-capability exit criteria and first-slice integrity requirements reconcile.
 
 No use case or `WP-AZ-*` package is promoted by this summary.
 
