@@ -38,7 +38,7 @@ The 2026-08-30 governance reconciliation remains part of the controlling compati
 
 ## Work-package evidence checklist
 
-The checklists below become executable evidence gates only after the current Foundation start gate is satisfied by the controlling governance chain and formal readiness decision.
+The checklists below become executable evidence gates only after the controlling `plan.md` pre-execution steps 1–9 reconcile and the formal Foundation decision remains effective.
 
 ### WP-AZ-001 — Azure baseline
 
@@ -134,14 +134,14 @@ Required before `COMPONENT_COMPLETE`:
 
 | Work package | Recorded delivery status | Execution gate | Evidence gate satisfied? | Evidence IDs | Notes |
 |---|---|---|---:|---|---|
-| WP-AZ-001 | `READY_FOR_DEVELOPMENT` | `AUTHORISED_GO` | No | FSA-EV-001 | Authorised to start and record realised evidence |
-| WP-AZ-002 | `READY_FOR_DEVELOPMENT` | `AUTHORISED_GO` | No | FSA-EV-002 | Authorised to start and record realised evidence |
+| WP-AZ-001 | `READY_FOR_DEVELOPMENT` | `AUTHORISED_GO` | No | FSA-EV-001 | Authorised scope; start deferred pending controlling prerequisites |
+| WP-AZ-002 | `READY_FOR_DEVELOPMENT` | `AUTHORISED_GO` | No | FSA-EV-002 | Authorised scope; start deferred pending controlling prerequisites |
 | WP-AZ-003 | `READY_FOR_DEVELOPMENT` | `AUTHORISED_GO` | No | FSA-EV-003 | UC-IAM-001 remains independently governed for use-case completion |
-| WP-AZ-004 | `READY_FOR_DEVELOPMENT` | `AUTHORISED_GO` | No | FSA-EV-004 | Authorised to start and record realised evidence |
-| WP-AZ-005 | `READY_FOR_DEVELOPMENT` | `AUTHORISED_GO` | No | FSA-EV-005 | Authorised to start and record realised evidence |
-| WP-AZ-006 | `READY_FOR_DEVELOPMENT` | `AUTHORISED_GO` | No | FSA-EV-006 | Authorised to start and record realised evidence |
+| WP-AZ-004 | `READY_FOR_DEVELOPMENT` | `AUTHORISED_GO` | No | FSA-EV-004 | Authorised scope; start deferred pending controlling prerequisites |
+| WP-AZ-005 | `READY_FOR_DEVELOPMENT` | `AUTHORISED_GO` | No | FSA-EV-005 | Authorised scope; start deferred pending controlling prerequisites |
+| WP-AZ-006 | `READY_FOR_DEVELOPMENT` | `AUTHORISED_GO` | No | FSA-EV-006 | Authorised scope; start deferred pending controlling prerequisites |
 | WP-AZ-007 | `READY_FOR_DEVELOPMENT` | `AUTHORISED_GO` | No | FSA-EV-007 | Operational telemetry scope remains distinct from business audit scope |
 | WP-AZ-008 | `READY_FOR_DEVELOPMENT` | `AUTHORISED_GO` | No | FSA-EV-008 | Reproducibility/CI-CD evidence required before completion |
 
 **Foundation Slice A package:** `READY_FOR_DEVELOPMENT`.  
-**Foundation Slice A execution gate:** `AUTHORISED_GO` via `GO-2026-09-05-FSA-001` — `WP-AZ-001` through `WP-AZ-008` may start and advance within authorised scope. They remain `READY_FOR_DEVELOPMENT` until a recorded start or equivalent realised execution evidence supports a transition, and progress must be recorded here with objective evidence. No infrastructure implementation completion is claimed.
+**Foundation Slice A execution gate:** `AUTHORISED_GO` via `GO-2026-09-05-FSA-001` — the decision authorises only `WP-AZ-001` through `WP-AZ-008`, but execution remains deferred until the controlling `plan.md` pre-execution steps 1–9 reconcile. The packages remain `READY_FOR_DEVELOPMENT`; after prerequisites reconcile, a recorded start or equivalent realised execution evidence is required before transition, and progress must be recorded here with objective evidence. No infrastructure implementation completion is claimed.
