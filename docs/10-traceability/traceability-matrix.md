@@ -2,7 +2,7 @@
 
 Status: `IN_DEVELOPMENT`
 
-Current execution-authorising decision: `docs/09-delivery/foundation-slice-a-go-decision-2026-09-05.md` (`GO-2026-09-05-FSA-001`)
+Prior bounded decision pending revalidation: `docs/09-delivery/foundation-slice-a-go-decision-2026-09-05.md` (`GO-2026-09-05-FSA-001`). Effective execution gate: `CLOSED_PENDING_REVALIDATION`; this decision is not current execution authority until a post-prerequisite formal review revalidates or replaces it.
 
 Ubuntu Capital OS uses two related but distinct traceability chains so the pre-implementation readiness gate does not require evidence that can only exist after authorised delivery begins.
 
@@ -52,4 +52,4 @@ The entries below are recorded implementation/test evidence where repository his
 4. `Pending` in a **realised post-start** implementation, test/run or durable-evidence hop does **not** prevent a pre-start readiness decision for work that has not yet been authorised. After execution starts, however, those missing realised hops block the affected delivery-status promotion, E2E readiness and acceptance.
 5. Historical local implementation/test paths are supporting evidence only until represented by durable repository-accessible evidence with revision/run identity. They must not be used to infer current completion or to bypass the readiness gate.
 6. `docs/09-delivery/e2e-delivery-tracker.md` must point to the same stable planned IDs/targets before start and then reconcile to the realised implementation/test/evidence/status references during delivery; it cannot substitute for a missing traceability hop.
-7. This matrix does not by itself authorise implementation. The effective execution decision is governed by `AGENT.md`, controlling `plan.md`, the current readiness decision `docs/09-delivery/foundation-slice-a-go-decision-2026-09-05.md`, and the applicable decision controls.
+7. This matrix does not by itself authorise implementation. The effective execution gate is governed by `AGENT.md`, controlling `plan.md`, the applicable decision controls, and a new or explicitly revalidated post-prerequisite readiness decision. `GO-2026-09-05-FSA-001` is retained only as prior bounded scope and authority evidence while the gate remains `CLOSED_PENDING_REVALIDATION`.
