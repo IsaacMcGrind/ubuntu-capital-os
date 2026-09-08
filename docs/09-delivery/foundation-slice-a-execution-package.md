@@ -1,7 +1,11 @@
-# Ubuntu Capital OS — Foundation Slice A Execution Package
+# Ubuntu Capital OS - Foundation Slice A Execution Package
 
-**Status:** `IN_DEVELOPMENT`  
-**Execution gate:** `AUTHORISED_GO` via `docs/09-delivery/foundation-slice-a-go-decision-2026-09-05.md`  
+## Imported update note
+
+Supplemental 2026-09-06 execution-scope and approval details from external governance attachments are preserved in `docs/09-delivery/imported-governance-update-2026-09-06.md`.
+
+**Status:** `READY_FOR_IMPLEMENTATION`  
+**Execution gate:** `APPROVED_TO_START` via `docs/09-delivery/foundation-slice-a-go-decision-2026-09-05.md`  
 **Execution scope:** `WP-AZ-001` through `WP-AZ-008`  
 **Architecture decision:** `ARCH-ADR-001`  
 **Parent delivery plan:** `docs/09-delivery/azure-mvp-platform-delivery-plan.md`  
@@ -128,7 +132,7 @@ Once the start gate is satisfied, work packages may overlap only where their sta
 
 ## 7. Work-package execution cards
 
-### WP-AZ-001 — Azure subscription and resource baseline
+### WP-AZ-001 - Azure subscription and resource baseline
 
 **Objective**  
 Create a controlled Azure DEV/MVP baseline with explicit ownership, cost governance and deployment identity.
@@ -158,7 +162,7 @@ Create a controlled Azure DEV/MVP baseline with explicit ownership, cost governa
 - budget and alert evidence;
 - naming/tagging record.
 
-### WP-AZ-002 — Static Web Apps frontend deployment
+### WP-AZ-002 - Static Web Apps frontend deployment
 
 **Objective**  
 Deploy the current React/Vite application to an Azure-hosted DEV/MVP endpoint.
@@ -184,7 +188,7 @@ Deploy the current React/Vite application to an Azure-hosted DEV/MVP endpoint.
 - route smoke-test results;
 - deployed commit SHA.
 
-### WP-AZ-003 — Microsoft Entra External ID foundation
+### WP-AZ-003 - Microsoft Entra External ID foundation
 
 **Objective**  
 Establish the selected customer identity foundation for Ubuntu Capital investor authentication.
@@ -210,7 +214,7 @@ Establish the selected customer identity foundation for Ubuntu Capital investor 
 - failed/unauthenticated test result;
 - identity-to-backend validation contract.
 
-### WP-AZ-004 — Protected Azure Functions API foundation
+### WP-AZ-004 - Protected Azure Functions API foundation
 
 **Objective**  
 Create a backend execution boundary that enforces authentication server-side.
@@ -238,7 +242,7 @@ Create a backend execution boundary that enforces authentication server-side.
 - health endpoint evidence;
 - deployment reference.
 
-### WP-AZ-005 — Azure SQL persistence foundation
+### WP-AZ-005 G�� Azure SQL persistence foundation
 
 **Objective**  
 Create the minimum relational persistence capability required by later business slices.
@@ -264,7 +268,7 @@ Create the minimum relational persistence capability required by later business 
 - schema/version reference;
 - redacted connectivity/configuration evidence.
 
-### WP-AZ-006 — Key Vault and Managed Identity
+### WP-AZ-006 G�� Key Vault and Managed Identity
 
 **Objective**  
 Remove embedded infrastructure credentials and establish least-privilege service identity.
@@ -288,7 +292,7 @@ Remove embedded infrastructure credentials and establish least-privilege service
 - successful runtime access evidence;
 - repository secret-scan/manual verification result where available.
 
-### WP-AZ-007 — Application Insights and Azure Monitor
+### WP-AZ-007 G�� Application Insights and Azure Monitor
 
 **Objective**  
 Make the DEV/MVP platform observable without logging sensitive data.

@@ -1,8 +1,12 @@
-# Ubuntu Capital OS — Foundation Slice A Evidence Register
+# Ubuntu Capital OS - Foundation Slice A Evidence Register
+
+## Imported update note
+
+Supplemental 2026-09-06 evidence-gate statements from external governance attachments are preserved in `docs/09-delivery/imported-governance-update-2026-09-06.md`.
 
 **Scope:** `WP-AZ-001` through `WP-AZ-008`  
-**Delivery package status:** `IN_DEVELOPMENT`  
-**Execution gate:** `AUTHORISED_GO` via `docs/09-delivery/foundation-slice-a-go-decision-2026-09-05.md`  
+**Delivery package status:** `READY_FOR_IMPLEMENTATION`  
+**Execution gate:** `APPROVED_TO_START` via `docs/09-delivery/foundation-slice-a-go-decision-2026-09-05.md`  
 **Execution package:** `docs/09-delivery/foundation-slice-a-execution-package.md`  
 **Governance reconciliation:** `docs/09-delivery/foundation-slice-a-governance-reconciliation.md`  
 **Current readiness decision:** `docs/09-delivery/foundation-slice-a-go-decision-2026-09-05.md`
@@ -40,7 +44,7 @@ The 2026-08-30 governance reconciliation remains part of the controlling compati
 
 The checklists below become executable evidence gates only after the current Foundation start gate is satisfied by the controlling governance chain and formal readiness decision.
 
-### WP-AZ-001 — Azure baseline
+### WP-AZ-001 - Azure baseline
 
 Required before `COMPONENT_COMPLETE`:
 - [ ] resource inventory/export/CLI evidence;
@@ -52,7 +56,7 @@ Required before `COMPONENT_COMPLETE`:
 - [ ] deployment identity/service connection approach documented;
 - [ ] secrets exposure check.
 
-### WP-AZ-002 — Static Web Apps frontend
+### WP-AZ-002 - Static Web Apps frontend
 
 Required before `COMPONENT_COMPLETE`:
 - [ ] successful clean build;
@@ -62,7 +66,7 @@ Required before `COMPONENT_COMPLETE`:
 - [ ] deployed commit SHA/PR reference;
 - [ ] environment configuration separation verified.
 
-### WP-AZ-003 — Entra External ID
+### WP-AZ-003 - Entra External ID
 
 Required before `COMPONENT_COMPLETE` for the **work package**:
 - [ ] customer identity configuration evidence;
@@ -74,7 +78,7 @@ Required before `COMPONENT_COMPLETE` for the **work package**:
 
 `WP-AZ-003` completion does not by itself make `UC-IAM-001` complete; the broader authentication use case remains governed by protected backend enforcement and E2E evidence.
 
-### WP-AZ-004 — Protected Azure Functions API
+### WP-AZ-004 - Protected Azure Functions API
 
 Required before `COMPONENT_COMPLETE`:
 - [ ] versioned API deployment evidence;
@@ -84,7 +88,7 @@ Required before `COMPONENT_COMPLETE`:
 - [ ] health endpoint evidence;
 - [ ] runtime failure telemetry reference.
 
-### WP-AZ-005 — Azure SQL persistence
+### WP-AZ-005 - Azure SQL persistence
 
 Required before `COMPONENT_COMPLETE`:
 - [ ] schema/migration evidence;
@@ -94,7 +98,7 @@ Required before `COMPONENT_COMPLETE`:
 - [ ] business-state ownership documented;
 - [ ] verification that document binaries/telemetry are not incorrectly stored as business relational state.
 
-### WP-AZ-006 — Key Vault and Managed Identity
+### WP-AZ-006 - Key Vault and Managed Identity
 
 Required before `COMPONENT_COMPLETE`:
 - [ ] Key Vault inventory with sensitive values redacted;
@@ -103,7 +107,7 @@ Required before `COMPONENT_COMPLETE`:
 - [ ] deployed runtime access test;
 - [ ] confirmation that client/repository code contains no required backend secrets.
 
-### WP-AZ-007 — Application Insights and Azure Monitor
+### WP-AZ-007 - Application Insights and Azure Monitor
 
 Required before `COMPONENT_COMPLETE`:
 - [ ] successful request trace;
@@ -115,7 +119,7 @@ Required before `COMPONENT_COMPLETE`:
 
 `WP-AZ-007` proves operational observability only. It does not satisfy `UC-AUD-001` and does not replace the business-audit evidence required by `WP-AZ-011`.
 
-### WP-AZ-008 — Reproducible infrastructure and CI/CD deployment evidence
+### WP-AZ-008 - Reproducible infrastructure and CI/CD deployment evidence
 
 Required before `COMPONENT_COMPLETE`:
 - [ ] version-controlled infrastructure-as-code or equivalent declarative provisioning definitions for Foundation resources;
@@ -134,14 +138,14 @@ Required before `COMPONENT_COMPLETE`:
 
 | Work package | Recorded delivery status | Execution gate | Evidence gate satisfied? | Evidence IDs | Notes |
 |---|---|---|---:|---|---|
-| WP-AZ-001 | `IN_DEVELOPMENT` | `AUTHORISED_GO` | No | FSA-EV-001 | Authorised to start and record realised evidence |
-| WP-AZ-002 | `IN_DEVELOPMENT` | `AUTHORISED_GO` | No | FSA-EV-002 | Authorised to start and record realised evidence |
-| WP-AZ-003 | `IN_DEVELOPMENT` | `AUTHORISED_GO` | No | FSA-EV-003 | UC-IAM-001 remains independently governed for use-case completion |
-| WP-AZ-004 | `IN_DEVELOPMENT` | `AUTHORISED_GO` | No | FSA-EV-004 | Authorised to start and record realised evidence |
-| WP-AZ-005 | `IN_DEVELOPMENT` | `AUTHORISED_GO` | No | FSA-EV-005 | Authorised to start and record realised evidence |
-| WP-AZ-006 | `IN_DEVELOPMENT` | `AUTHORISED_GO` | No | FSA-EV-006 | Authorised to start and record realised evidence |
-| WP-AZ-007 | `IN_DEVELOPMENT` | `AUTHORISED_GO` | No | FSA-EV-007 | Operational telemetry scope remains distinct from business audit scope |
-| WP-AZ-008 | `IN_DEVELOPMENT` | `AUTHORISED_GO` | No | FSA-EV-008 | Reproducibility/CI-CD evidence required before completion |
+| WP-AZ-001 | `READY_FOR_IMPLEMENTATION` | `APPROVED_TO_START` | No | FSA-EV-001 | Authorised to start and record realised evidence |
+| WP-AZ-002 | `READY_FOR_IMPLEMENTATION` | `APPROVED_TO_START` | No | FSA-EV-002 | Authorised to start and record realised evidence |
+| WP-AZ-003 | `READY_FOR_IMPLEMENTATION` | `APPROVED_TO_START` | No | FSA-EV-003 | UC-IAM-001 remains independently governed for use-case completion |
+| WP-AZ-004 | `READY_FOR_IMPLEMENTATION` | `APPROVED_TO_START` | No | FSA-EV-004 | Authorised to start and record realised evidence |
+| WP-AZ-005 | `READY_FOR_IMPLEMENTATION` | `APPROVED_TO_START` | No | FSA-EV-005 | Authorised to start and record realised evidence |
+| WP-AZ-006 | `READY_FOR_IMPLEMENTATION` | `APPROVED_TO_START` | No | FSA-EV-006 | Authorised to start and record realised evidence |
+| WP-AZ-007 | `READY_FOR_IMPLEMENTATION` | `APPROVED_TO_START` | No | FSA-EV-007 | Operational telemetry scope remains distinct from business audit scope |
+| WP-AZ-008 | `READY_FOR_IMPLEMENTATION` | `APPROVED_TO_START` | No | FSA-EV-008 | Reproducibility/CI-CD evidence required before completion |
 
-**Foundation Slice A package:** `IN_DEVELOPMENT`.  
-**Foundation Slice A execution gate:** `AUTHORISED_GO` via `GO-2026-09-05-FSA-001` — `WP-AZ-001` through `WP-AZ-008` may start and advance within authorised scope, and progress must be recorded here with objective realised evidence. No infrastructure implementation completion is claimed.
+**Foundation Slice A package:** `READY_FOR_IMPLEMENTATION`.  
+**Foundation Slice A execution gate:** `APPROVED_TO_START` via `GO-2026-09-05-FSA-001` - `WP-AZ-001` through `WP-AZ-008` may start and advance within authorised scope, and progress must be recorded here with objective realised evidence. No infrastructure implementation completion is claimed.

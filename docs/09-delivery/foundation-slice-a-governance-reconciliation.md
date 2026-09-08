@@ -1,5 +1,9 @@
 # Ubuntu Capital OS — Foundation Slice A Governance Reconciliation
 
+## Imported update note
+
+Supplemental 2026-09-06 approval-state details are preserved in `docs/09-delivery/imported-governance-update-2026-09-06.md`.
+
 **Status:** `ANALYSIS_IN_PROGRESS`  
 **Evidence classification:** `CONFIRMED`  
 **Assessment date:** 2026-08-30  

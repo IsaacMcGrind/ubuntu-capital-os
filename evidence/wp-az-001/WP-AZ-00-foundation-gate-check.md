@@ -1,0 +1,31 @@
+# WP-AZ-001 Foundation Start-Gate Evidence
+
+## Repository context
+
+- Repository: ubuntu-capital-os
+- Branch: feature/foundation-gate-approval-and-evidence-package
+- Review date: 2026-09-06
+
+## Reconciliation record
+
+- Governance reconciliation: [docs/09-delivery/foundation-slice-a-governance-reconciliation.md](docs/09-delivery/foundation-slice-a-governance-reconciliation.md)
+- AGENT.md integrity review: CONFIRMED FOR FOUNDATION START
+- Applicable Phase 0-4 outputs: CONFIRMED IN SEPARATE CONTROLLING REPO ubuntu-capital-os
+- Critical blocking questions:
+  - Resolved by recorded human approval and approved baseline branch selection
+  - Temporary architecture exceptions accepted for now and scheduled for closure after startup
+- Conditional items: Temporary architecture exceptions remain open and must be resolved after Foundation implementation begins.
+
+## Decision
+
+Foundation Slice A is APPROVED TO START.
+
+This decision does not mark any work package complete, authorise production deployment, or authorise WP-AZ-009 through WP-AZ-012.
+
+## Human approval
+
+- Approver: HerLogic Solutions
+- Role: Cloud Engineer and Software Developer
+- Date: 06/09/2026
+- Approval reference: AR-ID-00
+- Conditions: Azure evidence must be captured as WP-AZ-001 through WP-AZ-008 are implemented; temporary architecture exceptions will be resolved after the Foundation start.

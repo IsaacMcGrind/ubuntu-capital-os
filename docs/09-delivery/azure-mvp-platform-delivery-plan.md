@@ -1,8 +1,18 @@
-# Ubuntu Capital OS — Azure MVP Platform Delivery Plan
+# Ubuntu Capital OS - Azure MVP Platform Delivery Plan
 
-**Status:** `IN_DEVELOPMENT`  
+## Imported update note
+
+Additional 2026-09-06 approved-to-start planning details supplied externally are preserved in `docs/09-delivery/imported-governance-update-2026-09-06.md` and are additive to this plan.
+
+**Status:** `APPROVED_TO_START`  
 **Architecture decision:** `ARCH-ADR-001`  
 **Purpose:** convert the chosen Azure MVP platform direction into evidence-gated delivery work without treating infrastructure selection as implementation completion.
+
+Imported 2026-09-06 status update:
+
+- approved branch baseline: `feature/foundation-gate-approval-and-evidence-package`;
+- human approver: HerLogic Solutions (`AR-ID-00`);
+- Foundation scope remains `WP-AZ-001` through `WP-AZ-008` with business slice blocked pending evidence acceptance.
 
 ## 1. Delivery objective
 
@@ -45,7 +55,7 @@ Azure Blob Storage remains selected by `ARCH-ADR-001` for documents/generated fi
 
 ## 3. Work-package evidence gates
 
-### WP-AZ-001 — Azure baseline
+### WP-AZ-001 - Azure baseline
 
 **Deliverables**
 - resource-group/environment model;
@@ -59,7 +69,7 @@ Azure Blob Storage remains selected by `ARCH-ADR-001` for documents/generated fi
 - budget configuration evidence;
 - no production secrets in repository/client code.
 
-### WP-AZ-002 — Static Web Apps frontend
+### WP-AZ-002 - Static Web Apps frontend
 
 **Deliverables**
 - React/Vite build deployed to Static Web Apps;
@@ -71,7 +81,7 @@ Azure Blob Storage remains selected by `ARCH-ADR-001` for documents/generated fi
 - reachable Azure-hosted URL;
 - smoke test of core routes.
 
-### WP-AZ-003 — Entra External ID
+### WP-AZ-003 - Entra External ID
 
 **Deliverables**
 - customer identity tenant/configuration;
@@ -90,7 +100,7 @@ Azure Blob Storage remains selected by `ARCH-ADR-001` for documents/generated fi
 - when the current Foundation start gate has been satisfied, the formal readiness decision authorizes the work, and the evidence above is present, `WP-AZ-003` may reach `COMPONENT_COMPLETE`;
 - this does **not** by itself move `UC-IAM-001` to `COMPLETE`.
 
-### WP-AZ-004 — Azure Functions API foundation
+### WP-AZ-004 - Azure Functions API foundation
 
 **Deliverables**
 - versioned API structure;
@@ -104,7 +114,7 @@ Azure Blob Storage remains selected by `ARCH-ADR-001` for documents/generated fi
 - authenticated request resolves the caller identity server-side;
 - application failure appears in telemetry with correlation data.
 
-### WP-AZ-005 — Azure SQL persistence
+### WP-AZ-005 - Azure SQL persistence
 
 **Deliverables**
 - initial relational schema aligned to accepted logical ownership;
@@ -118,7 +128,7 @@ Azure Blob Storage remains selected by `ARCH-ADR-001` for documents/generated fi
 - database is not used for document binaries or telemetry logs;
 - business state ownership remains explicit.
 
-### WP-AZ-006 — Key Vault and Managed Identity
+### WP-AZ-006 - Key Vault and Managed Identity
 
 **Deliverables**
 - Key Vault for required secrets/configuration;
@@ -130,7 +140,7 @@ Azure Blob Storage remains selected by `ARCH-ADR-001` for documents/generated fi
 - deployed Function can access required resource without embedded credential;
 - access assignments are documented.
 
-### WP-AZ-007 — Application Insights and Azure Monitor
+### WP-AZ-007 - Application Insights and Azure Monitor
 
 **Deliverables**
 - request, dependency, exception and availability telemetry;
@@ -147,7 +157,7 @@ Azure Blob Storage remains selected by `ARCH-ADR-001` for documents/generated fi
 - `WP-AZ-007` proves operational observability only;
 - it does not satisfy `UC-AUD-001` business-audit requirements or replace the Phase 5 business audit-event framework or `WP-AZ-011` slice audit evidence.
 
-### WP-AZ-008 — Reproducible infrastructure and CI/CD deployment evidence
+### WP-AZ-008 - Reproducible infrastructure and CI/CD deployment evidence
 
 **Deliverables**
 - version-controlled infrastructure-as-code or equivalent declarative provisioning definitions for Foundation Slice A resources that are reasonably automatable;
@@ -168,7 +178,7 @@ Azure Blob Storage remains selected by `ARCH-ADR-001` for documents/generated fi
 - deployment credentials use an approved service identity/connection and are not committed to the repository;
 - reconstruction/operational notes are recorded for any unavoidable manual step.
 
-### WP-AZ-009 — Opportunity API
+### WP-AZ-009 - Opportunity API
 
 **Start prerequisite**  
 Do not start or advance this package until Foundation Slice A is evidenced, the current readiness position and formal readiness conditions permit progression, the full first-business-slice integrity gate in `docs/09-delivery/foundation-slice-a-governance-reconciliation.md` and `docs/09-delivery/pre-implementation-gate-reassessment-2026-09-03.md` is satisfied, and the `plan.md` Phase 5 **shared** foundational product capabilities and exit criteria required by Phase 6 are complete and evidenced. Phase 5 does not require the catalogue/API produced by this package; `WP-AZ-009` is the Phase 6 delivery unit that implements that business capability after the shared-capability handoff.
@@ -184,7 +194,7 @@ Do not start or advance this package until Foundation Slice A is evidenced, the 
 - unavailable/restricted opportunity test;
 - traceable request-to-data evidence.
 
-### WP-AZ-010 — Non-binding expression of interest
+### WP-AZ-010 - Non-binding expression of interest
 
 **Start prerequisite**  
 Do not start or advance this package until Foundation Slice A is evidenced, the current readiness position and formal readiness conditions permit progression, the full first-business-slice integrity gate is satisfied, and the `plan.md` Phase 5 foundational product capabilities and exit criteria required by Phase 6 are complete and evidenced.
@@ -205,7 +215,7 @@ Do not start or advance this package until Foundation Slice A is evidenced, the 
 - database failure is safely surfaced/recoverable;
 - action remains explicitly non-binding.
 
-### WP-AZ-011 — Audit evidence for first slice
+### WP-AZ-011 - Audit evidence for first slice
 
 **Start prerequisite**  
 Do not start or advance this package until Foundation Slice A is evidenced, the current readiness position and formal readiness conditions permit progression, the full first-business-slice integrity gate is satisfied, and the `plan.md` Phase 5 foundational product capabilities and exit criteria — including the shared business audit-event framework — are complete and evidenced.

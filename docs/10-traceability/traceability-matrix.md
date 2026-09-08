@@ -1,6 +1,8 @@
 # Traceability Matrix
 
-Status: `IN_DEVELOPMENT`
+Imported 2026-09-06 traceability assertions from external governance attachments are preserved in `docs/09-delivery/imported-governance-update-2026-09-06.md` as additive context.
+
+Status: `READY_FOR_IMPLEMENTATION`
 
 Current execution-authorising decision: `docs/09-delivery/foundation-slice-a-go-decision-2026-09-05.md` (`GO-2026-09-05-FSA-001`)
 
@@ -45,6 +47,20 @@ The entries below are recorded implementation/test evidence where repository his
 | TRC-005 | No runtime integration evidence recorded | Pending runtime integration tests | Pending provider/runtime evidence record | PARTIAL |
 
 ## Usage and gate rules
+
+## 2026-09-06 imported operational traceability snapshot
+- Ubuntu Capital PLatform  repository used as reference for source(src)
+
+| Trace ID | Source | Work Package or Use Case | Implementation Evidence | Validation Evidence | Status |
+|---|---|---|---|---|---|
+| TRC-AZ-001 | [README.md](README.md#L1-L53) | WP-AZ-001 baseline governance | Repo context only; no Azure resource evidence yet | [docs/09-delivery/foundation-slice-a-governance-reconciliation.md](docs/09-delivery/foundation-slice-a-governance-reconciliation.md) | PARTIAL |
+| TRC-AZ-002 | [src/App.tsx](src/App.tsx#L35-L66) | UC-IAM-001, prototype session gate | Client-side route protection implemented | [src/test/auth-and-eoi.test.tsx](src/test/auth-and-eoi.test.tsx#L15-L51) | PARTIAL |
+| TRC-AZ-003 | [src/lib/session.ts](src/lib/session.ts#L1-L42) | Session handling baseline | LocalStorage-based session logic | Test coverage only; no server-side identity evidence | PARTIAL |
+| TRC-AZ-004 | [src/lib/eoi.ts](src/lib/eoi.ts#L1-L43) | UC-INV-001, prototype EOI flow | LocalStorage-based EOI state | [src/test/auth-and-eoi.test.tsx](src/test/auth-and-eoi.test.tsx#L53-L75) | PARTIAL |
+| TRC-AZ-005 | [src/pages/Login.tsx](src/pages/Login.tsx#L11-L67) | Auth entry flow | UI login and local session bootstrap | No backend validation or Entra integration evidence | PARTIAL |
+| TRC-AZ-006 | [src/pages/DealDetail.tsx](src/pages/DealDetail.tsx#L29-L60) | UC-INV-001 validation flow | Amount validation and duplicate check | Local component tests only; no Azure-backed workflow | PARTIAL |
+| TRC-AZ-007 | [docs/09-delivery/foundation-slice-a-governance-reconciliation.md](docs/09-delivery/foundation-slice-a-governance-reconciliation.md) | Foundation gate status | Governance record now records approval to start | Human decision is recorded by HerLogic Solutions under AR-ID-00 | READY_FOR_IMPLEMENTATION |
+| TRC-AZ-008 | [docs/09-delivery/foundation-slice-a-evidence-register.md](docs/09-delivery/foundation-slice-a-evidence-register.md) | WP-AZ-001 to WP-AZ-008 evidence register | Evidence placeholders are active and must be populated during implementation | Foundation work has started under the approved gate | READY_FOR_IMPLEMENTATION |
 
 1. **Readiness uses the planned chain.** Every applicable proposed scope must have stable source, use-case, backlog, architecture/design where applicable, planned implementation, planned test/validation, planned durable-evidence and planned tracker/status targets before that trace chain can support a readiness decision.
 2. A general backlog-file reference, undefined future test, generic evidence placeholder or unlinked E2E tracker row is not sufficient. Critical scope must reconcile to stable repository-accessible IDs or targets.
