@@ -24,6 +24,7 @@ The agent's objective is not to speculate about an ideal platform. Its objective
 12. Validate JSON against the schemas in `/schemas` before treating an output as complete.
 13. Use the canonical repository structure defined in `plan.md`; do not create parallel or renamed directory trees.
 14. If counts, links, IDs, evidence status, or required outputs do not reconcile, stop progression and repair the inconsistency before continuing.
+15. Repository change policy: after required canonical outputs are present, all further updates must modify existing files only. Do not create new files unless explicitly approved by the project owner for a specific purpose.
 
 ## Evidence classifications
 

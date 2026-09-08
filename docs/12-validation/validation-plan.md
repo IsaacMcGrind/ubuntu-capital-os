@@ -10,31 +10,38 @@ Status: `ANALYSIS_IN_PROGRESS`
 4. Security/authorization checks for protected workflows.
 5. E2E walkthrough evidence for status promotion.
 
-## Current executable checks
+## Repository-executable validation checks
 
-- JSON parse validation with jq for backlog/schema files.
-- Required-file inventory comparison against plan.md.
-- Local implementation repo baseline checks (2026-08-31):
-	- `npm run lint` in `/Users/officialnumbr10/Dev/ubuntu-capital-platform` (0 errors, 8 warnings)
-	- `npm test` in `/Users/officialnumbr10/Dev/ubuntu-capital-platform` (passed)
-	- `npm run build` in `/Users/officialnumbr10/Dev/ubuntu-capital-platform` (passed)
+- JSON parse validation with `jq` for backlog/schema files.
+- Required-file inventory comparison against `plan.md`.
 
-- Local implementation repo verification rerun (2026-08-31):
-	- `npm run lint` in `/Users/officialnumbr10/Dev/ubuntu-capital-platform` (0 errors, 8 warnings; unchanged)
-	- `npm test` in `/Users/officialnumbr10/Dev/ubuntu-capital-platform` (passed; `2` files, `6` tests)
-	- `npm run build` in `/Users/officialnumbr10/Dev/ubuntu-capital-platform` (passed; non-blocking warnings unchanged)
+These checks apply to this Ubuntu Capital OS repository. They do not verify the current contents or runtime behaviour of `HarleyJoker/ubuntu-capital-platform`.
 
-- Step-2 verification coverage added (2026-08-31):
+## Reported historical implementation checks
+
+Repository artifacts record the following results for a local snapshot on 2026-08-31. The exact source branch, commit SHA, run identity, and durable raw-evidence reference are `UNKNOWN`, so every result in this section is historical/partial supporting evidence only.
+
+- Reported local path: `/Users/officialnumbr10/Dev/ubuntu-capital-platform`
+- Reported baseline checks:
+	- `npm run lint` (0 errors, 8 warnings)
+	- `npm test` (passed)
+	- `npm run build` (passed)
+- Reported verification rerun:
+	- `npm run lint` (0 errors, 8 warnings; reportedly unchanged)
+	- `npm test` (passed; `2` files, `6` tests)
+	- `npm run build` (passed; non-blocking warnings reportedly unchanged)
+- Reported Step-2 test coverage:
 	- session-required route behavior (`/myportfolio/*` redirect for unauthenticated access)
 	- unauthorized-access denial for guarded portfolio route entry
 	- EOI validation failure checks (empty and below-minimum amount)
-	- EOI duplicate-submission protection for same deal ID
+	- EOI duplicate-submission protection for the same deal ID
 
-## Observed verification limitations
+## Historical verification limitations and current boundary
 
-- Current lint output includes `react-refresh/only-export-components` warnings in shared UI files.
-- Build output includes non-blocking warnings for large JS chunk size and Browserslist data staleness.
-- Current tests validate limited UI rendering behavior and do not yet provide business-flow, authorization-boundary, persistence, or E2E coverage for critical use cases.
+- The reported lint warnings concerned `react-refresh/only-export-components` in shared UI files.
+- The reported build warnings concerned large JS chunk size and Browserslist data staleness.
+- The reported tests covered limited UI behaviour and did not establish business-flow, authorization-boundary, persistence, or E2E completion for critical use cases.
+- None of these observations confirms current codebase health or current implementation behaviour. An authorised revision-pinned inspection and durable run record are required before they can be refreshed as current verification evidence.
 
 ## Planned checks
 

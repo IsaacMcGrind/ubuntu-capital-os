@@ -34,7 +34,7 @@ The reconciled decision is:
 
 > **IAM-D03-R1:** Use a standards-based identity-provider boundary rather than implementing credential/password authentication inside Ubuntu Capital OS. **Microsoft Entra External ID is the selected customer-identity platform for the MVP.** Detailed tenant configuration, user flows/policies, protocol settings, token/session handling and production enforcement remain delivery-design decisions subject to evidence gates.
 
-This supersession does **not** change UC-IAM-001's implementation status. It remains `IN_DEVELOPMENT` until server-side authentication/session enforcement and E2E evidence exist.
+This supersession does **not** change the target architecture or the historical snapshot label for UC-IAM-001. The unpinned snapshot label remains `IN_DEVELOPMENT` for traceability, while current reproducible implementation verification is `BLOCKED_BY_CONTEXT` until a revision-pinned inspection, server-side authentication/session enforcement, and durable E2E evidence exist.
 
 ## IAM-D08 reconciliation
 

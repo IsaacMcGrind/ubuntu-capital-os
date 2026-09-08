@@ -1,13 +1,21 @@
 # Ubuntu Capital OS Blueprint — Solution Architecture Readiness Audit
 
-**Document status:** Architecture governance assessment  
-**Assessment date:** 2026-08-31  
+**Document status:** Architecture governance assessment with post-baseline amendment  
+**Original assessment date:** 2026-08-31  
 **Blueprint assessed:** `Ubuntu_Capital_OS_Blueprint(2).pdf`  
 **Repository assessed:** `IsaacMcGrind/ubuntu-capital-os`  
-**Evidence branch:** `master`  
-**Evidence commit:** `d2d6f7bfe90ef04ec846eb11308cf551977cd33d`  
-**Target documentation branch:** `corefinity-docs`  
+**Original evidence branch:** `master`  
+**Original evidence commit:** `d2d6f7bfe90ef04ec846eb11308cf551977cd33d`  
+**Original target documentation branch:** `corefinity-docs`  
+**Post-baseline amendment date:** 2026-09-04  
+**Post-baseline amendment branch:** `fix/reconcile-current-repository-status` (PR #27)  
+**Post-baseline evidence commit:** `0e90af17cdfab695ecacd622fc7d591a3aaf5451`  
+**Amendment scope:** Sections 6, 8 and 11 incorporate the later pre-implementation reassessment, planned-versus-realised traceability model, readiness-authority control, and Phase 5/Phase 6 handoff. The quantitative snapshot in Section 2 remains tied to the original evidence commit.  
 **SA recommendation:** `NO-GO FOR UNRESTRICTED IMPLEMENTATION`
+
+**2026-09-05 current-status amendment:** `GO-2026-09-05-FSA-001` records bounded authority for `WP-AZ-001` through `WP-AZ-008` only. The original and 2026-09-04 audit findings remain historical architecture evidence; only wording that treats readiness authority as undefined or `OQ-016` as open is superseded. Foundation execution remains deferred until the controlling `plan.md` pre-execution steps 1–9 reconcile and a formal readiness decision is revalidated afterward. All eight Foundation completion evidence gates remain unsatisfied, and `WP-AZ-009` through `WP-AZ-012` remain blocked.
+
+**2026-09-07 formal readiness amendment:** Thembinkosi Mtsweni, as project owner and final approving authority, completed the formal post-prerequisite review and revalidated `GO-2026-09-05-FSA-001`. The bounded Foundation gate for `WP-AZ-001` through `WP-AZ-008` is `OPEN_FOR_AUTHORISED_EXECUTION` in Azure DEV/MVP. This supersedes the 2026-09-05 deferral statement but does not satisfy implementation evidence gates, authorise the first business slice, or establish production readiness. Source: `SRC-020`.
 
 ## 1. Purpose
 
@@ -24,7 +32,7 @@ It distinguishes:
 
 The Blueprint is a defensible **target-architecture presentation**. It correctly separates logical capabilities, Azure implementation, identity responsibilities and the business-audit boundary.
 
-The repository does not yet support an implementation-readiness claim:
+The repository supports only the bounded Foundation start authorised on 2026-09-07; it does not support an unrestricted platform or production-readiness claim:
 
 | Measure | Current evidence |
 |---|---:|
@@ -115,7 +123,7 @@ The following are not approved or evidenced:
 
 ## 6. Blocked delivery gates
 
-All Foundation work packages remain `READY_FOR_DEVELOPMENT` with execution `BLOCKED_BY_CONTEXT`:
+All Foundation work packages remain `READY_FOR_DEVELOPMENT` with execution `OPEN_FOR_AUTHORISED_EXECUTION`:
 
 | Work package | Capability | Evidence gate |
 |---|---|---|
@@ -128,7 +136,7 @@ All Foundation work packages remain `READY_FOR_DEVELOPMENT` with execution `BLOC
 | `WP-AZ-007` | Application Insights and Azure Monitor | Not satisfied |
 | `WP-AZ-008` | Infrastructure as Code and CI/CD | Not satisfied |
 
-`WP-AZ-009` through `WP-AZ-012` must not start until the Foundation evidence gates and controlling Phase 5 exit criteria are satisfied.
+`WP-AZ-009` through `WP-AZ-012` must not start until the Foundation evidence gates and controlling Phase 5 **shared-capability** exit criteria are satisfied. `WP-AZ-009` then implements the opportunity read model, seed/test data, access policy enforcement, and permitted catalogue API as Phase 6 work; none of those `WP-AZ-009` outputs is a Phase 5 exit prerequisite.
 
 ## 7. Blueprint corrections required
 
@@ -139,13 +147,13 @@ All Foundation work packages remain `READY_FOR_DEVELOPMENT` with execution `BLOC
 | Blob appears part of active Foundation | Label as selected target, deferred until a controlled-document use case. |
 | NDA appears mandatory for every EOI | Make NDA conditional on opportunity/resource policy. |
 | Mapping omits data ownership | Add the authoritative logical owner per business entity. |
-| Identity flow appears implemented | Mark as target flow; current implementation is frontend session simulation. |
+| Identity flow appears implemented | Mark as target flow; the reported unpinned snapshot described frontend session simulation, while current implementation state remains unverified. |
 | Readiness path uses four generic gates | Replace with the controlling governance and delivery sequence below. |
 | Evidence baseline absent | Add repository, branch, commit SHA and assessment date. |
 
 ## 8. Solution Architect next steps
 
-### P0 — Close before Foundation implementation
+### P0 — Closed for bounded Foundation start on 2026-09-07
 
 1. Reconcile Phase 0–4 repository outputs and integrity rules.
 2. Resolve EOI, jurisdiction, eligibility, NDA and operator-authority decisions.
@@ -155,10 +163,12 @@ All Foundation work packages remain `READY_FOR_DEVELOPMENT` with execution `BLOC
 6. Complete the first-slice API, error, audit, persistence and integration contracts.
 7. Approve measurable availability, performance, recovery, retention and cost NFRs.
 8. Complete the ADR set.
-9. Reconcile source → use case → architecture → implementation → validation traceability.
-10. Run an Architecture Readiness Review and record `GO`, `CONDITIONAL GO` or `NO-GO`.
+9. Reconcile the **pre-start planned traceability chain** for the proposed Foundation/first-slice scope as `source -> use case -> backlog -> architecture/design (where applicable) -> planned implementation target -> planned test/validation -> planned durable-evidence target -> planned tracker/status`. Actual implementation, test-run, deployment and durable-evidence records are not required before authorised execution because they cannot exist for not-yet-started work.
+10. Run an Architecture Readiness Review. A non-authorising `NO-GO` may be recorded immediately while blockers remain. An execution-authorising `GO` or explicitly scoped `CONDITIONAL GO` may be recorded only after the non-waivable closure set, required planned pre-start traceability and readiness-decision authority reconcile.
 
 ### P1 — Execute only after the readiness gate opens
+
+After an effective authorised `GO` or explicitly scoped `CONDITIONAL GO`, replace the applicable planned targets progressively with the **realised delivery chain**: `source -> use case -> backlog -> architecture/design (where applicable) -> implementation evidence -> test/run evidence -> durable evidence -> validation/status`. Missing required realised hops block work-package/use-case status promotion, E2E readiness and acceptance; they do not make the pre-start decision circular.
 
 ```mermaid
 flowchart LR
@@ -196,6 +206,7 @@ The Blueprint establishes a useful target architecture, but current evidence doe
 - `docs/09-delivery/e2e-delivery-tracker.md`
 - `docs/09-delivery/foundation-slice-a-evidence-register.md`
 - `docs/09-delivery/foundation-slice-a-governance-reconciliation.md`
+- `docs/09-delivery/pre-implementation-gate-reassessment-2026-09-03.md`
 - `docs/10-traceability/traceability-matrix.md`
 - `docs/11-open-questions/open-questions.md`
 - `docs/12-validation/validation-plan.md`

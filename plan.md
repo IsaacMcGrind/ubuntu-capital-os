@@ -95,6 +95,10 @@ output/
   system-reconstruction-summary.md
 ```
 
+The required-output tree is the canonical maintenance contract. File presence does not by itself satisfy a phase exit criterion. As of the 2026-09-03 reassessment, the canonical Phase 0–4 directories and major structured outputs materially exist; remaining work is therefore primarily validation, approval, reconciliation and gap closure rather than recreating those outputs from scratch.
+
+The working `docs/02-architecture/` tree is an explicit structure exception because it is actively used but not declared in the canonical tree above. It must be formally dispositioned before the repository-integrity gate can close.
+
 ## 4. Phase 0 — Context and Architecture Baseline
 
 ### Objective
@@ -195,7 +199,7 @@ Convert the current catalogue into a complete, structured reconstruction specifi
 
 ### Exit Criteria
 
-- Every use case has evidence status, source references, permissions, audit events, failure paths, acceptance criteria, and E2E completion evidence.
+- Every use case has evidence status, source references, permissions, audit events, failure paths, acceptance criteria, **E2E completion criteria, and a stable planned E2E evidence target**. Actual E2E completion evidence is produced only after authorised implementation and is required for later status promotion and acceptance, not for the pre-implementation Phase 2 exit.
 - Critical unknowns remain visible and are linked to open questions.
 - JSON validates against Draft 2020-12 schema.
 
@@ -247,7 +251,8 @@ Create a development-ready, dependency-aware implementation system.
 - Convert use cases into Initiative → Epic → Feature → User Story → Technical/Test Task hierarchy.
 - Add business value, acceptance criteria, dependencies, risk, discipline, evidence, and status to every item.
 - Build the E2E delivery tracker.
-- Build complete source-to-evidence traceability.
+- Build complete **pre-start planned traceability** for the proposed implementation scope using `source -> use case -> backlog -> architecture/design (where applicable) -> planned implementation target -> planned test/validation -> planned durable-evidence target -> planned tracker/status`.
+- Define how those planned targets will be replaced by realised implementation, test/run and durable-evidence references after authorised execution begins.
 - Generate and validate `backlog.json`.
 
 ### Deliverables
@@ -262,6 +267,9 @@ Create a development-ready, dependency-aware implementation system.
 
 - Every backlog item traces to at least one use case.
 - Every critical use case has frontend, backend, database, security, tests, deployment, documentation, and evidence work represented.
+- Every applicable critical **planned pre-start** trace chain has stable source, use-case, backlog, architecture/design where applicable, planned implementation, planned test/validation, planned durable-evidence and planned tracker/status references. A missing required planned hop keeps the chain incomplete.
+- Post-build implementation/test-run/durable evidence is **not** required to exit this pre-implementation phase because it can only be produced after authorised execution. Those realised hops become mandatory for later status promotion and acceptance.
+- The E2E tracker reconciles to the same stable planned IDs and targets rather than substituting for missing planned traceability.
 - The tracker uses only approved status values.
 
 ## 9. Phase 5 — Foundational Product Capabilities
@@ -276,7 +284,7 @@ Implement only the shared capabilities needed by the first vertical slice.
 - role and permission enforcement
 - investor profile identity baseline
 - shared validation and error contract
-- opportunity read model and seed data
+- protected API bootstrap/authorization probe and non-business test data
 - audit event framework
 - structured logging and correlation IDs
 - persistence migrations
@@ -291,12 +299,16 @@ Implement only the shared capabilities needed by the first vertical slice.
 - audit records
 - API request/response samples
 - deployment/build reference
+- realised traceability replacing the applicable planned Phase 4 targets with implementation, test/run and durable-evidence references
 
 ### Exit Criteria
 
-- An authorised test investor can authenticate and securely load a permitted opportunity catalogue.
-- Cross-user access is denied and tested.
+- An authorised test investor can authenticate, establish a server-validated session, and call a protected bootstrap/authorization test surface without receiving another user's data.
+- Unauthenticated, insufficient-role, and cross-user access are denied and tested.
 - Failures produce safe errors and traceable logs.
+- Required realised traceability for completed work reconciles from source/use case/backlog through implementation, test/run, durable evidence and status.
+
+`WP-AZ-009` owns the opportunity read model, seed/test data, access policy enforcement, and permitted catalogue API in Phase 6. Those catalogue outputs are not Phase 5 exit prerequisites; Phase 5 proves the shared authentication, authorization, validation, audit, persistence, observability, deployment, and test foundations that `WP-AZ-009` consumes.
 
 ## 10. Phase 6 — First Complete Vertical Slice
 
@@ -338,6 +350,7 @@ This slice is deliberately non-binding until investment settlement, accreditatio
 
 - UI, API, database, security, audit, notification/simulation, automated tests, deployment, and captured E2E evidence are complete.
 - No unresolved critical question invalidates the interpretation of the slice.
+- Realised source/use-case/backlog/implementation/test/durable-evidence/status traceability reconciles.
 - Tracker status reaches `READY_FOR_ACCEPTANCE`, then `COMPLETE` only after acceptance evidence.
 
 ## 11. Phase 7 — Core Business Journeys
@@ -440,20 +453,23 @@ Make the platform operable, supportable, and auditable.
 
 ## 15. Immediate Execution Queue
 
+The current queue must use the artifacts that already exist. Do not recreate canonical Phase 0–4 outputs merely because an older status document described them as absent.
+
 Execute these tasks next, in order:
 
-1. Complete source inventory and terminology, including current implementation and contractor provenance.
-2. Gain repository access to `HarleyJoker/ubuntu-capital-platform` and perform implementation inventory when access becomes available.
-3. Produce actors and permissions matrix.
-4. Produce capability map.
-5. Upgrade the 41-use-case catalogue to all mandatory fields.
-6. Reconcile the current implementation against the 41 use cases without overstating visual completion as E2E completion.
-7. Fully specify the foundational and first-slice use cases.
-8. Extract business rules.
-9. Create journeys and state models for the first slice.
-10. Create integration and validation records for the first slice.
-11. Generate backlog, tracker, and traceability entries for the first slice.
-12. Continue or remediate implementation only after the relevant analysis and evidence meet exit criteria.
+1. Validate the existing Phase 0–4 outputs against the applicable phase exit criteria and `AGENT.md` integrity rules, using `docs/09-delivery/pre-implementation-gate-reassessment-2026-09-03.md` as the current reconciliation point.
+2. Produce a residual-gaps list that distinguishes `PRESENT_AND_ACCEPTABLE`, `PRESENT_BUT_PARTIAL`, `PRESENT_BUT_INCONSISTENT`, and `MISSING` so that already completed reconstruction work is not reopened unnecessarily.
+3. Gain repository access to `HarleyJoker/ubuntu-capital-platform` and refresh the implementation inventory when access becomes available; until then, preserve the current recorded implementation evidence boundary.
+4. Close the remaining P0 business/legal decisions required for the Foundation and first slice: EOI meaning, jurisdiction/eligibility, NDA policy, operator authority, logical data ownership, and authoritative state transitions.
+5. Close the remaining architecture/security/NFR readiness items identified by the current Solution Architecture audit, including threat model, authorization design, privacy/retention, measurable availability/performance/recovery/cost targets, the first-slice API/error/audit/persistence/integration contracts, and the minimum ADR set.
+6. Reconcile the **pre-start planned traceability chain** for the proposed Foundation/first-slice scope as `source -> use case -> backlog -> architecture/design (where applicable) -> planned implementation target -> planned test/validation -> planned durable-evidence target -> planned tracker/status`. Update `docs/10-traceability/traceability-matrix.md` and `docs/09-delivery/e2e-delivery-tracker.md` to the same stable planned IDs/targets, and verify schemas, structured data, links, IDs, counts, statuses, open-question references, and risk references. Do not require implementation/test-run/deployment/durable evidence that can only be produced after authorised execution starts.
+7. Reconcile `output/system-reconstruction-summary.md`, `README.md`, the implementation roadmap and all live delivery/gate artifacts with the same current readiness position; no summary may state that the business slice can proceed while Foundation/Phase 5 gates remain blocked.
+8. Define and record the readiness-decision approving authority and decision-control contract. Until authority exists, `GO` and `CONDITIONAL_GO` cannot open the gate and `NO_GO` remains effective.
+9. Run and record a formal pre-implementation readiness review. A non-authorising `NO_GO` may be recorded or refreshed immediately while blockers, integrity failures, partial required planned traceability, or undefined readiness authority remain. An execution-authorising `GO` or `CONDITIONAL_GO` may be recorded only after all non-waivable integrity conditions, required **planned pre-start** traceability hops, and readiness-authority requirements for the proposed scope reconcile.
+10. Only if an effective authorised decision permits execution, begin the exact permitted subset of `WP-AZ-001` through `WP-AZ-008` and capture objective evidence in `docs/09-delivery/foundation-slice-a-evidence-register.md`.
+11. During authorised delivery, replace planned targets progressively with realised `implementation -> test/run -> durable evidence -> validation/status` references. A missing required realised hop blocks work-package/use-case status promotion and acceptance, not the pre-start decision itself.
+12. Keep `WP-AZ-009` through `WP-AZ-012` blocked until Foundation evidence and the separate Phase 5 / first-business-slice gate are satisfied.
+13. Continue regulated onboarding, NDA, settlement, custody, portfolio and production-hardening work only as their own evidence and dependency gates are satisfied.
 
 ## 16. Agent Completion Protocol
 
