@@ -23,8 +23,8 @@ This decision does not mark any work package complete, authorise production depl
 
 ## Human approval
 
-- Approver: HerLogic Solutions
-- Role: Cloud Engineer and Software Developer
-- Date: 06/09/2026
-- Approval reference: AR-ID-00
+- Approver (contractor): HerLogic Solutions (Cloud Engineer / Software Developer)
+- Project owner approval: Thembinkosi Mtsweni
+- Governing decision: GO-2026-09-05-FSA-001 (revalidated 2026-09-07; SRC-020)
+- Approval date: 2026-09-06
 - Conditions: Azure evidence must be captured as WP-AZ-001 through WP-AZ-008 are implemented; temporary architecture exceptions will be resolved after the Foundation start.
