@@ -52,8 +52,8 @@ Code references:
 ### 2.4 Secrets and environment signals
 
 - No `.env*` files were found in this workspace scan.
-- No obvious hardcoded credential patterns were found in the app source during scan.
-- Existing ignore policy already excludes common build/dependency artifacts.
+- No obvious hardcoded credential patterns were found in the inspected artifacts.
+- `.gitignore` currently covers OS-level artifacts (macOS/Windows); it does not include dependency/build output ignores (e.g., `node_modules/`, `dist/`).
 
 Code references:
 
