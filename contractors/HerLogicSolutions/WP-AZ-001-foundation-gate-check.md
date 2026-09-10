@@ -9,7 +9,7 @@
 ## Reconciliation record
 
 - AGENT.md integrity review: CONFIRMED FOR FOUNDATION START
-- Applicable Phase 0-4 outputs: CONFIRMED IN SEPARATE CONTROLLING REPO ubuntu-capital-os
+- Applicable Phase 0-4 outputs: CONFIRMED IN CONTROLLING REPO ubuntu-capital-os (see docs/09-delivery/)
 - Critical blocking questions:
   - Resolved by recorded human approval and approved baseline branch selection
   - Temporary architecture exceptions accepted for now and scheduled for closure after startup
