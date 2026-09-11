@@ -40,13 +40,13 @@ Contractors and coders submit evidence; they do not exercise project-management 
 For every PR:
 
 1. Verify the submitting organization, responsible human and declared capacity.
-2. Verify the exact executor, work-package subset, authorised paths, evidence purpose, and assignment/decision reference against repository evidence. A scope-level `GO` is not an executor assignment.
+2. Verify the exact executor, work-package subset, authorised paths, evidence purpose, and decision/context reference against repository evidence. A scope-level `GO` is not a work allocation.
 3. Confirm changed paths remain inside the authorised scope. For `CONTRACTOR_TECHNICAL_EVIDENCE`, require every repository-hosted first-pass evidence file to remain under the submitting contractor's existing folder; reject changes to canonical governance, status, decision, register, tracker, traceability, roadmap, plan, or summary artifacts.
 4. Require factual, sanitised and revision-pinned evidence for current claims.
 5. Reject contractor-authored approval, gate, status-promotion, completion, architecture-decision, business/legal-decision or scope-authorisation language as a role-boundary violation.
 6. Treat merged contractor evidence as provenance input only; separately assess it before recommending acceptance or any canonical reconciliation.
 7. Perform canonical repository reconciliation separately after merge.
-8. Obtain Thembinkosi Mtsweni's human approval before any status change or next assignment.
+8. Obtain Thembinkosi Mtsweni's human approval before any status change or subsequent-work authorisation.
 
 ## Contractor coordination
 
