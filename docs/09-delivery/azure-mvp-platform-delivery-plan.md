@@ -246,7 +246,7 @@ Do not start or advance this package until Foundation Slice A is evidenced, the 
 
 Foundation Slice A consists of `WP-AZ-001` through `WP-AZ-008`.
 
-Foundation execution can begin only after the current pre-implementation scope gate is satisfied, a formal `GO` or explicitly scoped `CONDITIONAL_GO` authorises the applicable work, and the Project Manager records an exact contractor/package/path declaration. After that, Foundation Slice A as a whole may be described as `COMPONENT_COMPLETE` only when:
+Foundation execution can begin only after the current pre-implementation scope gate is satisfied, a formal `GO` or explicitly scoped `CONDITIONAL_GO` authorises the applicable work, and the contractor declares its exact selected package/path scope and evidence purpose in the PR. After that, Foundation Slice A as a whole may be described as `COMPONENT_COMPLETE` only when:
 
 1. every Foundation work package has satisfied its own evidence gate and reached `COMPONENT_COMPLETE`;
 2. `WP-AZ-003` identity-foundation completion is not confused with completion of `UC-IAM-001`;
