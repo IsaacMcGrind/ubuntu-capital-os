@@ -123,18 +123,16 @@ The discovery/non-binding-EOI concept remains the preferred first vertical slice
 
 ## 12. Recommended Next Action
 
-Do **not** restart Phase 0 or recreate canonical artifacts that already exist. Execute the current residual-closure queue in `plan.md`:
+Do **not** restart Phase 0 or recreate canonical artifacts that already exist. `SRC-020` records completion of the bounded Foundation prerequisite review and revalidation of `GO-2026-09-05-FSA-001`; reopen it only for a material baseline, scope, risk, or non-waivable evidence change.
 
-1. validate the existing Phase 0–4 outputs against their exit criteria and `AGENT.md` integrity rules, then classify residual gaps without recreating accepted artifacts;
-2. obtain authorised, revision-pinned access to the application source and capture its current lint, test, build, security and implementation evidence;
-3. close or formally bound the remaining P0 business/legal, permissions, data-ownership/state, first-slice technical-contract, architecture/security/NFR and ADR gaps;
-4. reconcile the pre-start planned traceability chain, structured data, links, stable IDs, counts, statuses, open questions and risks;
-5. reconcile this summary, `README.md`, the roadmap and all live delivery/gate artifacts, including formal disposition of the `docs/02-architecture/`, `docs/engineering-sessions/` and `output/pdf/` structure exceptions;
-6. preserve the defined readiness-decision authority and the completed 2026-09-07 formal review that explicitly revalidated `GO-2026-09-05-FSA-001`;
-7. begin the exact permitted `WP-AZ-001` through `WP-AZ-008` scope in governed dependency order under the effective GO; do not begin source-dependent packages such as `WP-AZ-002` and `WP-AZ-003` until the application branch and commit are pinned;
-8. require technical contractors to capture objective, sanitised and revision-pinned implementation, test/run, deployment and operational evidence under their applicable `contractors/<contractor>/` folders; after review and merge, the 80K Developers Project Manager workstream separately assesses the merged evidence and, when accepted, links it into `docs/09-delivery/foundation-slice-a-evidence-register.md`, and maintains the realised traceability chain;
-9. repair the repository-monitor path/import regression in a separate focused change and validate the repaired workflow at a pinned commit;
-10. keep `WP-AZ-009` through `WP-AZ-012` blocked until Foundation evidence, Phase 5 shared-capability exit criteria and first-slice integrity requirements reconcile.
+Execute the current queue in `plan.md`:
+
+1. begin only the exact permitted `WP-AZ-001` through `WP-AZ-008` scope in governed dependency order; source-dependent packages still require a pinned application branch and commit;
+2. require each technical contractor to capture objective, sanitised, revision-pinned first-pass implementation, test/run, deployment, and operational evidence only under its applicable `contractors/<contractor>/` folder;
+3. review and merge contractor evidence as provenance only;
+4. require the 80K Developers Project Manager workstream to separately assess merged evidence and, when accepted, link it into `docs/09-delivery/foundation-slice-a-evidence-register.md`, maintain realised traceability, and record any status change through a distinct `PROJECT_MANAGER_GOVERNANCE` PR;
+5. repair the repository-monitor path/import regression in a separate focused change and validate the repaired workflow at a pinned commit;
+6. keep `WP-AZ-009` through `WP-AZ-012` blocked until Foundation evidence, Phase 5 shared-capability exit criteria, and first-slice integrity requirements reconcile.
 
 No use case or `WP-AZ-*` package is promoted by this summary.
 
