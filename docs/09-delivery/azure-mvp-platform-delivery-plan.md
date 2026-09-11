@@ -288,14 +288,15 @@ Additional QA/SIT/UAT/staging environments are introduced only when the delivery
 
 ## 7. Delivery roles and ownership
 
-The repository currently records distinct responsibilities:
+Under `SRC-021`, the repository records distinct responsibilities:
 
-- Ubuntu Capital OS: authoritative requirements, architecture boundaries, evidence gates and delivery status;
-- 80K Developers implementation evidence: historical/partial application-prototype delivery provenance; current source state is unverified;
-- HerLogic Solutions: Azure cloud architecture/cost workstream and practical Azure implementation learning path;
-- Corefinity: architecture-analysis contribution provenance where recorded.
+- 80K Developers Project Manager capacity: accountable repository analysis, canonical requirements/architecture/evidence/status reconciliation, priority and gate recommendations;
+- Thembinkosi Mtsweni: responsible human Project Manager and final project-owner decision authority;
+- 80K Developers technical capacity: historical/partial application-prototype evidence and any explicitly assigned future implementation evidence, reviewed like other contractor evidence;
+- HerLogic Solutions: technical Azure cloud architecture, cost and infrastructure-delivery evidence;
+- Corefinity: technical architecture-analysis contribution evidence.
 
-Contractor provenance does not grant independent authority to change business/legal requirements or mark use cases complete.
+Technical contractor provenance does not grant independent authority to accept evidence, change business/legal requirements, adopt architecture, promote status, approve gates or authorise subsequent work.
 
 ## 8. First-slice start and exit criteria
 
@@ -328,8 +329,8 @@ The first business slice may move to `READY_FOR_ACCEPTANCE` only when all of the
 1. Complete and reconcile the controlling `plan.md` pre-execution steps: Phase 0–4 validation, residual-gap classification, application-source pinning, P0/architecture closure, planned traceability, live-artifact reconciliation, readiness authority and the formal readiness review.
 2. Preserve the defined readiness-decision authority and the effective 2026-09-07 revalidation of `GO-2026-09-05-FSA-001`.
 3. Only if that post-reconciliation review records an effective `GO` or `CONDITIONAL_GO`, execute its exact permitted subset of **WP-AZ-001 through WP-AZ-008** using `docs/09-delivery/foundation-slice-a-execution-package.md`.
-4. Capture objective realised evidence continuously in `docs/09-delivery/foundation-slice-a-evidence-register.md` and reconcile status only when each work-package evidence gate is satisfied.
-5. Maintain planned-to-realised traceability links in `docs/10-traceability/traceability-matrix.md` and `docs/09-delivery/e2e-delivery-tracker.md` as implementation/testing evidence is produced.
+4. Require technical contractors to capture objective, sanitised and revision-pinned evidence in their contractor folders as implementation/testing work is produced.
+5. After evidence review and merge, require the 80K Developers Project Manager workstream to link accepted evidence into `docs/09-delivery/foundation-slice-a-evidence-register.md`, maintain planned-to-realised traceability, and reconcile status only when each work-package evidence gate is satisfied.
 6. Keep downstream scope controls in place: `WP-AZ-009` through `WP-AZ-012` remain blocked until Foundation evidence gates and first-slice start-gate prerequisites are satisfied.
 7. If critical contradictions or non-waivable integrity failures emerge during execution, pause affected scope and issue a governance review update before status promotion.
 8. Reconcile all Foundation evidence gates.
