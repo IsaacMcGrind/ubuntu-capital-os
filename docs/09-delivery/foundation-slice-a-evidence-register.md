@@ -5,12 +5,12 @@
 **Scope:** `WP-AZ-001` through `WP-AZ-008`  
 **Delivery package status:** `READY_FOR_DEVELOPMENT`  
 **Scope gate:** `OPEN_FOR_AUTHORISED_EXECUTION`; `GO-2026-09-05-FSA-001` was revalidated on 2026-09-07  
-**Contractor start gate:** `BLOCKED_PENDING_ASSIGNMENT`; no exact executor/package/path assignment is recorded  
+**Contractor start mode:** `BLOCKED_PENDING_ASSIGNMENT`; no exact executor/package/path assignment is recorded  
 **Execution package:** `docs/09-delivery/foundation-slice-a-execution-package.md`  
 **Governance reconciliation:** `docs/09-delivery/foundation-slice-a-governance-reconciliation.md`  
 **Current readiness decision:** `docs/09-delivery/foundation-slice-a-go-decision-2026-09-05.md`
 
-The 2026-08-30 governance reconciliation remains part of the controlling compatibility chain. `GO-2026-09-05-FSA-001` is effective for `WP-AZ-001` through `WP-AZ-008` after the 2026-09-07 project-owner formal review. No realised execution evidence is recorded. The work packages remain `READY_FOR_DEVELOPMENT`; contractor start is blocked until an exact Project Manager assignment is recorded, and status may change only after objective start evidence is accepted and canonically reconciled through a separate `PROJECT_MANAGER_GOVERNANCE` change.
+The 2026-08-30 governance reconciliation remains part of the controlling compatibility chain. `GO-2026-09-05-FSA-001` is effective for `WP-AZ-001` through `WP-AZ-008` after the 2026-09-07 project-owner formal review. No realised execution evidence is recorded. The work packages remain `READY_FOR_DEVELOPMENT`; contractors may self-select work; each PR must declare its exact package/path scope, and status may change only after objective start evidence is accepted and canonically reconciled through a separate `PROJECT_MANAGER_GOVERNANCE` change.
 
 ## Evidence handling rules
 
@@ -137,16 +137,16 @@ Required before `COMPONENT_COMPLETE`:
 
 ## Foundation Slice A acceptance summary
 
-| Work package | Recorded delivery status | Contractor start gate | Evidence gate satisfied? | Evidence IDs | Notes |
+| Work package | Recorded delivery status | Contractor start mode | Evidence gate satisfied? | Evidence IDs | Notes |
 |---|---|---|---:|---|---|
-| WP-AZ-001 | `READY_FOR_DEVELOPMENT` | `BLOCKED_PENDING_ASSIGNMENT` | No | FSA-EV-001 | Scope approved; no executor assignment or accepted start evidence |
-| WP-AZ-002 | `READY_FOR_DEVELOPMENT` | `BLOCKED_PENDING_ASSIGNMENT` | No | FSA-EV-002 | Scope approved; no executor assignment or accepted start evidence |
-| WP-AZ-003 | `READY_FOR_DEVELOPMENT` | `BLOCKED_PENDING_ASSIGNMENT` | No | FSA-EV-003 | Scope approved; no executor assignment or accepted start evidence; UC-IAM-001 remains independently governed |
-| WP-AZ-004 | `READY_FOR_DEVELOPMENT` | `BLOCKED_PENDING_ASSIGNMENT` | No | FSA-EV-004 | Scope approved; no executor assignment or accepted start evidence |
-| WP-AZ-005 | `READY_FOR_DEVELOPMENT` | `BLOCKED_PENDING_ASSIGNMENT` | No | FSA-EV-005 | Scope approved; no executor assignment or accepted start evidence |
-| WP-AZ-006 | `READY_FOR_DEVELOPMENT` | `BLOCKED_PENDING_ASSIGNMENT` | No | FSA-EV-006 | Scope approved; no executor assignment or accepted start evidence |
-| WP-AZ-007 | `READY_FOR_DEVELOPMENT` | `BLOCKED_PENDING_ASSIGNMENT` | No | FSA-EV-007 | Scope approved; no executor assignment or accepted start evidence; telemetry remains distinct from business audit |
-| WP-AZ-008 | `READY_FOR_DEVELOPMENT` | `BLOCKED_PENDING_ASSIGNMENT` | No | FSA-EV-008 | Scope approved; no executor assignment or accepted start evidence; reproducibility evidence remains required |
+| WP-AZ-001 | `READY_FOR_DEVELOPMENT` | `BLOCKED_PENDING_ASSIGNMENT` | No | FSA-EV-001 | Scope available for self-selection; no accepted start evidence |
+| WP-AZ-002 | `READY_FOR_DEVELOPMENT` | `BLOCKED_PENDING_ASSIGNMENT` | No | FSA-EV-002 | Scope available for self-selection; no accepted start evidence |
+| WP-AZ-003 | `READY_FOR_DEVELOPMENT` | `BLOCKED_PENDING_ASSIGNMENT` | No | FSA-EV-003 | Scope available for self-selection; no accepted start evidence; UC-IAM-001 remains independently governed |
+| WP-AZ-004 | `READY_FOR_DEVELOPMENT` | `BLOCKED_PENDING_ASSIGNMENT` | No | FSA-EV-004 | Scope available for self-selection; no accepted start evidence |
+| WP-AZ-005 | `READY_FOR_DEVELOPMENT` | `BLOCKED_PENDING_ASSIGNMENT` | No | FSA-EV-005 | Scope available for self-selection; no accepted start evidence |
+| WP-AZ-006 | `READY_FOR_DEVELOPMENT` | `BLOCKED_PENDING_ASSIGNMENT` | No | FSA-EV-006 | Scope available for self-selection; no accepted start evidence |
+| WP-AZ-007 | `READY_FOR_DEVELOPMENT` | `BLOCKED_PENDING_ASSIGNMENT` | No | FSA-EV-007 | Scope available for self-selection; no accepted start evidence; telemetry remains distinct from business audit |
+| WP-AZ-008 | `READY_FOR_DEVELOPMENT` | `BLOCKED_PENDING_ASSIGNMENT` | No | FSA-EV-008 | Scope available for self-selection; no accepted start evidence; reproducibility evidence remains required |
 
 **Foundation Slice A package:** `READY_FOR_DEVELOPMENT`.  
-**Foundation Slice A scope gate:** `OPEN_FOR_AUTHORISED_EXECUTION` — `GO-2026-09-05-FSA-001` was revalidated by the project owner on 2026-09-07 for `WP-AZ-001` through `WP-AZ-008`. **Contractor start gate:** `BLOCKED_PENDING_ASSIGNMENT`. The packages remain `READY_FOR_DEVELOPMENT`; objective start evidence must be accepted and canonically reconciled before transition. All eight evidence gates remain unsatisfied, and no infrastructure implementation completion is claimed.
+**Foundation Slice A scope gate:** `OPEN_FOR_AUTHORISED_EXECUTION` — `GO-2026-09-05-FSA-001` was revalidated by the project owner on 2026-09-07 for `WP-AZ-001` through `WP-AZ-008`. **Contractor start mode:** `BLOCKED_PENDING_ASSIGNMENT`. The packages remain `READY_FOR_DEVELOPMENT`; objective start evidence must be accepted and canonically reconciled before transition. All eight evidence gates remain unsatisfied, and no infrastructure implementation completion is claimed.
