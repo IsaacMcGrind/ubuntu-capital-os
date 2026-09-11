@@ -1,6 +1,6 @@
 # Ubuntu Capital OS — Implementation Analysis Refresh
 
-> **Post-assessment Foundation decision — 2026-09-07:** Thembinkosi Mtsweni completed the formal post-prerequisite readiness review and revalidated `GO-2026-09-05-FSA-001`. The scope gate for `WP-AZ-001` through `WP-AZ-008` is now `OPEN_FOR_AUTHORISED_EXECUTION` in Azure DEV/MVP, while contractor start is `BLOCKED_PENDING_ASSIGNMENT`. This supersedes the pending-revalidation statements in this dated assessment; its implementation, business-slice, production and evidence findings remain unchanged. Source: `SRC-020`.
+> **Post-assessment Foundation decision — 2026-09-07:** Thembinkosi Mtsweni completed the formal post-prerequisite readiness review and revalidated `GO-2026-09-05-FSA-001`. The scope gate for `WP-AZ-001` through `WP-AZ-008` is now `OPEN_FOR_AUTHORISED_EXECUTION` in Azure DEV/MVP, while contractor start is `OPEN_FOR_SELF_SELECTION`. This supersedes the pending-revalidation statements in this dated assessment; its implementation, business-slice, production and evidence findings remain unchanged. Source: `SRC-020`.
 >
 > **Management/evidence amendment — 2026-09-11:** `SRC-021` appoints 80K Developers as the Project Manager contractor, identifies Thembinkosi Mtsweni as the responsible human/final project-owner decision authority, and requires technical contractors to submit first-pass evidence only in their contractor folders before separate Project-Manager-owned canonical reconciliation.
 
@@ -10,7 +10,7 @@
 **Evidence branch:** `master`  
 **Evidence commit:** `e1bbbe2fa5bcb3570271ac3bdbcba5b3072ad256`  
 **Controlling instructions:** `.agent.md`, `AGENT.md`, `plan.md`  
-**Current Foundation decision:** `GO-2026-09-05-FSA-001` — revalidated and effective; scope gate `OPEN_FOR_AUTHORISED_EXECUTION`; contractor start `BLOCKED_PENDING_ASSIGNMENT`  
+**Current Foundation decision:** `GO-2026-09-05-FSA-001` — revalidated and effective; scope gate `OPEN_FOR_AUTHORISED_EXECUTION`; contractor start `OPEN_FOR_SELF_SELECTION`  
 **Overall implementation assessment:** `PARTIALLY_READY`  
 **Production readiness:** `NOT_READY`
 
@@ -18,7 +18,7 @@
 
 Ubuntu Capital OS is a strong evidence-first reconstruction, architecture and delivery-governance repository. It is not yet a deployable Ubuntu Capital application repository.
 
-Foundation Slice A has bounded Azure DEV/MVP scope authority under `GO-2026-09-05-FSA-001`; the controlling prerequisites and formal readiness review were accepted as reconciled on 2026-09-07. The GO does not assign an executor, and no exact contractor/package/path assignment is recorded, so technical execution must not begin until the Project Manager records one. No Foundation work package has objective start or completion evidence. A concurrent master commit landed during this assessment and introduced a confirmed repository-monitor regression; the assessment baseline was advanced to that new head. The evidence register still contains eight planned placeholders, all classified `UNKNOWN`, and records zero satisfied evidence gates. The `GO` was formally revalidated by the project owner on 2026-09-07 and permits governed Foundation execution; it does not prove that Azure resources, application infrastructure or runtime capabilities exist.
+Foundation Slice A has bounded Azure DEV/MVP scope authority under `GO-2026-09-05-FSA-001`; the controlling prerequisites and formal readiness review were accepted as reconciled on 2026-09-07. The GO does not allocate work. Contractors may self-select technical work and must declare the exact package/path scope and evidence purpose in the PR. No Foundation work package has objective start or completion evidence. A concurrent master commit landed during this assessment and introduced a confirmed repository-monitor regression; the assessment baseline was advanced to that new head. The evidence register still contains eight planned placeholders, all classified `UNKNOWN`, and records zero satisfied evidence gates. The `GO` was formally revalidated by the project owner on 2026-09-07 and permits governed Foundation execution; it does not prove that Azure resources, application infrastructure or runtime capabilities exist.
 
 The stated application repository, `HarleyJoker/ubuntu-capital-platform`, returned `404 Not Found` through the connected GitHub installation during this assessment (`SRC-018` in `docs/00-context/source-inventory.md`). This dated access outcome does not prove repository absence; its current branch, commit, source contents and runtime behaviour remain unavailable. Historical React/Vite observations are retained as supporting evidence only and cannot be promoted to current implementation status.
 
@@ -84,16 +84,16 @@ Historical snapshot labels are not counted as current implementation evidence.
 
 | Work package | Executable now? | Objective evidence gate | Current defensible status |
 |---|---:|---:|---|
-| `WP-AZ-001` Azure baseline | No — scope approved; assignment missing | Not satisfied | `READY_FOR_DEVELOPMENT`; contractor start `BLOCKED_PENDING_ASSIGNMENT`; implementation `UNKNOWN` |
-| `WP-AZ-002` Static Web Apps | No — scope approved; assignment missing | Not satisfied | `READY_FOR_DEVELOPMENT`; contractor start `BLOCKED_PENDING_ASSIGNMENT`; implementation `UNKNOWN` |
-| `WP-AZ-003` Entra External ID | No — scope approved; assignment missing | Not satisfied | `READY_FOR_DEVELOPMENT`; contractor start `BLOCKED_PENDING_ASSIGNMENT`; implementation `UNKNOWN` |
-| `WP-AZ-004` Protected Functions API | No — scope approved; assignment missing | Not satisfied | `READY_FOR_DEVELOPMENT`; contractor start `BLOCKED_PENDING_ASSIGNMENT`; implementation `UNKNOWN` |
-| `WP-AZ-005` Azure SQL | No — scope approved; assignment missing | Not satisfied | `READY_FOR_DEVELOPMENT`; contractor start `BLOCKED_PENDING_ASSIGNMENT`; implementation `UNKNOWN` |
-| `WP-AZ-006` Key Vault / Managed Identity | No — scope approved; assignment missing | Not satisfied | `READY_FOR_DEVELOPMENT`; contractor start `BLOCKED_PENDING_ASSIGNMENT`; implementation `UNKNOWN` |
-| `WP-AZ-007` Application Insights / Monitor | No — scope approved; assignment missing | Not satisfied | `READY_FOR_DEVELOPMENT`; contractor start `BLOCKED_PENDING_ASSIGNMENT`; implementation `UNKNOWN` |
-| `WP-AZ-008` IaC and CI/CD | No — scope approved; assignment missing | Not satisfied | `READY_FOR_DEVELOPMENT`; contractor start `BLOCKED_PENDING_ASSIGNMENT`; implementation `UNKNOWN` |
+| `WP-AZ-001` Azure baseline | Yes — scope open for self-selection | Not satisfied | `READY_FOR_DEVELOPMENT`; contractor start `OPEN_FOR_SELF_SELECTION`; implementation `UNKNOWN` |
+| `WP-AZ-002` Static Web Apps | Yes — scope open for self-selection | Not satisfied | `READY_FOR_DEVELOPMENT`; contractor start `OPEN_FOR_SELF_SELECTION`; implementation `UNKNOWN` |
+| `WP-AZ-003` Entra External ID | Yes — scope open for self-selection | Not satisfied | `READY_FOR_DEVELOPMENT`; contractor start `OPEN_FOR_SELF_SELECTION`; implementation `UNKNOWN` |
+| `WP-AZ-004` Protected Functions API | Yes — scope open for self-selection | Not satisfied | `READY_FOR_DEVELOPMENT`; contractor start `OPEN_FOR_SELF_SELECTION`; implementation `UNKNOWN` |
+| `WP-AZ-005` Azure SQL | Yes — scope open for self-selection | Not satisfied | `READY_FOR_DEVELOPMENT`; contractor start `OPEN_FOR_SELF_SELECTION`; implementation `UNKNOWN` |
+| `WP-AZ-006` Key Vault / Managed Identity | Yes — scope open for self-selection | Not satisfied | `READY_FOR_DEVELOPMENT`; contractor start `OPEN_FOR_SELF_SELECTION`; implementation `UNKNOWN` |
+| `WP-AZ-007` Application Insights / Monitor | Yes — scope open for self-selection | Not satisfied | `READY_FOR_DEVELOPMENT`; contractor start `OPEN_FOR_SELF_SELECTION`; implementation `UNKNOWN` |
+| `WP-AZ-008` IaC and CI/CD | Yes — scope open for self-selection | Not satisfied | `READY_FOR_DEVELOPMENT`; contractor start `OPEN_FOR_SELF_SELECTION`; implementation `UNKNOWN` |
 
-The scope gate is `OPEN_FOR_AUTHORISED_EXECUTION`; contractor start is `BLOCKED_PENDING_ASSIGNMENT`. The project owner formally revalidated the bounded GO on 2026-09-07, but no exact executor/package/path assignment is recorded. Each work package retains `READY_FOR_DEVELOPMENT` until objective start evidence is accepted and canonically reconciled through a separate `PROJECT_MANAGER_GOVERNANCE` change; promotion to `COMPONENT_COMPLETE` remains prohibited until the package's full evidence gate is accepted.
+The scope gate is `OPEN_FOR_AUTHORISED_EXECUTION`; contractor start is `OPEN_FOR_SELF_SELECTION`. The project owner formally revalidated the bounded GO on 2026-09-07, but no exact contractor/package/path declaration is recorded. Each work package retains `READY_FOR_DEVELOPMENT` until objective start evidence is accepted and canonically reconciled through a separate `PROJECT_MANAGER_GOVERNANCE` change; promotion to `COMPONENT_COMPLETE` remains prohibited until the package's full evidence gate is accepted.
 
 ## 6. Business use-case coverage
 
@@ -184,9 +184,9 @@ The former `docs/02-architecture/` canonical-structure exception is resolved by 
 
 ### Foundation Slice A
 
-**Decision:** bounded `GO` formally revalidated; scope gate is `OPEN_FOR_AUTHORISED_EXECUTION` for `WP-AZ-001` through `WP-AZ-008`, while contractor start is `BLOCKED_PENDING_ASSIGNMENT`.
+**Decision:** bounded `GO` formally revalidated; scope gate is `OPEN_FOR_AUTHORISED_EXECUTION` for `WP-AZ-001` through `WP-AZ-008`, while contractor start is `OPEN_FOR_SELF_SELECTION`.
 
-The 2026-09-07 formal review makes the bounded scope assignable without broadening it. Foundation work may begin in governed dependency order only after the Project Manager records an exact contractor/package/path assignment; no work package may be promoted without accepted and canonically reconciled objective evidence.
+The 2026-09-07 formal review defines the bounded scope without allocating work. Contractors may self-select Foundation work in governed dependency order and must declare it in their PR; no work package may be promoted without accepted and canonically reconciled objective evidence.
 
 ### Foundational product capabilities and first business slice
 
@@ -209,7 +209,7 @@ Settlement, custody, binding investment, eligibility, NDA, valuation, tax, priva
 
 Completed prerequisite: the 2026-09-07 project-owner review accepted the bounded Foundation prerequisite reconciliation and revalidated `GO-2026-09-05-FSA-001`. Preserve rather than repeat that work unless material baseline, scope, risk, or non-waivable evidence changes.
 
-1. Execute only the exact authorised `WP-AZ-001` through `WP-AZ-008` subset in governed dependency order; source-dependent packages require a pinned application revision.
+1. Contractors may self-select the exact `WP-AZ-001` through `WP-AZ-008` subset in governed dependency order and must declare it in the PR; source-dependent packages require a pinned application revision.
 2. Each technical contractor records objective, sanitised, revision-pinned first-pass evidence only under its applicable contractor folder and submits it for review.
 3. Merge contractor evidence as provenance only; merge is not acceptance or status promotion.
 4. The 80K Developers Project Manager workstream separately assesses merged evidence and, when accepted, updates `FSA-EV-001` through `FSA-EV-008`, realised traceability, and status through a distinct `PROJECT_MANAGER_GOVERNANCE` PR.
