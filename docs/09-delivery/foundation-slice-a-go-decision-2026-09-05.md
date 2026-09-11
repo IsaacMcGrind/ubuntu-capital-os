@@ -23,7 +23,7 @@ The Ubuntu Capital project owner approved this bounded GO on 2026-09-05. On 2026
 ## 1.1 Formal post-prerequisite revalidation
 
 Decision: `GO` revalidated and effective.  
-Scope position: `WP-AZ-001` through `WP-AZ-008` are approved for governed execution within Azure DEV/MVP. Contractor start requires a later durable Project Manager assignment naming the executor, exact package subset, authorised paths or bounded contractor subdirectory, evidence purpose, and applicable external implementation/resource scope. No such assignment is recorded by this decision.  
+Scope position: `WP-AZ-001` through `WP-AZ-008` are approved for governed execution within Azure DEV/MVP. Contractors may self-select work within the approved scope and must declare the executor, exact package subset, authorised paths or bounded contractor subdirectory, evidence purpose, and applicable external implementation/resource scope in the PR. This decision does not allocate work.  
 Evidence boundary: the decision authorises execution but does not claim that execution has started, that Azure resources exist, or that any implementation evidence gate is satisfied. Package status remains `READY_FOR_DEVELOPMENT` until objective start evidence is accepted and canonically reconciled through a separate `PROJECT_MANAGER_GOVERNANCE` change.
 
 ## 2. Conditions and boundaries
@@ -52,4 +52,4 @@ A contractor evidence merge does not itself accept evidence, promote status or a
 
 ## 4. Residual risk statement
 
-This revalidated GO authorises the bounded Foundation scope but does not assign an executor. Execution may begin in governed dependency order only after a durable Project Manager assignment is recorded, with objective evidence submitted as it is produced and accepted separately before canonical reconciliation. It does not remove existing business/legal unknowns outside Foundation scope, prove implementation completion, authorise production, or authorise `WP-AZ-009` through `WP-AZ-012`.
+This revalidated GO authorises the bounded Foundation scope but does not assign an executor. Execution may begin in governed dependency order only after a durable contractor self-selection declaration is recorded, with objective evidence submitted as it is produced and accepted separately before canonical reconciliation. It does not remove existing business/legal unknowns outside Foundation scope, prove implementation completion, authorise production, or authorise `WP-AZ-009` through `WP-AZ-012`.
