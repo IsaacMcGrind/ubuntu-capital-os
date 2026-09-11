@@ -49,7 +49,7 @@ The monitor uses the checked-out repository and GitHub API to inspect:
 - changed file paths and available patches;
 - the current use-case catalogue;
 - controlling documents and repository-integrity conditions;
-- contractor records under `contractors/80kDevelopers/`.
+- contractor records under every existing `contractors/<contractor>/` directory.
 
 Commit details and patches are derived locally from the full git checkout rather than expanding every commit through the REST API. For a merge commit, both the changed paths (including renames) and patch are calculated against the same first parent, so file reporting is consistent with the displayed patch.
 
@@ -97,6 +97,14 @@ The monitor follows Ubuntu Capital OS evidence discipline:
 
 It does not automatically promote a use case or delivery status. A code, documentation, UI or contractor change is treated as evidence requiring reconciliation rather than proof of end-to-end completion.
 
+## Contractor role-boundary review
+
+For every contractor-authored or contractor-scoped pull request, the monitor checks whether the submission remains factual evidence within the assigned contractor folder and whether current claims are sanitised, reproducible and revision-pinned.
+
+The monitor reports `Changes required` when a contractor submission attempts to approve or authorise work, create or reinterpret a gate, change canonical status, declare completion, make a project-level architecture/business/legal decision, broaden assigned scope, or modify canonical OS artifacts without explicit Project Manager authorisation.
+
+Review outcomes are analytical only. A merged contractor evidence PR records evidence but does not promote status. Canonical repository reconciliation, priority changes, gate decisions and subsequent work authorisation remain with Thembinkosi Mtsweni as Project Manager and project owner.
+
 ## Integrity Checks
 
 The initial automated checks include:
@@ -104,7 +112,8 @@ The initial automated checks include:
 - presence of `AGENT.md`, `plan.md`, `README.md`, and the master use-case catalogue;
 - reconciliation between the declared use-case count and parsed use-case rows;
 - stale `N-use-case` references in `plan.md` that conflict with the current catalogue;
-- case-conflicting contractor directory names.
+- case-conflicting contractor directory names;
+- contractor PR path scope and compliance with the contractor-evidence/project-management authority boundary.
 
 These checks are intentionally conservative. They do not replace human review or the broader traceability/validation requirements in `AGENT.md` and `plan.md`.
 
