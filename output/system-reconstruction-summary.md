@@ -1,6 +1,6 @@
 # System Reconstruction Summary
 
-> **Current Foundation decision — 2026-09-07:** Thembinkosi Mtsweni completed the formal post-prerequisite readiness review and revalidated `GO-2026-09-05-FSA-001`. The scope gate for `WP-AZ-001` through `WP-AZ-008` is `OPEN_FOR_AUTHORISED_EXECUTION` in Azure DEV/MVP. This approves the bounded scope for assignment; technical start also requires a durable Project Manager contractor/package/path assignment. Implementation, completion, business-use-case and production claims remain evidence-gated. Source: `SRC-020`.
+> **Current Foundation decision — 2026-09-07:** Thembinkosi Mtsweni completed the formal post-prerequisite readiness review and revalidated `GO-2026-09-05-FSA-001`. The scope gate for `WP-AZ-001` through `WP-AZ-008` is `OPEN_FOR_AUTHORISED_EXECUTION` in Azure DEV/MVP. This defines the bounded project boundary; contractors may self-select and must declare package/path scope in the PR. Implementation, completion, business-use-case and production claims remain evidence-gated. Source: `SRC-020`.
 
 ## 1. System Purpose
 
@@ -113,7 +113,7 @@ The supplied context supports an investor-facing marketplace and portfolio model
 
 **Architecture direction:** materially improved and usable with assumptions, but several architecture/security/NFR and ADR closures remain outstanding.
 
-**Foundation Slice A:** scope gate `OPEN_FOR_AUTHORISED_EXECUTION` for `WP-AZ-001` through `WP-AZ-008`; contractor start `BLOCKED_PENDING_ASSIGNMENT`; package status `READY_FOR_DEVELOPMENT`; 0 of 8 objective evidence gates satisfied.
+**Foundation Slice A:** scope gate `OPEN_FOR_AUTHORISED_EXECUTION` for `WP-AZ-001` through `WP-AZ-008`; contractor start `OPEN_FOR_SELF_SELECTION`; package status `READY_FOR_DEVELOPMENT`; 0 of 8 objective evidence gates satisfied.
 
 The effective decision is `GO-2026-09-05-FSA-001`, limited to Foundation work packages `WP-AZ-001` through `WP-AZ-008` in Azure DEV/MVP. It authorises the bounded scope but does not assign an executor or prove implementation: the Foundation evidence register still records 0 of 8 objective evidence gates satisfied. No business use case is promoted by this decision, and `WP-AZ-009` through `WP-AZ-012` remain blocked by their separate gates.
 
@@ -128,7 +128,7 @@ Do **not** restart Phase 0 or recreate canonical artifacts that already exist. `
 Execute the current queue in `plan.md`:
 
 1. require the Project Manager to record the contractor, exact permitted `WP-AZ-001` through `WP-AZ-008` subset, authorised repository paths or bounded contractor subdirectory, evidence purpose, and applicable external implementation/resource scope;
-2. allow the assigned contractor to begin only that exact subset in governed dependency order; source-dependent packages still require a pinned application branch and commit;
+2. allow the self-selecting contractor to begin only that exact subset in governed dependency order; source-dependent packages still require a pinned application branch and commit;
 3. require each technical contractor to capture objective, sanitised, revision-pinned first-pass implementation, test/run, deployment, and operational evidence only under its applicable `contractors/<contractor>/` folder;
 4. review and merge contractor evidence as provenance only;
 5. require the 80K Developers Project Manager workstream to separately assess merged evidence and, when accepted, link it into `docs/09-delivery/foundation-slice-a-evidence-register.md`, maintain realised traceability, and record any status change through a distinct `PROJECT_MANAGER_GOVERNANCE` PR;
