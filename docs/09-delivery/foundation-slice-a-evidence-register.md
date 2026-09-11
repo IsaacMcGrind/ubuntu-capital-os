@@ -13,7 +13,7 @@ The 2026-08-30 governance reconciliation remains part of the controlling compati
 
 ## Evidence handling rules
 
-- Under `SRC-021`, contractors record factual, sanitised execution evidence in their existing `contractors/<contractor>/` directory unless the Project Manager explicitly authorises another path. 80K Developers (Pty) Ltd is the appointed Project Manager contractor; Thembinkosi Mtsweni is the responsible human Project Manager and final project-owner decision authority. The 80K Developers Project Manager workstream reviews merged contractor evidence and reconciles accepted references into this canonical register through a separate `PROJECT_MANAGER_GOVERNANCE` update.
+- Under `SRC-021`, a `CONTRACTOR_TECHNICAL_EVIDENCE` PR must keep every repository-hosted first-pass evidence file under the submitting contractor's existing `contractors/<contractor>/` directory and must not modify this canonical register or another canonical governance/status artifact. Approved external raw evidence is represented by a sanitised stable reference in the contractor folder. 80K Developers (Pty) Ltd is the appointed Project Manager contractor; Thembinkosi Mtsweni is the responsible human Project Manager and final project-owner decision authority. After merge, the 80K Developers Project Manager workstream separately assesses the contractor evidence and reconciles accepted references into this register through a distinct `PROJECT_MANAGER_GOVERNANCE` update.
 - Contractor evidence does not approve execution, change this register's review status, promote a work package, declare completion, redefine a gate, or authorise subsequent work.
 - Do not record passwords, client secrets, bearer tokens, private keys or full connection strings.
 - Redact subscription, tenant, application or resource identifiers where disclosure is not required for project traceability.
@@ -22,7 +22,7 @@ The 2026-08-30 governance reconciliation remains part of the controlling compati
 - Architecture/design documents are not implementation evidence unless the record explicitly says the evidence only proves design intent.
 - External evidence links must be stable enough for an authorised project reviewer to retrieve later.
 - The formal post-prerequisite review revalidated `GO-2026-09-05-FSA-001` on 2026-09-07. Execution may proceed only for that decision's exact scope; this register records evidence and does not broaden the authority.
-- After contractor evidence is reviewed and merged, capture its accepted objective implementation, test/run, deployment and operational metadata or stable reference here through a Project-Manager-owned governance change. This reconciliation does not by itself promote delivery status.
+- After a contractor evidence PR is reviewed and merged as provenance, the 80K Developers Project Manager workstream separately assesses it. Only when accepted may its objective implementation, test/run, deployment and operational metadata or stable reference be recorded here through a distinct `PROJECT_MANAGER_GOVERNANCE` change. This reconciliation does not by itself promote delivery status.
 - After the start gate is satisfied, a work package cannot move to `COMPONENT_COMPLETE` until its required evidence gate is reconciled here or in an explicitly linked canonical evidence artifact and the governed status transition is recorded.
 - `WP-AZ-008` requires version-controlled infrastructure provisioning/reconciliation evidence; manual Azure configuration alone cannot satisfy the Foundation reproducibility gate.
 
@@ -42,7 +42,7 @@ The 2026-08-30 governance reconciliation remains part of the controlling compati
 
 ## Work-package evidence checklist
 
-The checklists below become executable evidence gates only after the controlling `plan.md` pre-execution steps reconcile and a subsequent formal readiness review records an effective Foundation decision.
+The checklists below became executable for the bounded `WP-AZ-001` through `WP-AZ-008` Azure DEV/MVP scope when the project owner formally revalidated `GO-2026-09-05-FSA-001` on 2026-09-07 (`SRC-020`). They do not authorise broader scope or status promotion.
 
 ### WP-AZ-001 — Azure baseline
 
