@@ -19,7 +19,7 @@ The plan is the controlling implementation sequence for developers and autonomou
 
 ## 2.1 Contractor evidence and project-management workflow
 
-80K Developers (Pty) Ltd is the appointed Project Manager contractor and accountable project-management workstream. Thembinkosi Mtsweni is the responsible human Project Manager and project-owner decision authority acting for 80K Developers. In that capacity, he retains authority to interpret evidence, accept or reject delivery claims, update canonical Ubuntu Capital OS artifacts and statuses, set priorities, approve gates, and authorise subsequent work.
+Under `SRC-021`, 80K Developers (Pty) Ltd is the appointed Project Manager contractor and accountable project-management workstream. Thembinkosi Mtsweni is the responsible human Project Manager and final project-owner decision authority working through that management arrangement. In that capacity, he retains authority to interpret evidence, accept or reject delivery claims, update canonical Ubuntu Capital OS artifacts and statuses, set priorities, approve gates, and authorise subsequent work.
 
 Contractors and coders must:
 
@@ -35,6 +35,21 @@ Because 80K Developers may act both as Project Manager contractor and as an impl
 Automated review may recommend `Candidate for human approval`, `Changes required`, `Blocked`, or `Unverified`, but those verdicts are analytical and cannot change repository authority or delivery status.
 
 After contractor evidence is reviewed and merged, the Project Manager performs a repository-wide impact analysis and, where justified, makes canonical OS updates through a separate governed change. Only the Project Manager may approve the next assignment or status transition.
+
+Required PR declaration:
+
+Every PR must complete `.github/pull_request_template.md` and provide:
+
+- submitting organization and responsible human;
+- declared capacity: `PROJECT_MANAGER_GOVERNANCE` or `CONTRACTOR_TECHNICAL_EVIDENCE`;
+- assigned work-package IDs and assignment/decision source reference;
+- authorised repository paths;
+- revision-pinned evidence references;
+- validation performed and results;
+- what the evidence proves and does not prove;
+- sensitive-information confirmation.
+
+A declaration is not self-authorising. Reviewers must verify it against the cited source, decision, work package and path scope. Missing or unverifiable metadata makes the PR `Unverified` or `Changes required`.
 
 Required sequence:
 
