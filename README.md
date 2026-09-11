@@ -67,11 +67,13 @@ The pre-implementation gate was formally satisfied for the bounded Foundation sc
 
 ## Delivery authority and contractor evidence workflow
 
-Thembinkosi Mtsweni, acting as Project Manager and project owner, assigns work, interprets contractor evidence, updates canonical Ubuntu Capital OS status and priorities, approves gates, and authorises subsequent work.
+80K Developers (Pty) Ltd is the appointed Project Manager contractor and accountable project-management workstream. Thembinkosi Mtsweni is the responsible human Project Manager and project-owner decision authority acting for 80K Developers. In that capacity, he assigns work, interprets contractor evidence, updates canonical Ubuntu Capital OS status and priorities, approves gates, and authorises subsequent work.
 
 Contractors and coders record factual, sanitised delivery evidence only under their existing `contractors/<contractor>/` directory unless a different path is explicitly authorised. Contractor evidence may document work performed, validation, limitations, unfinished work, blockers and decisions needed; it must not authorise work, redefine gates, change canonical status, declare completion, or make project-level architecture, business or legal decisions.
 
-Automated reviews assess evidence and recommend action only. After an evidence PR is reviewed and merged, the Project Manager performs repository-level analysis and makes any justified canonical OS update through a separate governed change.
+Automated reviews assess evidence and recommend action only. After an evidence PR is reviewed and merged, 80K Developers' Project Manager workstream performs repository-level analysis and makes any justified canonical OS update through a separate governed change.
+
+When 80K Developers performs coding or implementation work, its technical evidence is governed exactly like other contractor evidence. A submission must clearly identify whether it is an implementation-evidence contribution or an 80K-Developers-Project-Manager-owned governance change.
 
 See `AGENT.md` for the mandatory authority boundary and `plan.md` for the complete governed workflow.
 
