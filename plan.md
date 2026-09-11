@@ -513,7 +513,7 @@ Completed prerequisites—do not repeat them unless a material baseline, scope, 
 
 1. **Completed:** Phase 0–4 output validation, residual-gap classification, material P0/architecture/security/NFR closure or bounding, planned pre-start traceability reconciliation, and live-artifact alignment were accepted through the formal project-owner review recorded by `SRC-020`. The former `docs/02-architecture/` structure exception is resolved by the canonical-tree amendment in this plan under `SRC-021`.
 2. **Completed:** readiness-decision authority is defined by `SRC-021`, `OQ-016` is closed, and Thembinkosi Mtsweni is the final project-owner decision authority.
-3. **Completed:** the 2026-09-07 formal review revalidated `GO-2026-09-05-FSA-001`; `WP-AZ-001` through `WP-AZ-008` are `OPEN_FOR_AUTHORISED_EXECUTION` in Azure DEV/MVP. Re-run readiness only if material scope, baseline, risk, or non-waivable evidence changes.
+3. **Completed:** the 2026-09-07 formal review revalidated `GO-2026-09-05-FSA-001`; the scope gate for `WP-AZ-001` through `WP-AZ-008` is `OPEN_FOR_AUTHORISED_EXECUTION` in Azure DEV/MVP; contractor start remains `BLOCKED_PENDING_ASSIGNMENT` until an exact assignment is recorded. Re-run readiness only if material scope, baseline, risk, or non-waivable evidence changes.
 
 Execute the current work next, in order:
 
