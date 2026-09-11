@@ -8,7 +8,9 @@ It is an implementation-provenance record. It does not replace the evidence-firs
 
 ## Submission contract
 
-Within this Ubuntu Capital OS repository, this contractor workstream records factual, sanitised implementation evidence only. Thembinkosi Mtsweni, acting as Project Manager and project owner, retains authority to interpret and accept evidence, update canonical OS artifacts and delivery status, set priorities, approve gates, and authorise subsequent work.
+Within this Ubuntu Capital OS repository, this contractor workstream records factual, sanitised implementation evidence only. 80K Developers (Pty) Ltd is the appointed Project Manager contractor and accountable project-management workstream. Thembinkosi Mtsweni is the responsible human Project Manager and project-owner decision authority acting for 80K Developers; in that capacity, he retains authority to interpret and accept evidence, update canonical OS artifacts and delivery status, set priorities, approve gates, and authorise subsequent work.
+
+80K Developers may also perform implementation or coding work. When it does, the resulting submission remains evidence-only and must not self-accept, self-promote status or rely on 80K's Project Manager appointment to bypass review. An 80K Developers change exercises Project Manager authority only when it is explicitly identified as Project-Manager-owned governance work and is kept separate from technical evidence capture.
 
 An evidence submission may record:
 
