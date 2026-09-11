@@ -86,28 +86,37 @@ Additional QA, SIT, UAT or staging environments must not be introduced unless th
 
 ## 5. Ownership and authority
 
-### Ubuntu Capital OS
+### 80K Developers — Project Manager contractor
 
-Owns:
-- authoritative requirements and use-case status;
-- architecture boundaries and approved decisions;
-- evidence gates;
-- delivery readiness and acceptance decisions;
-- traceability and integrity reconciliation.
+Under `SRC-021`, owns the accountable project-management workstream for:
 
-### HerLogic Solutions
+- authoritative requirements and use-case status reconciliation;
+- architecture-boundary and approved-decision maintenance;
+- evidence-gate assessment;
+- delivery readiness, priority and acceptance recommendations;
+- traceability and integrity reconciliation;
+- subsequent-work recommendations for Thembinkosi Mtsweni's human decision.
+
+Thembinkosi Mtsweni is the responsible human Project Manager and final project-owner decision authority.
+
+### HerLogic Solutions — technical Azure contractor
 
 Recorded scope:
+
 - Azure platform implementation workstream after the governance start gate is satisfied;
-- practical Azure delivery and evidence capture;
+- practical Azure delivery and sanitised evidence capture;
 - Azure cost-governance implementation;
 - cloud deployment support within approved architecture.
 
-HerLogic Solutions may issue execution-authorising decisions within approved governance scope per `docs/09-delivery/foundation-slice-a-go-decision-2026-09-05.md`, but does **not** have authority to change legal/business rules, waive repository-integrity gates, or mark Ubuntu Capital use cases complete.
+HerLogic Solutions does not independently authorise execution, accept its own evidence, change legal/business rules, waive repository-integrity gates, promote canonical status or authorise subsequent work.
 
-### 80K Developers / implementation contributors
+### Corefinity — technical architecture-analysis contractor
 
-May provide application, integration, deployment and implementation evidence according to approved work packages and repository governance after the applicable start gate is satisfied.
+May provide architecture-analysis evidence within assigned scope. Its contribution is supporting evidence, not independent architecture adoption or project authority.
+
+### 80K Developers — technical capacity
+
+When 80K Developers performs application, integration, deployment or other implementation work, it uses `CONTRACTOR_TECHNICAL_EVIDENCE` capacity and is subject to the same evidence-only review as other contractors. Its technical work cannot self-promote status.
 
 ## 6. Execution sequence
 
@@ -375,13 +384,13 @@ Foundation Slice A cannot begin until its current readiness start gate is satisf
 
 ## 9. Evidence storage and traceability contract
 
-Evidence metadata is recorded in:
+Technical contractors first record factual, sanitised, revision-pinned evidence under their existing `contractors/<contractor>/` directory. After review and merge, the 80K Developers Project Manager workstream reconciles accepted metadata and stable references into:
 
 `docs/09-delivery/foundation-slice-a-evidence-register.md`
 
-Where evidence lives outside this repository, the register must include a stable reference or URL, date captured, owner, related work-package ID, evidence classification and what the evidence proves.
+The register must include a stable repository path or external URL, date captured, owner, related work-package ID, evidence classification, and what the evidence proves and does not prove. It should link to contractor evidence rather than duplicate sensitive or bulky raw material.
 
-Sensitive Azure values must be redacted. The evidence register must not contain passwords, client secrets, bearer tokens, connection strings or private keys.
+Sensitive Azure values must be redacted. Neither contractor folders nor the evidence register may contain passwords, client secrets, bearer tokens, connection strings, private keys or unnecessary infrastructure identifiers.
 
 ## 10. Status transition model
 
