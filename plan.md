@@ -23,8 +23,8 @@ Under `SRC-021`, 80K Developers (Pty) Ltd is the appointed Project Manager contr
 
 Contractors and coders must:
 
-- execute only assigned work;
-- keep all repository-hosted first-pass evidence under their existing `contractors/<contractor>/` directory; create a new evidence file only when the Project Manager assignment identifies its exact path or bounded contractor subdirectory and purpose; never modify canonical governance, status, decision, register, tracker, traceability, roadmap, plan, or summary artifacts in a `CONTRACTOR_TECHNICAL_EVIDENCE` change; use sanitised stable references in the contractor folder for approved external raw evidence;
+- self-select and declare the exact work and evidence scope;
+- keep all repository-hosted first-pass evidence under their existing `contractors/<contractor>/` directory; create a new evidence file only when the contractor self-selection declaration identifies its exact path or bounded contractor subdirectory and purpose; never modify canonical governance, status, decision, register, tracker, traceability, roadmap, plan, or summary artifacts in a `CONTRACTOR_TECHNICAL_EVIDENCE` change; use sanitised stable references in the contractor folder for approved external raw evidence;
 - record what was performed, by whom and when, validation results, limitations, unfinished work, blockers, dependencies, and decisions required;
 - avoid project-level approval, gate, status, completion, architecture, business, legal, or scope-authorisation statements.
 
@@ -34,7 +34,7 @@ Because 80K Developers may act both as Project Manager contractor and as an impl
 
 Automated review may recommend `Candidate for human approval`, `Changes required`, `Blocked`, or `Unverified`, but those verdicts are analytical and cannot change repository authority or delivery status.
 
-After a contractor evidence PR is reviewed and merged as provenance, the Project Manager separately assesses the merged evidence and performs a repository-wide impact analysis. Where evidence is accepted, canonical OS updates must be made through a separate, explicitly identified `PROJECT_MANAGER_GOVERNANCE` change. Only the Project Manager may approve the next assignment or status transition.
+After a contractor evidence PR is reviewed and merged as provenance, the Project Manager separately assesses the merged evidence and performs a repository-wide impact analysis. Where evidence is accepted, canonical OS updates must be made through a separate, explicitly identified `PROJECT_MANAGER_GOVERNANCE` change. Only the Project Manager may approve the subsequent-work authorisation or status transition.
 
 Required PR declaration:
 
@@ -42,7 +42,7 @@ Every PR must complete the project-owner-approved `.github/pull_request_template
 
 - submitting organization and responsible human;
 - declared capacity: `PROJECT_MANAGER_GOVERNANCE` or `CONTRACTOR_TECHNICAL_EVIDENCE`;
-- assigned work-package IDs and assignment/decision source reference;
+- selected work-package IDs and decision/context source reference;
 - authorised repository paths;
 - revision-pinned evidence references;
 - validation performed and results;
@@ -53,8 +53,8 @@ A declaration is not self-authorising. Reviewers must verify it against the cite
 
 Required sequence:
 
-1. Project Manager assigns a bounded work package.
-2. Contractor implements the assigned scope.
+1. Contractor self-selects a bounded work package and declares it in the PR.
+2. Contractor implements the selected scope.
 3. Contractor records sanitised evidence in the contractor folder.
 4. The evidence PR is reviewed for factual support, reproducibility, safety, scope and role-boundary compliance.
 5. A contractor evidence PR may be merged after the required review; merge records contractor provenance only and does not constitute Project Manager evidence acceptance or a canonical status change.
@@ -513,16 +513,16 @@ Completed prerequisites—do not repeat them unless a material baseline, scope, 
 
 1. **Completed:** Phase 0–4 output validation, residual-gap classification, material P0/architecture/security/NFR closure or bounding, planned pre-start traceability reconciliation, and live-artifact alignment were accepted through the formal project-owner review recorded by `SRC-020`. The former `docs/02-architecture/` structure exception is resolved by the canonical-tree amendment in this plan under `SRC-021`.
 2. **Completed:** readiness-decision authority is defined by `SRC-021`, `OQ-016` is closed, and Thembinkosi Mtsweni is the final project-owner decision authority.
-3. **Completed:** the 2026-09-07 formal review revalidated `GO-2026-09-05-FSA-001`; the scope gate for `WP-AZ-001` through `WP-AZ-008` is `OPEN_FOR_AUTHORISED_EXECUTION` in Azure DEV/MVP; contractor start remains `BLOCKED_PENDING_ASSIGNMENT` until an exact assignment is recorded. Re-run readiness only if material scope, baseline, risk, or non-waivable evidence changes.
+3. **Completed:** the 2026-09-07 formal review revalidated `GO-2026-09-05-FSA-001`; the scope gate for `WP-AZ-001` through `WP-AZ-008` is `OPEN_FOR_AUTHORISED_EXECUTION` in Azure DEV/MVP; contractor start remains `OPEN_FOR_SELF_SELECTION` once the contractor declares its exact scope in the PR. Re-run readiness only if material scope, baseline, risk, or non-waivable evidence changes.
 
 Execute the current work next, in order:
 
-1. The 80K Developers Project Manager workstream issues a durable assignment before technical execution. It must identify the contractor, exact `WP-AZ-001` through `WP-AZ-008` subset, authorised repository paths or bounded contractor subdirectory, evidence purpose, and applicable external implementation/resource scope. The existing `GO` is scope authority, not an executor assignment; no current assignment is recorded.
-2. The assigned contractor begins only that exact subset in governed dependency order. Source-dependent work still requires a pinned application branch and commit.
+1. Contractors self-select any work within the repository's approved boundaries and declare the contractor, exact work-package/use-case scope, authorised repository paths or bounded contractor subdirectory, evidence purpose, and applicable external implementation/resource scope in the PR. The existing `GO` defines a project boundary; it does not allocate work.
+2. The self-selecting contractor begins only that exact subset in governed dependency order. Source-dependent work still requires a pinned application branch and commit.
 3. Each technical contractor records objective, sanitised, revision-pinned first-pass evidence only under its applicable `contractors/<contractor>/` folder; approved external raw evidence is represented by a sanitised stable reference there.
 4. Review and merge a contractor evidence PR as provenance only; merge does not accept evidence or change canonical status.
 5. The 80K Developers Project Manager workstream separately assesses the merged evidence and, when accepted, links it into `docs/09-delivery/foundation-slice-a-evidence-register.md`, updates realised traceability and records any status change through a distinct `PROJECT_MANAGER_GOVERNANCE` PR.
-6. A missing assignment blocks contractor start. A missing required realised hop blocks work-package/use-case status promotion and acceptance; neither condition invalidates the scope-level GO unless it reveals a material non-waivable contradiction.
+6. An incomplete self-selection declaration makes the PR `Unverified` or `Changes required`. A missing required realised hop blocks work-package/use-case status promotion and acceptance; neither condition changes the scope-level GO.
 7. Keep `WP-AZ-009` through `WP-AZ-012` blocked until Foundation evidence and the separate Phase 5 / first-business-slice gate are satisfied.
 8. Continue regulated onboarding, NDA, settlement, custody, portfolio and production-hardening work only as their own evidence and dependency gates are satisfied.
 
