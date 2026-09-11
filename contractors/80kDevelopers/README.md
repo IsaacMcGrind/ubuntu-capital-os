@@ -8,31 +8,16 @@ It is an implementation-provenance record. It does not replace the evidence-firs
 
 ## Submission contract
 
-Within this Ubuntu Capital OS repository, this contractor workstream records factual, sanitised implementation evidence only. 80K Developers (Pty) Ltd is the appointed Project Manager contractor and accountable project-management workstream. Thembinkosi Mtsweni is the responsible human Project Manager and project-owner decision authority acting for 80K Developers; in that capacity, he retains authority to interpret and accept evidence, update canonical OS artifacts and delivery status, set priorities, approve gates, and authorise subsequent work.
+**Project role:** Under `SRC-021`, 80K Developers (Pty) Ltd is the appointed Project Manager contractor. Thembinkosi Mtsweni is the responsible human Project Manager and final project-owner decision authority.
 
-80K Developers may also perform implementation or coding work. When it does, the resulting submission remains evidence-only and must not self-accept, self-promote status or rely on 80K's Project Manager appointment to bypass review. An 80K Developers change exercises Project Manager authority only when it is explicitly identified as Project-Manager-owned governance work and is kept separate from technical evidence capture.
+80K Developers must declare one capacity in every PR:
 
-An evidence submission may record:
+- `PROJECT_MANAGER_GOVERNANCE` for an explicitly authorised canonical reconciliation or management decision; or
+- `CONTRACTOR_TECHNICAL_EVIDENCE` for implementation, coding or other technical evidence.
 
-- assigned work package and scope;
-- work actually performed, responsible contributor and date;
-- revision-pinned implementation or resource references where safe;
-- commands or procedures used;
-- validation executed and results;
-- limitations, unfinished work, blockers and dependencies;
-- decisions or clarification required from the Project Manager.
+Technical evidence from 80K Developers cannot self-accept, self-promote status or inherit management authority from the organization name. Every PR must complete `.github/pull_request_template.md`; reviewers must verify the cited assignment/decision reference and authorised paths.
 
-An evidence submission must not:
-
-- approve or authorise work;
-- create, replace or reinterpret a project gate;
-- change canonical project, work-package or use-case status;
-- declare a work package or use case complete;
-- make an Ubuntu Capital architecture, business, legal or commercial decision;
-- broaden the contractor's assigned scope;
-- present unsupported or unpinned implementation observations as current fact.
-
-Evidence must not expose secrets, credentials, tokens, private personal information, raw sensitive cloud exports or unnecessary infrastructure identifiers. Merging an evidence PR records evidence only; it does not promote status or authorise further work. The Project Manager performs repository-wide analysis and any canonical OS update separately after evidence is merged.
+The canonical rules are `AGENT.md` and `plan.md`.
 
 ## Current Implementation
 
