@@ -15,7 +15,7 @@ It is an implementation-provenance record. It does not replace the evidence-firs
 - `PROJECT_MANAGER_GOVERNANCE` for an explicitly authorised canonical reconciliation or management decision; or
 - `CONTRACTOR_TECHNICAL_EVIDENCE` for implementation, coding or other technical evidence.
 
-Technical evidence from 80K Developers cannot self-accept, self-promote status or inherit management authority from the organization name. In `CONTRACTOR_TECHNICAL_EVIDENCE` capacity, all repository-hosted first-pass evidence must remain under `contractors/80kDevelopers/`; approved external raw evidence must be represented by a sanitised stable reference here, and canonical governance/status artifacts must not be changed in the same PR. Every PR must complete `.github/pull_request_template.md`; reviewers must verify the cited assignment/decision reference and authorised paths.
+Technical evidence from 80K Developers cannot self-accept, self-promote status or inherit management authority from the organization name. In `CONTRACTOR_TECHNICAL_EVIDENCE` capacity, all repository-hosted first-pass evidence must remain under `contractors/80kDevelopers/`; approved external raw evidence must be represented by a sanitised stable reference here, and canonical governance/status artifacts must not be changed in the same PR. Every PR must complete the project-owner-approved `.github/pull_request_template.md` (`SRC-021`); reviewers must verify the cited assignment/decision reference and authorised paths.
 
 The canonical rules are `AGENT.md` and `plan.md`.
 
@@ -49,7 +49,7 @@ Based on the current evidence supplied to Ubuntu Capital OS:
 | Historical ChatGPT connector access attempt | CONFIRMED | BLOCKED_BY_CONTEXT | The recorded attempt returned `404 Not Found`; this classifies that access path and time only, not the later local inspection. |
 | Exact source revision and durable inspection run | UNKNOWN | BLOCKED_BY_CONTEXT | The inspected branch/commit SHA and durable run/evidence reference are absent, so the local inspection cannot be reproduced or treated as current source verification. |
 | Existence of 41-use-case coverage artifacts | CONFIRMED | ANALYSIS_IN_PROGRESS | Coverage artifacts exist and distinguish UI/prototype, partial, missing, and E2E-unproven behaviour; their source-revision provenance remains incomplete. |
-| Production readiness | CONFIRMED | BLOCKED_BY_CONTEXT | The current repository gate remains `NO-GO FOR UNRESTRICTED IMPLEMENTATION`; no complete E2E, security, integration, settlement, audit, or operational acceptance evidence has been established. |
+| Production readiness | CONFIRMED | BLOCKED_BY_CONTEXT | Bounded Azure DEV/MVP Foundation execution is authorised under `GO-2026-09-05-FSA-001`; unrestricted and production implementation remain `NO-GO` because complete E2E, security, integration, settlement, audit, and operational acceptance evidence has not been established. |
 
 The connector failure is **not** classified as `CONTRADICTED`. A `404 Not Found` does not establish incompatible source descriptions; it establishes an access/context blocker for that recorded attempt. The later reported local inspection is separate historical evidence, but it remains non-reproducible until its exact source revision and durable run record are added.
 
