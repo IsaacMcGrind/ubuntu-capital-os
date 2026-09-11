@@ -49,7 +49,7 @@ The monitor uses the checked-out repository and GitHub API to inspect:
 - changed file paths and available patches;
 - the current use-case catalogue;
 - controlling documents and repository-integrity conditions;
-- contractor records under every existing `contractors/<contractor>/` directory.
+- contractor records under `contractors/80kDevelopers/`.
 
 Commit details and patches are derived locally from the full git checkout rather than expanding every commit through the REST API. For a merge commit, both the changed paths (including renames) and patch are calculated against the same first parent, so file reporting is consistent with the displayed patch.
 
@@ -97,13 +97,15 @@ The monitor follows Ubuntu Capital OS evidence discipline:
 
 It does not automatically promote a use case or delivery status. A code, documentation, UI or contractor change is treated as evidence requiring reconciliation rather than proof of end-to-end completion.
 
-## Contractor role-boundary review
+## Contractor role-boundary review requirement
 
-For every contractor-authored or contractor-scoped pull request, the monitor checks whether the submission remains factual evidence within the assigned contractor folder and whether current claims are sanitised, reproducible and revision-pinned.
+80K Developers (Pty) Ltd is the appointed Project Manager contractor and accountable project-management workstream. Thembinkosi Mtsweni is the responsible human Project Manager and project-owner decision authority acting for 80K Developers.
 
-The monitor reports `Changes required` when a contractor submission attempts to approve or authorise work, create or reinterpret a gate, change canonical status, declare completion, make a project-level architecture/business/legal decision, broaden assigned scope, or modify canonical OS artifacts without explicit Project Manager authorisation.
+The separately configured Ubuntu Capital Change Watch and human PR review must check every contractor-authored or contractor-scoped PR against the authority boundary in `AGENT.md` and the workflow in `plan.md`. This includes identifying whether 80K Developers is acting in its Project Manager capacity or its implementation/coding capacity. Technical evidence from 80K Developers receives the same evidence-only review as any other contractor submission.
 
-Review outcomes are analytical only. A merged contractor evidence PR records evidence but does not promote status. Canonical repository reconciliation, priority changes, gate decisions and subsequent work authorisation remain with Thembinkosi Mtsweni as Project Manager and project owner.
+The repository-native monitor scripts do not currently implement contractor-authorship, authorised-path, content-sanitisation or role-boundary classification checks. This section is therefore a review requirement, not a claim about existing script capability. Until that implementation is separately authorised, tested and merged, do not rely on the repository-native workflow to enforce the boundary.
+
+Review outcomes remain analytical only. A merged contractor evidence PR records evidence but does not promote status. Canonical repository reconciliation, priority changes, gate decisions and subsequent work authorisation remain with the 80K Developers Project Manager workstream and Thembinkosi Mtsweni's human decision authority.
 
 ## Integrity Checks
 
@@ -112,8 +114,7 @@ The initial automated checks include:
 - presence of `AGENT.md`, `plan.md`, `README.md`, and the master use-case catalogue;
 - reconciliation between the declared use-case count and parsed use-case rows;
 - stale `N-use-case` references in `plan.md` that conflict with the current catalogue;
-- case-conflicting contractor directory names;
-- contractor PR path scope and compliance with the contractor-evidence/project-management authority boundary.
+- case-conflicting contractor directory names.
 
 These checks are intentionally conservative. They do not replace human review or the broader traceability/validation requirements in `AGENT.md` and `plan.md`.
 
