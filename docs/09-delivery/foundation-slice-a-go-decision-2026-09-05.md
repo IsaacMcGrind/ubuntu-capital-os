@@ -9,19 +9,16 @@ Authorised environment: AZURE DEV/MVP
 Effective execution gate: OPEN_FOR_AUTHORISED_EXECUTION  
 Revalidation date: 2026-09-07  
 Revalidation evidence: SRC-020  
+Management-authority and evidence-workflow amendment: SRC-021 (effective 2026-09-11)  
 Supersession scope: replaces the interim `CLOSED_PENDING_REVALIDATION` state while retaining every non-waivable condition and scope boundary below
 
 ## 1. Authority model
 
-Execution-authorising GO authority is defined as:
+The Ubuntu Capital project owner is the final execution-authorising authority. Under `SRC-021`, 80K Developers (Pty) Ltd is the appointed Project Manager contractor and accountable project-management workstream, with Thembinkosi Mtsweni as the responsible human Project Manager and final project-owner decision authority.
 
-- Ubuntu Capital project owner (final approving authority);
-- any one designated contractor delivery authority from:
-  - 80kDevelopers;
-  - Corefinity;
-  - HerLogicSolutions.
+HerLogic Solutions and Corefinity contribute technical delivery or analysis evidence within assigned scope. They do not independently approve a gate, promote canonical status, accept their own evidence, change priorities or authorise subsequent work.
 
-The Ubuntu Capital project owner approved this bounded GO on 2026-09-05. On 2026-09-07, Thembinkosi Mtsweni, as project owner and final approving authority, completed the formal post-prerequisite readiness review, validated the prerequisite reconciliation, and explicitly confirmed that the Foundation work is ready to begin. This decision is therefore revalidated and effective.
+The Ubuntu Capital project owner approved this bounded GO on 2026-09-05. On 2026-09-07, Thembinkosi Mtsweni completed the formal post-prerequisite readiness review, validated the prerequisite reconciliation, and explicitly confirmed that the Foundation work is ready to begin. This decision remains revalidated and effective. The `SRC-021` authority amendment governs future evidence acceptance and further-work decisions without retroactively invalidating this GO.
 
 ## 1.1 Formal post-prerequisite revalidation
 
@@ -42,11 +39,15 @@ The following conditions are non-waivable:
 
 ## 3. Required execution recording
 
-Execution progress must be recorded as it is produced in:
+Execution recording uses two governed stages:
 
-- docs/09-delivery/foundation-slice-a-evidence-register.md;
-- docs/10-traceability/traceability-matrix.md;
-- docs/09-delivery/e2e-delivery-tracker.md (where applicable to use-case progression).
+1. The technical contractor records factual, sanitised, revision-pinned work evidence in its existing `contractors/<contractor>/` directory.
+2. After review and merge, the 80K Developers Project Manager workstream analyses that evidence and, through a separate `PROJECT_MANAGER_GOVERNANCE` change, updates or links the accepted evidence in:
+   - `docs/09-delivery/foundation-slice-a-evidence-register.md`;
+   - `docs/10-traceability/traceability-matrix.md`;
+   - `docs/09-delivery/e2e-delivery-tracker.md` where use-case progression is affected.
+
+A contractor evidence merge does not itself accept evidence, promote status or authorise further work. Canonical records should reference the contractor evidence rather than duplicate sensitive or bulky raw material.
 
 ## 4. Residual risk statement
 
