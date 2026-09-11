@@ -29,6 +29,21 @@ Before planning or commenting on a work item, read `AGENT.md`, then `plan.md`, f
 5. Stop progression when counts, IDs, links, evidence classifications, required outputs, or canonical structure do not reconcile. Repair the inconsistency before advancing implementation status.
 6. Escalate business/legal/compliance/security choices—especially eligibility, KYC/AML, NDA, commitment, settlement/custody, valuation, permissions, audit, retention/privacy, and recovery—when evidence or explicit approval is missing.
 
+## Decision authority
+
+Thembinkosi Mtsweni, acting as Project Manager and project owner, is the decision authority for evidence acceptance, canonical OS reconciliation, delivery-status changes, priorities, gates and subsequent work authorisation.
+
+Contractors and coders submit evidence; they do not exercise project-management authority through their PRs. Automated review verdicts are recommendations only.
+
+For every contractor PR:
+
+1. confirm the changed paths remain inside the contractor's authorised evidence scope unless an explicit Project Manager assignment proves otherwise;
+2. require factual, sanitised and revision-pinned evidence for current claims;
+3. reject contractor-authored approval, gate, status-promotion, completion, architecture-decision, business/legal-decision or scope-authorisation language as a role-boundary violation;
+4. treat merged contractor evidence as input only;
+5. perform canonical repository reconciliation separately after merge; and
+6. obtain Project Manager approval before any status change or next assignment.
+
 ## Contractor coordination
 
 | Workstream | Role in programme | Management boundary |
