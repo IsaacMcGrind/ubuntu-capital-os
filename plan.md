@@ -82,6 +82,15 @@ docs/
   02-actors-and-permissions/
     actors.md
     permissions-matrix.md
+  02-architecture/
+    architecture-decision-reconciliation-2026-08-29.md
+    azure-mvp-platform-decision.md
+    high-level-logical-architecture-v0.1.md
+    priority-use-case-architecture-map.md
+    system-boundary-view.md
+    ubuntu-capital-os-blueprint-sa-readiness-audit.md
+    ubuntu-capital-os-phase-1-mvp-blueprint-22-use-cases.pdf
+    use-cases/
   03-functional-domains/
     domains.md
     capability-map.md
@@ -142,7 +151,7 @@ output/
 
 The required-output tree is the canonical maintenance contract. File presence does not by itself satisfy a phase exit criterion. As of the 2026-09-03 reassessment, the canonical Phase 0–4 directories and major structured outputs materially exist; remaining work is therefore primarily validation, approval, reconciliation and gap closure rather than recreating those outputs from scratch.
 
-The working `docs/02-architecture/` tree is an explicit structure exception because it is actively used but not declared in the canonical tree above. It must be formally dispositioned before the repository-integrity gate can close.
+`docs/02-architecture/` is part of the canonical maintenance contract through this project-owner-authorised `PROJECT_MANAGER_GOVERNANCE` amendment under `SRC-021`. Its inclusion resolves the prior structure exception; architecture artifacts remain evidence-gated and do not become approved or complete merely because their paths are canonical.
 
 ## 4. Phase 0 — Context and Architecture Baseline
 
@@ -502,19 +511,20 @@ The current queue must use the artifacts that already exist. Do not recreate can
 
 Completed prerequisites—do not repeat them unless a material baseline, scope, or controlling-evidence change invalidates the 2026-09-07 decision:
 
-1. **Completed:** Phase 0–4 output validation, residual-gap classification, material P0/architecture/security/NFR closure or bounding, planned pre-start traceability reconciliation, and live-artifact alignment were accepted through the formal project-owner review recorded by `SRC-020`.
+1. **Completed:** Phase 0–4 output validation, residual-gap classification, material P0/architecture/security/NFR closure or bounding, planned pre-start traceability reconciliation, and live-artifact alignment were accepted through the formal project-owner review recorded by `SRC-020`. The former `docs/02-architecture/` structure exception is resolved by the canonical-tree amendment in this plan under `SRC-021`.
 2. **Completed:** readiness-decision authority is defined by `SRC-021`, `OQ-016` is closed, and Thembinkosi Mtsweni is the final project-owner decision authority.
 3. **Completed:** the 2026-09-07 formal review revalidated `GO-2026-09-05-FSA-001`; `WP-AZ-001` through `WP-AZ-008` are `OPEN_FOR_AUTHORISED_EXECUTION` in Azure DEV/MVP. Re-run readiness only if material scope, baseline, risk, or non-waivable evidence changes.
 
 Execute the current work next, in order:
 
-1. Begin only the exact `WP-AZ-001` through `WP-AZ-008` scope authorised by `GO-2026-09-05-FSA-001`, in governed dependency order. Source-dependent work still requires a pinned application branch and commit.
-2. Each technical contractor records objective, sanitised, revision-pinned first-pass evidence only under its applicable `contractors/<contractor>/` folder; approved external raw evidence is represented by a sanitised stable reference there.
-3. Review and merge a contractor evidence PR as provenance only; merge does not accept evidence or change canonical status.
-4. The 80K Developers Project Manager workstream separately assesses the merged evidence and, when accepted, links it into `docs/09-delivery/foundation-slice-a-evidence-register.md`, updates realised traceability and records any status change through a distinct `PROJECT_MANAGER_GOVERNANCE` PR.
-5. A missing required realised hop blocks work-package/use-case status promotion and acceptance, not the already-completed bounded start decision.
-6. Keep `WP-AZ-009` through `WP-AZ-012` blocked until Foundation evidence and the separate Phase 5 / first-business-slice gate are satisfied.
-7. Continue regulated onboarding, NDA, settlement, custody, portfolio and production-hardening work only as their own evidence and dependency gates are satisfied.
+1. The 80K Developers Project Manager workstream issues a durable assignment before technical execution. It must identify the contractor, exact `WP-AZ-001` through `WP-AZ-008` subset, authorised repository paths or bounded contractor subdirectory, evidence purpose, and applicable external implementation/resource scope. The existing `GO` is scope authority, not an executor assignment; no current assignment is recorded.
+2. The assigned contractor begins only that exact subset in governed dependency order. Source-dependent work still requires a pinned application branch and commit.
+3. Each technical contractor records objective, sanitised, revision-pinned first-pass evidence only under its applicable `contractors/<contractor>/` folder; approved external raw evidence is represented by a sanitised stable reference there.
+4. Review and merge a contractor evidence PR as provenance only; merge does not accept evidence or change canonical status.
+5. The 80K Developers Project Manager workstream separately assesses the merged evidence and, when accepted, links it into `docs/09-delivery/foundation-slice-a-evidence-register.md`, updates realised traceability and records any status change through a distinct `PROJECT_MANAGER_GOVERNANCE` PR.
+6. A missing assignment blocks contractor start. A missing required realised hop blocks work-package/use-case status promotion and acceptance; neither condition invalidates the scope-level GO unless it reveals a material non-waivable contradiction.
+7. Keep `WP-AZ-009` through `WP-AZ-012` blocked until Foundation evidence and the separate Phase 5 / first-business-slice gate are satisfied.
+8. Continue regulated onboarding, NDA, settlement, custody, portfolio and production-hardening work only as their own evidence and dependency gates are satisfied.
 
 ## 16. Agent Completion Protocol
 
