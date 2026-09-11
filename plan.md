@@ -19,7 +19,7 @@ The plan is the controlling implementation sequence for developers and autonomou
 
 ## 2.1 Contractor evidence and project-management workflow
 
-Under `SRC-021`, 80K Developers (Pty) Ltd is the appointed Project Manager contractor and accountable project-management workstream. Thembinkosi Mtsweni is the responsible human Project Manager and final project-owner decision authority working through that management arrangement. In that capacity, he retains authority to interpret evidence, accept or reject delivery claims, update canonical Ubuntu Capital OS artifacts and statuses, set priorities, approve gates, and authorise subsequent work.
+Under `SRC-021`, 80K Developers (Pty) Ltd is the appointed Project Manager contractor and accountable project-management workstream. Thembinkosi Mtsweni is the responsible human Project Manager and final project-owner decision authority working through that management arrangement. In that capacity, Thembinkosi Mtsweni retains authority to interpret evidence, accept or reject delivery claims, update canonical Ubuntu Capital OS artifacts and statuses, set priorities, approve gates, and authorise subsequent work.
 
 Contractors and coders must:
 
