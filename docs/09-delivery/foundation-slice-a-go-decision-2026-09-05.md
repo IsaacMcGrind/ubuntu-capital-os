@@ -16,7 +16,7 @@ Supersession scope: replaces the interim `CLOSED_PENDING_REVALIDATION` state whi
 
 The Ubuntu Capital project owner is the final execution-authorising authority. Under `SRC-021`, 80K Developers (Pty) Ltd is the appointed Project Manager contractor and accountable project-management workstream, with Thembinkosi Mtsweni as the responsible human Project Manager and final project-owner decision authority.
 
-HerLogic Solutions and Corefinity contribute technical delivery or analysis evidence within assigned scope. They do not independently approve a gate, promote canonical status, accept their own evidence, change priorities or authorise subsequent work.
+HerLogic Solutions and Corefinity may self-select work and contribute technical delivery or analysis evidence within the approved scope. They do not independently approve a gate, promote canonical status, accept their own evidence, change priorities or authorise subsequent work.
 
 The Ubuntu Capital project owner approved this bounded GO on 2026-09-05. On 2026-09-07, Thembinkosi Mtsweni completed the formal post-prerequisite readiness review, validated the prerequisite reconciliation, and explicitly confirmed that the Foundation work is ready to begin. This decision remains revalidated and effective. The `SRC-021` authority amendment governs future evidence acceptance and further-work decisions without retroactively invalidating this GO.
 
@@ -52,4 +52,4 @@ A contractor evidence merge does not itself accept evidence, promote status or a
 
 ## 4. Residual risk statement
 
-This revalidated GO authorises the bounded Foundation scope but does not assign an executor. Execution may begin in governed dependency order only after a durable contractor self-selection declaration is recorded, with objective evidence submitted as it is produced and accepted separately before canonical reconciliation. It does not remove existing business/legal unknowns outside Foundation scope, prove implementation completion, authorise production, or authorise `WP-AZ-009` through `WP-AZ-012`.
+This revalidated GO authorises the bounded Foundation scope but does not allocate work. Execution may begin in governed dependency order only after a durable contractor self-selection declaration is recorded, with objective evidence submitted as it is produced and accepted separately before canonical reconciliation. It does not remove existing business/legal unknowns outside Foundation scope, prove implementation completion, authorise production, or authorise `WP-AZ-009` through `WP-AZ-012`.
