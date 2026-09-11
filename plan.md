@@ -53,14 +53,14 @@ A declaration documents the contributor's capacity, self-selected work, changed 
 
 Required sequence:
 
-1. Contractor self-selects a bounded work package and declares it in the PR.
-2. Contractor implements the selected scope.
-3. Contractor records sanitised evidence in the contractor folder.
+1. Contractor self-selects and implements any work inside established project boundaries without assignment or a Project Manager pre-start record.
+2. Contractor records sanitised evidence in the contractor folder.
+3. The contractor's evidence PR documents the selected work, changed paths, evidence purpose, validation and limitations.
 4. The evidence PR is reviewed for factual support, reproducibility, safety, scope and role-boundary compliance.
 5. A contractor evidence PR may be merged after the required review; merge records contractor provenance only and does not constitute Project Manager evidence acceptance or a canonical status change.
 6. Project Manager separately assesses the merged evidence and analyses the integrated repository.
 7. If evidence is accepted, the Project Manager updates canonical OS records through an explicitly identified `PROJECT_MANAGER_GOVERNANCE` change.
-8. Thembinkosi Mtsweni decides priorities, status, gates and the next authorised work.
+8. Thembinkosi Mtsweni decides canonical priorities, status, gates and project-boundary changes; none of those decisions allocate contractor work.
 
 ## 3. Required Repository Outputs
 

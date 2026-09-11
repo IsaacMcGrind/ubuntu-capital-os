@@ -115,7 +115,7 @@ Current delivery evidence remains:
 - all E2E tracker rows `BLOCKED_BY_CONTEXT` for reproducible verification;
 - historical labels of 7 `COMPONENT_COMPLETE`, 16 `IN_DEVELOPMENT` and 18 `READY_FOR_DEVELOPMENT`, preserved only as an unpinned snapshot.
 
-The current source gap prevents a defensible refreshed allocation of the 41 use cases by implementation status.
+The current source gap prevents a defensible refreshed classification of the 41 use cases by implementation status.
 
 ## 7. Repository-monitor regression
 
