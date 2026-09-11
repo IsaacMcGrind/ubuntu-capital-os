@@ -26,7 +26,7 @@ Thembinkosi Mtsweni, as Ubuntu Capital project owner and final approving authori
 
 For current execution decisions, this amendment supersedes the historical `OQ-016`-open, authority-`UNKNOWN`, effective-`NO_GO`, and pre-revalidation statements retained in Sections 3, 4 and 4.1. Those statements remain dated assessment history and must not be treated as current blockers. The revalidated GO authorises governed start only: all eight implementation evidence gates remain unsatisfied, package status remains `READY_FOR_DEVELOPMENT` until start evidence is accepted, `WP-AZ-009` through `WP-AZ-012` remain separately blocked, and production remains unauthorised.
 
-`SRC-021` subsequently establishes the ongoing management/evidence workflow: technical contractors keep repository-hosted first-pass evidence in their contractor folders; contractor evidence merges as provenance only; and the 80K Developers Project Manager workstream separately assesses accepted evidence and reconciles canonical records through a distinct `PROJECT_MANAGER_GOVERNANCE` PR.
+`SRC-021` subsequently establishes the ongoing management/evidence workflow: technical contractors keep repository-hosted first-pass evidence in their contractor folders; contractor evidence merges as provenance only; and the 80K Developers Project Manager workstream separately assesses accepted evidence and reconciles canonical records through a distinct `PROJECT_MANAGER_GOVERNANCE` PR. The same governance amendment adds the existing `docs/02-architecture/` tree to the canonical `plan.md` contract, resolving the former structure exception without treating its contents as approved or complete. It also distinguishes the scope-level GO from the still-missing exact contractor/package/path assignment.
 
 ## 2. Current repository-output presence
 
@@ -130,18 +130,19 @@ The following statements are obsolete and must not be used as current blockers:
 
 Those artifacts may still require completion, approval, correction or validation. The work is now **reconciliation and closure**, not initial creation.
 
-The `docs/02-architecture/` issue is different: the directory exists and is actively used, but its relationship to the canonical tree remains an explicit structural exception requiring disposition before the integrity gate can be closed.
+At this historical baseline, the `docs/02-architecture/` relationship was an unresolved structural exception. The current `plan.md` now includes the existing architecture tree under the project-owner-authorised `SRC-021` amendment, so that structural blocker is resolved; substantive architecture evidence and approval gaps remain governed separately.
 
 ## 6. Current execution sequence
 
 Completed prerequisite: the project-owner review recorded by `SRC-020` accepted the bounded Foundation prerequisite reconciliation, closed `OQ-016`, and revalidated `GO-2026-09-05-FSA-001` on 2026-09-07. Reopen readiness only for a material baseline, scope, risk, or non-waivable evidence change.
 
-1. Begin only the authorised `WP-AZ-001` through `WP-AZ-008` subset in governed dependency order.
-2. Each technical contractor records objective, sanitised, revision-pinned first-pass evidence only under its applicable contractor folder; approved external raw evidence is represented by a sanitised stable reference there.
-3. Review and merge contractor evidence as provenance only.
-4. The 80K Developers Project Manager workstream separately assesses merged evidence and, when accepted, reconciles the canonical Foundation evidence register, realised chain, and status through a distinct `PROJECT_MANAGER_GOVERNANCE` PR.
-5. Required realised hops govern status promotion, `COMPONENT_COMPLETE`, E2E readiness, and acceptance rather than the already-completed bounded start decision.
-6. Keep `WP-AZ-009` through `WP-AZ-012` blocked until Foundation evidence and the separate Phase 5 / first-business-slice gate are satisfied.
+1. The Project Manager records a durable assignment naming the contractor, exact authorised `WP-AZ-001` through `WP-AZ-008` subset, authorised repository paths or bounded contractor subdirectory, evidence purpose, and applicable external implementation/resource scope.
+2. The assigned contractor begins only that exact subset in governed dependency order.
+3. Each technical contractor records objective, sanitised, revision-pinned first-pass evidence only under its applicable contractor folder; approved external raw evidence is represented by a sanitised stable reference there.
+4. Review and merge contractor evidence as provenance only.
+5. The 80K Developers Project Manager workstream separately assesses merged evidence and, when accepted, reconciles the canonical Foundation evidence register, realised chain, and status through a distinct `PROJECT_MANAGER_GOVERNANCE` PR.
+6. Required realised hops govern status promotion, `COMPONENT_COMPLETE`, E2E readiness, and acceptance rather than the already-completed bounded start decision.
+7. Keep `WP-AZ-009` through `WP-AZ-012` blocked until Foundation evidence and the separate Phase 5 / first-business-slice gate are satisfied.
 
 ## 7. Status boundary
 
