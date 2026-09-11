@@ -28,7 +28,7 @@ The agent's objective is not to speculate about an ideal platform. Its objective
 
 ## Delivery authority and contractor evidence boundary
 
-Under `SRC-021`, 80K Developers (Pty) Ltd is the appointed Project Manager contractor and accountable project-management workstream. Thembinkosi Mtsweni is the responsible human Project Manager and final project-owner decision authority working through that management arrangement. In that capacity, he holds the sole repository authority for interpreting or accepting contractor evidence, changing canonical Ubuntu Capital OS delivery status, changing priorities, approving gates, and authorising subsequent work.
+Under `SRC-021`, 80K Developers (Pty) Ltd is the appointed Project Manager contractor and accountable project-management workstream. Thembinkosi Mtsweni is the responsible human Project Manager and final project-owner decision authority working through that management arrangement. In that capacity, Thembinkosi Mtsweni holds the sole repository authority for interpreting or accepting contractor evidence, changing canonical Ubuntu Capital OS delivery status, changing priorities, approving gates, and authorising subsequent work.
 
 Within this Ubuntu Capital OS repository:
 
