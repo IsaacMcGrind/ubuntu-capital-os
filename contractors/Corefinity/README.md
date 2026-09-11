@@ -6,7 +6,7 @@ Corefinity contribution evidence is supporting project evidence only. It does no
 
 ## Submission contract
 
-Within this Ubuntu Capital OS repository, this contractor workstream records factual, sanitised implementation evidence only. Thembinkosi Mtsweni, acting as Project Manager and project owner, retains authority to interpret and accept evidence, update canonical OS artifacts and delivery status, set priorities, approve gates, and authorise subsequent work.
+Within this Ubuntu Capital OS repository, this contractor workstream records factual, sanitised implementation evidence only. 80K Developers (Pty) Ltd is the appointed Project Manager contractor and accountable project-management workstream. Thembinkosi Mtsweni is the responsible human Project Manager and project-owner decision authority acting for 80K Developers; in that capacity, he retains authority to interpret and accept evidence, update canonical OS artifacts and delivery status, set priorities, approve gates, and authorise subsequent work.
 
 An evidence submission may record:
 
