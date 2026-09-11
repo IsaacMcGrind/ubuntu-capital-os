@@ -24,7 +24,7 @@ Under `SRC-021`, 80K Developers (Pty) Ltd is the appointed Project Manager contr
 Contractors and coders must:
 
 - execute only assigned work;
-- submit factual, sanitised, revision-pinned evidence under their existing `contractors/<contractor>/` directory unless the Project Manager explicitly authorises another path;
+- keep all repository-hosted first-pass evidence under their existing `contractors/<contractor>/` directory; never modify canonical governance, status, decision, register, tracker, traceability, roadmap, plan, or summary artifacts in a `CONTRACTOR_TECHNICAL_EVIDENCE` change; use sanitised stable references in the contractor folder for approved external raw evidence;
 - record what was performed, by whom and when, validation results, limitations, unfinished work, blockers, dependencies, and decisions required;
 - avoid project-level approval, gate, status, completion, architecture, business, legal, or scope-authorisation statements.
 
@@ -34,11 +34,11 @@ Because 80K Developers may act both as Project Manager contractor and as an impl
 
 Automated review may recommend `Candidate for human approval`, `Changes required`, `Blocked`, or `Unverified`, but those verdicts are analytical and cannot change repository authority or delivery status.
 
-After contractor evidence is reviewed and merged, the Project Manager performs a repository-wide impact analysis and, where justified, makes canonical OS updates through a separate governed change. Only the Project Manager may approve the next assignment or status transition.
+After a contractor evidence PR is reviewed and merged as provenance, the Project Manager separately assesses the merged evidence and performs a repository-wide impact analysis. Where evidence is accepted, canonical OS updates must be made through a separate, explicitly identified `PROJECT_MANAGER_GOVERNANCE` change. Only the Project Manager may approve the next assignment or status transition.
 
 Required PR declaration:
 
-Every PR must complete `.github/pull_request_template.md` and provide:
+Every PR must complete the project-owner-approved `.github/pull_request_template.md` (`SRC-021`) and provide:
 
 - submitting organization and responsible human;
 - declared capacity: `PROJECT_MANAGER_GOVERNANCE` or `CONTRACTOR_TECHNICAL_EVIDENCE`;
@@ -58,8 +58,9 @@ Required sequence:
 3. Contractor records sanitised evidence in the contractor folder.
 4. The evidence PR is reviewed for factual support, reproducibility, safety, scope and role-boundary compliance.
 5. A contractor evidence PR may be merged after the required review; merge records contractor provenance only and does not constitute Project Manager evidence acceptance or a canonical status change.
-6. Project Manager analyses the integrated repository and updates canonical OS records separately.
-7. Project Manager decides priorities, status and the next authorised work.
+6. Project Manager separately assesses the merged evidence and analyses the integrated repository.
+7. If evidence is accepted, the Project Manager updates canonical OS records through an explicitly identified `PROJECT_MANAGER_GOVERNANCE` change.
+8. Thembinkosi Mtsweni decides priorities, status, gates and the next authorised work.
 
 ## 3. Required Repository Outputs
 
@@ -499,21 +500,21 @@ Make the platform operable, supportable, and auditable.
 
 The current queue must use the artifacts that already exist. Do not recreate canonical Phase 0–4 outputs merely because an older status document described them as absent.
 
-Execute these tasks next, in order:
+Completed prerequisites—do not repeat them unless a material baseline, scope, or controlling-evidence change invalidates the 2026-09-07 decision:
 
-1. Validate the existing Phase 0–4 outputs against the applicable phase exit criteria and `AGENT.md` integrity rules, using `docs/09-delivery/pre-implementation-gate-reassessment-2026-09-03.md` as the current reconciliation point.
-2. Produce a residual-gaps list that distinguishes `PRESENT_AND_ACCEPTABLE`, `PRESENT_BUT_PARTIAL`, `PRESENT_BUT_INCONSISTENT`, and `MISSING` so that already completed reconstruction work is not reopened unnecessarily.
-3. Gain repository access to `HarleyJoker/ubuntu-capital-platform` and refresh the implementation inventory when access becomes available; until then, preserve the current recorded implementation evidence boundary.
-4. Close the remaining P0 business/legal decisions required for the Foundation and first slice: EOI meaning, jurisdiction/eligibility, NDA policy, operator authority, logical data ownership, and authoritative state transitions.
-5. Close the remaining architecture/security/NFR readiness items identified by the current Solution Architecture audit, including threat model, authorization design, privacy/retention, measurable availability/performance/recovery/cost targets, the first-slice API/error/audit/persistence/integration contracts, and the minimum ADR set.
-6. Reconcile the **pre-start planned traceability chain** for the proposed Foundation/first-slice scope as `source -> use case -> backlog -> architecture/design (where applicable) -> planned implementation target -> planned test/validation -> planned durable-evidence target -> planned tracker/status`. Update `docs/10-traceability/traceability-matrix.md` and `docs/09-delivery/e2e-delivery-tracker.md` to the same stable planned IDs/targets, and verify schemas, structured data, links, IDs, counts, statuses, open-question references, and risk references. Do not require implementation/test-run/deployment/durable evidence that can only be produced after authorised execution starts.
-7. Reconcile `output/system-reconstruction-summary.md`, `README.md`, the implementation roadmap and all live delivery/gate artifacts with the same current readiness position; no summary may state that the business slice can proceed while Foundation/Phase 5 gates remain blocked.
-8. Define and record the readiness-decision approving authority and decision-control contract. Until authority exists, `GO` and `CONDITIONAL_GO` cannot open the gate and `NO_GO` remains effective.
-9. Run and record a formal pre-implementation readiness review. A non-authorising `NO_GO` may be recorded or refreshed immediately while blockers, integrity failures, partial required planned traceability, or undefined readiness authority remain. An execution-authorising `GO` or `CONDITIONAL_GO` may be recorded only after all non-waivable integrity conditions, required **planned pre-start** traceability hops, and readiness-authority requirements for the proposed scope reconcile.
-10. Only if an effective authorised decision permits execution, begin the exact permitted subset of `WP-AZ-001` through `WP-AZ-008`; technical contractors must capture objective, sanitised and revision-pinned first-pass evidence under their applicable `contractors/<contractor>/` folder.
-11. After contractor evidence review and merge, the 80K Developers Project Manager workstream must separately assess and, when accepted, link the evidence into `docs/09-delivery/foundation-slice-a-evidence-register.md` and replace planned targets progressively with realised `implementation -> test/run -> durable evidence -> validation/status` references. A missing required realised hop blocks work-package/use-case status promotion and acceptance, not the pre-start decision itself.
-12. Keep `WP-AZ-009` through `WP-AZ-012` blocked until Foundation evidence and the separate Phase 5 / first-business-slice gate are satisfied.
-13. Continue regulated onboarding, NDA, settlement, custody, portfolio and production-hardening work only as their own evidence and dependency gates are satisfied.
+1. **Completed:** Phase 0–4 output validation, residual-gap classification, material P0/architecture/security/NFR closure or bounding, planned pre-start traceability reconciliation, and live-artifact alignment were accepted through the formal project-owner review recorded by `SRC-020`.
+2. **Completed:** readiness-decision authority is defined by `SRC-021`, `OQ-016` is closed, and Thembinkosi Mtsweni is the final project-owner decision authority.
+3. **Completed:** the 2026-09-07 formal review revalidated `GO-2026-09-05-FSA-001`; `WP-AZ-001` through `WP-AZ-008` are `OPEN_FOR_AUTHORISED_EXECUTION` in Azure DEV/MVP. Re-run readiness only if material scope, baseline, risk, or non-waivable evidence changes.
+
+Execute the current work next, in order:
+
+1. Begin only the exact `WP-AZ-001` through `WP-AZ-008` scope authorised by `GO-2026-09-05-FSA-001`, in governed dependency order. Source-dependent work still requires a pinned application branch and commit.
+2. Each technical contractor records objective, sanitised, revision-pinned first-pass evidence only under its applicable `contractors/<contractor>/` folder; approved external raw evidence is represented by a sanitised stable reference there.
+3. Review and merge a contractor evidence PR as provenance only; merge does not accept evidence or change canonical status.
+4. The 80K Developers Project Manager workstream separately assesses the merged evidence and, when accepted, links it into `docs/09-delivery/foundation-slice-a-evidence-register.md`, updates realised traceability and records any status change through a distinct `PROJECT_MANAGER_GOVERNANCE` PR.
+5. A missing required realised hop blocks work-package/use-case status promotion and acceptance, not the already-completed bounded start decision.
+6. Keep `WP-AZ-009` through `WP-AZ-012` blocked until Foundation evidence and the separate Phase 5 / first-business-slice gate are satisfied.
+7. Continue regulated onboarding, NDA, settlement, custody, portfolio and production-hardening work only as their own evidence and dependency gates are satisfied.
 
 ## 16. Agent Completion Protocol
 
