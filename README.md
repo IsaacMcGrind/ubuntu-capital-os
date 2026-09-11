@@ -65,6 +65,16 @@ The repository materially advanced its canonical reconstruction outputs in commi
 
 The pre-implementation gate was formally satisfied for the bounded Foundation scope by the 2026-09-07 revalidation, so Foundation Slice A may be executed in governed dependency order. The first business vertical slice—authenticated opportunity discovery plus a **non-binding expression of interest**—must not start or advance through `WP-AZ-009` to `WP-AZ-012` until Foundation evidence and the separate first-slice integrity prerequisites both reconcile.
 
+## Delivery authority and contractor evidence workflow
+
+Thembinkosi Mtsweni, acting as Project Manager and project owner, assigns work, interprets contractor evidence, updates canonical Ubuntu Capital OS status and priorities, approves gates, and authorises subsequent work.
+
+Contractors and coders record factual, sanitised delivery evidence only under their existing `contractors/<contractor>/` directory unless a different path is explicitly authorised. Contractor evidence may document work performed, validation, limitations, unfinished work, blockers and decisions needed; it must not authorise work, redefine gates, change canonical status, declare completion, or make project-level architecture, business or legal decisions.
+
+Automated reviews assess evidence and recommend action only. After an evidence PR is reviewed and merged, the Project Manager performs repository-level analysis and makes any justified canonical OS update through a separate governed change.
+
+See `AGENT.md` for the mandatory authority boundary and `plan.md` for the complete governed workflow.
+
 ## Controlling documents
 
 - `AGENT.md` defines how autonomous agents and contributors must operate.
