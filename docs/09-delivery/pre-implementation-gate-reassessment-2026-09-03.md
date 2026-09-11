@@ -24,7 +24,9 @@ Any Foundation delivery artifact that still points to `docs/09-delivery/foundati
 
 Thembinkosi Mtsweni, as Ubuntu Capital project owner and final approving authority, completed the formal post-prerequisite readiness review and explicitly revalidated `GO-2026-09-05-FSA-001`. `OQ-016` is closed, readiness-decision authority is defined, and the effective gate for `WP-AZ-001` through `WP-AZ-008` is `OPEN_FOR_AUTHORISED_EXECUTION` in Azure DEV/MVP. Source: `SRC-020`.
 
-For current execution decisions, this amendment supersedes the historical `OQ-016`-open, authority-`UNKNOWN`, effective-`NO_GO`, and pre-revalidation queue statements retained in Sections 3, 4, 4.1 and 6. Those statements remain part of the dated assessment history and must not be treated as current blockers. The revalidated GO authorises governed start only: all eight implementation evidence gates remain unsatisfied, package status remains `READY_FOR_DEVELOPMENT` until start evidence is recorded, `WP-AZ-009` through `WP-AZ-012` remain separately blocked, and production remains unauthorised.
+For current execution decisions, this amendment supersedes the historical `OQ-016`-open, authority-`UNKNOWN`, effective-`NO_GO`, and pre-revalidation statements retained in Sections 3, 4 and 4.1. Those statements remain dated assessment history and must not be treated as current blockers. The revalidated GO authorises governed start only: all eight implementation evidence gates remain unsatisfied, package status remains `READY_FOR_DEVELOPMENT` until start evidence is accepted, `WP-AZ-009` through `WP-AZ-012` remain separately blocked, and production remains unauthorised.
+
+`SRC-021` subsequently establishes the ongoing management/evidence workflow: technical contractors keep repository-hosted first-pass evidence in their contractor folders; contractor evidence merges as provenance only; and the 80K Developers Project Manager workstream separately assesses accepted evidence and reconciles canonical records through a distinct `PROJECT_MANAGER_GOVERNANCE` PR.
 
 ## 2. Current repository-output presence
 
@@ -132,16 +134,14 @@ The `docs/02-architecture/` issue is different: the directory exists and is acti
 
 ## 6. Current execution sequence
 
-1. Validate the existing Phase 0–4 artifacts against their `plan.md` exit criteria and `AGENT.md` integrity rules.
-2. Produce an explicit residual-gaps register from that validation; do not reopen work that is already present and internally consistent.
-3. Disposition the `docs/02-architecture/` canonical-structure exception.
-4. Close the P0 business/legal/security/NFR, first-slice technical-contract and ADR gaps identified by the current Solution Architecture audit.
-5. Reconcile the **planned pre-start** chain for the proposed Foundation/first-slice scope as `source -> use case -> backlog -> architecture/design (where applicable) -> planned implementation target -> planned test/validation -> planned durable-evidence target -> planned tracker/status`, and update `docs/10-traceability/traceability-matrix.md` plus `docs/09-delivery/e2e-delivery-tracker.md` so both point to the same stable planned IDs/targets.
-6. Resolve `OQ-016` by defining and recording the readiness-decision approving authority and decision-control contract in controlling governance.
-7. While blockers remain, record or refresh a durable `NO_GO` outcome with the evaluated scope, reasons and evidence. Only when `OQ-016`, the required planned pre-start traceability, and all other non-waivable closure conditions for the proposed scope are satisfied may an execution-authorising `GO` or `CONDITIONAL_GO` be issued.
-8. Only after an effective `GO`, or a `CONDITIONAL_GO` that satisfies Section 4.1 without waiving any integrity stop condition, begin only the authorised Foundation work packages and capture objective evidence in `docs/09-delivery/foundation-slice-a-evidence-register.md`.
-9. During authorised delivery, populate and reconcile the realised chain `source -> use case -> backlog -> architecture/design (where applicable) -> implementation evidence -> test/run evidence -> durable evidence -> validation/status`; required realised hops govern status promotion, `COMPONENT_COMPLETE`, E2E readiness and acceptance rather than the start decision.
-10. Keep `WP-AZ-009` through `WP-AZ-012` blocked until Foundation evidence and the separate Phase 5 / first-business-slice gate are satisfied.
+Completed prerequisite: the project-owner review recorded by `SRC-020` accepted the bounded Foundation prerequisite reconciliation, closed `OQ-016`, and revalidated `GO-2026-09-05-FSA-001` on 2026-09-07. Reopen readiness only for a material baseline, scope, risk, or non-waivable evidence change.
+
+1. Begin only the authorised `WP-AZ-001` through `WP-AZ-008` subset in governed dependency order.
+2. Each technical contractor records objective, sanitised, revision-pinned first-pass evidence only under its applicable contractor folder; approved external raw evidence is represented by a sanitised stable reference there.
+3. Review and merge contractor evidence as provenance only.
+4. The 80K Developers Project Manager workstream separately assesses merged evidence and, when accepted, reconciles the canonical Foundation evidence register, realised chain, and status through a distinct `PROJECT_MANAGER_GOVERNANCE` PR.
+5. Required realised hops govern status promotion, `COMPONENT_COMPLETE`, E2E readiness, and acceptance rather than the already-completed bounded start decision.
+6. Keep `WP-AZ-009` through `WP-AZ-012` blocked until Foundation evidence and the separate Phase 5 / first-business-slice gate are satisfied.
 
 ## 7. Status boundary
 
