@@ -24,7 +24,7 @@ Under `SRC-021`, 80K Developers (Pty) Ltd is the appointed Project Manager contr
 Contractors and coders must:
 
 - execute only assigned work;
-- keep all repository-hosted first-pass evidence under their existing `contractors/<contractor>/` directory; never modify canonical governance, status, decision, register, tracker, traceability, roadmap, plan, or summary artifacts in a `CONTRACTOR_TECHNICAL_EVIDENCE` change; use sanitised stable references in the contractor folder for approved external raw evidence;
+- keep all repository-hosted first-pass evidence under their existing `contractors/<contractor>/` directory; create a new evidence file only when the Project Manager assignment identifies its exact path or bounded contractor subdirectory and purpose; never modify canonical governance, status, decision, register, tracker, traceability, roadmap, plan, or summary artifacts in a `CONTRACTOR_TECHNICAL_EVIDENCE` change; use sanitised stable references in the contractor folder for approved external raw evidence;
 - record what was performed, by whom and when, validation results, limitations, unfinished work, blockers, dependencies, and decisions required;
 - avoid project-level approval, gate, status, completion, architecture, business, legal, or scope-authorisation statements.
 
