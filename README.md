@@ -57,13 +57,13 @@ The first three counts describe only that unpinned snapshot; they must not be us
 
 Foundation Slice A remains the planned Azure infrastructure package documented in `docs/09-delivery/foundation-slice-a-execution-package.md`. Technical contractors submit first-pass evidence in their contractor folders; accepted evidence references are later maintained in `docs/09-delivery/foundation-slice-a-evidence-register.md` through a separate Project-Manager-owned governance change.
 
-**Current Foundation decision (2026-09-07):** Thembinkosi Mtsweni completed the formal post-prerequisite readiness review and revalidated `GO-2026-09-05-FSA-001`. `WP-AZ-001` through `WP-AZ-008` are authorised to begin in governed dependency order in Azure DEV/MVP. The packages remain `READY_FOR_DEVELOPMENT` until start evidence is recorded; 0 of 8 completion evidence gates are satisfied. Source: `SRC-020`.
+**Current Foundation decision (2026-09-07):** Thembinkosi Mtsweni completed the formal post-prerequisite readiness review and revalidated `GO-2026-09-05-FSA-001` for `WP-AZ-001` through `WP-AZ-008` in Azure DEV/MVP. That decision approves the bounded scope but is not an executor assignment. No exact contractor/package/path assignment is currently recorded, so technical execution must not begin until the Project Manager records one. The packages remain `READY_FOR_DEVELOPMENT` until objective start evidence is accepted and canonically reconciled through a separate `PROJECT_MANAGER_GOVERNANCE` change; 0 of 8 completion evidence gates are satisfied. Source: `SRC-020`.
 
 The repository materially advanced its canonical reconstruction outputs in commit `d2d6f7bfe90ef04ec846eb11308cf551977cd33d`: actors and permissions, detailed use-case specifications, business rules, journeys, state models, integration records, structured data, backlog/tracker/traceability/validation/risk artifacts and related schemas now exist in the canonical structure. Their existence removes the earlier claim that these directories or files were absent.
 
-**Foundation implementation is authorised by the recorded project-owner decision, not by file presence alone.** Evidence quality, exit criteria, traceability, security, status promotion and completion remain governed by `AGENT.md`, the controlling `plan.md`, and the Foundation evidence register.
+**Foundation scope is authorised by the recorded project-owner decision, not by file presence alone.** Contractor start additionally requires a durable Project Manager assignment. Evidence quality, exit criteria, traceability, security, status promotion and completion remain governed by `AGENT.md`, the controlling `plan.md`, and the Foundation evidence register.
 
-The pre-implementation gate was formally satisfied for the bounded Foundation scope by the 2026-09-07 revalidation, so Foundation Slice A may be executed in governed dependency order. The first business vertical slice—authenticated opportunity discovery plus a **non-binding expression of interest**—must not start or advance through `WP-AZ-009` to `WP-AZ-012` until Foundation evidence and the separate first-slice integrity prerequisites both reconcile.
+The pre-implementation scope gate was formally satisfied by the 2026-09-07 revalidation. Foundation Slice A may be executed in governed dependency order only after the Project Manager records an exact contractor/package/path assignment. The first business vertical slice—authenticated opportunity discovery plus a **non-binding expression of interest**—must not start or advance through `WP-AZ-009` to `WP-AZ-012` until Foundation evidence and the separate first-slice integrity prerequisites both reconcile.
 
 ## Delivery authority and contractor evidence workflow
 
@@ -90,7 +90,7 @@ See `AGENT.md` for the mandatory authority boundary and `plan.md` for the comple
 
 `plan.md` remains the canonical structure definition. The repository now contains the plan-defined canonical actors-and-permissions outputs under `docs/02-actors-and-permissions/`.
 
-The working architecture tree under `docs/02-architecture/` is an **explicit unresolved structure exception**: it is actively used and contains material architecture evidence, but it is not currently declared in the canonical required-output tree in `plan.md`. That exception must be formally dispositioned before the repository-integrity gate is closed—either by amending the canonical contract to include the architecture tree or by recording an approved exception that is consistent with `AGENT.md` and the controlling plan. Its existence must not be silently treated as canonical reconciliation.
+The architecture tree under `docs/02-architecture/` is now explicitly included in the canonical required-output tree by the project-owner-authorised `plan.md` amendment under `SRC-021`. This resolves the former structural exception only; it does not approve the contents, close their evidence gaps, or promote delivery status.
 
 Other plan-required reconstruction, validation, traceability and machine-readable outputs also now exist. Presence is not equivalent to approval or completion: several remain `ANALYSIS_IN_PROGRESS`, contain `INFERRED`/`UNKNOWN` evidence, or have incomplete traceability and validation closure. Those substantive gaps—not the prior directory-absence claim—continue to govern evidence-based status promotion, downstream business-slice readiness and production readiness.
 
@@ -99,7 +99,7 @@ Key active areas include:
 - `docs/00-context` — source inventory, terminology and boundary context
 - `docs/01-system-understanding` — system purpose, evidence and assumptions
 - `docs/02-actors-and-permissions` — canonical actors and permissions evidence
-- `docs/02-architecture` — working system/logical architecture, Blueprint and architecture decisions; explicit structure exception pending disposition
+- `docs/02-architecture` — canonical system/logical architecture, Blueprint and architecture-decision evidence; content remains evidence-gated
 - `docs/03-functional-domains` — domains and capability map
 - `docs/04-use-cases` — master catalogue and detailed specifications
 - `docs/05-business-rules` — business-rule register
