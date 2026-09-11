@@ -4,7 +4,7 @@
 
 **Status:** `READY_FOR_DEVELOPMENT`  
 **Scope gate:** `OPEN_FOR_AUTHORISED_EXECUTION`; `GO-2026-09-05-FSA-001` was revalidated on 2026-09-07  
-**Contractor start gate:** `OPEN_FOR_SELF_SELECTION`; no exact contractor/package/path declaration is recorded  
+**Contractor start mode:** `OPEN_FOR_SELF_SELECTION`; contractors declare their selected package/path scope in each PR  
 **Execution scope:** `WP-AZ-001` through `WP-AZ-008`  
 **Architecture decision:** `ARCH-ADR-001`  
 **Parent delivery plan:** `docs/09-delivery/azure-mvp-platform-delivery-plan.md`  
