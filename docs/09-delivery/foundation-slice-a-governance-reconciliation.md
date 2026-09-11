@@ -8,7 +8,7 @@
 **Related merged PR:** #18 — Foundation Slice A execution package  
 **Controlling documents:** `AGENT.md`, `plan.md`  
 **Related delivery artifacts:** `docs/09-delivery/implementation-roadmap.md`, `docs/09-delivery/azure-mvp-platform-delivery-plan.md`, `docs/09-delivery/foundation-slice-a-execution-package.md`, `docs/09-delivery/foundation-slice-a-evidence-register.md`
-**Effective revalidated decision:** `docs/09-delivery/foundation-slice-a-go-decision-2026-09-05.md` (`GO-2026-09-05-FSA-001`); effective execution gate: `OPEN_FOR_AUTHORISED_EXECUTION`  
+**Effective revalidated decision:** `docs/09-delivery/foundation-slice-a-go-decision-2026-09-05.md` (`GO-2026-09-05-FSA-001`); effective scope gate: `OPEN_FOR_AUTHORISED_EXECUTION`  
 **Current management-authority and evidence-workflow source:** `SRC-021` — 80K Developers Project Manager contractor; Thembinkosi Mtsweni responsible human/final project-owner decision authority
 
 ## 2026-09-11 management-authority reconciliation
