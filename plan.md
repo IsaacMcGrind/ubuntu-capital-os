@@ -19,7 +19,7 @@ The plan is the controlling implementation sequence for developers and autonomou
 
 ## 2.1 Contractor evidence and project-management workflow
 
-Thembinkosi Mtsweni, acting as Project Manager and project owner, retains authority to interpret evidence, accept or reject delivery claims, update canonical Ubuntu Capital OS artifacts and statuses, set priorities, approve gates, and authorise subsequent work.
+80K Developers (Pty) Ltd is the appointed Project Manager contractor and accountable project-management workstream. Thembinkosi Mtsweni is the responsible human Project Manager and project-owner decision authority acting for 80K Developers. In that capacity, he retains authority to interpret evidence, accept or reject delivery claims, update canonical Ubuntu Capital OS artifacts and statuses, set priorities, approve gates, and authorise subsequent work.
 
 Contractors and coders must:
 
@@ -29,6 +29,8 @@ Contractors and coders must:
 - avoid project-level approval, gate, status, completion, architecture, business, legal, or scope-authorisation statements.
 
 Contractor evidence is not self-accepting. A merged evidence PR records provenance and observations only. It does not change a work package, use case, phase, gate, readiness, or completion state.
+
+Because 80K Developers may act both as Project Manager contractor and as an implementation/coding contractor, every submission must identify which capacity applies. 80K technical evidence remains subject to the same evidence-only contract and review as other contractor evidence. Project-management authority applies only to explicitly identified Project-Manager-owned governance work; it is not inferred from the contributor organization.
 
 Automated review may recommend `Candidate for human approval`, `Changes required`, `Blocked`, or `Unverified`, but those verdicts are analytical and cannot change repository authority or delivery status.
 
