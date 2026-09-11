@@ -1,6 +1,8 @@
 # Ubuntu Capital OS — Implementation Analysis Refresh
 
-> **Post-assessment Foundation decision — 2026-09-07:** Thembinkosi Mtsweni completed the formal post-prerequisite readiness review and revalidated `GO-2026-09-05-FSA-001`. The execution gate for `WP-AZ-001` through `WP-AZ-008` is now `OPEN_FOR_AUTHORISED_EXECUTION` in Azure DEV/MVP. This supersedes only the pending-revalidation statements in this dated assessment; its implementation, business-slice, production and evidence findings remain unchanged. Source: `SRC-020`.
+> **Post-assessment Foundation decision — 2026-09-07:** Thembinkosi Mtsweni completed the formal post-prerequisite readiness review and revalidated `GO-2026-09-05-FSA-001`. The execution gate for `WP-AZ-001` through `WP-AZ-008` is now `OPEN_FOR_AUTHORISED_EXECUTION` in Azure DEV/MVP. This supersedes the pending-revalidation and pre-execution-deferral statements in this dated assessment; its implementation, business-slice, production and evidence findings remain unchanged. Source: `SRC-020`.
+>
+> **Management/evidence amendment — 2026-09-11:** `SRC-021` appoints 80K Developers as the Project Manager contractor, identifies Thembinkosi Mtsweni as the responsible human/final project-owner decision authority, and requires technical contractors to submit first-pass evidence only in their contractor folders before separate Project-Manager-owned canonical reconciliation.
 
 **Document status:** `CURRENT_IMPLEMENTATION_ASSESSMENT`  
 **Assessment date:** 2026-09-05  
@@ -16,7 +18,7 @@
 
 Ubuntu Capital OS is a strong evidence-first reconstruction, architecture and delivery-governance repository. It is not yet a deployable Ubuntu Capital application repository.
 
-Foundation Slice A has bounded Azure DEV/MVP authority under `GO-2026-09-05-FSA-001`, but execution remains deferred until the controlling `plan.md` pre-execution steps 1–9 reconcile, and no Foundation work package has objective completion evidence. A concurrent master commit landed during this assessment and introduced a confirmed repository-monitor regression; the assessment baseline was advanced to that new head. The evidence register still contains eight planned placeholders, all classified `UNKNOWN`, and records zero satisfied evidence gates. The `GO` was formally revalidated by the project owner on 2026-09-07 and permits governed Foundation execution; it does not prove that Azure resources, application infrastructure or runtime capabilities exist.
+Foundation Slice A has bounded Azure DEV/MVP authority under `GO-2026-09-05-FSA-001`; the controlling prerequisites and formal readiness review were accepted as reconciled on 2026-09-07, so governed execution may begin. No Foundation work package has objective start or completion evidence. A concurrent master commit landed during this assessment and introduced a confirmed repository-monitor regression; the assessment baseline was advanced to that new head. The evidence register still contains eight planned placeholders, all classified `UNKNOWN`, and records zero satisfied evidence gates. The `GO` was formally revalidated by the project owner on 2026-09-07 and permits governed Foundation execution; it does not prove that Azure resources, application infrastructure or runtime capabilities exist.
 
 The stated application repository, `HarleyJoker/ubuntu-capital-platform`, returned `404 Not Found` through the connected GitHub installation during this assessment (`SRC-018` in `docs/00-context/source-inventory.md`). This dated access outcome does not prove repository absence; its current branch, commit, source contents and runtime behaviour remain unavailable. Historical React/Vite observations are retained as supporting evidence only and cannot be promoted to current implementation status.
 
@@ -205,16 +207,14 @@ Settlement, custody, binding investment, eligibility, NDA, valuation, tax, priva
 
 ## 10. Dependency-first execution queue
 
-1. Validate the existing Phase 0–4 outputs against their exit criteria and `AGENT.md` integrity rules, then classify residual gaps without recreating accepted artifacts.
-2. Obtain authorised access to `HarleyJoker/ubuntu-capital-platform` or record the replacement canonical repository; pin its exact branch and commit, then capture current lint, test, build, security and implementation evidence.
-3. Close or formally bound the remaining P0 business/legal, permissions, data-ownership/state, first-slice technical-contract, architecture/security/NFR and ADR gaps.
-4. Reconcile the pre-start planned traceability chain, structured data, links, stable IDs, counts, statuses, open questions and risks.
-5. Reconcile all live summaries, roadmaps and delivery/gate artifacts, including formal disposition of `docs/02-architecture/`, `docs/engineering-sessions/` and `output/pdf/` in the canonical repository structure.
-6. Preserve the defined readiness-decision authority and the completed 2026-09-07 formal review that explicitly revalidated `GO-2026-09-05-FSA-001`.
-7. Only after the preceding controlling-plan steps reconcile and the formal readiness review records an effective `GO` or `CONDITIONAL_GO`, execute its exact permitted subset of `WP-AZ-001` through `WP-AZ-008` in governed dependency order; do not begin source-dependent packages until the application revision is pinned.
-8. Populate `FSA-EV-001` through `FSA-EV-008` with realised implementation, test/run, deployment and operational evidence, and maintain the realised traceability chain as work progresses.
-9. Repair the confirmed repository-monitor regression in a separate focused change, add automated tests, and validate the workflow at a pinned repaired commit.
-10. Re-run this analysis after material source or Foundation evidence changes, and keep all business-slice and regulated-scope work blocked until their distinct gates open.
+Completed prerequisite: the 2026-09-07 project-owner review accepted the bounded Foundation prerequisite reconciliation and revalidated `GO-2026-09-05-FSA-001`. Preserve rather than repeat that work unless material baseline, scope, risk, or non-waivable evidence changes.
+
+1. Execute only the exact authorised `WP-AZ-001` through `WP-AZ-008` subset in governed dependency order; source-dependent packages require a pinned application revision.
+2. Each technical contractor records objective, sanitised, revision-pinned first-pass evidence only under its applicable contractor folder and submits it for review.
+3. Merge contractor evidence as provenance only; merge is not acceptance or status promotion.
+4. The 80K Developers Project Manager workstream separately assesses merged evidence and, when accepted, updates `FSA-EV-001` through `FSA-EV-008`, realised traceability, and status through a distinct `PROJECT_MANAGER_GOVERNANCE` PR.
+5. Repair the confirmed repository-monitor regression in a separate focused change, add automated tests, and validate the workflow at a pinned repaired commit.
+6. Re-run this analysis after material source or Foundation evidence changes, and keep all business-slice and regulated-scope work blocked until their distinct gates open.
 
 ## 11. Verification performed
 
