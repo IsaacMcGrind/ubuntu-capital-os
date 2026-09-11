@@ -97,15 +97,18 @@ The monitor follows Ubuntu Capital OS evidence discipline:
 
 It does not automatically promote a use case or delivery status. A code, documentation, UI or contractor change is treated as evidence requiring reconciliation rather than proof of end-to-end completion.
 
-## Contractor role-boundary review requirement
+## External governance review controls
 
-80K Developers (Pty) Ltd is the appointed Project Manager contractor and accountable project-management workstream. Thembinkosi Mtsweni is the responsible human Project Manager and project-owner decision authority acting for 80K Developers.
+The repository-native monitor described above is an informational workflow. It does not enforce GitHub merge protection and its scripts do not currently implement contractor-authorship, authorised-path, content-sanitisation or role-boundary classification checks.
 
-The separately configured Ubuntu Capital Change Watch and human PR review must check every contractor-authored or contractor-scoped PR against the authority boundary in `AGENT.md` and the workflow in `plan.md`. This includes identifying whether 80K Developers is acting in its Project Manager capacity or its implementation/coding capacity. Technical evidence from 80K Developers receives the same evidence-only review as any other contractor submission.
+Hard prevention belongs to the GitHub `master` branch/ruleset configuration: require pull requests, human approval of the latest revision, dismissal of stale approvals, resolution of review conversations, and protection from direct/force pushes. Repository monitoring must report the ruleset state as `UNKNOWN` when permissions prevent verification; documentation must not present an unverified rule as active.
 
-The repository-native monitor scripts do not currently implement contractor-authorship, authorised-path, content-sanitisation or role-boundary classification checks. This section is therefore a review requirement, not a claim about existing script capability. Until that implementation is separately authorised, tested and merged, do not rely on the repository-native workflow to enforce the boundary.
+Two separately configured, read-only external reviews complement—not replace—the ruleset:
 
-Review outcomes remain analytical only. A merged contractor evidence PR records evidence but does not promote status. Canonical repository reconciliation, priority changes, gate decisions and subsequent work authorisation remain with the 80K Developers Project Manager workstream and Thembinkosi Mtsweni's human decision authority.
+1. **Ubuntu Capital PR & Merge Watch** runs at 00:00 and 12:00 Africa/Johannesburg. It is detective only: it reviews PRs, checks the `SRC-021` contractor/Project Manager boundary, detects confirmed merges and performs post-merge impact analysis. It cannot block, approve or merge.
+2. **Ubuntu Capital Weekly PM Review** runs every Friday at 09:00 Africa/Johannesburg. It performs an integrated repository assessment even when no merge occurred and proposes the canonical reconciliation that the 80K Developers Project Manager workstream may raise later through a separately authorised governance PR.
+
+Both external reviews treat 80K Developers technical evidence like other contractor evidence and require a declared capacity, assignment/decision reference, authorised paths, revision-pinned evidence, validation and sensitive-information checks. Their findings are analytical; Thembinkosi Mtsweni remains the responsible human and final project-owner decision authority.
 
 ## Integrity Checks
 
