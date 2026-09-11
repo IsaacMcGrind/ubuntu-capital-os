@@ -27,7 +27,7 @@ This roadmap separates faithful system reconstruction, Azure platform enablement
 - evidence-grounded repository monitoring;
 - canonical actors/permissions, business rules, journeys, state models, integrations, backlog/tracker/traceability/validation/risk artifacts and structured data materially present.
 
-**Remaining gate:** validate the existing Phase 0 through Phase 4 outputs against `AGENT.md` and `plan.md`; disposition the `docs/02-architecture/` structure exception; and reconcile business/legal, architecture, security, NFR, planned traceability, schema, link, ID, count, evidence-classification, open-question and risk gaps. A non-authorising `NO_GO` may be recorded or refreshed at any point while blockers remain. An execution-authorising `GO` or explicitly scoped `CONDITIONAL_GO` may be recorded only after all applicable non-waivable closure and readiness-authority requirements reconcile.
+**Current gate position:** the project-owner review recorded by `SRC-020` accepted the bounded Foundation prerequisite reconciliation and made `GO-2026-09-05-FSA-001` effective on 2026-09-07. Residual implementation evidence, status-promotion, production, and first-business-slice gates remain; they do not re-block the bounded Foundation start unless a material baseline, scope, risk, or non-waivable evidence change invalidates the decision.
 
 ## Phase 1A — Azure MVP Platform Foundation
 
