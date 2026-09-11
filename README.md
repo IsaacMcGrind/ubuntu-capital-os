@@ -63,7 +63,7 @@ The repository materially advanced its canonical reconstruction outputs in commi
 
 **Foundation scope is authorised by the recorded project-owner decision, not by file presence alone.** Contractor start additionally requires a complete contractor PR declaration. Evidence quality, exit criteria, traceability, security, status promotion and completion remain governed by `AGENT.md`, the controlling `plan.md`, and the Foundation evidence register.
 
-The pre-implementation scope gate was formally satisfied by the 2026-09-07 revalidation. Foundation Slice A may be executed in governed dependency order only after the Project Manager records an exact contractor/package/path declaration. The first business vertical slice—authenticated opportunity discovery plus a **non-binding expression of interest**—must not start or advance through `WP-AZ-009` to `WP-AZ-012` until Foundation evidence and the separate first-slice integrity prerequisites both reconcile.
+The pre-implementation scope gate was formally satisfied by the 2026-09-07 revalidation. A contractor may begin self-selected Foundation Slice A work in governed dependency order after declaring its exact package/path scope and evidence purpose in the PR. The first business vertical slice—authenticated opportunity discovery plus a **non-binding expression of interest**—must not start or advance through `WP-AZ-009` to `WP-AZ-012` until Foundation evidence and the separate first-slice integrity prerequisites both reconcile.
 
 ## Delivery authority and contractor evidence workflow
 
