@@ -15,7 +15,7 @@ It is an implementation-provenance record. It does not replace the evidence-firs
 - `PROJECT_MANAGER_GOVERNANCE` for an explicitly authorised canonical reconciliation or management decision; or
 - `CONTRACTOR_TECHNICAL_EVIDENCE` for implementation, coding or other technical evidence.
 
-Technical evidence from 80K Developers cannot self-accept, self-promote status or inherit management authority from the organization name. Every PR must complete `.github/pull_request_template.md`; reviewers must verify the cited assignment/decision reference and authorised paths.
+Technical evidence from 80K Developers cannot self-accept, self-promote status or inherit management authority from the organization name. In `CONTRACTOR_TECHNICAL_EVIDENCE` capacity, all repository-hosted first-pass evidence must remain under `contractors/80kDevelopers/`; approved external raw evidence must be represented by a sanitised stable reference here, and canonical governance/status artifacts must not be changed in the same PR. Every PR must complete `.github/pull_request_template.md`; reviewers must verify the cited assignment/decision reference and authorised paths.
 
 The canonical rules are `AGENT.md` and `plan.md`.
 
