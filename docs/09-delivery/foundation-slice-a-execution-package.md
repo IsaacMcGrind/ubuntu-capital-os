@@ -113,7 +113,7 @@ HerLogic Solutions does not independently authorise execution, accept its own ev
 
 ### Corefinity — technical architecture-analysis contractor
 
-May provide architecture-analysis evidence within assigned scope. Its contribution is supporting evidence, not independent architecture adoption or project authority.
+May self-select and provide architecture-analysis evidence within the approved scope. Its contribution is supporting evidence, not independent architecture adoption or project authority.
 
 ### 80K Developers — technical capacity
 
@@ -121,7 +121,7 @@ When 80K Developers performs application, integration, deployment or other imple
 
 ## 6. Execution sequence
 
-The Foundation scope gate for the bounded `WP-AZ-001` through `WP-AZ-008` Azure DEV/MVP scope was satisfied by the project-owner revalidation recorded on 2026-09-07 (`SRC-020`). The execution sequence remains blocked until the Project Manager records an exact contractor/package/path declaration. Once assigned, it may execute only within that subset and dependency order; it does not authorise production or `WP-AZ-009` through `WP-AZ-012`.
+The Foundation scope gate for the bounded `WP-AZ-001` through `WP-AZ-008` Azure DEV/MVP scope was satisfied by the project-owner revalidation recorded on 2026-09-07 (`SRC-020`). Contractors may self-select work within that bounded scope and must record the exact package/path declaration and evidence purpose in their PR. They may execute only within their declared subset and dependency order; it does not authorise production or `WP-AZ-009` through `WP-AZ-012`.
 
 | Order | Work package | Delivery objective | Target status after evidence | Primary dependency |
 |---:|---|---|---|---|
