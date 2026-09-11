@@ -29,7 +29,7 @@
 - [ ] No contractor evidence attempts to approve a gate, accept itself, promote canonical status, declare completion, adopt architecture, change business/legal rules or authorise subsequent work.
 - [ ] Any `PROJECT_MANAGER_GOVERNANCE` change is explicitly owned by the 80K Developers Project Manager workstream and is separate from technical evidence capture.
 - [ ] An 80K Developers technical submission uses `CONTRACTOR_TECHNICAL_EVIDENCE` and receives the same evidence review as other contractors.
-- [ ] Merging this PR will not be treated as automatic evidence acceptance, status promotion or authorization of further work.
+- [ ] Merging this PR will not be treated as automatic evidence acceptance, status promotion or authorisation of further work.
 
 ## Sensitive-information check
 
