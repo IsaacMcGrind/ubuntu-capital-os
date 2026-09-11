@@ -13,6 +13,8 @@ The 2026-08-30 governance reconciliation remains part of the controlling compati
 
 ## Evidence handling rules
 
+- Contractors record factual, sanitised execution evidence in their existing `contractors/<contractor>/` directory unless the Project Manager explicitly authorises another path. The Project Manager reviews merged contractor evidence and reconciles accepted references into this canonical register through a separate governed update.
+- Contractor evidence does not approve execution, change this register's review status, promote a work package, declare completion, redefine a gate, or authorise subsequent work.
 - Do not record passwords, client secrets, bearer tokens, private keys or full connection strings.
 - Redact subscription, tenant, application or resource identifiers where disclosure is not required for project traceability.
 - Every record must state exactly what the evidence proves and what it does **not** prove.
