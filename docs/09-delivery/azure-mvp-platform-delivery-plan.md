@@ -22,7 +22,7 @@ The foundation must prove deployability, authentication, protected backend execu
 
 ## 2. Delivery sequence
 
-The sequence below defines the Foundation Slice A delivery order after the controlling `plan.md` pre-execution steps reconcile and a formal readiness review records an effective `GO` or `CONDITIONAL_GO`. It is not an instruction to begin `WP-AZ-001` through `WP-AZ-008` before those prerequisites are satisfied.
+The sequence below is executable for the exact Foundation Slice A scope authorised by the project-owner revalidation of `GO-2026-09-05-FSA-001` on 2026-09-07 (`SRC-020`). It does not authorise production, broader scope, or `WP-AZ-009` through `WP-AZ-012`; material baseline, scope, risk, or non-waivable evidence changes require renewed readiness review.
 
 | Order | Work package | Primary Azure capability | Main use-case dependency | Target status after evidence |
 |---:|---|---|---|---|
@@ -326,11 +326,11 @@ The first business slice may move to `READY_FOR_ACCEPTANCE` only when all of the
 
 ## 9. Next action
 
-1. Complete and reconcile the controlling `plan.md` pre-execution steps: Phase 0–4 validation, residual-gap classification, application-source pinning, P0/architecture closure, planned traceability, live-artifact reconciliation, readiness authority and the formal readiness review.
-2. Preserve the defined readiness-decision authority and the effective 2026-09-07 revalidation of `GO-2026-09-05-FSA-001`.
-3. Only if that post-reconciliation review records an effective `GO` or `CONDITIONAL_GO`, execute its exact permitted subset of **WP-AZ-001 through WP-AZ-008** using `docs/09-delivery/foundation-slice-a-execution-package.md`.
-4. Require technical contractors to capture objective, sanitised and revision-pinned evidence in their contractor folders as implementation/testing work is produced.
-5. After evidence review and merge, require the 80K Developers Project Manager workstream to link accepted evidence into `docs/09-delivery/foundation-slice-a-evidence-register.md`, maintain planned-to-realised traceability, and reconcile status only when each work-package evidence gate is satisfied.
+1. Preserve the completed prerequisite reconciliation and effective 2026-09-07 revalidation of `GO-2026-09-05-FSA-001`; reopen it only for a material baseline, scope, risk, or non-waivable evidence change.
+2. Execute only the permitted **WP-AZ-001 through WP-AZ-008** subset using `docs/09-delivery/foundation-slice-a-execution-package.md`; source-dependent packages require a pinned application branch and commit.
+3. Require technical contractors to capture objective, sanitised and revision-pinned first-pass evidence only in their contractor folders as implementation/testing work is produced.
+4. Review and merge technical evidence as provenance only.
+5. Require the 80K Developers Project Manager workstream to separately assess merged evidence and, when accepted, link it into `docs/09-delivery/foundation-slice-a-evidence-register.md`, maintain planned-to-realised traceability, and reconcile status through a distinct `PROJECT_MANAGER_GOVERNANCE` PR only when each work-package evidence gate is satisfied.
 6. Keep downstream scope controls in place: `WP-AZ-009` through `WP-AZ-012` remain blocked until Foundation evidence gates and first-slice start-gate prerequisites are satisfied.
 7. If critical contradictions or non-waivable integrity failures emerge during execution, pause affected scope and issue a governance review update before status promotion.
 8. Reconcile all Foundation evidence gates.
