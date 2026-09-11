@@ -6,7 +6,7 @@ Decision outcome: GO
 Decision status: REVALIDATED_EFFECTIVE  
 Authorised scope: WP-AZ-001 through WP-AZ-008 (Foundation Slice A only)  
 Authorised environment: AZURE DEV/MVP  
-Effective execution gate: OPEN_FOR_AUTHORISED_EXECUTION  
+Effective scope gate: OPEN_FOR_AUTHORISED_EXECUTION  
 Revalidation date: 2026-09-07  
 Revalidation evidence: SRC-020  
 Management-authority and evidence-workflow amendment: SRC-021 (effective 2026-09-11)  
