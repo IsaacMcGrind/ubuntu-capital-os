@@ -1,15 +1,16 @@
 # Ubuntu Capital OS — Foundation Slice A Evidence Register
 
-> **Current Foundation decision — 2026-09-07:** Thembinkosi Mtsweni completed the formal post-prerequisite readiness review and revalidated `GO-2026-09-05-FSA-001`. The execution gate for `WP-AZ-001` through `WP-AZ-008` is `OPEN_FOR_AUTHORISED_EXECUTION` in Azure DEV/MVP. This authorises governed start only; implementation, completion, business-use-case and production claims remain evidence-gated. Source: `SRC-020`.
+> **Current Foundation decision — 2026-09-07:** Thembinkosi Mtsweni completed the formal post-prerequisite readiness review and revalidated `GO-2026-09-05-FSA-001`. The scope gate for `WP-AZ-001` through `WP-AZ-008` is `OPEN_FOR_AUTHORISED_EXECUTION` in Azure DEV/MVP. This approves the bounded scope for assignment; technical start also requires a durable Project Manager contractor/package/path assignment. Implementation, completion, business-use-case and production claims remain evidence-gated. Source: `SRC-020`.
 
 **Scope:** `WP-AZ-001` through `WP-AZ-008`  
 **Delivery package status:** `READY_FOR_DEVELOPMENT`  
-**Execution gate:** `OPEN_FOR_AUTHORISED_EXECUTION`; `GO-2026-09-05-FSA-001` was revalidated on 2026-09-07  
+**Scope gate:** `OPEN_FOR_AUTHORISED_EXECUTION`; `GO-2026-09-05-FSA-001` was revalidated on 2026-09-07  
+**Contractor start gate:** `BLOCKED_PENDING_ASSIGNMENT`; no exact executor/package/path assignment is recorded  
 **Execution package:** `docs/09-delivery/foundation-slice-a-execution-package.md`  
 **Governance reconciliation:** `docs/09-delivery/foundation-slice-a-governance-reconciliation.md`  
 **Current readiness decision:** `docs/09-delivery/foundation-slice-a-go-decision-2026-09-05.md`
 
-The 2026-08-30 governance reconciliation remains part of the controlling compatibility chain. `GO-2026-09-05-FSA-001` is effective for `WP-AZ-001` through `WP-AZ-008` after the 2026-09-07 project-owner formal review. No realised execution evidence is recorded, so the work packages remain `READY_FOR_DEVELOPMENT` until governed start evidence is captured.
+The 2026-08-30 governance reconciliation remains part of the controlling compatibility chain. `GO-2026-09-05-FSA-001` is effective for `WP-AZ-001` through `WP-AZ-008` after the 2026-09-07 project-owner formal review. No realised execution evidence is recorded. The work packages remain `READY_FOR_DEVELOPMENT`; contractor start is blocked until an exact Project Manager assignment is recorded, and status may change only after objective start evidence is accepted and canonically reconciled through a separate `PROJECT_MANAGER_GOVERNANCE` change.
 
 ## Evidence handling rules
 
@@ -21,7 +22,7 @@ The 2026-08-30 governance reconciliation remains part of the controlling compati
 - Evidence classification must use `CONFIRMED`, `INFERRED`, `UNKNOWN` or `CONTRADICTED`.
 - Architecture/design documents are not implementation evidence unless the record explicitly says the evidence only proves design intent.
 - External evidence links must be stable enough for an authorised project reviewer to retrieve later.
-- The formal post-prerequisite review revalidated `GO-2026-09-05-FSA-001` on 2026-09-07. Execution may proceed only for that decision's exact scope; this register records evidence and does not broaden the authority.
+- The formal post-prerequisite review revalidated `GO-2026-09-05-FSA-001` on 2026-09-07. The scope-level GO applies only to that decision's exact scope; contractor execution additionally requires a durable Project Manager assignment. This register records accepted evidence references and does not broaden authority.
 - After a contractor evidence PR is reviewed and merged as provenance, the 80K Developers Project Manager workstream separately assesses it. Only when accepted may its objective implementation, test/run, deployment and operational metadata or stable reference be recorded here through a distinct `PROJECT_MANAGER_GOVERNANCE` change. This reconciliation does not by itself promote delivery status.
 - After the start gate is satisfied, a work package cannot move to `COMPONENT_COMPLETE` until its required evidence gate is reconciled here or in an explicitly linked canonical evidence artifact and the governed status transition is recorded.
 - `WP-AZ-008` requires version-controlled infrastructure provisioning/reconciliation evidence; manual Azure configuration alone cannot satisfy the Foundation reproducibility gate.
@@ -138,14 +139,14 @@ Required before `COMPONENT_COMPLETE`:
 
 | Work package | Recorded delivery status | Execution gate | Evidence gate satisfied? | Evidence IDs | Notes |
 |---|---|---|---:|---|---|
-| WP-AZ-001 | `READY_FOR_DEVELOPMENT` | `OPEN_FOR_AUTHORISED_EXECUTION` | Yes | FSA-EV-001 | Authorised scope; start authorised; capture start evidence before status transition |
-| WP-AZ-002 | `READY_FOR_DEVELOPMENT` | `OPEN_FOR_AUTHORISED_EXECUTION` | Yes | FSA-EV-002 | Authorised scope; start authorised; capture start evidence before status transition |
-| WP-AZ-003 | `READY_FOR_DEVELOPMENT` | `OPEN_FOR_AUTHORISED_EXECUTION` | Yes | FSA-EV-003 | UC-IAM-001 remains independently governed for use-case completion |
-| WP-AZ-004 | `READY_FOR_DEVELOPMENT` | `OPEN_FOR_AUTHORISED_EXECUTION` | Yes | FSA-EV-004 | Authorised scope; start authorised; capture start evidence before status transition |
-| WP-AZ-005 | `READY_FOR_DEVELOPMENT` | `OPEN_FOR_AUTHORISED_EXECUTION` | Yes | FSA-EV-005 | Authorised scope; start authorised; capture start evidence before status transition |
-| WP-AZ-006 | `READY_FOR_DEVELOPMENT` | `OPEN_FOR_AUTHORISED_EXECUTION` | Yes | FSA-EV-006 | Authorised scope; start authorised; capture start evidence before status transition |
-| WP-AZ-007 | `READY_FOR_DEVELOPMENT` | `OPEN_FOR_AUTHORISED_EXECUTION` | Yes | FSA-EV-007 | Operational telemetry scope remains distinct from business audit scope |
-| WP-AZ-008 | `READY_FOR_DEVELOPMENT` | `OPEN_FOR_AUTHORISED_EXECUTION` | Yes | FSA-EV-008 | Reproducibility/CI-CD evidence required before completion |
+| WP-AZ-001 | `READY_FOR_DEVELOPMENT` | `BLOCKED_PENDING_ASSIGNMENT` | No | FSA-EV-001 | Scope approved; no executor assignment or accepted start evidence |
+| WP-AZ-002 | `READY_FOR_DEVELOPMENT` | `BLOCKED_PENDING_ASSIGNMENT` | No | FSA-EV-002 | Scope approved; no executor assignment or accepted start evidence |
+| WP-AZ-003 | `READY_FOR_DEVELOPMENT` | `BLOCKED_PENDING_ASSIGNMENT` | No | FSA-EV-003 | Scope approved; no executor assignment or accepted start evidence; UC-IAM-001 remains independently governed |
+| WP-AZ-004 | `READY_FOR_DEVELOPMENT` | `BLOCKED_PENDING_ASSIGNMENT` | No | FSA-EV-004 | Scope approved; no executor assignment or accepted start evidence |
+| WP-AZ-005 | `READY_FOR_DEVELOPMENT` | `BLOCKED_PENDING_ASSIGNMENT` | No | FSA-EV-005 | Scope approved; no executor assignment or accepted start evidence |
+| WP-AZ-006 | `READY_FOR_DEVELOPMENT` | `BLOCKED_PENDING_ASSIGNMENT` | No | FSA-EV-006 | Scope approved; no executor assignment or accepted start evidence |
+| WP-AZ-007 | `READY_FOR_DEVELOPMENT` | `BLOCKED_PENDING_ASSIGNMENT` | No | FSA-EV-007 | Scope approved; no executor assignment or accepted start evidence; telemetry remains distinct from business audit |
+| WP-AZ-008 | `READY_FOR_DEVELOPMENT` | `BLOCKED_PENDING_ASSIGNMENT` | No | FSA-EV-008 | Scope approved; no executor assignment or accepted start evidence; reproducibility evidence remains required |
 
 **Foundation Slice A package:** `READY_FOR_DEVELOPMENT`.  
-**Foundation Slice A effective gate:** `OPEN_FOR_AUTHORISED_EXECUTION` — `GO-2026-09-05-FSA-001` was revalidated by the project owner on 2026-09-07 for `WP-AZ-001` through `WP-AZ-008`. The packages remain `READY_FOR_DEVELOPMENT`; a recorded start or equivalent realised execution evidence is required before transition, and progress must be recorded here with objective evidence. No infrastructure implementation completion is claimed.
+**Foundation Slice A scope gate:** `OPEN_FOR_AUTHORISED_EXECUTION` — `GO-2026-09-05-FSA-001` was revalidated by the project owner on 2026-09-07 for `WP-AZ-001` through `WP-AZ-008`. **Contractor start gate:** `BLOCKED_PENDING_ASSIGNMENT`. The packages remain `READY_FOR_DEVELOPMENT`; objective start evidence must be accepted and canonically reconciled before transition. All eight evidence gates remain unsatisfied, and no infrastructure implementation completion is claimed.
