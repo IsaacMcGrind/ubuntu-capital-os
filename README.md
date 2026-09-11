@@ -55,7 +55,7 @@ The historical, unpinned coverage snapshot in `docs/09-delivery/implementation-c
 
 The first three counts describe only that unpinned snapshot; they must not be used as a current implementation-status roll-up until revision-pinned inspection and durable run evidence are recorded.
 
-Foundation Slice A remains the planned Azure infrastructure package, documented in `docs/09-delivery/foundation-slice-a-execution-package.md` with evidence intended for `docs/09-delivery/foundation-slice-a-evidence-register.md`.
+Foundation Slice A remains the planned Azure infrastructure package documented in `docs/09-delivery/foundation-slice-a-execution-package.md`. Technical contractors submit first-pass evidence in their contractor folders; accepted evidence references are later maintained in `docs/09-delivery/foundation-slice-a-evidence-register.md` through a separate Project-Manager-owned governance change.
 
 **Current Foundation decision (2026-09-07):** Thembinkosi Mtsweni completed the formal post-prerequisite readiness review and revalidated `GO-2026-09-05-FSA-001`. `WP-AZ-001` through `WP-AZ-008` are authorised to begin in governed dependency order in Azure DEV/MVP. The packages remain `READY_FOR_DEVELOPMENT` until start evidence is recorded; 0 of 8 completion evidence gates are satisfied. Source: `SRC-020`.
 
@@ -69,9 +69,9 @@ The pre-implementation gate was formally satisfied for the bounded Foundation sc
 
 Under `SRC-021`, 80K Developers (Pty) Ltd is the appointed Project Manager contractor and accountable project-management workstream. Thembinkosi Mtsweni is the responsible human Project Manager and final project-owner decision authority working through that management arrangement. In that capacity, Thembinkosi Mtsweni assigns work, interprets contractor evidence, updates canonical Ubuntu Capital OS status and priorities, approves gates, and authorises subsequent work.
 
-Contractors and coders record factual, sanitised delivery evidence only under their existing `contractors/<contractor>/` directory unless a different path is explicitly authorised. Contractor evidence may document work performed, validation, limitations, unfinished work, blockers and decisions needed; it must not authorise work, redefine gates, change canonical status, declare completion, or make project-level architecture, business or legal decisions.
+Contractors and coders record all repository-hosted first-pass delivery evidence only under their existing `contractors/<contractor>/` directory. A technical evidence PR must not modify canonical governance, status, decision, register, tracker, traceability, roadmap, plan, or summary artifacts. Approved external raw evidence is represented by a sanitised stable reference in the contractor folder. Contractor evidence may document work performed, validation, limitations, unfinished work, blockers and decisions needed; it must not authorise work, redefine gates, change canonical status, declare completion, or make project-level architecture, business or legal decisions.
 
-Automated reviews assess evidence and recommend action only. After an evidence PR is reviewed and merged, 80K Developers Project Manager workstream performs repository-level analysis and makes any justified canonical OS update through a separate governed change.
+Automated reviews assess evidence and recommend action only. After an evidence PR is reviewed and merged as provenance, the 80K Developers Project Manager workstream separately assesses it and makes any justified canonical OS update through an explicitly identified `PROJECT_MANAGER_GOVERNANCE` change.
 
 When 80K Developers performs coding or implementation work, its technical evidence is governed exactly like other contractor evidence. A submission must clearly identify whether it is an implementation-evidence contribution or an 80K-Developers-Project-Manager-owned governance change.
 
