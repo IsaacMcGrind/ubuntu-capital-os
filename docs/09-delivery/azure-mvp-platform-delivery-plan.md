@@ -1,6 +1,6 @@
 # Ubuntu Capital OS — Azure MVP Platform Delivery Plan
 
-> **Current Foundation decision — 2026-09-07:** Thembinkosi Mtsweni completed the formal post-prerequisite readiness review and revalidated `GO-2026-09-05-FSA-001`. The scope gate for `WP-AZ-001` through `WP-AZ-008` is `OPEN_FOR_AUTHORISED_EXECUTION` in Azure DEV/MVP. This approves the bounded scope for assignment; technical start also requires a durable Project Manager contractor/package/path assignment. Implementation, completion, business-use-case and production claims remain evidence-gated. Source: `SRC-020`.
+> **Current Foundation decision — 2026-09-07:** Thembinkosi Mtsweni completed the formal post-prerequisite readiness review and revalidated `GO-2026-09-05-FSA-001`. The scope gate for `WP-AZ-001` through `WP-AZ-008` is `OPEN_FOR_AUTHORISED_EXECUTION` in Azure DEV/MVP. This defines the bounded project boundary; contractors may self-select and must declare package/path scope in the PR. Implementation, completion, business-use-case and production claims remain evidence-gated. Source: `SRC-020`.
 
 **Status:** `READY_FOR_DEVELOPMENT`  
 **Architecture decision:** `ARCH-ADR-001`  
@@ -18,11 +18,11 @@ The foundation must prove deployability, authentication, protected backend execu
 
 `plan.md` remains the controlling implementation sequence. This Azure plan is a subordinate delivery plan and does not replace or close plan-required reconstruction outputs.
 
-`GO-2026-09-05-FSA-001` is the effective bounded scope authority for `WP-AZ-001` through `WP-AZ-008` after the 2026-09-07 formal project-owner review. It does not assign an executor. The governance chain remains `AGENT.md`, `plan.md`, and `docs/09-delivery/foundation-slice-a-governance-reconciliation.md`; contractor execution requires a durable Project Manager assignment, must follow governed dependency order, and all status promotions remain evidence-gated.
+`GO-2026-09-05-FSA-001` is the effective bounded scope authority for `WP-AZ-001` through `WP-AZ-008` after the 2026-09-07 formal project-owner review. It does not allocate work to any contractor. The governance chain remains `AGENT.md`, `plan.md`, and `docs/09-delivery/foundation-slice-a-governance-reconciliation.md`; contractor execution requires a complete contractor PR declaration, must follow governed dependency order, and all status promotions remain evidence-gated.
 
 ## 2. Delivery sequence
 
-The sequence below defines the authorised Foundation Slice A scope. It becomes executable only after the Project Manager records the contractor, exact assigned work-package subset, authorised repository paths or bounded contractor subdirectory, evidence purpose, and applicable external implementation/resource scope. No such assignment is currently recorded. The sequence does not authorise production, broader scope, or `WP-AZ-009` through `WP-AZ-012`; material baseline, scope, risk, or non-waivable evidence changes require renewed readiness review.
+The sequence defines the bounded Foundation Slice A project boundary. Contractors may self-select any item and must declare the exact package/path scope, evidence purpose, and applicable external implementation/resource scope in the PR. The sequence does not authorise production, broader scope, or `WP-AZ-009` through `WP-AZ-012`; material baseline, scope, risk, or non-waivable evidence changes require renewed readiness review.
 
 | Order | Work package | Primary Azure capability | Main use-case dependency | Target status after evidence |
 |---:|---|---|---|---|
@@ -246,7 +246,7 @@ Do not start or advance this package until Foundation Slice A is evidenced, the 
 
 Foundation Slice A consists of `WP-AZ-001` through `WP-AZ-008`.
 
-Foundation execution can begin only after the current pre-implementation scope gate is satisfied, a formal `GO` or explicitly scoped `CONDITIONAL_GO` authorises the applicable work, and the Project Manager records an exact contractor/package/path assignment. After that, Foundation Slice A as a whole may be described as `COMPONENT_COMPLETE` only when:
+Foundation execution can begin only after the current pre-implementation scope gate is satisfied, a formal `GO` or explicitly scoped `CONDITIONAL_GO` authorises the applicable work, and the Project Manager records an exact contractor/package/path declaration. After that, Foundation Slice A as a whole may be described as `COMPONENT_COMPLETE` only when:
 
 1. every Foundation work package has satisfied its own evidence gate and reached `COMPONENT_COMPLETE`;
 2. `WP-AZ-003` identity-foundation completion is not confused with completion of `UC-IAM-001`;
