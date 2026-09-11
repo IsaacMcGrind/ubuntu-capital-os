@@ -23,19 +23,20 @@ The Ubuntu Capital project owner approved this bounded GO on 2026-09-05. On 2026
 ## 1.1 Formal post-prerequisite revalidation
 
 Decision: `GO` revalidated and effective.  
-Execution position: `WP-AZ-001` through `WP-AZ-008` may begin in governed dependency order within Azure DEV/MVP.  
-Evidence boundary: the decision authorises execution but does not claim that execution has started, that Azure resources exist, or that any implementation evidence gate is satisfied. Package status remains `READY_FOR_DEVELOPMENT` until recorded start evidence supports transition.
+Scope position: `WP-AZ-001` through `WP-AZ-008` are approved for governed execution within Azure DEV/MVP. Contractor start requires a later durable Project Manager assignment naming the executor, exact package subset, authorised paths or bounded contractor subdirectory, evidence purpose, and applicable external implementation/resource scope. No such assignment is recorded by this decision.  
+Evidence boundary: the decision authorises execution but does not claim that execution has started, that Azure resources exist, or that any implementation evidence gate is satisfied. Package status remains `READY_FOR_DEVELOPMENT` until objective start evidence is accepted and canonically reconciled through a separate `PROJECT_MANAGER_GOVERNANCE` change.
 
 ## 2. Conditions and boundaries
 
 The following conditions are non-waivable:
 
 1. Scope remains strictly WP-AZ-001 through WP-AZ-008.
-2. Status promotion still requires objective evidence gates per work package.
-3. No business use case may be marked COMPLETE from Foundation work alone.
-4. Secrets, credentials, and tokens must not be committed to repository artifacts.
-5. Required traceability links must be maintained from source/use case/backlog/design to implementation, tests, and durable evidence as execution progresses.
-6. Any critical contradiction discovered during execution triggers immediate pause and governance review.
+2. Before contractor execution begins, the Project Manager must record the executor, exact package subset, authorised paths or bounded contractor subdirectory, evidence purpose, and applicable external implementation/resource scope.
+3. Status promotion still requires objective evidence gates per work package.
+4. No business use case may be marked COMPLETE from Foundation work alone.
+5. Secrets, credentials, and tokens must not be committed to repository artifacts.
+6. Required traceability links must be maintained from source/use case/backlog/design to implementation, tests, and durable evidence as execution progresses.
+7. Any critical contradiction discovered during execution triggers immediate pause and governance review.
 
 ## 3. Required execution recording
 
@@ -51,4 +52,4 @@ A contractor evidence merge does not itself accept evidence, promote status or a
 
 ## 4. Residual risk statement
 
-This revalidated GO authorises Foundation implementation start within its bounded scope. Execution may begin in governed dependency order, with objective evidence recorded as it is produced. It does not remove existing business/legal unknowns outside Foundation scope, prove implementation completion, authorise production, or authorise `WP-AZ-009` through `WP-AZ-012`.
+This revalidated GO authorises the bounded Foundation scope but does not assign an executor. Execution may begin in governed dependency order only after a durable Project Manager assignment is recorded, with objective evidence submitted as it is produced and accepted separately before canonical reconciliation. It does not remove existing business/legal unknowns outside Foundation scope, prove implementation completion, authorise production, or authorise `WP-AZ-009` through `WP-AZ-012`.
