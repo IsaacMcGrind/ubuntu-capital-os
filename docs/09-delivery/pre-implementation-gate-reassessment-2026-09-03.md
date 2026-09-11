@@ -55,7 +55,7 @@ The following plan-required outputs are now present in the repository and must n
 
 The presence of these outputs is evidence of reconstruction progress only. It is not itself evidence that the relevant phase exit criteria are satisfied.
 
-## 3. Reassessed gate position
+## 3. Historical reassessed gate position at the 2026-09-03 baseline
 
 The evidence classification below applies to the **repository-state finding**, not to the underlying business rule or regulated behaviour. Each row is `CONFIRMED` because the stated current position is directly supported by repository artifacts, open-question/risk records, delivery evidence registers, or the current Solution Architecture audit. Where the underlying product behaviour remains inferred or unknown, this reassessment does not promote it to confirmed.
 
@@ -74,7 +74,7 @@ The evidence classification below applies to the **repository-state finding**, n
 | Business/legal readiness for first slice | `NOT_SATISFIED` | `CONFIRMED` | EOI meaning, eligibility/jurisdiction, NDA policy, operator authority and data ownership remain open. |
 | Readiness-decision authority | `NOT_SATISFIED` | `CONFIRMED` | Canonical open question `OQ-016` remains open: the repository does not yet define which approved role/person may issue an execution-authorising `GO` or `CONDITIONAL_GO`, so no such decision can currently open the gate. |
 
-## 4. Current Foundation decision
+## 4. Historical Foundation decision at the 2026-09-03 baseline
 
 **Decision: `NO-GO FOR UNRESTRICTED IMPLEMENTATION`**
 
@@ -99,9 +99,9 @@ A readiness review **must not issue `GO` or `CONDITIONAL_GO` for a scope whose r
 
 A `NO_GO` outcome is different: it is a non-authorising blocked-state finding and may be recorded or refreshed as soon as unresolved blockers are identified. Recording `NO_GO` does not require those blockers to be closed first and does not depend on resolving `OQ-016`; `OQ-016` must be resolved before `GO` or `CONDITIONAL_GO` can carry execution authority.
 
-### 4.1 Readiness decision authority and `CONDITIONAL_GO` controls
+### 4.1 Historical readiness-authority finding and continuing `CONDITIONAL_GO` controls
 
-**Current authority status: `UNKNOWN` (`OQ-016`).** No current repository artifact identifies an approved role or person with authority to issue an execution-authorising `GO` or `CONDITIONAL_GO`. Therefore, until `OQ-016` is resolved in controlling governance, `GO` and `CONDITIONAL_GO` are reporting labels only and **must not open the Foundation execution gate**. `NO_GO` remains the effective current decision.
+**Historical authority status at this assessment baseline: `UNKNOWN` (`OQ-016`) — superseded for current execution by `SRC-020` and `SRC-021`.** At the 2026-09-03 baseline no repository artifact identified an approved execution-authorising role/person, so `GO` and `CONDITIONAL_GO` could not then open the Foundation gate. The current bounded authority is recorded by the 2026-09-07 project-owner revalidation and the subsequent management model; the non-waivable decision controls below continue to apply to future or changed scope.
 
 Before a future `CONDITIONAL_GO` can authorise any Foundation work, the controlling governance must identify the approving authority and the decision record must include all of the following:
 
