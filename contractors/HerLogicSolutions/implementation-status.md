@@ -4,8 +4,9 @@
 **Gate reconciliation date:** 2026-09-04  
 **Workstream:** Azure cloud infrastructure and platform services  
 **Planning/package status:** `READY_FOR_DEVELOPMENT`  
-**Execution gate:** `OPEN_FOR_AUTHORISED_EXECUTION` for the bounded `WP-AZ-001` through `WP-AZ-008` Azure DEV/MVP scope  
-**Current delivery status:** `READY_FOR_DEVELOPMENT`; no realised start or completion evidence recorded  
+**Scope gate:** `OPEN_FOR_AUTHORISED_EXECUTION` for the bounded `WP-AZ-001` through `WP-AZ-008` Azure DEV/MVP scope  
+**Contractor start gate:** `BLOCKED_PENDING_ASSIGNMENT`; no exact HerLogic Solutions package/path assignment is recorded  
+**Current delivery status:** `READY_FOR_DEVELOPMENT`; no accepted realised start or completion evidence recorded  
 **Broader/production readiness:** `NO-GO FOR UNRESTRICTED IMPLEMENTATION`
 
 ## Scope
@@ -71,11 +72,11 @@ Therefore the infrastructure workstream must not be described as `COMPONENT_COMP
 
 ## Current execution boundary
 
-`READY_FOR_DEVELOPMENT` remains the package status until objective start evidence is accepted; it does not prove implementation. `OQ-016` is closed, `SRC-021` defines the authority model, and the project-owner review recorded by `SRC-020` revalidated `GO-2026-09-05-FSA-001`. HerLogic Solutions may execute only its assigned subset of `WP-AZ-001` through `WP-AZ-008` in Azure DEV/MVP and must comply with `AGENT.md`, the controlling `plan.md`, and all non-waivable security, traceability, validation, and evidence gates. Production, unrestricted implementation, and `WP-AZ-009` through `WP-AZ-012` remain unauthorised.
+`READY_FOR_DEVELOPMENT` remains the package status until objective start evidence is accepted; it does not prove implementation. `OQ-016` is closed, `SRC-021` defines the authority model, and the project-owner review recorded by `SRC-020` revalidated `GO-2026-09-05-FSA-001`. HerLogic Solutions may execute only a subset of `WP-AZ-001` through `WP-AZ-008` explicitly assigned by the Project Manager; no such exact assignment is currently recorded, so technical execution must not begin and must comply with `AGENT.md`, the controlling `plan.md`, and all non-waivable security, traceability, validation, and evidence gates. Production, unrestricted implementation, and `WP-AZ-009` through `WP-AZ-012` remain unauthorised.
 
 ## Current bounded execution evidence gates
 
-The sequence below is executable only for HerLogic Solutions' exact assigned subset within the bounded `GO-2026-09-05-FSA-001` scope. A material scope, baseline, risk, or non-waivable evidence change requires renewed Project Manager review before affected work continues.
+The sequence below defines potential evidence gates, not a current assignment. It becomes executable for HerLogic Solutions only after the Project Manager records the exact assigned subset, authorised repository paths or bounded contractor subdirectory, evidence purpose, and applicable external implementation/resource scope within `GO-2026-09-05-FSA-001`. A material scope, baseline, risk, or non-waivable evidence change requires renewed Project Manager review before affected work continues.
 
 1. Record Azure resource inventory, environment ownership and RBAC.
 2. Configure budget/cost alerts.
@@ -95,6 +96,6 @@ The workstream may continue to support practical HerLogic Solutions Azure upskil
 
 **Architecture contribution:** materially complete enough to guide MVP implementation.  
 **Infrastructure planning/package definition:** `READY_FOR_DEVELOPMENT`.  
-**Infrastructure execution:** bounded `WP-AZ-001` through `WP-AZ-008` execution is authorised in Azure DEV/MVP, but remains `READY_FOR_DEVELOPMENT` until objective start evidence is accepted; broader and production execution remain unauthorised.  
+**Infrastructure execution:** the bounded `WP-AZ-001` through `WP-AZ-008` scope is approved in Azure DEV/MVP, but HerLogic Solutions start is `BLOCKED_PENDING_ASSIGNMENT`; package status remains `READY_FOR_DEVELOPMENT` until objective start evidence is accepted and canonically reconciled. Broader and production execution remain unauthorised.  
 **E2E delivery evidence:** not yet recorded.  
 **Authority to mark Ubuntu Capital use cases complete:** none; completion remains governed by Ubuntu Capital OS evidence gates.
