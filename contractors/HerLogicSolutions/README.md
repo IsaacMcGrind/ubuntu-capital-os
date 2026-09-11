@@ -6,7 +6,7 @@ This directory records HerLogic Solutions contribution provenance for the Ubuntu
 
 **Project role:** HerLogic Solutions is the technical Azure architecture, cost and infrastructure-delivery contractor. Under `SRC-021`, it is not the Project Manager and does not independently authorise execution, gates, canonical status, completion, architecture adoption or further work.
 
-HerLogic Solutions PRs use capacity `CONTRACTOR_TECHNICAL_EVIDENCE`, remain within an explicitly assigned work package, keep every repository-hosted first-pass evidence file under `contractors/HerLogicSolutions/`, and complete `.github/pull_request_template.md`. Approved external raw evidence must be represented by a sanitised stable reference in this folder; canonical governance/status artifacts must not be changed in the same PR. They may record sanitised Azure work performed, revision-pinned evidence, validation, limitations, blockers, dependencies and decisions required from 80K Developers Project Manager workstream.
+HerLogic Solutions PRs use capacity `CONTRACTOR_TECHNICAL_EVIDENCE`, remain within an explicitly assigned work package, keep every repository-hosted first-pass evidence file under `contractors/HerLogicSolutions/`, and complete the project-owner-approved `.github/pull_request_template.md` (`SRC-021`). Approved external raw evidence must be represented by a sanitised stable reference in this folder; canonical governance/status artifacts must not be changed in the same PR. They may record sanitised Azure work performed, revision-pinned evidence, validation, limitations, blockers, dependencies and decisions required from 80K Developers Project Manager workstream.
 
 The canonical rules are `AGENT.md` and `plan.md`.
 
