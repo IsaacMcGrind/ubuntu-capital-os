@@ -57,7 +57,7 @@ Required sequence:
 2. Contractor implements the assigned scope.
 3. Contractor records sanitised evidence in the contractor folder.
 4. The evidence PR is reviewed for factual support, reproducibility, safety, scope and role-boundary compliance.
-5. Accepted evidence is merged without automatically changing canonical status.
+5. A contractor evidence PR may be merged after the required review; merge records contractor provenance only and does not constitute Project Manager evidence acceptance or a canonical status change.
 6. Project Manager analyses the integrated repository and updates canonical OS records separately.
 7. Project Manager decides priorities, status and the next authorised work.
 
@@ -510,8 +510,8 @@ Execute these tasks next, in order:
 7. Reconcile `output/system-reconstruction-summary.md`, `README.md`, the implementation roadmap and all live delivery/gate artifacts with the same current readiness position; no summary may state that the business slice can proceed while Foundation/Phase 5 gates remain blocked.
 8. Define and record the readiness-decision approving authority and decision-control contract. Until authority exists, `GO` and `CONDITIONAL_GO` cannot open the gate and `NO_GO` remains effective.
 9. Run and record a formal pre-implementation readiness review. A non-authorising `NO_GO` may be recorded or refreshed immediately while blockers, integrity failures, partial required planned traceability, or undefined readiness authority remain. An execution-authorising `GO` or `CONDITIONAL_GO` may be recorded only after all non-waivable integrity conditions, required **planned pre-start** traceability hops, and readiness-authority requirements for the proposed scope reconcile.
-10. Only if an effective authorised decision permits execution, begin the exact permitted subset of `WP-AZ-001` through `WP-AZ-008` and capture objective evidence in `docs/09-delivery/foundation-slice-a-evidence-register.md`.
-11. During authorised delivery, replace planned targets progressively with realised `implementation -> test/run -> durable evidence -> validation/status` references. A missing required realised hop blocks work-package/use-case status promotion and acceptance, not the pre-start decision itself.
+10. Only if an effective authorised decision permits execution, begin the exact permitted subset of `WP-AZ-001` through `WP-AZ-008`; technical contractors must capture objective, sanitised and revision-pinned first-pass evidence under their applicable `contractors/<contractor>/` folder.
+11. After contractor evidence review and merge, the 80K Developers Project Manager workstream must separately assess and, when accepted, link the evidence into `docs/09-delivery/foundation-slice-a-evidence-register.md` and replace planned targets progressively with realised `implementation -> test/run -> durable evidence -> validation/status` references. A missing required realised hop blocks work-package/use-case status promotion and acceptance, not the pre-start decision itself.
 12. Keep `WP-AZ-009` through `WP-AZ-012` blocked until Foundation evidence and the separate Phase 5 / first-business-slice gate are satisfied.
 13. Continue regulated onboarding, NDA, settlement, custody, portfolio and production-hardening work only as their own evidence and dependency gates are satisfied.
 
