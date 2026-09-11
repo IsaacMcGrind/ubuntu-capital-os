@@ -43,13 +43,13 @@ Every PR must complete the project-owner-approved `.github/pull_request_template
 - submitting organization and responsible human;
 - declared capacity: `PROJECT_MANAGER_GOVERNANCE` or `CONTRACTOR_TECHNICAL_EVIDENCE`;
 - selected work-package IDs and decision/context source reference;
-- authorised repository paths;
+- repository paths changed or bounded contractor evidence directory;
 - revision-pinned evidence references;
 - validation performed and results;
 - what the evidence proves and does not prove;
 - sensitive-information confirmation.
 
-A declaration is not self-authorising. Reviewers must verify it against the cited source, decision, work package and path scope. Missing or unverifiable metadata makes the PR `Unverified` or `Changes required`.
+A declaration documents the contributor's capacity, self-selected work, changed paths and evidence; it is not a work assignment, pre-start approval, evidence acceptance or status decision. Reviewers verify the declared capacity, established project boundaries, contractor-folder rule, evidence quality and changed paths. Missing or unverifiable metadata makes the PR `Unverified` or `Changes required` for evidence quality only.
 
 Required sequence:
 
