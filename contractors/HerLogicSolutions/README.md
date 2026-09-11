@@ -4,29 +4,11 @@ This directory records HerLogic Solutions contribution provenance for the Ubuntu
 
 ## Submission contract
 
-Within this Ubuntu Capital OS repository, this contractor workstream records factual, sanitised implementation evidence only. 80K Developers (Pty) Ltd is the appointed Project Manager contractor and accountable project-management workstream. Thembinkosi Mtsweni is the responsible human Project Manager and project-owner decision authority acting for 80K Developers; in that capacity, he retains authority to interpret and accept evidence, update canonical OS artifacts and delivery status, set priorities, approve gates, and authorise subsequent work.
+**Project role:** HerLogic Solutions is the technical Azure architecture, cost and infrastructure-delivery contractor. Under `SRC-021`, it is not the Project Manager and does not independently authorise execution, gates, canonical status, completion, architecture adoption or further work.
 
-An evidence submission may record:
+HerLogic Solutions PRs use capacity `CONTRACTOR_TECHNICAL_EVIDENCE`, remain within an explicitly assigned work package and authorised paths, and complete `.github/pull_request_template.md`. They may record sanitised Azure work performed, revision-pinned evidence, validation, limitations, blockers, dependencies and decisions required from 80K Developers' Project Manager workstream.
 
-- assigned work package and scope;
-- work actually performed, responsible contributor and date;
-- revision-pinned implementation or resource references where safe;
-- commands or procedures used;
-- validation executed and results;
-- limitations, unfinished work, blockers and dependencies;
-- decisions or clarification required from the Project Manager.
-
-An evidence submission must not:
-
-- approve or authorise work;
-- create, replace or reinterpret a project gate;
-- change canonical project, work-package or use-case status;
-- declare a work package or use case complete;
-- make an Ubuntu Capital architecture, business, legal or commercial decision;
-- broaden the contractor's assigned scope;
-- present unsupported or unpinned implementation observations as current fact.
-
-Evidence must not expose secrets, credentials, tokens, private personal information, raw sensitive cloud exports or unnecessary infrastructure identifiers. Merging an evidence PR records evidence only; it does not promote status or authorise further work. The Project Manager performs repository-wide analysis and any canonical OS update separately after evidence is merged.
+The canonical rules are `AGENT.md` and `plan.md`.
 
 ## Current evidence
 
