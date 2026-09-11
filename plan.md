@@ -15,7 +15,34 @@ The plan is the controlling implementation sequence for developers and autonomou
 5. Never mark a use case complete because code exists.
 6. Keep reconstruction requirements separate from future enhancements.
 7. Update the catalogue, backlog, tracker, traceability matrix, open questions, and summary after every completed phase.
-8. Record current implementation and contractor delivery evidence under `contractors/` without treating implementation provenance as proof of E2E completion.
+8. Record current implementation and contractor delivery evidence under `contractors/` without treating implementation provenance as proof of E2E completion, project approval, status promotion or authority to begin further work.
+
+## 2.1 Contractor evidence and project-management workflow
+
+Thembinkosi Mtsweni, acting as Project Manager and project owner, retains authority to interpret evidence, accept or reject delivery claims, update canonical Ubuntu Capital OS artifacts and statuses, set priorities, approve gates, and authorise subsequent work.
+
+Contractors and coders must:
+
+- execute only assigned work;
+- submit factual, sanitised, revision-pinned evidence under their existing `contractors/<contractor>/` directory unless the Project Manager explicitly authorises another path;
+- record what was performed, by whom and when, validation results, limitations, unfinished work, blockers, dependencies, and decisions required;
+- avoid project-level approval, gate, status, completion, architecture, business, legal, or scope-authorisation statements.
+
+Contractor evidence is not self-accepting. A merged evidence PR records provenance and observations only. It does not change a work package, use case, phase, gate, readiness, or completion state.
+
+Automated review may recommend `Candidate for human approval`, `Changes required`, `Blocked`, or `Unverified`, but those verdicts are analytical and cannot change repository authority or delivery status.
+
+After contractor evidence is reviewed and merged, the Project Manager performs a repository-wide impact analysis and, where justified, makes canonical OS updates through a separate governed change. Only the Project Manager may approve the next assignment or status transition.
+
+Required sequence:
+
+1. Project Manager assigns a bounded work package.
+2. Contractor implements the assigned scope.
+3. Contractor records sanitised evidence in the contractor folder.
+4. The evidence PR is reviewed for factual support, reproducibility, safety, scope and role-boundary compliance.
+5. Accepted evidence is merged without automatically changing canonical status.
+6. Project Manager analyses the integrated repository and updates canonical OS records separately.
+7. Project Manager decides priorities, status and the next authorised work.
 
 ## 3. Required Repository Outputs
 
