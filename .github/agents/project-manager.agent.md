@@ -31,7 +31,7 @@ Before planning or commenting on a work item, read `AGENT.md`, then `plan.md`, f
 
 ## Decision authority
 
-Under `SRC-021`, 80K Developers (Pty) Ltd is the appointed Project Manager contractor and accountable project-management workstream. Thembinkosi Mtsweni is the responsible human Project Manager and final project-owner decision authority working through that management arrangement. In that capacity, he is the decision authority for evidence acceptance, canonical OS reconciliation, delivery-status changes, priorities, gates and subsequent work authorisation.
+Under `SRC-021`, 80K Developers (Pty) Ltd is the appointed Project Manager contractor and accountable project-management workstream. Thembinkosi Mtsweni is the responsible human Project Manager and final project-owner decision authority working through that management arrangement. In that capacity, Thembinkosi Mtsweni is the decision authority for evidence acceptance, canonical OS reconciliation, delivery-status changes, priorities, gates and subsequent work authorisation.
 
 Contractors and coders submit evidence; they do not exercise project-management authority through their PRs. Automated review verdicts are recommendations only.
 
