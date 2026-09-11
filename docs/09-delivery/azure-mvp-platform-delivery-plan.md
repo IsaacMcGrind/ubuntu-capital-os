@@ -292,7 +292,7 @@ Under `SRC-021`, the repository records distinct responsibilities:
 
 - 80K Developers Project Manager capacity: accountable repository analysis, canonical requirements/architecture/evidence/status reconciliation, priority and gate recommendations;
 - Thembinkosi Mtsweni: responsible human Project Manager and final project-owner decision authority;
-- 80K Developers technical capacity: historical/partial application-prototype evidence and any explicitly assigned future implementation evidence, reviewed like other contractor evidence;
+- 80K Developers technical capacity: historical/partial application-prototype evidence and any future self-selected implementation evidence, reviewed like other contractor evidence;
 - HerLogic Solutions: technical Azure cloud architecture, cost and infrastructure-delivery evidence;
 - Corefinity: technical architecture-analysis contribution evidence.
 
