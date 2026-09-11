@@ -8,7 +8,7 @@ Corefinity contribution evidence is supporting project evidence only. It does no
 
 **Project role:** Corefinity is a technical contractor whose recorded scope is architecture-analysis contribution evidence. Under `SRC-021`, it is not the Project Manager and does not independently authorise execution, gates, canonical status, completion, architecture adoption or further work.
 
-Corefinity PRs use capacity `CONTRACTOR_TECHNICAL_EVIDENCE`, remain within an explicitly assigned work package, keep every repository-hosted first-pass evidence file under `contractors/Corefinity/`, and complete `.github/pull_request_template.md`. Approved external raw evidence must be represented by a sanitised stable reference in this folder; canonical governance/status artifacts must not be changed in the same PR. Architecture-analysis provenance may support an 80K Developers Project Manager decision but does not become that decision.
+Corefinity PRs use capacity `CONTRACTOR_TECHNICAL_EVIDENCE`, remain within an explicitly assigned work package, keep every repository-hosted first-pass evidence file under `contractors/Corefinity/`, and complete the project-owner-approved `.github/pull_request_template.md` (`SRC-021`). Approved external raw evidence must be represented by a sanitised stable reference in this folder; canonical governance/status artifacts must not be changed in the same PR. Architecture-analysis provenance may support an 80K Developers Project Manager decision but does not become that decision.
 
 The canonical rules are `AGENT.md` and `plan.md`.
 
