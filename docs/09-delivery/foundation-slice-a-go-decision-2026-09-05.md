@@ -42,7 +42,7 @@ The following conditions are non-waivable:
 Execution recording uses two governed stages:
 
 1. The technical contractor records factual, sanitised, revision-pinned work evidence in its existing `contractors/<contractor>/` directory.
-2. After review and merge, the 80K Developers Project Manager workstream analyses that evidence and, through a separate `PROJECT_MANAGER_GOVERNANCE` change, updates or links the accepted evidence in:
+2. After review and merge as provenance, the 80K Developers Project Manager workstream separately assesses that evidence and, only when accepted, updates or links it through a distinct `PROJECT_MANAGER_GOVERNANCE` change in:
    - `docs/09-delivery/foundation-slice-a-evidence-register.md`;
    - `docs/10-traceability/traceability-matrix.md`;
    - `docs/09-delivery/e2e-delivery-tracker.md` where use-case progression is affected.
