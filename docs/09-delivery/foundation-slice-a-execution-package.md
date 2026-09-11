@@ -13,7 +13,7 @@
 
 ## 1. Purpose
 
-This package converts the approved Azure MVP platform direction into a future executable, evidence-gated Foundation Slice A delivery package.
+This package converts the approved Azure MVP platform direction into the bounded, currently authorised, evidence-gated Foundation Slice A delivery package.
 
 Its purpose is to establish the smallest secure, deployable, observable and cost-governed Azure platform shell required before Ubuntu Capital implements the first complete business vertical slice.
 
@@ -25,7 +25,7 @@ Foundation Slice A does **not** make any Ubuntu Capital business use case `COMPL
 
 `GO-2026-09-05-FSA-001` records the exact Foundation scope and authority. The project owner completed the formal post-prerequisite readiness review on 2026-09-07, so package execution may begin in governed dependency order.
 
-`AGENT.md` and `plan.md` remain controlling. The 2026-08-30 governance reconciliation remains part of the compatibility chain, and bounded execution authority is recorded in `docs/09-delivery/foundation-slice-a-go-decision-2026-09-05.md` (`GO-2026-09-05-FSA-001`). Only after the controlling prerequisites reconcile and a post-reconciliation formal review records an effective `GO` or `CONDITIONAL_GO` may work begin within its exact permitted subset of `WP-AZ-001` through `WP-AZ-008`; status promotion remains evidence-gated.
+`AGENT.md` and `plan.md` remain controlling. The 2026-08-30 governance reconciliation remains part of the compatibility chain, and `SRC-020` records that the controlling prerequisites reconciled and `GO-2026-09-05-FSA-001` became effective for the exact `WP-AZ-001` through `WP-AZ-008` Azure DEV/MVP scope on 2026-09-07. A material baseline, scope, risk, or non-waivable evidence change requires renewed readiness review; status promotion remains evidence-gated.
 
 ## 2. Governing evidence rules
 
@@ -37,7 +37,7 @@ The following rules are controlling:
 4. No use case becomes `COMPLETE` without objective E2E evidence.
 5. Secrets, credentials, tokens and sensitive payloads must not be committed to the repository or exposed to client code.
 6. Every deployment result must be traceable to the repository revision that produced it.
-7. Evidence must be stored or linked in `docs/09-delivery/foundation-slice-a-evidence-register.md`.
+7. Technical contractors store repository-hosted first-pass evidence only in their contractor folders. After merge as provenance, the 80K Developers Project Manager workstream separately assesses it and, when accepted, links it in `docs/09-delivery/foundation-slice-a-evidence-register.md` through a distinct `PROJECT_MANAGER_GOVERNANCE` change.
 8. Any unresolved contradiction in ownership, status, IDs, evidence or environment configuration must be reconciled before progression.
 9. Production-grade regulated transaction capability is outside this slice.
 10. Foundation infrastructure must be reproducible from version-controlled provisioning definitions; manually configured Azure state alone cannot satisfy `WP-AZ-008` or the Foundation exit gate.
