@@ -137,7 +137,7 @@ Required before `COMPONENT_COMPLETE`:
 
 ## Foundation Slice A acceptance summary
 
-| Work package | Recorded delivery status | Execution gate | Evidence gate satisfied? | Evidence IDs | Notes |
+| Work package | Recorded delivery status | Contractor start gate | Evidence gate satisfied? | Evidence IDs | Notes |
 |---|---|---|---:|---|---|
 | WP-AZ-001 | `READY_FOR_DEVELOPMENT` | `BLOCKED_PENDING_ASSIGNMENT` | No | FSA-EV-001 | Scope approved; no executor assignment or accepted start evidence |
 | WP-AZ-002 | `READY_FOR_DEVELOPMENT` | `BLOCKED_PENDING_ASSIGNMENT` | No | FSA-EV-002 | Scope approved; no executor assignment or accepted start evidence |
