@@ -18,7 +18,7 @@ The foundation must prove deployability, authentication, protected backend execu
 
 `plan.md` remains the controlling implementation sequence. This Azure plan is a subordinate delivery plan and does not replace or close plan-required reconstruction outputs.
 
-`GO-2026-09-05-FSA-001` is the effective bounded scope authority for `WP-AZ-001` through `WP-AZ-008` after the 2026-09-07 formal project-owner review. It does not allocate work to any contractor. The governance chain remains `AGENT.md`, `plan.md`, and `docs/09-delivery/foundation-slice-a-governance-reconciliation.md`; contractor execution requires no allocation or Project Manager pre-start record and must follow governed dependency order; the resulting evidence PR requires a complete contractor declaration, and all status promotions remain evidence-gated.
+`GO-2026-09-05-FSA-001` is the effective bounded scope authority for `WP-AZ-001` through `WP-AZ-008` after the 2026-09-07 formal project-owner review. It does not allocate work to any contractor. The governance chain remains `AGENT.md`, `plan.md`, and `docs/09-delivery/foundation-slice-a-governance-reconciliation.md`. Contractors may execute inside this boundary without allocation or a Project Manager pre-start record and must follow governed dependency order. The resulting evidence PR must completely document the contractor's selected work, and all status promotions remain evidence-gated.
 
 ## 2. Delivery sequence
 
