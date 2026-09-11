@@ -1,10 +1,10 @@
 # Traceability Matrix
 
-> **Current Foundation decision — 2026-09-07:** Thembinkosi Mtsweni completed the formal post-prerequisite readiness review and revalidated `GO-2026-09-05-FSA-001`. The execution gate for `WP-AZ-001` through `WP-AZ-008` is `OPEN_FOR_AUTHORISED_EXECUTION` in Azure DEV/MVP. This authorises governed start only; implementation, completion, business-use-case and production claims remain evidence-gated. Source: `SRC-020`.
+> **Current Foundation decision — 2026-09-07:** Thembinkosi Mtsweni completed the formal post-prerequisite readiness review and revalidated `GO-2026-09-05-FSA-001`. The scope gate for `WP-AZ-001` through `WP-AZ-008` is `OPEN_FOR_AUTHORISED_EXECUTION` in Azure DEV/MVP. Contractors may self-select and begin work inside that project boundary without assignment or a Project Manager pre-start record; implementation, evidence acceptance, canonical status, completion, business-use-case and production claims remain evidence-gated. Source: `SRC-020`.
 
 Status: `IN_DEVELOPMENT`
 
-Effective revalidated decision: `docs/09-delivery/foundation-slice-a-go-decision-2026-09-05.md` (`GO-2026-09-05-FSA-001`). Effective execution gate: `OPEN_FOR_AUTHORISED_EXECUTION`; the formal project-owner review is recorded by `SRC-020`.
+Effective revalidated decision: `docs/09-delivery/foundation-slice-a-go-decision-2026-09-05.md` (`GO-2026-09-05-FSA-001`). Effective scope gate: `OPEN_FOR_AUTHORISED_EXECUTION`; the formal project-owner review is recorded by `SRC-020`, and contractor work allocation is not used.
 
 Ubuntu Capital OS uses two related but distinct traceability chains so the pre-implementation readiness gate does not require evidence that can only exist after authorised delivery begins.
 
@@ -54,4 +54,4 @@ The entries below are recorded implementation/test evidence where repository his
 4. `Pending` in a **realised post-start** implementation, test/run or durable-evidence hop does **not** prevent a pre-start readiness decision for work that has not yet been authorised. After execution starts, however, those missing realised hops block the affected delivery-status promotion, E2E readiness and acceptance.
 5. Historical local implementation/test paths are supporting evidence only until represented by durable repository-accessible evidence with revision/run identity. They must not be used to infer current completion or to bypass the readiness gate.
 6. `docs/09-delivery/e2e-delivery-tracker.md` must point to the same stable planned IDs/targets before start and then reconcile to the realised implementation/test/evidence/status references during delivery; it cannot substitute for a missing traceability hop.
-7. This matrix does not by itself authorise implementation. The effective execution gate is governed by `AGENT.md`, controlling `plan.md`, and the applicable decision controls. `GO-2026-09-05-FSA-001` was explicitly revalidated by the project owner on 2026-09-07 and is current authority for its bounded Foundation scope; realised traceability remains mandatory as execution progresses.
+7. This matrix does not by itself change project boundaries, accept evidence, or promote status. The effective scope gate is governed by `AGENT.md`, controlling `plan.md`, and the applicable project-owner decision controls. `GO-2026-09-05-FSA-001` was explicitly revalidated on 2026-09-07 and is current authority for its bounded Foundation scope. Contractors may self-select and begin work within it without assignment or a Project Manager pre-start record; realised traceability remains mandatory as execution progresses.

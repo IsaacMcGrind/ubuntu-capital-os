@@ -48,7 +48,7 @@ The Foundation Slice A package is internally coherent as a future infrastructure
 
 The former `docs/02-architecture/` canonical-structure gap is resolved by the project-owner-authorised `plan.md` tree amendment under `SRC-021`. The wider repository still contains substantive reconstruction, evidence, validation, and traceability gaps. `plan.md` remains controlling, and `AGENT.md` still requires affected progression to stop when required outputs, links, counts, traceability, or other integrity conditions do not reconcile.
 
-Accordingly, **Foundation Slice A implementation must not start or advance while those prerequisite repository outputs remain materially incomplete or inconsistent**. The Foundation package may be maintained as planning documentation, but its work-package statuses must remain unchanged until the controlling prerequisites are reconciled.
+Accordingly, the remaining gaps do not block a contractor from self-selecting and beginning work inside the revalidated `WP-AZ-001` through `WP-AZ-008` boundary. They do block evidence acceptance, canonical status advancement, completion claims, or progression outside that boundary wherever required outputs remain materially incomplete or inconsistent. A material baseline, scope, risk, or non-waivable integrity contradiction requires renewed Project Manager readiness review.
 
 No parallel-execution exception is created by this document. Any future exception to the ordered plan would need to be explicitly dependency-based and recorded in the controlling plan without conflicting with `AGENT.md` integrity rules.
 
