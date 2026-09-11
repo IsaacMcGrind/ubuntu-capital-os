@@ -1,3 +1,5 @@
+<!-- Project-owner-approved PR governance control under SRC-021. -->
+
 ## Submission identity
 
 - **Submitting organization:** <!-- 80K Developers / HerLogic Solutions / Corefinity / other approved contributor -->
@@ -25,6 +27,7 @@
 
 - [ ] The declared capacity is supported by the assignment or decision reference.
 - [ ] Changes remain inside the authorised work-package and path scope.
+- [ ] If capacity is `CONTRACTOR_TECHNICAL_EVIDENCE`, every repository-hosted first-pass evidence file is under the submitting contractor's existing folder and no canonical governance/status artifact is changed.
 - [ ] Current-state claims are factual, sanitised, reproducible and revision-pinned.
 - [ ] No contractor evidence attempts to approve a gate, accept itself, promote canonical status, declare completion, adopt architecture, change business/legal rules or authorise subsequent work.
 - [ ] Any `PROJECT_MANAGER_GOVERNANCE` change is explicitly owned by the 80K Developers Project Manager workstream and is separate from technical evidence capture.
