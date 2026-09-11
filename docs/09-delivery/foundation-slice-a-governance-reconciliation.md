@@ -15,7 +15,7 @@
 
 `SRC-021` supersedes future-facing wording that allowed a technical contractor to independently issue execution-authorising decisions. HerLogic Solutions and Corefinity remain technical evidence contributors. 80K Developers is the appointed Project Manager contractor, and Thembinkosi Mtsweni remains the responsible human and final project-owner decision authority.
 
-This amendment changes the ongoing management and evidence-acceptance workflow; it does not invalidate the bounded Foundation GO already approved and revalidated by the project owner. Contractor evidence is captured first in the applicable contractor folder, then reviewed and reconciled into canonical registers by the 80K Developers Project Manager workstream through a separate governance change.
+This amendment changes the ongoing management and evidence-acceptance workflow; it does not invalidate the bounded Foundation GO already approved and revalidated by the project owner. Contractor evidence is captured first and only in the applicable contractor folder for repository-hosted evidence, then reviewed and merged as provenance. The 80K Developers Project Manager workstream separately assesses it and, when accepted, reconciles it into canonical registers through a distinct `PROJECT_MANAGER_GOVERNANCE` change.
 
 ## Current applicability and compatibility rule
 
@@ -151,11 +151,11 @@ The following rules remain controlling:
 
 The active sequence is:
 
-1. Apply `docs/09-delivery/pre-implementation-gate-reassessment-2026-09-03.md` to the current repository baseline and close or disposition its residual ADR, security, privacy, NFR, business/legal, planned-traceability, validation, and repository-structure items.
-2. Preserve the closed `OQ-016` authority outcome and the effective formal revalidation recorded on 2026-09-07.
-3. Begin the permitted `WP-AZ-001` through `WP-AZ-008` scope in governed dependency order and populate `docs/09-delivery/foundation-slice-a-evidence-register.md` with objective implementation evidence.
-4. During authorised Foundation delivery, reconcile realised implementation/test-run/durable-evidence/status links against the planned chain; do not promote a package while a required realised hop is missing.
-5. Reconcile all Foundation evidence gates; do not infer business-use-case completion from infrastructure completion.
+1. Preserve the completed 2026-09-07 prerequisite reconciliation, closed `OQ-016`, `SRC-021` authority model, and effective `GO-2026-09-05-FSA-001`; reopen readiness only for a material baseline, scope, risk, or non-waivable evidence change.
+2. Begin only the permitted `WP-AZ-001` through `WP-AZ-008` scope in governed dependency order.
+3. Each technical contractor captures objective, sanitised, revision-pinned first-pass evidence only in its applicable contractor folder and submits it for review; merge records provenance only.
+4. The 80K Developers Project Manager workstream separately assesses merged evidence and, when accepted, reconciles canonical evidence-register, realised-traceability, and status references through a distinct `PROJECT_MANAGER_GOVERNANCE` change.
+5. Do not promote a package while a required realised hop or evidence gate is missing, and do not infer business-use-case completion from infrastructure completion.
 6. Complete and evidence the `plan.md` Phase 5 shared foundational product capabilities and its exit criteria, including role/permission enforcement, protected API bootstrap/authorization testing, shared validation/error handling, business audit-event framework, persistence/observability foundations, and test harness/quality gates. Do not require the `WP-AZ-009` opportunity catalogue/API as an input to its own start gate.
 7. Confirm the separate first-business-slice start gate is fully satisfied.
 8. Only then start or advance `WP-AZ-009` through `WP-AZ-012` as Phase 6 business-slice work.
@@ -167,7 +167,7 @@ This governance reconciliation may move beyond `ANALYSIS_IN_PROGRESS` only when:
 
 - the repository no longer relies on a parallel-work interpretation that conflicts with the controlling integrity rules;
 - required pre-implementation outputs and **planned pre-start traceability** are reconciled before Foundation implementation starts;
-- after all controlling prerequisites reconcile, the defined readiness authority records a new or explicitly revalidated execution-authorising `GO` or scoped `CONDITIONAL_GO` before any Foundation work starts;
+- for the current bounded Foundation scope, the controlling prerequisites and execution authority are satisfied by the 2026-09-07 revalidation (`SRC-020`); a new or revalidated decision is required only when material scope, baseline, risk, or non-waivable evidence changes invalidate that authority;
 - the `docs/02-architecture/` structure exception has been formally dispositioned or the canonical structure has been amended;
 - Blob Storage is explicitly selected-but-deferred rather than silently omitted;
 - operational telemetry is distinguished from business audit evidence;
