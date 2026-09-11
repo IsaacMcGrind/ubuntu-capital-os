@@ -1,6 +1,6 @@
 # Ubuntu Capital OS — Implementation Roadmap
 
-> **Current Foundation decision — 2026-09-07:** Thembinkosi Mtsweni completed the formal post-prerequisite readiness review and revalidated `GO-2026-09-05-FSA-001`. The execution gate for `WP-AZ-001` through `WP-AZ-008` is `OPEN_FOR_AUTHORISED_EXECUTION` in Azure DEV/MVP. This authorises governed start only; implementation, completion, business-use-case and production claims remain evidence-gated. Source: `SRC-020`.
+> **Current Foundation decision — 2026-09-07:** Thembinkosi Mtsweni completed the formal post-prerequisite readiness review and revalidated `GO-2026-09-05-FSA-001`. The scope gate for `WP-AZ-001` through `WP-AZ-008` is `OPEN_FOR_AUTHORISED_EXECUTION` in Azure DEV/MVP. This approves the bounded scope for assignment; technical start also requires a durable Project Manager contractor/package/path assignment. Implementation, completion, business-use-case and production claims remain evidence-gated. Source: `SRC-020`.
 
 **Current programme status:** `PARTIALLY_READY`  
 **Architecture readiness:** `READY_WITH_ASSUMPTIONS` for MVP cloud implementation  
@@ -9,7 +9,7 @@
 
 This roadmap separates faithful system reconstruction, Azure platform enablement, business-capability delivery and later production hardening. No production investment transaction should be released until critical legal, compliance, settlement, custody, ownership and permission questions are resolved.
 
-`plan.md` remains the controlling implementation sequence. This roadmap is subordinate to it. The major canonical Phase 0 through Phase 4 outputs now materially exist. Foundation Slice A's bounded scope is recorded in `docs/09-delivery/foundation-slice-a-go-decision-2026-09-05.md`, and progression is `OPEN_FOR_AUTHORISED_EXECUTION` after the 2026-09-07 formal review, while downstream business-slice progression remains separately gated by validation, approval, traceability reconciliation, architecture/security/NFR closure, structure-exception disposition, and scope-specific readiness controls.
+`plan.md` remains the controlling implementation sequence. This roadmap is subordinate to it. The major canonical Phase 0 through Phase 4 outputs now materially exist, and the former `docs/02-architecture/` structure exception is resolved by the canonical-tree amendment under `SRC-021`. Foundation Slice A's bounded scope is `OPEN_FOR_AUTHORISED_EXECUTION` after the 2026-09-07 formal review, but contractor start is `BLOCKED_PENDING_ASSIGNMENT`. Downstream business-slice progression remains separately gated by validation, approval, traceability reconciliation, architecture/security/NFR closure, and scope-specific readiness controls.
 
 ## Phase 0 — Context and Architecture Baseline
 
@@ -31,7 +31,7 @@ This roadmap separates faithful system reconstruction, Azure platform enablement
 
 ## Phase 1A — Azure MVP Platform Foundation
 
-**Status:** `READY_FOR_DEVELOPMENT` for `WP-AZ-001` through `WP-AZ-008`; execution gate `OPEN_FOR_AUTHORISED_EXECUTION`; no realised start evidence is recorded.
+**Status:** `READY_FOR_DEVELOPMENT` for `WP-AZ-001` through `WP-AZ-008`; scope gate `OPEN_FOR_AUTHORISED_EXECUTION`; contractor start `BLOCKED_PENDING_ASSIGNMENT`; no accepted realised start evidence is recorded.
 
 **Primary delivery plan:** `docs/09-delivery/azure-mvp-platform-delivery-plan.md`.  
 **Execution package:** `docs/09-delivery/foundation-slice-a-execution-package.md`.  
@@ -39,7 +39,7 @@ This roadmap separates faithful system reconstruction, Azure platform enablement
 **Governance reconciliation:** `docs/09-delivery/foundation-slice-a-governance-reconciliation.md`.  
 **Current readiness decision:** `docs/09-delivery/foundation-slice-a-go-decision-2026-09-05.md`.
 
-Foundation Slice A is documented as `WP-AZ-001` through `WP-AZ-008`. The package defines implementation tasks, acceptance criteria, evidence gates, ownership/authority boundaries, environment expectations and handoff conditions. `GO-2026-09-05-FSA-001` records that exact scope and authority and was revalidated by the project owner on 2026-09-07. Execution may begin in governed dependency order. The older governance reconciliation remains a required compatibility reference and does not override current decision scope controls.
+Foundation Slice A is documented as `WP-AZ-001` through `WP-AZ-008`. The package defines implementation tasks, acceptance criteria, evidence gates, ownership/authority boundaries, environment expectations and handoff conditions. `GO-2026-09-05-FSA-001` records that exact scope authority and was revalidated by the project owner on 2026-09-07. Execution may begin in governed dependency order only after an exact Project Manager contractor/package/path assignment is recorded. The older governance reconciliation remains a required compatibility reference and does not override current decision scope controls.
 
 **Chosen platform services:**
 - Azure Static Web Apps;
@@ -179,14 +179,15 @@ Operational telemetry produced by Foundation `WP-AZ-007` does not satisfy `UC-AU
 
 ## Immediate execution queue
 
-The queue follows the controlling `plan.md`. Existing canonical outputs were accepted as reconciled by the project owner during the formal review recorded on 2026-09-07. `GO-2026-09-05-FSA-001` is the effective bounded authority; the next executable action is governed Foundation delivery.
+The queue follows the controlling `plan.md`. Existing canonical outputs were accepted as reconciled by the project owner during the formal review recorded on 2026-09-07, and the former architecture-tree structure exception is now resolved by the `plan.md` amendment under `SRC-021`. `GO-2026-09-05-FSA-001` is the effective bounded scope authority; the next executable action is a durable Project Manager assignment, not technical delivery.
 
 Completed prerequisites—preserve rather than repeat: the project-owner review recorded by `SRC-020` accepted the Phase 0–4/residual-gap, P0/architecture/security/NFR, planned-traceability, live-artifact, readiness-authority and decision prerequisites for the bounded Foundation scope and revalidated `GO-2026-09-05-FSA-001` on 2026-09-07. Reopen that decision only for a material baseline, scope, risk, or non-waivable evidence change.
 
-1. Begin only the authorised `WP-AZ-001` through `WP-AZ-008` scope in governed dependency order; source-dependent packages still require a pinned application branch and commit.
-2. Each technical contractor captures objective, sanitised, revision-pinned first-pass evidence only under its applicable `contractors/<contractor>/` folder; approved external raw evidence is represented by a sanitised stable reference there.
-3. Review and merge contractor evidence as provenance only; merge is not acceptance or status promotion.
-4. The 80K Developers Project Manager workstream separately assesses merged evidence and, when accepted, reconciles it into the canonical Foundation evidence register, realised traceability, E2E tracker, and status records through a distinct `PROJECT_MANAGER_GOVERNANCE` PR.
-5. A required realised `Pending` hop blocks status promotion, `COMPONENT_COMPLETE`, E2E readiness or acceptance; it does not invalidate the already-completed bounded start decision unless it reveals a material non-waivable contradiction.
-6. Keep `WP-AZ-009` through `WP-AZ-012` blocked until Foundation evidence, the controlling Phase 5 capabilities/exit criteria, and the first-slice integrity gate all reconcile.
-7. Progress Blob-backed document capabilities, onboarding, NDA, specialist integrations and later regulated journeys only as their actual use-case dependencies and critical questions are resolved.
+1. The Project Manager records the contractor, exact authorised `WP-AZ-001` through `WP-AZ-008` subset, authorised repository paths or bounded contractor subdirectory, evidence purpose, and applicable external implementation/resource scope.
+2. The assigned contractor begins only that exact subset in governed dependency order; source-dependent packages still require a pinned application branch and commit.
+3. Each technical contractor captures objective, sanitised, revision-pinned first-pass evidence only under its applicable `contractors/<contractor>/` folder; approved external raw evidence is represented by a sanitised stable reference there.
+4. Review and merge contractor evidence as provenance only; merge is not acceptance or status promotion.
+5. The 80K Developers Project Manager workstream separately assesses merged evidence and, when accepted, reconciles it into the canonical Foundation evidence register, realised traceability, E2E tracker, and status records through a distinct `PROJECT_MANAGER_GOVERNANCE` PR.
+6. A required realised `Pending` hop blocks status promotion, `COMPONENT_COMPLETE`, E2E readiness or acceptance; it does not invalidate the already-completed bounded start decision unless it reveals a material non-waivable contradiction.
+7. Keep `WP-AZ-009` through `WP-AZ-012` blocked until Foundation evidence, the controlling Phase 5 capabilities/exit criteria, and the first-slice integrity gate all reconcile.
+8. Progress Blob-backed document capabilities, onboarding, NDA, specialist integrations and later regulated journeys only as their actual use-case dependencies and critical questions are resolved.
