@@ -67,11 +67,11 @@ The pre-implementation gate was formally satisfied for the bounded Foundation sc
 
 ## Delivery authority and contractor evidence workflow
 
-Under `SRC-021`, 80K Developers (Pty) Ltd is the appointed Project Manager contractor and accountable project-management workstream. Thembinkosi Mtsweni is the responsible human Project Manager and final project-owner decision authority working through that management arrangement. In that capacity, he assigns work, interprets contractor evidence, updates canonical Ubuntu Capital OS status and priorities, approves gates, and authorises subsequent work.
+Under `SRC-021`, 80K Developers (Pty) Ltd is the appointed Project Manager contractor and accountable project-management workstream. Thembinkosi Mtsweni is the responsible human Project Manager and final project-owner decision authority working through that management arrangement. In that capacity, Thembinkosi Mtsweni assigns work, interprets contractor evidence, updates canonical Ubuntu Capital OS status and priorities, approves gates, and authorises subsequent work.
 
 Contractors and coders record factual, sanitised delivery evidence only under their existing `contractors/<contractor>/` directory unless a different path is explicitly authorised. Contractor evidence may document work performed, validation, limitations, unfinished work, blockers and decisions needed; it must not authorise work, redefine gates, change canonical status, declare completion, or make project-level architecture, business or legal decisions.
 
-Automated reviews assess evidence and recommend action only. After an evidence PR is reviewed and merged, 80K Developers' Project Manager workstream performs repository-level analysis and makes any justified canonical OS update through a separate governed change.
+Automated reviews assess evidence and recommend action only. After an evidence PR is reviewed and merged, 80K Developers Project Manager workstream performs repository-level analysis and makes any justified canonical OS update through a separate governed change.
 
 When 80K Developers performs coding or implementation work, its technical evidence is governed exactly like other contractor evidence. A submission must clearly identify whether it is an implementation-evidence contribution or an 80K-Developers-Project-Manager-owned governance change.
 
