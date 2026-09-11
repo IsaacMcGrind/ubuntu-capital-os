@@ -76,7 +76,7 @@ Therefore the infrastructure workstream must not be described as `COMPONENT_COMP
 
 ## Current bounded execution evidence gates
 
-The sequence below defines potential evidence gates, not a current assignment. It becomes executable for HerLogic Solutions only after the Project Manager records the exact self-selected subset, authorised repository paths or bounded contractor subdirectory, evidence purpose, and applicable external implementation/resource scope within `GO-2026-09-05-FSA-001`. A material scope, baseline, risk, or non-waivable evidence change requires renewed Project Manager review before affected work continues.
+The sequence below defines potential evidence gates, not a current assignment. HerLogic Solutions may begin its self-selected work within the bounded scope after declaring the exact subset, authorised repository paths or bounded contractor subdirectory, evidence purpose, and applicable external implementation/resource scope in its PR. A material scope, baseline, risk, or non-waivable evidence change requires renewed Project Manager review before affected work continues.
 
 1. Record Azure resource inventory, environment ownership and RBAC.
 2. Configure budget/cost alerts.
