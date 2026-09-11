@@ -1,6 +1,6 @@
 # Ubuntu Capital OS — Foundation Slice A Governance Reconciliation
 
-> **Current Foundation decision — 2026-09-07:** Thembinkosi Mtsweni completed the formal post-prerequisite readiness review and revalidated `GO-2026-09-05-FSA-001`. The execution gate for `WP-AZ-001` through `WP-AZ-008` is `OPEN_FOR_AUTHORISED_EXECUTION` in Azure DEV/MVP. This authorises governed start only; implementation, completion, business-use-case and production claims remain evidence-gated. Source: `SRC-020`.
+> **Current Foundation decision — 2026-09-07:** Thembinkosi Mtsweni completed the formal post-prerequisite readiness review and revalidated `GO-2026-09-05-FSA-001`. The scope gate for `WP-AZ-001` through `WP-AZ-008` is `OPEN_FOR_AUTHORISED_EXECUTION` in Azure DEV/MVP. This approves the bounded scope for assignment; technical start also requires a durable Project Manager contractor/package/path assignment. Implementation, completion, business-use-case and production claims remain evidence-gated. Source: `SRC-020`.
 
 **Status:** `ANALYSIS_IN_PROGRESS`  
 **Evidence classification:** `CONFIRMED`  
@@ -34,7 +34,7 @@ The traceability terms in this document use the current two-stage model from `pl
 
 ## 2026-09-05 execution amendment
 
-`GO-2026-09-05-FSA-001` is the current execution authority for `WP-AZ-001` through `WP-AZ-008` after the project-owner formal review recorded by `SRC-020`. The effective gate is `OPEN_FOR_AUTHORISED_EXECUTION`: historical undefined-authority, open-`OQ-016`, and interim pending-revalidation wording is superseded. Evidence gates and all non-waivable boundaries remain in force.
+`GO-2026-09-05-FSA-001` is the current scope authority for `WP-AZ-001` through `WP-AZ-008` after the project-owner formal review recorded by `SRC-020`. The scope gate is `OPEN_FOR_AUTHORISED_EXECUTION`, but no executor/package/path assignment is recorded; contractor start is therefore `BLOCKED_PENDING_ASSIGNMENT`. Historical undefined-authority, open-`OQ-016`, and interim pending-revalidation wording is superseded. Evidence gates and all non-waivable boundaries remain in force.
 
 ## 1. Purpose
 
@@ -46,7 +46,7 @@ It exists to prevent the Foundation execution package from being interpreted as 
 
 The Foundation Slice A package is internally coherent as a future infrastructure execution package for `WP-AZ-001` through `WP-AZ-008`.
 
-However, the wider repository still contains known reconstruction and canonical-structure gaps. `plan.md` remains the controlling execution plan, and `AGENT.md` requires progression to stop when required outputs, links, counts, traceability, or other integrity conditions do not reconcile.
+The former `docs/02-architecture/` canonical-structure gap is resolved by the project-owner-authorised `plan.md` tree amendment under `SRC-021`. The wider repository still contains substantive reconstruction, evidence, validation, and traceability gaps. `plan.md` remains controlling, and `AGENT.md` still requires affected progression to stop when required outputs, links, counts, traceability, or other integrity conditions do not reconcile.
 
 Accordingly, **Foundation Slice A implementation must not start or advance while those prerequisite repository outputs remain materially incomplete or inconsistent**. The Foundation package may be maintained as planning documentation, but its work-package statuses must remain unchanged until the controlling prerequisites are reconciled.
 
@@ -152,14 +152,15 @@ The following rules remain controlling:
 The active sequence is:
 
 1. Preserve the completed 2026-09-07 prerequisite reconciliation, closed `OQ-016`, `SRC-021` authority model, and effective `GO-2026-09-05-FSA-001`; reopen readiness only for a material baseline, scope, risk, or non-waivable evidence change.
-2. Begin only the permitted `WP-AZ-001` through `WP-AZ-008` scope in governed dependency order.
-3. Each technical contractor captures objective, sanitised, revision-pinned first-pass evidence only in its applicable contractor folder and submits it for review; merge records provenance only.
-4. The 80K Developers Project Manager workstream separately assesses merged evidence and, when accepted, reconciles canonical evidence-register, realised-traceability, and status references through a distinct `PROJECT_MANAGER_GOVERNANCE` change.
-5. Do not promote a package while a required realised hop or evidence gate is missing, and do not infer business-use-case completion from infrastructure completion.
-6. Complete and evidence the `plan.md` Phase 5 shared foundational product capabilities and its exit criteria, including role/permission enforcement, protected API bootstrap/authorization testing, shared validation/error handling, business audit-event framework, persistence/observability foundations, and test harness/quality gates. Do not require the `WP-AZ-009` opportunity catalogue/API as an input to its own start gate.
-7. Confirm the separate first-business-slice start gate is fully satisfied.
-8. Only then start or advance `WP-AZ-009` through `WP-AZ-012` as Phase 6 business-slice work.
-9. Complete first-slice business-audit evidence and deployed E2E acceptance evidence before considering `READY_FOR_ACCEPTANCE`.
+2. The Project Manager records a durable assignment naming the contractor, exact permitted `WP-AZ-001` through `WP-AZ-008` subset, authorised repository paths or bounded contractor subdirectory, evidence purpose, and applicable external implementation/resource scope.
+3. The assigned contractor begins only that exact subset in governed dependency order.
+4. Each technical contractor captures objective, sanitised, revision-pinned first-pass evidence only in its applicable contractor folder and submits it for review; merge records provenance only.
+5. The 80K Developers Project Manager workstream separately assesses merged evidence and, when accepted, reconciles canonical evidence-register, realised-traceability, and status references through a distinct `PROJECT_MANAGER_GOVERNANCE` change.
+6. Do not promote a package while a required realised hop or evidence gate is missing, and do not infer business-use-case completion from infrastructure completion.
+7. Complete and evidence the `plan.md` Phase 5 shared foundational product capabilities and its exit criteria, including role/permission enforcement, protected API bootstrap/authorization testing, shared validation/error handling, business audit-event framework, persistence/observability foundations, and test harness/quality gates. Do not require the `WP-AZ-009` opportunity catalogue/API as an input to its own start gate.
+8. Confirm the separate first-business-slice start gate is fully satisfied.
+9. Only then start or advance `WP-AZ-009` through `WP-AZ-012` as Phase 6 business-slice work.
+10. Complete first-slice business-audit evidence and deployed E2E acceptance evidence before considering `READY_FOR_ACCEPTANCE`.
 
 ## 9. Definition of reconciliation complete
 
@@ -168,7 +169,7 @@ This governance reconciliation may move beyond `ANALYSIS_IN_PROGRESS` only when:
 - the repository no longer relies on a parallel-work interpretation that conflicts with the controlling integrity rules;
 - required pre-implementation outputs and **planned pre-start traceability** are reconciled before Foundation implementation starts;
 - for the current bounded Foundation scope, the controlling prerequisites and execution authority are satisfied by the 2026-09-07 revalidation (`SRC-020`); a new or revalidated decision is required only when material scope, baseline, risk, or non-waivable evidence changes invalidate that authority;
-- the `docs/02-architecture/` structure exception has been formally dispositioned or the canonical structure has been amended;
+- the former `docs/02-architecture/` structure exception remains resolved by the canonical-tree amendment in `plan.md` under `SRC-021`;
 - Blob Storage is explicitly selected-but-deferred rather than silently omitted;
 - operational telemetry is distinguished from business audit evidence;
 - no Foundation or use-case status is promoted because documentation exists;
