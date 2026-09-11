@@ -120,7 +120,7 @@ When 80K Developers performs application, integration, deployment or other imple
 
 ## 6. Execution sequence
 
-The sequence below is defined but **must not be executed until the Foundation start gate is satisfied by the current reassessment and formal readiness decision**.
+The Foundation start gate for the bounded `WP-AZ-001` through `WP-AZ-008` Azure DEV/MVP scope was satisfied by the project-owner revalidation recorded on 2026-09-07 (`SRC-020`). The sequence below may execute only within that scope and dependency order; it does not authorise production or `WP-AZ-009` through `WP-AZ-012`.
 
 | Order | Work package | Delivery objective | Target status after evidence | Primary dependency |
 |---:|---|---|---|---|
@@ -384,7 +384,7 @@ Foundation Slice A cannot begin until its current readiness start gate is satisf
 
 ## 9. Evidence storage and traceability contract
 
-Technical contractors first record factual, sanitised, revision-pinned evidence under their existing `contractors/<contractor>/` directory. After review and merge, the 80K Developers Project Manager workstream reconciles accepted metadata and stable references into:
+Technical contractors first record all repository-hosted factual, sanitised, revision-pinned evidence under their existing `contractors/<contractor>/` directory and do not modify canonical governance/status artifacts in the same PR. After review and merge as provenance, the 80K Developers Project Manager workstream separately assesses the merged evidence and, when accepted, reconciles metadata and stable references into:
 
 `docs/09-delivery/foundation-slice-a-evidence-register.md`
 
@@ -396,7 +396,7 @@ Sensitive Azure values must be redacted. Neither contractor folders nor the evid
 
 Default recorded status for `WP-AZ-001` through `WP-AZ-008` remains `READY_FOR_DEVELOPMENT` unless stronger evidence already exists and is reconciled into this repository.
 
-Until the controlling `plan.md` pre-execution steps reconcile and a subsequent formal readiness review records an effective Foundation decision, **no work package may transition to `IN_DEVELOPMENT` or `COMPONENT_COMPLETE`**.
+The 2026-09-07 project-owner review completed the bounded start decision, so an authorised package may transition to `IN_DEVELOPMENT` only when objective start evidence is accepted through a separate `PROJECT_MANAGER_GOVERNANCE` reconciliation. No package may transition to `COMPONENT_COMPLETE` until its full evidence gate is accepted.
 
 After those prerequisites reconcile, allowed transitions are:
 
