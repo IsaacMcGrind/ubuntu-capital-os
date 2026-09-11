@@ -101,7 +101,7 @@ It does not automatically promote a use case or delivery status. A code, documen
 
 The repository-native monitor described above is an informational workflow. It does not enforce GitHub merge protection and its scripts do not currently implement contractor-authorship, authorised-path, content-sanitisation or role-boundary classification checks.
 
-Hard prevention belongs to the GitHub `master` branch/ruleset configuration: require pull requests, human approval of the latest revision, dismissal of stale approvals, resolution of review conversations, and protection from direct/force pushes. Repository monitoring must report the ruleset state as `UNKNOWN` when permissions prevent verification; documentation must not present an unverified rule as active.
+Hard prevention belongs to the GitHub ruleset protecting the repository default branch (currently `master`): require pull requests, human approval of the latest revision, dismissal of stale approvals, resolution of review conversations, and protection from direct/force pushes. Repository monitoring must report the ruleset state as `UNKNOWN` when permissions prevent verification; documentation must not present an unverified rule as active.
 
 Two separately configured, read-only external reviews complement—not replace—the ruleset:
 
