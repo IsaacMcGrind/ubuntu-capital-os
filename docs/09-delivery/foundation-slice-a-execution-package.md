@@ -1,9 +1,10 @@
 # Ubuntu Capital OS — Foundation Slice A Execution Package
 
-> **Current Foundation decision — 2026-09-07:** Thembinkosi Mtsweni completed the formal post-prerequisite readiness review and revalidated `GO-2026-09-05-FSA-001`. The execution gate for `WP-AZ-001` through `WP-AZ-008` is `OPEN_FOR_AUTHORISED_EXECUTION` in Azure DEV/MVP. This authorises governed start only; implementation, completion, business-use-case and production claims remain evidence-gated. Source: `SRC-020`.
+> **Current Foundation decision — 2026-09-07:** Thembinkosi Mtsweni completed the formal post-prerequisite readiness review and revalidated `GO-2026-09-05-FSA-001`. The scope gate for `WP-AZ-001` through `WP-AZ-008` is `OPEN_FOR_AUTHORISED_EXECUTION` in Azure DEV/MVP. This approves the bounded scope for assignment; technical start also requires a durable Project Manager contractor/package/path assignment. Implementation, completion, business-use-case and production claims remain evidence-gated. Source: `SRC-020`.
 
 **Status:** `READY_FOR_DEVELOPMENT`  
-**Execution gate:** `OPEN_FOR_AUTHORISED_EXECUTION`; `GO-2026-09-05-FSA-001` was revalidated on 2026-09-07  
+**Scope gate:** `OPEN_FOR_AUTHORISED_EXECUTION`; `GO-2026-09-05-FSA-001` was revalidated on 2026-09-07  
+**Contractor start gate:** `BLOCKED_PENDING_ASSIGNMENT`; no exact executor/package/path assignment is recorded  
 **Execution scope:** `WP-AZ-001` through `WP-AZ-008`  
 **Architecture decision:** `ARCH-ADR-001`  
 **Parent delivery plan:** `docs/09-delivery/azure-mvp-platform-delivery-plan.md`  
@@ -23,7 +24,7 @@ Foundation Slice A does **not** make any Ubuntu Capital business use case `COMPL
 
 ### Hard start gate
 
-`GO-2026-09-05-FSA-001` records the exact Foundation scope and authority. The project owner completed the formal post-prerequisite readiness review on 2026-09-07, so package execution may begin in governed dependency order.
+`GO-2026-09-05-FSA-001` records the exact Foundation scope authority. The project owner completed the formal post-prerequisite readiness review on 2026-09-07, but that scope-level GO does not assign an executor. No technical contractor may begin until the Project Manager records the contractor, exact package subset, authorised repository paths or bounded contractor subdirectory, evidence purpose, and applicable external implementation/resource scope.
 
 `AGENT.md` and `plan.md` remain controlling. The 2026-08-30 governance reconciliation remains part of the compatibility chain, and `SRC-020` records that the controlling prerequisites reconciled and `GO-2026-09-05-FSA-001` became effective for the exact `WP-AZ-001` through `WP-AZ-008` Azure DEV/MVP scope on 2026-09-07. A material baseline, scope, risk, or non-waivable evidence change requires renewed readiness review; status promotion remains evidence-gated.
 
@@ -31,7 +32,7 @@ Foundation Slice A does **not** make any Ubuntu Capital business use case `COMPL
 
 The following rules are controlling:
 
-1. `GO-2026-09-05-FSA-001` is the effective bounded authority for `WP-AZ-001` through `WP-AZ-008` after the 2026-09-07 formal review; implementation may begin and must remain within that decision's exact controls.
+1. `GO-2026-09-05-FSA-001` is the effective bounded scope authority for `WP-AZ-001` through `WP-AZ-008` after the 2026-09-07 formal review. Implementation may begin only after a durable Project Manager assignment identifies the executor, exact package subset, authorised paths, evidence purpose, and external implementation/resource scope.
 2. Architecture selection is not implementation evidence.
 3. A work package advances only when its evidence gate is satisfied.
 4. No use case becomes `COMPLETE` without objective E2E evidence.
@@ -120,7 +121,7 @@ When 80K Developers performs application, integration, deployment or other imple
 
 ## 6. Execution sequence
 
-The Foundation start gate for the bounded `WP-AZ-001` through `WP-AZ-008` Azure DEV/MVP scope was satisfied by the project-owner revalidation recorded on 2026-09-07 (`SRC-020`). The sequence below may execute only within that scope and dependency order; it does not authorise production or `WP-AZ-009` through `WP-AZ-012`.
+The Foundation scope gate for the bounded `WP-AZ-001` through `WP-AZ-008` Azure DEV/MVP scope was satisfied by the project-owner revalidation recorded on 2026-09-07 (`SRC-020`). The execution sequence remains blocked until the Project Manager records an exact contractor/package/path assignment. Once assigned, it may execute only within that subset and dependency order; it does not authorise production or `WP-AZ-009` through `WP-AZ-012`.
 
 | Order | Work package | Delivery objective | Target status after evidence | Primary dependency |
 |---:|---|---|---|---|
