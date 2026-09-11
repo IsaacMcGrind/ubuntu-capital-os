@@ -28,7 +28,7 @@ The agent's objective is not to speculate about an ideal platform. Its objective
 
 ## Delivery authority and contractor evidence boundary
 
-Thembinkosi Mtsweni, acting as Project Manager and project owner, is the sole repository authority for interpreting contractor evidence, changing canonical Ubuntu Capital OS delivery status, accepting evidence, changing priorities, approving gates, and authorising subsequent work.
+80K Developers (Pty) Ltd is the appointed Project Manager contractor and accountable project-management workstream. Thembinkosi Mtsweni is the responsible human Project Manager and project-owner decision authority acting for 80K Developers. In that capacity, he holds the sole repository authority for interpreting or accepting contractor evidence, changing canonical Ubuntu Capital OS delivery status, changing priorities, approving gates, and authorising subsequent work.
 
 Within this Ubuntu Capital OS repository:
 
@@ -39,7 +39,8 @@ Within this Ubuntu Capital OS repository:
 5. Contractor evidence is an input to governance, not a governance decision. Merging contractor evidence does not promote status or approve further work.
 6. Automated reviewers and agents may assess evidence quality, completeness, traceability, security, contradictions, and alignment. Their labels and recommendations are analytical only; they do not approve, accept, reject, merge, or change project status.
 7. After evidence is reviewed and merged, the Project Manager performs the repository-level reconciliation, updates affected canonical OS artifacts in a separate governed change, decides any status or priority change, and authorises the next work.
-8. If a contractor PR crosses this boundary, classify it as `Changes required` until project-level decisions and status changes are removed or explicitly moved into a Project-Manager-owned governance change.
+8. 80K Developers may operate in two explicitly separated capacities: Project Manager contractor and implementation/coding contractor. When submitting implementation or technical delivery evidence, 80K Developers is subject to the same evidence-only rules and review as every other contractor. A canonical governance change is Project-Manager-owned only when its purpose and authority are explicitly identified; organizational identity alone does not convert a technical evidence submission into a governance decision.
+9. If a contractor PR crosses this boundary, classify it as `Changes required` until project-level decisions and status changes are removed or explicitly moved into an 80K-Developers-Project-Manager-owned governance change.
 
 The governed workflow is:
 
