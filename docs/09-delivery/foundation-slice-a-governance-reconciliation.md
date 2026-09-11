@@ -8,7 +8,14 @@
 **Related merged PR:** #18 — Foundation Slice A execution package  
 **Controlling documents:** `AGENT.md`, `plan.md`  
 **Related delivery artifacts:** `docs/09-delivery/implementation-roadmap.md`, `docs/09-delivery/azure-mvp-platform-delivery-plan.md`, `docs/09-delivery/foundation-slice-a-execution-package.md`, `docs/09-delivery/foundation-slice-a-evidence-register.md`
-**Effective revalidated decision:** `docs/09-delivery/foundation-slice-a-go-decision-2026-09-05.md` (`GO-2026-09-05-FSA-001`); effective execution gate: `OPEN_FOR_AUTHORISED_EXECUTION`
+**Effective revalidated decision:** `docs/09-delivery/foundation-slice-a-go-decision-2026-09-05.md` (`GO-2026-09-05-FSA-001`); effective execution gate: `OPEN_FOR_AUTHORISED_EXECUTION`  
+**Current management-authority and evidence-workflow source:** `SRC-021` — 80K Developers Project Manager contractor; Thembinkosi Mtsweni responsible human/final project-owner decision authority
+
+## 2026-09-11 management-authority reconciliation
+
+`SRC-021` supersedes future-facing wording that allowed a technical contractor to independently issue execution-authorising decisions. HerLogic Solutions and Corefinity remain technical evidence contributors. 80K Developers is the appointed Project Manager contractor, and Thembinkosi Mtsweni remains the responsible human and final project-owner decision authority.
+
+This amendment changes the ongoing management and evidence-acceptance workflow; it does not invalidate the bounded Foundation GO already approved and revalidated by the project owner. Contractor evidence is captured first in the applicable contractor folder, then reviewed and reconciled into canonical registers by the 80K Developers Project Manager workstream through a separate governance change.
 
 ## Current applicability and compatibility rule
 
