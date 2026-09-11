@@ -1,6 +1,6 @@
 # Ubuntu Capital OS — Implementation Analysis Refresh
 
-> **Post-assessment Foundation decision — 2026-09-07:** Thembinkosi Mtsweni completed the formal post-prerequisite readiness review and revalidated `GO-2026-09-05-FSA-001`. The execution gate for `WP-AZ-001` through `WP-AZ-008` is now `OPEN_FOR_AUTHORISED_EXECUTION` in Azure DEV/MVP. This supersedes the pending-revalidation and pre-execution-deferral statements in this dated assessment; its implementation, business-slice, production and evidence findings remain unchanged. Source: `SRC-020`.
+> **Post-assessment Foundation decision — 2026-09-07:** Thembinkosi Mtsweni completed the formal post-prerequisite readiness review and revalidated `GO-2026-09-05-FSA-001`. The scope gate for `WP-AZ-001` through `WP-AZ-008` is now `OPEN_FOR_AUTHORISED_EXECUTION` in Azure DEV/MVP, while contractor start is `BLOCKED_PENDING_ASSIGNMENT`. This supersedes the pending-revalidation statements in this dated assessment; its implementation, business-slice, production and evidence findings remain unchanged. Source: `SRC-020`.
 >
 > **Management/evidence amendment — 2026-09-11:** `SRC-021` appoints 80K Developers as the Project Manager contractor, identifies Thembinkosi Mtsweni as the responsible human/final project-owner decision authority, and requires technical contractors to submit first-pass evidence only in their contractor folders before separate Project-Manager-owned canonical reconciliation.
 
@@ -18,7 +18,7 @@
 
 Ubuntu Capital OS is a strong evidence-first reconstruction, architecture and delivery-governance repository. It is not yet a deployable Ubuntu Capital application repository.
 
-Foundation Slice A has bounded Azure DEV/MVP authority under `GO-2026-09-05-FSA-001`; the controlling prerequisites and formal readiness review were accepted as reconciled on 2026-09-07, so governed execution may begin. No Foundation work package has objective start or completion evidence. A concurrent master commit landed during this assessment and introduced a confirmed repository-monitor regression; the assessment baseline was advanced to that new head. The evidence register still contains eight planned placeholders, all classified `UNKNOWN`, and records zero satisfied evidence gates. The `GO` was formally revalidated by the project owner on 2026-09-07 and permits governed Foundation execution; it does not prove that Azure resources, application infrastructure or runtime capabilities exist.
+Foundation Slice A has bounded Azure DEV/MVP scope authority under `GO-2026-09-05-FSA-001`; the controlling prerequisites and formal readiness review were accepted as reconciled on 2026-09-07. The GO does not assign an executor, and no exact contractor/package/path assignment is recorded, so technical execution must not begin until the Project Manager records one. No Foundation work package has objective start or completion evidence. A concurrent master commit landed during this assessment and introduced a confirmed repository-monitor regression; the assessment baseline was advanced to that new head. The evidence register still contains eight planned placeholders, all classified `UNKNOWN`, and records zero satisfied evidence gates. The `GO` was formally revalidated by the project owner on 2026-09-07 and permits governed Foundation execution; it does not prove that Azure resources, application infrastructure or runtime capabilities exist.
 
 The stated application repository, `HarleyJoker/ubuntu-capital-platform`, returned `404 Not Found` through the connected GitHub installation during this assessment (`SRC-018` in `docs/00-context/source-inventory.md`). This dated access outcome does not prove repository absence; its current branch, commit, source contents and runtime behaviour remain unavailable. Historical React/Vite observations are retained as supporting evidence only and cannot be promoted to current implementation status.
 
@@ -84,16 +84,16 @@ Historical snapshot labels are not counted as current implementation evidence.
 
 | Work package | Executable now? | Objective evidence gate | Current defensible status |
 |---|---:|---:|---|
-| `WP-AZ-001` Azure baseline | Yes — revalidated 2026-09-07 | Not satisfied | `READY_FOR_DEVELOPMENT`; execution gate `OPEN_FOR_AUTHORISED_EXECUTION`; implementation `UNKNOWN` |
-| `WP-AZ-002` Static Web Apps | Yes — revalidated 2026-09-07 | Not satisfied | `READY_FOR_DEVELOPMENT`; execution gate `OPEN_FOR_AUTHORISED_EXECUTION`; implementation `UNKNOWN` |
-| `WP-AZ-003` Entra External ID | Yes — revalidated 2026-09-07 | Not satisfied | `READY_FOR_DEVELOPMENT`; execution gate `OPEN_FOR_AUTHORISED_EXECUTION`; implementation `UNKNOWN` |
-| `WP-AZ-004` Protected Functions API | Yes — revalidated 2026-09-07 | Not satisfied | `READY_FOR_DEVELOPMENT`; execution gate `OPEN_FOR_AUTHORISED_EXECUTION`; implementation `UNKNOWN` |
-| `WP-AZ-005` Azure SQL | Yes — revalidated 2026-09-07 | Not satisfied | `READY_FOR_DEVELOPMENT`; execution gate `OPEN_FOR_AUTHORISED_EXECUTION`; implementation `UNKNOWN` |
-| `WP-AZ-006` Key Vault / Managed Identity | Yes — revalidated 2026-09-07 | Not satisfied | `READY_FOR_DEVELOPMENT`; execution gate `OPEN_FOR_AUTHORISED_EXECUTION`; implementation `UNKNOWN` |
-| `WP-AZ-007` Application Insights / Monitor | Yes — revalidated 2026-09-07 | Not satisfied | `READY_FOR_DEVELOPMENT`; execution gate `OPEN_FOR_AUTHORISED_EXECUTION`; implementation `UNKNOWN` |
-| `WP-AZ-008` IaC and CI/CD | Yes — revalidated 2026-09-07 | Not satisfied | `READY_FOR_DEVELOPMENT`; execution gate `OPEN_FOR_AUTHORISED_EXECUTION`; implementation `UNKNOWN` |
+| `WP-AZ-001` Azure baseline | No — scope approved; assignment missing | Not satisfied | `READY_FOR_DEVELOPMENT`; contractor start `BLOCKED_PENDING_ASSIGNMENT`; implementation `UNKNOWN` |
+| `WP-AZ-002` Static Web Apps | No — scope approved; assignment missing | Not satisfied | `READY_FOR_DEVELOPMENT`; contractor start `BLOCKED_PENDING_ASSIGNMENT`; implementation `UNKNOWN` |
+| `WP-AZ-003` Entra External ID | No — scope approved; assignment missing | Not satisfied | `READY_FOR_DEVELOPMENT`; contractor start `BLOCKED_PENDING_ASSIGNMENT`; implementation `UNKNOWN` |
+| `WP-AZ-004` Protected Functions API | No — scope approved; assignment missing | Not satisfied | `READY_FOR_DEVELOPMENT`; contractor start `BLOCKED_PENDING_ASSIGNMENT`; implementation `UNKNOWN` |
+| `WP-AZ-005` Azure SQL | No — scope approved; assignment missing | Not satisfied | `READY_FOR_DEVELOPMENT`; contractor start `BLOCKED_PENDING_ASSIGNMENT`; implementation `UNKNOWN` |
+| `WP-AZ-006` Key Vault / Managed Identity | No — scope approved; assignment missing | Not satisfied | `READY_FOR_DEVELOPMENT`; contractor start `BLOCKED_PENDING_ASSIGNMENT`; implementation `UNKNOWN` |
+| `WP-AZ-007` Application Insights / Monitor | No — scope approved; assignment missing | Not satisfied | `READY_FOR_DEVELOPMENT`; contractor start `BLOCKED_PENDING_ASSIGNMENT`; implementation `UNKNOWN` |
+| `WP-AZ-008` IaC and CI/CD | No — scope approved; assignment missing | Not satisfied | `READY_FOR_DEVELOPMENT`; contractor start `BLOCKED_PENDING_ASSIGNMENT`; implementation `UNKNOWN` |
 
-The effective execution gate is `OPEN_FOR_AUTHORISED_EXECUTION`. The project owner formally revalidated the bounded GO on 2026-09-07. Each work package retains `READY_FOR_DEVELOPMENT` until a recorded start or equivalent realised execution evidence supports transition to `IN_DEVELOPMENT`; promotion to `COMPONENT_COMPLETE` remains prohibited until the package's required evidence is accepted.
+The scope gate is `OPEN_FOR_AUTHORISED_EXECUTION`; contractor start is `BLOCKED_PENDING_ASSIGNMENT`. The project owner formally revalidated the bounded GO on 2026-09-07, but no exact executor/package/path assignment is recorded. Each work package retains `READY_FOR_DEVELOPMENT` until objective start evidence is accepted and canonically reconciled through a separate `PROJECT_MANAGER_GOVERNANCE` change; promotion to `COMPONENT_COMPLETE` remains prohibited until the package's full evidence gate is accepted.
 
 ## 6. Business use-case coverage
 
@@ -178,7 +178,7 @@ No application feature is promoted from historical evidence. The prior React/Vit
 
 At the pinned `e1bbbe2fa5bcb3570271ac3bdbcba5b3072ad256` baseline, the executive summary and older Solution Architecture audit contained pre-GO wording that described Foundation execution as blocked and `OQ-016` as open. This change reconciles the live documentation by updating the executive summary and adding a current-status amendment to the audit while preserving the original dated findings as historical evidence.
 
-The `docs/02-architecture/` tree also remains an explicitly unresolved canonical-structure exception under `plan.md`.
+The former `docs/02-architecture/` canonical-structure exception is resolved by the project-owner-authorised amendment that adds the existing architecture tree to `plan.md` under `SRC-021`. This resolves structure only, not the architecture artifacts' substantive evidence or approval gaps.
 
 ## 9. Gate decision
 
@@ -186,7 +186,7 @@ The `docs/02-architecture/` tree also remains an explicitly unresolved canonical
 
 **Decision:** bounded `GO` formally revalidated; effective execution gate is `OPEN_FOR_AUTHORISED_EXECUTION` for `WP-AZ-001` through `WP-AZ-008`.
 
-The 2026-09-07 formal review makes the recorded decision executable without broadening it. Foundation work may begin in governed dependency order; no work package may be promoted without objective evidence.
+The 2026-09-07 formal review makes the bounded scope assignable without broadening it. Foundation work may begin in governed dependency order only after the Project Manager records an exact contractor/package/path assignment; no work package may be promoted without accepted and canonically reconciled objective evidence.
 
 ### Foundational product capabilities and first business slice
 
