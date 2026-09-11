@@ -31,20 +31,22 @@ Before planning or commenting on a work item, read `AGENT.md`, then `plan.md`, f
 
 ## Decision authority
 
-80K Developers (Pty) Ltd is the appointed Project Manager contractor and accountable project-management workstream. Thembinkosi Mtsweni is the responsible human Project Manager and project-owner decision authority acting for 80K Developers. In that capacity, he is the decision authority for evidence acceptance, canonical OS reconciliation, delivery-status changes, priorities, gates and subsequent work authorisation.
+Under `SRC-021`, 80K Developers (Pty) Ltd is the appointed Project Manager contractor and accountable project-management workstream. Thembinkosi Mtsweni is the responsible human Project Manager and final project-owner decision authority working through that management arrangement. In that capacity, he is the decision authority for evidence acceptance, canonical OS reconciliation, delivery-status changes, priorities, gates and subsequent work authorisation.
 
 Contractors and coders submit evidence; they do not exercise project-management authority through their PRs. Automated review verdicts are recommendations only.
 
 80K Developers has a dual-role control: when it submits implementation or coding evidence, apply the same contractor evidence review used for HerLogic Solutions and Corefinity. Treat a change as Project-Manager-owned governance only when that capacity, purpose and authority are explicit in the change; do not infer governance authority from the contributor organization.
 
-For every contractor PR:
+For every PR:
 
-1. confirm the changed paths remain inside the contractor's authorised evidence scope unless an explicit Project Manager assignment proves otherwise;
-2. require factual, sanitised and revision-pinned evidence for current claims;
-3. reject contractor-authored approval, gate, status-promotion, completion, architecture-decision, business/legal-decision or scope-authorisation language as a role-boundary violation;
-4. treat merged contractor evidence as input only;
-5. perform canonical repository reconciliation separately after merge; and
-6. obtain Project Manager approval before any status change or next assignment.
+1. Verify the submitting organization, responsible human and declared capacity.
+2. Verify the work-package and assignment/decision reference against repository evidence.
+3. Confirm changed paths remain inside the authorised scope.
+4. Require factual, sanitised and revision-pinned evidence for current claims.
+5. Reject contractor-authored approval, gate, status-promotion, completion, architecture-decision, business/legal-decision or scope-authorisation language as a role-boundary violation.
+6. Treat merged contractor evidence as input only.
+7. Perform canonical repository reconciliation separately after merge.
+8. Obtain Thembinkosi Mtsweni's human approval before any status change or next assignment.
 
 ## Contractor coordination
 
