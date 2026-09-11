@@ -1,6 +1,6 @@
 # Ubuntu Capital OS — Foundation Slice A Governance Reconciliation
 
-> **Current Foundation decision — 2026-09-07:** Thembinkosi Mtsweni completed the formal post-prerequisite readiness review and revalidated `GO-2026-09-05-FSA-001`. The scope gate for `WP-AZ-001` through `WP-AZ-008` is `OPEN_FOR_AUTHORISED_EXECUTION` in Azure DEV/MVP. This approves the bounded scope for assignment; technical start also requires a durable Project Manager contractor/package/path assignment. Implementation, completion, business-use-case and production claims remain evidence-gated. Source: `SRC-020`.
+> **Current Foundation decision — 2026-09-07:** Thembinkosi Mtsweni completed the formal post-prerequisite readiness review and revalidated `GO-2026-09-05-FSA-001`. The scope gate for `WP-AZ-001` through `WP-AZ-008` is `OPEN_FOR_AUTHORISED_EXECUTION` in Azure DEV/MVP. This defines the bounded project boundary; contractors may self-select and must declare package/path scope in the PR. Implementation, completion, business-use-case and production claims remain evidence-gated. Source: `SRC-020`.
 
 **Status:** `ANALYSIS_IN_PROGRESS`  
 **Evidence classification:** `CONFIRMED`  
@@ -34,7 +34,7 @@ The traceability terms in this document use the current two-stage model from `pl
 
 ## 2026-09-05 execution amendment
 
-`GO-2026-09-05-FSA-001` is the current scope authority for `WP-AZ-001` through `WP-AZ-008` after the project-owner formal review recorded by `SRC-020`. The scope gate is `OPEN_FOR_AUTHORISED_EXECUTION`, but no executor/package/path assignment is recorded; contractor start is therefore `BLOCKED_PENDING_ASSIGNMENT`. Historical undefined-authority, open-`OQ-016`, and interim pending-revalidation wording is superseded. Evidence gates and all non-waivable boundaries remain in force.
+`GO-2026-09-05-FSA-001` is the current scope authority for `WP-AZ-001` through `WP-AZ-008` after the project-owner formal review recorded by `SRC-020`. The scope gate is `OPEN_FOR_AUTHORISED_EXECUTION`, but no contractor/package/path declaration is recorded; contractor start is therefore `OPEN_FOR_SELF_SELECTION`. Historical undefined-authority, open-`OQ-016`, and interim pending-revalidation wording is superseded. Evidence gates and all non-waivable boundaries remain in force.
 
 ## 1. Purpose
 
@@ -152,8 +152,8 @@ The following rules remain controlling:
 The active sequence is:
 
 1. Preserve the completed 2026-09-07 prerequisite reconciliation, closed `OQ-016`, `SRC-021` authority model, and effective `GO-2026-09-05-FSA-001`; reopen readiness only for a material baseline, scope, risk, or non-waivable evidence change.
-2. The Project Manager records a durable assignment naming the contractor, exact permitted `WP-AZ-001` through `WP-AZ-008` subset, authorised repository paths or bounded contractor subdirectory, evidence purpose, and applicable external implementation/resource scope.
-3. The assigned contractor begins only that exact subset in governed dependency order.
+2. Contractors self-select the permitted `WP-AZ-001` through `WP-AZ-008` subset in governed dependency order and declare the contractor, exact package/path scope, evidence purpose, and applicable external implementation/resource scope in the PR.
+3. The self-selecting contractor begins only that exact subset in governed dependency order.
 4. Each technical contractor captures objective, sanitised, revision-pinned first-pass evidence only in its applicable contractor folder and submits it for review; merge records provenance only.
 5. The 80K Developers Project Manager workstream separately assesses merged evidence and, when accepted, reconciles canonical evidence-register, realised-traceability, and status references through a distinct `PROJECT_MANAGER_GOVERNANCE` change.
 6. Do not promote a package while a required realised hop or evidence gate is missing, and do not infer business-use-case completion from infrastructure completion.
