@@ -5,7 +5,7 @@
 **Workstream:** Azure cloud infrastructure and platform services  
 **Planning/package status:** `READY_FOR_DEVELOPMENT`  
 **Scope gate:** `OPEN_FOR_AUTHORISED_EXECUTION` for the bounded `WP-AZ-001` through `WP-AZ-008` Azure DEV/MVP scope  
-**Contractor start mode:** `OPEN_FOR_SELF_SELECTION`; HerLogic Solutions may choose any work and must declare its exact package/path scope in each PR  
+**Work-selection model:** contractor self-selection; no assignment or Project Manager pre-start record is required; each evidence PR documents the work selected  
 **Current delivery status:** `READY_FOR_DEVELOPMENT`; no accepted realised start or completion evidence recorded  
 **Broader/production readiness:** `NO-GO FOR UNRESTRICTED IMPLEMENTATION`
 
@@ -76,7 +76,7 @@ Therefore the infrastructure workstream must not be described as `COMPONENT_COMP
 
 ## Current bounded execution evidence gates
 
-The sequence below defines potential evidence gates, not a work allocation. HerLogic Solutions may begin its self-selected work within the bounded scope after declaring the exact subset, authorised repository paths or bounded contractor subdirectory, evidence purpose, and applicable external implementation/resource scope in its PR. A material scope, baseline, risk, or non-waivable evidence change requires renewed Project Manager review before affected work continues.
+The sequence below defines potential evidence gates, not a work allocation. HerLogic Solutions may begin any self-selected work within the bounded scope without assignment or a Project Manager pre-start record. Its evidence PR documents the selected subset, repository paths changed or bounded contractor subdirectory, evidence purpose, and applicable external implementation/resource scope. A material scope, baseline, risk, or non-waivable evidence change requires renewed Project Manager review before affected work continues.
 
 1. Record Azure resource inventory, environment ownership and RBAC.
 2. Configure budget/cost alerts.

@@ -93,7 +93,7 @@ Historical snapshot labels are not counted as current implementation evidence.
 | `WP-AZ-007` Application Insights / Monitor | Yes — scope open for self-selection | Not satisfied | `READY_FOR_DEVELOPMENT`; contractor start `OPEN_FOR_SELF_SELECTION`; implementation `UNKNOWN` |
 | `WP-AZ-008` IaC and CI/CD | Yes — scope open for self-selection | Not satisfied | `READY_FOR_DEVELOPMENT`; contractor start `OPEN_FOR_SELF_SELECTION`; implementation `UNKNOWN` |
 
-The scope gate is `OPEN_FOR_AUTHORISED_EXECUTION`; contractor start is `OPEN_FOR_SELF_SELECTION`. The project owner formally revalidated the bounded GO on 2026-09-07, but no exact contractor/package/path declaration is recorded. Each work package retains `READY_FOR_DEVELOPMENT` until objective start evidence is accepted and canonically reconciled through a separate `PROJECT_MANAGER_GOVERNANCE` change; promotion to `COMPONENT_COMPLETE` remains prohibited until the package's full evidence gate is accepted.
+The scope gate is `OPEN_FOR_AUTHORISED_EXECUTION`; contractors may self-select and begin in-scope work without assignment or a Project Manager pre-start record. The project owner formally revalidated the bounded GO on 2026-09-07. Each work package retains `READY_FOR_DEVELOPMENT` until objective start evidence is accepted and canonically reconciled through a separate `PROJECT_MANAGER_GOVERNANCE` change; promotion to `COMPONENT_COMPLETE` remains prohibited until the package's full evidence gate is accepted.
 
 ## 6. Business use-case coverage
 
@@ -209,7 +209,7 @@ Settlement, custody, binding investment, eligibility, NDA, valuation, tax, priva
 
 Completed prerequisite: the 2026-09-07 project-owner review accepted the bounded Foundation prerequisite reconciliation and revalidated `GO-2026-09-05-FSA-001`. Preserve rather than repeat that work unless material baseline, scope, risk, or non-waivable evidence changes.
 
-1. Contractors may self-select the exact `WP-AZ-001` through `WP-AZ-008` subset in governed dependency order and must declare it in the PR; source-dependent packages require a pinned application revision.
+1. Contractors may self-select and begin any `WP-AZ-001` through `WP-AZ-008` subset in governed dependency order without assignment or a Project Manager pre-start record; the evidence PR documents the selected subset, and source-dependent packages require a pinned application revision.
 2. Each technical contractor records objective, sanitised, revision-pinned first-pass evidence only under its applicable contractor folder and submits it for review.
 3. Merge contractor evidence as provenance only; merge is not acceptance or status promotion.
 4. The 80K Developers Project Manager workstream separately assesses merged evidence and, when accepted, updates `FSA-EV-001` through `FSA-EV-008`, realised traceability, and status through a distinct `PROJECT_MANAGER_GOVERNANCE` PR.

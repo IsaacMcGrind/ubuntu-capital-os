@@ -16,14 +16,14 @@ Supersession scope: replaces the interim `CLOSED_PENDING_REVALIDATION` state whi
 
 The Ubuntu Capital project owner is the final execution-authorising authority. Under `SRC-021`, 80K Developers (Pty) Ltd is the appointed Project Manager contractor and accountable project-management workstream, with Thembinkosi Mtsweni as the responsible human Project Manager and final project-owner decision authority.
 
-HerLogic Solutions and Corefinity may self-select work and contribute technical delivery or analysis evidence within the approved scope. They do not independently approve a gate, promote canonical status, accept their own evidence, change priorities or authorise subsequent work.
+HerLogic Solutions and Corefinity may self-select work and contribute technical delivery or analysis evidence within the approved scope. They do not independently approve a gate, promote canonical status, accept their own evidence, change priorities or project boundaries.
 
 The Ubuntu Capital project owner approved this bounded GO on 2026-09-05. On 2026-09-07, Thembinkosi Mtsweni completed the formal post-prerequisite readiness review, validated the prerequisite reconciliation, and explicitly confirmed that the Foundation work is ready to begin. This decision remains revalidated and effective. The `SRC-021` authority amendment governs future evidence acceptance and further-work decisions without retroactively invalidating this GO.
 
 ## 1.1 Formal post-prerequisite revalidation
 
 Decision: `GO` revalidated and effective.  
-Scope position: `WP-AZ-001` through `WP-AZ-008` are approved for governed execution within Azure DEV/MVP. Contractors may self-select work within the approved scope and must declare the executor, exact package subset, authorised paths or bounded contractor subdirectory, evidence purpose, and applicable external implementation/resource scope in the PR. This decision does not allocate work.  
+Scope position: `WP-AZ-001` through `WP-AZ-008` are approved for governed execution within Azure DEV/MVP. Contractors may self-select work within the approved scope and must document the submitting contractor, self-selected package subset, repository paths changed or bounded contractor subdirectory, evidence purpose, and applicable external implementation/resource scope in the evidence PR. This decision does not allocate work.  
 Evidence boundary: the decision authorises execution but does not claim that execution has started, that Azure resources exist, or that any implementation evidence gate is satisfied. Package status remains `READY_FOR_DEVELOPMENT` until objective start evidence is accepted and canonically reconciled through a separate `PROJECT_MANAGER_GOVERNANCE` change.
 
 ## 2. Conditions and boundaries
@@ -31,7 +31,7 @@ Evidence boundary: the decision authorises execution but does not claim that exe
 The following conditions are non-waivable:
 
 1. Scope remains strictly WP-AZ-001 through WP-AZ-008.
-2. Before contractor execution begins, the Project Manager must record the executor, exact package subset, authorised paths or bounded contractor subdirectory, evidence purpose, and applicable external implementation/resource scope.
+2. Contractors may self-select and begin any work inside this bounded scope without assignment or a Project Manager pre-start record; the contractor's evidence PR documents the selected package subset, repository paths changed or bounded contractor subdirectory, evidence purpose, and applicable external implementation/resource scope.
 3. Status promotion still requires objective evidence gates per work package.
 4. No business use case may be marked COMPLETE from Foundation work alone.
 5. Secrets, credentials, and tokens must not be committed to repository artifacts.
@@ -52,4 +52,4 @@ A contractor evidence merge does not itself accept evidence, promote status or a
 
 ## 4. Residual risk statement
 
-This revalidated GO authorises the bounded Foundation scope but does not allocate work. Execution may begin in governed dependency order only after a durable contractor self-selection declaration is recorded, with objective evidence submitted as it is produced and accepted separately before canonical reconciliation. It does not remove existing business/legal unknowns outside Foundation scope, prove implementation completion, authorise production, or authorise `WP-AZ-009` through `WP-AZ-012`.
+This revalidated GO authorises the bounded Foundation scope but does not allocate work. Execution may begin in governed dependency order without a work assignment or Project Manager pre-start record. The contractor documents its self-selected work and submits objective evidence in its evidence PR; evidence is accepted separately before canonical reconciliation. It does not remove existing business/legal unknowns outside Foundation scope, prove implementation completion, authorise production, or authorise `WP-AZ-009` through `WP-AZ-012`.

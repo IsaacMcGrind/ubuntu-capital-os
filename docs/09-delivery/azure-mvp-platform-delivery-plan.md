@@ -18,7 +18,7 @@ The foundation must prove deployability, authentication, protected backend execu
 
 `plan.md` remains the controlling implementation sequence. This Azure plan is a subordinate delivery plan and does not replace or close plan-required reconstruction outputs.
 
-`GO-2026-09-05-FSA-001` is the effective bounded scope authority for `WP-AZ-001` through `WP-AZ-008` after the 2026-09-07 formal project-owner review. It does not allocate work to any contractor. The governance chain remains `AGENT.md`, `plan.md`, and `docs/09-delivery/foundation-slice-a-governance-reconciliation.md`; contractor execution requires a complete contractor PR declaration, must follow governed dependency order, and all status promotions remain evidence-gated.
+`GO-2026-09-05-FSA-001` is the effective bounded scope authority for `WP-AZ-001` through `WP-AZ-008` after the 2026-09-07 formal project-owner review. It does not allocate work to any contractor. The governance chain remains `AGENT.md`, `plan.md`, and `docs/09-delivery/foundation-slice-a-governance-reconciliation.md`; contractor execution requires no allocation or Project Manager pre-start record and must follow governed dependency order; the resulting evidence PR requires a complete contractor declaration, and all status promotions remain evidence-gated.
 
 ## 2. Delivery sequence
 
@@ -246,7 +246,7 @@ Do not start or advance this package until Foundation Slice A is evidenced, the 
 
 Foundation Slice A consists of `WP-AZ-001` through `WP-AZ-008`.
 
-Foundation execution can begin only after the current pre-implementation scope gate is satisfied, a formal `GO` or explicitly scoped `CONDITIONAL_GO` authorises the applicable work, and the contractor declares its exact selected package/path scope and evidence purpose in the PR. After that, Foundation Slice A as a whole may be described as `COMPONENT_COMPLETE` only when:
+Foundation execution can begin after the pre-implementation scope gate is satisfied and a formal `GO` or explicitly scoped `CONDITIONAL_GO` defines the applicable project boundary. No contractor assignment or Project Manager pre-start record is required; the contractor's evidence PR documents its selected package/path scope and evidence purpose. After that, Foundation Slice A as a whole may be described as `COMPONENT_COMPLETE` only when:
 
 1. every Foundation work package has satisfied its own evidence gate and reached `COMPONENT_COMPLETE`;
 2. `WP-AZ-003` identity-foundation completion is not confused with completion of `UC-IAM-001`;
@@ -296,7 +296,7 @@ Under `SRC-021`, the repository records distinct responsibilities:
 - HerLogic Solutions: technical Azure cloud architecture, cost and infrastructure-delivery evidence;
 - Corefinity: technical architecture-analysis contribution evidence.
 
-Technical contractor provenance does not grant independent authority to accept evidence, change business/legal requirements, adopt architecture, promote status, approve gates or authorise subsequent work.
+Technical contractor provenance does not grant independent authority to accept evidence, change business/legal requirements, adopt architecture, promote status, approve gates or change project boundaries.
 
 ## 8. First-slice start and exit criteria
 

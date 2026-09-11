@@ -6,12 +6,12 @@
 - **Responsible human:**
 - **Declared capacity:** <!-- Choose exactly one: PROJECT_MANAGER_GOVERNANCE | CONTRACTOR_TECHNICAL_EVIDENCE -->
 - **Work-package / use-case IDs:**
-- **Decision or context reference:** <!-- Stable repository source, decision or approved work item; a PR description is not authority -->
-- **Authorised repository paths:**
+- **Decision or context reference:** <!-- Stable repository source, scope boundary or decision relevant to the work; this is not a work assignment -->
+- **Repository paths changed / contractor evidence directory:**
 
 ## Intended outcome and scope
 
-<!-- State the bounded outcome, dependencies and exclusions. -->
+<!-- State the self-selected outcome, affected project boundary, dependencies and exclusions. No work-assignment reference is required. -->
 
 ## Evidence
 
@@ -25,15 +25,15 @@
 
 ## Authority and status checks
 
-- [ ] The declared capacity is supported by the decision or context reference.
-- [ ] Changes remain inside the authorised work-package and path scope.
+- [ ] The declared capacity matches the contributor's role under `SRC-021`; no work assignment or Project Manager pre-start record is required.
+- [ ] Changes remain inside established project boundaries and the repository paths permitted for the declared capacity.
 - [ ] If capacity is `CONTRACTOR_TECHNICAL_EVIDENCE`, every repository-hosted first-pass evidence file is under the submitting contractor's existing folder and no canonical governance/status artifact is changed.
-- [ ] Every new file is covered by `SRC-021` and an explicit contractor self-selection declaration naming its exact path or bounded contractor subdirectory and evidence purpose, or by another specific project-owner approval.
+- [ ] A new contractor-evidence file is inside the submitting contractor's existing folder and its exact path or bounded subdirectory and evidence purpose are declared here; any new file outside that boundary has specific project-owner approval.
 - [ ] Current-state claims are factual, sanitised, reproducible and revision-pinned.
-- [ ] No contractor evidence attempts to approve a gate, accept itself, promote canonical status, declare completion, adopt architecture, change business/legal rules or authorise subsequent work.
+- [ ] No contractor evidence attempts to approve a gate, accept itself, promote canonical status, declare completion, adopt architecture, or change project, business or legal boundaries.
 - [ ] Any `PROJECT_MANAGER_GOVERNANCE` change is explicitly owned by the 80K Developers Project Manager workstream and is separate from technical evidence capture.
 - [ ] An 80K Developers technical submission uses `CONTRACTOR_TECHNICAL_EVIDENCE` and receives the same evidence review as other contractors.
-- [ ] Merging this PR will not be treated as automatic evidence acceptance, status promotion or authorisation of further work.
+- [ ] Merging this PR will not be treated as automatic evidence acceptance or status promotion.
 
 ## Sensitive-information check
 

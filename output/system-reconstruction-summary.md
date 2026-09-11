@@ -127,8 +127,8 @@ Do **not** restart Phase 0 or recreate canonical artifacts that already exist. `
 
 Execute the current queue in `plan.md`:
 
-1. require the Project Manager to record the contractor, exact permitted `WP-AZ-001` through `WP-AZ-008` subset, authorised repository paths or bounded contractor subdirectory, evidence purpose, and applicable external implementation/resource scope;
-2. allow the self-selecting contractor to begin only that exact subset in governed dependency order; source-dependent packages still require a pinned application branch and commit;
+1. allow any contractor to self-select and begin a `WP-AZ-001` through `WP-AZ-008` subset in governed dependency order without assignment or a Project Manager pre-start record; source-dependent packages still require a pinned application branch and commit;
+2. require the contractor's evidence PR to document the submitting contractor, selected package subset, repository paths changed or bounded contractor subdirectory, evidence purpose, and applicable external implementation/resource scope;
 3. require each technical contractor to capture objective, sanitised, revision-pinned first-pass implementation, test/run, deployment, and operational evidence only under its applicable `contractors/<contractor>/` folder;
 4. review and merge contractor evidence as provenance only;
 5. require the 80K Developers Project Manager workstream to separately assess merged evidence and, when accepted, link it into `docs/09-delivery/foundation-slice-a-evidence-register.md`, maintain realised traceability, and record any status change through a distinct `PROJECT_MANAGER_GOVERNANCE` PR;

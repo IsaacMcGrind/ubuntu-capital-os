@@ -19,11 +19,11 @@ The plan is the controlling implementation sequence for developers and autonomou
 
 ## 2.1 Contractor evidence and project-management workflow
 
-Under `SRC-021`, 80K Developers (Pty) Ltd is the appointed Project Manager contractor and accountable project-management workstream. Thembinkosi Mtsweni is the responsible human Project Manager and final project-owner decision authority working through that management arrangement. In that capacity, Thembinkosi Mtsweni retains authority to interpret evidence, accept or reject delivery claims, update canonical Ubuntu Capital OS artifacts and statuses, set priorities, approve gates, and authorise subsequent work.
+Under `SRC-021`, 80K Developers (Pty) Ltd is the appointed Project Manager contractor and accountable project-management workstream. Thembinkosi Mtsweni is the responsible human Project Manager and final project-owner decision authority working through that management arrangement. In that capacity, Thembinkosi Mtsweni retains authority to interpret evidence, accept or reject delivery claims, update canonical Ubuntu Capital OS artifacts and statuses, set priorities, and approve gates or project-boundary changes. This authority does not allocate work; contractors self-select.
 
 Contractors and coders must:
 
-- self-select and declare the exact work and evidence scope;
+- self-select and begin any work inside established project boundaries without assignment or a Project Manager pre-start record, then document the exact work and evidence scope in the PR;
 - keep all repository-hosted first-pass evidence under their existing `contractors/<contractor>/` directory; create a new evidence file only when the contractor self-selection declaration identifies its exact path or bounded contractor subdirectory and purpose; never modify canonical governance, status, decision, register, tracker, traceability, roadmap, plan, or summary artifacts in a `CONTRACTOR_TECHNICAL_EVIDENCE` change; use sanitised stable references in the contractor folder for approved external raw evidence;
 - record what was performed, by whom and when, validation results, limitations, unfinished work, blockers, dependencies, and decisions required;
 - avoid project-level approval, gate, status, completion, architecture, business, legal, or scope-authorisation statements.
@@ -513,16 +513,16 @@ Completed prerequisites—do not repeat them unless a material baseline, scope, 
 
 1. **Completed:** Phase 0–4 output validation, residual-gap classification, material P0/architecture/security/NFR closure or bounding, planned pre-start traceability reconciliation, and live-artifact alignment were accepted through the formal project-owner review recorded by `SRC-020`. The former `docs/02-architecture/` structure exception is resolved by the canonical-tree amendment in this plan under `SRC-021`.
 2. **Completed:** readiness-decision authority is defined by `SRC-021`, `OQ-016` is closed, and Thembinkosi Mtsweni is the final project-owner decision authority.
-3. **Completed:** the 2026-09-07 formal review revalidated `GO-2026-09-05-FSA-001`; the scope gate for `WP-AZ-001` through `WP-AZ-008` is `OPEN_FOR_AUTHORISED_EXECUTION` in Azure DEV/MVP; contractor start remains `OPEN_FOR_SELF_SELECTION` once the contractor declares its exact scope in the PR. Re-run readiness only if material scope, baseline, risk, or non-waivable evidence changes.
+3. **Completed:** the 2026-09-07 formal review revalidated `GO-2026-09-05-FSA-001`; the scope gate for `WP-AZ-001` through `WP-AZ-008` is `OPEN_FOR_AUTHORISED_EXECUTION` in Azure DEV/MVP; contractors may self-select and begin in-scope work without assignment or a Project Manager pre-start record; the evidence PR documents the exact work selected. Re-run readiness only if material scope, baseline, risk, or non-waivable evidence changes.
 
 Execute the current work next, in order:
 
-1. Contractors self-select any work within the repository's approved boundaries and declare the contractor, exact work-package/use-case scope, authorised repository paths or bounded contractor subdirectory, evidence purpose, and applicable external implementation/resource scope in the PR. The existing `GO` defines a project boundary; it does not allocate work.
-2. The self-selecting contractor begins only that exact subset in governed dependency order. Source-dependent work still requires a pinned application branch and commit.
+1. Contractors self-select and begin any work within the repository's approved boundaries without assignment or a Project Manager pre-start record. The existing `GO` defines a project boundary; it does not allocate work. Source-dependent work still requires a pinned application branch and commit.
+2. The contractor's evidence PR documents the submitting contractor, exact work-package/use-case scope selected, repository paths changed or bounded contractor subdirectory, evidence purpose, and applicable external implementation/resource scope.
 3. Each technical contractor records objective, sanitised, revision-pinned first-pass evidence only under its applicable `contractors/<contractor>/` folder; approved external raw evidence is represented by a sanitised stable reference there.
 4. Review and merge a contractor evidence PR as provenance only; merge does not accept evidence or change canonical status.
 5. The 80K Developers Project Manager workstream separately assesses the merged evidence and, when accepted, links it into `docs/09-delivery/foundation-slice-a-evidence-register.md`, updates realised traceability and records any status change through a distinct `PROJECT_MANAGER_GOVERNANCE` PR.
-6. An incomplete self-selection declaration makes the PR `Unverified` or `Changes required`. A missing required realised hop blocks work-package/use-case status promotion and acceptance; neither condition changes the scope-level GO.
+6. An incomplete evidence-PR declaration makes the PR `Unverified` or `Changes required`; it does not retroactively make the work assigned or unassigned. A missing required realised hop blocks work-package/use-case status promotion and acceptance; neither condition changes the scope-level GO.
 7. Keep `WP-AZ-009` through `WP-AZ-012` blocked until Foundation evidence and the separate Phase 5 / first-business-slice gate are satisfied.
 8. Continue regulated onboarding, NDA, settlement, custody, portfolio and production-hardening work only as their own evidence and dependency gates are satisfied.
 

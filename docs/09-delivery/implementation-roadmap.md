@@ -179,12 +179,12 @@ Operational telemetry produced by Foundation `WP-AZ-007` does not satisfy `UC-AU
 
 ## Immediate execution queue
 
-The queue follows the controlling `plan.md`. Existing canonical outputs were accepted as reconciled by the project owner during the formal review recorded on 2026-09-07, and the former architecture-tree structure exception is now resolved by the `plan.md` amendment under `SRC-021`. `GO-2026-09-05-FSA-001` is the effective bounded scope authority; the next executable action is a durable contractor self-selection declaration, not technical delivery.
+The queue follows the controlling `plan.md`. Existing canonical outputs were accepted as reconciled by the project owner during the formal review recorded on 2026-09-07, and the former architecture-tree structure exception is now resolved by the `plan.md` amendment under `SRC-021`. `GO-2026-09-05-FSA-001` is the effective bounded scope authority; the next executable action is technical delivery chosen by any contractor within that boundary, with the selected work documented in its evidence PR.
 
 Completed prerequisites—preserve rather than repeat: the project-owner review recorded by `SRC-020` accepted the Phase 0–4/residual-gap, P0/architecture/security/NFR, planned-traceability, live-artifact, readiness-authority and decision prerequisites for the bounded Foundation scope and revalidated `GO-2026-09-05-FSA-001` on 2026-09-07. Reopen that decision only for a material baseline, scope, risk, or non-waivable evidence change.
 
-1. The Project Manager records the contractor, exact authorised `WP-AZ-001` through `WP-AZ-008` subset, authorised repository paths or bounded contractor subdirectory, evidence purpose, and applicable external implementation/resource scope.
-2. The self-selecting contractor begins only that exact subset in governed dependency order; source-dependent packages still require a pinned application branch and commit.
+1. Any contractor may self-select and begin a `WP-AZ-001` through `WP-AZ-008` subset in governed dependency order without assignment or a Project Manager pre-start record; source-dependent packages still require a pinned application branch and commit.
+2. The contractor's evidence PR documents the submitting contractor, selected package subset, repository paths changed or bounded contractor subdirectory, evidence purpose, and applicable external implementation/resource scope.
 3. Each technical contractor captures objective, sanitised, revision-pinned first-pass evidence only under its applicable `contractors/<contractor>/` folder; approved external raw evidence is represented by a sanitised stable reference there.
 4. Review and merge contractor evidence as provenance only; merge is not acceptance or status promotion.
 5. The 80K Developers Project Manager workstream separately assesses merged evidence and, when accepted, reconciles it into the canonical Foundation evidence register, realised traceability, E2E tracker, and status records through a distinct `PROJECT_MANAGER_GOVERNANCE` PR.

@@ -32,7 +32,7 @@ Foundation Slice A does **not** make any Ubuntu Capital business use case `COMPL
 
 The following rules are controlling:
 
-1. `GO-2026-09-05-FSA-001` is the effective bounded scope authority for `WP-AZ-001` through `WP-AZ-008` after the 2026-09-07 formal review. Implementation may begin only after a durable contractor self-selection declaration identifies the executor, exact package subset, authorised paths, evidence purpose, and external implementation/resource scope.
+1. `GO-2026-09-05-FSA-001` is the effective bounded scope authority for `WP-AZ-001` through `WP-AZ-008` after the 2026-09-07 formal review. Any contractor may begin a self-selected package subset inside this boundary without assignment or a Project Manager pre-start record. The contractor's evidence PR must identify the submitting contractor, selected package subset, repository paths changed, evidence purpose, and external implementation/resource scope.
 2. Architecture selection is not implementation evidence.
 3. A work package advances only when its evidence gate is satisfied.
 4. No use case becomes `COMPLETE` without objective E2E evidence.
@@ -109,7 +109,7 @@ Recorded scope:
 - Azure cost-governance implementation;
 - cloud deployment support within approved architecture.
 
-HerLogic Solutions does not independently authorise execution, accept its own evidence, change legal/business rules, waive repository-integrity gates, promote canonical status or authorise subsequent work.
+HerLogic Solutions does not independently authorise execution, accept its own evidence, change legal/business rules, waive repository-integrity gates, promote canonical status or change project boundaries.
 
 ### Corefinity — technical architecture-analysis contractor
 
