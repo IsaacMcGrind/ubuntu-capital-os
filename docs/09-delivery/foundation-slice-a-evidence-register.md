@@ -1,11 +1,11 @@
 # Ubuntu Capital OS — Foundation Slice A Evidence Register
 
-> **Current Foundation decision — 2026-09-07:** Thembinkosi Mtsweni completed the formal post-prerequisite readiness review and revalidated `GO-2026-09-05-FSA-001`. The scope gate for `WP-AZ-001` through `WP-AZ-008` is `OPEN_FOR_AUTHORISED_EXECUTION` in Azure DEV/MVP. This approves the bounded scope for assignment; technical start also requires a durable Project Manager contractor/package/path assignment. Implementation, completion, business-use-case and production claims remain evidence-gated. Source: `SRC-020`.
+> **Current Foundation decision — 2026-09-07:** Thembinkosi Mtsweni completed the formal post-prerequisite readiness review and revalidated `GO-2026-09-05-FSA-001`. The scope gate for `WP-AZ-001` through `WP-AZ-008` is `OPEN_FOR_AUTHORISED_EXECUTION` in Azure DEV/MVP. This approves the bounded scope for contractor self-selection; it does not allocate work. Implementation, completion, business-use-case and production claims remain evidence-gated. Source: `SRC-020`.
 
 **Scope:** `WP-AZ-001` through `WP-AZ-008`  
 **Delivery package status:** `READY_FOR_DEVELOPMENT`  
 **Scope gate:** `OPEN_FOR_AUTHORISED_EXECUTION`; `GO-2026-09-05-FSA-001` was revalidated on 2026-09-07  
-**Contractor start mode:** `BLOCKED_PENDING_ASSIGNMENT`; no exact executor/package/path assignment is recorded  
+**Contractor start mode:** `OPEN_FOR_SELF_SELECTION`; no contractor selection declaration is recorded yet  
 **Execution package:** `docs/09-delivery/foundation-slice-a-execution-package.md`  
 **Governance reconciliation:** `docs/09-delivery/foundation-slice-a-governance-reconciliation.md`  
 **Current readiness decision:** `docs/09-delivery/foundation-slice-a-go-decision-2026-09-05.md`
@@ -104,7 +104,7 @@ Required before `COMPONENT_COMPLETE`:
 Required before `COMPONENT_COMPLETE`:
 - [ ] Key Vault inventory with sensitive values redacted;
 - [ ] Managed Identity evidence where supported;
-- [ ] least-privilege access assignment evidence;
+- [ ] least-privilege access evidence;
 - [ ] deployed runtime access test;
 - [ ] confirmation that client/repository code contains no required backend secrets.
 
@@ -139,14 +139,14 @@ Required before `COMPONENT_COMPLETE`:
 
 | Work package | Recorded delivery status | Contractor start mode | Evidence gate satisfied? | Evidence IDs | Notes |
 |---|---|---|---:|---|---|
-| WP-AZ-001 | `READY_FOR_DEVELOPMENT` | `BLOCKED_PENDING_ASSIGNMENT` | No | FSA-EV-001 | Scope available for self-selection; no accepted start evidence |
-| WP-AZ-002 | `READY_FOR_DEVELOPMENT` | `BLOCKED_PENDING_ASSIGNMENT` | No | FSA-EV-002 | Scope available for self-selection; no accepted start evidence |
-| WP-AZ-003 | `READY_FOR_DEVELOPMENT` | `BLOCKED_PENDING_ASSIGNMENT` | No | FSA-EV-003 | Scope available for self-selection; no accepted start evidence; UC-IAM-001 remains independently governed |
-| WP-AZ-004 | `READY_FOR_DEVELOPMENT` | `BLOCKED_PENDING_ASSIGNMENT` | No | FSA-EV-004 | Scope available for self-selection; no accepted start evidence |
-| WP-AZ-005 | `READY_FOR_DEVELOPMENT` | `BLOCKED_PENDING_ASSIGNMENT` | No | FSA-EV-005 | Scope available for self-selection; no accepted start evidence |
-| WP-AZ-006 | `READY_FOR_DEVELOPMENT` | `BLOCKED_PENDING_ASSIGNMENT` | No | FSA-EV-006 | Scope available for self-selection; no accepted start evidence |
-| WP-AZ-007 | `READY_FOR_DEVELOPMENT` | `BLOCKED_PENDING_ASSIGNMENT` | No | FSA-EV-007 | Scope available for self-selection; no accepted start evidence; telemetry remains distinct from business audit |
-| WP-AZ-008 | `READY_FOR_DEVELOPMENT` | `BLOCKED_PENDING_ASSIGNMENT` | No | FSA-EV-008 | Scope available for self-selection; no accepted start evidence; reproducibility evidence remains required |
+| WP-AZ-001 | `READY_FOR_DEVELOPMENT` | `OPEN_FOR_SELF_SELECTION` | No | FSA-EV-001 | Scope available for self-selection; no accepted start evidence |
+| WP-AZ-002 | `READY_FOR_DEVELOPMENT` | `OPEN_FOR_SELF_SELECTION` | No | FSA-EV-002 | Scope available for self-selection; no accepted start evidence |
+| WP-AZ-003 | `READY_FOR_DEVELOPMENT` | `OPEN_FOR_SELF_SELECTION` | No | FSA-EV-003 | Scope available for self-selection; no accepted start evidence; UC-IAM-001 remains independently governed |
+| WP-AZ-004 | `READY_FOR_DEVELOPMENT` | `OPEN_FOR_SELF_SELECTION` | No | FSA-EV-004 | Scope available for self-selection; no accepted start evidence |
+| WP-AZ-005 | `READY_FOR_DEVELOPMENT` | `OPEN_FOR_SELF_SELECTION` | No | FSA-EV-005 | Scope available for self-selection; no accepted start evidence |
+| WP-AZ-006 | `READY_FOR_DEVELOPMENT` | `OPEN_FOR_SELF_SELECTION` | No | FSA-EV-006 | Scope available for self-selection; no accepted start evidence |
+| WP-AZ-007 | `READY_FOR_DEVELOPMENT` | `OPEN_FOR_SELF_SELECTION` | No | FSA-EV-007 | Scope available for self-selection; no accepted start evidence; telemetry remains distinct from business audit |
+| WP-AZ-008 | `READY_FOR_DEVELOPMENT` | `OPEN_FOR_SELF_SELECTION` | No | FSA-EV-008 | Scope available for self-selection; no accepted start evidence; reproducibility evidence remains required |
 
 **Foundation Slice A package:** `READY_FOR_DEVELOPMENT`.  
-**Foundation Slice A scope gate:** `OPEN_FOR_AUTHORISED_EXECUTION` — `GO-2026-09-05-FSA-001` was revalidated by the project owner on 2026-09-07 for `WP-AZ-001` through `WP-AZ-008`. **Contractor start mode:** `BLOCKED_PENDING_ASSIGNMENT`. The packages remain `READY_FOR_DEVELOPMENT`; objective start evidence must be accepted and canonically reconciled before transition. All eight evidence gates remain unsatisfied, and no infrastructure implementation completion is claimed.
+**Foundation Slice A scope gate:** `OPEN_FOR_AUTHORISED_EXECUTION` — `GO-2026-09-05-FSA-001` was revalidated by the project owner on 2026-09-07 for `WP-AZ-001` through `WP-AZ-008`. **Contractor start mode:** `OPEN_FOR_SELF_SELECTION`. The packages remain `READY_FOR_DEVELOPMENT`; objective start evidence must be accepted and canonically reconciled before transition. All eight evidence gates remain unsatisfied, and no infrastructure implementation completion is claimed.
