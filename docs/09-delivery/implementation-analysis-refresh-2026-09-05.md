@@ -10,7 +10,7 @@
 **Evidence branch:** `master`  
 **Evidence commit:** `e1bbbe2fa5bcb3570271ac3bdbcba5b3072ad256`  
 **Controlling instructions:** `.agent.md`, `AGENT.md`, `plan.md`  
-**Current Foundation decision:** `GO-2026-09-05-FSA-001` — revalidated and effective; `OPEN_FOR_AUTHORISED_EXECUTION`  
+**Current Foundation decision:** `GO-2026-09-05-FSA-001` — revalidated and effective; scope gate `OPEN_FOR_AUTHORISED_EXECUTION`; contractor start `BLOCKED_PENDING_ASSIGNMENT`  
 **Overall implementation assessment:** `PARTIALLY_READY`  
 **Production readiness:** `NOT_READY`
 
@@ -184,7 +184,7 @@ The former `docs/02-architecture/` canonical-structure exception is resolved by 
 
 ### Foundation Slice A
 
-**Decision:** bounded `GO` formally revalidated; effective execution gate is `OPEN_FOR_AUTHORISED_EXECUTION` for `WP-AZ-001` through `WP-AZ-008`.
+**Decision:** bounded `GO` formally revalidated; scope gate is `OPEN_FOR_AUTHORISED_EXECUTION` for `WP-AZ-001` through `WP-AZ-008`, while contractor start is `BLOCKED_PENDING_ASSIGNMENT`.
 
 The 2026-09-07 formal review makes the bounded scope assignable without broadening it. Foundation work may begin in governed dependency order only after the Project Manager records an exact contractor/package/path assignment; no work package may be promoted without accepted and canonically reconciled objective evidence.
 
