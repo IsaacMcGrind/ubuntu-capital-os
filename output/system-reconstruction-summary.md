@@ -115,7 +115,7 @@ The supplied context supports an investor-facing marketplace and portfolio model
 
 **Foundation Slice A:** scope gate `OPEN_FOR_AUTHORISED_EXECUTION` for `WP-AZ-001` through `WP-AZ-008`; contractor start `OPEN_FOR_SELF_SELECTION`; package status `READY_FOR_DEVELOPMENT`; 0 of 8 objective evidence gates satisfied.
 
-The effective decision is `GO-2026-09-05-FSA-001`, limited to Foundation work packages `WP-AZ-001` through `WP-AZ-008` in Azure DEV/MVP. It authorises the bounded scope but does not assign an executor or prove implementation: the Foundation evidence register still records 0 of 8 objective evidence gates satisfied. No business use case is promoted by this decision, and `WP-AZ-009` through `WP-AZ-012` remain blocked by their separate gates.
+The effective decision is `GO-2026-09-05-FSA-001`, limited to Foundation work packages `WP-AZ-001` through `WP-AZ-008` in Azure DEV/MVP. It authorises the bounded scope but does not allocate work or prove implementation: the Foundation evidence register still records 0 of 8 objective evidence gates satisfied. No business use case is promoted by this decision, and `WP-AZ-009` through `WP-AZ-012` remain blocked by their separate gates.
 
 **First business slice execution:** `BLOCKED_BY_CONTEXT`.
 
