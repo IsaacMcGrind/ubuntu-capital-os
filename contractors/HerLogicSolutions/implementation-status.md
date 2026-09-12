@@ -4,8 +4,10 @@
 **Gate reconciliation date:** 2026-09-04  
 **Workstream:** Azure cloud infrastructure and platform services  
 **Planning/package status:** `READY_FOR_DEVELOPMENT`  
-**Execution status:** `BLOCKED_BY_CONTEXT`  
-**Current readiness position:** `NO-GO FOR UNRESTRICTED IMPLEMENTATION`
+**Scope gate:** `OPEN_FOR_AUTHORISED_EXECUTION` for the bounded `WP-AZ-001` through `WP-AZ-008` Azure DEV/MVP scope  
+**Work-selection model:** contractor self-selection; no assignment or Project Manager pre-start record is required; each evidence PR documents the work selected  
+**Current delivery status:** `READY_FOR_DEVELOPMENT`; no accepted realised start or completion evidence recorded  
+**Broader/production readiness:** `NO-GO FOR UNRESTRICTED IMPLEMENTATION`
 
 ## Scope
 
@@ -70,13 +72,11 @@ Therefore the infrastructure workstream must not be described as `COMPONENT_COMP
 
 ## Current execution boundary
 
-`READY_FOR_DEVELOPMENT` means the delivery packages and evidence gates are defined; it does **not** authorize implementation. This contractor workstream remains `BLOCKED_BY_CONTEXT` under `AGENT.md`, the controlling `plan.md`, `docs/09-delivery/foundation-slice-a-governance-reconciliation.md`, and `docs/09-delivery/pre-implementation-gate-reassessment-2026-09-03.md`.
+`READY_FOR_DEVELOPMENT` remains the package status until objective start evidence is accepted; it does not prove implementation. `OQ-016` is closed, `SRC-021` defines the authority model, and the project-owner review recorded by `SRC-020` revalidated `GO-2026-09-05-FSA-001`. HerLogic Solutions may self-select any subset of `WP-AZ-001` through `WP-AZ-008` and must declare the selected package/path scope in each PR. Self-selection does not approve status, completion, production or broader work, and all work must comply with `AGENT.md`, the controlling `plan.md`, and non-waivable security, traceability, validation, and evidence gates. Production, unrestricted implementation, and `WP-AZ-009` through `WP-AZ-012` remain unauthorised.
 
-No `WP-AZ-001` through `WP-AZ-008` work may start or advance until `OQ-016` is resolved in controlling governance and an authorised readiness decision records `GO` or an explicitly scoped `CONDITIONAL_GO` for the exact work-package scope without waiving repository-integrity, legal, regulatory, business, security, NFR, traceability, or validation conditions. While blockers remain, `NO_GO` is the effective non-authorising outcome.
+## Current bounded execution evidence gates
 
-## Next evidence gates after authorisation
-
-The sequence below is executable only for the exact scope authorised by that readiness decision. Until then it is a future evidence plan, not an instruction to provision, deploy, configure, or integrate Azure resources.
+The sequence below defines potential evidence gates, not a work allocation. HerLogic Solutions may begin any self-selected work within the bounded scope without assignment or a Project Manager pre-start record. Its evidence PR documents the selected subset, repository paths changed or bounded contractor subdirectory, evidence purpose, and applicable external implementation/resource scope. A material scope, baseline, risk, or non-waivable evidence change requires renewed Project Manager review before affected work continues.
 
 1. Record Azure resource inventory, environment ownership and RBAC.
 2. Configure budget/cost alerts.
@@ -86,7 +86,7 @@ The sequence below is executable only for the exact scope authorised by that rea
 6. Establish Azure SQL persistence with migration/integration-test evidence.
 7. Configure Key Vault and Managed Identity so secrets are not embedded in client/repository code.
 8. Capture Application Insights request/dependency/exception traces and Azure Monitor alert evidence.
-9. Link all deployment/test evidence into Ubuntu Capital OS delivery/traceability records.
+9. Record all repository-hosted first-pass deployment/test evidence only under `contractors/HerLogicSolutions/`. After review and merge as provenance, the 80K Developers Project Manager workstream separately assesses it and, when accepted, links it into canonical delivery/traceability records through a distinct `PROJECT_MANAGER_GOVERNANCE` PR.
 
 ## Learning objective
 
@@ -96,6 +96,6 @@ The workstream may continue to support practical HerLogic Solutions Azure upskil
 
 **Architecture contribution:** materially complete enough to guide MVP implementation.  
 **Infrastructure planning/package definition:** `READY_FOR_DEVELOPMENT`.  
-**Infrastructure execution:** `BLOCKED_BY_CONTEXT`; no Azure implementation is currently authorised.  
+**Infrastructure execution:** the bounded `WP-AZ-001` through `WP-AZ-008` scope is approved in Azure DEV/MVP, but HerLogic Solutions start is `OPEN_FOR_SELF_SELECTION`; package status remains `READY_FOR_DEVELOPMENT` until objective start evidence is accepted and canonically reconciled. Broader and production execution remain unauthorised.  
 **E2E delivery evidence:** not yet recorded.  
 **Authority to mark Ubuntu Capital use cases complete:** none; completion remains governed by Ubuntu Capital OS evidence gates.

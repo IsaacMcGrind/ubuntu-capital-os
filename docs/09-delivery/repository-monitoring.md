@@ -97,6 +97,19 @@ The monitor follows Ubuntu Capital OS evidence discipline:
 
 It does not automatically promote a use case or delivery status. A code, documentation, UI or contractor change is treated as evidence requiring reconciliation rather than proof of end-to-end completion.
 
+## External governance review controls
+
+The repository-native monitor described above is an informational workflow. It does not enforce GitHub merge protection and its scripts do not currently implement contractor-authorship, authorised-path, content-sanitisation or role-boundary classification checks.
+
+The required preventive control is a GitHub ruleset protecting the repository default branch (currently `master`) that requires pull requests, human approval of the latest revision, dismissal of stale approvals, resolution of review conversations, and protection from direct/force pushes. This repository does not independently prove that configuration is active; until verified through repository administration evidence, ruleset enforcement remains `UNKNOWN`.
+
+The intended external, read-only review configuration complements—but cannot replace—the ruleset:
+
+1. **Ubuntu Capital PR & Merge Watch** — intended schedule: 00:00 and 12:00 Africa/Johannesburg. Intended scope: review PRs, check the `SRC-021` contractor/Project Manager boundary, detect confirmed merges, and perform post-merge impact analysis. It is detective only and cannot block, approve, or merge.
+2. **Ubuntu Capital Weekly PM Review** — intended schedule: Friday 09:00 Africa/Johannesburg. Intended scope: perform an integrated repository assessment even when no merge occurred and propose canonical reconciliation that the 80K Developers Project Manager workstream may later raise through a separately authorised governance PR.
+
+External-task configuration and runtime state are outside this repository and remain `UNKNOWN` here unless durable verification evidence is linked. When configured, both reviews must treat 80K Developers technical evidence like other contractor evidence and require a declared capacity, decision/context reference, repository paths changed, revision-pinned evidence, validation, and sensitive-information checks. Their findings are analytical; Thembinkosi Mtsweni remains the responsible human and final project-owner decision authority.
+
 ## Integrity Checks
 
 The initial automated checks include:

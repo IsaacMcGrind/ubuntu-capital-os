@@ -22,9 +22,11 @@ Any Foundation delivery artifact that still points to `docs/09-delivery/foundati
 
 ## 1.1 Current status amendment — 2026-09-07
 
-Thembinkosi Mtsweni, as Ubuntu Capital project owner and final approving authority, completed the formal post-prerequisite readiness review and explicitly revalidated `GO-2026-09-05-FSA-001`. `OQ-016` is closed, readiness-decision authority is defined, and the effective gate for `WP-AZ-001` through `WP-AZ-008` is `OPEN_FOR_AUTHORISED_EXECUTION` in Azure DEV/MVP. Source: `SRC-020`.
+Thembinkosi Mtsweni, as Ubuntu Capital project owner and final approving authority, completed the formal post-prerequisite readiness review and explicitly revalidated `GO-2026-09-05-FSA-001`. `OQ-016` is closed, readiness-decision authority is defined, and the scope gate for `WP-AZ-001` through `WP-AZ-008` is `OPEN_FOR_AUTHORISED_EXECUTION` in Azure DEV/MVP. Contractors may self-select and begin in-scope work without assignment or a Project Manager pre-start record. Source: `SRC-020`.
 
-For current execution decisions, this amendment supersedes the historical `OQ-016`-open, authority-`UNKNOWN`, effective-`NO_GO`, and pre-revalidation queue statements retained in Sections 3, 4, 4.1 and 6. Those statements remain part of the dated assessment history and must not be treated as current blockers. The revalidated GO authorises governed start only: all eight implementation evidence gates remain unsatisfied, package status remains `READY_FOR_DEVELOPMENT` until start evidence is recorded, `WP-AZ-009` through `WP-AZ-012` remain separately blocked, and production remains unauthorised.
+For current execution decisions, this amendment supersedes the historical `OQ-016`-open, authority-`UNKNOWN`, effective-`NO_GO`, and pre-revalidation statements retained in Sections 3, 4 and 4.1. Those statements remain dated assessment history and must not be treated as current blockers. The revalidated GO defines the bounded scope without allocating work: all eight implementation evidence gates remain unsatisfied, contractor start is `OPEN_FOR_SELF_SELECTION`, package status remains `READY_FOR_DEVELOPMENT` until start evidence is accepted and canonically reconciled, `WP-AZ-009` through `WP-AZ-012` remain separately blocked, and production remains unauthorised.
+
+`SRC-021` subsequently establishes the ongoing management/evidence workflow: technical contractors keep repository-hosted first-pass evidence in their contractor folders; contractor evidence merges as provenance only; and the 80K Developers Project Manager workstream separately assesses accepted evidence and reconciles canonical records through a distinct `PROJECT_MANAGER_GOVERNANCE` PR. The same governance amendment adds the existing `docs/02-architecture/` tree to the canonical `plan.md` contract, resolving the former structure exception without treating its contents as approved or complete. It also distinguishes the scope-level GO from each contractor's later evidence-PR declaration; no work-allocation record is required.
 
 ## 2. Current repository-output presence
 
@@ -53,7 +55,7 @@ The following plan-required outputs are now present in the repository and must n
 
 The presence of these outputs is evidence of reconstruction progress only. It is not itself evidence that the relevant phase exit criteria are satisfied.
 
-## 3. Reassessed gate position
+## 3. Historical reassessed gate position at the 2026-09-03 baseline
 
 The evidence classification below applies to the **repository-state finding**, not to the underlying business rule or regulated behaviour. Each row is `CONFIRMED` because the stated current position is directly supported by repository artifacts, open-question/risk records, delivery evidence registers, or the current Solution Architecture audit. Where the underlying product behaviour remains inferred or unknown, this reassessment does not promote it to confirmed.
 
@@ -72,7 +74,7 @@ The evidence classification below applies to the **repository-state finding**, n
 | Business/legal readiness for first slice | `NOT_SATISFIED` | `CONFIRMED` | EOI meaning, eligibility/jurisdiction, NDA policy, operator authority and data ownership remain open. |
 | Readiness-decision authority | `NOT_SATISFIED` | `CONFIRMED` | Canonical open question `OQ-016` remains open: the repository does not yet define which approved role/person may issue an execution-authorising `GO` or `CONDITIONAL_GO`, so no such decision can currently open the gate. |
 
-## 4. Current Foundation decision
+## 4. Historical Foundation decision at the 2026-09-03 baseline
 
 **Decision: `NO-GO FOR UNRESTRICTED IMPLEMENTATION`**
 
@@ -97,9 +99,9 @@ A readiness review **must not issue `GO` or `CONDITIONAL_GO` for a scope whose r
 
 A `NO_GO` outcome is different: it is a non-authorising blocked-state finding and may be recorded or refreshed as soon as unresolved blockers are identified. Recording `NO_GO` does not require those blockers to be closed first and does not depend on resolving `OQ-016`; `OQ-016` must be resolved before `GO` or `CONDITIONAL_GO` can carry execution authority.
 
-### 4.1 Readiness decision authority and `CONDITIONAL_GO` controls
+### 4.1 Historical readiness-authority finding and continuing `CONDITIONAL_GO` controls
 
-**Current authority status: `UNKNOWN` (`OQ-016`).** No current repository artifact identifies an approved role or person with authority to issue an execution-authorising `GO` or `CONDITIONAL_GO`. Therefore, until `OQ-016` is resolved in controlling governance, `GO` and `CONDITIONAL_GO` are reporting labels only and **must not open the Foundation execution gate**. `NO_GO` remains the effective current decision.
+**Historical authority status at this assessment baseline: `UNKNOWN` (`OQ-016`) — superseded for current execution by `SRC-020` and `SRC-021`.** At the 2026-09-03 baseline no repository artifact identified an approved execution-authorising role/person, so `GO` and `CONDITIONAL_GO` could not then open the Foundation gate. The current bounded authority is recorded by the 2026-09-07 project-owner revalidation and the subsequent management model; the non-waivable decision controls below continue to apply to future or changed scope.
 
 Before a future `CONDITIONAL_GO` can authorise any Foundation work, the controlling governance must identify the approving authority and the decision record must include all of the following:
 
@@ -128,20 +130,19 @@ The following statements are obsolete and must not be used as current blockers:
 
 Those artifacts may still require completion, approval, correction or validation. The work is now **reconciliation and closure**, not initial creation.
 
-The `docs/02-architecture/` issue is different: the directory exists and is actively used, but its relationship to the canonical tree remains an explicit structural exception requiring disposition before the integrity gate can be closed.
+At this historical baseline, the `docs/02-architecture/` relationship was an unresolved structural exception. The current `plan.md` now includes the existing architecture tree under the project-owner-authorised `SRC-021` amendment, so that structural blocker is resolved; substantive architecture evidence and approval gaps remain governed separately.
 
 ## 6. Current execution sequence
 
-1. Validate the existing Phase 0–4 artifacts against their `plan.md` exit criteria and `AGENT.md` integrity rules.
-2. Produce an explicit residual-gaps register from that validation; do not reopen work that is already present and internally consistent.
-3. Disposition the `docs/02-architecture/` canonical-structure exception.
-4. Close the P0 business/legal/security/NFR, first-slice technical-contract and ADR gaps identified by the current Solution Architecture audit.
-5. Reconcile the **planned pre-start** chain for the proposed Foundation/first-slice scope as `source -> use case -> backlog -> architecture/design (where applicable) -> planned implementation target -> planned test/validation -> planned durable-evidence target -> planned tracker/status`, and update `docs/10-traceability/traceability-matrix.md` plus `docs/09-delivery/e2e-delivery-tracker.md` so both point to the same stable planned IDs/targets.
-6. Resolve `OQ-016` by defining and recording the readiness-decision approving authority and decision-control contract in controlling governance.
-7. While blockers remain, record or refresh a durable `NO_GO` outcome with the evaluated scope, reasons and evidence. Only when `OQ-016`, the required planned pre-start traceability, and all other non-waivable closure conditions for the proposed scope are satisfied may an execution-authorising `GO` or `CONDITIONAL_GO` be issued.
-8. Only after an effective `GO`, or a `CONDITIONAL_GO` that satisfies Section 4.1 without waiving any integrity stop condition, begin only the authorised Foundation work packages and capture objective evidence in `docs/09-delivery/foundation-slice-a-evidence-register.md`.
-9. During authorised delivery, populate and reconcile the realised chain `source -> use case -> backlog -> architecture/design (where applicable) -> implementation evidence -> test/run evidence -> durable evidence -> validation/status`; required realised hops govern status promotion, `COMPONENT_COMPLETE`, E2E readiness and acceptance rather than the start decision.
-10. Keep `WP-AZ-009` through `WP-AZ-012` blocked until Foundation evidence and the separate Phase 5 / first-business-slice gate are satisfied.
+Completed prerequisite: the project-owner review recorded by `SRC-020` accepted the bounded Foundation prerequisite reconciliation, closed `OQ-016`, and revalidated `GO-2026-09-05-FSA-001` on 2026-09-07. Reopen readiness only for a material baseline, scope, risk, or non-waivable evidence change.
+
+1. Contractors self-select and begin any `WP-AZ-001` through `WP-AZ-008` subset in governed dependency order without assignment or a Project Manager pre-start record.
+2. The contractor's evidence PR documents the submitting contractor, selected package/path scope, evidence purpose, and applicable external implementation/resource scope.
+3. Each technical contractor records objective, sanitised, revision-pinned first-pass evidence only under its applicable contractor folder; approved external raw evidence is represented by a sanitised stable reference there.
+4. Review and merge contractor evidence as provenance only.
+5. The 80K Developers Project Manager workstream separately assesses merged evidence and, when accepted, reconciles the canonical Foundation evidence register, realised chain, and status through a distinct `PROJECT_MANAGER_GOVERNANCE` PR.
+6. Required realised hops govern status promotion, `COMPONENT_COMPLETE`, E2E readiness, and acceptance rather than the already-completed bounded start decision.
+7. Keep `WP-AZ-009` through `WP-AZ-012` blocked until Foundation evidence and the separate Phase 5 / first-business-slice gate are satisfied.
 
 ## 7. Status boundary
 

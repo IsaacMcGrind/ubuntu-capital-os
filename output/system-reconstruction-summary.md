@@ -1,6 +1,6 @@
 # System Reconstruction Summary
 
-> **Current Foundation decision — 2026-09-07:** Thembinkosi Mtsweni completed the formal post-prerequisite readiness review and revalidated `GO-2026-09-05-FSA-001`. The execution gate for `WP-AZ-001` through `WP-AZ-008` is `OPEN_FOR_AUTHORISED_EXECUTION` in Azure DEV/MVP. This authorises governed start only; implementation, completion, business-use-case and production claims remain evidence-gated. Source: `SRC-020`.
+> **Current Foundation decision — 2026-09-07:** Thembinkosi Mtsweni completed the formal post-prerequisite readiness review and revalidated `GO-2026-09-05-FSA-001`. The scope gate for `WP-AZ-001` through `WP-AZ-008` is `OPEN_FOR_AUTHORISED_EXECUTION` in Azure DEV/MVP. This defines the bounded project boundary; contractors may self-select and must declare package/path scope in the PR. Implementation, completion, business-use-case and production claims remain evidence-gated. Source: `SRC-020`.
 
 ## 1. System Purpose
 
@@ -113,9 +113,9 @@ The supplied context supports an investor-facing marketplace and portfolio model
 
 **Architecture direction:** materially improved and usable with assumptions, but several architecture/security/NFR and ADR closures remain outstanding.
 
-**Foundation Slice A execution:** `OPEN_FOR_AUTHORISED_EXECUTION` for `WP-AZ-001` through `WP-AZ-008`; package status remains `READY_FOR_DEVELOPMENT`; 0 of 8 objective evidence gates satisfied.
+**Foundation Slice A:** scope gate `OPEN_FOR_AUTHORISED_EXECUTION` for `WP-AZ-001` through `WP-AZ-008`; contractor start `OPEN_FOR_SELF_SELECTION`; package status `READY_FOR_DEVELOPMENT`; 0 of 8 objective evidence gates satisfied.
 
-The effective decision is `GO-2026-09-05-FSA-001`, limited to Foundation work packages `WP-AZ-001` through `WP-AZ-008` in Azure DEV/MVP. It authorises governed execution but does not prove implementation: the Foundation evidence register still records 0 of 8 objective evidence gates satisfied. No business use case is promoted by this decision, and `WP-AZ-009` through `WP-AZ-012` remain blocked by their separate gates.
+The effective decision is `GO-2026-09-05-FSA-001`, limited to Foundation work packages `WP-AZ-001` through `WP-AZ-008` in Azure DEV/MVP. It authorises the bounded scope but does not allocate work or prove implementation: the Foundation evidence register still records 0 of 8 objective evidence gates satisfied. No business use case is promoted by this decision, and `WP-AZ-009` through `WP-AZ-012` remain blocked by their separate gates.
 
 **First business slice execution:** `BLOCKED_BY_CONTEXT`.
 
@@ -123,18 +123,17 @@ The discovery/non-binding-EOI concept remains the preferred first vertical slice
 
 ## 12. Recommended Next Action
 
-Do **not** restart Phase 0 or recreate canonical artifacts that already exist. Execute the current residual-closure queue in `plan.md`:
+Do **not** restart Phase 0 or recreate canonical artifacts that already exist. `SRC-020` records completion of the bounded Foundation prerequisite review and revalidation of `GO-2026-09-05-FSA-001`; reopen it only for a material baseline, scope, risk, or non-waivable evidence change.
 
-1. validate the existing Phase 0–4 outputs against their exit criteria and `AGENT.md` integrity rules, then classify residual gaps without recreating accepted artifacts;
-2. obtain authorised, revision-pinned access to the application source and capture its current lint, test, build, security and implementation evidence;
-3. close or formally bound the remaining P0 business/legal, permissions, data-ownership/state, first-slice technical-contract, architecture/security/NFR and ADR gaps;
-4. reconcile the pre-start planned traceability chain, structured data, links, stable IDs, counts, statuses, open questions and risks;
-5. reconcile this summary, `README.md`, the roadmap and all live delivery/gate artifacts, including formal disposition of the `docs/02-architecture/`, `docs/engineering-sessions/` and `output/pdf/` structure exceptions;
-6. preserve the defined readiness-decision authority and the completed 2026-09-07 formal review that explicitly revalidated `GO-2026-09-05-FSA-001`;
-7. begin the exact permitted `WP-AZ-001` through `WP-AZ-008` scope in governed dependency order under the effective GO; do not begin source-dependent packages such as `WP-AZ-002` and `WP-AZ-003` until the application branch and commit are pinned;
-8. capture objective implementation, test/run, deployment and operational evidence in `docs/09-delivery/foundation-slice-a-evidence-register.md`, and maintain the realised traceability chain as each package progresses;
-9. repair the repository-monitor path/import regression in a separate focused change and validate the repaired workflow at a pinned commit;
-10. keep `WP-AZ-009` through `WP-AZ-012` blocked until Foundation evidence, Phase 5 shared-capability exit criteria and first-slice integrity requirements reconcile.
+Execute the current queue in `plan.md`:
+
+1. allow any contractor to self-select and begin a `WP-AZ-001` through `WP-AZ-008` subset in governed dependency order without assignment or a Project Manager pre-start record; source-dependent packages still require a pinned application branch and commit;
+2. require the contractor's evidence PR to document the submitting contractor, selected package subset, repository paths changed or bounded contractor subdirectory, evidence purpose, and applicable external implementation/resource scope;
+3. require each technical contractor to capture objective, sanitised, revision-pinned first-pass implementation, test/run, deployment, and operational evidence only under its applicable `contractors/<contractor>/` folder;
+4. review and merge contractor evidence as provenance only;
+5. require the 80K Developers Project Manager workstream to separately assess merged evidence and, when accepted, link it into `docs/09-delivery/foundation-slice-a-evidence-register.md`, maintain realised traceability, and record any status change through a distinct `PROJECT_MANAGER_GOVERNANCE` PR;
+6. repair the repository-monitor path/import regression in a separate focused change and validate the repaired workflow at a pinned commit;
+7. keep `WP-AZ-009` through `WP-AZ-012` blocked until Foundation evidence, Phase 5 shared-capability exit criteria, and first-slice integrity requirements reconcile.
 
 No use case or `WP-AZ-*` package is promoted by this summary.
 

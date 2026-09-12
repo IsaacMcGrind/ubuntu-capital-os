@@ -15,7 +15,52 @@ The plan is the controlling implementation sequence for developers and autonomou
 5. Never mark a use case complete because code exists.
 6. Keep reconstruction requirements separate from future enhancements.
 7. Update the catalogue, backlog, tracker, traceability matrix, open questions, and summary after every completed phase.
-8. Record current implementation and contractor delivery evidence under `contractors/` without treating implementation provenance as proof of E2E completion.
+8. Record current implementation and contractor delivery evidence under `contractors/` without treating implementation provenance as proof of E2E completion, project approval, status promotion or authority to begin further work.
+
+## 2.1 Contractor evidence and project-management workflow
+
+Under `SRC-021`, 80K Developers (Pty) Ltd is the appointed Project Manager contractor and accountable project-management workstream. Thembinkosi Mtsweni is the responsible human Project Manager and final project-owner decision authority working through that management arrangement. In that capacity, Thembinkosi Mtsweni retains authority to interpret evidence, accept or reject delivery claims, update canonical Ubuntu Capital OS artifacts and statuses, set priorities, and approve gates or project-boundary changes. This authority does not allocate work; contractors self-select.
+
+Contractors and coders must:
+
+- self-select and begin any work inside established project boundaries without assignment or a Project Manager pre-start record, then document the exact work and evidence scope in the PR;
+- keep all repository-hosted first-pass evidence under their existing `contractors/<contractor>/` directory; create a new evidence file only when the contractor self-selection declaration identifies its exact path or bounded contractor subdirectory and purpose; never modify canonical governance, status, decision, register, tracker, traceability, roadmap, plan, or summary artifacts in a `CONTRACTOR_TECHNICAL_EVIDENCE` change; use sanitised stable references in the contractor folder for approved external raw evidence;
+- record what was performed, by whom and when, validation results, limitations, unfinished work, blockers, dependencies, and decisions required;
+- avoid project-level approval, gate, status, completion, architecture, business, legal, or scope-authorisation statements.
+
+Contractor evidence is not self-accepting. A merged evidence PR records provenance and observations only. It does not change a work package, use case, phase, gate, readiness, or completion state.
+
+Because 80K Developers may act both as Project Manager contractor and as an implementation/coding contractor, every submission must identify which capacity applies. 80K technical evidence remains subject to the same evidence-only contract and review as other contractor evidence. Project-management authority applies only to explicitly identified Project-Manager-owned governance work; it is not inferred from the contributor organization.
+
+Automated review may recommend `Candidate for human approval`, `Changes required`, `Blocked`, or `Unverified`, but those verdicts are analytical and cannot change repository authority or delivery status.
+
+After a contractor evidence PR is reviewed and merged as provenance, the Project Manager separately assesses the merged evidence and performs a repository-wide impact analysis. Where evidence is accepted, canonical OS updates must be made through a separate, explicitly identified `PROJECT_MANAGER_GOVERNANCE` change. Only the Project Manager may approve the subsequent-work authorisation or status transition.
+
+Required PR declaration:
+
+Every PR must complete the project-owner-approved `.github/pull_request_template.md` (`SRC-021`) and provide:
+
+- submitting organization and responsible human;
+- declared capacity: `PROJECT_MANAGER_GOVERNANCE` or `CONTRACTOR_TECHNICAL_EVIDENCE`;
+- selected work-package IDs and decision/context source reference;
+- repository paths changed or bounded contractor evidence directory;
+- revision-pinned evidence references;
+- validation performed and results;
+- what the evidence proves and does not prove;
+- sensitive-information confirmation.
+
+A declaration documents the contributor's capacity, self-selected work, changed paths and evidence; it is not a work assignment, pre-start approval, evidence acceptance or status decision. Reviewers verify the declared capacity, established project boundaries, contractor-folder rule, evidence quality and changed paths. Missing or unverifiable metadata makes the PR `Unverified` or `Changes required` for evidence quality only.
+
+Required sequence:
+
+1. Contractor self-selects and implements any work inside established project boundaries without assignment or a Project Manager pre-start record.
+2. Contractor records sanitised evidence in the contractor folder.
+3. The contractor's evidence PR documents the selected work, changed paths, evidence purpose, validation and limitations.
+4. The evidence PR is reviewed for factual support, reproducibility, safety, scope and role-boundary compliance.
+5. A contractor evidence PR may be merged after the required review; merge records contractor provenance only and does not constitute Project Manager evidence acceptance or a canonical status change.
+6. Project Manager separately assesses the merged evidence and analyses the integrated repository.
+7. If evidence is accepted, the Project Manager updates canonical OS records through an explicitly identified `PROJECT_MANAGER_GOVERNANCE` change.
+8. Thembinkosi Mtsweni decides canonical priorities, status, gates and project-boundary changes; none of those decisions allocate contractor work.
 
 ## 3. Required Repository Outputs
 
@@ -37,6 +82,15 @@ docs/
   02-actors-and-permissions/
     actors.md
     permissions-matrix.md
+  02-architecture/
+    architecture-decision-reconciliation-2026-08-29.md
+    azure-mvp-platform-decision.md
+    high-level-logical-architecture-v0.1.md
+    priority-use-case-architecture-map.md
+    system-boundary-view.md
+    ubuntu-capital-os-blueprint-sa-readiness-audit.md
+    ubuntu-capital-os-phase-1-mvp-blueprint-22-use-cases.pdf
+    use-cases/
   03-functional-domains/
     domains.md
     capability-map.md
@@ -97,7 +151,7 @@ output/
 
 The required-output tree is the canonical maintenance contract. File presence does not by itself satisfy a phase exit criterion. As of the 2026-09-03 reassessment, the canonical Phase 0–4 directories and major structured outputs materially exist; remaining work is therefore primarily validation, approval, reconciliation and gap closure rather than recreating those outputs from scratch.
 
-The working `docs/02-architecture/` tree is an explicit structure exception because it is actively used but not declared in the canonical tree above. It must be formally dispositioned before the repository-integrity gate can close.
+`docs/02-architecture/` is part of the canonical maintenance contract through this project-owner-authorised `PROJECT_MANAGER_GOVERNANCE` amendment under `SRC-021`. Its inclusion resolves the prior structure exception; architecture artifacts remain evidence-gated and do not become approved or complete merely because their paths are canonical.
 
 ## 4. Phase 0 — Context and Architecture Baseline
 
@@ -455,21 +509,22 @@ Make the platform operable, supportable, and auditable.
 
 The current queue must use the artifacts that already exist. Do not recreate canonical Phase 0–4 outputs merely because an older status document described them as absent.
 
-Execute these tasks next, in order:
+Completed prerequisites—do not repeat them unless a material baseline, scope, or controlling-evidence change invalidates the 2026-09-07 decision:
 
-1. Validate the existing Phase 0–4 outputs against the applicable phase exit criteria and `AGENT.md` integrity rules, using `docs/09-delivery/pre-implementation-gate-reassessment-2026-09-03.md` as the current reconciliation point.
-2. Produce a residual-gaps list that distinguishes `PRESENT_AND_ACCEPTABLE`, `PRESENT_BUT_PARTIAL`, `PRESENT_BUT_INCONSISTENT`, and `MISSING` so that already completed reconstruction work is not reopened unnecessarily.
-3. Gain repository access to `HarleyJoker/ubuntu-capital-platform` and refresh the implementation inventory when access becomes available; until then, preserve the current recorded implementation evidence boundary.
-4. Close the remaining P0 business/legal decisions required for the Foundation and first slice: EOI meaning, jurisdiction/eligibility, NDA policy, operator authority, logical data ownership, and authoritative state transitions.
-5. Close the remaining architecture/security/NFR readiness items identified by the current Solution Architecture audit, including threat model, authorization design, privacy/retention, measurable availability/performance/recovery/cost targets, the first-slice API/error/audit/persistence/integration contracts, and the minimum ADR set.
-6. Reconcile the **pre-start planned traceability chain** for the proposed Foundation/first-slice scope as `source -> use case -> backlog -> architecture/design (where applicable) -> planned implementation target -> planned test/validation -> planned durable-evidence target -> planned tracker/status`. Update `docs/10-traceability/traceability-matrix.md` and `docs/09-delivery/e2e-delivery-tracker.md` to the same stable planned IDs/targets, and verify schemas, structured data, links, IDs, counts, statuses, open-question references, and risk references. Do not require implementation/test-run/deployment/durable evidence that can only be produced after authorised execution starts.
-7. Reconcile `output/system-reconstruction-summary.md`, `README.md`, the implementation roadmap and all live delivery/gate artifacts with the same current readiness position; no summary may state that the business slice can proceed while Foundation/Phase 5 gates remain blocked.
-8. Define and record the readiness-decision approving authority and decision-control contract. Until authority exists, `GO` and `CONDITIONAL_GO` cannot open the gate and `NO_GO` remains effective.
-9. Run and record a formal pre-implementation readiness review. A non-authorising `NO_GO` may be recorded or refreshed immediately while blockers, integrity failures, partial required planned traceability, or undefined readiness authority remain. An execution-authorising `GO` or `CONDITIONAL_GO` may be recorded only after all non-waivable integrity conditions, required **planned pre-start** traceability hops, and readiness-authority requirements for the proposed scope reconcile.
-10. Only if an effective authorised decision permits execution, begin the exact permitted subset of `WP-AZ-001` through `WP-AZ-008` and capture objective evidence in `docs/09-delivery/foundation-slice-a-evidence-register.md`.
-11. During authorised delivery, replace planned targets progressively with realised `implementation -> test/run -> durable evidence -> validation/status` references. A missing required realised hop blocks work-package/use-case status promotion and acceptance, not the pre-start decision itself.
-12. Keep `WP-AZ-009` through `WP-AZ-012` blocked until Foundation evidence and the separate Phase 5 / first-business-slice gate are satisfied.
-13. Continue regulated onboarding, NDA, settlement, custody, portfolio and production-hardening work only as their own evidence and dependency gates are satisfied.
+1. **Completed:** Phase 0–4 output validation, residual-gap classification, material P0/architecture/security/NFR closure or bounding, planned pre-start traceability reconciliation, and live-artifact alignment were accepted through the formal project-owner review recorded by `SRC-020`. The former `docs/02-architecture/` structure exception is resolved by the canonical-tree amendment in this plan under `SRC-021`.
+2. **Completed:** readiness-decision authority is defined by `SRC-021`, `OQ-016` is closed, and Thembinkosi Mtsweni is the final project-owner decision authority.
+3. **Completed:** the 2026-09-07 formal review revalidated `GO-2026-09-05-FSA-001`; the scope gate for `WP-AZ-001` through `WP-AZ-008` is `OPEN_FOR_AUTHORISED_EXECUTION` in Azure DEV/MVP; contractors may self-select and begin in-scope work without assignment or a Project Manager pre-start record; the evidence PR documents the exact work selected. Re-run readiness only if material scope, baseline, risk, or non-waivable evidence changes.
+
+Execute the current work next, in order:
+
+1. Contractors self-select and begin any work within the repository's approved boundaries without assignment or a Project Manager pre-start record. The existing `GO` defines a project boundary; it does not allocate work. Source-dependent work still requires a pinned application branch and commit.
+2. The contractor's evidence PR documents the submitting contractor, exact work-package/use-case scope selected, repository paths changed or bounded contractor subdirectory, evidence purpose, and applicable external implementation/resource scope.
+3. Each technical contractor records objective, sanitised, revision-pinned first-pass evidence only under its applicable `contractors/<contractor>/` folder; approved external raw evidence is represented by a sanitised stable reference there.
+4. Review and merge a contractor evidence PR as provenance only; merge does not accept evidence or change canonical status.
+5. The 80K Developers Project Manager workstream separately assesses the merged evidence and, when accepted, links it into `docs/09-delivery/foundation-slice-a-evidence-register.md`, updates realised traceability and records any status change through a distinct `PROJECT_MANAGER_GOVERNANCE` PR.
+6. An incomplete evidence-PR declaration makes the PR `Unverified` or `Changes required`; it does not retroactively make the work assigned or unassigned. A missing required realised hop blocks work-package/use-case status promotion and acceptance; neither condition changes the scope-level GO.
+7. Keep `WP-AZ-009` through `WP-AZ-012` blocked until Foundation evidence and the separate Phase 5 / first-business-slice gate are satisfied.
+8. Continue regulated onboarding, NDA, settlement, custody, portfolio and production-hardening work only as their own evidence and dependency gates are satisfied.
 
 ## 16. Agent Completion Protocol
 
